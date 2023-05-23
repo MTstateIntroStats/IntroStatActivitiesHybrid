@@ -43,7 +43,7 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 ### Helper-Hinderer
 
-Do young children know the difference between helpful and unhelpful behavior? A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy over the hinderer toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy over the hinderer toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 
 In this study, the **observational units are the infants ages 6 to 10 months**.  The **variable measured on each observational unit (infant) is whether they chose the helper or the hinderer toy**.  This is a categorical variable so we will be assessing the proportion of infants ages 6 to 10 months that choose the helper toy.  Choosing the helper toy in this study will be considered a success.
@@ -165,13 +165,13 @@ Let's think about how to use a coin to create one simulation of 16 infants under
 
 <!-- \vspace{0.8in} -->
 
-<!-- 15.  Report your simulated sample proportion to your instructor.  Sketch the distribution created by your class below. -->
+12.  Report your simulated sample proportion to your instructor via the Google sheet provided on D2L.  Sketch the distribution created by your class below.
 
-<!-- \vspace{1.5in} -->
+\vspace{1.5in}
 
-<!-- 16. Circle the observed statistic (value from question 3) on the distribution you drew in question 15.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?   -->
+13. Circle the observed statistic (value from question 3) on the distribution you drew in question 15.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
 
-<!-- \vspace{1in} -->
+\vspace{1in}
 
 <!-- 17. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot. -->
 

@@ -1,0 +1,164 @@
+## Module 1 Lab - Sampling Methods
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Identify biased sampling methods.
+
+### Terminology review
+Statistics is the study of how best to collect, analyze, and draw conclusions from data.  Today in class you will be introduced to the following terms:
+
+* Types of sampling bias 
+    - Selection bias
+    - Response bias
+    - Non-response bias
+
+For more on these concepts, read Chapter 1 and Section 2.1 in the textbook.
+
+### General information on labs
+
+At the end of each module you will complete a lab. Questions are selected from each lab to be turned in on Gradescope.  The questions to be submitted on Gradescope are bolded in the lab.  As you work through the lab have the Gradescope lab assignment open so that you can answer those questions as you go.  
+
+### Types of bias 
+
+In the next few weeks we will look at how to summarize data both numerically and graphically.  For now we will focus on sampling methods and the type of sampling bias that may be present.
+
+* Selection bias: a part of the target population is not included or is underrepresented in the sample
+
+* Non-response or non-participation bias: part of the already selected sample does not respond or chooses not to participate
+
+* Response bias: survey participant gives an untruthful or misleading response
+
+To help determine the type of bias present, it is helpful to think about the observational units, the sample, and the target population represented by the problem. The **target population** is the group of cases that makes up the population the researcher is interested in. If sampling bias is present, than the sample taken will not be representative of the actual target population.  In these next questions, identify the target population, the sample selected, the variable collected and its type (categorical or quantitative), and the type of bias present.
+
+\newpage
+
+
+1. **To determine if the proportion of out-of-state undergraduate students at Montana State University has increased in the last 10 years, a statistics instructor sent an email survey to 500 randomly selected current undergraduate students.  One of the questions on the survey asked whether they had in-state or out-of-state residency.  She only received 378 responses.**
+\vspace{0.25in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is non-response bias in this study.
+\vspace{0.5in}
+
+2.  A television station is interested in predicting whether or not a local referendum to legalize marijuana for adult use will pass. It asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum. Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
+\vspace{0.1in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is selection bias in this study.
+\vspace{0.5in}
+\newpage
+
+3. To gauge the interest in a new swimming pool, a local organization stood outside of the Bogart Pool in Bozeman, MT, during open hours.  One of the questions they asked was, "Since the Bogart Pool is in such bad repair, don't you agree that the city should fund a new pool?"
+\vspace{0.1in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is response bias in this study.
+\vspace{0.5in}
+
+    Justify why there is selection bias in this study.
+\vspace{0.5in}
+
+4. **The Bozeman school district was interested in surveying parents of students about their opinions on returning to in-person classes following the COVID-19 pandemic.  They divided the school district into 10 divisions based on location and randomly surveyed 20 households within each division.  Explain why selection bias would be present in this study design.**
+\vspace{1in}
+
+\newpage
+
+### Gas prices 
+
+In this part of the lab we will explore two different websites to explore the cost of gas.  Open both the Gas Buddy Website (www.gasbuddy.com) and a government website (https://www.eia.gov/petroleum/).  Spend some time exploring each site.
+
+5. Choose a city listed on both sites.  Write down three gas prices found on Gas Buddy for this city and the reported gas price from the government website for the same city.
+
+\vspace{0.5in}
+
+6. Compare the two websites.  
+
+* How are gas stations selected to appear in each data set?
+
+\vspace{0.5in}
+
+* Do we know if gas stations were left out for any given time period?
+
+\vspace{0.5in}
+
+* Can we make claims about what the mean price is for all gas stations in a region?  Explain.
+
+\vspace{0.5in}
+
+7. **Which of the following questions are best answered with the government data, and which with Gas Buddy?**
+
+* How do average gas prices compare across regions of the country?
+
+\vspace{0.4in}
+
+* Where should I go to buy gas right now?
+
+\vspace{0.3in}
+
+* What will prices be like in one week?  One year?
+
+\vspace{0.3in}
+
+8. What type(s) of sampling bias may be present?  Explain.
+
+\vspace{0.5in}
+
+
+
+### Take-home messages
+
+1. There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias.
+
+2. Think about how the sample was selected and the target population when determining if sampling bias exists. 
+
+3. It is always important to look at how a sample was selected to determine which group of observational units the results of a study can be generalized to (the target population or observational units similar to the sample).
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered, and to write down the names and contact information of your teammates.
+
+\newpage

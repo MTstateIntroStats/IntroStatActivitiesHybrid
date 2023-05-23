@@ -1,0 +1,9 @@
+## Lecture Notes Week 9: Theoretical inference for two categorical variables 
+
+
+\setstretch{1}
+
+
+### Hypothesi
+
+\newpage

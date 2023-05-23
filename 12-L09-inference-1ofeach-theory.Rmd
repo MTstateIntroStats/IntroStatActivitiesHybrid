@@ -27,7 +27,7 @@ In today's activity, we will use theory-based methods to analyze the association
 
 * Normality
 
-To review these concepts, see Chapter 21 in the textbook.
+To review these concepts, see Chapter 19 in the textbook.
 
 
 ### The triple crown 
@@ -125,10 +125,7 @@ $$SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.$$
 11. **Explain why we multiplied by 2 in the code above.**
 \vspace{0.3in}
 
-12.  Interpret the p-value in context of the study.
-\vspace{0.8in}
-
-13.  Do you expect the 95\% confidence interval to contain the null value of zero?  Explain your answer.
+12.  Do you expect the 95\% confidence interval to contain the null value of zero?  Explain your answer.
 \vspace{0.8in}
 
 
@@ -141,43 +138,65 @@ We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\%
 Enter the appropriate percentile value (as a decimal) for `xx` and degrees of freedom for `yy` into the `qt()` function at line 23 to find the appropriate $t^*$ multiplier
 
 ```{r, echo=TRUE, eval=FALSE}
-qt(xx, df = yy, lower.tail=TRUE)
+qt(xx, df = yy, lower.tail=FALSE)
 ```
-14. Report the $t^*$ multiplier for the 95\% confidence interval.
+13. Report the $t^*$ multiplier for the 95\% confidence interval.
 
 \vspace{0.3in}
 
-15.  Calculate the 95\% confidence interval using theory-based methods.
-
-\newpage
-
-16.  Interpret the 95\% confidence interval in context of the study.
-
-\vspace{1in}
-
-17.  Do the results of the CI agree with the p-value?  Explain your answer.
+14.  Calculate the 95\% confidence interval using theory-based methods.
 
 \vspace{0.5in}
 
-18.  Write a conclusion to the test in context of the study.
-\vspace{0.8in}
+15.  Do the results of the CI agree with the p-value?  Explain your answer.
 
-19.  What type of error may be possible?
+\vspace{0.5in}
+
+16.  What type of error may be possible?
 \vspace{0.2in}
 
-20.  Write a paragraph summarizing the results of the study as if you are reporting the results to your supervisor.  **Upload a copy of your paragraph to Gradescope for your group.**  Be sure to describe:
+17.  Write a paragraph summarizing the results of the study as if you are reporting the results to your supervisor.  **Upload a copy of your paragraph to Gradescope for your group.**  Be sure to describe:
 
-* Summary statistic
+* Summary statistic and interpretation
 
 * P-value and interpretation
 
-* Conclusion (written to answer the research question)
+    * Statement about probability or proportion of samples
+    
+    * Statistic (summary measure and value)
+    
+    * Direction of the alternative 
+    
+    * Null hypothesis (in context) 
+
 
 * Confidence interval and interpretation
 
+    * How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+    * Parameter of interest
+    
+    * Calculated interval
+    
+    * Order of subtraction when comparing two groups
+
+
+* Conclusion (written to answer the research question)
+
+    * Amount of evidence
+    
+    * Parameter of interest 
+    
+    * Direction of the alternative hypothesis
+
+
 * Scope of inference
 
-\vspace{3in}
+\newpage
+
+Paragraph:
+
+
 \newpage
 
 

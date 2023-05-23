@@ -26,7 +26,7 @@ In today's activity we will continue with steps 4 and 5 in the statistical inves
 
 ### Helper-Hinderer
 
-Do young children know the difference between helpful and unhelpful behavior? A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy over the hinderer toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy over the hinderer toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 
 1.  Report the sample proportion calculated in the out of class activity.
@@ -105,7 +105,7 @@ The value in question 8 is the **p-value**.  The smaller the p-value, the more e
 9. **Using the following guidelines for the strength of evidence, how much evidence do the data provide against the null hypothesis? (Circle one of the five descriptions.)**
 
 
-\begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_grayscale} \end{center}
+\begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
 
 
 #### Interpret the p-value {-}
@@ -125,6 +125,7 @@ The p-value measures the probability that we observe a sample proportion as extr
 12.  What direction did we count simulations from the statistic?
 \vspace{0.3in}
 
+\newpage
 
 13.  Fill in the blanks below to interpret the p-value.  
 

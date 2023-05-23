@@ -1,0 +1,11 @@
+## Lecture Notes Week 8: Inference for two categorical variables using Simulation-based methods
+
+
+\setstretch{1}
+
+
+### Hypothesis Testing
+
+
+
+\newpage

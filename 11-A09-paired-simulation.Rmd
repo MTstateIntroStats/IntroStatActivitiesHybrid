@@ -1,4 +1,4 @@
-## Activity 11A:  COVID-19 and Air Pollution
+## Activity 11:  COVID-19 and Air Pollution
 
 \setstretch{1}
 

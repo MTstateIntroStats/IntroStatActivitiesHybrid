@@ -167,10 +167,10 @@ $$SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.$$
 
 \vspace{0.5in}
 
-Using the provided R script file, enter the T-score (for `xx`) into the `pt()` function.  For single sample or paired data, degrees of freedom are found by subtracting 1 from the sample size.  You should therefore use `df` = $n_d-1 = 70 - 1 = 69$ and `lower.tail = FALSE` to find the p-value.  Highlight and run line 23.  
+To find the p-value we enter the value for the standardized statistic (T = 2.464) into the pt function in R.  If you did not get his answer for question 7, double check your work.  For a single sample or paired data, degrees of freedom are found by subtracting 1 from the sample size.  You should therefore use `df` = $n_d-1 = 70 - 1 = 69$ and `lower.tail = FALSE` to find the p-value.    
 
-```{r, echo=TRUE, eval=FALSE}
-pt(xx, df=69, lower.tail=FALSE)
+```{r, echo=TRUE, eval=TRUE}
+pt(2.464, df=69, lower.tail=FALSE)
 ```
 8. Explain why we found the area above the T-score using `lower.tail = FALSE` in the code above.
 \vspace{0.3in}
