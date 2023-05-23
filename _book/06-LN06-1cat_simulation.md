@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 ## Lecture Notes Week 6: Inference for one categorical variable using Simulation-based methods
 
 

@@ -130,6 +130,8 @@ Conditions for inference using theory-based methods:
 
 - Large enough sample size:
 
+\vspace{0.2in}
+
 ### T - distribution {-}
 
 In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
@@ -289,9 +291,13 @@ Conclusion:
 
 * Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
 
-Standardized sample mean:
+Equation for the standard error of the sample mean:
 
-\vspace{0.8in}
+\vspace{0.5in}
+
+Equation for the standardized sample mean:
+
+\vspace{0.5in}
 
 Calculate the standardized sample mean weight of adult male polar bears:
 

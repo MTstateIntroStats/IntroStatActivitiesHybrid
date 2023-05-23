@@ -323,7 +323,7 @@ Theory-based test:
 
 * Find the area under the t-distribution with $n - 2$ df at least as extreme as the standardized statistic
 
-Standardized difference in sample mean:
+Equation for the standardized slope:
 
 \vspace{0.8in}
 

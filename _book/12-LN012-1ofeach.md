@@ -226,9 +226,13 @@ Theory-based test:
 
 * Find the area under the t-distribution with the smallest $n - 1$ df [min($n_1-1, n_2-1$) at least as extreme as the standardized statistic
 
-Standardized difference in sample mean:
+Equation for the standard error of the difference in sample mean:
 
-\vspace{0.8in}
+\vspace{0.5in}
+
+Equation for the standardized difference in sample mean:
+
+\vspace{0.5in}
 
 Example:
 

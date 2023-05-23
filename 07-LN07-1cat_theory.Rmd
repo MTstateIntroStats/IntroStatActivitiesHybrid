@@ -1,0 +1,257 @@
+## Lecture Notes Week 7: Inference for one categorical variable using Theory-based methods
+
+
+\setstretch{1}
+
+### Theory-based methods
+
+#### Central limit theorem {-}
+
+The Central Limit Theorem tells us that the ______________ distribution of a sample proportion (and sample mean and sample differences) will be approximately ______________ if the sample size is ______________ ________________.
+
+The ______________ of distribution of sample proportions (sampling distribution) from thousands of samples will be bell-shaped/symmetric (Normal), if the sample size is large enough and the observations are ________________.
+
+* $\hat{p} \sim N (\pi, \sqrt{\frac{\pi \times (1-\pi)}{n}})$
+
+Conditions of the CLT:
+
+* Independence:
+
+\vspace{0.5in}
+
+* Large enough sample size:
+
+\vspace{0.5in}
+
+Normal distribution:
+
+* $N(\mu, \sigma)$
+
+* Bell-shaped and ______________
+
+* $\mu$ is the ___________
+
+* $\sigma$ is the ____________ ______________.
+
+* Standard normal distribution:  $N(0,1)$
+
+```{r simpleNormalc, warning=FALSE, out.width="50%"}
+openintro::normTail(m = 0, s = 1)
+```
+
+Standardized statistic: Z - score
+
+* $Z = \frac{x - \mu}{\sigma}$
+
+\vspace{0.5in}
+
+* Measures the ___________ of standard _____________ x is from $\mu$
+
+Example(s):  Heights of Caucasian American adult males are roughly Normally distributed with a mean of 1.72 m and a standard deviation of 0.28 m. Find and interpret the z-score for a man who is 5’4” (1.626 m) tall. Round your answer to three decimal places.
+
+\vspace{1.2in}
+
+Heights of Caucasian American adult females are roughly Normally distributed with a mean of 1.59 meters and a standard deviation of 0.22 meters.  Which is more unusual: a 5’4” (1.626 m) tall male or a 5’9” (1.753 m) tall female?
+
+\vspace{1.2in}
+
+In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.  
+
+```{r, echo=TRUE}
+library(openintro)
+normTail(m = 1.72, s = 0.28, L = 1.626)
+pnorm(mean = 1.72, sd = 0.28, q = 1.626)
+```
+
+\vspace{0.5in}
+
+We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.  
+
+```{r, echo=TRUE}
+qnorm(mean = 1.72, sd = 0.28, p = 0.75)
+normTail(m = 1.72, s = 0.28, L = 1.909)
+```
+
+### 68-95-99.7 Rule {-}
+
+* 68% of Normal distribution within 1 SD of the mean (mean – SD, mean + SD)
+
+* 95% within (mean – 2SD, mean + 2SD)
+
+* 99.7% within (mean – 3SD, mean + 3SD)
+
+```{r, out.width="90%"}
+include_graphics("images/Empirical_Rule.png")
+```
+
+General steps of a hypothesis test
+
+1.	Write a research question and hypotheses.
+
+2.	Collect data and calculate a summary statistic.
+
+3.	Model a sampling distribution which assumes the null hypothesis is true.
+
+4.	Calculate a p-value.
+
+5.	Draw conclusions based on a p-value.
+
+#### Theory-based methods for a single categorical variable {-}
+
+Conditions for inference using theory-based methods:
+
+- Independence:
+
+\vspace{0.2in}
+
+- Large enough sample size:
+
+\vspace{1in}
+
+* Calculate the standardized statistic
+
+* Find the area under the standard normal distribution at least as extreme as the standardized statistic
+
+Equation for the standard error of the sample proportion assuming the null hypothesis is true:
+
+\vspace{0.5in}
+
+Equation for the standardized sample proportion:
+
+\vspace{0.5in}
+
+Example:  The American Red Cross reports that 10% of US residents eligible to donate blood actually do donate.  A poll conducted on a representative of 200 Montana residents eligible to donate blood found that 33 had donated blood sometime in their life.  Do Montana residents donate at a different rate than US population?
+
+Are the conditions met to analyze the blood donations data using theory-based methods?
+
+\vspace{1in}
+
+Hypotheses:
+
+In notation:  
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+
+In words: 
+
+$H_0:$
+
+\vspace{0.6in}
+
+$H_A:$
+
+\vspace{0.6in}
+
+Calculate the standardized sample proportion of Montana residents that have donated blood sometime in their life.
+
+* 1st calculate the standard error of the sample proportion
+
+\vspace{1.2in}
+
+```{r standNormalc, warning=FALSE, out.width="50%"}
+openintro::normTail(m = 0, s = 1)
+```
+
+Interpret the standardized statistic
+
+\vspace{0.5in}
+
+To find the p-value, find the area under the standard normal distribution at the standardized statistic and more extreme.
+
+```{r, eval=TRUE}
+pnorm(3.064, lower.tail = FALSE)*2
+```
+Interpretation of the p-value:
+
+* Statement about probability or proportion of samples
+
+* Statistic (summary measure and value)
+    
+* Direction of the alternative 
+    
+* Null hypothesis (in context) 
+
+\vspace{0.8in}
+
+Conclusion: 
+
+* Amount of evidence
+    
+* Parameter of interest 
+    
+* Direction of the alternative hypothesis
+
+\vspace{0.6in}
+
+Decision:
+
+\vspace{0.3in}
+
+Generalization:
+
+* Can the results of the study be generalized to the target population?
+
+\vspace{0.4in}
+
+### Confidence interval 
+
+* Interval of __________ values for the parameter of interest
+
+* $CI = \text{statistic} \pm \text{margin of error}$
+
+\vspace{0.5in}
+
+#### Theory-based method for a single categorical variable {-}
+
+* $CI = \hat{p} \pm (z^* \times SE(\hat{p}))$
+
+* Multiplier (z^*) is the value at a certain ____________ under the standard normal distribution
+
+```{r standardNormalcur, warning=FALSE, out.width="50%"}
+openintro::normTail(m = 0, s = 1)
+```
+
+For a 95\% confidence interval:
+```{r, echo=TRUE}
+qrnorm(0.975, lower.tail=TRUE)
+```
+
+* When creating a confidence interval, we no longer assume the _____________ hypothesis is true. Use ________ to calculate the sample to sample variability, rather than $\pi_0$.
+
+Equation for the standard error of the sample proportion *NOT* assuming the null is true:
+
+\vspace{0.5in}
+
+Example:  Estimate the true proportion of Montana residents that have donated blood at least once in their life.
+
+Find a 95\% confidence interval:
+
+\vspace{1in}
+
+Confidence interval interpretation:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+* Parameter of interest
+    
+* Calculated interval
+    
+* Order of subtraction when comparing two groups
+
+\vspace{0.8in}
+
+#### Interpreting confidence level {-}
+
+What does it mean to be 95\% confident in a created confidence interval?
+
+****
+
+### Errors, 
+
+\newpage
