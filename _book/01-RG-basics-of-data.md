@@ -1,15 +1,15 @@
 # Basics of Data
 
-## Module 1 Reading Guide: Basics of Data
+## Week 1 Reading Guide: Basics of Data
 
 ### Sections 1.1 (Case study) and 1.2 (Data basics) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Stat 216 Course_Tour
-* Instructor bio
-* 1.2.1_1.2.2
-* 1.2.3_1.2.4_1.2.5
+<!-- * Stat 216 Course_Tour -->
+<!-- * Instructor bio -->
+<!-- * 1.2.1_1.2.2 -->
+<!-- * 1.2.3_1.2.4_1.2.5 -->
 
 \setstretch{1.25}
 
@@ -175,9 +175,9 @@ True or False: Observational studies can show a naturally occurring association 
 
 ### Section 1.3 (Sampling principles and strategies) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 1.3
+<!-- * 1.3 -->
 
 \setstretch{1.25}
 

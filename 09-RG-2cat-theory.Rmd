@@ -1,14 +1,14 @@
 # Inference for Two Categorical Variables: Theory-based Methods
 
-## Module 9 Reading Guide: Theory-based Inference for a Difference in Proportions
+## Week 9 Reading Guide: Theory-based Inference for a Difference in Proportions
 
 ### Section 15.3 (Theory-based inferential methods for $\pi_1 - \pi_2$)
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 15.3Tests
-* 15.3Intervals
+<!-- * 15.3Tests -->
+<!-- * 15.3Intervals -->
 
 \setstretch{1.25}
 

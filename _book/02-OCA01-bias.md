@@ -1,4 +1,4 @@
-## OUt of Class Activity 2: American Indian Address
+## Out of Class Activity Week 2: American Indian Address
 
 \setstretch{1}
 
@@ -26,7 +26,7 @@ To review these concepts, see Section 1.3 in the textbook.
 
 ### American Indian Address
 
-Complete questions 1 - 4 in class.  Your instructor will create and post the distribution needed for the remainder of the activity by 8 pm on Monday night. For this activity, you will read a speech given by Jim Becenti, a member of the Navajo American Indian tribe, who spoke about the employment problems his people faced at an Office of Indian Affairs meeting in Phoenix, Arizona, on January 30, 1947 [@becentispeech]. His speech is below:
+Complete questions 1 - 4 in class on Monday.  Your instructor will create and post the distribution needed for the remainder of the activity by 8 pm on Monday night. For this activity, you will read a speech given by Jim Becenti, a member of the Navajo American Indian tribe, who spoke about the employment problems his people faced at an Office of Indian Affairs meeting in Phoenix, Arizona, on January 30, 1947 [@becentispeech]. His speech is below:
 
 **It is hard for us to go outside the reservation where we meet strangers. I have been off the reservation ever since I was sixteen. Today I am sorry I quit the Santa Fe [Railroad]. I worked for them in 1912-13. You are enjoying life, liberty, and happiness on the soil the American Indian had, so it is your responsibility to give us a hand, brother. Take us out of distress. I have never been to vocational school. I have very little education. I look at the white man who is a skilled laborer. When I was a young man I worked for a man in Gallup as a carpenter’s helper. He treated me as his own brother. I used his tools. Then he took his tools and gave me a list of tools I should buy and I started carpentering just from what I had seen. We have no alphabetical language.**
 
@@ -98,15 +98,93 @@ Observation & Word & Length  \\ \hline
 11.  Should we use results from our by eye samples to make a statement about the word length in the population of words in Becenti's address?  Why or why not?
 \vspace{1in}
 
+\newpage
+
+#### Types of bias {-}
+
+12. To determine if the proportion of out-of-state undergraduate students at Montana State University has increased in the last 10 years, a statistics instructor sent an email survey to 500 randomly selected current undergraduate students.  One of the questions on the survey asked whether they had in-state or out-of-state residency.  She only received 378 responses.
+\vspace{0.1in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is non-response bias in this study.
+\vspace{0.5in}
+
+
+13.  A television station is interested in predicting whether or not a local referendum to legalize marijuana for adult use will pass. It asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum. Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
+\vspace{0.1in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is non-response bias in this study.
+\vspace{0.5in}
+
+\newpage
+
+14. To gauge the interest in a new swimming pool, a local organization stood outside of the Bogart Pool in Bozeman, MT, during open hours.  One of the questions they asked was, "Since the Bogart Pool is in such bad repair, don't you agree that the city should fund a new pool?"
+\vspace{0.1in}
+
+    Sample size:
+\vspace{0.3in}
+
+    Sample taken:
+\vspace{0.3in}
+
+    Target population:
+\vspace{0.3in}
+
+    Variable:
+\vspace{0.3in}
+
+    Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
+\vspace{1mm}
+
+    Justify why there is response bias in this study.
+\vspace{0.5in}
+
+    Justify why there is selection bias in this study.
+\vspace{0.5in}
+
+15. The Bozeman school district was interested in surveying parents of students about their opinions on returning to in-person classes following the COVID-19 pandemic.  They divided the school district into 10 divisions based on location and randomly surveyed 20 households within each division.  Explain why selection bias would be present in this study design.
+\vspace{1in}
+
+\newpage
+
 ### Take-home messages
 
-<!-- 1.  There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias. -->
+1.  There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias.
 
-1.	When we use a biased method of selection, we will over or underestimate the parameter.
+2.	When we use a biased method of selection, we will over or underestimate the parameter.
 
-2. To see if a method is biased, we compare the distribution of the estimates to the true value. We want our estimate to be on target or unbiased.  When using unbiased methods of selection, the mean of the distribution matches or is very similar to our true parameter.
+3. To see if a method is biased, we compare the distribution of the estimates to the true value. We want our estimate to be on target or unbiased.  When using unbiased methods of selection, the mean of the distribution matches or is very similar to our true parameter.
 
-3. If the sampling method is biased, inferences made about the population based on a sample estimate will not be valid. 
+4. If the sampling method is biased, inferences made about the population based on a sample estimate will not be valid. 
 
 ### Additional notes
 

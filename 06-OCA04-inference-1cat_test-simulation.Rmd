@@ -1,4 +1,4 @@
-## Out of Class Activity 6:  Helperer-Hinderer --- Simulation-based Hypothesis Test
+## Out of Class Activity Week 6:  Helperer-Hinderer --- Simulation-based Hypothesis Test
 
 \setstretch{1}
 

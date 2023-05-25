@@ -1,15 +1,15 @@
 # Inference for Two Quantitative Variables
 
-## Module 13 Reading Guide: Inference for Slope and Correlation
+## Week 13 Reading Guide: Inference for Slope and Correlation
 
 ### Chapter 21 (Inference for regression and model conditions) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 21.2
-* 21.3
-* 21.4to21.5Tests
-* 21.4to21.5Intervals
+<!-- * 21.2 -->
+<!-- * 21.3 -->
+<!-- * 21.4to21.5Tests -->
+<!-- * 21.4to21.5Intervals -->
 
 \setstretch{1.25}
 

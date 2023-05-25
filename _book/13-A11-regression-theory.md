@@ -172,9 +172,9 @@ qt(0.975, 352) # 95% t* multiplier
 
 \vspace{.8in}
 
-### Multivariate plots {-}
+### Multivariable plots {-}
 
-Another variable that may affect the percent accuracy is the sex of the golfer. We will look at how this variable may change the relationship between driving distance and percent accuracy. Highlight and run lines 32--39 to produce the multivariate plot. 
+Another variable that may affect the percent accuracy is the sex of the golfer. We will look at how this variable may change the relationship between driving distance and percent accuracy. Highlight and run lines 32--39 to produce the multivariable plot. 
 
 
 ```r

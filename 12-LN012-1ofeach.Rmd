@@ -1,8 +1,8 @@
-## Lecture Notes Week 12: Inference for independent samples 
+## Lecture Notes Week 12: Inference for Independent Samples 
 
 \setstretch{1}
 
-### Single categorical, single quantitative variable with independent samples
+### Single categorical, single quantitative variable with independent samples {-}
 
 \setstretch{1.5}
 
@@ -82,6 +82,11 @@ letters<-read.csv("data/letters.csv")
 letters %>%
     reframe(favstats(Memorized~Grouped))
 ```
+
+Summary statistic:
+
+\vspace{0.4in}
+
 ```{r, echo=TRUE}
 letters%>%
   ggplot(aes(y = Memorized, x = Grouped))  + #Enter the name of the explanatory and response variable

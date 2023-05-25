@@ -1,4 +1,4 @@
-## Lecture Notes Week 6: Inference for one categorical variable using Simulation-based methods
+## Lecture Notes Week 6: Inference for One Categorical Variable using Simulation-based Methods
 
 
 \setstretch{1}

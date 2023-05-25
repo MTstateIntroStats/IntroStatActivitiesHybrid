@@ -1,14 +1,14 @@
 # Inference for a Single Categorical Variable: Simulation-based Methods
 
-## Module 6 Reading Guide: Categorical Inference
+## Week 6 Reading Guide: Categorical Inference
 
 ### Section 5.1 (Foundations of inference: Hypothesis tests) {-}
 
 Please note that Theory-based inference will be covered next week.
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 5.1
+<!-- * 5.1 -->
 
 \setstretch{1.25}
 

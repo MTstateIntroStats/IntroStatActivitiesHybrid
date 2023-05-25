@@ -1,4 +1,4 @@
-## Out of Class Activity 8:  The Good Samaritan --- Intro
+## Out of Class Activity Week 8:  The Good Samaritan --- Intro
 
 \setstretch{1}
 
@@ -83,13 +83,13 @@ Remember, we define the parameter for a single categorical variable as the true 
 
 \newpage
 
-5. Write the two parameters of interest for this study.  Let 1 = hurry condition, 2 = no hurry condition. 
+5. Write the two parameters of interest for this study.  
 \vspace{1mm}
 
-   $\pi_1$ --- 
+   $\pi_{\text{hurry}}$ --- 
 \vspace{0.5in}
 
-   $\pi_2$ ---
+   $\pi_{\text{no hurry}}$ ---
 \vspace{0.5in}
 
 When comparing two groups, we assume the two parameters are equal in the null hypothesis---there is no association between the variables.

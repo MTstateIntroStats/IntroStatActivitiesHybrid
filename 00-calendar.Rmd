@@ -11,51 +11,61 @@ This calendar only lists the in-class activities, RStudio labs and exams each we
 
 1& W& 8/23& Intro to Data \\*
 1& F& 8/25& Data Lecture and Lab \\ \hline
-2& M& 8/28& Study Design Lecture - Complete Out of Class Activity 2 \\*
-2& W& 8/30& American Indian Address \\* 
+2& M& 8/28& Study Design Lecture \\*
+2& W& 8/30& Complete Out of Class Activity Week 2 \\*
+2& W& 8/30& American Indian Address Part 2 \\* 
 2& F& 9/1& Week 2 Lab \\ \hline
 3& M& 9/4& (\textit{No class}) \\*
-3& W& 9/6& Categorical/Quantitative EDA Lecture - Complete Out of Class Activity 3 \\*
+3& W& 9/6& Categorical and Quantitative EDA Lecture \\*
+3& F& 9/8& Complete Out of Class Activity Week 3 \\*
 3& F& 9/8& Week 3 Lab \\ \hline
-4& M& 9/11& Regression Lecture - Complete Out of Class Activity 4 \\*
+4& M& 9/11& Regression Lecture \\*
+4& W& 9/13& Complete Out of Class Activity Week 4 \\*
 4& W& 9/13& Movie Profits \\*
 4& F& 9/15& Week 4 Lab \\ \hline
 5& M& 9/18& Exam 1 Review \\*
 5& W& 9/20& Group Midterm Exam 1 \\*	
-5& F& 9/21& Midterm Exam 1 \\ \hline
-6& M& 9/26& Hypothesis Testing Lecture \\*
-6& W& 9/28& Helper Hinderer --- Simulation HT \\*	
-6& F& 9/30& Week 6 Lab \\ \hline
-7& M& 10/3& Theory-based Testing Lecture \\*
-7& W& 10/5& Handedness of Male Boxers --- Theory\\*
-7& F& 10/7& Week 7 Lab \\ \hline
-8& M& 10/10& Two Proportion Simulation Lecture \\*
-8& W& 10/12& Good Samaritan --- Simulation HT & CI \\*	
-8& F& 10/14& Week 8 Lab \\ \hline
-9& M& 10/17& Two Proportion Theory Lecture \\*
-9& W& 10/19& Helmet Use and Head Injuries --- Theory HT & CI \\*	
-9& F& 10/21& Week 9 Lab \\ \hline
-10& M& 10/24& Exam 2 Review \\*
-10& W& 10/26& Group Midterm Exam 2 \\*
-10& F& 10/28& Midterm Exam 2\\ \hline
-11& M& 10/31& Paired Inference Lecture \\*
-11& W& 11/2& Color Interference \\*	
-11& F& 11/4& Week 11 Lab \\ \hline
-12& M& 11/7& Weather Patterns and Snowfall \\*
-12& W& 11/9& Week 12 Lab \\*
-12& F& 11/11& (\textit{No class}) \\ \hline
-13& M& 11/14& Regression Inference Lecture \\*
-13& W& 11/16& Golf Driving Distances \\*
-13& F& 11/18& Week 13 Lab \\ \hline
-Holiday& M--F& 11/21--11/25& \textbf{No Class --- Fall Break} \\ \hline
-14& M& 11/28& Probability & Relative Risk Lecture \\*
-14& W& 11/30& Relative Risk \\*
-14& F& 12/2& Week 14 Lab \\ \hline
-15& M& 12/5& Final Exam Review \\*
-15& W& 12/7& Final Group Exam Part 1 \\*
-15& F& 12/9& Final Group Exam Part 2 \\ \hline
-Finals& 12/13& 6 - 7:50 pm & Common Final Exam \\
-&  &  & See \url{www.montana.edu/registrar/Schedules.html} \\ \hline
+5& F& 9/22& Midterm Exam 1 \\ \hline
+6& M& 9/25& Hypothesis Testing Lecture \\*
+6& W& 9/27& Complete Out of Class Activity Week 6 \\*
+6& W& 9/27& Helper Hinderer --- Simulation HT \\*	
+6& F& 9/29& Week 6 Lab \\ \hline
+7& M& 10/2& Theory-based Testing Lecture \\*
+7& W& 10/4& Complete Out of Class Activity Week 7 \\*
+7& W& 10/4& Handedness of Male Boxers --- Theory \\*
+7& F& 10/6& Week 7 Lab \\ \hline
+8& M& 10/9& Two Proportion Simulation Lecture \\*
+8& W& 10/11& Complete Out of Class Activity Week 8 \\*
+8& W& 10/11& Good Samaritan --- Simulation HT and CI \\*	
+8& F& 10/13& Week 8 Lab \\ \hline
+9& M& 10/16& Two Proportion Theory Lecture \\*
+9& W& 10/18& Complete Out of Class Activity Week 9 \\*
+9& W& 10/18& Helmet Use and Head Injuries --- Theory HT and CI \\*	
+9& F& 10/20& Week 9 Lab \\ \hline
+10& M& 10/23& Exam 2 Review \\*
+10& W& 10/25& Group Midterm Exam 2 \\*
+10& F& 10/27& Midterm Exam 2\\ \hline
+11& M& 10/30& Paired Inference Lecture \\*
+11& W& 11/1& Complete Out of Class Activity Week 11 \\*
+11& W& 11/1& Color Interference \\*	
+11& F& 11/3& Week 11 Lab \\ \hline
+12& M& 11/6& Two Independent Samples Inference Lecture \\*
+12& W& 11/8& Complete Out of Class Activity Week 12 \\*
+12& W& 11/8& Week 12 Lab \\*
+12& F& 11/10& (\textit{No class}) \\ \hline
+13& M& 11/13& Regression Inference Lecture \\*
+13& W& 11/15& Complete Out of Class Activity Week 13 \\*
+13& W& 11/15& Golf Driving Distances \\*
+13& F& 11/17& Week 13 Lab \\ \hline
+Holiday& M--F& 11/20--11/24& \textbf{No Class --- Fall Break} \\ \hline
+14& M& 11/27& Probability and Relative Risk Lecture \\*
+14& W& 11/29& Complete Out of Class Activity Week 14 \\*
+14& W& 11/29& Relative Risk \\*
+14& F& 12/1& Week 14 Lab \\ \hline
+15& M& 12/4& Final Exam Review \\*
+15& W& 12/6& Final Group Exam Part 1 \\*
+15& F& 12/8& Final Group Exam Part 2 \\ \hline
+Common Final Exam& M--R & 12/11--12/14& See \url{www.montana.edu/registrar/Schedules.html} \\ \hline
 
 \end{longtable}
 

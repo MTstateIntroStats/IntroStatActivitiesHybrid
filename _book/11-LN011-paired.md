@@ -2,322 +2,312 @@
 
 \setstretch{1}
 
-### Single quantitative variable
+<!-- ### Single quantitative variable -->
 
-* Reminder: review summary measures and plots discussed in the Week 3 material and Chapter 5 of the textbook.
+<!-- * Reminder: review summary measures and plots discussed in the Week 3 material and Chapter 5 of the textbook. -->
 
-* The summary measure for a single quantitative variable is the ______________.
+<!-- * The summary measure for a single quantitative variable is the ______________. -->
 
-\setstretch{1.5}
+<!-- \setstretch{1.5} -->
 
-Notation:
+<!-- Notation: -->
 
-- Population mean: 
+<!-- - Population mean:  -->
 
-- Population standard deviation:
+<!-- - Population standard deviation: -->
 
-- Sample mean:
+<!-- - Sample mean: -->
 
-- Sample standard deviation:
+<!-- - Sample standard deviation: -->
 
-- Sample size: 
+<!-- - Sample size:  -->
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.  
+<!-- Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.   -->
 
+<!-- ```{r, echo=TRUE} -->
+<!-- pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv") -->
+<!-- ``` -->
 
-```r
-pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
-```
+<!-- Plots of the data: -->
 
-Plots of the data:
+<!-- ```{r, echo=TRUE, out.width="60%"} -->
+<!-- pb %>% -->
+<!--     ggplot(aes(x = Weight)) +   # Name variable to plot -->
+<!--     geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth  -->
+<!--     labs(title = "Histogram of Male Polar Bear Weight", # Title for plot -->
+<!--        x = "Weight (kg)", # Label for x axis -->
+<!--        y = "Frequency") # Label for y axis -->
 
+<!-- pb %>% # Data set piped into... -->
+<!-- ggplot(aes(x = Weight)) +   # Name variable to plot -->
+<!--   geom_boxplot() +  # Create boxplot  -->
+<!--   labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot -->
+<!--        x = "Weight (kg)", # Label for x axis -->
+<!--        y = "Frequency") # Label for y axis -->
+<!-- ``` -->
 
-```r
-pb %>%
-    ggplot(aes(x = Weight)) +   # Name variable to plot
-    geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth 
-    labs(title = "Histogram of Male Polar Bear Weight", # Title for plot
-       x = "Weight (kg)", # Label for x axis
-       y = "Frequency") # Label for y axis
+<!-- Summary Statistics: -->
 
-pb %>% # Data set piped into...
-ggplot(aes(x = Weight)) +   # Name variable to plot
-  geom_boxplot() +  # Create boxplot 
-  labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot
-       x = "Weight (kg)", # Label for x axis
-       y = "Frequency") # Label for y axis
-```
+<!-- ```{r, echo=TRUE} -->
+<!-- pb %>% -->
+<!--   summarise(favstats(Weight)) #Gives the summary statistics -->
+<!-- ``` -->
+<!-- ### Confidence interval {-} -->
 
+<!-- #### Simulation-based method{-} -->
 
+<!-- * Label cards with the values from the data set -->
 
-\begin{center}\includegraphics[width=0.6\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.6\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-2-2} \end{center}
+<!-- * Sample with replacement (bootstrap) from the original sample $n$ times -->
 
-Summary Statistics:
+<!-- * Plot the simulated sample mean on the bootstrap distribution -->
 
+<!-- * Repeat at least 1000 times (simulations)  -->
 
-```r
-pb %>%
-  summarise(favstats(Weight)) #Gives the summary statistics
-#>     min    Q1 median     Q3   max     mean       sd  n missing
-#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
-```
-### Confidence interval {-}
+<!-- * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution. -->
 
-#### Simulation-based method{-}
+<!-- * ie. 95% CI = (2.5th percentile, 97.5th percentile)  -->
 
-* Label cards with the values from the data set
+<!-- Conditions for inference for a single mean: -->
 
-* Sample with replacement (bootstrap) from the original sample $n$ times
+<!-- - Independence: -->
 
-* Plot the simulated sample mean on the bootstrap distribution
+<!-- \vspace{0.5in} -->
 
-* Repeat at least 1000 times (simulations) 
+<!-- ```{r, echo=TRUE, warning=FALSE} -->
+<!-- set.seed(216) -->
+<!-- paired_bootstrap_CI(data = pb$Weight, # Enter vector of differences -->
+<!--             number_repetitions = 1000, # Number of bootstrap samples for CI -->
+<!--             confidence_level = 0.95,  # Confidence level in decimal form -->
+<!--             which_first = 1)  # Not needed when entering vector of differences -->
+<!-- ``` -->
+<!-- The confidence interval estimates the ________________ -->
+<!-- of ____________________. -->
 
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+<!-- Confidence interval interpretation: -->
 
-* ie. 95% CI = (2.5th percentile, 97.5th percentile) 
+<!-- * How confident you are (e.g., 90%, 95%, 98%, 99%) -->
 
-Conditions for inference for a single mean:
+<!-- * Parameter of interest -->
 
-- Independence:
+<!-- * Calculated interval -->
 
-\vspace{0.5in}
+<!-- * Order of subtraction when comparing two groups -->
 
+<!-- \vspace{0.8in} -->
 
-```r
-set.seed(216)
-paired_bootstrap_CI(data = pb$Weight, # Enter vector of differences
-            number_repetitions = 1000, # Number of bootstrap samples for CI
-            confidence_level = 0.95,  # Confidence level in decimal form
-            which_first = 1)  # Not needed when entering vector of differences
-```
+<!-- \newpage -->
 
+<!-- #### Theory-based method {-} -->
 
+<!-- * Calculate the interval centered at the sample statistic -->
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-4-1} \end{center}
-The confidence interval estimates the ________________
-of ____________________.
+<!-- \rgi $\text{statistic} \pm \text{margin of error}$ -->
 
-Confidence interval interpretation:
+<!-- \vspace{0.5in} -->
 
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
-    
-* Parameter of interest
-    
-* Calculated interval
-    
-* Order of subtraction when comparing two groups
+<!-- Conditions for inference using theory-based methods: -->
 
-\vspace{0.8in}
+<!-- - Independence: -->
 
-\newpage
+<!-- \vspace{0.2in} -->
 
-#### Theory-based method {-}
+<!-- - Large enough sample size: -->
 
-* Calculate the interval centered at the sample statistic
+<!-- \vspace{0.2in} -->
 
-\rgi $\text{statistic} \pm \text{margin of error}$
+<!-- ### T - distribution {-} -->
 
-\vspace{0.8in}
+<!-- In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$. -->
 
-Conditions for inference using theory-based methods:
+<!-- $$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$ -->
+<!-- \setstretch{1.5} -->
 
-- Independence:
+<!-- * Estimate the population standard deviation, $\sigma$, with the -->
+<!-- ___________________________ standard deviation, ________. -->
 
-\vspace{0.2in}
+<!-- * For a single quantitative variable we use the ____ - distribution -->
+<!-- with _______________  -->
+<!-- degrees of freedom to approximate the sampling distribution. -->
 
-- Large enough sample size:
+<!-- \setstretch{1} -->
 
-\vspace{0.2in}
+<!-- The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom. -->
 
-### T - distribution {-}
+<!-- ```{r, tstarpb, echo = F} -->
 
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
+<!-- x <- seq(-4, 4, length=100) -->
+<!-- hx<-dt(x, 82) -->
+<!-- degf <- 82 -->
 
-$$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$
-\setstretch{1.5}
+<!-- plot(x, hx, type="l", lty=1, lwd=3, xlab="", -->
+<!--   ylab="Density", main="t-distribution with 82 df") -->
 
-* Estimate the population standard deviation, $\sigma$, with the
-___________________________ standard deviation, ________.
+<!-- ``` -->
 
-* For a single quantitative variable we use the ____ - distribution
-with _______________ 
-degrees of freedom to approximate the sampling distribution.
+<!-- \newpage -->
+<!-- To find the $t^*$ multiplier for a 95\% confidence interval: -->
 
-\setstretch{1}
+<!-- ```{r, echo=TRUE} -->
+<!-- qt(0.975, df = 82) -->
+<!-- ``` -->
+<!-- Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea: -->
 
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+<!-- \vspace{0.8in} -->
 
+<!-- ### Hypothesis testing {-} -->
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/tstarpb-1} \end{center}
+<!-- \setstretch{1.5} -->
 
-\newpage
-To find the $t^*$ multiplier for a 95\% confidence interval:
+<!-- * Hypotheses are always written about the _________________________.  For a single mean we will use the notation ___________. -->
 
+<!-- \setstretch{1} -->
 
-```r
-qt(0.975, df = 82)
-#> [1] 1.989319
-```
-Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
+<!-- Null Hypothesis:  -->
 
-\vspace{0.8in}
+<!-- $H_0:$ -->
 
-### Hypothesis testing {-}
+<!-- \vspace{0.2in} -->
+<!-- Alternative Hypothesis:  -->
 
-\setstretch{1.5}
+<!-- $H_A:$ -->
 
-* Hypotheses are always written about the _________________________.  For a single mean we will use the notation ___________.
+<!-- \vspace{0.2in} -->
 
-\setstretch{1}
+<!-- \setstretch{1.5} -->
 
-Null Hypothesis: 
+<!-- * Direction of the alternative depends on the __________________ -->
+<!-- ___________________. -->
 
-$H_0:$
+<!-- \setstretch{1} -->
 
-\vspace{0.2in}
-Alternative Hypothesis: 
+<!-- #### Simulation-based method {-} -->
 
-$H_A:$
+<!-- * Simulate many samples assuming $H_0: \mu = \mu_0$ -->
 
-\vspace{0.2in}
+<!--     * Shift the data by the difference between $\mu_0$ and $\bar{x}$ -->
 
-\setstretch{1.5}
+<!--     * Sample with replacement $n$ times from the shifted data -->
 
-* Direction of the alternative depends on the __________________
-___________________.
+<!--     * Plot the simulated shifted sample mean from each simulation -->
 
-\setstretch{1}
+<!--     * Repeat 1000 times (simulations) to create the null distribution -->
 
-#### Simulation-based method {-}
+<!--     * Find the proportion of simulations at least as extreme as $\bar{x}$   -->
 
-* Simulate many samples assuming $H_0: \mu = \mu_0$
+<!-- Example:  Is there evidence that male polar bears weigh less than 370kg (previously recorded measure), on average?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea. -->
 
-    * Shift the data by the difference between $\mu_0$ and $\bar{x}$
+<!-- Hypotheses: -->
 
-    * Sample with replacement $n$ times from the shifted data
+<!-- In notation:   -->
 
-    * Plot the simulated shifted sample mean from each simulation
+<!-- $H_0:$ -->
 
-    * Repeat 1000 times (simulations) to create the null distribution
+<!-- \vspace{0.2in} -->
 
-    * Find the proportion of simulations at least as extreme as $\bar{x}$  
+<!-- $H_A:$ -->
 
-Example:  Is there evidence that male polar bears weigh less than 370kg (previously recorded measure), on average?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+<!-- \vspace{0.2in} -->
 
-Hypotheses:
+<!-- \newpage -->
 
-In notation:  
+<!-- In words:  -->
 
-$H_0:$
+<!-- $H_0:$ -->
 
-\vspace{0.2in}
+<!-- \vspace{0.6in} -->
 
-$H_A:$
+<!-- $H_A:$ -->
 
-\vspace{0.2in}
+<!-- \vspace{0.6in} -->
 
-\newpage
+<!-- Reminder of summary statistics: -->
 
-In words: 
+<!-- ```{r, echo=TRUE} -->
+<!-- pb %>% -->
+<!--   summarise(favstats(Weight)) #Gives the summary statistics -->
+<!-- ``` -->
+<!-- Find the difference:  -->
 
-$H_0:$
+<!-- $\mu_0 - \bar{x} =$ -->
 
-\vspace{0.6in}
+<!-- ```{r, echo=TRUE, warning=FALSE, out.width="60%"} -->
+<!-- set.seed(216) -->
+<!-- paired_test(data = pb$Weight,   # Vector of differences  -->
+<!--                                          # or data set with column for each group -->
+<!--             shift = 45.4,   # Shift needed for bootstrap hypothesis test -->
+<!--             as_extreme_as = 324.6,  # Observed statistic -->
+<!--             direction = "less",  # Direction of alternative -->
+<!--             number_repetitions = 1000,  # Number of simulated samples for null distribution -->
+<!--             which_first = 1)  # Not needed when using calculated differences -->
+<!-- ``` -->
 
-$H_A:$
+<!-- \newpage -->
 
-\vspace{0.6in}
+<!-- Interpretation of the p-value: -->
 
-Reminder of summary statistics:
+<!-- * Statement about probability or proportion of samples -->
 
+<!-- * Statistic (summary measure and value) -->
 
-```r
-pb %>%
-  summarise(favstats(Weight)) #Gives the summary statistics
-#>     min    Q1 median     Q3   max     mean       sd  n missing
-#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
-```
-Find the difference: 
+<!-- * Direction of the alternative  -->
 
-$\mu_0 - \bar{x} =$
+<!-- * Null hypothesis (in context)  -->
 
 
-```r
-set.seed(216)
-paired_test(data = pb$Weight,   # Vector of differences 
-                                         # or data set with column for each group
-            shift = 45.4,   # Shift needed for bootstrap hypothesis test
-            as_extreme_as = 324.6,  # Observed statistic
-            direction = "less",  # Direction of alternative
-            number_repetitions = 1000,  # Number of simulated samples for null distribution
-            which_first = 1)  # Not needed when using calculated differences
-```
+<!-- \vspace{0.8in} -->
 
+<!-- Conclusion:  -->
 
+<!-- * Amount of evidence -->
 
-\begin{center}\includegraphics[width=0.6\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-7-1} \end{center}
+<!-- * Parameter of interest  -->
 
-\newpage
+<!-- * Direction of the alternative hypothesis -->
 
-Interpretation of the p-value:
+<!-- \vspace{0.8in} -->
 
-* Statement about probability or proportion of samples
+<!-- #### Theory-based method {-} -->
 
-* Statistic (summary measure and value)
-    
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
+<!-- * Calculate the standardized statistic -->
 
+<!-- * Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic -->
 
-\vspace{0.8in}
+<!-- Equation for the standard error of the sample mean: -->
 
-Conclusion: 
+<!-- \vspace{0.5in} -->
 
-* Amount of evidence
-    
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+<!-- Equation for the standardized sample mean: -->
 
-\vspace{0.8in}
+<!-- \vspace{0.5in} -->
 
-#### Theory-based method {-}
+<!-- Calculate the standardized sample mean weight of adult male polar bears: -->
 
-* Calculate the standardized statistic
+<!-- \vspace{0.4in} -->
 
-* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
+<!-- ```{r, pvaluepb, echo = F} -->
 
-Equation for the standard error of the sample mean:
+<!-- x <- seq(-4, 4, length=100) -->
+<!-- hx<-dt(x, 82) -->
+<!-- degf <- 82 -->
 
-\vspace{0.5in}
+<!-- plot(x, hx, type="l", lty=1, lwd=3, xlab="", -->
+<!--   ylab="Density", main="t-distribution with 82 df") -->
 
-Equation for the standardized sample mean:
+<!-- ``` -->
 
-\vspace{0.5in}
+<!-- Interpret the standardized sample mean weight: -->
 
-Calculate the standardized sample mean weight of adult male polar bears:
+<!-- \vspace{0.8in} -->
 
-\vspace{0.4in}
+<!-- To find the theory-based p-value: -->
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/pvaluepb-1} \end{center}
-
-Interpret the standardized sample mean weight:
-
-\vspace{0.8in}
-
-To find the theory-based p-value:
-
-
-```r
-pt(-4.683, df=82, lower.tail=TRUE)
-#> [1] 5.531605e-06
-```
-### Paired vs. Independent Samples 
+<!-- ```{r, echo=TRUE} -->
+<!-- pt(-4.683, df=82, lower.tail=TRUE) -->
+<!-- ``` -->
+### Paired vs. Independent Samples {-}
 
 Two groups are paired if an observational unit in one group is connected to an observational unit in another group 
 	
@@ -387,8 +377,6 @@ Notation for the Sample Statistics
 
 * Sample standard deviation of the differences: 
 	
-\newpage
-
 Example: Is there a difference in heights between husbands and wives?  The heights were measured on the husband and wife in a random sample of 199 married couples from Great Britain.  
 
 Parameter of interest:
@@ -404,7 +392,7 @@ paired_observed_plot(hw)
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 
 ```r
@@ -437,7 +425,113 @@ hw_diff %>%
 #> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
 ```
 
-\newpage
+### Confidence interval {-}
+
+#### Simulation-based method{-}
+
+* Label cards with the values (differences) from the data set
+
+* Sample with replacement (bootstrap) from the original sample $n$ times
+
+* Plot the simulated sample mean on the bootstrap distribution
+
+* Repeat at least 1000 times (simulations)
+
+* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+
+* ie. 95% CI = (2.5th percentile, 97.5th percentile)
+
+Conditions for inference for paired data:
+
+- Independence:
+
+\vspace{0.5in}
+
+Is the independence condition met for the height study?
+
+\vspace{0.5in}
+
+Simulated bootstrap distribution:
+
+
+```r
+set.seed(216)
+paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
+            number_repetitions = 1000, # Number of bootstrap samples for CI
+            confidence_level = 0.99,  # Confidence level in decimal form
+            which_first = 1)  # Not needed when entering vector of differences
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+Interpret the 99\% confidence interval:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+* Parameter of interest
+    
+* Calculated interval
+    
+* Order of subtraction when comparing two groups
+
+\vspace{0.8in}
+
+#### Theory-based method {-}
+
+* Calculate the interval centered at the sample statistic
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.5in}
+
+Conditions for inference using theory-based methods:
+
+- Independence:
+
+\vspace{0.2in}
+
+- Large enough sample size:
+
+\vspace{0.2in}
+
+### T - distribution {-}
+
+In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
+
+$$\bar{x} \sim N(\mu_0, \frac{\sigma_d}{\sqrt{n}})$$
+\setstretch{1.5}
+
+* Estimate the population standard deviation, $\sigma_d$, with the
+___________________________ standard deviation, ________.
+
+* For a single quantitative variable we use the ____ - distribution
+with _______________
+degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+
+For the height data, we will use a t-distribution with _________ df.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/tstar-1} \end{center}
+
+To find the $t^*$ multiplier for a 99\% confidence interval:
+
+
+```r
+qt(0.995, df=198, lower.tail = TRUE)
+#> [1] 2.600887
+```
+
+Calculate the margin of error:
+\vspace{0.4in}
+
+Calculate the theory-based confidence interval.
+\vspace{0.5in}
 
 ### Hypothesis testing {-}
 
@@ -481,6 +575,33 @@ $H_A:$
 
 #### Simulation-based method {-}
 
+* Simulate many samples assuming $H_0: \mu_d = 0$
+
+    * Shift the data by the difference between $\mu_0$ and $\bar{x}_d$
+
+    * Sample with replacement $n$ times from the shifted data
+
+    * Plot the simulated shifted sample mean from each simulation
+
+    * Repeat 1000 times (simulations) to create the null distribution
+
+    * Find the proportion of simulations at least as extreme as $\bar{x}-d$
+    
+Reminder of summary statistics:
+
+
+```r
+hw_diff %>%
+    summarise(fav_stats(ht_diff))
+#>   min   Q1 median  Q3 max     mean       sd   n missing
+#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
+```
+
+Find the difference:
+
+$\mu_0 - \bar{x}_d =$
+
+
 Simulated null distribution:
 
 
@@ -497,7 +618,7 @@ paired_test(data = hw_diff$ht_diff,   # Vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-9-1} \end{center}
 Interpret the p-value:
 
 * Statement about probability or proportion of samples
@@ -520,37 +641,21 @@ Conclusion:
 
 \vspace{0.8in}
 
-### Confidence interval{-}
-
-Simulated bootstrap distribution:
-
-
-```r
-set.seed(216)
-paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
-            number_repetitions = 1000, # Number of bootstrap samples for CI
-            confidence_level = 0.99,  # Confidence level in decimal form
-            which_first = 1)  # Not needed when entering vector of differences
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/unnamed-chunk-15-1} \end{center}
-
-Interpret the 99\% confidence interval:
-
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
-    
-* Parameter of interest
-    
-* Calculated interval
-    
-* Order of subtraction when comparing two groups
-
-\vspace{0.8in}
-
 #### Theory-based method {-}
 
+* Calculate the standardized statistic 
+
+* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
+
+Equation for the standard error of the mean difference:
+
+\vspace{0.5in}
+
+Equation for the standardized sample mean difference:
+
+\vspace{0.5in}
+
+Reminder of summary statistics for height data:
 
 ```r
 hw_diff %>%
@@ -559,17 +664,17 @@ hw_diff %>%
 #> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
 ```
 
-Check the conditions to use theory-based methods:
-
-\vspace{1in}
-
 Calculate the standardized sample mean difference in height:
 
 \vspace{1in}
 
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/pvalueheight-1} \end{center}
+
 Interpret the standardized statistic:
 
 \vspace{0.8in}
+
 
 What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
 
@@ -582,19 +687,5 @@ To find the p-value:
 pt(24.84, df = 198, lower.tail=FALSE)*2
 #> [1] 9.477617e-63
 ```
-Calculate a 99\% confidence interval:
 
-* First need to find the $t*$ multiplier from the t-distribution with 198 df
-
-
-```r
-qt(0.995, df=198, lower.tail = TRUE)
-#> [1] 2.600887
-```
-
-Calculate the margin of error:
-\vspace{0.4in}
-
-Calculate the theory-based confidence interval.
-\vspace{0.5in}
 \newpage

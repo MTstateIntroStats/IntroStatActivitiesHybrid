@@ -1,4 +1,4 @@
-## Week 14 Lab: Efficacy of the COVID Vaccination
+## Module 14 Lab: Efficacy of the COVID Vaccination
 
 \setstretch{1}
 
@@ -39,7 +39,7 @@ Let $A$ = the event the US adult is vaccinated, and $B$ = the event the US adult
 
 \newpage
 
-4.  **Give the probability notation for the calculation $\frac{27.7302}{30.0392} = 0.923$.  Write out what this probability measures in words.**
+4.  **Give the probability notation for the calculation $\frac{27.7302}{30.0351} = 0.923$.  Write out what this probability measures in words.**
 
 \vspace{0.8in}
 
@@ -55,18 +55,30 @@ Let $A$ = the event the US adult is vaccinated, and $B$ = the event the US adult
 
 \vspace{0.5in}
 
-8.  Calculate the percent increase (or decrease) in hospitalization rate for US adults fully vaccinated compared to US adults not vaccinated.
+8.  Interpret the value of relative risk in context of the problem.
 
 \vspace{0.5in}
 
-9. **Interpret the relative risk as a percent increase/decrease in context of the problem.**
+9. Calculate the increase (or decrease) in risk of hospitalization for US adults fully vaccinated compared to US adults not vaccinated.
 
 \vspace{0.5in}
 
-10. **Does it appear that there is an association with the risk of hospitalization due to COVID-19 and vaccination status? Explain.**
+10. Interpret the increase in risk of hospitalization in context of the problem.
 
 \vspace{0.5in}
 
-11.  **Explain why a hypothesis test would not be appropriate in this case.**
+11. Calculate the percent increase (or decrease) in hospitalization rate for US adults fully vaccinated compared to US adults not vaccinated.
+
+\vspace{0.5in}
+
+12. **Interpret the relative risk as a percent increase/decrease in context of the problem.**
+
+\vspace{0.5in}
+
+13. **Does it appear that there is an association with the risk of hospitalization due to COVID-19 and vaccination status? Explain.**
+
+\vspace{0.5in}
+
+14.  **Explain why a hypothesis test would not be appropriate in this case.**
 
 \newpage

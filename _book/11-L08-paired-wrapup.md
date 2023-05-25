@@ -150,17 +150,46 @@ paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differen
 
 \vspace{0.8in}
 
-17.  Write a paragraph summarizing the results of this study as if you were describing the results to your roommate.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
+17.  Write a paragraph summarizing the results of the study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
 
-* Summary statistic
+* Summary statistic and interpretation
 
 * P-value and interpretation
 
-* Conclusion (written to answer the research question)
+    * Statement about probability or proportion of samples
+    
+    * Statistic (summary measure and value)
+    
+    * Direction of the alternative 
+    
+    * Null hypothesis (in context) 
+
 
 * Confidence interval and interpretation
 
+    * How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+    * Parameter of interest
+    
+    * Calculated interval
+    
+    * Order of subtraction when comparing two groups
+
+
+* Conclusion (written to answer the research question)
+
+    * Amount of evidence
+    
+    * Parameter of interest 
+    
+    * Direction of the alternative hypothesis
+
+
 * Scope of inference
+
+    * To what group of observational units do the results apply (target population or observational units similar to the sample)?
+	
+    * What type of inference is appropriate (causal or non-causal)?
 
 \vspace{2.6in}
 

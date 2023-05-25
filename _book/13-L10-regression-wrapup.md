@@ -1,4 +1,4 @@
-## Week 13 Lab: Big Mac Index
+## Module 13 Lab: Big Mac Index
 
 \setstretch{1}
 
@@ -18,7 +18,7 @@
 
 Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country?  The GDP per person and the adjusted dollar equivalent to purchase a Big Mac was found on a random sample of 55 countries in January of 2022.  The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates.  Is there evidence of a positive relationship between Big Mac cost and the GDP per person?
 
-Upload and open the R script file for Week 13 lab. Upload and import the csv file, `big_mac_adjusted_index_S22.csv`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 7. Highlight and run lines 1--7 to load the data.
+Upload and open the R script file for Week 13 lab. Upload and import the csv file, `big_mac_adjusted_index_S22.csv`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 9. Highlight and run lines 1--9 to load the data.
 
 
 ```r
@@ -28,7 +28,7 @@ mac <- datasetname
 
 #### Summarize and visualize the data {-} 
 
-To find the correlation between the variables, `GDP_dollar` and `dollar_price` highlight and run lines 10--13 in the R script file.
+To find the correlation between the variables, `GDP_dollar` and `dollar_price` highlight and run lines 13--16 in the R script file.
 
 
 ```r
@@ -47,7 +47,7 @@ mac %>%
 3. Interpret the value of the coefficient of determination in context of the problem.
 \vspace{0.6in}
 
-In the next part of the activity we will assess the linear model between Big Mac cost and GDP.  Enter the variable `GDP_dollar` for `response` and the variable `dollar_price` for `explanatory` in line 17.  Highlight and run lines 17--18 to get the linear model output. 
+In the next part of the activity we will assess the linear model between Big Mac cost and GDP.  Enter the variable `GDP_dollar` for `response` and the variable `dollar_price` for `explanatory` in line 22.  Highlight and run lines 22--23 to get the linear model output. 
 
 
 ```r
@@ -61,7 +61,7 @@ summary(bigmacLM)$coefficients # Display coefficient summary
 
 #### Conditions for the least squares line {-}
 
-Highlight and run lines 22--35 to produce the diagnostic plots needed to assess conditions to use theory-based methods.  Use the scatterplot and the residual plots to assess the validity conditions for approximating the data with the $t$-distribution.
+Highlight and run lines 27--40 to produce the diagnostic plots needed to assess conditions to use theory-based methods.  Use the scatterplot and the residual plots to assess the validity conditions for approximating the data with the $t$-distribution.
 
 
 ```r
@@ -95,7 +95,7 @@ hist(bigmacLM$resid, xlab="Residuals", ylab="Frequency",
 
 |    $H_0:$
 
-|    $H_a:$
+|    $H_A:$
 
 #### Use statistical inferential methods to draw inferences from the data {-}
 
@@ -124,7 +124,7 @@ The response variable name is `GDP_dollar` and the explanatory variable name is 
     
 \vspace{.2in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 38--43. **Upload a copy of your plot showing the p-value to Gradescope for your group.**
+Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 45--51. **Upload a copy of your plot showing the p-value to Gradescope for your group.**
 
 
 ```r
@@ -139,12 +139,9 @@ regression_test(GDP_dollar~dollar_price, # response ~ explanatory
 8.  Report the p-value from the R output. 
 \vspace{0.3in}
 
-9. Interpret the p-value in context of the problem.
-\vspace{0.8in}
-
 #### Simulation-based confidence interval {-}
 
-We will use the `regression_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample **correlations** and calculate a confidence interval. Fill in the `xx`'s in the the provided R script file to find a 90\% confidence interval. Highlight and run lines 46--50. 
+We will use the `regression_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample **correlations** and calculate a confidence interval. Fill in the `xx`'s in the the provided R script file to find a 90\% confidence interval. Highlight and run lines 56--60. 
 
 
 ```r
@@ -154,39 +151,61 @@ regression_bootstrap_CI(GDP_dollar~dollar_price, # response ~ explanatory
    summary_measure = "xx", # Slope or correlation
    number_repetitions = 1000) # Number of simulated samples for bootstrap distribution
 ```
-10.  Report the bootstrap 90\% confidence interval in interval notation.  
+9.  Report the bootstrap 90\% confidence interval in interval notation.  
 \vspace{0.5in}
 
-11. Interpret the 90\% confidence interval in context of the problem.
-\vspace{0.8in}
-   
 #### Communicate the results and answer the research question {-}
 
-12. Based on the p-value, write a conclusion in context of the problem.
-
-\vspace{.8in}
-
-13. Using a significance level of 0.1, what decision would you make?
+10. Using a significance level of 0.1, what decision would you make?
 \vspace{0.2in}
 
-14. What type of error is possible?
+11. What type of error is possible?
 \vspace{0.3in}
 
-15. Interpret this error in context of the problem.
+12. Interpret this error in context of the problem.
 \vspace{0.8in}
 
-16. Write a paragraph summarizing the results of the study as if you are reporting these results in your local newspaper.  **Upload a copy of your paragraph to Gradescope for your group.**  Be sure to describe:
+13. Write a paragraph summarizing the results of the study as if you are reporting these results in your local newspaper.  **Upload a copy of your paragraph to Gradescope for your group.**  Be sure to describe:
 
-* Summary statistic
+* Summary statistic and interpretation
 
 * P-value and interpretation
 
+    * Statement about probability or proportion of samples
+    
+    * Statistic (summary measure and value)
+    
+    * Direction of the alternative 
+    
+    * Null hypothesis (in context) 
+
+
 * Confidence interval and interpretation
+
+    * How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+    * Parameter of interest
+    
+    * Calculated interval
+    
+    * Order of subtraction when comparing two groups
+
 
 * Conclusion (written to answer the research question)
 
+    * Amount of evidence
+    
+    * Parameter of interest 
+    
+    * Direction of the alternative hypothesis
+
+
 * Scope of inference
 
+    * To what group of observational units do the results apply (target population or observational units similar to the sample)?
+	
+    * What type of inference is appropriate (causal or non-causal)?
+    
 \vspace{3in}
 
 \newpage

@@ -88,11 +88,11 @@ Another summary measure used to explain the linear relationship between two quan
 |    Use the variances of the response and the residuals:  $R^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}$
 
 
-6.  Use the correlation, $R$, found in question 2 of the activity, to calculate the coefficient of determination between budget and revenue, $R^2$.
+5.  Use the correlation, $R$, found in question 2 of the activity, to calculate the coefficient of determination between budget and revenue, $R^2$.
 
 \vspace{.4in}
 
-7.  The variance of the response variable, revenue in \$MM, is about $s_{revenue}^2 = 8024.261$ \$MM$^2$  and the variability in the residuals is about $s_{RES}^2 = 4244.832$ \$MM$^2$.  Use these values to calculate the coefficient of determination.  Verify that your answers to 6 and 7 are the same.
+6.  The variance of the response variable, revenue in \$MM, is about $s_{revenue}^2 = 8024.261$ \$MM$^2$  and the variability in the residuals is about $s_{RES}^2 = 4244.832$ \$MM$^2$.  Use these values to calculate the coefficient of determination.  Verify that your answers to 6 and 7 are the same.
 
 \vspace{1in}
 
@@ -109,7 +109,9 @@ In Figure \@ref(fig:horizontal-line), we see the data plotted with a horizontal 
 \caption{Plot of the data with no slope.}(\#fig:horizontal-line)
 \end{figure}
 
-8.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST).
+7.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST).
+
+* SST = 
 
 \vspace{0.2in}
 
@@ -124,7 +126,9 @@ In Figure \@ref(fig:regression-line), we see the data plotted with the regressio
 \caption{Plot of the data showing the regression line.}(\#fig:regression-line)
 \end{figure}
 
-9. Write down the value for SSE from this image.
+8. Write down the value for SSE from this image.
+
+* SSE = 
 
 \vspace{0.2in}
 
@@ -152,11 +156,11 @@ In Figure \@ref(fig:regression-line), we see the data plotted with the regressio
 
 <!-- \vspace{0.5in} -->
 
-10.  Calculate the value for $R^2$ using the values found for SST and SSE.  
+9.  Calculate the value for $R^2$ using the values found for SST and SSE.  
 
 \vspace{1in}
 
-11.  Write a sentence interpreting the coefficient of determination in context of the problem.
+10.  Write a sentence interpreting the coefficient of determination in context of the problem.
 
 \newpage
 

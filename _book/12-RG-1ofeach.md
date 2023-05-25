@@ -1,15 +1,15 @@
 # Inference for a Quantitative Response with Independent Samples
 
-## Module 12 Reading Guide: Inference for a Difference in Two Means
+## Week 12 Reading Guide: Inference for a Difference in Two Means
 
 ### Chapter 19 (Inference for comparing two independent means) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 19.1
-* 19.2
-* 19.3Tests
-* 19.3Intervals
+<!-- * 19.1 -->
+<!-- * 19.2 -->
+<!-- * 19.3Tests -->
+<!-- * 19.3Intervals -->
 
 \setstretch{1.25}
 #### Reminders from previous sections {-}

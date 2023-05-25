@@ -1,15 +1,15 @@
 # Inference for Two Categorical Variables: Simulation-based Methods
 
-## Module 8 Reading Guide: Hypothesis Testing for a Difference in Proportions
+## Week 8 Reading Guide: Hypothesis Testing for a Difference in Proportions
 
 ### Section 15.1 (Randomization test for $H_0: \pi_1 - \pi_2 = 0$) and Section 15.2 (Bootstrap confidence interval for $\pi_1 - \pi_2$) {-}
 
 You may skip example 15.1.4, which discussed hypothesis testing for **relative risk**.  We will discuss relative risk in Week 14.
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 15.1
-* 15.2
+<!-- * 15.1 -->
+<!-- * 15.2 -->
 
 \setstretch{1.25}
 

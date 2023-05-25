@@ -1,0 +1,142 @@
+## Module 4 Lab:  Penguins
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Identify and create appropriate summary statistics and plots
+  given a data set with two quantitative variables.
+  
+* Use scatterplots to assess the relationship between two quantitative variables.
+
+* Find the estimated line of regression using summary statistics and R linear model (`lm()`) output.
+
+* Interpret the slope coefficient in context of the problem.
+
+* Calculate and interpret $R^2$, the coefficient of determination, in context of the problem.
+
+* Find the correlation coefficient from R output or from $R^2$ and the sign of the slope.
+
+### Penguins {-}
+
+The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including bill depth and body mass. The researchers were interested in the relationship between bill depth and body mass and wondered if bill depth could be used to accurately predict the body mass of these three penguin species. 
+
+Upload and import the `Antarctica_Penguins` csv file and the provided R script file for week 4 lab. Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 5.
+
+First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth (mm) to predict body mass (g).  This makes bill depth the explanatory variable. **Make sure to give your plot a descriptive title between the quotations in line 16.** Highlight and run lines 1--17 in the R script file.  **Upload a copy of your scatterplot to Gradescope.**
+
+```{r, out.width="60%", echo=TRUE, eval=FALSE}
+penguins <- datasetname %>% #Creates the object penguins
+    na.omit() #Removes data points without values
+penguins %>%
+  ggplot(aes(x = bill_depth_mm, y = body_mass_g))+  # Specify variables
+  geom_point() +  # Add scatterplot of points
+  labs(x = "bill depth (mm)",  # Label x-axis
+       y = "body mass (g)",  # Label y-axis
+       title = "Title") + # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+```
+
+1. Assess the four features of the scatterplot that describe this relationship.
+\vspace{1mm}
+
+* Form (linear, non-linear)
+
+\vspace{.1in}
+
+* Direction (positive, negative)
+
+\vspace{.1in}
+
+* Strength
+
+\vspace{.1in}
+
+* Unusual observations or outliers
+
+\vspace{.1in}
+
+Highlight and run lines 20--24 in the R script file to get the correlation matrix.
+
+```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
+penguins %>%  # Data set pipes into
+  select(c("bill_length_mm", "bill_depth_mm", 
+           "flipper_length_mm", "body_mass_g")) %>%
+  cor(use="pairwise.complete.obs") %>%
+  round(3)
+```
+
+2.  Using the R output, report the value of correlation between bill depth and body mass.
+
+\vspace{0.5in}
+
+3. Using the value of correlation found in question 2, calculate the value of the coefficient of determination.
+
+\vspace{0.5in}
+
+4. **Interpret the coefficient of determination in context of the problem.**
+
+\vspace{1in}
+
+Enter the variable name `body_mass_g` for `response` and the variable name `bill_depth_mm` for `explanatory` in line 29 in the R script file.  Highlight and run lines 29--30 to get the linear model output.
+
+```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
+# Fit linear model: y ~ x
+penguinsLM <- lm(response~explanatory, data=penguins)
+summary(penguinsLM)$coefficients # Display coefficient summary
+```
+
+5.  Write out the least squares regression line using the summary statistics from the R output in context of the problem.
+
+\vspace{.5in}
+
+6. **Interpret the value of slope in context of the problem.**
+
+\vspace{.8in}
+
+7. **Using the least squares regression line from question 5, predict the body mass for a penguin with a bill depth of 19.6 mm.**
+
+\vspace{.6in}
+
+8. One penguin had a bill depth of 19.6 mm and a body mass of 4675 g. Find the residual for this penguin.
+
+\vspace{.8in}
+
+9.  Did the line of regression overestimate or underestimate the body mass for this penguin?
+
+\vspace{0.5in}
+
+Does species change the relationship between bill depth and body mass? Highlight and run lines 27--34 to get the multivariable plot.
+
+```{r, out.width="60%", echo=TRUE, eval=FALSE}
+penguins %>%
+  ggplot(aes(x = bill_depth_mm, y = body_mass_g, color=species))+  # Specify variables
+  geom_point(aes(shape = species), size = 3) +  # Add scatterplot of points
+  labs(x = "bill depth (mm)",  # Label x-axis
+       y = "body mass (g)",  # Label y-axis
+       color = "species",
+       shape = "species",
+       title = "Scatterplot of Bill Depth and Body Mass by Penguin Species") + # Enter the title for the plot between the quotations
+  geom_smooth(method = "lm", se = FALSE) +  # Add regression line
+  scale_color_viridis_d(end=0.8)
+```
+
+10.  What three variables are plotted on this plot?
+
+\vspace{0.3in}
+
+
+11. **Does adding the variable species change the relationship between bill depth and body mass? Explain your answer.**
+
+\vspace{0.5in}
+
+12. Explain the association between species and each of the other two variables. 
+
+\vspace{0.5in}
+
+13. Notice that the slope of the line between bill depth and body mass for each species is positive while the slope for the line not accounting for species is negative.  What phenomena is this an example of?
+
+\vspace{0.2in}
+
+\newpage
+

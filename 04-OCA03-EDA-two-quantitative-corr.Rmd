@@ -96,6 +96,8 @@ include_graphics("images/HorizontalLine.png")
 
 7.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST).
 
+* SST = 
+
 \vspace{0.2in}
 
 In Figure \@ref(fig:regression-line), we see the data plotted with the regression line (we will learn more about the regression line in the next class). This is the line of best fit between budget and revenue. 
@@ -105,6 +107,8 @@ include_graphics("images/Regression_Line.png")
 ```
 
 8. Write down the value for SSE from this image.
+
+* SSE = 
 
 \vspace{0.2in}
 

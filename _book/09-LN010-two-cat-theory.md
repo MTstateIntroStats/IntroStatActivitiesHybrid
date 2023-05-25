@@ -1,0 +1,226 @@
+## Lecture Notes Week 9: Theoretical Inference for Two Categorical Variables 
+
+
+\setstretch{1}
+
+### Hypothesis testing using theory-based methods {-}
+
+Conditions for inference using theory-based methods:
+
+- Independence:
+
+\vspace{0.2in}
+
+- Large enough sample size:
+
+\vspace{1in}
+
+* Calculate the standardized statistic
+
+* Find the area under the standard normal distribution at least as extreme as the standardized statistic
+
+Equation for the standard error of the difference in sample proportions assuming the null hypothesis is true:
+
+\vspace{0.5in}
+
+\setstretch{1.5}
+
+* This value measures how far each possible sample difference in _____________ is from the _________ value, on average.
+
+\setstretch{1}
+
+Equation for the standardized differenece in sample proportions:
+
+\vspace{0.5in}
+
+\setstretch{1.5}
+
+* This value measures how many _____________ deviations the sample difference in _____________ is above/below the __________ value.
+
+\setstretch{1}
+
+Example: In the week 3 Lab, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES). A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
+
+Are the conditions met to analyze the university data using theory-based methods?
+
+\vspace{1in}
+
+
+```r
+IPED <-read.csv("https://math.montana.edu/courses/s216/data/IPEDS_2018.csv")
+
+IPEDS <- IPED %>%
+    drop_na(Tenure)
+
+IPEDS %>% # Data set piped into...
+    ggplot(aes(x = LandGrant, fill = Tenure)) +   # This specifies the variables
+  geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
+  labs(title = "Segmented Bar Plot of Tenure Availability \n Use by Type of Institution",  
+       # Make sure to title your plot 
+       x = "Land Grant",   # Label the x axis
+       y = "") + # Remove y axis label 
+    scale_fill_grey()
+
+IPEDS %>% group_by(LandGrant) %>% count(Tenure)
+#> # A tibble: 4 x 3
+#> # Groups:   LandGrant [2]
+#>   LandGrant Tenure     n
+#>   <chr>     <chr>  <int>
+#> 1 No        No       976
+#> 2 No        Yes     1829
+#> 3 Yes       No        31
+#> 4 Yes       Yes       72
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{09-LN010-two-cat-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+What is the explanatory variable?
+
+\vspace{0.2in}
+
+What is the response variable?
+
+\vspace{0.2in}
+
+Write the parameter of interest:
+
+\vspace{0.8in}
+
+Hypotheses:
+
+In notation:  
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+
+In words: 
+
+$H_0:$
+
+\vspace{0.6in}
+
+$H_A:$
+
+\vspace{0.6in}
+
+Report the summary statistic:
+
+\vspace{0.8in}
+
+Calculate the standardized difference in sample proportion of higher education institutions that offer tenure between land grant universities and non-land grant universities.
+
+* 1st calculate the standard error of the difference in proportion
+
+\vspace{0.5in}
+
+
+* Then calculate the Z score.
+
+\vspace{0.5in}
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{09-LN010-two-cat-theory_files/figure-latex/standNormc-1} \end{center}
+
+Interpret the standardized statistic
+
+\vspace{0.5in}
+
+To find the p-value, find the area under the standard normal distribution at the standardized statistic and more extreme.
+
+
+```r
+pnorm(0.985, lower.tail = FALSE)*2
+#> [1] 0.3246241
+```
+Interpretation of the p-value:
+
+* Statement about probability or proportion of samples
+
+* Statistic (summary measure and value)
+    
+* Direction of the alternative 
+    
+* Null hypothesis (in context) 
+
+\vspace{0.8in}
+
+Conclusion with scope of inference: 
+
+* Amount of evidence
+    
+* Parameter of interest 
+    
+* Direction of the alternative hypothesis
+
+* Generalization
+
+* Causation
+
+\vspace{0.6in}
+
+### Confidence interval {-}
+
+* Estimate the _______________ in true _______________ 
+
+* $CI = \text{statistic} \pm \text{margin of error}$
+
+\vspace{0.5in}
+
+#### Theory-based method for a two categorical variables {-}
+
+* $CI = \hat{p}_1-\hat{p}_2 \pm (z^* \times SE(\hat{p}_1-\hat{p}_2))$
+
+\setstretch{1.5}
+
+* When creating a confidence interval, we no longer assume the _____________ hypothesis is true. Use the sample _____________ to calculate the sample to sample variability, rather than $\hat{p}_{pooled}$.
+
+\setstretch{1}
+
+Equation for the standard error of the difference in sample proportions *NOT* assuming the null is true:
+
+\vspace{0.5in}
+
+Example:  Estimate the difference in true proportions of higher education institutions that offer tenure between land grant universities and non-land grant universities.
+
+Find a 90\% confidence interval:
+
+* 1st find the $t^*$ multiplier 
+
+
+```r
+qnorm(0.95, lower.tail=TRUE)
+#> [1] 1.644854
+```
+
+* Next, calculate the standard error for the difference in proportions
+
+\vspace{0.8in}
+
+* Calculate the margin of error
+
+\vspace{0.6in}
+
+* Calculate the endpoints of the 90\% confidence interval
+
+\vspace{0.6in}
+
+Confidence interval interpretation:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+* Parameter of interest
+    
+* Calculated interval
+    
+* Order of subtraction when comparing two groups
+
+\vspace{0.8in}
+
+
+\newpage

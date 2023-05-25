@@ -48,8 +48,8 @@ Note that we do not include a "0" subscript, since we are not assuming a null hy
 To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
 
 $$\text{point estimate}\pm\text{margin of error}$$
-$$\hat{p}\pm z^* SE(\hat{p})$$
-$$ME = z^* SE(\hat{p})$$
+$$\hat{p}\pm z^* \times SE(\hat{p})$$
+$$ME = z^* \times SE(\hat{p})$$
 
 The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
  

@@ -1,4 +1,4 @@
-## Out of Class Activity 7:  Handedness of Male Boxers 
+## Out of Class Activity Week 7:  Handedness of Male Boxers 
 
 \setstretch{1}
 
@@ -29,7 +29,7 @@ In this activity, we will introduce theory-based hypothesis tests for a single c
 
 To review these concepts, see Chapter 11 & 14 in your textbook.
 
-Activities 6A, 6B, and the Week 6 Lab covered simulation-based methods for hypothesis tests involving a single categorical variable. This activity covers theory-based methods for testing a single categorical variable.  
+Activities from week 6 covered simulation-based methods for hypothesis tests involving a single categorical variable. This activity covers theory-based methods for testing a single categorical variable.  
 
 ### Handedness of male boxers
 
@@ -97,31 +97,33 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
 
 Each sample proportion of male boxers that are left-handed is 0.013 from the true proportion of male boxers that are left-handed, on average.
 
-<!-- 7.  Interpret the null standard error of the sample proportion in context of the problem. -->
+7.  Interpret the null standard error of the sample proportion in context of the problem.
 
-<!-- \vspace{0.6in} -->
+\vspace{0.6in}
 
-7.  Using the null standard error of the sample proportion, calculate the standardized sample proportion.  
+8. Label the standard normal distribution (figure 7.1) with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
+
+\vspace{2mm}
+
+```{r Normalcur, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center'}
+openintro::normTail()
+``` 
+
+\newpage
+
+9.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
 
 \vspace{0.6in}
 
 The standardized statistic is used as a ruler to measure how far the sample statistic is from the null value.  Essentially, we are converting the sample proportion into a measure of standard errors to compare to the standard normal distribution.  
 
-8.  Using the 68-95-99.7 rule in Section 5.2.5 to guide you, fill in the percentages on the standard normal distribution displayed in Figure \@ref(fig:simpleNormalcurve), and also mark the value of the standardized statistic calculated in question 8.
-
-```{r simpleNormalcurve, fig.cap="A standard normal curve.", warning=FALSE, out.width="50%"}
-openintro::normTail(m = 0, s = 1)
-```
-
-\newpage
-
 The standardized statistic measures the *number of standard errors the sample statistic is from the null value*.
 
-9.  Interpret the standardized sample proportion from question 7 in context of the problem.
+10.  Interpret the standardized sample proportion from question 9 in context of the problem.
 
 \vspace{.8in}
 
-We will use the `pnorm()` function in `R` to find the p-value. Use the provided `R` script file and enter the value of the standardized statistic calculated in question 7 at `xx` in line 7; highlight and run lines 7--9.  Notice that in line 9 it says `lower.tail = FALSE`.  `R` will calculate the p-value *greater* than the value of the standardized statistic.  
+We will use the `pnorm()` function in `R` to find the p-value. The value for Z was entered into the code below to get the p-value.  Check that this answer matches what you calculated in question 7. Notice that we used `lower.tail = FALSE` to find the p-value.  `R` will calculate the p-value *greater* than the value of the standardized statistic.  
 
 Notes:
 
@@ -130,16 +132,16 @@ Notes:
 * To find a two-sided p-value, use a left-sided test for negative Z or a right-sided test for positive Z, then multiply the value found by 2 to get the p-value.
 
 ```{r, echo=TRUE, eval=FALSE}
-pnorm(xx, # Enter value of standardized statistic
+pnorm(4.769, # Enter value of standardized statistic
       m=0, s=1, # Using the standard normal mean = 0, sd = 1
       lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
 ```
   
   
-10.  Report the p-value obtained from the `R` output.
+11.  Report the p-value obtained from the `R` output.
 \vspace{0.3in}
 
-11.  Write a conclusion based on the value of the p-value.
+12.  Write a conclusion based on the value of the p-value.
 \newpage
 
 <!-- ### Impacts on the P-value {-} -->
@@ -221,8 +223,6 @@ pnorm(xx, # Enter value of standardized statistic
 <!-- 4.  The larger the sample size, the smaller the sample to sample variability.  This will result in a larger standardized statistic and more evidence against the null hypothesis. -->
 
 <!-- 5.  The farther the statistic is from the null value, the larger the standardized statistic.  This will result in a smaller p-value and more evidence against the null hypothesis. -->
-
-\newpage
 
 ### Additional notes
 

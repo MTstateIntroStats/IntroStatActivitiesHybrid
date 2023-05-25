@@ -3,7 +3,7 @@
 
 \setstretch{1}
 
-### Probability
+### Probability {-}
 
 \setstretch{1.5}
 
@@ -215,7 +215,7 @@ Total & & & 100,000 \\
 
 \vspace{0.3in}
 
-### Relative Risk
+### Relative Risk {-}
 
 * Relative risk is the ratio of the risks in two different categories of an explanatory variable.
 

@@ -42,7 +42,6 @@ To create the null distribution of differences in sample proportions, we will us
 
 The response variable name is `Behavior` and the explanatory variable name is `Condition`.
 
-\newpage
 
 2.  What inputs should be entered for each of the following to create the simulation?
 \vspace{1mm}
@@ -93,7 +92,7 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 
 \vspace{1in}
 
-7.  How much evidence does the p-value provide against the null hypothesis? *Hint*: Refer to the guidelines given in Activity 6A.
+7.  How much evidence does the p-value provide against the null hypothesis? *Hint*: Refer to the guidelines given in Week 6.
 
 \vspace{0.4in}
 
@@ -173,7 +172,7 @@ two_proportion_bootstrap_CI(formula = Behavior ~ Condition,
 
 <!-- #### Types of errors {-} -->
 
-<!-- Recall from a previous activity, hypothesis tests are not flawless. In a hypothesis test, there are two competing hypotheses: the null and alternative. We make a decision about which might be true, but we may choose incorrectly.   -->
+<!-- Recall from a previous activity, hypothesis tests are not flawless. In a hypothesis test, there are two competing hypotheses: the null and alternative. We make a decision about which might be true, but we may choose incorrectly. -->
 
 <!-- <!-- |       |            | Test Conclusion |                     | --> -->
 <!-- <!-- |       |            | Reject $H_0$    | Fail to reject $H_0$| --> -->
@@ -213,7 +212,7 @@ two_proportion_bootstrap_CI(formula = Behavior ~ Condition,
 
 ### Take-home messages
 
-1.  We use the same guidelines for the strength of evidence as we did in Activity 6A.
+1.  We use the same guidelines for the strength of evidence as we did in Week 6.
 
 2. To create one simulated sample on the bootstrap distribution for a difference in sample proportions, label $n_1 + n_2$ cards with the outcomes for the original responses.  Keep groups separate and randomly draw with replacement $n_1$  times from group 1 and $n_2$ times from group 2.  Calculate and plot the resampled difference in the proportion of successes. 
 

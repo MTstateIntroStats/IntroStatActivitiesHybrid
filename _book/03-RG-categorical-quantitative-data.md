@@ -1,12 +1,12 @@
 # Exploring Categorical and Quantitative Data
 
-## Module 3 Reading Guide: Introduction to `R`, Categorical Variables, and a Single Quantitative Variable
+## Week 3 Reading Guide: Introduction to `R`, Categorical Variables, and a Single Quantitative Variable
 
 ### Section 1.7 (Data in `R`) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Starting_with_R
+<!-- * Starting_with_R -->
 
 \setstretch{1.25}
 
@@ -48,10 +48,10 @@ State what these introductory functions do in `R`:
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 2.1
-* MosaicPlots
+<!-- * 2.1 -->
+<!-- * MosaicPlots -->
 
 \setstretch{1.25}
 
@@ -151,9 +151,9 @@ a ______________ variable.
 
 ### Section 2.3 (Exploring quantitative data) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 2.3
+<!-- * 2.3 -->
 
 #### Type of Plots {-}
 
@@ -334,6 +334,16 @@ Two quantitative variables  & \\
 \newpage 
 
 Decision tree for determining an appropriate plot  given a number of variables and their types from Chapter 2 review:
+
+
+```
+#> Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.
+#> i Please use `linewidth` in the `default_aes` field and elsewhere instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
+```
+
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{03-RG-categorical-quantitative-data_files/figure-latex/decision-tree-plots-1} \end{center}

@@ -1,12 +1,12 @@
 # Exploring Categorical and Quantitative Data
 
-## Module 3 Reading Guide: Introduction to `R`, Categorical Variables, and a Single Quantitative Variable
+## Week 3 Reading Guide: Introduction to `R`, Categorical Variables, and a Single Quantitative Variable
 
 ### Section 1.7 (Data in `R`) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Starting_with_R
+<!-- * Starting_with_R -->
 
 \setstretch{1.25}
 
@@ -48,10 +48,10 @@ State what these introductory functions do in `R`:
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 2.1
-* MosaicPlots
+<!-- * 2.1 -->
+<!-- * MosaicPlots -->
 
 \setstretch{1.25}
 
@@ -151,9 +151,9 @@ a ______________ variable.
 
 ### Section 2.3 (Exploring quantitative data) {-}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 2.3
+<!-- * 2.3 -->
 
 #### Type of Plots {-}
 

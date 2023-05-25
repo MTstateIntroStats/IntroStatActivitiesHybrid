@@ -1,4 +1,4 @@
-## Out of Class Activity 11:  Color Interference
+## Out of Class Activity Week 11:  Color Interference
 
 <!-- Data set source: http://users.stat.ufl.edu/~winner/datasets.html -->
 <!-- Data simulated to match means and SDs in article. -->
@@ -182,7 +182,7 @@ pt(2.464, df=69, lower.tail=FALSE)
 
 To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
 
-$$\bar{x}_d\pm t^* SE(\bar{x}_d).$$
+$$\bar{x}_d\pm t^* \times SE(\bar{x}_d).$$
 We will need to find the $t^*$ multiplier using the function `qt()`. The code below will return the 95th percentile of the $t$ distribution with `df` = $n_d - 1 = 70 - 1 = 69$. 
 
 ```{r, echo=TRUE}

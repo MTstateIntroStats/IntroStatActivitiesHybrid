@@ -1,14 +1,14 @@
 # Inference for a Single Categorical Variable: Theory-based Methods + Errors and Power
 
-## Module 7 Reading Guide: Categorical Inference
+## Week 7 Reading Guide: Categorical Inference
 
 ### Chapter 11 (Inference with mathematical models) {-}
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter11
+<!-- * Chapter11 -->
 
 \setstretch{1.25}
 
@@ -223,10 +223,10 @@ We would recommend you work through each of the examples in Section 5.2.4 using 
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* 14.3TheoryTests
-* 14.3TheoryIntervals
+<!-- * 14.3TheoryTests -->
+<!-- * 14.3TheoryIntervals -->
 
 \setstretch{1.25}
 
@@ -425,9 +425,9 @@ Margin of error of a confidence interval for a sample proportion:
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter12
+<!-- * Chapter12 -->
 
 \setstretch{1.25}
 

@@ -1,9 +1,9 @@
-## Lecture Notes Week 13: Inference for two quantitative variable 
+## Lecture Notes Week 13: Inference for Two Quantitative Variables
 
 
 \setstretch{1}
 
-### Summary measures and plots for two quantitative variables.
+### Summary measures and plots for two quantitative variables. {-}
 
 Scatterplot:
 	

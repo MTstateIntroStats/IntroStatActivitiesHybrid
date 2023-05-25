@@ -27,7 +27,7 @@ Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an a
 
 * **Success-failure condition**: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
 
-1.  Explain why a theory-based confidence interval for the data set in Activities 8A and 8B would NOT be similar to the bootstrap interval created.
+1.  Explain why a theory-based confidence interval for the Good Samaritan study from last week would NOT be similar to the bootstrap interval created.
 
 \vspace{1in}
 
@@ -66,7 +66,7 @@ qnorm(0.95) # Multiplier for 90% confidence interval
 
 \newpage
 
-3. Draw and label a standard normal distribution. Mark the value of the $z^*$ multiplier adn the percentages used to find this muliplier.  
+3. Draw and label a standard normal distribution. Mark the value of the $z^*$ multiplier and the percentages used to find this multiplier.  
 
 \vspace{1.5in}
 

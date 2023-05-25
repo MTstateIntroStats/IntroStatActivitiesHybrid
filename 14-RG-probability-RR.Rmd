@@ -1,14 +1,14 @@
 # Probability and Relative Risk
 
-## Module 14 Reading Guide: Special Topics
+## Week 14 Reading Guide: Special Topics
 
 ### Chapter 23 (Probability with tables) {-}
 
 \setstretch{1}
 
-**Videos**
+<!-- **Videos** -->
 
-* Chapter23
+<!-- * Chapter23 -->
 
 \setstretch{1.25}
 

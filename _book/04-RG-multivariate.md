@@ -1,14 +1,14 @@
 # Exploring Multivariable Data
 
-## Module 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts
+## Week 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts
 
 ### Section 3.1 (Fitting a line, residuals, and correlation) {-}
 
 \setstretch{1}
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter3
+<!-- * Chapter3 -->
 
 \setstretch{1.25}
 

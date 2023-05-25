@@ -96,7 +96,7 @@ hikes %>%
 
 To find the standardized statistic for the difference in means we will calculate:
 
-$$T = \frac{\bar{x}_1-\bar{x}_2}{SE(\bar{x}_1-\bar{x}_2)},$$
+$$T = \frac{\bar{x}_1-\bar{x}_2 -0}{SE(\bar{x}_1-\bar{x}_2)},$$
 
 where the standard error of the difference in means is calculated using:
 
@@ -131,7 +131,7 @@ $$SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.$$
 
 To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
 
-$$\bar{x}_1- \bar{x}_2\pm t^* SE(\bar{x}_1- \bar{x}_2).$$
+$$\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2).$$
 
 We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with (`df` = minimum of $n_1 - 1$ or  $n_2 - 1$).
 
@@ -154,6 +154,8 @@ qt(xx, df = yy, lower.tail=FALSE)
 
 16.  What type of error may be possible?
 \vspace{0.2in}
+
+\newpage
 
 17.  Write a paragraph summarizing the results of the study as if you are reporting the results to your supervisor.  **Upload a copy of your paragraph to Gradescope for your group.**  Be sure to describe:
 

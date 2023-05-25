@@ -1,8 +1,8 @@
-## Lecture Notes Week 12: Inference for independent samples 
+## Lecture Notes Week 12: Inference for Independent Samples 
 
 \setstretch{1}
 
-### Single categorical, single quantitative variable with independent samples
+### Single categorical, single quantitative variable with independent samples {-}
 
 \setstretch{1.5}
 
@@ -86,6 +86,11 @@ letters %>%
 #> 1 NotRecognizable   1  6     12 14.75  24 11.15385 6.576883 26       0
 #> 2    Recognizable   1  6     15 21.00  30 14.32000 8.518216 25       0
 ```
+
+Summary statistic:
+
+\vspace{0.4in}
+
 
 ```r
 letters%>%

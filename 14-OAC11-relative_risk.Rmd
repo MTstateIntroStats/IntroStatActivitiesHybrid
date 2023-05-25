@@ -101,22 +101,30 @@ $$\text{relative risk} = \frac{\hat{p}_1}{\hat{p}_2}.$$
 
 \vspace{0.8in}
 
-8. Calculate the percent increase or percent decrease in death.
+8. Calculate the increase or decrease in risk of death for 3rd class passengers compared to 1st class passengers.
 
 \vspace{0.5in}
 
-9. Interpret the value of relative risk as a percent increase or percent decrease in death.
+9. Interpret the increase or decrease in risk of death in context of the problem. 
 
 \vspace{0.8in}
 
-10. Based on the summary statistic, was the risk of death higher among 3rd class passengers compared to 1st class passengers? By what percent?
+10. Calculate the percent increase or percent decrease in death.
+
+\vspace{0.5in}
+
+11. Interpret the value of relative risk as a percent increase or percent decrease in death.
+
+\vspace{0.8in}
+
+12. Based on the summary statistic, was the risk of death higher among 3rd class passengers compared to 1st class passengers? By what percent?
 
 \vspace{0.8in}
 
 
 ### Risk in the News
 
-11.  Find a recent news article discussing 'risk'.  Summarize the article below by answering the following questions.
+13.  Find a recent news article discussing 'risk'.  Summarize the article below by answering the following questions.
 
 * What is the article discussing the risk of?  (This is the a *success* for the study.)
 

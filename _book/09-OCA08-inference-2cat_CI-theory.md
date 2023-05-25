@@ -1,0 +1,144 @@
+## Out of Class Activity Week 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Assess the conditions to use the normal distribution model for a difference in proportions.
+
+* Create and interpret a theory-based confidence interval for a difference in proportions.
+
+### Terminology review
+In today's activity, we will use theory-based methods to estimate the difference in two proportions. Some terms covered in this activity are:
+
+* Standard normal distribution
+
+* Independence and success-failure conditions
+
+To review these concepts, see Chapter 15 in your textbook.
+
+### Winter sports helmet use and head injury 
+
+In this activity we will focus on theory-based methods to calculate a confidence interval.  Recall from Activity 9A, the sampling distribution of a difference in proportions can be mathematically modeled using the normal distribution if certain conditions are met.
+
+Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
+
+* **Independence**: The data are independent within and between the two groups. (*Remember*: This also must be true to use simulation methods!)
+
+* **Success-failure condition**: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
+
+1.  Explain why a theory-based confidence interval for the Good Samaritan study from last week would NOT be similar to the bootstrap interval created.
+
+\vspace{1in}
+
+For this activity we will again use the Helmet Use and Head Injury data set. In Activity 9A we saw that there was evidence that helmet use is associated with a reduced risk of head injury.  Today we will estimate the difference in proportion of head injuries for those who wore helmets and those who did not.
+
+In "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], we can see the summary results from a random sample of 3562 skiers and snowboarders involved in accidents in the two-way table below. 
+
+|                | Helmet Use | No Helmet Use | Total |
+|:--------------:|:----------:|:-------------:|:-----:|
+| Head Injury    |     96     |      480      |  576  |
+| No Head Injury |     656    |      2330     |  2986 |
+| Total          |     752    |      2810     |  3562 |
+
+2. Write the parameter of interest for this study in context of the problem.
+
+\vspace{0.8in}
+
+To find a confidence interval for the difference in proportions we will add and subtract the margin of error from the point estimate to find the two endpoints.
+
+ $$\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2), \hspace{.2cm} \text{where}$$
+ $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}$$
+ 
+Note that the formula changes when calculating the variability around the statistic in order to calculate a confidence interval from the formula used in Activity 9A!  Here, we use the sample proportions for each group to calculate the standard error for the difference in proportions since we are not assuming that the true difference is zero.
+
+To calculate the standard error for a difference in proportions to create a 90\% confidence interval we substitute in the two sample proportions and the sample size for each group into the equation above.
+
+$$n_1 = 752, n_2 = 2810, \hat{p}_h = \frac{96}{752} = 0.128, \hat{p}_n = \frac{480}{2810} = 0.171$$
+ 
+ $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{0.128\times (1-0.128)}{752}+\frac{0.171\times (1-0.171)}{2810}} = 0.014$$
+
+Recall that the $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 90\%, we find the Z values that encompass the middle 90\% of the standard normal distribution. If 90\% of the standard normal distribution should be in the middle, that leaves 10\% in the tails, or 5\% in each tail.  The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 90\% + 5\% = 95\% percentile). 
+
+
+```r
+qnorm(0.95) # Multiplier for 90% confidence interval
+```
+
+```
+#> [1] 1.644854
+```
+
+\newpage
+
+3. Draw and label a standard normal distribution. Mark the value of the $z^*$ multiplier and the percentages used to find this multiplier.  
+
+\vspace{1.5in}
+
+
+Remember that the margin of error is the value added and subtracted to the sample difference in proportions to find the endpoints for the confidence interval.
+
+$$ME = z^*\times SE(\hat{p}_1 - \hat{p}_2)$$
+
+4. Using the multiplier of $z^*$ = 1.645 and the calculated standard error, calculate the margin of error for a 90\% confidence interval.
+
+\vspace{0.5in}
+
+5. Calculate the 90\% confidence interval for the parameter of interest. 
+
+\vspace{0.8in}
+
+6. Interpret the confidence interval found in question 5 in context of the problem.
+
+\vspace{0.8in}
+
+7.  Interpret the level of confidence in context of the problem.  What does it mean to be 90% confident in the confidence interval?
+
+\vspace{0.8in}
+
+8.  What decision (reject or fail to reject the null hypothesis) would you make based on your confidence interval?  Explain your answer.
+\vspace{0.5in}
+\newpage
+
+### Effect of sample size 
+
+Suppose in another sample of skiers and snowboards involved in accidents we saw these results:
+
+|                | Helmet Use | No Helmet Use | Total |
+|:--------------:|:----------:|:-------------:|:-----:|
+| Head Injury    |     135    |      674      |  809  |
+| No Head Injury |     921    |      3270     |  4191 |
+| Total          |     1056   |      3944     |  5000 |
+
+Note that the sample proportions for each group are the same as the smaller sample size.
+
+$$\hat{p}_h = \frac{135}{1056}=0.127, \hat{p}_n = \frac{674}{3944}=0.171$$
+
+9. Calculate the standard error for the difference in sample proportions for this new sample.
+\vspace{0.8in}
+
+
+10. Calculate the margin of error for a 90\% confidence interval using a multiplier of $z^*$ = 1.645 for this new sample.  Is the margin of error larger or smaller than the margin of error for the original study?
+\vspace{.8in}
+
+11.  Calculate the 90\% confidence interval for this new study using the margin of error from question 10.  
+\vspace{.8in}
+
+12.  Is the confidence interval calculated in question 11 with the larger sample size wider or narrower than the confidence interval in question 5? Why?
+\vspace{.8in}
+
+\newpage
+
+### Take-home messages
+
+1. Simulation-based methods and theory-based methods should give the same results for a study *if the validity conditions are met*.  For both methods, observational units need to be independent. To use theory-based methods, additionally, the success-failure condition must be met. Check the validity conditions for each type of test to determine if theory-based methods can be used.
+
+2. When calculating the standard error for the difference in sample proportions when doing a hypothesis test, we use the pooled proportion of successes, the best estimate for calculating the variability *under the assumption the null hypothesis is true*.  For a confidence interval, we are not assuming a null hypothesis, so we use the values of the two conditional proportions to calculate the standard error.  Make note of the difference in these two formulas. 
+
+3.  Increasing sample size will result in less sample-to-sample variability in statistics, which will result in a smaller standard error, and thus a narrower confidence interval.  
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
