@@ -95,7 +95,7 @@ Observation & Word & Length  \\ \hline
 10.  If the sampling method is biased, what type of sampling bias (selection, response, non-response) is present?  What is the direction of the bias, i.e., does the method tend to overestimate or underestimate the population mean word length?
 \vspace{0.5in}
 
-11.  Should we use results from our by eye samples to make a statement about the word length in the population of words in Becenti's address?  Why or why not?
+11.  Should we use results from our "by eye" samples to make a statement about the word length in the population of words in Becenti's address?  Why or why not?
 \vspace{1in}
 
 \newpage
@@ -123,8 +123,7 @@ Observation & Word & Length  \\ \hline
     Justify why there is non-response bias in this study.
 \vspace{0.5in}
 
-
-13.  A television station is interested in predicting whether or not a local referendum to legalize marijuana for adult use will pass. It asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum. Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
+13. A television station is interest in predicting whether or not a local referendum to legalize marijuana for adult use will pass.  It asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum.  Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
 \vspace{0.1in}
 
     Sample size:
@@ -142,10 +141,11 @@ Observation & Word & Length  \\ \hline
     Type of Variable: \hspace{1mm}  categorical \hspace{0.2in} quantitative
 \vspace{1mm}
 
-    Justify why there is non-response bias in this study.
+    Justify why there is selection bias in this study.
 \vspace{0.5in}
 
 \newpage
+    
 
 14. To gauge the interest in a new swimming pool, a local organization stood outside of the Bogart Pool in Bozeman, MT, during open hours.  One of the questions they asked was, "Since the Bogart Pool is in such bad repair, don't you agree that the city should fund a new pool?"
 \vspace{0.1in}

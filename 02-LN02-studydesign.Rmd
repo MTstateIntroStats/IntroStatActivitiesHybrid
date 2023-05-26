@@ -68,7 +68,7 @@ Example:  Selected to complete review of online purchase but choose to not respo
 
 \vspace{0.5in}
 
-Example(s): Jimmy Kimmel lie detector. Police officer pulls you over and asks if you have been drinking.  Expect people to say no, whether they have been drinking or not.  
+Example(s): Police officer pulls you over and asks if you have been drinking.  Expect people to say no, whether they have been drinking or not.  
     
 * Need to be able to predict how people will respond.
     
