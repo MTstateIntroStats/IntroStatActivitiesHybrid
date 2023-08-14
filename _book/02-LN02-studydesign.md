@@ -134,7 +134,7 @@ A police detective interested in determining the extent of drug use by high scho
 
 \vspace{0.3in}
     
-### Observational studies, experiments, and scope of inference: Sections 2.2 - 2.4 in the course textbook {-}
+### Observational studies, experiments, and scope of inference: Sections 2.2 -- 2.4 in the course textbook {-}
 
 * Review
 
@@ -217,7 +217,21 @@ Example: In the Physician's Health Study, male physicians participated in a stud
 
 Scope of Inference Table:
 
-\vspace{2in}
+\begin{center}
+\begin{tabular}{|p{2in}|p{2in}|p{2in}|}
+\hline
+ & \multicolumn{2}{|c|}{\textbf{Study Design}} \\ \hline
+ \textbf{Selection of Cases} & Randomized experiment & Observational study \\ \hline
+ Random sample && \\ 
+ (and no other sampling bias) & & \\ 
+  & & \\
+   & & \\ \hline
+   Non-random sample && \\ 
+   (or other sampling bias) & & \\ 
+  & & \\
+   & & \\ \hline
+\end{tabular}
+\end{center}
 
 
 

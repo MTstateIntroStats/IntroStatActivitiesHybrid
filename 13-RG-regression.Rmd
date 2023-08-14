@@ -2,7 +2,7 @@
 
 ## Week 13 Reading Guide: Inference for Slope and Correlation
 
-### Chapter 21 (Inference for regression and model conditions) {-}
+### Textbook Chapter 21: Inference for regression and model conditions {-}
 
 <!-- **Videos**   -->
 
@@ -39,9 +39,9 @@ Four characteristics of a scatterplot:
 
 \setstretch{1.25}
 
-Least squares regression line: $\hat{y} = b_0+b_1 \times x$, where $b_0$ is the sample $y$-intercept (the estimate for the `(Intercept)` row in the R regression output), and $b_1$ is the sample slope (the estimate for the `x-variable_name` row in the R).
+Least squares regression line: $\hat{y} = b_0+b_1x$ , where $b_0$ is the sample $y$-intercept (the estimate for the `(Intercept)` row in the R regression output), and $b_1$ is the sample slope (the estimate for the `x-variable_name` row in the R).
 
-Sample slope interpretation: a 1 unit increase in the *x* variable is associated with a $|b_1|$ unit *predicted* increase/decrease in the *y*-variable.
+Sample slope interpretation: a 1 unit increase in the *x* variable is associated with a $|b_1 |$ unit *predicted* increase/decrease in the *y*-variable.
 
 General steps of a hypothesis test:
 

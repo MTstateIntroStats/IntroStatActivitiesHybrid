@@ -1,38 +1,34 @@
 # Exploring Categorical and Quantitative Data
 
-## Week 3 Reading Guide: Introduction to `R`, Categorical Variables, and a Single Quantitative Variable
+## Week 3 Reading Guide: Introduction to R, Categorical Variables, and a Single Quantitative Variable
 
-### Section 1.7 (Data in `R`) {-}
+### Textbook Chapter 3 Applications: Data {-}
 
 <!-- **Videos**   -->
 
 <!-- * Starting_with_R -->
 
-\setstretch{1.25}
+<!-- \setstretch{1.25} -->
 
 #### Notes {-}
 
-`R` is case sensitive, meaning it reads `data` differently from `Data`.  If you get an error message, check that your capitalization is correct.
+R is case sensitive, meaning it reads `data` differently from `Data`.  If you get an error message, check that your capitalization is correct.
 
-`R` does not like spaces or special characters  This means the column and row headers in the data set should not have spaces, periods, commas, etc.  Instead of titling the variable `column header`, use `column_header` or `ColumnHeader`.
+R does not like spaces or special characters.  This means the column and row headers in the data set should not have spaces, periods, commas, etc.  Instead of titling the variable `column header`, use `column_header` or `ColumnHeader`.
 
-**Tidy data**:  Data frames with
+**Tidy data**:  Data frames should have
 
 \rgi 1 row per ________________, 
 
 \rgi 1 column per ____________.
 
-We highly recommend completing Tutorial 1 at the end of Chapter 1 (all four lessons) to give you practice with R/RStudio AND to help reflect on the content of Chapter 1: basics of data, sampling, study design, and scope of inference.  These tutorials have some content questions and some places for you to practice using R online with some guidance.
+We highly recommend completing the R/RStudio tutorials in section 3 to help understand R better.
 
-\rgi __ indicate spots you need to type in functions, data sets, or variable names.
-
-\rgi There are Hint and Solution buttons on the R code box to help you.
-
-We would not expect you to know the coding right now, especially for things like mutations or creating new variables in the data set.  But seeing some initial coding for these more difficult functions will only make you more comfortable using the functions needed for this course!
+We will not expect you to be able to write full code independently for this course. For Stat 216, you will need to understand types (categorical or quantitative) and roles (explanatory or response) of variables, as well as the structure of data, in order to fill in a few blanks in provided code to graph or analyze data.
 	
 #### Functions {-}
 
-State what these introductory functions do in `R`:
+State what these introductory functions do in R:
 
 `glimpse(data_set_name)`
 
@@ -40,20 +36,22 @@ State what these introductory functions do in `R`:
 
 `data_set_name$variable_name`
 
-`%>%`
-
 `<-`
 
-### Section 2.1 (Exploring categorical data) {-}
+`%>%`
+
+
+### Textbook Chapter 4: Exploring categorical data {-}
 
 \setstretch{1}
 
 <!-- **Videos**   -->
 
-<!-- * 2.1 -->
-<!-- * MosaicPlots -->
+<!-- * 4.1 -->
+<!-- * 4.2 -->
+<!-- * 4.4 -->
 
-\setstretch{1.25}
+<!-- \setstretch{1.25} -->
 
 #### Vocabulary {-}
 
@@ -64,6 +62,9 @@ Relative frequency table:
 \rgs
 
 Contingency or two-way table:
+\rgs
+
+Association (between two variables):
 \rgs
 
 Unconditional proportion:
@@ -102,6 +103,9 @@ Bar plot:
 Segmented bar plot:
 \rgs
 
+Mosaic plot:
+\rgs
+
 Simpson’s Paradox:
 \rgs
 
@@ -117,13 +121,12 @@ In a segmented bar plot, the bars represent the levels of which variable?  The s
 What type of plot(s) are appropriate to display a single categorical variable?
 \rgs
 
-
 What type of plot(s) are appropriate to display two categorical variables?
 \rgs
 
-
 What is the difference between a standardized segmented bar plot and a mosaic plot?
 \rgs
+
 
 True or false: Pie charts are generally highly recommended ways to graphically display categorical data.
 
@@ -133,13 +136,13 @@ True or false: When a segmented bar plot has segments that sum to 1 (or 100%), t
 
 #### Review of Simpson’s Paradox {-}
 
-Based on the segmented bar plot in Figure 2.6, which race of defendant was more likely to have the death penalty invoked?
+Based on the segmented bar plot in Figure 4.6, which race of defendant was more likely to have the death penalty invoked?
 \rgs
 
-Based on the segmented bar plot in Figure 2.7 and Table 2.9, which race of defendant was more likely to have the death penalty invoked when the victim was Caucasian?
+Based on the segmented bar plot in Figure 4.7 and Table 4.9, which race of defendant was more likely to have the death penalty invoked when the victim was Caucasian?
 \rgs
 
-Based on the segmented bar plot in Figure 2.7 and Table 2.9, which race of defendant was more likely to have the death penalty invoked when the victim was African American?
+Based on the segmented bar plot in Figure 4.7 and Table 4.9, which race of defendant was more likely to have the death penalty invoked when the victim was African American?
 \rgs
 
 The direction of the relationship between the ______________
@@ -149,11 +152,13 @@ a ______________ variable.
 
 
 
-### Section 2.3 (Exploring quantitative data) {-}
+### Textbook Chapter 5: Exploring quantitative data {-}
 
 <!-- **Videos**   -->
 
-<!-- * 2.3 -->
+<!-- * 5.2to5.4 -->
+<!-- * 5.5to5.6 -->
+<!-- * 5.7 -->
 
 #### Type of Plots {-}
 
@@ -189,21 +194,6 @@ Four characteristics of a scatterplot:
 \rgi Unusual observations or outliers:
 \rgs
 
-Data density:
-\rgs
-
-Tail:
-\rgs
-
-Skew:
-\rgs
-
-Symmetric:
-\rgs
-
-Modality:
-\rgs
-
 Distribution (of a variable):
 \rgs
 
@@ -224,10 +214,43 @@ Distribution (of a variable):
 Point estimate:
 \rgs
 
+Histogram:
+\rgs
+
+Data density:
+\rgs
+
+Tail:
+\rgs
+
+Skew:
+\rgs
+
+Symmetric:
+\rgs
+
+Modality:
+\rgs
+
+Density plot:
+\rgs 
+
 Deviation:
 \rgs
 
+Variance:
+\rgs
+
+Standard deviation:
+\rgs
+
+Boxplot:
+\rgs
+
 Five number summary:
+\rgs
+
+Median:
 \rgs
 
 $X^{th}$ percentile:
@@ -276,9 +299,11 @@ How are outliers denoted on a box plot?  How can you mathematically determine if
 \rgs
 
 
-### Section 2.4 (`R`: Exploratory data analysis) and Section 2.5 (Chapter 2 review) {-}
+### Summarizing Chapters 4 and 5 {-}
 
-Section 2.4 presents four tutorials on analyzing quantitative data in `R`.  We recommend you complete all four.
+
+Look at the table of vocabulary terms in the final section of each chapter.  If there are any you do not know, be sure to review the appropriate section of your text.
+
 
 #### Notes {-}
 
@@ -308,8 +333,6 @@ two quantitative variables)& & \\ \hline
 \end{tabular}
 \end{center}
 
-Look at the table of vocabulary terms.  If there are any you do not know, be sure to review the appropriate section of your text.
-
 #### Data visualization summary {-}
 
 Fill in the following table to help associate type of plot for each of several scenarios.
@@ -331,59 +354,6 @@ Two quantitative variables  & \\
 \end{center}
 
 \rgs
-\newpage 
-
-Decision tree for determining an appropriate plot  given a number of variables and their types from Chapter 2 review:
-
-```{r decision-tree-plots, fig.fullwidth=TRUE}
-pal <- c("#000000",brewer.pal(8, 'Dark2'))
-
-data <- data.frame(
-  level1 = "Resp",
-  level2 = c(rep("Quan0",7), rep("Cat0",5)),
-  level3 = c(rep(c("None","Cat","Quant"),c(1,2,4)),
-             rep(c("None2","Cat2","Quant2"),c(2,2,1))),
-  level4 = paste0("plot_", letters[1:12])
-)
-
-# transform to edge list
-edges_level1_2 = data %>% select(level1, level2) %>% unique %>% rename(from=level1, to=level2)
-edges_level2_3 = data %>% select(level2, level3) %>% unique %>% rename(from=level2, to=level3)
-edges_level3_4 = data %>% select(level3, level4) %>% unique %>% rename(from=level3, to=level4)
-edge_list=rbind(edges_level1_2, edges_level2_3, edges_level3_4)
-
-# decision tree
-mygraph <- graph_from_data_frame( edge_list )
-ggraph(mygraph, layout = 'dendrogram', circular = FALSE) + 
-  geom_edge_diagonal(arrow = arrow(length = unit(3, 'mm')), 
-                   end_cap = circle(2, 'mm')) +
-  geom_node_point(color="#69b3a2", size=1) +
-  geom_node_label(
-    aes(   label=c("Response variable",
-                   "Quantitative", "Categorical",
-                  rep(c("Quantitative","Categorical","None"),2),
-                  "Scatterplot",
-                  "Stacked histogram", 
-                  "Side-by-side box plots", "Box plot",
-                  "Density plot", "Histogram",
-                  "Dot plot", "Side-by-side box plots",
-                  "Smoothed scatterplot", "Segmented bar plot", 
-                  "Mosaic plot", "Bar plot")),
-    label.padding = unit(0.3, "lines"),
-    color = pal[c(1:9,4,5,5,6,6,6,6,7,7,8,8,9)],
-    size = c(4,rep(3.5,20)),
-    fontface = c("bold",rep("plain",20)),
-    nudge_x = c(rep(.5,9),rep(0,12)),
-    nudge_y = c(rep(0,9),rep(.7,12))
-                # c(.6,.8,.9,.47,.6,.55,.45,.9,.9,.9, .6,.5))
-    ) +
-  theme(plot.margin = margin(t=20, r=20, b=20, l=20, unit="pt")) +
-  coord_flip() +
-  scale_y_reverse(expand = c(.2,.2)) +
-  scale_x_discrete() +
-  annotate("text",  x = 6.1, y = 1, label = "Explanatory variable",
-           fontface = "bold", size = 4)
-```
 
 \newpage
 

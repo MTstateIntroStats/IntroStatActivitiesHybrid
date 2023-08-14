@@ -1,4 +1,4 @@
-## Out of Class Activity Week 8:  The Good Samaritan --- Intro
+## Out-of-Class Activity Week 8:  The Good Samaritan --- Intro
 
 \setstretch{1}
 
@@ -83,7 +83,7 @@ Remember, we define the parameter for a single categorical variable as the true 
 
 \newpage
 
-5. Write the two parameters of interest for this study.  
+5. Write the two parameters of interest in context of the study.  
 \vspace{1mm}
 
    $\pi_{\text{hurry}}$ --- 
@@ -102,32 +102,46 @@ When comparing two groups, we assume the two parameters are equal in the null hy
 7. Based on the research question, fill in the appropriate sign for the alternative hypothesis ($<$, $>$, or $\neq$):
 \vspace{0.1in}
 
-|           $H_A: \pi_1 -\pi_2$ __________ 0
+|           $H_A: \pi_{\text{hurry}} -\pi_{\text{no hurry}}$ __________ 0
 
 
  
 #### Summarize and visualize the data {-}
 
-8. Using the two-way table given in the introduction, calculate the conditional proportion of students in the hurry condition who helped the actor.
+```{r, echo=TRUE, out.width="80%"}
+good %>%
+  ggplot(aes(x = Condition, fill = Behavior))+ #Enter the variables to plot
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented bar plot of Condition of Seminary \n Students by Behavior", #Title your plot
+       y = "Relative Frequency", #y-axis label
+       x = "Condition") + #x-axis label
+  scale_fill_grey()
+```
+
+8. Using the provided segmented bar plot, is there an association between whether a Seminary student helps the actor and condition assigned?  
+
+\vspace{0.5in}
+
+9. Using the two-way table given in the introduction, calculate the conditional proportion of students in the hurry condition who helped the actor.
 
 \vspace{.3in}
 
-9. Using the two-way table given in the introduction, calculate the conditional proportion of students in the no hurry condition who helped the actor.
+10. Using the two-way table given in the introduction, calculate the conditional proportion of students in the no hurry condition who helped the actor.
 
 \vspace{.3in}
 
-10.  Calculate the summary statistic (difference in sample proportion) for this study.  Use Hurry - No hurry as the order of subtraction.
+11.  Calculate the summary statistic (difference in sample proportion) for this study.  Use Hurry - No hurry as the order of subtraction.
 
 \vspace{0.4in}
 
 
-11. What is the notation used for the value calculated in question 10?
+12. What is the notation used for the value calculated in question 11?
 
 \newpage
 
 We will now simulate a **null distribution** of sample differences in proportions. The null distribution is created under the assumption the null hypothesis is true.
 
-12.  First, let's think about how one simulation would be created on the null distribution using cards.
+13.  First, let's think about how one simulation would be created on the null distribution using cards.
 
 \rgi How many cards would you need?
 \vspace{0.1in}
@@ -136,7 +150,7 @@ We will now simulate a **null distribution** of sample differences in proportion
 
 \vspace{0.5in}
 
-13. Next, we would mix the cards together and shuffle into two piles.
+14. Next, we would mix the cards together and shuffle into two piles.
 
 \rgi How many cards would be in each pile?
 \vspace{0.1in}
@@ -144,9 +158,28 @@ We will now simulate a **null distribution** of sample differences in proportion
 \rgi What would each pile represent?
 \vspace{0.5in}
 
-14. Once we have one simulated sample, what would we calculate and plot on the null distribution?  *Hint*: What statistic are we calculating from the data?
+15. Once we have one simulated sample, what would we calculate and plot on the null distribution?  *Hint*: What statistic are we calculating from the data?
 
 \vspace{0.8in}
+
+The segmented bar plot below shows the relationship between the variables for one simulation assuming the null hypothesis is true.
+
+```{r, echo=FALSE, out.width="80%"}
+good_sim <- read.csv("data/good_Sam_sim.csv") 
+
+good_sim %>%
+    ggplot(aes(x = Condition, fill = Behavior))+ #Enter the variables to plot
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented bar plot of Simulated Data", #Title your plot
+       y = "Relative Frequency", #y-axis label
+       x = "Condition") + #x-axis label
+  scale_fill_grey()
+
+```
+
+16.  Compare the segmented bar plot for the simulated data to the previous segmented bar plot of the original data.  Explain how the segmented bar plot of the simulated data reflects the null hypothesis.
+
+\vspace{1in}
 
 <!-- 15.  Simulate one sample using the cards provided by your instructor.  Write down the value of the simulated statistic.  How does the value of your group's simulated statistic compare to the other groups at your table?  Are the simulated values closer to the null value of zero than the actual calculated difference in proportions? -->
 

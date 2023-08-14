@@ -40,7 +40,7 @@ location: Montana State University
 \newpage
 \thispagestyle{empty}
 
-This resource was developed by Melinda Yager, Jade Schmidt, and Stacey Hancock in 2021 to accompany the online textbook: Carnegie, N., Hancock, S., Meyer, E., Schmidt, J., and Yager, M. (2021). _Montana State Introductory Statistics with R_. Montana State University. [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/).
+This resource was developed by Melinda Yager, Jade Schmidt, and Stacey Hancock in 2021 to accompany the online textbook: Hancock, S., Carnegie, N., Meyer, E., Schmidt, J., and Yager, M. (2021). _Montana State Introductory Statistics with R_. Montana State University. [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/).
 
 This resource is released under a [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license unless otherwise noted.
 
@@ -54,12 +54,12 @@ This resource is released under a [Creative Commons BY-NC-SA 4.0](https://creati
 
 # Preface {-}
 
-This coursepack accompanies the textbook for STAT 216: Montana State Introductory Statistics with `R`, which can be found at [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/). The syllabus for the course (including the course calendar), data sets, and links to D2L Brightspace, Gradescope, and the MSU RStudio server can be found on the course webpage: [https://math.montana.edu/courses/s216/](https://math.montana.edu/courses/s216/).
+This coursepack accompanies the textbook for STAT 216: Montana State Introductory Statistics with R, which can be found at [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/). The syllabus for the course (including the course calendar), data sets, and links to D2L Brightspace, Gradescope, and the MSU RStudio server can be found on the course webpage: [https://math.montana.edu/courses/s216/](https://math.montana.edu/courses/s216/).
 Other notes and review materials are linked in D2L.
 
 Each of the activities in this workbook is designed to target specific learning outcomes of the course, giving you practice with important statistical concepts in a group setting with instructor guidance. In addition to the in-class activities for the course, the coursepack includes reading guides and lecture notes to aid in taking notes while you complete the required readings and videos. Bring this workbook with you to class each class period, and take notes in the workbook as you would your own notes. A well-written completed workbook will provide an optimal study guide for exams!  
 
-The out of class activities will be completed outside of class, typically between the Monday and Wednesday classes.  The additional activities and labs in this coursepack will be completed during class time.  Parts of each lab will be turned in on Gradescope. To aid in your understanding, read through the introduction for each activity before attending class each day.  
+The out-of-class activities will be completed outside of class, typically between the Monday and Wednesday classes.  The additional activities and labs in this coursepack will be completed during class time.  Parts of each lab will be turned in on Gradescope. To aid in your understanding, read through the introduction for each activity before attending class each day.  
 
 STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nine hours per week outside of class to achieve a good grade in this class.  By “good” we mean at least a C because a grade of D or below does not count toward fulfilling degree requirements. Many of you set your goals higher than just getting a C, and we fully support that. You need roughly nine hours per week to review past activities, read feedback on previous assignments, complete current assignments, and prepare for the next day's class. A typical week in the life of a STAT 216 student looks like:
 
@@ -68,7 +68,7 @@ STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nin
     - Read through the introduction to the day's in-class activity.
     - Read through the week's homework assignment and note any questions you may have on the content.
 * _During class meeting_:
-    - Fill in the lecture notes during class
+    - Fill in the lecture notes during class.
     - Work through the in-class activity or weekly lab with your classmates and instructor, taking detailed notes on your answers to each question in the activity.
 * _After class meeting_:
     - Complete any parts of the activity you did not complete in class.

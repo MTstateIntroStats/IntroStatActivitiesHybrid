@@ -2,9 +2,9 @@
 
 ## Week 14 Reading Guide: Special Topics
 
-### Chapter 23 (Probability with tables) {-}
+### Textbook Chapter 23 Probability with tables {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
 <!-- **Videos** -->
 
@@ -129,7 +129,7 @@ Total & & & 100,000 \\ \hline
 
 \newpage
 
-### Section 15.1.4 revisited (Simulation-based inference for a relative risk)  {-}
+### Section 15.1.4 revisited: Simulation-based inference for a relative risk  {-}
 
 #### Vocabulary {-}
 

@@ -1,0 +1,2480 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{report}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage[none]{hyphenat}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{pdfpages}
+
+\pagestyle{plain}
+
+%%%% Set margins
+\setlength{\topmargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\textheight}{3cm}
+\addtolength{\textwidth}{2cm}
+
+% Spacing for reading guides
+\newcommand{\rgs}{\vspace{12pt}} % Vertical space
+\newcommand{\rgi}{\hspace{24pt}}  % Indent
+
+\newcommand\latexcode[1]{#1}
+
+% Format chapter titles and spacing
+\renewcommand*{\chaptername}{Week}
+
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{3ex}
+{\titlerule
+\vspace{1.5ex}%
+\filright}
+[\vspace{1.5ex}%
+\titlerule]
+\titlespacing*{\chapter}{0pt}{-40pt}{20pt}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{\textbf{STAT 216 Coursepack}\\
+\strut \\
+\includegraphics[width=5in,height=\textheight]{images/msu-campus.jpg}}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Fall 2023\\
+Montana State University}
+\author{Melinda Yager\\
+Jade Schmidt\\
+Stacey Hancock}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+Placeholder
+
+\hypertarget{fall-2023-calendar-of-in-class-activities}{%
+\chapter*{Fall 2023 Calendar of In-Class Activities}\label{fall-2023-calendar-of-in-class-activities}}
+\addcontentsline{toc}{chapter}{Fall 2023 Calendar of In-Class Activities}
+
+Placeholder
+
+\hypertarget{basics-of-data}{%
+\chapter{Basics of Data}\label{basics-of-data}}
+
+Placeholder
+
+\hypertarget{reading-guides}{%
+\section{Reading Guides}\label{reading-guides}}
+
+\hypertarget{week-1-reading-guide-basics-of-data}{%
+\section{Week 1 Reading Guide: Basics of Data}\label{week-1-reading-guide-basics-of-data}}
+
+\hypertarget{textbook-sections-1.1-case-study-and-1.2-data-basics}{%
+\subsection*{Textbook Sections 1.1: Case study and 1.2: Data basics}\label{textbook-sections-1.1-case-study-and-1.2-data-basics}}
+\addcontentsline{toc}{subsection}{Textbook Sections 1.1: Case study and 1.2: Data basics}
+
+\hypertarget{vocabulary}{%
+\subsubsection*{Vocabulary}\label{vocabulary}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes}{%
+\subsubsection*{Notes}\label{notes}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-section-1.1-case-study-using-stents-to-prevent-strokes}{%
+\subsubsection*{Example: Section 1.1 --- Case study: Using stents to prevent strokes}\label{example-section-1.1-case-study-using-stents-to-prevent-strokes}}
+\addcontentsline{toc}{subsubsection}{Example: Section 1.1 --- Case study: Using stents to prevent strokes}
+
+\hypertarget{activity-1-intro-to-data}{%
+\section{Activity 1: Intro to Data}\label{activity-1-intro-to-data}}
+
+\hypertarget{learning-outcomes}{%
+\subsection{Learning outcomes}\label{learning-outcomes}}
+
+\hypertarget{terminology-review}{%
+\subsection{Terminology review}\label{terminology-review}}
+
+\hypertarget{general-information-on-the-coursepack}{%
+\subsection{General information on the Coursepack}\label{general-information-on-the-coursepack}}
+
+\hypertarget{steps-of-the-statistical-investigation-process}{%
+\subsection{Steps of the statistical investigation process}\label{steps-of-the-statistical-investigation-process}}
+
+\hypertarget{take-home-messages}{%
+\subsection{Take-home messages}\label{take-home-messages}}
+
+\hypertarget{additional-notes}{%
+\subsection{Additional notes}\label{additional-notes}}
+
+\hypertarget{lecture-notes-week-1-intro-to-data}{%
+\section{Lecture Notes Week 1: Intro to data}\label{lecture-notes-week-1-intro-to-data}}
+
+\setstretch{1}
+
+Read through Sections 1.2.1 -- 1.2.5 in the course textbook prior to coming to class on Friday using the reading guides at the beginning of week 1 material.
+
+\hypertarget{data-basics-sections-1.2.1-1.2.2}{%
+\subsection*{Data basics: Sections 1.2.1 -- 1.2.2}\label{data-basics-sections-1.2.1-1.2.2}}
+\addcontentsline{toc}{subsection}{Data basics: Sections 1.2.1 -- 1.2.2}
+
+Data: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ used to answer research questions
+
+Observational unit or case: the people or things we \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ data from
+
+Variable: what is measured on each \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ or
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+
+\hypertarget{types-of-variables}{%
+\subsubsection*{Types of variables}\label{types-of-variables}}
+\addcontentsline{toc}{subsubsection}{Types of variables}
+
+\begin{itemize}
+\tightlist
+\item
+  Categorical variable:
+\end{itemize}
+
+\vspace{0.5in}
+
+\rgi Ordinal: levels of the variable have a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ordering
+
+\rgi \rgi Examples: `Scale' questions, Years of schooling completed
+
+\rgi Nominal:levels of the variable do \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ have a natural ordering
+
+\rgi \rgi Examples: hair color, eye color, zipcode
+
+\begin{itemize}
+\tightlist
+\item
+  Quantitative variable:
+\end{itemize}
+
+\vspace{0.5in}
+
+\rgi Continuous variables: value can be any \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ within a range.
+
+\rgi \rgi Examples: percentage of students who are nursing majors, average hours of exercise per week; distance or time (measured with enough precision)
+
+\rgi Discrete variables: can only be \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ values, with jumps between
+
+\rgi \rgi Examples: years of schooling completed; SAT score, number of car accidents
+
+Example: The Bureau of Transportation Statistics collects data on all forms of public transportation. The data set seen here includes several variables collect on flights departing on a random sample of 150 US airports in December of 2019.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{airport }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/airport\_delay.csv"}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(airport)}
+\CommentTok{\#\textgreater{} Rows: 150}
+\CommentTok{\#\textgreater{} Columns: 19}
+\CommentTok{\#\textgreater{} $ airport             \textless{}chr\textgreater{} "ABI", "ABY", "ACV", "ACY", "ADQ", "AEX", "ALB", "\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ city                \textless{}chr\textgreater{} "Abilene", "Albany", "Arcata/Eureka", "Atlantic Ci\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ state               \textless{}chr\textgreater{} " TX", " GA", " CA", " NJ", " AK", " LA", " NY", "\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ airport\_name        \textless{}chr\textgreater{} " Abilene Regional", " Southwest Georgia Regional"\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ hub                 \textless{}chr\textgreater{} "no", "no", "no", "no", "no", "no", "no", "no", "n\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ international       \textless{}chr\textgreater{} "no", "no", "no", "yes", "no", "yes", "yes", "yes"\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ elevation\_1000      \textless{}dbl\textgreater{} 1.7906, 0.1932, 0.2223, 0.0748, 0.0787, 0.0881, 0.\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ latitude            \textless{}dbl\textgreater{} 32.4, 31.5, 41.0, 39.5, 57.7, 31.3, 42.7, 35.2, 45\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ longitude           \textless{}dbl\textgreater{} {-}99.7, {-}81.2, {-}124.1, {-}74.6, {-}152.5, {-}92.5, {-}73.8,\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ arr\_flights         \textless{}int\textgreater{} 195, 81, 215, 293, 54, 282, 943, 410, 53, 32314, 6\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ perc\_delay15        \textless{}dbl\textgreater{} 16.410256, 13.580247, 23.255814, 15.358362, 12.962\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ perc\_cancelled      \textless{}dbl\textgreater{} 0.5128205, 0.0000000, 4.1860465, 0.6825939, 14.814\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ perc\_diverted       \textless{}dbl\textgreater{} 0.00000000, 0.00000000, 2.32558139, 0.68259386, 0.\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ arr\_delay           \textless{}int\textgreater{} 1563, 1244, 4763, 2905, 329, 1293, 15127, 9705, 25\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ carrier\_delay       \textless{}int\textgreater{} 459, 890, 1613, 476, 180, 302, 5627, 2253, 439, 10\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ weather\_delay       \textless{}int\textgreater{} 21, 43, 549, 124, 1, 58, 2346, 168, 1236, 13331, 2\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ nas\_delay           \textless{}int\textgreater{} 257, 39, 154, 771, 51, 112, 2096, 616, 746, 45674,\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ security\_delay      \textless{}int\textgreater{} 0, 0, 0, 25, 0, 0, 44, 0, 0, 375, 0, 83, 0, 23, 0,\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ late\_aircraft\_delay \textless{}int\textgreater{} 826, 272, 2447, 1509, 97, 821, 5014, 6668, 108, 10\textasciitilde{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  What are the observational units?
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify which variables are categorical.
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify which variables are quantitative.
+\end{itemize}
+
+\vspace{0.2in}
+
+\hypertarget{exploratory-data-analysis-eda}{%
+\subsubsection*{Exploratory data analysis (EDA)}\label{exploratory-data-analysis-eda}}
+\addcontentsline{toc}{subsubsection}{Exploratory data analysis (EDA)}
+
+Summary statistic: a number which \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ an entire data set
+
+\begin{itemize}
+\tightlist
+\item
+  Also called the \_\_\_\_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\rgi Examples:
+
+\rgi \rgi proportion of people who had a stroke
+
+\vspace{0.3in}
+
+\rgi \rgi mean (or average) age
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Summary statistic and type of plot used depends on the type of variable(s)!
+\end{itemize}
+
+\hypertarget{roles-of-variables-sections-1.2.3-1.2.5}{%
+\subsection*{Roles of variables: Sections 1.2.3 -- 1.2.5}\label{roles-of-variables-sections-1.2.3-1.2.5}}
+\addcontentsline{toc}{subsection}{Roles of variables: Sections 1.2.3 -- 1.2.5}
+
+Explanatory variable: predictor variable
+
+\begin{itemize}
+\item
+  The variable researchers think \emph{may be} \_\_\_\_\_\_\_\_\_\_\_\_\_
+  the other variable.
+\item
+  In an experiment, what the researchers \_\_\_\_\_\_\_\_\_\_\_\_\_ or \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+\item
+  The groups that we are comparing from the data set.
+\end{itemize}
+
+Response variable:
+
+\begin{itemize}
+\item
+  The variable researchers think \emph{may be} \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ by the other variable.
+\item
+  Always simply \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ or \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_; never controlled by researchers.
+\end{itemize}
+
+Examples:
+
+Can you predict a criminal's height based on the footprint left at the scene of a crime?
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the explanatory variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the response variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+Does marking an item on sale (even without changing the price) increase the number of units sold per day, on average?
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the explanatory variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the response variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+In the Physician's Health Study, male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack.
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the explanatory variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the response variable:
+\end{itemize}
+
+\vspace{0.3in}
+
+\hypertarget{relationships-between-variables}{%
+\subsubsection*{Relationships between variables}\label{relationships-between-variables}}
+\addcontentsline{toc}{subsubsection}{Relationships between variables}
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  Association: the \_\_\_\_\_\_\_\_\_\_\_\_\_ between variables create a pattern; knowing something about one variable tells us about the other.
+
+  \begin{itemize}
+  \item
+    Positive association: as one variable \_\_\_\_\_\_\_\_\_\_\_\_\_, the other tends to \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ also.
+  \item
+    Negative association: as one variable \_\_\_\_\_\_\_\_\_\_\_\_\_, the other tends to \_\_\_\_\_\_\_\_\_\_\_\_\_.
+  \end{itemize}
+\item
+  Independent: no clear pattern can be seen between the \_\_\_\_\_\_\_\_\_\_.
+\end{itemize}
+
+\setstretch{1}
+\newpage
+
+\hypertarget{study-design}{%
+\chapter{Study Design}\label{study-design}}
+
+Placeholder
+
+\hypertarget{week-2-reading-guide-sampling-study-design-and-scope-of-inference}{%
+\section{Week 2 Reading Guide: Sampling, Study Design, and Scope of Inference}\label{week-2-reading-guide-sampling-study-design-and-scope-of-inference}}
+
+\hypertarget{textbook-chapter-2-study-design}{%
+\subsection*{Textbook Chapter 2: Study Design}\label{textbook-chapter-2-study-design}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 2: Study Design}
+
+\hypertarget{section-2.1-sampling-principles-and-strategies}{%
+\subsection*{Section 2.1: Sampling principles and strategies}\label{section-2.1-sampling-principles-and-strategies}}
+\addcontentsline{toc}{subsection}{Section 2.1: Sampling principles and strategies}
+
+\hypertarget{vocabulary-1}{%
+\subsubsection*{Vocabulary}\label{vocabulary-1}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-1}{%
+\subsubsection*{Notes}\label{notes-1}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{notes-on-types-of-sampling-bias}{%
+\paragraph*{Notes on types of sampling bias}\label{notes-on-types-of-sampling-bias}}
+\addcontentsline{toc}{paragraph}{Notes on types of sampling bias}
+
+\hypertarget{section-2.2-2.3-study-design}{%
+\subsection*{Section 2.2 \& 2.3: Study Design}\label{section-2.2-2.3-study-design}}
+\addcontentsline{toc}{subsection}{Section 2.2 \& 2.3: Study Design}
+
+\hypertarget{reminders-from-section-1.2}{%
+\subsubsection*{Reminders from Section 1.2}\label{reminders-from-section-1.2}}
+\addcontentsline{toc}{subsubsection}{Reminders from Section 1.2}
+
+\hypertarget{vocabulary-2}{%
+\subsubsection*{Vocabulary}\label{vocabulary-2}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-2}{%
+\subsubsection*{Notes}\label{notes-2}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{section-2.4-scope-of-inference}{%
+\subsection*{Section 2.4: Scope of inference}\label{section-2.4-scope-of-inference}}
+\addcontentsline{toc}{subsection}{Section 2.4: Scope of inference}
+
+\hypertarget{lecture-notes-week-2-study-design}{%
+\section{Lecture Notes Week 2: Study Design}\label{lecture-notes-week-2-study-design}}
+
+\hypertarget{sampling-methods-section-2.1-in-the-course-textbook}{%
+\subsection*{Sampling Methods: Section 2.1 in the course textbook}\label{sampling-methods-section-2.1-in-the-course-textbook}}
+\addcontentsline{toc}{subsection}{Sampling Methods: Section 2.1 in the course textbook}
+
+\hypertarget{good-vs.-bad-sampling}{%
+\subsubsection*{Good vs.~bad sampling}\label{good-vs.-bad-sampling}}
+\addcontentsline{toc}{subsubsection}{Good vs.~bad sampling}
+
+\hypertarget{types-of-sampling-bias}{%
+\subsection*{Types of Sampling Bias}\label{types-of-sampling-bias}}
+\addcontentsline{toc}{subsection}{Types of Sampling Bias}
+
+\hypertarget{examples}{%
+\subsubsection*{Examples}\label{examples}}
+\addcontentsline{toc}{subsubsection}{Examples}
+
+\hypertarget{observational-studies-experiments-and-scope-of-inference-sections-2.2-2.4-in-the-course-textbook}{%
+\subsection*{Observational studies, experiments, and scope of inference: Sections 2.2 -- 2.4 in the course textbook}\label{observational-studies-experiments-and-scope-of-inference-sections-2.2-2.4-in-the-course-textbook}}
+\addcontentsline{toc}{subsection}{Observational studies, experiments, and scope of inference: Sections 2.2 -- 2.4 in the course textbook}
+
+\hypertarget{study-design-1}{%
+\subsubsection*{Study design}\label{study-design-1}}
+\addcontentsline{toc}{subsubsection}{Study design}
+
+\hypertarget{scope-of-inference}{%
+\subsubsection*{Scope of Inference}\label{scope-of-inference}}
+\addcontentsline{toc}{subsubsection}{Scope of Inference}
+
+\hypertarget{out-of-class-activity-week-2-american-indian-address}{%
+\section{Out-of-Class Activity Week 2: American Indian Address}\label{out-of-class-activity-week-2-american-indian-address}}
+
+\hypertarget{learning-outcomes-1}{%
+\subsection{Learning outcomes}\label{learning-outcomes-1}}
+
+\hypertarget{terminology-review-1}{%
+\subsection{Terminology review}\label{terminology-review-1}}
+
+\hypertarget{american-indian-address}{%
+\subsection{American Indian Address}\label{american-indian-address}}
+
+\hypertarget{by-eye-selection}{%
+\subsubsection*{By eye selection}\label{by-eye-selection}}
+\addcontentsline{toc}{subsubsection}{By eye selection}
+
+\hypertarget{types-of-bias}{%
+\subsubsection*{Types of bias}\label{types-of-bias}}
+\addcontentsline{toc}{subsubsection}{Types of bias}
+
+\hypertarget{take-home-messages-1}{%
+\subsection{Take-home messages}\label{take-home-messages-1}}
+
+\hypertarget{additional-notes-1}{%
+\subsection{Additional notes}\label{additional-notes-1}}
+
+\hypertarget{activity-2-american-indian-address-continued}{%
+\section{Activity 2: American Indian Address (continued)}\label{activity-2-american-indian-address-continued}}
+
+\hypertarget{learning-outcomes-2}{%
+\subsection{Learning outcomes}\label{learning-outcomes-2}}
+
+\hypertarget{terminology-review-2}{%
+\subsection{Terminology review}\label{terminology-review-2}}
+
+\hypertarget{random-selection}{%
+\subsubsection*{Random selection}\label{random-selection}}
+\addcontentsline{toc}{subsubsection}{Random selection}
+
+\hypertarget{effect-of-sample-size}{%
+\subsection*{Effect of sample size}\label{effect-of-sample-size}}
+\addcontentsline{toc}{subsection}{Effect of sample size}
+
+\hypertarget{take-home-messages-2}{%
+\subsection{Take-home messages}\label{take-home-messages-2}}
+
+\hypertarget{additional-notes-2}{%
+\subsection{Additional notes}\label{additional-notes-2}}
+
+\hypertarget{week-2-lab-study-design}{%
+\section{Week 2 Lab: Study Design}\label{week-2-lab-study-design}}
+
+\hypertarget{learning-outcomes-3}{%
+\subsection{Learning outcomes}\label{learning-outcomes-3}}
+
+\hypertarget{terminology-review-3}{%
+\subsection{Terminology review}\label{terminology-review-3}}
+
+\hypertarget{general-information-labs}{%
+\subsection{General information labs}\label{general-information-labs}}
+
+\hypertarget{atrial-fibrillation}{%
+\subsection{Atrial fibrillation}\label{atrial-fibrillation}}
+
+\hypertarget{study-design-2}{%
+\subsection{Study design}\label{study-design-2}}
+
+\hypertarget{take-home-messages-3}{%
+\subsection{Take-home messages}\label{take-home-messages-3}}
+
+\hypertarget{additional-notes-3}{%
+\subsection{Additional notes}\label{additional-notes-3}}
+
+\hypertarget{exploring-categorical-and-quantitative-data}{%
+\chapter{Exploring Categorical and Quantitative Data}\label{exploring-categorical-and-quantitative-data}}
+
+Placeholder
+
+\hypertarget{week-3-reading-guide-introduction-to-r-categorical-variables-and-a-single-quantitative-variable}{%
+\section{Week 3 Reading Guide: Introduction to R, Categorical Variables, and a Single Quantitative Variable}\label{week-3-reading-guide-introduction-to-r-categorical-variables-and-a-single-quantitative-variable}}
+
+\hypertarget{textbook-chapter-3-applications-data}{%
+\subsection*{Textbook Chapter 3 Applications: Data}\label{textbook-chapter-3-applications-data}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 3 Applications: Data}
+
+\hypertarget{notes-3}{%
+\subsubsection*{Notes}\label{notes-3}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{functions}{%
+\subsubsection*{Functions}\label{functions}}
+\addcontentsline{toc}{subsubsection}{Functions}
+
+\hypertarget{textbook-chapter-4-exploring-categorical-data}{%
+\subsection*{Textbook Chapter 4: Exploring categorical data}\label{textbook-chapter-4-exploring-categorical-data}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 4: Exploring categorical data}
+
+\hypertarget{vocabulary-3}{%
+\subsubsection*{Vocabulary}\label{vocabulary-3}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-4}{%
+\subsubsection*{Notes}\label{notes-4}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{review-of-simpsons-paradox}{%
+\subsubsection*{Review of Simpson's Paradox}\label{review-of-simpsons-paradox}}
+\addcontentsline{toc}{subsubsection}{Review of Simpson's Paradox}
+
+\hypertarget{textbook-chapter-5-exploring-quantitative-data}{%
+\subsection*{Textbook Chapter 5: Exploring quantitative data}\label{textbook-chapter-5-exploring-quantitative-data}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 5: Exploring quantitative data}
+
+\hypertarget{type-of-plots}{%
+\subsubsection*{Type of Plots}\label{type-of-plots}}
+\addcontentsline{toc}{subsubsection}{Type of Plots}
+
+\hypertarget{vocabulary-4}{%
+\subsubsection*{Vocabulary}\label{vocabulary-4}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-5}{%
+\subsubsection*{Notes}\label{notes-5}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{summarizing-chapters-4-and-5}{%
+\subsection*{Summarizing Chapters 4 and 5}\label{summarizing-chapters-4-and-5}}
+\addcontentsline{toc}{subsection}{Summarizing Chapters 4 and 5}
+
+\hypertarget{notes-6}{%
+\subsubsection*{Notes}\label{notes-6}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{data-visualization-summary}{%
+\subsubsection*{Data visualization summary}\label{data-visualization-summary}}
+\addcontentsline{toc}{subsubsection}{Data visualization summary}
+
+\hypertarget{lecture-notes-week-3-exploratory-data-analysis}{%
+\section{Lecture Notes Week 3: Exploratory Data Analysis}\label{lecture-notes-week-3-exploratory-data-analysis}}
+
+\hypertarget{summarizing-categorical-data}{%
+\subsection*{Summarizing categorical data}\label{summarizing-categorical-data}}
+\addcontentsline{toc}{subsection}{Summarizing categorical data}
+
+\hypertarget{displaying-categorical-variables}{%
+\subsubsection*{Displaying categorical variables}\label{displaying-categorical-variables}}
+\addcontentsline{toc}{subsubsection}{Displaying categorical variables}
+
+\hypertarget{simpsons-paradox}{%
+\subsubsection*{Simpson's paradox}\label{simpsons-paradox}}
+\addcontentsline{toc}{subsubsection}{Simpson's paradox}
+
+\hypertarget{summarizing-quantitative-data}{%
+\subsection*{Summarizing quantitative data}\label{summarizing-quantitative-data}}
+\addcontentsline{toc}{subsection}{Summarizing quantitative data}
+
+\hypertarget{types-of-plots}{%
+\subsubsection*{Types of plots}\label{types-of-plots}}
+\addcontentsline{toc}{subsubsection}{Types of plots}
+
+\hypertarget{four-characteristics-of-plots-for-quantitative-variables}{%
+\subsubsection*{Four characteristics of plots for quantitative variables}\label{four-characteristics-of-plots-for-quantitative-variables}}
+\addcontentsline{toc}{subsubsection}{Four characteristics of plots for quantitative variables}
+
+\hypertarget{robust-statistics}{%
+\subsubsection*{Robust statistics}\label{robust-statistics}}
+\addcontentsline{toc}{subsubsection}{Robust statistics}
+
+\hypertarget{out-of-class-activity-week-3-summarizing-categorical-variables}{%
+\section{Out-of-Class Activity Week 3: Summarizing Categorical Variables}\label{out-of-class-activity-week-3-summarizing-categorical-variables}}
+
+\hypertarget{learning-outcomes-4}{%
+\subsection{Learning outcomes}\label{learning-outcomes-4}}
+
+\hypertarget{terminology-review-4}{%
+\subsection{Terminology review}\label{terminology-review-4}}
+
+\hypertarget{graphing-categorical-variables}{%
+\subsection{Graphing categorical variables}\label{graphing-categorical-variables}}
+
+\hypertarget{nightlight-use-and-myopia}{%
+\subsection*{Nightlight use and myopia}\label{nightlight-use-and-myopia}}
+\addcontentsline{toc}{subsection}{Nightlight use and myopia}
+
+\hypertarget{r-code}{%
+\subsubsection*{R code}\label{r-code}}
+\addcontentsline{toc}{subsubsection}{R code}
+
+\hypertarget{displaying-a-single-categorical-variable}{%
+\subsubsection*{Displaying a single categorical variable}\label{displaying-a-single-categorical-variable}}
+\addcontentsline{toc}{subsubsection}{Displaying a single categorical variable}
+
+\hypertarget{displaying-two-categorical-variables}{%
+\subsubsection*{Displaying two categorical variables}\label{displaying-two-categorical-variables}}
+\addcontentsline{toc}{subsubsection}{Displaying two categorical variables}
+
+\hypertarget{take-home-messages-4}{%
+\subsection{Take-home messages}\label{take-home-messages-4}}
+
+\hypertarget{additional-notes-4}{%
+\subsection{Additional notes}\label{additional-notes-4}}
+
+\hypertarget{week-3-lab-ipeds}{%
+\section{Week 3 Lab: IPEDs}\label{week-3-lab-ipeds}}
+
+\hypertarget{learning-outcomes-5}{%
+\subsection{Learning outcomes}\label{learning-outcomes-5}}
+
+\hypertarget{terminology-review-5}{%
+\subsection{Terminology review}\label{terminology-review-5}}
+
+\hypertarget{the-integrated-postsecondary-education-data-system-ipeds}{%
+\subsection{The Integrated Postsecondary Education Data System (IPEDS)}\label{the-integrated-postsecondary-education-data-system-ipeds}}
+
+\hypertarget{summary-statistics-for-a-single-quantitative-variable}{%
+\subsubsection*{Summary statistics for a single quantitative variable}\label{summary-statistics-for-a-single-quantitative-variable}}
+\addcontentsline{toc}{subsubsection}{Summary statistics for a single quantitative variable}
+
+\hypertarget{displaying-a-single-quantitative-variable}{%
+\subsubsection*{Displaying a single quantitative variable}\label{displaying-a-single-quantitative-variable}}
+\addcontentsline{toc}{subsubsection}{Displaying a single quantitative variable}
+
+\hypertarget{robust-statistics-1}{%
+\subsubsection*{Robust Statistics}\label{robust-statistics-1}}
+\addcontentsline{toc}{subsubsection}{Robust Statistics}
+
+\hypertarget{summarizing-a-single-categorical-and-single-quantitative-variable}{%
+\subsubsection*{Summarizing a single categorical and single quantitative variable}\label{summarizing-a-single-categorical-and-single-quantitative-variable}}
+\addcontentsline{toc}{subsubsection}{Summarizing a single categorical and single quantitative variable}
+
+\hypertarget{summarizing-two-categorical-variables}{%
+\subsubsection*{Summarizing two categorical variables}\label{summarizing-two-categorical-variables}}
+\addcontentsline{toc}{subsubsection}{Summarizing two categorical variables}
+
+\hypertarget{take-home-messages-5}{%
+\subsection{Take-home messages}\label{take-home-messages-5}}
+
+\hypertarget{exploring-multivariable-data}{%
+\chapter{Exploring Multivariable Data}\label{exploring-multivariable-data}}
+
+Placeholder
+
+\hypertarget{week-4-reading-guide-two-quantitative-variables-and-multivariable-concepts}{%
+\section{Week 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts}\label{week-4-reading-guide-two-quantitative-variables-and-multivariable-concepts}}
+
+\hypertarget{textbook-chapter-6-correlation-and-regression}{%
+\subsection*{Textbook Chapter 6: Correlation and regression}\label{textbook-chapter-6-correlation-and-regression}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 6: Correlation and regression}
+
+\hypertarget{section-6.1-fitting-a-line-residuals-and-correlation}{%
+\subsection*{Section 6.1 (Fitting a line, residuals, and correlation)}\label{section-6.1-fitting-a-line-residuals-and-correlation}}
+\addcontentsline{toc}{subsection}{Section 6.1 (Fitting a line, residuals, and correlation)}
+
+\hypertarget{reminders-from-section-5.1}{%
+\subsubsection*{Reminders from Section 5.1}\label{reminders-from-section-5.1}}
+\addcontentsline{toc}{subsubsection}{Reminders from Section 5.1}
+
+\hypertarget{vocabulary-5}{%
+\subsubsection*{Vocabulary}\label{vocabulary-5}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-7}{%
+\subsubsection*{Notes}\label{notes-7}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-brushtail-possums}{%
+\subsubsection*{Example: Brushtail possums}\label{example-brushtail-possums}}
+\addcontentsline{toc}{subsubsection}{Example: Brushtail possums}
+
+\hypertarget{section-6.2-least-squares-regression}{%
+\subsection*{Section 6.2: Least squares regression}\label{section-6.2-least-squares-regression}}
+\addcontentsline{toc}{subsection}{Section 6.2: Least squares regression}
+
+\hypertarget{vocabulary-6}{%
+\subsubsection*{Vocabulary}\label{vocabulary-6}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-8}{%
+\subsubsection*{Notes}\label{notes-8}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-elmhurst-college}{%
+\subsubsection*{Example: Elmhurst College}\label{example-elmhurst-college}}
+\addcontentsline{toc}{subsubsection}{Example: Elmhurst College}
+
+\hypertarget{section-6.3-outliers-in-linear-regression}{%
+\subsection*{Section 6.3: Outliers in linear regression}\label{section-6.3-outliers-in-linear-regression}}
+\addcontentsline{toc}{subsection}{Section 6.3: Outliers in linear regression}
+
+\hypertarget{vocabulary-7}{%
+\subsubsection*{Vocabulary}\label{vocabulary-7}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-9}{%
+\subsubsection*{Notes}\label{notes-9}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{section-6.4-chapter-6-review}{%
+\subsection*{Section 6.4: Chapter 6 review}\label{section-6.4-chapter-6-review}}
+\addcontentsline{toc}{subsection}{Section 6.4: Chapter 6 review}
+
+\hypertarget{notes-10}{%
+\subsubsection*{Notes}\label{notes-10}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{section-7.1-gapminder-world}{%
+\subsection*{Section 7.1: Gapminder world}\label{section-7.1-gapminder-world}}
+\addcontentsline{toc}{subsection}{Section 7.1: Gapminder world}
+
+\hypertarget{vocabulary-8}{%
+\subsubsection*{Vocabulary}\label{vocabulary-8}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-11}{%
+\subsubsection*{Notes}\label{notes-11}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{section-7.2-simpsons-paradox-revisited}{%
+\subsection*{Section 7.2: Simpson's Paradox, revisited}\label{section-7.2-simpsons-paradox-revisited}}
+\addcontentsline{toc}{subsection}{Section 7.2: Simpson's Paradox, revisited}
+
+\hypertarget{reminder-from-section-4.4}{%
+\subsubsection*{Reminder from Section 4.4}\label{reminder-from-section-4.4}}
+\addcontentsline{toc}{subsubsection}{Reminder from Section 4.4}
+
+\hypertarget{notes-12}{%
+\subsubsection*{Notes}\label{notes-12}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-sat-scores}{%
+\subsubsection*{Example: SAT scores}\label{example-sat-scores}}
+\addcontentsline{toc}{subsubsection}{Example: SAT scores}
+
+\hypertarget{lecture-notes-week-4-regression-and-correlation}{%
+\section{Lecture Notes Week 4: Regression and Correlation}\label{lecture-notes-week-4-regression-and-correlation}}
+
+\hypertarget{summary-measures-and-plots-for-two-quantitative-variables}{%
+\subsection*{Summary measures and plots for two quantitative variables}\label{summary-measures-and-plots-for-two-quantitative-variables}}
+\addcontentsline{toc}{subsection}{Summary measures and plots for two quantitative variables}
+
+\hypertarget{multivariable-plots}{%
+\subsubsection*{Multivariable plots}\label{multivariable-plots}}
+\addcontentsline{toc}{subsubsection}{Multivariable plots}
+
+\hypertarget{out-of-class-activity-week-4-movie-profits-correlation-and-coefficient-of-determination}{%
+\section{Out-of-Class Activity Week 4: Movie Profits --- Correlation and Coefficient of Determination}\label{out-of-class-activity-week-4-movie-profits-correlation-and-coefficient-of-determination}}
+
+\hypertarget{learning-outcomes-6}{%
+\subsection{Learning outcomes}\label{learning-outcomes-6}}
+
+\hypertarget{terminology-review-6}{%
+\subsection{Terminology review}\label{terminology-review-6}}
+
+\hypertarget{movies-released-in-2016}{%
+\subsection{Movies released in 2016}\label{movies-released-in-2016}}
+
+\hypertarget{correlation}{%
+\subsubsection*{Correlation}\label{correlation}}
+\addcontentsline{toc}{subsubsection}{Correlation}
+
+\hypertarget{coefficient-of-determination-squared-correlation}{%
+\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}}
+\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
+
+\hypertarget{take-home-messages-6}{%
+\subsection{Take-home messages}\label{take-home-messages-6}}
+
+\hypertarget{additional-notes-5}{%
+\subsection{Additional notes}\label{additional-notes-5}}
+
+\hypertarget{activity-4-movie-profits-linear-regression}{%
+\section{Activity 4: Movie Profits --- Linear Regression}\label{activity-4-movie-profits-linear-regression}}
+
+\hypertarget{learning-outcomes-7}{%
+\subsection{Learning outcomes}\label{learning-outcomes-7}}
+
+\hypertarget{terminology-review-7}{%
+\subsection{Terminology review}\label{terminology-review-7}}
+
+\hypertarget{movies-released-in-2016-1}{%
+\subsection{Movies released in 2016}\label{movies-released-in-2016-1}}
+
+\hypertarget{vocabulary-review}{%
+\subsubsection*{Vocabulary review}\label{vocabulary-review}}
+\addcontentsline{toc}{subsubsection}{Vocabulary review}
+
+\hypertarget{slope}{%
+\subsubsection*{Slope}\label{slope}}
+\addcontentsline{toc}{subsubsection}{Slope}
+
+\hypertarget{residuals}{%
+\subsubsection*{Residuals}\label{residuals}}
+\addcontentsline{toc}{subsubsection}{Residuals}
+
+\hypertarget{multivariable-plots-1}{%
+\subsubsection*{Multivariable plots}\label{multivariable-plots-1}}
+\addcontentsline{toc}{subsubsection}{Multivariable plots}
+
+\hypertarget{take-home-messages-7}{%
+\subsection{Take-home messages}\label{take-home-messages-7}}
+
+\hypertarget{additional-notes-6}{%
+\subsection{Additional notes}\label{additional-notes-6}}
+
+\hypertarget{week-4-lab-penguins}{%
+\section{Week 4 Lab: Penguins}\label{week-4-lab-penguins}}
+
+\hypertarget{learning-outcomes-8}{%
+\subsection{Learning outcomes}\label{learning-outcomes-8}}
+
+\hypertarget{penguins}{%
+\subsection*{Penguins}\label{penguins}}
+\addcontentsline{toc}{subsection}{Penguins}
+
+\hypertarget{group-exam-1-review}{%
+\chapter{Group Exam 1 Review}\label{group-exam-1-review}}
+
+Placeholder
+
+\hypertarget{inference-for-a-single-categorical-variable-simulation-based-methods}{%
+\chapter{Inference for a Single Categorical Variable: Simulation-based Methods}\label{inference-for-a-single-categorical-variable-simulation-based-methods}}
+
+Placeholder
+
+\hypertarget{week-6-reading-guide-categorical-inference}{%
+\section{Week 6 Reading Guide: Categorical Inference}\label{week-6-reading-guide-categorical-inference}}
+
+\hypertarget{textbook-chapter-9-hypothesis-testing-with-randomization}{%
+\subsection*{Textbook Chapter 9: Hypothesis testing with randomization}\label{textbook-chapter-9-hypothesis-testing-with-randomization}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 9: Hypothesis testing with randomization}
+
+\hypertarget{reminders-from-previous-sections}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-9}{%
+\subsubsection*{Vocabulary}\label{vocabulary-9}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-13}{%
+\subsubsection*{Notes}\label{notes-13}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-from-section-9.1-martian-alphabet}{%
+\subsubsection*{Example from section 9.1: Martian alphabet}\label{example-from-section-9.1-martian-alphabet}}
+\addcontentsline{toc}{subsubsection}{Example from section 9.1: Martian alphabet}
+
+\hypertarget{example-from-section-9.2-sex-discrimination}{%
+\subsubsection*{Example from section 9.2: Sex discrimination}\label{example-from-section-9.2-sex-discrimination}}
+\addcontentsline{toc}{subsubsection}{Example from section 9.2: Sex discrimination}
+
+\hypertarget{chapter-10-confidence-intervals-with-bootstrapping}{%
+\subsection*{Chapter 10: Confidence intervals with bootstrapping}\label{chapter-10-confidence-intervals-with-bootstrapping}}
+\addcontentsline{toc}{subsection}{Chapter 10: Confidence intervals with bootstrapping}
+
+\hypertarget{reminders-from-previous-sections-1}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-1}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-10}{%
+\subsubsection*{Vocabulary}\label{vocabulary-10}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-14}{%
+\subsubsection*{Notes}\label{notes-14}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-medical-consultant}{%
+\subsubsection*{Example: Medical consultant}\label{example-medical-consultant}}
+\addcontentsline{toc}{subsubsection}{Example: Medical consultant}
+
+\hypertarget{section-14.1-simulation-based-test-for-h_0pi-pi_0}{%
+\subsection*{\texorpdfstring{Section 14.1: Simulation-based test for \(H_0:\pi = \pi_0\)}{Section 14.1: Simulation-based test for H\_0:\textbackslash pi = \textbackslash pi\_0}}\label{section-14.1-simulation-based-test-for-h_0pi-pi_0}}
+\addcontentsline{toc}{subsection}{Section 14.1: Simulation-based test for \(H_0:\pi = \pi_0\)}
+
+\hypertarget{reminders-from-previous-sections-2}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-2}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-11}{%
+\subsubsection*{Vocabulary}\label{vocabulary-11}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-15}{%
+\subsubsection*{Notes}\label{notes-15}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-medical-consultant-1}{%
+\subsubsection*{Example: Medical consultant}\label{example-medical-consultant-1}}
+\addcontentsline{toc}{subsubsection}{Example: Medical consultant}
+
+\hypertarget{section-14.2-bootstrap-confidence-interval-for-pi}{%
+\subsection*{\texorpdfstring{Section 14.2: Bootstrap confidence interval for \(\pi\)}{Section 14.2: Bootstrap confidence interval for \textbackslash pi}}\label{section-14.2-bootstrap-confidence-interval-for-pi}}
+\addcontentsline{toc}{subsection}{Section 14.2: Bootstrap confidence interval for \(\pi\)}
+
+\hypertarget{reminders-from-previous-sections-3}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-3}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{notes-16}{%
+\subsubsection*{Notes}\label{notes-16}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-medical-consultant-2}{%
+\subsubsection*{Example: Medical consultant}\label{example-medical-consultant-2}}
+\addcontentsline{toc}{subsubsection}{Example: Medical consultant}
+
+\hypertarget{lecture-notes-week-6-inference-for-one-categorical-variable-using-simulation-based-methods}{%
+\section{Lecture Notes Week 6: Inference for One Categorical Variable using Simulation-based Methods}\label{lecture-notes-week-6-inference-for-one-categorical-variable-using-simulation-based-methods}}
+
+\hypertarget{hypothesis-testing}{%
+\subsection*{Hypothesis Testing}\label{hypothesis-testing}}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+\hypertarget{hypotheses}{%
+\subsection*{Hypotheses}\label{hypotheses}}
+\addcontentsline{toc}{subsection}{Hypotheses}
+
+\hypertarget{null-hypothesis}{%
+\subsubsection*{Null hypothesis}\label{null-hypothesis}}
+\addcontentsline{toc}{subsubsection}{Null hypothesis}
+
+\hypertarget{alternative-hypothesis}{%
+\subsubsection*{Alternative hypothesis}\label{alternative-hypothesis}}
+\addcontentsline{toc}{subsubsection}{Alternative hypothesis}
+
+\hypertarget{simulation-vs.-theory-based-methods}{%
+\subsection*{Simulation vs.~Theory-based Methods}\label{simulation-vs.-theory-based-methods}}
+\addcontentsline{toc}{subsection}{Simulation vs.~Theory-based Methods}
+
+\hypertarget{simulation-based-method}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method}{%
+\subsubsection*{Theory-based method}\label{theory-based-method}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{p-value}{%
+\subsubsection*{P-value}\label{p-value}}
+\addcontentsline{toc}{subsubsection}{P-value}
+
+\hypertarget{one-proportion-test}{%
+\subsection*{One proportion test}\label{one-proportion-test}}
+\addcontentsline{toc}{subsection}{One proportion test}
+
+\hypertarget{hypothesis-testing-1}{%
+\subsubsection*{Hypothesis testing}\label{hypothesis-testing-1}}
+\addcontentsline{toc}{subsubsection}{Hypothesis testing}
+
+\hypertarget{simulation-based-method-1}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-1}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{confidence-interval}{%
+\subsection*{Confidence interval}\label{confidence-interval}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{sampling-distribution}{%
+\subsubsection*{Sampling distribution}\label{sampling-distribution}}
+\addcontentsline{toc}{subsubsection}{Sampling distribution}
+
+\hypertarget{simulation-based-methods}{%
+\subsubsection*{Simulation-based methods}\label{simulation-based-methods}}
+\addcontentsline{toc}{subsubsection}{Simulation-based methods}
+
+\hypertarget{out-of-class-activity-week-6-helper-hinderer-simulation-based-hypothesis-test}{%
+\section{Out-of-Class Activity Week 6: Helper-Hinderer --- Simulation-based Hypothesis Test}\label{out-of-class-activity-week-6-helper-hinderer-simulation-based-hypothesis-test}}
+
+\hypertarget{learning-outcomes-9}{%
+\subsection{Learning outcomes}\label{learning-outcomes-9}}
+
+\hypertarget{terminology-review-8}{%
+\subsection{Terminology review}\label{terminology-review-8}}
+
+\hypertarget{steps-of-the-statistical-investigation-process-1}{%
+\subsection{Steps of the statistical investigation process}\label{steps-of-the-statistical-investigation-process-1}}
+
+\hypertarget{helper-hinderer}{%
+\subsection{Helper-Hinderer}\label{helper-hinderer}}
+
+\hypertarget{ask-a-research-question}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{design-a-study-and-collect-data}{%
+\subsubsection*{Design a study and collect data}\label{design-a-study-and-collect-data}}
+\addcontentsline{toc}{subsubsection}{Design a study and collect data}
+
+\hypertarget{summarize-and-visualize-the-data}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{use-statistical-analysis-methods-to-draw-inferences-from-the-data}{%
+\subsubsection*{Use statistical analysis methods to draw inferences from the data}\label{use-statistical-analysis-methods-to-draw-inferences-from-the-data}}
+\addcontentsline{toc}{subsubsection}{Use statistical analysis methods to draw inferences from the data}
+
+\hypertarget{take-home-messages-8}{%
+\subsection{Take-home messages}\label{take-home-messages-8}}
+
+\hypertarget{additional-notes-7}{%
+\subsection{Additional notes}\label{additional-notes-7}}
+
+\hypertarget{activity-6-helper-hinderer-continued}{%
+\section{Activity 6: Helper-Hinderer (continued)}\label{activity-6-helper-hinderer-continued}}
+
+\hypertarget{learning-outcomes-10}{%
+\subsection{Learning outcomes}\label{learning-outcomes-10}}
+
+\hypertarget{steps-of-the-statistical-investigation-process-2}{%
+\subsection{Steps of the statistical investigation process}\label{steps-of-the-statistical-investigation-process-2}}
+
+\hypertarget{helper-hinderer-1}{%
+\subsection{Helper-Hinderer}\label{helper-hinderer-1}}
+
+\hypertarget{interpret-the-p-value}{%
+\subsubsection*{Interpret the p-value}\label{interpret-the-p-value}}
+\addcontentsline{toc}{subsubsection}{Interpret the p-value}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{take-home-messages-9}{%
+\subsection{Take-home messages}\label{take-home-messages-9}}
+
+\hypertarget{additional-notes-8}{%
+\subsection{Additional notes}\label{additional-notes-8}}
+
+\hypertarget{week-6-lab-helper-hinderer-simulation-based-confidence-interval}{%
+\section{Week 6 Lab: Helper-Hinderer --- Simulation-based Confidence Interval}\label{week-6-lab-helper-hinderer-simulation-based-confidence-interval}}
+
+\hypertarget{learning-outcomes-11}{%
+\subsection{Learning outcomes}\label{learning-outcomes-11}}
+
+\hypertarget{terminology-review-9}{%
+\subsection{Terminology review}\label{terminology-review-9}}
+
+\hypertarget{helper-hinderer-2}{%
+\subsection{Helper-Hinderer}\label{helper-hinderer-2}}
+
+\hypertarget{activity-intro}{%
+\subsubsection*{Activity intro}\label{activity-intro}}
+\addcontentsline{toc}{subsubsection}{Activity intro}
+
+\hypertarget{use-statistical-analysis-methods-to-draw-inferences-from-the-data-1}{%
+\subsubsection*{Use statistical analysis methods to draw inferences from the data}\label{use-statistical-analysis-methods-to-draw-inferences-from-the-data-1}}
+\addcontentsline{toc}{subsubsection}{Use statistical analysis methods to draw inferences from the data}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-1}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-1}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{effect-of-confidence-level}{%
+\subsubsection*{Effect of confidence level}\label{effect-of-confidence-level}}
+\addcontentsline{toc}{subsubsection}{Effect of confidence level}
+
+\hypertarget{take-home-messages-10}{%
+\subsection{Take-home messages}\label{take-home-messages-10}}
+
+\hypertarget{additional-notes-9}{%
+\subsection{Additional notes}\label{additional-notes-9}}
+
+\hypertarget{inference-for-a-single-categorical-variable-theory-based-methods-errors-and-power}{%
+\chapter{Inference for a Single Categorical Variable: Theory-based Methods + Errors and Power}\label{inference-for-a-single-categorical-variable-theory-based-methods-errors-and-power}}
+
+Placeholder
+
+\hypertarget{week-7-reading-guide-categorical-inference}{%
+\section{Week 7 Reading Guide: Categorical Inference}\label{week-7-reading-guide-categorical-inference}}
+
+\hypertarget{textbook-chapter-11-inference-with-mathematical-models}{%
+\subsection*{Textbook Chapter 11: Inference with mathematical models}\label{textbook-chapter-11-inference-with-mathematical-models}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 11: Inference with mathematical models}
+
+\hypertarget{reminders-from-previous-sections-4}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-4}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-12}{%
+\subsubsection*{Vocabulary}\label{vocabulary-12}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-17}{%
+\subsubsection*{Notes}\label{notes-17}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas}{%
+\subsubsection*{Formulas}\label{formulas}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{r-coding}{%
+\subsection*{R coding}\label{r-coding}}
+\addcontentsline{toc}{subsection}{R coding}
+
+\hypertarget{calculating-normal-probabilities}{%
+\paragraph*{Calculating normal probabilities}\label{calculating-normal-probabilities}}
+\addcontentsline{toc}{paragraph}{Calculating normal probabilities}
+
+\hypertarget{displaying-normal-probabilities}{%
+\paragraph*{Displaying normal probabilities}\label{displaying-normal-probabilities}}
+\addcontentsline{toc}{paragraph}{Displaying normal probabilities}
+
+\hypertarget{calculating-normal-percentiles}{%
+\paragraph*{Calculating normal percentiles}\label{calculating-normal-percentiles}}
+\addcontentsline{toc}{paragraph}{Calculating normal percentiles}
+
+\hypertarget{section-14.3-theory-based-inferential-methods-for-pi}{%
+\subsection*{\texorpdfstring{Section 14.3: Theory-based inferential methods for \(\pi\)}{Section 14.3: Theory-based inferential methods for \textbackslash pi}}\label{section-14.3-theory-based-inferential-methods-for-pi}}
+\addcontentsline{toc}{subsection}{Section 14.3: Theory-based inferential methods for \(\pi\)}
+
+\hypertarget{vocabulary-13}{%
+\subsubsection*{Vocabulary}\label{vocabulary-13}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{reminders-from-previous-sections-5}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-5}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-14}{%
+\subsubsection*{Vocabulary}\label{vocabulary-14}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-18}{%
+\subsubsection*{Notes}\label{notes-18}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-1}{%
+\subsubsection*{Formulas}\label{formulas-1}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{example-payday-loans}{%
+\subsubsection*{Example: Payday loans}\label{example-payday-loans}}
+\addcontentsline{toc}{subsubsection}{Example: Payday loans}
+
+\hypertarget{chapter-12-errors-power-and-practical-importance}{%
+\subsection*{Chapter 12: Errors, power, and practical importance}\label{chapter-12-errors-power-and-practical-importance}}
+\addcontentsline{toc}{subsection}{Chapter 12: Errors, power, and practical importance}
+
+\hypertarget{reminders-from-previous-sections-6}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-6}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-15}{%
+\subsubsection*{Vocabulary}\label{vocabulary-15}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-19}{%
+\subsubsection*{Notes}\label{notes-19}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{examples-1}{%
+\subsubsection*{Examples:}\label{examples-1}}
+\addcontentsline{toc}{subsubsection}{Examples:}
+
+\hypertarget{lecture-notes-week-7-inference-for-one-categorical-variable-using-theory-based-methods}{%
+\section{Lecture Notes Week 7: Inference for One Categorical Variable using Theory-based Methods}\label{lecture-notes-week-7-inference-for-one-categorical-variable-using-theory-based-methods}}
+
+\hypertarget{theory-based-methods}{%
+\subsection*{Theory-based methods}\label{theory-based-methods}}
+\addcontentsline{toc}{subsection}{Theory-based methods}
+
+\hypertarget{central-limit-theorem}{%
+\subsubsection*{Central limit theorem}\label{central-limit-theorem}}
+\addcontentsline{toc}{subsubsection}{Central limit theorem}
+
+\hypertarget{rule}{%
+\subsection*{68-95-99.7 Rule}\label{rule}}
+\addcontentsline{toc}{subsection}{68-95-99.7 Rule}
+
+\hypertarget{theory-based-methods-for-a-single-categorical-variable}{%
+\subsubsection*{Theory-based methods for a single categorical variable}\label{theory-based-methods-for-a-single-categorical-variable}}
+\addcontentsline{toc}{subsubsection}{Theory-based methods for a single categorical variable}
+
+\hypertarget{confidence-interval-1}{%
+\subsection*{Confidence interval}\label{confidence-interval-1}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{theory-based-method-for-a-single-categorical-variable}{%
+\subsubsection*{Theory-based method for a single categorical variable}\label{theory-based-method-for-a-single-categorical-variable}}
+\addcontentsline{toc}{subsubsection}{Theory-based method for a single categorical variable}
+
+\hypertarget{interpreting-confidence-level}{%
+\subsubsection*{Interpreting confidence level}\label{interpreting-confidence-level}}
+\addcontentsline{toc}{subsubsection}{Interpreting confidence level}
+
+\hypertarget{errors-power-and-practical-importance}{%
+\subsection*{Errors, power, and practical importance}\label{errors-power-and-practical-importance}}
+\addcontentsline{toc}{subsection}{Errors, power, and practical importance}
+
+\hypertarget{practical-importance}{%
+\subsubsection*{Practical importance}\label{practical-importance}}
+\addcontentsline{toc}{subsubsection}{Practical importance}
+
+\hypertarget{out-of-class-activity-week-7-handedness-of-male-boxers}{%
+\section{Out-of-Class Activity Week 7: Handedness of Male Boxers}\label{out-of-class-activity-week-7-handedness-of-male-boxers}}
+
+\hypertarget{learning-outcomes-12}{%
+\subsection{Learning outcomes}\label{learning-outcomes-12}}
+
+\hypertarget{terminology-review-10}{%
+\subsection{Terminology review}\label{terminology-review-10}}
+
+\hypertarget{handedness-of-male-boxers}{%
+\subsection{Handedness of male boxers}\label{handedness-of-male-boxers}}
+
+\hypertarget{review-of-summary-statistics}{%
+\subsection*{Review of summary statistics}\label{review-of-summary-statistics}}
+\addcontentsline{toc}{subsection}{Review of summary statistics}
+
+\hypertarget{theory-based-methods-1}{%
+\subsection*{Theory-based methods}\label{theory-based-methods-1}}
+\addcontentsline{toc}{subsection}{Theory-based methods}
+
+\hypertarget{take-home-messages-11}{%
+\subsection{Take-home messages}\label{take-home-messages-11}}
+
+\hypertarget{additional-notes-10}{%
+\subsection{Additional notes}\label{additional-notes-10}}
+
+\hypertarget{activity-7-handedness-of-male-boxers-theory-ci}{%
+\section{Activity 7: Handedness of Male Boxers --- Theory CI}\label{activity-7-handedness-of-male-boxers-theory-ci}}
+
+\hypertarget{learning-objectives}{%
+\subsection{Learning objectives}\label{learning-objectives}}
+
+\hypertarget{terminology-review-11}{%
+\subsection{Terminology review}\label{terminology-review-11}}
+
+\hypertarget{handedness-of-male-boxers-1}{%
+\subsection{Handedness of Male Boxers}\label{handedness-of-male-boxers-1}}
+
+\hypertarget{theory-based-confidence-interval}{%
+\subsubsection*{Theory-based confidence interval}\label{theory-based-confidence-interval}}
+\addcontentsline{toc}{subsubsection}{Theory-based confidence interval}
+
+\hypertarget{simulation-methods}{%
+\subsubsection*{Simulation Methods}\label{simulation-methods}}
+\addcontentsline{toc}{subsubsection}{Simulation Methods}
+
+\hypertarget{what-does-confidence-mean}{%
+\subsection*{\texorpdfstring{What does \emph{confidence} mean?}{What does confidence mean?}}\label{what-does-confidence-mean}}
+\addcontentsline{toc}{subsection}{What does \emph{confidence} mean?}
+
+\hypertarget{take-home-messages-12}{%
+\subsection{Take-home messages}\label{take-home-messages-12}}
+
+\hypertarget{additional-notes-11}{%
+\subsection{Additional notes}\label{additional-notes-11}}
+
+\hypertarget{week-7-lab-errors-and-power}{%
+\section{Week 7 Lab: Errors and Power}\label{week-7-lab-errors-and-power}}
+
+\hypertarget{learning-outcomes-13}{%
+\subsection{Learning outcomes}\label{learning-outcomes-13}}
+
+\hypertarget{terminology-review-12}{%
+\subsection{Terminology review}\label{terminology-review-12}}
+
+\hypertarget{acl-recovery}{%
+\subsection{ACL recovery}\label{acl-recovery}}
+
+\hypertarget{inference-for-two-categorical-variables-simulation-based-methods}{%
+\chapter{Inference for Two Categorical Variables: Simulation-based Methods}\label{inference-for-two-categorical-variables-simulation-based-methods}}
+
+Placeholder
+
+\hypertarget{week-8-reading-guide-hypothesis-testing-for-a-difference-in-proportions}{%
+\section{Week 8 Reading Guide: Hypothesis Testing for a Difference in Proportions}\label{week-8-reading-guide-hypothesis-testing-for-a-difference-in-proportions}}
+
+\hypertarget{textbook-chapter-15-inference-for-comparing-two-proportions}{%
+\subsection*{Textbook Chapter 15: Inference for comparing two proportions}\label{textbook-chapter-15-inference-for-comparing-two-proportions}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 15: Inference for comparing two proportions}
+
+\hypertarget{section-15.1-randomization-test-for-h_0-pi_1---pi_2-0-and-section-15.2-bootstrap-confidence-interval-for-pi_1---pi_2}{%
+\subsection*{\texorpdfstring{Section 15.1: Randomization test for \(H_0: \pi_1 - \pi_2 = 0\)) and Section 15.2: Bootstrap confidence interval for \(\pi_1 - \pi_2\)}{Section 15.1: Randomization test for H\_0: \textbackslash pi\_1 - \textbackslash pi\_2 = 0) and Section 15.2: Bootstrap confidence interval for \textbackslash pi\_1 - \textbackslash pi\_2}}\label{section-15.1-randomization-test-for-h_0-pi_1---pi_2-0-and-section-15.2-bootstrap-confidence-interval-for-pi_1---pi_2}}
+\addcontentsline{toc}{subsection}{Section 15.1: Randomization test for \(H_0: \pi_1 - \pi_2 = 0\)) and Section 15.2: Bootstrap confidence interval for \(\pi_1 - \pi_2\)}
+
+\hypertarget{reminders-from-previous-sections-7}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-7}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-16}{%
+\subsubsection*{Vocabulary}\label{vocabulary-16}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-20}{%
+\subsubsection*{Notes}\label{notes-20}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{notation}{%
+\subsubsection*{Notation}\label{notation}}
+\addcontentsline{toc}{subsubsection}{Notation}
+
+\hypertarget{example-gender-discrimination}{%
+\subsubsection*{Example: Gender discrimination}\label{example-gender-discrimination}}
+\addcontentsline{toc}{subsubsection}{Example: Gender discrimination}
+
+\hypertarget{example-opportunity-cost}{%
+\subsubsection*{Example: Opportunity cost}\label{example-opportunity-cost}}
+\addcontentsline{toc}{subsubsection}{Example: Opportunity cost}
+
+\hypertarget{example-cpr-and-blood-thinners}{%
+\subsubsection*{Example: CPR and blood thinners}\label{example-cpr-and-blood-thinners}}
+\addcontentsline{toc}{subsubsection}{Example: CPR and blood thinners}
+
+\hypertarget{lecture-notes-week-8-inference-for-two-categorical-variables-using-simulation-based-methods}{%
+\section{Lecture Notes Week 8: Inference for Two Categorical Variables using Simulation-based Methods}\label{lecture-notes-week-8-inference-for-two-categorical-variables-using-simulation-based-methods}}
+
+\hypertarget{two-categorical-variables}{%
+\subsection*{Two categorical variables}\label{two-categorical-variables}}
+\addcontentsline{toc}{subsection}{Two categorical variables}
+
+\hypertarget{hypothesis-testing-2}{%
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-2}}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+\hypertarget{simulation-based-method-2}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-2}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{confidence-interval-2}{%
+\subsection*{Confidence interval}\label{confidence-interval-2}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{simulation-based-method-3}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-3}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{out-of-class-activity-week-8-the-good-samaritan-intro}{%
+\section{Out-of-Class Activity Week 8: The Good Samaritan --- Intro}\label{out-of-class-activity-week-8-the-good-samaritan-intro}}
+
+\hypertarget{learning-outcomes-14}{%
+\subsection{Learning outcomes}\label{learning-outcomes-14}}
+
+\hypertarget{terminology-review-13}{%
+\subsection{Terminology review}\label{terminology-review-13}}
+
+\hypertarget{the-good-samaritan}{%
+\subsection{The Good Samaritan}\label{the-good-samaritan}}
+
+\hypertarget{vocabulary-review-1}{%
+\subsubsection*{Vocabulary review}\label{vocabulary-review-1}}
+\addcontentsline{toc}{subsubsection}{Vocabulary review}
+
+\hypertarget{ask-a-research-question-1}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-1}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-1}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-1}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{take-home-messages-13}{%
+\subsection{Take-home messages}\label{take-home-messages-13}}
+
+\hypertarget{additional-notes-12}{%
+\subsection{Additional notes}\label{additional-notes-12}}
+
+\hypertarget{activity-8-the-good-samaritan-continued-simulation-based-hypothesis-test-confidence-interval}{%
+\section{Activity 8: The Good Samaritan (continued) --- Simulation-based Hypothesis Test \& Confidence Interval}\label{activity-8-the-good-samaritan-continued-simulation-based-hypothesis-test-confidence-interval}}
+
+\hypertarget{learning-outcomes-15}{%
+\subsection{Learning outcomes}\label{learning-outcomes-15}}
+
+\hypertarget{terminology-review-14}{%
+\subsection{Terminology review}\label{terminology-review-14}}
+
+\hypertarget{the-good-samaritan-1}{%
+\subsection{The Good Samaritan}\label{the-good-samaritan-1}}
+
+\hypertarget{use-statistical-analysis-methods-to-draw-inferences-from-the-data-2}{%
+\subsubsection*{Use statistical analysis methods to draw inferences from the data}\label{use-statistical-analysis-methods-to-draw-inferences-from-the-data-2}}
+\addcontentsline{toc}{subsubsection}{Use statistical analysis methods to draw inferences from the data}
+
+\hypertarget{take-home-messages-14}{%
+\subsection{Take-home messages}\label{take-home-messages-14}}
+
+\hypertarget{additional-notes-13}{%
+\subsection{Additional notes}\label{additional-notes-13}}
+
+\hypertarget{week-8-lab-poisonous-mushrooms}{%
+\section{Week 8 Lab: Poisonous Mushrooms}\label{week-8-lab-poisonous-mushrooms}}
+
+\hypertarget{learning-outcomes-16}{%
+\subsection{Learning outcomes}\label{learning-outcomes-16}}
+
+\hypertarget{poisonous-mushrooms}{%
+\subsection{Poisonous Mushrooms}\label{poisonous-mushrooms}}
+
+\hypertarget{inference-for-two-categorical-variables-theory-based-methods}{%
+\chapter{Inference for Two Categorical Variables: Theory-based Methods}\label{inference-for-two-categorical-variables-theory-based-methods}}
+
+Placeholder
+
+\hypertarget{week-9-reading-guide-theory-based-inference-for-a-difference-in-proportions}{%
+\section{Week 9 Reading Guide: Theory-based Inference for a Difference in Proportions}\label{week-9-reading-guide-theory-based-inference-for-a-difference-in-proportions}}
+
+\hypertarget{textbook-chapter-15-inference-for-comparing-two-proportions-1}{%
+\subsection*{Textbook Chapter 15: Inference for comparing two proportions}\label{textbook-chapter-15-inference-for-comparing-two-proportions-1}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 15: Inference for comparing two proportions}
+
+\hypertarget{section-15.3-theory-based-inferential-methods-for-pi_1---pi_2}{%
+\subsection*{\texorpdfstring{Section 15.3: Theory-based inferential methods for \(\pi_1 - \pi_2\)}{Section 15.3: Theory-based inferential methods for \textbackslash pi\_1 - \textbackslash pi\_2}}\label{section-15.3-theory-based-inferential-methods-for-pi_1---pi_2}}
+\addcontentsline{toc}{subsection}{Section 15.3: Theory-based inferential methods for \(\pi_1 - \pi_2\)}
+
+\hypertarget{reminders-from-previous-sections-8}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-8}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{notes-21}{%
+\subsubsection*{Notes}\label{notes-21}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-2}{%
+\subsubsection*{Formulas}\label{formulas-2}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{notation-1}{%
+\subsubsection*{Notation}\label{notation-1}}
+\addcontentsline{toc}{subsubsection}{Notation}
+
+\hypertarget{example-cpr-and-blood-thinners-1}{%
+\subsubsection*{Example: CPR and blood thinners}\label{example-cpr-and-blood-thinners-1}}
+\addcontentsline{toc}{subsubsection}{Example: CPR and blood thinners}
+
+\hypertarget{example-mammograms}{%
+\subsubsection*{Example: Mammograms}\label{example-mammograms}}
+\addcontentsline{toc}{subsubsection}{Example: Mammograms}
+
+\hypertarget{lecture-notes-week-9-theoretical-inference-for-two-categorical-variables}{%
+\section{Lecture Notes Week 9: Theoretical Inference for Two Categorical Variables}\label{lecture-notes-week-9-theoretical-inference-for-two-categorical-variables}}
+
+\hypertarget{hypothesis-testing-using-theory-based-methods}{%
+\subsection*{Hypothesis testing using theory-based methods}\label{hypothesis-testing-using-theory-based-methods}}
+\addcontentsline{toc}{subsection}{Hypothesis testing using theory-based methods}
+
+\hypertarget{confidence-interval-3}{%
+\subsection*{Confidence interval}\label{confidence-interval-3}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{theory-based-method-for-a-two-categorical-variables}{%
+\subsubsection*{Theory-based method for a two categorical variables}\label{theory-based-method-for-a-two-categorical-variables}}
+\addcontentsline{toc}{subsubsection}{Theory-based method for a two categorical variables}
+
+\hypertarget{out-of-class-activity-week-9-winter-sports-helmet-use-and-head-injuries-theory-based-confidence-interval}{%
+\section{Out-of-Class Activity Week 9: Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval}\label{out-of-class-activity-week-9-winter-sports-helmet-use-and-head-injuries-theory-based-confidence-interval}}
+
+\hypertarget{learning-outcomes-17}{%
+\subsection{Learning outcomes}\label{learning-outcomes-17}}
+
+\hypertarget{terminology-review-15}{%
+\subsection{Terminology review}\label{terminology-review-15}}
+
+\hypertarget{winter-sports-helmet-use-and-head-injury}{%
+\subsection{Winter sports helmet use and head injury}\label{winter-sports-helmet-use-and-head-injury}}
+
+\hypertarget{effect-of-sample-size-1}{%
+\subsection{Effect of sample size}\label{effect-of-sample-size-1}}
+
+\hypertarget{take-home-messages-15}{%
+\subsection{Take-home messages}\label{take-home-messages-15}}
+
+\hypertarget{additional-notes-14}{%
+\subsection{Additional notes}\label{additional-notes-14}}
+
+\hypertarget{activity-week-9-winter-sports-helmet-use-and-head-injuries-theory-based-hypothesis-test}{%
+\section{Activity Week 9: Winter Sports Helmet Use and Head Injuries --- Theory-based Hypothesis Test}\label{activity-week-9-winter-sports-helmet-use-and-head-injuries-theory-based-hypothesis-test}}
+
+\hypertarget{learning-outcomes-18}{%
+\subsection{Learning outcomes}\label{learning-outcomes-18}}
+
+\hypertarget{terminology-review-16}{%
+\subsection{Terminology review}\label{terminology-review-16}}
+
+\hypertarget{helmet-use-and-head-injuries}{%
+\subsection{Helmet use and head injuries}\label{helmet-use-and-head-injuries}}
+
+\hypertarget{use-statistical-analysis-methods-to-draw-inferences-from-the-data-3}{%
+\subsubsection*{Use statistical analysis methods to draw inferences from the data}\label{use-statistical-analysis-methods-to-draw-inferences-from-the-data-3}}
+\addcontentsline{toc}{subsubsection}{Use statistical analysis methods to draw inferences from the data}
+
+\hypertarget{impacts-on-the-p-value}{%
+\subsection*{Impacts on the p-value}\label{impacts-on-the-p-value}}
+\addcontentsline{toc}{subsection}{Impacts on the p-value}
+
+\hypertarget{take-home-messages-16}{%
+\subsection{Take-home messages}\label{take-home-messages-16}}
+
+\hypertarget{additional-notes-15}{%
+\subsection{Additional notes}\label{additional-notes-15}}
+
+\hypertarget{week-9-lab-diabetes}{%
+\section{Week 9 Lab: Diabetes}\label{week-9-lab-diabetes}}
+
+\hypertarget{learning-outcomes-19}{%
+\subsection{Learning outcomes}\label{learning-outcomes-19}}
+
+\hypertarget{glycemic-control-in-diabetic-adolescents}{%
+\subsection{Glycemic control in diabetic adolescents}\label{glycemic-control-in-diabetic-adolescents}}
+
+\hypertarget{group-exam-2-review}{%
+\chapter{Group Exam 2 Review}\label{group-exam-2-review}}
+
+Placeholder
+
+\hypertarget{inference-for-a-quantitative-response-with-paired-samples}{%
+\chapter{Inference for a Quantitative Response with Paired Samples}\label{inference-for-a-quantitative-response-with-paired-samples}}
+
+Placeholder
+
+\hypertarget{week-11-reading-guide-inference-for-a-single-mean-or-paired-mean-difference}{%
+\section{Week 11 Reading Guide: Inference for a Single Mean or Paired Mean Difference}\label{week-11-reading-guide-inference-for-a-single-mean-or-paired-mean-difference}}
+
+\hypertarget{textbook-chapter-17-inference-for-a-single-mean}{%
+\subsection*{Textbook Chapter 17: Inference for a single mean}\label{textbook-chapter-17-inference-for-a-single-mean}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 17: Inference for a single mean}
+
+\hypertarget{reminders-from-previous-sections-9}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-9}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{vocabulary-17}{%
+\subsubsection*{Vocabulary}\label{vocabulary-17}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-22}{%
+\subsubsection*{Notes}\label{notes-22}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-3}{%
+\subsubsection*{Formulas}\label{formulas-3}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{notation-2}{%
+\subsubsection*{Notation}\label{notation-2}}
+\addcontentsline{toc}{subsubsection}{Notation}
+
+\hypertarget{example-from-section-17.1-edinburgh-rentals}{%
+\subsubsection*{Example from section 17.1: Edinburgh rentals}\label{example-from-section-17.1-edinburgh-rentals}}
+\addcontentsline{toc}{subsubsection}{Example from section 17.1: Edinburgh rentals}
+
+\hypertarget{example-from-section-17.2-sleep-times-of-msu-students}{%
+\subsubsection*{Example from section 17.2: Sleep times of MSU students}\label{example-from-section-17.2-sleep-times-of-msu-students}}
+\addcontentsline{toc}{subsubsection}{Example from section 17.2: Sleep times of MSU students}
+
+\hypertarget{example-from-section-17.3-mercury-content-of-dolphin-muscle}{%
+\subsubsection*{Example from section 17.3: Mercury content of dolphin muscle}\label{example-from-section-17.3-mercury-content-of-dolphin-muscle}}
+\addcontentsline{toc}{subsubsection}{Example from section 17.3: Mercury content of dolphin muscle}
+
+\hypertarget{example-from-section-17.3-cherry-blossom-race}{%
+\subsubsection*{Example from section 17.3: Cherry Blossom Race}\label{example-from-section-17.3-cherry-blossom-race}}
+\addcontentsline{toc}{subsubsection}{Example from section 17.3: Cherry Blossom Race}
+
+\hypertarget{textbook-chapter-18-inference-for-paired-mean-difference}{%
+\subsection*{Textbook Chapter 18: Inference for paired mean difference}\label{textbook-chapter-18-inference-for-paired-mean-difference}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 18: Inference for paired mean difference}
+
+\hypertarget{vocabulary-18}{%
+\subsubsection*{Vocabulary}\label{vocabulary-18}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-23}{%
+\subsubsection*{Notes}\label{notes-23}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-4}{%
+\subsubsection*{Formulas}\label{formulas-4}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{notation-3}{%
+\subsubsection*{Notation}\label{notation-3}}
+\addcontentsline{toc}{subsubsection}{Notation}
+
+\hypertarget{example-from-section-18.1-tires}{%
+\subsubsection*{Example from section 18.1: Tires}\label{example-from-section-18.1-tires}}
+\addcontentsline{toc}{subsubsection}{Example from section 18.1: Tires}
+
+\hypertarget{example-from-sections-18.2-and-18.3-ucla-textbook-prices}{%
+\subsubsection*{Example from sections 18.2 and 18.3: UCLA textbook prices}\label{example-from-sections-18.2-and-18.3-ucla-textbook-prices}}
+\addcontentsline{toc}{subsubsection}{Example from sections 18.2 and 18.3: UCLA textbook prices}
+
+\hypertarget{lecture-notes-week-11-inference-for-a-single-mean-paired-data}{%
+\section{Lecture Notes Week 11: Inference for a Single Mean \& Paired Data}\label{lecture-notes-week-11-inference-for-a-single-mean-paired-data}}
+
+\hypertarget{paired-vs.-independent-samples}{%
+\subsection*{Paired vs.~Independent Samples}\label{paired-vs.-independent-samples}}
+\addcontentsline{toc}{subsection}{Paired vs.~Independent Samples}
+
+\hypertarget{confidence-interval-4}{%
+\subsection*{Confidence interval}\label{confidence-interval-4}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{simulation-based-method-4}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-4}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-1}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-1}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{t-distribution}{%
+\subsection*{\texorpdfstring{\(t\)-distribution}{t-distribution}}\label{t-distribution}}
+\addcontentsline{toc}{subsection}{\(t\)-distribution}
+
+\hypertarget{hypothesis-testing-3}{%
+\subsection*{Hypothesis testing}\label{hypothesis-testing-3}}
+\addcontentsline{toc}{subsection}{Hypothesis testing}
+
+\hypertarget{simulation-based-method-5}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-5}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-2}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-2}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{out-of-class-activity-week-11-color-interference}{%
+\section{Out-of-Class Activity Week 11: Color Interference}\label{out-of-class-activity-week-11-color-interference}}
+
+\hypertarget{learning-outcomes-20}{%
+\subsection{Learning outcomes}\label{learning-outcomes-20}}
+
+\hypertarget{terminology-review-17}{%
+\subsection{Terminology review}\label{terminology-review-17}}
+
+\hypertarget{color-interference}{%
+\subsection{Color Interference}\label{color-interference}}
+
+\hypertarget{identify-the-scenario}{%
+\subsubsection*{Identify the scenario}\label{identify-the-scenario}}
+\addcontentsline{toc}{subsubsection}{Identify the scenario}
+
+\hypertarget{ask-a-research-question-2}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-2}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-2}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-2}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{check-theoretical-conditions}{%
+\subsubsection*{Check theoretical conditions}\label{check-theoretical-conditions}}
+\addcontentsline{toc}{subsubsection}{Check theoretical conditions}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{take-home-messages-17}{%
+\subsection{Take-home messages}\label{take-home-messages-17}}
+
+\hypertarget{additional-notes-16}{%
+\subsection{Additional notes}\label{additional-notes-16}}
+
+\hypertarget{activity-11-covid-19-and-air-pollution}{%
+\section{Activity 11: COVID-19 and Air Pollution}\label{activity-11-covid-19-and-air-pollution}}
+
+\hypertarget{learning-outcomes-21}{%
+\subsection{Learning outcomes}\label{learning-outcomes-21}}
+
+\hypertarget{terminology-review-18}{%
+\subsection{Terminology review}\label{terminology-review-18}}
+
+\hypertarget{covid-19-and-air-pollution}{%
+\subsection{COVID-19 and air pollution}\label{covid-19-and-air-pollution}}
+
+\hypertarget{vocabulary-review.}{%
+\subsubsection*{Vocabulary review.}\label{vocabulary-review.}}
+\addcontentsline{toc}{subsubsection}{Vocabulary review.}
+
+\hypertarget{ask-a-research-question-3}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-3}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-3}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-3}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-1}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-1}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{hypothesis-test}{%
+\paragraph*{Hypothesis test}\label{hypothesis-test}}
+\addcontentsline{toc}{paragraph}{Hypothesis test}
+
+\hypertarget{confidence-interval-5}{%
+\paragraph*{Confidence interval}\label{confidence-interval-5}}
+\addcontentsline{toc}{paragraph}{Confidence interval}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-2}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-2}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{take-home-messages-18}{%
+\subsection{Take-home messages}\label{take-home-messages-18}}
+
+\hypertarget{additional-notes-17}{%
+\subsection{Additional notes}\label{additional-notes-17}}
+
+\hypertarget{week-11-lab-swearing}{%
+\section{Week 11 Lab: Swearing}\label{week-11-lab-swearing}}
+
+\hypertarget{learning-outcomes-22}{%
+\subsection{Learning outcomes}\label{learning-outcomes-22}}
+
+\hypertarget{type-of-samples}{%
+\subsection{Type of samples}\label{type-of-samples}}
+
+\hypertarget{swearing}{%
+\subsection{Swearing}\label{swearing}}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-2}{%
+\subsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-2}}
+\addcontentsline{toc}{subsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{hypothesis-test-1}{%
+\subsection*{Hypothesis test}\label{hypothesis-test-1}}
+\addcontentsline{toc}{subsection}{Hypothesis test}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-3}{%
+\subsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-3}}
+\addcontentsline{toc}{subsection}{Communicate the results and answer the research question}
+
+\hypertarget{confidence-interval-6}{%
+\subsection*{Confidence interval}\label{confidence-interval-6}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{inference-for-a-quantitative-response-with-independent-samples}{%
+\chapter{Inference for a Quantitative Response with Independent Samples}\label{inference-for-a-quantitative-response-with-independent-samples}}
+
+Placeholder
+
+\hypertarget{week-12-reading-guide-inference-for-a-difference-in-two-means}{%
+\section{Week 12 Reading Guide: Inference for a Difference in Two Means}\label{week-12-reading-guide-inference-for-a-difference-in-two-means}}
+
+\hypertarget{textbook-chapter-19-inference-for-comparing-two-independent-means}{%
+\subsection*{Textbook Chapter 19 Inference for comparing two independent means}\label{textbook-chapter-19-inference-for-comparing-two-independent-means}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 19 Inference for comparing two independent means}
+
+\hypertarget{reminders-from-previous-sections-10}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-10}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{notes-24}{%
+\subsubsection*{Notes}\label{notes-24}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-5}{%
+\subsubsection*{Formulas}\label{formulas-5}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{notation-4}{%
+\subsubsection*{Notation}\label{notation-4}}
+\addcontentsline{toc}{subsubsection}{Notation}
+
+\hypertarget{example-from-section-19.1-test-scores}{%
+\subsubsection*{Example from section 19.1: Test scores}\label{example-from-section-19.1-test-scores}}
+\addcontentsline{toc}{subsubsection}{Example from section 19.1: Test scores}
+
+\hypertarget{example-from-section-19.2-esc-and-heart-attacks}{%
+\subsubsection*{Example from section 19.2: ESC and heart attacks}\label{example-from-section-19.2-esc-and-heart-attacks}}
+\addcontentsline{toc}{subsubsection}{Example from section 19.2: ESC and heart attacks}
+
+\hypertarget{example-from-section-19.3-north-carolina-births}{%
+\subsubsection*{Example from section 19.3: North Carolina births}\label{example-from-section-19.3-north-carolina-births}}
+\addcontentsline{toc}{subsubsection}{Example from section 19.3: North Carolina births}
+
+\hypertarget{lecture-notes-week-12-inference-for-independent-samples}{%
+\section{Lecture Notes Week 12: Inference for Independent Samples}\label{lecture-notes-week-12-inference-for-independent-samples}}
+
+\hypertarget{single-categorical-single-quantitative-variable-with-independent-samples}{%
+\subsection*{Single categorical, single quantitative variable with independent samples}\label{single-categorical-single-quantitative-variable-with-independent-samples}}
+\addcontentsline{toc}{subsection}{Single categorical, single quantitative variable with independent samples}
+
+\hypertarget{hypothesis-testing-4}{%
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-4}}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+\hypertarget{simulation-based-method-6}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-6}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-3}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-3}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{confidence-interval-7}{%
+\subsection*{Confidence interval}\label{confidence-interval-7}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{simulation-based-method-7}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-7}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-4}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-4}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{out-of-class-activity-week-12-does-behavior-impact-performance}{%
+\section{Out-of-Class Activity Week 12: Does behavior impact performance?}\label{out-of-class-activity-week-12-does-behavior-impact-performance}}
+
+\hypertarget{learning-outcomes-23}{%
+\subsection{Learning outcomes}\label{learning-outcomes-23}}
+
+\hypertarget{terminology-review-19}{%
+\subsection{Terminology review}\label{terminology-review-19}}
+
+\hypertarget{behavior-and-performance}{%
+\subsection{Behavior and Performance}\label{behavior-and-performance}}
+
+\hypertarget{quantitative-variables-review}{%
+\subsubsection*{Quantitative variables review}\label{quantitative-variables-review}}
+\addcontentsline{toc}{subsubsection}{Quantitative variables review}
+
+\hypertarget{ask-a-research-question-4}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-4}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-4}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-4}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-3}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-3}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{hypothesis-test-2}{%
+\paragraph*{Hypothesis test}\label{hypothesis-test-2}}
+\addcontentsline{toc}{paragraph}{Hypothesis test}
+
+\hypertarget{confidence-interval-8}{%
+\paragraph*{Confidence interval}\label{confidence-interval-8}}
+\addcontentsline{toc}{paragraph}{Confidence interval}
+
+\hypertarget{take-home-messages-19}{%
+\subsection{Take-home messages}\label{take-home-messages-19}}
+
+\hypertarget{additional-notes-18}{%
+\subsection{Additional notes}\label{additional-notes-18}}
+
+\hypertarget{week-12-lab-the-triple-crown}{%
+\section{Week 12 Lab: The Triple Crown}\label{week-12-lab-the-triple-crown}}
+
+\hypertarget{learning-outcomes-24}{%
+\subsection{Learning outcomes}\label{learning-outcomes-24}}
+
+\hypertarget{terminology-review-20}{%
+\subsection{Terminology review}\label{terminology-review-20}}
+
+\hypertarget{the-triple-crown}{%
+\subsection{The triple crown}\label{the-triple-crown}}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-4}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-4}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{inference-for-two-quantitative-variables}{%
+\chapter{Inference for Two Quantitative Variables}\label{inference-for-two-quantitative-variables}}
+
+Placeholder
+
+\hypertarget{week-13-reading-guide-inference-for-slope-and-correlation}{%
+\section{Week 13 Reading Guide: Inference for Slope and Correlation}\label{week-13-reading-guide-inference-for-slope-and-correlation}}
+
+\hypertarget{textbook-chapter-21-inference-for-regression-and-model-conditions}{%
+\subsection*{Textbook Chapter 21: Inference for regression and model conditions}\label{textbook-chapter-21-inference-for-regression-and-model-conditions}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 21: Inference for regression and model conditions}
+
+\hypertarget{reminders-from-previous-sections-11}{%
+\subsubsection*{Reminders from previous sections}\label{reminders-from-previous-sections-11}}
+\addcontentsline{toc}{subsubsection}{Reminders from previous sections}
+
+\hypertarget{notes-25}{%
+\subsubsection*{Notes}\label{notes-25}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-6}{%
+\subsubsection*{Formulas}\label{formulas-6}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{example-from-sections-21.2-and-21.3-crop-yields}{%
+\subsubsection*{Example from sections 21.2 and 21.3: Crop yields}\label{example-from-sections-21.2-and-21.3-crop-yields}}
+\addcontentsline{toc}{subsubsection}{Example from sections 21.2 and 21.3: Crop yields}
+
+\hypertarget{example-from-section-21.4-midterm-elections-and-unemployment}{%
+\subsubsection*{Example from section 21.4: Midterm elections and unemployment}\label{example-from-section-21.4-midterm-elections-and-unemployment}}
+\addcontentsline{toc}{subsubsection}{Example from section 21.4: Midterm elections and unemployment}
+
+\hypertarget{lecture-notes-week-13-inference-for-two-quantitative-variables}{%
+\section{Lecture Notes Week 13: Inference for Two Quantitative Variables}\label{lecture-notes-week-13-inference-for-two-quantitative-variables}}
+
+\hypertarget{summary-measures-and-plots-for-two-quantitative-variables.}{%
+\subsection*{Summary measures and plots for two quantitative variables.}\label{summary-measures-and-plots-for-two-quantitative-variables.}}
+\addcontentsline{toc}{subsection}{Summary measures and plots for two quantitative variables.}
+
+\hypertarget{hypothesis-testing-5}{%
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-5}}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+\hypertarget{simulation-based-method-8}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-8}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-5}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-5}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{confidence-interval-9}{%
+\subsection*{Confidence interval}\label{confidence-interval-9}}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\hypertarget{simulation-based-method-9}{%
+\subsubsection*{Simulation-based method}\label{simulation-based-method-9}}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\hypertarget{theory-based-method-6}{%
+\subsubsection*{Theory-based method}\label{theory-based-method-6}}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\hypertarget{out-of-class-activity-week-13-prediction-of-crocodilian-body-size}{%
+\section{Out-of-Class Activity Week 13: Prediction of Crocodilian Body Size}\label{out-of-class-activity-week-13-prediction-of-crocodilian-body-size}}
+
+\hypertarget{learning-outcomes-25}{%
+\subsection{Learning outcomes}\label{learning-outcomes-25}}
+
+\hypertarget{terminology-review-21}{%
+\subsection{Terminology review}\label{terminology-review-21}}
+
+\hypertarget{crocodilian-body-size}{%
+\subsection{Crocodilian Body Size}\label{crocodilian-body-size}}
+
+\hypertarget{vocabulary-review-2}{%
+\subsubsection*{Vocabulary review}\label{vocabulary-review-2}}
+\addcontentsline{toc}{subsubsection}{Vocabulary review}
+
+\hypertarget{ask-a-research-question-5}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-5}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-5}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-5}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-5}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-5}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{simulation-based-hypothesis-test}{%
+\subsubsection*{Simulation-based hypothesis test}\label{simulation-based-hypothesis-test}}
+\addcontentsline{toc}{subsubsection}{Simulation-based hypothesis test}
+
+\hypertarget{simulation-based-confidence-interval}{%
+\subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval}}
+\addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-4}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-4}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{take-home-messages-20}{%
+\subsection{Take-home messages}\label{take-home-messages-20}}
+
+\hypertarget{additional-notes-19}{%
+\subsection{Additional notes}\label{additional-notes-19}}
+
+\hypertarget{activity-13-golf-driving-distance}{%
+\section{Activity 13: Golf Driving Distance}\label{activity-13-golf-driving-distance}}
+
+\hypertarget{learning-outcomes-26}{%
+\subsection{Learning outcomes}\label{learning-outcomes-26}}
+
+\hypertarget{terminology-review-22}{%
+\subsection{Terminology review}\label{terminology-review-22}}
+
+\hypertarget{golf-driving-distance}{%
+\subsection{Golf driving distance}\label{golf-driving-distance}}
+
+\hypertarget{plot-review.}{%
+\subsubsection*{Plot review.}\label{plot-review.}}
+\addcontentsline{toc}{subsubsection}{Plot review.}
+
+\hypertarget{conditions-for-the-least-squares-line}{%
+\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line}}
+\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
+
+\hypertarget{ask-a-research-question-6}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-6}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{summarize-and-visualize-the-data-6}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-6}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-6}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-6}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{hypothesis-test-3}{%
+\paragraph*{Hypothesis test}\label{hypothesis-test-3}}
+\addcontentsline{toc}{paragraph}{Hypothesis test}
+
+\hypertarget{confidence-interval-10}{%
+\paragraph*{Confidence interval}\label{confidence-interval-10}}
+\addcontentsline{toc}{paragraph}{Confidence interval}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-5}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-5}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{multivariable-plots-2}{%
+\subsection*{Multivariable plots}\label{multivariable-plots-2}}
+\addcontentsline{toc}{subsection}{Multivariable plots}
+
+\hypertarget{take-home-messages-21}{%
+\subsection{Take-home messages}\label{take-home-messages-21}}
+
+\hypertarget{additional-notes-20}{%
+\subsection{Additional notes}\label{additional-notes-20}}
+
+\hypertarget{week-13-lab-big-mac-index}{%
+\section{Week 13 Lab: Big Mac Index}\label{week-13-lab-big-mac-index}}
+
+\hypertarget{learning-outcomes-27}{%
+\subsection{Learning outcomes}\label{learning-outcomes-27}}
+
+\hypertarget{big-mac-index}{%
+\subsection{Big Mac Index}\label{big-mac-index}}
+
+\hypertarget{summarize-and-visualize-the-data-7}{%
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-7}}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\hypertarget{conditions-for-the-least-squares-line-1}{%
+\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line-1}}
+\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
+
+\hypertarget{ask-a-research-question-7}{%
+\subsubsection*{Ask a research question}\label{ask-a-research-question-7}}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\hypertarget{use-statistical-inferential-methods-to-draw-inferences-from-the-data-7}{%
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-7}}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\hypertarget{hypothesis-test-4}{%
+\subsubsection*{Hypothesis test}\label{hypothesis-test-4}}
+\addcontentsline{toc}{subsubsection}{Hypothesis test}
+
+\hypertarget{simulation-based-confidence-interval-1}{%
+\subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval-1}}
+\addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
+
+\hypertarget{communicate-the-results-and-answer-the-research-question-6}{%
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-6}}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\hypertarget{probability-and-relative-risk}{%
+\chapter{Probability and Relative Risk}\label{probability-and-relative-risk}}
+
+Placeholder
+
+\hypertarget{week-14-reading-guide-special-topics}{%
+\section{Week 14 Reading Guide: Special Topics}\label{week-14-reading-guide-special-topics}}
+
+\hypertarget{textbook-chapter-23-probability-with-tables}{%
+\subsection*{Textbook Chapter 23 Probability with tables}\label{textbook-chapter-23-probability-with-tables}}
+\addcontentsline{toc}{subsection}{Textbook Chapter 23 Probability with tables}
+
+\hypertarget{vocabulary-19}{%
+\subsubsection*{Vocabulary}\label{vocabulary-19}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-26}{%
+\subsubsection*{Notes}\label{notes-26}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{example-from-section-23.4-baby-jeff}{%
+\subsubsection*{Example from section 23.4: Baby Jeff}\label{example-from-section-23.4-baby-jeff}}
+\addcontentsline{toc}{subsubsection}{Example from section 23.4: Baby Jeff}
+
+\hypertarget{section-15.1.4-revisited-simulation-based-inference-for-a-relative-risk}{%
+\subsection*{Section 15.1.4 revisited: Simulation-based inference for a relative risk}\label{section-15.1.4-revisited-simulation-based-inference-for-a-relative-risk}}
+\addcontentsline{toc}{subsection}{Section 15.1.4 revisited: Simulation-based inference for a relative risk}
+
+\hypertarget{vocabulary-20}{%
+\subsubsection*{Vocabulary}\label{vocabulary-20}}
+\addcontentsline{toc}{subsubsection}{Vocabulary}
+
+\hypertarget{notes-27}{%
+\subsubsection*{Notes}\label{notes-27}}
+\addcontentsline{toc}{subsubsection}{Notes}
+
+\hypertarget{formulas-7}{%
+\subsubsection*{Formulas}\label{formulas-7}}
+\addcontentsline{toc}{subsubsection}{Formulas}
+
+\hypertarget{example-malaria-vaccine}{%
+\subsubsection*{Example: Malaria Vaccine}\label{example-malaria-vaccine}}
+\addcontentsline{toc}{subsubsection}{Example: Malaria Vaccine}
+
+\hypertarget{lecture-notes-week-14-probability-and-relative-risk}{%
+\section{Lecture Notes Week 14: Probability and Relative Risk}\label{lecture-notes-week-14-probability-and-relative-risk}}
+
+\hypertarget{probability}{%
+\subsection*{Probability}\label{probability}}
+\addcontentsline{toc}{subsection}{Probability}
+
+\hypertarget{finding-probabilities-from-a-table}{%
+\subsubsection*{Finding probabilities from a table}\label{finding-probabilities-from-a-table}}
+\addcontentsline{toc}{subsubsection}{Finding probabilities from a table}
+
+\hypertarget{creating-a-hypothetical-two-way-table}{%
+\subsubsection*{Creating a hypothetical two-way table}\label{creating-a-hypothetical-two-way-table}}
+\addcontentsline{toc}{subsubsection}{Creating a hypothetical two-way table}
+
+\hypertarget{diagnostic-tests}{%
+\subsubsection*{Diagnostic tests}\label{diagnostic-tests}}
+\addcontentsline{toc}{subsubsection}{Diagnostic tests}
+
+\hypertarget{relative-risk}{%
+\subsection*{Relative Risk}\label{relative-risk}}
+\addcontentsline{toc}{subsection}{Relative Risk}
+
+\hypertarget{relative-risk-in-the-news}{%
+\subsubsection*{Relative risk in the news}\label{relative-risk-in-the-news}}
+\addcontentsline{toc}{subsubsection}{Relative risk in the news}
+
+\hypertarget{testing-relative-risk}{%
+\subsubsection*{Testing Relative Risk}\label{testing-relative-risk}}
+\addcontentsline{toc}{subsubsection}{Testing Relative Risk}
+
+\hypertarget{out-of-class-activity-week-14-titanic-survivors-relative-risk}{%
+\section{Out-of-Class Activity Week 14: Titanic Survivors --- Relative Risk}\label{out-of-class-activity-week-14-titanic-survivors-relative-risk}}
+
+\hypertarget{learning-outcomes-28}{%
+\subsection{Learning outcomes}\label{learning-outcomes-28}}
+
+\hypertarget{terminology-review-23}{%
+\subsection{Terminology review}\label{terminology-review-23}}
+
+\hypertarget{titanic-survivors}{%
+\subsection{Titanic Survivors}\label{titanic-survivors}}
+
+\hypertarget{data-exploration}{%
+\subsubsection*{Data Exploration}\label{data-exploration}}
+\addcontentsline{toc}{subsubsection}{Data Exploration}
+
+\hypertarget{relative-risk-1}{%
+\subsubsection*{Relative Risk}\label{relative-risk-1}}
+\addcontentsline{toc}{subsubsection}{Relative Risk}
+
+\hypertarget{risk-in-the-news}{%
+\subsection{Risk in the News}\label{risk-in-the-news}}
+
+\hypertarget{take-home-messages-22}{%
+\subsection{Take-home messages}\label{take-home-messages-22}}
+
+\hypertarget{additional-notes-21}{%
+\subsection{Additional notes}\label{additional-notes-21}}
+
+\hypertarget{activity-14-whats-the-probability}{%
+\section{Activity 14: What's the probability?}\label{activity-14-whats-the-probability}}
+
+\hypertarget{learning-outcomes-29}{%
+\subsection{Learning outcomes}\label{learning-outcomes-29}}
+
+\hypertarget{terminology-review-24}{%
+\subsection{Terminology review}\label{terminology-review-24}}
+
+\hypertarget{probability-1}{%
+\subsection{Probability}\label{probability-1}}
+
+\hypertarget{take-home-messages-23}{%
+\subsection{Take home messages}\label{take-home-messages-23}}
+
+\hypertarget{additional-notes-22}{%
+\subsection{Additional notes}\label{additional-notes-22}}
+
+\hypertarget{week-14-lab-efficacy-of-the-covid-vaccination}{%
+\section{Week 14 Lab: Efficacy of the COVID Vaccination}\label{week-14-lab-efficacy-of-the-covid-vaccination}}
+
+\hypertarget{learning-outcomes-30}{%
+\subsection{Learning outcomes}\label{learning-outcomes-30}}
+
+\hypertarget{efficacy-of-the-covid-vaccination}{%
+\subsection{Efficacy of the COVID vaccination}\label{efficacy-of-the-covid-vaccination}}
+
+\hypertarget{semester-review}{%
+\chapter{Semester Review}\label{semester-review}}
+
+Placeholder
+
+\hypertarget{group-final-exam-review}{%
+\section{Group Final Exam Review}\label{group-final-exam-review}}
+
+\hypertarget{golden-ticket-to-descriptive-and-inferential-statistical-methods}{%
+\section{Golden Ticket to Descriptive and Inferential Statistical Methods}\label{golden-ticket-to-descriptive-and-inferential-statistical-methods}}
+
+In this course, we have covered descriptive (summary statistics and plots) and inferential (hypothesis tests and confidence intervals) methods for five different scenarios:
+
+\begin{itemize}
+\tightlist
+\item
+  one categorical response variable
+\item
+  two categorical variables
+\item
+  one quantitative response variable or paired differences in a quantitative variable
+\item
+  two quantitative variables
+\item
+  one quantitative response variable and one categorical explanatory variable
+\end{itemize}
+
+The ``golden ticket'' shown on the next page presents a visual summary of the similarities and differences across these five scenarios.
+
+\includepdf[landscape=true]{GoldenTicket_F23.pdf}
+
+\hypertarget{references}{%
+\subsection*{References}\label{references}}
+\addcontentsline{toc}{subsection}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-pga}{}}%
+{``Average Driving Distance and Fairway Accuracy.''} 2008. \href{https://www.pga.com/\%20and\%20https://www.lpga.com/}{https://www.pga.com/ and https://www.lpga.com/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-islands}{}}%
+Bulmer, M. n.d. {``Islands in Schools Project.''} \url{https://sites.google.com/site/islandsinschoolsprojectwebsite/home}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-darley1973}{}}%
+Darley, J. M., and C. D. Batson. 1973. {``"From Jerusalem to Jericho": A Study of Situational and Dispositional Variables in Helping Behavior.''} \emph{Journal of Personality and Social Psychology} 27: 100--108.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ipeds}{}}%
+Education Statistics, National Center for. 2018. {``IPEDS.''} \url{https://nces.ed.gov/ipeds/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zeitler2012}{}}%
+Group, TODAY Study. 2012. {``\href{https://www.ncbi.nlm.nih.gov/pubmed/22540912}{A Clinical Trial to Maintain Glycemic Control in Youth with Type 2 Diabetes}.''} \emph{New England Journal of Medicine} 366: 2247--56.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hamblin2007}{}}%
+Hamblin, J. K., K. Wynn, and P. Bloom. 2007. {``Social Evaluation by Preverbal Infants.''} \emph{Nature} 450 (6288): 557--59.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hirschfelder2018}{}}%
+Hirschfelder, A., and P. F. Molin. 2018. {``I Is for Ignoble: Stereotyping Native Americans.''} \href{Retrieved\%20from\%20https://www.ferris.edu/HTMLS/news/jimcrow/native/homepage.htm.}{Retrieved from https://www.ferris.edu/HTMLS/news/jimcrow/native/homepage.htm.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-hutchison2013}{}}%
+Hutchison, R. L., and M. A. Hirthler. 2013. {``\href{https://www.ncbi.nlm.nih.gov/pubmed/23932117}{Upper Extremity Injuies in Homer's Iliad}.''} \emph{Journal of Hand Surgery (American Volume)} 38: 1790--93.
+
+\leavevmode\vadjust pre{\hypertarget{ref-imdb}{}}%
+{``{IMDb} Movies Extensive Dataset.''} 2016. \url{https://kaggle.com/stefanoleone992/imdb-extensive-dataset}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-keating2021}{}}%
+Keating, D., N. Ahmed, F. Nirappil, Stanley-Becker I., and L. Bernstein. 2021. {``Coronavirus Infections Dropping Where People Are Vaccinated, Rising Where They Are Not, Post Analysis Finds.''} \emph{Washington Post}. \url{https://www.washingtonpost.com/health/2021/06/14/covid-cases-vaccination-rates/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-becentispeech}{}}%
+Moquin, W., and C. Van Doren. 1973. {``Great Documents in American Indian History.''} Praeger.
+
+\leavevmode\vadjust pre{\hypertarget{ref-weather}{}}%
+National Weather Service Corporate Image Web Team. n.d. {``National Weather Service -- {NWS} Billings.''} \url{https://w2.weather.gov/climate/xmacis.php?wfo=byz}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-obrien2019}{}}%
+O'Brien, Lynch, H. D. 2019. {``Crocodylian Head Width Allometry and Phylogenetic Prediction of Body Size in Extinct Crocodyliforms.''} \emph{Integrative Organismal Biology} 1.
+
+\leavevmode\vadjust pre{\hypertarget{ref-WashPost2022}{}}%
+{``Older People Who Get Covid Are at Increased Risk of Getting Shingles.''} 2022.\href{\%20Retrieved\%20from\%20https://www.washingtonpost.com/health/2022/04/19/shingles-and-covid-over-50/.}{Retrieved from https://www.washingtonpost.com/health/2022/04/19/shingles-and-covid-over-50/.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-porath2017}{}}%
+Porath, Erez, C. 2017. {``Does Rudeness Really Matter? The Effects of Rudeness on Task Performance and Helpfulness.''} \emph{Academy of Management Journal} 50.
+
+\leavevmode\vadjust pre{\hypertarget{ref-quinn1999}{}}%
+Quinn, G. E., C. H. Shin, M. G. Maguire, and R. A. Stone. 1999. {``Myopia and Ambient Lighting at Night.''} \emph{Nature} 399 (6732): 113--14. \url{https://doi.org/10.1038/20094}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ramachandran2007}{}}%
+Ramachandran, V. 2007. {``3 Clues to Understanding Your Brain.''} \url{https://www.ted.com/talks/vs_ramachandran_3_clues_to_understanding_your_brain}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cdchospitalization}{}}%
+{``Rates of Laboratory-Confimed COVID-19 Hospitalizations by Vaccination Status.''} 2021. CDC. \url{https://covid.cdc.gov/covid-data-tracker/\#covidnet-hospitalizations-vaccination}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-richardson2019}{}}%
+Richardson, T., and R. T. Gilman. 2019. {``Left-Handedness Is Associated with Greater Fighting Success in Humans.''} \emph{Scientific Reports} 9 (1): 15402. \url{https://doi.org/10.1038/s41598-019-51975-3}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stephens2020}{}}%
+Stephens, R., and O. Robertson. 2020. {``Swearing as a Response to Pain: Assessing Hypoalgesic Effects of Novel "Swear" Words.''} \emph{Frontiers in Psychology} 11: 643--62.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stewart2014}{}}%
+Stewart, E. H., B. Davis, B. L. Clemans-Taylor, B. Littenberg, C. A. Estrada, and R. M. Centor. 2014. {``Rapid Antigen Group a Streptococcus Test to Diagnose Pharyngitis: A Systematic Review and Meta-Analysis''} 9 (11). \url{https://doi.org/10.1371/journal.pone.0111727}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-stroop1935}{}}%
+Stroop, J. R. 1935. {``Studies of Interference in Serial Verbal Reactions.''} \emph{Journal of Experimental Psychology} 18: 643--62.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sulheim2017}{}}%
+Sulheim, S., A. Ekeland, I. Holme, and R. Bahr. 2017. {``Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders: Changes After an Interval of One Decade''} 51 (1): 44--50. \url{https://doi.org/10.1136/bjsports-2015-095798}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-titanic}{}}%
+{``Titanic.''} n.d. \url{http://www.encyclopedia-titanica.org}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-covidvaccinetracker}{}}%
+{``US COVID-19 Vaccine Tracker: See Your State's Progress.''} 2021. Mayo Clinic. \url{https://www.mayoclinic.org/coronavirus-covid-19/vaccine-tracker}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-usepa2020}{}}%
+US Environmental Protection Agency. n.d. {``Air Data -- Daily Air Quality Tracker.''} \url{https://www.epa.gov/outdoor-air-quality-data/air-data-daily-air-quality-tracker}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-navajo2011}{}}%
+{``Welcome to the Navajo Nation Government: Official Site of the Navajo Nation.''} 2011.\href{\%20Retrieved\%20from\%20https://www.navajo-nsn.gov/.}{Retrieved from https://www.navajo-nsn.gov/.}
+
+\end{CSLReferences}
+
+\end{document}

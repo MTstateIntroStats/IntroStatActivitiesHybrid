@@ -34,7 +34,7 @@ To review these concepts, see Chapter 19 in the textbook.
 
 The Triple Crown of "Thru" hiking consists of hiking the Appalachian Trail, the Pacific Crest Trail (PCT), and the Continental Divide Trail (CDT). Each year halfwayanywhere.com conducts a survey to better understand the people who hike these trails. One variable which is queried in the survey is the pre-hike "base weight" of a hiker's pack which is the total weight of gear without food, water, and worn gear. The 131 hikers surveyed who completed the CDT had a mean base weight of 15.266 lbs (sd = 5.128 lbs).  The 484 hikers surveyed who completed the PCT had a mean base weight of 17.837 lbs (sd = 7.823 lbs). Is there a difference in average base weight for PCT hikers and CDT hikers?  Use order of subtraction CDT - PCT.  
 
-1. **Write out the parameter of interest for this study.**
+1. **Write out the parameter of interest in words in context of the study.**
 
 \vspace{0.8in}
 
@@ -60,7 +60,7 @@ Conditions for the sampling distribution of $\bar{x}_1-\bar{x}_2$ to follow an a
     
      - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
-Upload and open the R script file for Week 12 lab. Upload and import the csv file, `Trail_Weight`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 7. Write a title for the boxplots in line 11. Highlight and run lines 1--13 to load the data and create plots of the data.
+Upload and open the R script file for Week 12 lab. Upload and import the csv file, `Trail_Weight`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 10. Write a title for the boxplots in line 15. Highlight and run lines 1--16 to load the data and create plots of the data.
 
 ```{r, echo=TRUE, eval=FALSE}
 hikes <- datasetname
@@ -81,11 +81,11 @@ hikes %>%  # Data set piped into...
 
 \newpage
 
-Enter the name of the explanatory variable for `explanatory` and the name of the response variable for `response` in line 17.  Highlight and run lines 16--17 to get the summary statistics for the data.
+Enter the name of the explanatory variable for `explanatory` and the name of the response variable for `response` in line 22.  Highlight and run lines 21--22 to get the summary statistics for the data.
 
 ```{r, echo=TRUE, eval=FALSE}
 hikes %>%
-  summarize(favstats(response~explanatory))
+  reframe(favstats(response~explanatory))
 ```
 
 6. **Calculate the summary statistic (difference in means) for this study.  Use appropriate notation with clearly defined subscripts.**
@@ -115,7 +115,7 @@ $$SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.$$
 \vspace{0.2in}
 \newpage
 
-10. Using the provided R script file, enter the T-score (for `xx`) and the `df` calculated in question 9 for `yy` into the `pt()` function to find the p-value.  Highlight and run line 20.  Report the p-value calculated. 
+10. Using the provided R script file, enter the T-score (for `xx`) and the `df` calculated in question 9 for `yy` into the `pt()` function to find the p-value.  Highlight and run line 28.  Report the p-value calculated. 
 
 ```{r, echo=TRUE, eval=FALSE}
 2*pt(xx, df=yy, lower.tail=FALSE)
@@ -135,7 +135,7 @@ $$\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2).$$
 
 We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with (`df` = minimum of $n_1 - 1$ or  $n_2 - 1$).
 
-Enter the appropriate percentile value (as a decimal) for `xx` and degrees of freedom for `yy` into the `qt()` function at line 23 to find the appropriate $t^*$ multiplier
+Enter the appropriate percentile value (as a decimal) for `xx` and degrees of freedom for `yy` into the `qt()` function at line 34 to find the appropriate $t^*$ multiplier
 
 ```{r, echo=TRUE, eval=FALSE}
 qt(xx, df = yy, lower.tail=FALSE)

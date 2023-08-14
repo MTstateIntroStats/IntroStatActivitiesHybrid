@@ -258,9 +258,11 @@ butterflies %>%
 
 ```{r, echo=TRUE}
 butterflies%>%
-  ggplot(aes(y = MaxGrip, x = Monarch_Group))  + #Enter the name of the explanatory and response variable
+  ggplot(aes(y = MaxGrip, x = Monarch_Group))  + 
+    #Enter the name of the explanatory and response variable
   geom_boxplot()+
-  labs(title = "Boxplot of max grip of Monarch butterflies by environment reared", #Title your plot
+  labs(title = "Boxplot of max grip of Monarch butterflies by environment reared", 
+       #Title your plot
        y = "Max Grip (Newtons)", #y-axis label
        x = "Environment Reared") #x-axis label
 ```
@@ -270,7 +272,7 @@ Are the conditions met to analyze the data using theory based-methods?
 
 Calculate the standardized difference in max grip strength.
 
-* 1st calculate the $SE(\bar{x}_1 - \bar{x}_2)$
+* First calculate the $SE(\bar{x}_1 - \bar{x}_2)$
 
 \vspace{0.6in}
 
@@ -315,7 +317,7 @@ To estimate the difference in true mean we will create a confidence interval.
 
 * Repeat 1000 times (simulations) to create the bootstrap distribution
 
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+* Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
 Returning to the letters example, we will estimate the difference in true mean number of letters recognized for students given  recognizable letter groupings and students given non-recognizable letter groupings.
 
@@ -330,7 +332,7 @@ two_mean_bootstrap_CI(Memorized ~ Grouped, #Enter the name of the variables
 
 Confidence interval interpretation:
 
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
+* How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
     
 * Parameter of interest
     
@@ -348,6 +350,8 @@ Confidence interval interpretation:
 \rgi $\text{statistic} \pm \text{margin of error}$
 
 \vspace{0.8in}
+
+\newpage
 
 Using the Monarch butterfly data, calculate the 99\% confidence interval.
 

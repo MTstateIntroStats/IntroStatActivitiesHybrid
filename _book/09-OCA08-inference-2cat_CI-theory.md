@@ -1,4 +1,4 @@
-## Out of Class Activity Week 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval
+## Out-of-Class Activity Week 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval
 
 \setstretch{1}
 
@@ -41,7 +41,7 @@ In "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by S
 | No Head Injury |     656    |      2330     |  2986 |
 | Total          |     752    |      2810     |  3562 |
 
-2. Write the parameter of interest for this study in context of the problem.
+2. Write the parameter of interest, in words, for this study, in context of the problem.
 
 \vspace{0.8in}
 
@@ -112,7 +112,7 @@ Suppose in another sample of skiers and snowboards involved in accidents we saw 
 
 Note that the sample proportions for each group are the same as the smaller sample size.
 
-$$\hat{p}_h = \frac{135}{1056}=0.127, \hat{p}_n = \frac{674}{3944}=0.171$$
+$$\hat{p}_h = \frac{135}{1056}=0.127, \hspace{2mm} \hat{p}_n = \frac{674}{3944}=0.171$$
 
 9. Calculate the standard error for the difference in sample proportions for this new sample.
 \vspace{0.8in}
@@ -131,7 +131,7 @@ $$\hat{p}_h = \frac{135}{1056}=0.127, \hat{p}_n = \frac{674}{3944}=0.171$$
 
 ### Take-home messages
 
-1. Simulation-based methods and theory-based methods should give the same results for a study *if the validity conditions are met*.  For both methods, observational units need to be independent. To use theory-based methods, additionally, the success-failure condition must be met. Check the validity conditions for each type of test to determine if theory-based methods can be used.
+1. Simulation-based methods and theory-based methods should give similar results for a study *if the validity conditions are met*.  For both methods, observational units need to be independent. To use theory-based methods, additionally, the success-failure condition must be met. Check the validity conditions for each type of test to determine if theory-based methods can be used.
 
 2. When calculating the standard error for the difference in sample proportions when doing a hypothesis test, we use the pooled proportion of successes, the best estimate for calculating the variability *under the assumption the null hypothesis is true*.  For a confidence interval, we are not assuming a null hypothesis, so we use the values of the two conditional proportions to calculate the standard error.  Make note of the difference in these two formulas. 
 

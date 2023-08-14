@@ -233,7 +233,7 @@ h. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-i Based on the graph, does there appear to be an association between the two variables? Explain your answer.
+i. Based on the graph, does there appear to be an association between the two variables? Explain your answer.
 
 \vspace{0.8in}
 

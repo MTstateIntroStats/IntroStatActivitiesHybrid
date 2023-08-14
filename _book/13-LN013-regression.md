@@ -59,7 +59,7 @@ Example:  Oceanic temperature is important for sea life.  The California Coopera
 ```r
 water %>% # Pipe data set into...
 ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "salinity (PSUs)",  # Label x-axis
        y = "temperature (C)",  # Label y-axis
        title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
@@ -271,7 +271,7 @@ Scatterplot:
 ```r
 Diamonds %>% # Pipe data set into...
     ggplot(aes(x = carat, y = price))+  # Specify variables
-    geom_point() +  # Add scatterplot of points
+    geom_point(alpha=0.5) +  # Add scatterplot of points
     labs(x = "carat",  # Label x-axis
        y = "price ($)",  # Label y-axis
        title = "Scatterplot of Diamonds Carats vs Price") + 
@@ -296,7 +296,7 @@ Scatterplot:
 ```r
 water %>% # Pipe data set into...
 ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "salinity (PSUs)",  # Label x-axis
        y = "temperature (C)",  # Label y-axis
        title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
@@ -314,7 +314,7 @@ Diagnostic plots:
 
 \begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
-Like with paired data the t-distribution can be used to model slope and correlation. 
+Like with paired data the $t$-distribution can be used to model slope and correlation. 
 
 \setstretch{1.5}
 
@@ -327,7 +327,7 @@ Theory-based test:
 
 * Calculate the standardized statistic
 
-* Find the area under the t-distribution with $n - 2$ df at least as extreme as the standardized statistic
+* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
 
 Equation for the standardized slope:
 
@@ -378,7 +378,7 @@ To estimate the true slope (or true correlation) we will create a confidence int
 
 * Repeat 1000 times (simulations) to create the bootstrap distribution
 
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+* Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
 Returning to the ocean example, we will estimate the true slope between salinity and temperature of the Pacific Ocean.
 
@@ -398,7 +398,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 Confidence interval interpretation:
 
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
+* How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
     
 * Parameter of interest
     
@@ -426,7 +426,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 Confidence interval interpretation:
 
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
+* How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
     
 * Parameter of interest
     
@@ -442,7 +442,7 @@ Confidence interval interpretation:
 
 \rgi $\text{statistic} \pm \text{margin of error}$
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 
 

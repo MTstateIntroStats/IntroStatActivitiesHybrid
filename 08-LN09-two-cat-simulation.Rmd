@@ -165,7 +165,7 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
 
 Explain why the null distribution is centered at the value of zero:
 
-\newpage
+\vspace{0.5in}
 
 Interpretation of the p-value:
 
@@ -178,6 +178,8 @@ Interpretation of the p-value:
 * Null hypothesis (in context) 
 
 \vspace{0.8in}
+
+\newpage
 
 Conclusion with scope of inference: 
 
@@ -209,7 +211,7 @@ To estimate the difference in true mean we will create a confidence interval.
 
 * Repeat 1000 times (simulations) to create the bootstrap distribution
 
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+* Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
 Returning to the cocaine example, we will estimate the difference in true proportion of cocaine addicts that stay clean for those on the desipramine and those on the placebo.
 

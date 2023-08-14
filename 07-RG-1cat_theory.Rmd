@@ -2,9 +2,9 @@
 
 ## Week 7 Reading Guide: Categorical Inference
 
-### Chapter 11 (Inference with mathematical models) {-}
+### Textbook Chapter 11: Inference with mathematical models {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
 <!-- **Videos**   -->
 
@@ -219,9 +219,9 @@ Changing to `lower.tail = FALSE` will give the value which has `x` area of the d
 We would recommend you work through each of the examples in Section 5.2.4 using R.
 
 
-### Section 14.3 (Theory-based inferential methods for $\pi$) {-}
+### Section 14.3: Theory-based inferential methods for $\pi$ {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
 <!-- **Videos**   -->
 
@@ -421,9 +421,9 @@ Margin of error of a confidence interval for a sample proportion:
 \rgs
 
 
-### Chapter 12 (Errors, power, and practical importance) {-}
+### Chapter 12: Errors, power, and practical importance {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
 <!-- **Videos**   -->
 
@@ -448,10 +448,10 @@ Decision:
 
 * If the p-value is large (greater than the significance level), the decision will be to __________ the null hypothesis.
 
-Type 1 error: 
+Type 1 Error: 
 \rgs
 
-Type 2 error: 
+Type 2 Error: 
 \rgs
 
 Confirmation bias: 
@@ -488,10 +488,10 @@ Fill in the following table with whether the decision was correct or not, and if
 
 \rgs
 
-How are the significance level and type I error rate related?
+How are the significance level and Type 1 Error rate related?
 \rgs
 
-How are the significance level and type II error rate related?
+How are the significance level and Type 2 Error rate related?
 \rgs
 
 Explain the differences between a one-sided and two-sided hypothesis test.
@@ -515,15 +515,15 @@ Should the default in research be a one-sided or two-sided hypothesis test?  Exp
 
 After collecting data, a researcher decides to change from a two-sided test to a one-sided test.  Why is this a bad idea?
 
-1. It ____________ (increases/decreases) the chance of a type I error.
+1. It ____________ (increases/decreases) the chance of a Type 1 Error.
 
 2. This can result in ________________________.
 \rgs
 
-How are power and type I error rate related?
+How are power and Type 1 Error rate related?
 \rgs
 
-How are power and type II error rate related?
+How are power and Type 2 Error rate related?
 \rgs
 
 How can we increase the power of a test?

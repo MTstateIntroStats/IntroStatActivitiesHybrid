@@ -74,7 +74,7 @@ The outcome of a categorical variable is a group or category such as eye color, 
 \caption{Types of variables.}(\#fig:types-of-variables)
 \end{figure}
 
-3. One person from each group open the Google sheet linked in D2L and fill in the responses for the following questions for each group member.  When creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure with the numerical values for the length of forearm.  For `Residency` use in_state or out_state as the two outcomes.
+3. One person from each group open the Google sheet linked in D2L and fill in the responses for the following questions for each group member.  When creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes.
 
 * Major: what is your declared major?
 

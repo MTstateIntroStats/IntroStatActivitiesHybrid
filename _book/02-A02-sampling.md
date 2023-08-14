@@ -28,7 +28,7 @@ To review these concepts, see Section 2.1 in the textbook.
 
 #### Random selection {-}
 
-Today we will return to the American Indian Address introduced in the out of class activity. Suppose instead of attempting to select a representative sample by eye (which did not work), each student used a random number generator to select a simple random sample of 10 words. A **simple random sample** relies on a random mechanism to choose a sample, without replacement, from the population, such that every sample of size 10 is equally likely to be chosen.
+Today we will return to the American Indian Address introduced in the out-of-class activity. Suppose instead of attempting to select a representative sample by eye (which did not work), each student used a random number generator to select a simple random sample of 10 words. A **simple random sample** relies on a random mechanism to choose a sample, without replacement, from the population, such that every sample of size 10 is equally likely to be chosen.
 
 To use a random number generator to select a simple random sample, you first need a numbered list of all the words in the population, called a **sampling frame**. You can then generate 10 random numbers from the numbers 1 to 359 (the number of words in the population), and the chosen random numbers correspond to the chosen words in your sample.
 
@@ -81,7 +81,7 @@ Observation & Number & Word & Length  \\ \hline
 
 \newpage
 
-5. How does the plot generated in question 3 compare to the plot generated in question 4 from Activity 2A? 
+5. How does the plot generated in question 3 compare to the plot generated in the out-of-class activity? 
 
 \rgi Which features are similar?  
 \vspace{0.4in}
@@ -128,7 +128,7 @@ One set of randomly generated sample mean word lengths from a single class may n
 
 We will now consider the impact of sample size.
 
-10. First, consider if each student had selected 20 words, instead of 10, by eye. Do you think this would make the plot from question 4 in Activity 2A centered on 3.95 (the true mean word length)?  Explain your answer.
+10. First, consider if each student had selected 20 words, instead of 10, by eye. Do you think this would make the plot from the out-of-class activity centered on 3.95 (the true mean word length)?  Explain your answer.
 \vspace{0.4in}
 
 11. Now we will select 20 words instead of 10 words at random.

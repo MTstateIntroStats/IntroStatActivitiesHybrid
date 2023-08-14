@@ -4,6 +4,13 @@
 
 ### Summary measures and plots for two quantitative variables {-}
 
+\setstretch{1.5}
+
+A __________________ is used to display the relationship
+between two ___________________ variables.
+
+\setstretch{1}
+
 Four characteristics of the scatterplot:
 	
 * Form: 
@@ -42,19 +49,19 @@ The summary measures for two quantitative variables are:
 
 * $\hat{y}$ or $\widehat{\text{response}}$ is
 
-\vspace{0.2in}
+\vspace{0.1in}
 
 * $b_0$ is
     
-\vspace{0.2in}
+\vspace{0.1in}
 
 * $b_1$ is 
     
-\vspace{0.2in}
+\vspace{0.1in}
 
 * $x$ or explanatory is 
     
-\vspace{0.2in}
+\vspace{0.1in}
 
 \setstretch{1.5}
     * The estimates for the linear model output will give the value of the ___________________ and the ______________.
@@ -63,17 +70,17 @@ The summary measures for two quantitative variables are:
 
 * Interpretation of the y-intercept: for a value of 0 for the _____________ variable, the predicted value for the __________ variable would be the value of y-intercept.
 
-* We can predict values of the ___________ variable by plugging in a give __________ variable value using the least squares equation line.
+* We can predict values of the ___________ variable by plugging in a given __________ variable value using the least squares equation line.
 
 * A prediction of a response variable value for an explanatory  value outside the range of x values is called _______________.
 
 * To find how far the predicted value deviates from the actual value we find the ____________.
 
-    * residual = observed y - predicted y
+\vspace{0.3in}
     
 * To find the least squares regression line the line with the __________ SSE is found.
 
-    * SSE = 
+    SSE = 
     
     * To find SSE, the _________ for each data point is found, squared and all the squared residuals are summed together
     
@@ -83,13 +90,13 @@ Correlation is always between the values of _______ and ________.
 
 * The stronger the relationship between the variables the closer the value of _______________ is to ________ or ________.
 
-* The sign give the _________________.
+* The sign gives the _________________.
 
 The coefficient of determination can be found using the _____________ for each variable or the SSE and SST (sum of squared total)
 
 * $r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}$
 
-* The coefficient of determination measures the ____________ of variation in the ___________ variable that is explained by the changes in the _____________ variable.
+* The coefficient of determination measures the ____________ of total variation in the ___________ variable that is explained by the changes in the _____________ variable.
 
 Notation:
 
@@ -129,16 +136,17 @@ The following shows a scatterplot of length of gestation as a predictor of birth
 ```r
 babies %>% # Data set pipes into...
 ggplot(aes(x = gestation, y = bwt))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "number of days of gestation",  # Label x-axis
        y = "birthweight (oz)",  # Label y-axis
        title = "Scatterplot of Gestation vs. Birthweight") + # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+  geom_smooth(method = "lm", se = FALSE) + # Add regression line
+    theme_bw()
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 Describe the scatterplot using the four characteristics.
 
@@ -163,7 +171,7 @@ Interpret the slope in context of the problem.
 
 \vspace{0.6in}
 
-Interpret the y-intercep
+Interpret the y-intercept in context of the problem.
 
 \vspace{0.6in}
 
@@ -175,7 +183,7 @@ Calculate the residual for a baby with a birthweight of 151 ounces and at 310 da
 
 \vspace{0.5in}
 
-Is this value (151, 310) above or below the line of regression?  Did the line of regression overestimate or underestimate the birthweight.
+Is this value (151, 310) above or below the line of regression?  Did the line of regression overestimate or underestimate the birthweight?
 
 \vspace{0.5in}
 
@@ -188,6 +196,8 @@ cor(bwt~gestation, data=babies, use="pairwise.complete.obs")
 ```
 This shows a ___________, _____________ relationship between gestation and birthweight.
 
+The value for SST was found to be 382172.68.  The value for SSE was found to be 321299.00.
+
 Calculate and interpret the coefficient of determination between gestation and birthweight.
 
 \vspace{0.8in}
@@ -195,23 +205,29 @@ Calculate and interpret the coefficient of determination between gestation and b
 
 \begin{center}\includegraphics[width=0.9\linewidth]{images/Coef_det} \end{center}
 
+\newpage
+
 #### Multivariable plots {-}
 
 Aesthetics: visual property of the objects in your plot
 
-* Position on the axes: groups for ____________ variables, or a number line if the variable is _______________
+\setstretch{1.5}
 
-* Color or shape - to represent _________ variables
+* Position on the axes: groups for _______________ variables, or a number line if the variable is _________________
 
-* Size - to represent __________ variables
+* Color or shape - to represent _______________ variables
+
+* Size - to represent ________________ variables
+
+\setstretch{1}
 
 Adding the quantitative variable maternal age to the scatterplot between gestation and birthweight.
 
 
 ```r
 babies %>% # Data set pipes into...
-ggplot(aes(x = gestation, y = bwt, size=age))+  # Specify variables
-  geom_point(shape=1) +  # Add scatterplot of points
+ggplot(aes(x = gestation, y = bwt))+  # Specify variables
+  geom_point(alpha=0.5, shape=1, aes(size=age)) +  # Add scatterplot of points
   labs(x = "number of days of gestation",  # Label x-axis
        y = "birthweight (oz)",  # Label y-axis
        title = "Scatterplot of Gestation vs. Birthweight by Age") + # Be sure to title your plots
@@ -220,7 +236,7 @@ ggplot(aes(x = gestation, y = bwt, size=age))+  # Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 
 Is there an association between maternal age and birthweight?
@@ -229,8 +245,8 @@ Is there an association between maternal age and birthweight?
 ```r
 babies %>% # Data set pipes into...
 ggplot(aes(x = age, y = bwt))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
-  labs(x = "number of days of gestation",  # Label x-axis
+  geom_point(alpha=0.5) +  # Add scatterplot of points
+  labs(x = "age",  # Label x-axis
        y = "birthweight (oz)",  # Label y-axis
        title = "Scatterplot of Birthweight by Age") + # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
@@ -238,7 +254,7 @@ ggplot(aes(x = age, y = bwt))+  # Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 
 ```r
@@ -252,23 +268,23 @@ Is there an association between maternal age and gestation?
 ```r
 babies %>% # Data set pipes into...
 ggplot(aes(x = gestation, y = age))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "number of days of gestation",  # Label x-axis
        y = "age",  # Label y-axis
-       title = "Scatterplot of Gestation vs. Aage") + # Be sure to title your plots
+       title = "Scatterplot of Gestation vs. Age") + # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 
 ```r
 cor(age~gestation, data=babies, use="pairwise.complete.obs")
 #> [1] -0.05560369
 ```
-Let's add the categorical variable, whether a mother smoked, to the scatterplot between gestataion and birthweight.
+Let's add the categorical variable, whether a mother smoked, to the scatterplot between gestation and birthweight.
 
 
 ```r
@@ -277,18 +293,19 @@ babies <- babies %>%
     na.omit()
            
 babies %>% # Data set pipes into...
-ggplot(aes(x = gestation, y = bwt, color=smoke))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
-  labs(x = "number of days of gestation",  # Label x-axis
-       y = "birthweight (oz)",  # Label y-axis
-       title = "Scatterplot of Gestation vs. Birthweight by Smoking Status") + # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE) + # Add regression line
-    scale_fill_grey()
+    ggplot(aes(x = gestation, y = bwt, color = smoke))+  #Specify variables
+    geom_point(aes(shape = smoke), size = 2) +  #Add scatterplot of points
+    labs(x = "number of days of gestation",  #Label x-axis
+         y = "birthweight (oz)",  #Label y-axis
+         title = "Scatterplot of Gestation vs. Birthweight by Smoking Status") + 
+    #Be sure to title your plots
+    geom_smooth(method = "lm", se = FALSE) + #Add regression line
+    scale_color_grey()
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 Does the relationship between length of gestation and birthweight appear to depend upon maternal smoking status? 
 
@@ -302,9 +319,9 @@ Adding a categorical predictor:
 
 \setstretch{1.5}
 
-* Look at the regression line for each level of the ____________
+* Look at the regression line for each level of the ______________
 
-* If the slopes are ______________, the two predictor variables do not ___________ to help explain the response
+* If the slopes are ________________, the two predictor variables do not _______________ to help explain the response
 
 * If the slopes _________________, there is an interaction between the categorical predictor and the relationship between the two quantitative variables.
 

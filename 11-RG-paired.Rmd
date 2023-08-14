@@ -2,7 +2,7 @@
 
 ## Week 11 Reading Guide: Inference for a Single Mean or Paired Mean Difference 
 
-### Chapter 17 (Inference for a single mean) {-}
+### Textbook Chapter 17: Inference for a single mean {-}
 
 <!-- **Videos**   -->
 
@@ -348,15 +348,15 @@ $\mu_0$ represents
 \rgs
 
 
-### Chapter 18 (Inference for paired mean difference)  {-}
+### Textbook Chapter 18: Inference for paired mean difference  {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Paired_Data
-* 18.1and18.2
-* 18.3
+<!-- * Paired_Data -->
+<!-- * 18.1and18.2 -->
+<!-- * 18.3 -->
 
 \setstretch{1.25}
 

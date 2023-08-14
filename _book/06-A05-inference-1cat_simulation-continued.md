@@ -67,7 +67,7 @@ To use the computer simulation, we will need to enter the
 
 \newpage
 
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 1--15.
+We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 1--16.
 
 
 ```r
@@ -102,7 +102,7 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
 The value in question 8 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
 
 
-9. **Using the following guidelines for the strength of evidence, how much evidence do the data provide against the null hypothesis? (Circle one of the five descriptions.)**
+9. Using the following guidelines for the strength of evidence, how much evidence do the data provide against the null hypothesis? (Circle one of the five descriptions.)
 
 
 \begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}

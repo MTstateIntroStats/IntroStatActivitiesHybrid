@@ -54,15 +54,15 @@ $$ME = z^* \times SE(\hat{p})$$
 The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
  
 
-2. Fill in the normal distribution shown in figure 7.2 to show how R found the $z^*$ multiplier.
+2. Fill in the normal distribution shown below to show how R found the $z^*$ multiplier.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{07-A06-inference-1cat_CI-theory_files/figure-latex/simpleNormaldist-1} 
+{\centering \includegraphics[width=0.5\linewidth]{07-A06-inference-1cat_CI-theory_files/figure-latex/Normalmult-1} 
 
 }
 
-\caption{A standard normal curve.}(\#fig:simpleNormaldist)
+\caption{Standard Normal Curve}(\#fig:Normalmult)
 \end{figure}
 
 The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 95\% + 2.5\% = 97.5\% percentile). Enter the value of 0.975 for xx in the provided R script file. This will give the value of the multiplier for a 95\% confidence interval.
@@ -84,12 +84,12 @@ qnorm(xx) # Multiplier for 95% confidence interval
 6.  Interpret the 95\% confidence interval in the context of the problem.
 \vspace{1in}
 
-7. Is the null value, 0.1, contained in the 95\% confidence interval?  Explain, based on the p-value from the last activity, why you expected this to be true.
+7. Is the null value, 0.1, contained in the 95\% confidence interval?  Explain, based on the p-value from the out-of-class activity, why you expected this to be true.
 \vspace{0.5in}
 
 #### Simulation Methods {-}
 
-In activity 7A, we found that the success-failure condition was met to use theory-based methods.  Here we will use simulation methods to find a 95\% confidence interval for the parameter of interest.
+In the out-of-class activity, we found that the success-failure condition was met to use theory-based methods.  Here we will use simulation methods to find a 95\% confidence interval for the parameter of interest.
 
 Use the `one_proportion_bootstrap_CI()` function in R to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 1000 simulations. Make sure to run the library(catstats) function before running the one_proportion_bootstrap_CI function.
 
@@ -131,6 +131,7 @@ For this part of the activity we will assume that the the true proportion of mal
 11.  **Interpret the level of confidence.  *Hint*: What proportion of samples would we expect to give a confidence interval that contains the parameter of interest?**
 
 \vspace{0.8in}
+\newpage
 
 ### Take-home messages
 

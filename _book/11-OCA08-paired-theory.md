@@ -1,4 +1,4 @@
-## Out of Class Activity Week 11:  Color Interference
+## Out-of-Class Activity Week 11:  Color Interference
 
 <!-- Data set source: http://users.stat.ufl.edu/~winner/datasets.html -->
 <!-- Data simulated to match means and SDs in article. -->
@@ -48,7 +48,7 @@ The abstract of the article "Studies of interference in serial verbal reactions"
 > The difference in time for reading the words printed in colors and the same words printed in black is the measure of interference of color stimuli upon reading words. ...
 > The interference of conflicting color stimuli upon the time for reading 100 words (each word naming a color unlike the ink-color of its print) caused an increase of 2.3 seconds or 5.6% over the normal time for reading the same words printed in black.
 
-The article reports on the results of a study in which seventy college undergraduates were given forms with 100 names of colors written in black ink, and the same 100 names of colors written in another color (i.e., the word purple written in green ink).  The total time (in seconds) for reading the 100 words printed in black, and the total time (in seconds) for reading the 100 words printed in different colors were recorded for each subject. The order in which the forms (black or color) were given was randomized to the subjects. Does printing the name of colors in a different color increase the time it takes to read the words?  Use color - black as the order of subtraction.
+The article reports on the results of a study in which seventy college undergraduates were given forms with 100 names of colors written in black ink, and the same 100 names of colors written in another color (i.e., the word purple written in green ink).  The total time (in seconds) for reading the 100 words printed in black, and the total time (in seconds) for reading the 100 words printed in different colors were recorded for each subject. The order in which the forms (black or color) were given was randomized to the subjects. Does printing the name of colors in a different color increase the time it takes to read the words?  Use color $-$ black as the order of subtraction.
 
 #### Identify the scenario {-}
 
@@ -196,7 +196,7 @@ qt(0.95, df = 69, lower.tail=TRUE)
 \caption{t-distribution with 69 degrees of freedom}(\#fig:tstar)
 \end{figure}
 
-10.  In Figure \@ref(fig:tstar), you see a t-distribution with 69 degrees of freedom. Label $t^\star$ and $-t^\star$ on that distribution.  Write on the plot the percent of the $t_{69}$-distribution that is below $-t^\star$, between $-t^\star$ and $t^\star$, and above $t^\star$.  Then use your plot to determine the confidence level associated with the $t^\star$ value obtained.
+10.  In Figure \@ref(fig:tstar), you see a $t$-distribution with 69 degrees of freedom. Label $t^\star$ and $-t^\star$ on that distribution.  Write on the plot the percent of the $t_{69}$-distribution that is below $-t^\star$, between $-t^\star$ and $t^\star$, and above $t^\star$.  Then use your plot to determine the confidence level associated with the $t^\star$ value obtained.
 \vspace{0.3in}
 
 

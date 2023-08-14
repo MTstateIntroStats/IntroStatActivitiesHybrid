@@ -1,8 +1,8 @@
 # Study Design
 
-## Week 2 Reading Guide: Sampling, Experimental Design, and Scope of Inference
+## Week 2 Reading Guide: Sampling, Study Design, and Scope of Inference
 
-### Sections 1.4 (Observational studies), 1.5 (Experiments), and 1.6 (Scope of inference) {-}
+### Textbook Chapter 2: Study Design {-}
 
 \setstretch{1}
 
@@ -11,6 +11,70 @@
 <!-- * 1.4to1.6 -->
 
 \setstretch{1.25}
+
+### Section 2.1: Sampling principles and strategies {-}
+
+<!-- **Videos**   -->
+
+<!-- * 1.3 -->
+
+\setstretch{1.25}
+
+#### Vocabulary {-}
+
+(Target) Population:
+\rgs
+
+Sample:
+\rgs
+
+Anecdotal evidence:
+\rgs
+
+Bias:
+\rgs
+
+\rgi Selection bias:
+\rgs
+
+\rgi Non-response bias:
+\rgs
+
+\rgi Response bias:
+\rgs
+
+Convenience sample:
+\rgs
+
+Simple Random Sample:
+\rgs
+
+Non-response rate:
+\rgs
+
+Representative:
+\rgs
+
+#### Notes {-}
+
+Ideally, how should we sample cases from our target population?  Using what sampling method? 
+\rgs
+
+##### Notes on types of sampling bias {-}
+
+* Someone must first be _chosen_ to be in a study and refuse to participate in order to have **non-response bias**.
+
+* There must be a valid reason for someone to lie or be untruthful to justify saying **response bias** is present.  Yes, anyone could lie at any time to any question.  Response bias is when those lies are predictable and systematic based on outside influences.
+\rgs
+
+
+True or False: Convenience sampling tends to result in non-response bias.
+
+True or False: Volunteer sampling tends to result in response bias.
+
+True or False: Random sampling helps to resolve selection bias, but has no impact on non-response or response bias.
+
+### Section 2.2 \& 2.3: Study Design {-}
 
 #### Reminders from Section 1.2 {-}
 
@@ -75,11 +139,13 @@ What are the four principles of a well-designed randomized experiment?
 \rgs
 \rgs
 
+### Section 2.4: Scope of inference {-}
+
 Fill in the appropriate scope of inference for each study design.
 \begin{center}
 \begin{tabular}{|p{2in}|p{2in}|p{2in}|}
 \hline
- & \multicolumn{2}{|c|}{\textbf{Study Type}} \\ \hline
+ & \multicolumn{2}{|c|}{\textbf{Study Design}} \\ \hline
  \textbf{Selection of Cases} & Randomized experiment & Observational study \\ \hline
  Random sample && \\ 
  (and no other sampling bias) & & \\ 

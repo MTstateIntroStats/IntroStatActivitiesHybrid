@@ -75,7 +75,7 @@ $P(A)=$
 
 \vspace{0.2in}
 
-$P(A$and$B^c) =$
+$P(A$ and $B^c) =$
 
 \vspace{0.2in}
 
@@ -280,7 +280,7 @@ Within the peanut flour group, the percent desensitized within each age group (a
 
 #### Relative risk in the news {-}
 
-People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases.
+People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@WashPost2022]. 
 
 * What was the calculated relative risk of developing shingles when comparing those who has mild COVID-19 to those who had not had COVID-19, among the 50 and older population?
 

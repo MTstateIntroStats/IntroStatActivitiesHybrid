@@ -3,7 +3,7 @@
 
 \setstretch{1}
 
-### Theory-based methods
+### Theory-based methods {-}
 
 #### Central limit theorem {-}
 
@@ -35,8 +35,14 @@ Normal distribution:
 
 * Standard normal distribution:  $N(0,1)$
 
+\begin{figure}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{07-LN07-1cat_theory_files/figure-latex/simpleNormalc-1} \end{center}
+{\centering \includegraphics[width=0.5\linewidth]{07-LN07-1cat_theory_files/figure-latex/simpleNormalc-1} 
+
+}
+
+\caption{A standard normal curve.}(\#fig:simpleNormalc)
+\end{figure}
 
 Standardized statistic: Z - score
 
@@ -48,11 +54,11 @@ Standardized statistic: Z - score
 
 Example(s):  Heights of Caucasian American adult males are roughly Normally distributed with a mean of 1.72 m and a standard deviation of 0.28 m. Find and interpret the z-score for a man who is 5’4” (1.626 m) tall. Round your answer to three decimal places.
 
-\vspace{1.2in}
+\vspace{0.6in}
 
 Heights of Caucasian American adult females are roughly Normally distributed with a mean of 1.59 meters and a standard deviation of 0.22 meters.  Which is more unusual: a 5’4” (1.626 m) tall male or a 5’9” (1.753 m) tall female?
 
-\vspace{1.2in}
+\vspace{0.6in}
 
 In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.  
 
@@ -66,9 +72,9 @@ pnorm(mean = 1.72, sd = 0.28, q = 1.626)
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-\vspace{0.5in}
+\vspace{1mm}
 
 We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.  
 
@@ -81,7 +87,7 @@ normTail(m = 1.72, s = 0.28, L = 1.909)
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 ### 68-95-99.7 Rule {-}
 
@@ -92,7 +98,9 @@ normTail(m = 1.72, s = 0.28, L = 1.909)
 * 99.7% within (mean – 3SD, mean + 3SD)
 
 
-\begin{center}\includegraphics[width=0.9\linewidth]{images/Empirical_Rule} \end{center}
+\begin{center}\includegraphics[width=0.65\linewidth]{images/Empirical_Rule} \end{center}
+
+\newpage
 
 General steps of a hypothesis test
 
@@ -172,7 +180,7 @@ $H_A:$
 
 Calculate the standardized sample proportion of Montana residents that have donated blood sometime in their life.
 
-* 1st calculate the standard error of the sample proportion
+* First calculate the standard error of the sample proportion assuming the null hypothesis is true
 
 \vspace{0.5in}
 
@@ -205,8 +213,7 @@ Interpretation of the p-value:
     
 * Null hypothesis (in context) 
 
-\vspace{0.8in}
-\newpage
+\vspace{0.6in}
 
 Conclusion: 
 
@@ -216,11 +223,13 @@ Conclusion:
     
 * Direction of the alternative hypothesis
 
-\vspace{0.6in}
+\vspace{0.5in}
 
 Decision at a significance level of 0.05 $(\alpha = 0.05)$:
 
 \vspace{0.3in}
+
+\newpage
 
 Generalization:
 
@@ -228,7 +237,7 @@ Generalization:
 
 \vspace{0.4in}
 
-### Confidence interval 
+### Confidence interval {-}
 
 * Interval of __________ values for the parameter of interest
 
@@ -240,7 +249,7 @@ Generalization:
 
 * $CI = \hat{p} \pm (z^* \times SE(\hat{p}))$
 
-* Multiplier (z^*) is the value at a certain ____________ under the standard normal distribution
+* Multiplier ($z^*$) is the value at a certain ____________ under the standard normal distribution
 
 
 \begin{center}\includegraphics[width=0.5\linewidth]{07-LN07-1cat_theory_files/figure-latex/standardNormalcur-1} \end{center}
@@ -257,6 +266,8 @@ qnorm(0.975, lower.tail=TRUE)
 Equation for the standard error of the sample proportion *NOT* assuming the null is true:
 
 \vspace{0.5in}
+
+\newpage
 
 Example:  Estimate the true proportion of Montana residents that have donated blood at least once in their life.
 
@@ -298,19 +309,21 @@ Interpret the confidence **level** for the blood donation study.
 
 \vspace{0.5in}
 
-### Errors, power, and practical importance
+\newpage
+
+### Errors, power, and practical importance {-}
 
 \setstretch{1.5}
 
-Type I Error: ___________ the null hypothesis, when the null is ____________.
+Type 1 Error: ___________ the null hypothesis, when the null is ____________.
 
-* Only can have a Type I Error when we make the ____________ to ____________ the null hypothesis.
+* Only can have a Type 1 Error when we make the ____________ to ____________ the null hypothesis.
 
-* The probability of a Type I Error is $\alpha$, the ____________ level
+* The probability of a Type 1 Error is $\alpha$, the ____________ level
 
-Type II Error: ___________ to reject the null hypothesis, when the null is __________.
+Type 2 Error: ___________ to reject the null hypothesis, when the null is __________.
 
-* Only can have a Type II Error when we make the ____________ to ____________ to reject the null hypothesis.
+* Only can have a Type 2 Error when we make the ____________ to ____________ to reject the null hypothesis.
 
 Power: probability of ___________ the null hypothesis, when the null is _____________.
 
@@ -369,8 +382,9 @@ For each of the following changes to the blood donation study, determine whether
 
     * Depends on the _____________, the __________ ___________, and the selected ______________ level.
     
-* Practically important: the ___________ seen in the data is meaningful 
-and has _______________ applications.
+* Practically important: the ___________ seen in the data is
+meaningful and has _____________ 
+applications.
 
     * Depends on the __________ and subjective opinion.
     

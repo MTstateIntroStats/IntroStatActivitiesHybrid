@@ -29,7 +29,7 @@ To review these concepts, see Chapter 21 in the textbook.
 
 ### Golf driving distance
 
-In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data was collecting on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
+In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 ```{r, echo = TRUE, collapse=FALSE}
 # Read in data set
@@ -38,12 +38,12 @@ golf <- read.csv("https://math.montana.edu/courses/s216/data/golf.csv")
 
 #### Plot review. {-}
 
-Use the provided R script file to create a scatterplot to examine the relationship between the driving distance and percent accuracy by filling in the variable names (`Driving_Distance` and `Percent_Accuracy`) for `xx` and `yy` in line 9.  Highlight and run lines 1--15. 
+Use the provided R script file to create a scatterplot to examine the relationship between the driving distance and percent accuracy by filling in the variable names (`Driving_Distance` and `Percent_Accuracy`) for `explanatory` and `response`` in line 9.  Highlight and run lines 1--17. 
  
 ```{r, echo=TRUE, eval=FALSE}
 golf %>% # Pipe data set into...
-ggplot(aes(x = xx, y = yy))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+ggplot(aes(x = explanatory, y = response))+  # Specify variables
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance",  # Label x-axis
        y = "Percent Accuracy",  # Label y-axis
        title = "Scatterplot of Driving Distance by Percent Accuracy") + 
@@ -99,7 +99,7 @@ hist(lm.golf$resid, xlab="Residuals", ylab="Frequency",
 
 #### Summarize and visualize the data {-}
 
-Using the provided R script file, enter the response variable name, `Percent_Accuracy`, into the `lm()` (linear model) function for `response` and the explanatory variable name, `Driving_Distance`, for `explanatory` in line 25 to get the linear model output.  Highlight and run lines 25--26.
+Using the provided R script file, enter the response variable name, `Percent_Accuracy`, into the `lm()` (linear model) function for `response` and the explanatory variable name, `Driving_Distance`, for `explanatory` in line 30 to get the linear model output.  Highlight and run lines 30--31.
 
 ```{r, echo=TRUE, eval =FALSE}
 lm.golf <- lm(response~explanatory, data=golf) # lm(response~explanatory)
@@ -120,7 +120,7 @@ round(summary(lm.golf)$coefficients, 5)
 To find the value of the standardized statistic to test the slope we will use, 
 
 $$
-T = \frac{\mbox{slope estimate}}{SE} = \frac{b_1}{SE(b_1)}.
+T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
 $$
  
 We will use the linear model R output above to get the estimate for slope and the standard error of the slope.
@@ -146,9 +146,9 @@ We will use the linear model R output above to get the estimate for slope and th
 
 ##### Confidence interval {-}
 Recall that a confidence interval is calculated by adding and subtracting the margin of error to the point estimate.  
-$$\mbox{point estimate}\pm t^*SE(\mbox{estimate}).$$
+$$\mbox{point estimate}\pm t^*\times SE(\mbox{estimate}).$$
 When the point estimate is a regression slope, this formula becomes 
-$$b_1 \pm t^* SE(b_1).$$
+$$b_1 \pm t^* \times SE(b_1).$$
  
 The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom.  Recall for a 95\% confidence interval, we use the 97.5\% percentile (95\% of the distribution is in the middle, leaving 2.5\% in each tail).  The sample size for this study is 354 so we will use the degrees of freedom 352 ($n-2$).
 
@@ -171,24 +171,27 @@ qt(0.975, 352) # 95% t* multiplier
 
 ### Multivariable plots {-}
 
-Another variable that may affect the percent accuracy is the sex of the golfer. We will look at how this variable may change the relationship between driving distance and percent accuracy. Highlight and run lines 32--39 to produce the multivariable plot. 
+Another variable that may affect the percent accuracy is the which league the golfer is part of. We will look at how this variable may change the relationship between driving distance and percent accuracy. Highlight and run lines 38--45 to produce the multivariable plot. 
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
 golf %>%
-  ggplot(aes(x = Driving_Distance, y = Percent_Accuracy, color=Sex))+  # Specify variables
-  geom_point(aes(shape = Sex), size = 3) +  # Add scatterplot of points
+  ggplot(aes(x = Driving_Distance, y = Percent_Accuracy, color=League))+  # Specify variables
+  geom_point(aes(shape = League), size = 2, alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (m)",  # Label x-axis
        y = "Percent Accuracy",  # Label y-axis
-       color = "Sex", shape = "Sex",
-       # Be sure to title your plots
-       title = "Scatterplot of Golf Driving Distance and Percent Accuracy by Sex") + 
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+       color = "League", shape = "League",
+       title = "Scatterplot of Golf Driving Distance and Percent Accuracy by League") + # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE) + # Add regression line
+    scale_color_viridis_d(end=0.8)
 ```
 
-15. Does the association between driving distance and percent accuracy change dependent on sex of the golfer?  Explain your answer.
+15. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.
 \vspace{1in}
 
-16.  Explain the association between sex and each of the other two variables.
+16.  Explain the association between league and each of the other two variables.
+
+\newpage
+
 \newpage
 
 ### Take-home messages

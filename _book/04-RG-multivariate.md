@@ -2,17 +2,19 @@
 
 ## Week 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts
 
-### Section 3.1 (Fitting a line, residuals, and correlation) {-}
+### Textbook Chapter 6: Correlation and regression {-}
 
-\setstretch{1}
+### Section 6.1 (Fitting a line, residuals, and correlation) {-}
+
+<!-- \setstretch{1} -->
 
 <!-- **Videos**   -->
 
-<!-- * Chapter3 -->
+<!-- * 6.1 -->
 
 \setstretch{1.25}
 
-#### Reminders from Section 2.3 {-}
+#### Reminders from Section 5.1 {-}
 
 Scatterplot: displays two quantitative variables; one dot = two measurements ($x$, $y$) on one observational unit.
 
@@ -27,6 +29,9 @@ Four characteristics of a scatterplot:
 \setstretch{1.25}
 
 #### Vocabulary {-}
+
+Predictor:
+\rgs
 
 Residual: 
 \rgs
@@ -107,7 +112,7 @@ True or false: A positive residual indicates the data point is above the regress
 1.	What are the observational units?  
 \rgs
 
-2.	Look at the scatterplot in Figure 3.5.
+2.	Look at the scatterplot in Figure 6.5.
 
 \rgi a)	What is the explanatory variable?  The response variable?  What type is each?
 \rgs
@@ -133,15 +138,15 @@ True or false: A positive residual indicates the data point is above the regress
 5.	One of the possums in the data set has a total length of 76.0 cm and a head length of 85.1 mm.  Calculate the residual for this possum.  Does this possum lie above or below the regression line?
 \rgs
 
-###  Section 3.2 (Least squares regression) {-}
+###  Section 6.2: Least squares regression {-}
 
 \setstretch{1}
 
-You may skip the special topic Sections 3.2.3.1 and 3.2.6.
+You may skip the special topic sections (6.2.7)
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter3
+<!-- * 6.2 -->
 
 \setstretch{1.25}
 
@@ -153,7 +158,7 @@ Least squares criterion:
 Least squares line: 
 \rgs
 
-`lm()` `R` function: 
+`lm()` R function: 
 \rgi `name_of_model <- lm(response ~ explanatory, data = data_set_name)`
 
 \rgs
@@ -202,7 +207,7 @@ True or false: The coefficient of determination is just the square of the correl
 1.	What are the observational units?  
 \rgs
 
-2.	Look at the scatterplot in Figure 3.13.
+2.	Look at the scatterplot in Figure 6.13.
 
 \rgi a)	What is the explanatory variable?  The response variable?  
 \rgs
@@ -230,7 +235,7 @@ True or false: The coefficient of determination is just the square of the correl
 \rgs
 \rgs
 
-6.	Is your interpretation in question 5 an example of extrapolation?
+6.	Is your interpretation in question 5 an example of extrapolation?  Justify your answer.
 \rgs
 
 7.	Give and interpret, in context, the value of the coefficient of determination.
@@ -238,13 +243,13 @@ True or false: The coefficient of determination is just the square of the correl
 \rgs
 
 
-###  Section 3.3 (Outliers in linear regression) {-}
+###  Section 6.3: Outliers in linear regression {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter3
+<!-- * 6.3 -->
 
 \setstretch{1.25}
 
@@ -256,7 +261,7 @@ Outlier:
 Leverage: 
 \rgs
 
-Influential: 
+Influential point: 
 \rgs
 
 #### Notes {-}
@@ -267,17 +272,11 @@ True or false: All high leverage outliers are influential.
 
 True or false: An outlier is considered high leverage if it is extreme in its $x$-value.
 
-### Section 3.4 (R: Correlation and regression) and Section 3.5 (Chapter 3 review) {-}
+### Section 6.4: Chapter 6 review {-}
 
 \setstretch{1}
 
-**Videos**  
-
-* Chapter3
-
-\setstretch{1.25}
-
-Section 3.4 presents five tutorials on analyzing two quantitative variables in `R`.  We recommend you complete all five. 
+Look at the table of vocabulary terms in the final section of each chapter.  If there are any you do not know, be sure to review the appropriate section of your text.
 
 #### Notes {-}
 
@@ -286,12 +285,7 @@ Statistics summarize:
 
 Parameters summarize: 
 \rgs
- 
-What are the two ways to calculate the coefficient of determination?
-\rgs
 
-What is the formula for calculating a residual?
-\rgs
 
 Determine whether each of the following statements about the correlation coefficient are true or false:
 
@@ -315,21 +309,20 @@ Fill in the blanks to correctly interpret:
 
     If _______________, we predict the __________________________ to equal __________.
 
-Look at the table of vocabulary terms.  If there are any you do not know, be sure to review the appropriate section of your text. 
+Decision tree for determining an appropriate plot given a number of variables and their types from Chapter  review:
 
-### Section 4.1 (Gapminder world) {-}
 
-\setstretch{1}
+\begin{center}\includegraphics[width=0.7\linewidth]{04-RG-multivariate_files/figure-latex/decision-tree-plots-1} \end{center}
 
-**Videos**  
+### Section 7.1: Gapminder world {-}
 
-* Chapter4
+<!-- \setstretch{1} -->
+
+<!-- **Videos**   -->
+
+<!-- * Chapter7 -->
 
 \setstretch{1.25}
-
-#### Reminder from Section 3.1 {-} 
-
-Use color and a legend to add a third variable to a scatterplot. E.g., Color the dots to represent different levels of a categorical variable or use shading of the dots to represent different values of a quantitative variable.
 
 #### Vocabulary {-} 
 
@@ -341,6 +334,9 @@ Aesthetic:
 
 #### Notes {-}
 
+
+Use color and a legend to add a third variable to a scatterplot. E.g., Color the dots to represent different levels of a categorical variable or use shading of the dots to represent different values of a quantitative variable.
+
 If the response and one predictor are quantitative and the other predictor is categorical, we fit a regression line for each level of the categorical predictor.  
 
 * Parallel slopes would indicate that that the two predictors ___________________ in explaining the response.
@@ -349,17 +345,17 @@ If the response and one predictor are quantitative and the other predictor is ca
 
 True or false: Scatterplots can only display two variables at a time.
 
-### Section 4.2 (Simpson’s Paradox, revisited) {-}
+### Section 7.2: Simpson’s Paradox, revisited {-}
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-**Videos**  
+<!-- **Videos**   -->
 
-* Chapter4
+<!-- * Chapter7 -->
 
 \setstretch{1.25}
 
-#### Reminder from Section 2.1 {-}
+#### Reminder from Section 4.4 {-}
 
 Simpson’s Paradox: when the relationship between the explanatory and response variable is reversed when looking at the relationship within different levels of a confounding variable.
 
@@ -372,7 +368,7 @@ True or false: Simpson’s Paradox can only occur when the explanatory, response
 1.	What are the observational units?  
 \rgs
 
-2.	Look at the scatterplot in Figure 4.5.
+2.	Look at the scatterplot in Figure 7.5.
 
 \rgi a)	What is the explanatory variable?  The response variable?
 \rgs
@@ -392,29 +388,10 @@ True or false: Simpson’s Paradox can only occur when the explanatory, response
 3.	What would need to be done to the study design in order to eliminate the confounding variable: percent of eligible students taking the SAT?
 \rgs
 
-4.	What features of the scatterplots in Figure 4.6 demonstrate that the percent of eligible students taking the SAT is a confounding variable?
+4.	What features of the scatterplots in Figure 7.6 demonstrate that the percent of eligible students taking the SAT is a confounding variable?
 \rgs
 
-5.	How does Figure 4.7 demonstrate Simpson’s Paradox?
+5.	How does Figure 7.7 demonstrate Simpson’s Paradox?
 \rgs
-
-### Section 4.4 (Chapter 4 review) {-}
-
-\setstretch{1}
-
-Section 4.3 discusses multiple regression and presents five tutorials on analyzing multiple variables in `R`.  This section is a special topic, meaning you are not required to read or complete these tutorials.
-
-**Videos**  
-
-* Chapter4
-
-\setstretch{1.25}
-
-#### Notes {-} 
-
-To determine if the relationship between two quantitative variables differs across levels of a categorical variable, you should compare 
-\rgs
-
-Simpson’s Paradox: 
 
 \newpage

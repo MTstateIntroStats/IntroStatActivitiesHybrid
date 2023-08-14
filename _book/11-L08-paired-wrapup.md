@@ -47,7 +47,7 @@ Profanity (language considered obscene or taboo) and society's attitude about it
 
 \vspace{0.5in}
 
-Upload and open the R script file for Week 11 lab. Upload and import the csv file, `pain_tolerance`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 6. Highlight and run lines 1--7 to load the data and create a paired plot of the data. 
+Upload and open the R script file for Week 11 lab. Upload and import the csv file, `pain_tolerance`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
 
 ```r
 swearing <- datasetname
@@ -57,7 +57,7 @@ paired_observed_plot(swearing)
 7. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
-Enter the outcome for group 1 (`Swear`) for `measurement_1` and the outcome for group 2 (`Neutral`) for `measurement_2` in line 10.  Highlight and run lines 9--12 to get the summary statistics for the data.
+Enter the outcome for group 1 (`Swear`) for `measurement_1` and the outcome for group 2 (`Neutral`) for `measurement_2` in line 16.  Highlight and run lines 14--18 to get the summary statistics for the data.
 
 
 ```r
@@ -102,7 +102,7 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
     
 \vspace{.2in}
 
-12.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 11 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 15--21.  
+12.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 11 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
 
 
 ```r
@@ -132,7 +132,7 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
 
-15. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 24--27. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
+15. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
 
 ```r
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
@@ -192,5 +192,9 @@ paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differen
     * What type of inference is appropriate (causal or non-causal)?
 
 \vspace{2.6in}
+
+\newpage
+
+Paragraph:
 
 \newpage

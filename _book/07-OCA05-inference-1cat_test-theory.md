@@ -1,4 +1,4 @@
-## Out of Class Activity Week 7:  Handedness of Male Boxers 
+## Out-of-Class Activity Week 7:  Handedness of Male Boxers 
 
 \setstretch{1}
 
@@ -21,7 +21,7 @@ In this activity, we will introduce theory-based hypothesis tests for a single c
 
 * Parameter of interest
 
-* Standardized Statistic
+* Standardized statistic
 
 * Normal distribution
 
@@ -51,7 +51,7 @@ boxers %>% count(Stance)  # Count number in each Stance category
 
 ### Review of summary statistics {-}
 
-1.  Write out the parameter of interest for this study.  
+1.  Write out the parameter of interest in words, in context of the study.  
 
 \vspace{0.8in}
 
@@ -79,7 +79,7 @@ Conditions for the sampling distribution of $\hat{p}$ to follow an approximate n
 
 \vspace{0.5in}
 
-6. Is the success-failure condition met to model the data with the normal distribution?  Show your work to support your answer.
+6. Is the success-failure condition met to model the data with the normal distribution?  Explain your answer in context of the problem.
 
 \vspace{1in}
 \newpage
@@ -104,20 +104,22 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
 
 Each sample proportion of male boxers that are left-handed is 0.013 from the true proportion of male boxers that are left-handed, on average.
 
-7.  Interpret the null standard error of the sample proportion in context of the problem.
-
-\vspace{0.6in}
-
-8. Label the standard normal distribution (figure 7.1) with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
+7. Label the standard normal distribution shown below with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
 
 \vspace{2mm}
 
+\begin{figure}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{07-OCA05-inference-1cat_test-theory_files/figure-latex/Normalcur-1} \end{center}
+{\centering \includegraphics[width=0.5\linewidth]{07-OCA05-inference-1cat_test-theory_files/figure-latex/Normalcur-1} 
+
+}
+
+\caption{Standard Normal Curve}(\#fig:Normalcur)
+\end{figure}
 
 \newpage
 
-9.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
+8.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
 
 \vspace{0.6in}
 
@@ -125,7 +127,7 @@ The standardized statistic is used as a ruler to measure how far the sample stat
 
 The standardized statistic measures the *number of standard errors the sample statistic is from the null value*.
 
-10.  Interpret the standardized sample proportion from question 9 in context of the problem.
+9.  Interpret the standardized sample proportion from question 8 in context of the problem.
 
 \vspace{.8in}
 
@@ -142,14 +144,16 @@ Notes:
 pnorm(4.769, # Enter value of standardized statistic
       m=0, s=1, # Using the standard normal mean = 0, sd = 1
       lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
+#> [1] 9.257133e-07
 ```
   
   
-11.  Report the p-value obtained from the `R` output.
+10.  Report the p-value obtained from the `R` output.
 \vspace{0.3in}
 
-12.  Write a conclusion based on the value of the p-value.
-\newpage
+11.  Write a conclusion based on the value of the p-value.
+
+\vspace{0.6in}
 
 <!-- ### Impacts on the P-value {-} -->
 
@@ -218,6 +222,8 @@ pnorm(4.769, # Enter value of standardized statistic
 <!-- c) Using a sample statistic closer to the null value. -->
 
 <!-- \vspace{0.4in} -->
+
+\newpage
 
 ### Take-home messages
 

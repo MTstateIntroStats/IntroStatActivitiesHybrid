@@ -1,4 +1,4 @@
-## Module 9 Lab:  Diabetes
+## Week 9 Lab:  Diabetes
 
 \setstretch{1}
 

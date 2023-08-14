@@ -1,10 +1,15 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Lecture Notes Week 1: Intro to data
 
 \setstretch{1}
 
-Read through Sections 1.2.1 - 1.2.5 in the course textbook prior to coming to class on Friday using the reading guides at the beginning of week 1 material.
+Read through Sections 1.2.1 -- 1.2.5 in the course textbook prior to coming to class on Friday using the reading guides at the beginning of week 1 material.
 
-### Data basics: Sections 1.2.1 - 1.2.2 {-}
+### Data basics: Sections 1.2.1 -- 1.2.2 {-}
 
 Data:  _______________________________ used to answer research questions
 
@@ -15,7 +20,7 @@ __________________.
 
 #### Types of variables {-}
 
-* Categorical Variable: 
+* Categorical variable: 
 
 \vspace{0.5in}
 
@@ -27,7 +32,7 @@ __________________.
 
 \rgi \rgi Examples: hair color, eye color, zipcode
     
-* Quantitative Variable: 
+* Quantitative variable: 
 
 \vspace{0.5in}
 
@@ -99,7 +104,7 @@ Summary statistic: a number which _______________________ an entire data set
 
 * Summary statistic and type of plot used depends on the type of variable(s)!  
 
-### Roles of variables: Sections 1.2.3 - 1.2.5 {-}
+### Roles of variables: Sections 1.2.3 -- 1.2.5 {-}
 
 Explanatory variable: predictor variable
 

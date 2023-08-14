@@ -1,4 +1,4 @@
-## Out of Class Activity Week 12:  Does behavior impact performance?
+## Out-of-Class Activity Week 12:  Does behavior impact performance?
 
 \setstretch{1}
 
@@ -147,7 +147,7 @@ We will use the `two_mean_test()` function in R (in the `catstats` package) to s
 
 \vspace{.2in}
 
-The code below will simulate a null distribution and compute the p-value. Check that your answers from question 15 match what is entered below
+The code below will simulate a null distribution and compute the p-value. Check that your answers from question 15 match what is entered below.
 
 ```{r, echo = TRUE, eval = TRUE}
 set.seed(216)

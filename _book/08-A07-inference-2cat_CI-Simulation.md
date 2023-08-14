@@ -62,7 +62,7 @@ The response variable name is `Behavior` and the explanatory variable name is `C
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 16 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+Using the R script file for this activity, enter your answers for question 2 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 1--18.
 
 
 ```r
@@ -87,7 +87,6 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 5.  What is the value of the p-value? *Remember*: This is the value given at the bottom of the null distribution.
 
 \vspace{0.2in}
-\newpage
 
 6.  Interpret the p-value in context of the study.
 
@@ -99,17 +98,17 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 
 8.  Write a conclusion to the test.
 
-\vspace{1in}
+\vspace{0.8in}
 
 9.  Do you expect the null value to be in a 99\% confidence interval?  Explain your answer.
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 #### Use statistical analysis methods to draw inferences from the data {-}
 
 In this part of the activity, we will estimate the difference in true proportion of people who will help others for those in the hurry condition and those not in the hurry condition by finding a confidence interval.
 
-10.  Write the parameter of interest in context of the study. Use proper notation. 
+10.  Write the parameter of interest in words, in context of the study. What notation should be used to represent this parameter? 
 
 \vspace{1in}
 
@@ -133,7 +132,7 @@ The response variable name is `Behavior` and the explanatory variable name is `C
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 16--21.
+Using the R script file for this activity, enter your answers for question 11 in place of the `xx`'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 23--28.
 
 
 ```r
@@ -175,12 +174,6 @@ two_proportion_bootstrap_CI(formula = Behavior ~ Condition,
 <!-- #### Types of errors {-} -->
 
 <!-- Recall from a previous activity, hypothesis tests are not flawless. In a hypothesis test, there are two competing hypotheses: the null and alternative. We make a decision about which might be true, but we may choose incorrectly. -->
-
-<!-- <!-- |       |            | Test Conclusion |                     | --> -->
-<!-- <!-- |       |            | Reject $H_0$    | Fail to reject $H_0$| --> -->
-<!-- <!-- |:-----:|:----------:|-----------------|---------------------| --> -->
-<!-- <!-- | Truth | $H_0$ true |  good decision  |  Type 1 Error       | --> -->
-<!-- <!-- |       | $H_A$ true |  Type 2 Error   |  good decision      | --> -->
 
 <!-- \begin{table} -->
 <!-- \caption{Four different possible scenarios for hypothesis test decisions.} -->

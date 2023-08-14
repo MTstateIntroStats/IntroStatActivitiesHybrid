@@ -17,7 +17,7 @@
 
 Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild mushrooms carries the risk of accidental poisoning. Even a single bite of the wrong mushroom can be enough to cause fatal poisoning. An amateur mushroom hunter is interested in finding an easy rule to differentiate poisonous and edible mushrooms. They think that the mushroom’s gills (the part which holds and releases spores) might be related to a mushroom’s edibility. They used a data set of 8124 mushrooms and their descriptions. For each mushroom, the data set includes whether it is edible (e) or poisonous (p) and the spacing of the gills (Broad (b) or Narrow (n)).  Is there evidence gill size is associated with whether a mushroom is poisonous?  PLEASE NOTE: According to The Audubon Society Field Guide to North American Mushrooms, there is no simple rule for determining the edibility of a mushroom; no rule like "leaflets three, let it be'' for Poisonous Oak and Ivy. 
 
-Upload and open the R script file for Week 8 lab. Upload and import the csv file, `mushrooms`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 6. Highlight and run lines 1--7 to get the counts for each combination of categories.
+Upload and open the R script file for Week 8 lab. Upload and import the csv file, `mushrooms`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. Highlight and run lines 1--9 to get the counts for each combination of categories.
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, collapse=FALSE, eval=FALSE}
 poisonous <- datasetname # Read data set in
@@ -51,7 +51,7 @@ Edible & & & \\
 \end{tabular}
 \end{center}
 
-4. Write the parameter of interest for this study.
+4. Write the parameter of interest in words, in context of the study.
 
 \vspace{1in}
 
@@ -71,8 +71,6 @@ Edible & & & \\
 <!--   scale_fill_grey()  # Make figure black and white -->
 <!-- ``` -->
 <!-- 7.  Based on the plot does there appear to be an association between the variables?  Explain your answer. -->
-
-\vspace{1in}
 
 6.  Write the null hypothesis for this study in notation.
 

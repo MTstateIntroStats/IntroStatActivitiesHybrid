@@ -2,8 +2,11 @@
 
 ## Week 9 Reading Guide: Theory-based Inference for a Difference in Proportions
 
-### Section 15.3 (Theory-based inferential methods for $\pi_1 - \pi_2$)
-\setstretch{1}
+### Textbook Chapter 15: Inference for comparing two proportions {-}
+
+### Section 15.3: Theory-based inferential methods for $\pi_1 - \pi_2$ {-}
+
+<!-- \setstretch{1} -->
 
 <!-- **Videos**   -->
 

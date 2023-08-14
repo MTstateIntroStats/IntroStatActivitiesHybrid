@@ -311,7 +311,7 @@
 
 Two groups are paired if an observational unit in one group is connected to an observational unit in another group 
 	
-\rgi Data is paired if the samples are ___________________
+\rgi Data are paired if the samples are ___________________
 	
 Examples: 
 
@@ -439,7 +439,7 @@ hw_diff %>%
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 
-* ie. 95% CI = (2.5th percentile, 97.5th percentile)
+* i.e., 95\% CI = (2.5th percentile, 97.5th percentile)
 
 Conditions for inference for paired data:
 
@@ -496,7 +496,7 @@ Conditions for inference using theory-based methods:
 
 \vspace{0.2in}
 
-### T - distribution {-}
+### $t$-distribution {-}
 
 In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
 
@@ -512,9 +512,9 @@ degrees of freedom to approximate the sampling distribution.
 
 \setstretch{1}
 
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+The $t^*$ multiplier is the value at the given percentile of the $t$-distribution with $n - 1$ degrees of freedom.
 
-For the height data, we will use a t-distribution with _________ df.
+For the height data, we will use a $t$-distribution with _________ df.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/tstar-1} \end{center}
@@ -585,7 +585,7 @@ $H_A:$
 
     * Repeat 1000 times (simulations) to create the null distribution
 
-    * Find the proportion of simulations at least as extreme as $\bar{x}-d$
+    * Find the proportion of simulations at least as extreme as $\bar{x}_d$
     
 Reminder of summary statistics:
 
@@ -645,7 +645,7 @@ Conclusion:
 
 * Calculate the standardized statistic 
 
-* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
+* Find the area under the $t$-distribution with $n - 1$ df at least as extreme as the standardized statistic
 
 Equation for the standard error of the mean difference:
 
@@ -666,7 +666,13 @@ hw_diff %>%
 
 Calculate the standardized sample mean difference in height:
 
-\vspace{1in}
+* First calculate the standard error for the mean difference
+
+\vspace{0.5in}
+
+* Then calculate the T score
+
+\vspace{0.5in}
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/pvalueheight-1} \end{center}

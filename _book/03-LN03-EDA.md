@@ -169,7 +169,7 @@ moving %>%
 
 \setstretch{1.5}
 
-If we want to know what proportion of each age group is from each state, we would calculate the proportion of buyers from each ________________ from each ___________________. In other words, divide the number of buyers from each state that are over 30 by the total for row 1, the total number of buyers over 30.
+If we want to know what proportion of each age group is from each state, we would calculate the proportion of buyers from each ________________ within each ___________________. In other words, divide the number of buyers from each state that are over 30 by the total for row 1, the total number of buyers over 30.
 
 \setstretch{1}
 
@@ -183,7 +183,7 @@ If we want to know what proportion of each age group is from each state, we woul
 
 \setstretch{1.5}
 
-Additionally, we could find the proportion of buyers in each state for each age group.  Here we would calculate the proportion of buyers in each ________________________ for each _____________________.  Divide the number of buyers in each age group from CA by the total for column 1, the total number of buyers from CA. 
+Additionally, we could find the proportion of buyers in each state for each age group.  Here we would calculate the proportion of buyers in each ________________________ within each _____________________.  Divide the number of buyers in each age group from CA by the total for column 1, the total number of buyers from CA. 
 
 \setstretch{1}
 
@@ -231,7 +231,7 @@ moving %>%
 
 
 
-\begin{center}\includegraphics[width=0.85\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.75\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 * What can we see from this plot?
 
@@ -251,7 +251,7 @@ moving %>%
 
 
 
-\begin{center}\includegraphics[width=0.85\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.75\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \setstretch{1.5}
 
@@ -274,7 +274,7 @@ moving %>%
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.75\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 In this second plot, we are plotting the column proportions calculated conditional on the state of origin for the buyer.
 
@@ -291,7 +291,7 @@ moving %>%
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=0.75\linewidth]{03-LN03-EDA_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 Mosaic plot: 
 
@@ -299,8 +299,10 @@ Mosaic plot:
 moving$Age_Group <- factor(moving$Age_Group, levels = c("Under30", "Over30"))
 moving %>% # Data set piped into...
   ggplot() +   # This specifies the variables
-  geom_mosaic(aes(x=product(From), fill = Age_Group)) +  # Tell it to make a mosaic plot
-  labs(title = "Mosaic plot of State of Origin \n Segmented by Age Group",  # Make sure to title your plot 
+  geom_mosaic(aes(x=product(From), fill = Age_Group)) +  
+    # Tell it to make a mosaic plot
+  labs(title = "Mosaic plot of State of Origin \n Segmented by Age Group",  
+       # Make sure to title your plot 
        x = "State of Origin",   # Label the x axis
        y = "") +  # Remove y axis label
     scale_fill_grey(guide = guide_legend(reverse = TRUE)) # Make figure color
@@ -314,13 +316,11 @@ moving %>% # Data set piped into...
 
 \vspace{0.2in}
 
-\newpage
-
 #### Simpson's paradox {-}
 
 * When an apparent _____________ between explanatory and response variables reverses when accounting for ______________ variable.
 
-Example: The "Berkeley Dataset" contains all 12,763 applicants to UC-Berkeley's graduate programs in Fall 1973. This dataset was published by UC-Berkeley researchers in an analysis to understand the possible gender bias in admissions and has now become a classic example of Simpson's Paradox.  
+Example: The "Berkeley Dataset" contains all 12,763 applicants to UC-Berkeley's graduate programs in Fall 1973. This dataset was published by UC Berkeley researchers in an analysis to understand the possible gender bias in admissions and has now become a classic example of Simpson's Paradox.  
 
 
 ```r
@@ -457,6 +457,20 @@ favstats(moving$Age)
 #>   20 28     36 49.25  77 39.77 14.35471 100       0
 ```
 
+
+Interpret the value of $Q_3$ for the age of buyers.
+
+\vspace{0.8in}
+
+Interpret the value of s for the age of buyers.
+
+\vspace{0.8in}
+
+Calculate the IQR for the age of buyers.
+
+\vspace{0.4in}
+
+
 #### Four characteristics of plots for quantitative variables {-}
 
 * Shape:
@@ -528,7 +542,7 @@ Notice that the _____________ has been pulled in the direction of the __________
 
 * The ___________ is a ______________ measure of spread.
 
-* Robust means not affected by.
+* Robust means not _________________ by.
 
 When the distribution is symmetric use the ____________ as the measure of center and the ___________ as the measure of spread.
 

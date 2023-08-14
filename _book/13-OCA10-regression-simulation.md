@@ -1,4 +1,4 @@
-## Out of Class Activity Week 13:  Prediction of Crocodylian Body Size
+## Out-of-Class Activity Week 13:  Prediction of Crocodilian Body Size
 
 \setstretch{1}
 
@@ -27,9 +27,9 @@ In today's activity, we will use simulation-based methods for hypothesis tests a
 To review these concepts, see Chapter 21 in the textbook.
 
 
-### Crocodylian Body Size
+### Crocodilian Body Size
 
-Much research surrounds using measurements of animals to estimate body-size of extinct animals.  Many challenges exist in making accurate estimates for extinct crocodylians.  The term crocodylians refers to all members of the family Crocodylidae (“true” crocodiles), family Alligatoridae (alligators and caimans) and family Gavialidae (gharial, Tomistoma). The researchers in this study [@obrien2019] state, "Among extinct crocodylians and their precursors (e.g., suchians), several methods have been developed to predict body size from suites of hard-tissue proxies. Nevertheless, many have limited applications due to the disparity of some major suchian groups and biases in the fossil record. Here, we test the utility of head width (HW) as a broadly applicable body-size estimator in living and fossil suchians."  Is there evidence that head width is a good predictor of body size for crocodylians? 
+Much research surrounds using measurements of animals to estimate body-size of extinct animals.  Many challenges exist in making accurate estimates for extinct crocodilians.  The term crocodilians refers to all members of the family Crocodylidae (“true” crocodiles), family Alligatoridae (alligators and caimans) and family Gavialidae (gharial, Tomistoma). The researchers in this study [@obrien2019] state, "Among extinct crocodilians and their precursors (e.g., suchians), several methods have been developed to predict body size from suites of hard-tissue proxies. Nevertheless, many have limited applications due to the disparity of some major suchian groups and biases in the fossil record. Here, we test the utility of head width (HW) as a broadly applicable body-size estimator in living and fossil suchians."  Data were collected on 76 male and female individuals of different species. Is there evidence that head width is a good predictor of body size for crocodilians? 
 
 
 
@@ -53,11 +53,11 @@ To create a scatterplot to examine the relationship between head width and total
 ```r
 croc %>% # Pipe data set into...
 ggplot(aes(x = HW_cm, y = TL_cm))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "head width (cm)",  # Label x-axis
        y = "total length (cm)",  # Label y-axis
-       title = "Scatterplot of Crocodylian Head Width vs. Total Length") + 
-               # Be sure to title your plots
+       title = "Scatterplot of Crocodilian Head Width vs. Total Length") + 
+    # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
@@ -89,7 +89,7 @@ The linear model output for the data is given below.
 
 
 ```r
-lm.croc <- lm(TL_cm~HW_cm, data=croc) # lm(response~explanatory)
+lm.croc <- lm(TL_cm~HW_cm, data=croc) #lm(response~explanatory)
 round(summary(lm.croc)$coefficients, 5)
 #>             Estimate Std. Error  t value Pr(>|t|)
 #> (Intercept) 17.61250   11.36269  1.55003  0.12687
@@ -105,6 +105,7 @@ cor(croc$HW_cm, croc$TL_cm)
 
 
 5.  Using the output from the evaluated R code above, write the equation of the regression line in the context of the problem using appropriate statistical notation.
+
 \vspace{1in}
 
 6.  Interpret the estimated slope in context of the problem.
@@ -121,7 +122,7 @@ In this activity, we will focus on using simulation-based methods for inference 
 
 #### Simulation-based hypothesis test {-}
 
-Let's start by thinking about how one simulation would be created on the null distribution using cards.  First, we would write the values for the response variable, total length, on each card.  Next, we would shuffle these $y$ values while keeping the $x$ values (explanatory variable) in the same order.  Then, find the line of regression for the shuffled $(x, y)$ pairs and calculate either the slope or correlation of the shuffled sample.  
+Let's start by thinking about how one simulation would be created on the null distribution using cards.  First, we would write the values for the response variable, total length, on each card.  Next, we would shuffle these $y$ values while keeping the $x$ values (explanatory variable) in the same order.  Then, find the line of regression for the shuffled $(x,y)$ pairs and calculate either the slope or correlation of the shuffled sample.  
 
 We will use the `regression_test()` function in R (in the `catstats` package) to simulate the null distribution of shuffled slopes (or shuffled correlations) and compute a p-value.  We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as `croc`), the summary measure for the test (either slope or correlation), number of repetitions, the sample statistic (value of slope or correlation), and the direction of the alternative hypothesis.
 
@@ -129,7 +130,7 @@ The response variable name is `TL_cm` and the explanatory variable name is `HW_c
 
 8. What inputs should be entered for each of the following to create the simulation to test regression slope?
 
-\vspace{.5 mm}
+\vspace{.5mm}
 
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
@@ -164,9 +165,11 @@ regression_test(TL_cm~HW_cm, # response ~ explanatory
 \begin{center}\includegraphics[width=0.7\linewidth]{13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 9.  Report the p-value from the R output. 
+
 \vspace{0.5in}
 
-10.  Suppose we wanted to complete the simulation test using correlation as the summary measure, instead of slope.  Which two inputs in #8 would need to be changed to test for correlation?  What inputs should you use instead?
+10.  Suppose we wanted to complete the simulation test using correlation as the summary measure, instead of slope.  Which two inputs in question 8 would need to be changed to test for correlation?  What inputs should you use instead?
+
 \vspace{0.75in}
 
 Check that your answers to question 10 reflect what is shown below in the R code to produce the null distribution for correlation.
@@ -187,6 +190,7 @@ regression_test(TL_cm~HW_cm, # response ~ explanatory
 \begin{center}\includegraphics[width=0.7\linewidth]{13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 11.  The p-values from the test of slope and the test of correlation should be similar.  Explain why the two p-values should match. *Hint: think about the relationship between slope and correlation!*
+
 \vspace{1in}
 
 #### Simulation-based confidence interval {-}
@@ -208,6 +212,7 @@ regression_bootstrap_CI(TL_cm~HW_cm, # response ~ explanatory
 \begin{center}\includegraphics[width=0.7\linewidth]{13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 12.  Report the bootstrap 95\% confidence interval in interval notation.  
+
 \vspace{0.5in}
 
 13.  Interpret the interval in question 12 in context of the problem.  *Hint: use the interpretation of slope in your confidence interval interpretation.*
@@ -223,6 +228,7 @@ regression_bootstrap_CI(TL_cm~HW_cm, # response ~ explanatory
 15. Does the conclusion based on the p-value agree with the results of the 95\% confidence interval?  What does each tell you about the null hypothesis?
 
 \vspace{.6in}
+
 \newpage
 
 ### Take-home messages

@@ -29,7 +29,7 @@ Equation for the standard error of the difference in sample proportions assuming
 
 \setstretch{1}
 
-Equation for the standardized differenece in sample proportions:
+Equation for the standardized difference in sample proportions:
 
 \vspace{0.5in}
 
@@ -41,9 +41,11 @@ Equation for the standardized differenece in sample proportions:
 
 Example: In the week 3 Lab, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES). A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
 
+\newpage 
+
 Are the conditions met to analyze the university data using theory-based methods?
 
-\vspace{1in}
+\vspace{0.8in}
 
 ```{r, echo=TRUE}
 IPED <-read.csv("https://math.montana.edu/courses/s216/data/IPEDS_2018.csv")
@@ -102,12 +104,12 @@ Report the summary statistic:
 
 Calculate the standardized difference in sample proportion of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
-* 1st calculate the standard error of the difference in proportion
+* First calculate the standard error of the difference in proportion assuming the null hypothesis is true
 
 \vspace{0.5in}
 
 
-* Then calculate the Z score.
+* Then calculate the Z score
 
 \vspace{0.5in}
 
@@ -176,13 +178,13 @@ Example:  Estimate the difference in true proportions of higher education instit
 
 Find a 90\% confidence interval:
 
-* 1st find the $t^*$ multiplier 
+* 1st find the $z^*$ multiplier 
 
 ```{r, echo=TRUE}
 qnorm(0.95, lower.tail=TRUE)
 ```
 
-* Next, calculate the standard error for the difference in proportions
+* Next, calculate the standard error for the difference in proportions **NOT** assuming the null hypothesis is true
 
 \vspace{0.8in}
 
@@ -193,6 +195,8 @@ qnorm(0.95, lower.tail=TRUE)
 * Calculate the endpoints of the 90\% confidence interval
 
 \vspace{0.6in}
+
+\newpage
 
 Confidence interval interpretation:
 

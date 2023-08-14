@@ -1,4 +1,4 @@
-## Module 4 Lab:  Penguins
+## Week 4 Lab:  Penguins
 
 \setstretch{1}
 
@@ -31,7 +31,7 @@ penguins <- datasetname %>% #Creates the object penguins
     na.omit() #Removes data points without values
 penguins %>%
   ggplot(aes(x = bill_depth_mm, y = body_mass_g))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "bill depth (mm)",  # Label x-axis
        y = "body mass (g)",  # Label y-axis
        title = "Title") + # Be sure to title your plots
@@ -109,18 +109,19 @@ summary(penguinsLM)$coefficients # Display coefficient summary
 
 \vspace{0.5in}
 
-Does species change the relationship between bill depth and body mass? Highlight and run lines 27--34 to get the multivariable plot.
+Does species change the relationship between bill depth and body mass? Highlight and run lines 34 - 43 to get the multivariable plot.
 
 
 ```r
 penguins %>%
   ggplot(aes(x = bill_depth_mm, y = body_mass_g, color=species))+  # Specify variables
-  geom_point(aes(shape = species), size = 3) +  # Add scatterplot of points
+  geom_point(aes(shape = species), size = 2, alpha=0.5) +  # Add scatterplot of points
   labs(x = "bill depth (mm)",  # Label x-axis
        y = "body mass (g)",  # Label y-axis
        color = "species",
        shape = "species",
-       title = "Scatterplot of Bill Depth and Body Mass by Penguin Species") + # Enter the title for the plot between the quotations
+       title = "Scatterplot of Bill Depth and Body Mass by Penguin Species") + 
+    # Enter the title for the plot between the quotations
   geom_smooth(method = "lm", se = FALSE) +  # Add regression line
   scale_color_viridis_d(end=0.8)
 ```

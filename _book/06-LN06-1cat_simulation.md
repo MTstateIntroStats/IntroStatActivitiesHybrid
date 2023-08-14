@@ -4,7 +4,7 @@
 \setstretch{1}
 
 
-### Hypothesis Testing
+### Hypothesis Testing {-}
 
 Purpose of a hypothesis test:
 
@@ -189,7 +189,7 @@ Example: A 2007 study published in the Behavioral Ecology and Sociobiology journ
 
 Parameter of interest:
 
-\vspace{0.6in}
+\vspace{0.5in}
 
 Write the null and alternative hypotheses for the blue-eyed study:
 
@@ -219,7 +219,7 @@ Statistic:
 
 Is the independence condition met to analyze these data using a simulation-based approach? 
 
-\vspace{0.3in}
+\vspace{0.2in}
 
 #### Simulation-based method {-}
 
@@ -265,6 +265,8 @@ Interpretation of the p-value:
 * Null hypothesis (in context) 
 
 \vspace{0.8in}
+
+\newpage
 
 Conclusion: 
 
@@ -338,8 +340,6 @@ What is bootstrapping?
 
 * Randomly sample with replacement from the original sample $n$ times. 
 
-\newpage
-
 Let's revisit the blue-eyed male study to estimate the *proportion of ALL heterosexual blue-eyed males who tend to find blue-eyed women the most attractive* by creating a 90\% confidence interval. 
 
 Bootstrap distribution:
@@ -375,6 +375,8 @@ Do the results of the confidence interval *match* the results based on the p-val
 
 How does changing the confidence level impact the width of the confidence interval?
 
+\newpage 
+
 95\% Confidence Interval:
 
 
@@ -404,4 +406,5 @@ one_proportion_bootstrap_CI(sample_size = 114, # Sample size
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
 \newpage

@@ -4,15 +4,15 @@
 
 ### Learning outcomes
 
-* Explain type 1 and type 2 errors in the context of a study.
+* Explain Type I and Type 2 Errors in the context of a study.
 
 * Explain the power of a test in the context of a study.
 
 * Understand how changes in sample size, significance level, and the difference between the null value and the parameter value impact the power of a test.
 
-* Understand how significance level impacts the probability of a type 1 error.
+* Understand how significance level impacts the probability of a Type 1 Error.
 
-* Understand the relationship between the probability of a type 2 error and power.
+* Understand the relationship between the probability of a Type 2 Error and power.
 
 * Be able to distinguish between practical importance and statistical significance.
 
@@ -22,9 +22,9 @@ In this activity, we will examine the possible errors that can be made based on 
 
 * Significance level
 
-* Type 1 error
+* Type 1 Error
 
-* Type 2 error
+* Type 2 Error
 
 * Power
 
@@ -65,9 +65,9 @@ The red distribution you see is the scaled-Normal distribution representing the 
 5. Notice that there are some sample proportions under the red line (when the null hypothesis is true) which would lead us to reject the null hypothesis.  Give the range of sample proportions which would lead to rejecting the null hypothesis when the null hypothesis is true?  What is the statistical name for this mistake?
 \vspace{0.4in}
 
-Check the "Type I Error" box under **Display**.  This should verify (or correct) your answer to question 5!  The area shaded in red represents the probability of making a **type 1 error** in our hypothesis test.  Recall that a type 1 error is when we reject the null hypothesis even though the null hypothesis is true.  To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level.  Therefore the significance level is the maximum probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a type 1 error in a hypothesis test!
+Check the "Type I Error" box under **Display**.  This should verify (or correct) your answer to question 5!  The area shaded in red represents the probability of making a **Type 1 Error** in our hypothesis test.  Recall that a Type 1 Error is when we reject the null hypothesis even though the null hypothesis is true.  To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level.  Therefore the significance level is the maximum probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a Type 1 Error in a hypothesis test!
 
-6.  **Based on the current applet settings, What percent of the null distribution is shaded red (what is the probability of making a type 1 error)?**
+6.  **Based on the current applet settings, What percent of the null distribution is shaded red (what is the probability of making a Type 1 Error)?**
 \vspace{0.25in}
 
 Let's say this physical therapist company believes their program can get 70% of athletes back to their sport within 8 months of an ACL surgery.  In the applet, set the scale under "True value of $p$" to 0.7.
@@ -77,13 +77,13 @@ Let's say this physical therapist company believes their program can get 70% of 
 
 The blue distribution that appears represents what the company believes, that 0.7 (not 0.5) is the true proportion of its clients who return to their sport within 8 months of ACL surgery.  This blue distribution represents the idea that the **null hypothesis is false**.
 
-8.  Consider the definition of power provided earlier in this lab.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a type 2 error?
+8.  Consider the definition of power provided earlier in this lab.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a Type 2 Error?
 \vspace{1in}
 
-* Check the "Type II Error" and "Power" boxes under **Display**.  This should verify (or correct) your answers to question 8!  The area shaded in blue represents the probability of making a **type 2 error** in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false).  The area shaded in green represents the power of the test.  Notice that the type 1 and type 2 errors rates and the power of the test are provided above the distribution.
+* Check the "Type II Error" and "Power" boxes under **Display**.  This should verify (or correct) your answers to question 8!  The area shaded in blue represents the probability of making a **Type 2 Error** in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false).  The area shaded in green represents the power of the test.  Notice that the Type 1 and Type 2 Error rates and the power of the test are provided above the distribution.
 
-9.  **Complete the following equation: Power + Type 2 Error Rate =  .  Explain why that equation makes sense.** *Hint: Consider what power and type 2 error are conditional on.*
-\vspace{0.8in}
+9.  **Complete the following equation: Power + Type 2 Error Rate =  .  Explain why that equation makes sense.** *Hint: Consider what power and Type 2 Error are conditional on.*
+\vspace{0.6in}
 
 Now let's investigate how changes in different factors influence the power of a test.
 

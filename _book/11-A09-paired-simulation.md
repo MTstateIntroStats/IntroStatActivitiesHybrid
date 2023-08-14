@@ -114,7 +114,7 @@ To simulate the null distribution of paired sample mean differences we will use 
 
 \vspace{.7in}
 
-We will use the `paired_test()` function in R (in the `catstats` package) to simulate the shifted bootstrap (null) distribution of sample mean differences and compute a p-value. Use the provided R script file and enter the calculated value from question 9 for `xx` to simulate the null distribution and enter the summary statistic from question 7 for `yy` to find the p-value.  Highlight and run lines 1--21.
+We will use the `paired_test()` function in R (in the `catstats` package) to simulate the shifted bootstrap (null) distribution of sample mean differences and compute a p-value. Use the provided R script file and enter the calculated value from question 9 for `xx` to simulate the null distribution and enter the summary statistic from question 7 for `yy` to find the p-value.  Highlight and run lines 1--24.
 
 
 ```r
@@ -156,7 +156,7 @@ We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package
 \vspace{0.8in}
 
 
-17. Using the provided R script file, fill in the missing value at `xx` to find a 99\% bootstrap confidence interval; highlight and run lines 24--27.  Report the confidence interval in interval notation.
+17. Using the provided R script file, fill in the missing value at `xx` to find a 99\% bootstrap confidence interval; highlight and run lines 29--32.  Report the confidence interval in interval notation.
 
 
 ```r

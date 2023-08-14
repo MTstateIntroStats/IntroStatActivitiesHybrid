@@ -1,4 +1,4 @@
-## Module 13 Lab: Big Mac Index
+## Week 13 Lab: Big Mac Index
 
 \setstretch{1}
 
@@ -68,7 +68,7 @@ Highlight and run lines 27--40 to produce the diagnostic plots needed to assess 
 #Scatterplot
 mac %>% # Pipe data set into...
   ggplot(aes(x = dollar_price, y = GDP_dollar))+  # Specify variables
-  geom_point() +  # Add scatterplot of points
+  geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "Big Mac Cost",  # Label x-axis
        y = "GDP",  # Label y-axis
        title = "Scatterplot of Big Mac Cost vs. GDP per person") +  # Be sure to tile your plots

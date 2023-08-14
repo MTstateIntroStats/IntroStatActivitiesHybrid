@@ -1,8 +1,12 @@
 # Basics of Data
 
+## Reading Guides
+
+Reading guides are designed to be completed while reading the required sections in the course textbook (https://mtstateintrostats.github.io/IntroStatTextbook/index.html) to aid students in taking notes.  These reading guides are not turned in in class but will be useful in understanding key concepts each week.  Solutions to the reading guides will be posted on D2L. 
+
 ## Week 1 Reading Guide: Basics of Data
 
-### Sections 1.1 (Case study) and 1.2 (Data basics) {-}
+### Textbook Sections 1.1: Case study and 1.2: Data basics {-}
 
 <!-- **Videos**   -->
 
@@ -117,7 +121,7 @@ True or False: If a study does have an explanatory and a response variable, that
 
 True or False: Observational studies can show a naturally occurring association between variables.  
 
-#### Example (Section 1.1 --- Case study: Using stents to prevent strokes) {-}
+#### Example: Section 1.1 --- Case study: Using stents to prevent strokes {-}
 
 1.	What is the principle question the researchers hope to answer?  (We call this the **research question**.)
 \rgs
@@ -172,67 +176,5 @@ True or False: Observational studies can show a naturally occurring association 
 
 11.	This study reported finding evidence that stents *increase* the risk of stroke.  This conclusion implies a causal link between stents and an increased risk of stroke.  Is that conclusion valid?  Justify your answer.
 
-
-### Section 1.3 (Sampling principles and strategies) {-}
-
-<!-- **Videos**   -->
-
-<!-- * 1.3 -->
-
-\setstretch{1.25}
-
-#### Vocabulary {-}
-
-(Target) Population:
-\rgs
-
-Sample:
-\rgs
-
-Anecdotal evidence:
-\rgs
-
-Bias:
-\rgs
-
-\rgi Selection bias:
-\rgs
-
-\rgi Non-response bias:
-\rgs
-
-\rgi Response bias:
-\rgs
-
-Convenience sample:
-\rgs
-
-Simple Random Sample:
-\rgs
-
-Non-response rate:
-\rgs
-
-Representative:
-\rgs
-
-#### Notes {-}
-
-Ideally, how should we sample cases from our target population?  Using what sampling method? 
-\rgs
-
-##### Notes on types of sampling bias {-}
-
-* Someone must first be _chosen_ to be in a study and refuse to participate in order to have **non-response bias**.
-
-* There must be a valid reason for someone to lie or be untruthful to justify saying **response bias** is present.  Yes, anyone could lie at any time to any question.  Response bias is when those lies are predictable and systematic based on outside influences.
-\rgs
-
-
-True or False: Convenience sampling tends to result in non-response bias.
-
-True or False: Volunteer sampling tends to result in response bias.
-
-True or False: Random sampling helps to resolve selection bias, but has no impact on non-response or response bias.
 
 \newpage

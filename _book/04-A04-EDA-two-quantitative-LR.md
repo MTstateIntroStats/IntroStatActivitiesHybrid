@@ -29,12 +29,12 @@ To review these concepts, see Chapter 6 & 7 in the textbook.
 
 ### Movies released in 2016
 
-We will revisit the movie data set collected on Movies released in 2016 [@imdb] to further explore the relationship between budget and revenue. Here is a reminder of the variables collected on these movies.
+We will revisit the movie data set collected on Movies released in 2016 [@imdb] to further explore the relationship between budget and revenue. Here is a reminder of the variables collected on these movies.  (Note: both budget and revenue are measured in "millions of dollars" (\$MM).)  
 
 | **Variable** 	| **Description** |
 |----	|-------------	|
-| `budget_mil` | Amount of money (in US $ millions) budgeted for the production of the movie |
-| `revenue_mil` | Amount of money (in US $ millions) the movie made after release|
+| `budget_mil` | Amount of money (\$MM) budgeted for the production of the movie |
+| `revenue_mil` | Amount of money (\$MM) the movie made after release|
 | `duration` | Length of the movie (in minutes)|
 | `content_rating` | Rating of the movie (`G`, `PG`, `PG-13`, `R`, `Not Rated`)|
 | `imdb_score` | IMDb user rating score from 1 to 10 |
@@ -51,7 +51,8 @@ movies <- read.csv("https://math.montana.edu/courses/s216/data/Movies2016.csv") 
 
 To look at the relationship between two quantitative variables we will create a scatterplot with the explanatory variable on the x-axis and the response variable on the y-axis.  We can also find three summary measures for the linear relationship between the two variables: regression slope, correlation and the coefficient of determination. 
 
-We will look at the relationship between budget and revenue for movies released in 2016. Enter the explanatory variable name, `budget_mil`, for `explanatory` and the response variable name, `revenue_mil`, for `response` at line 7 in the `R` script file to create the scatterplot. (Note: both variables are measured in "millions of dollars" ($MM).)  Upload and open the Movie Profits Activity 4 F22 Code `R` script file. Highlight and run lines 1--12.
+
+We will look at the relationship between budget and revenue for movies released in 2016. Upload and open the provided R script file. Enter the explanatory variable name, `budget_mil`, for `explanatory` and the response variable name, `revenue_mil`, for `response` at line 9 in the R script file to create the scatterplot. Highlight and run lines 1--14.
 
 
 ```r
@@ -60,7 +61,7 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
   geom_point() +  # Add scatterplot of points
   labs(x = "Budget in Millions ($)",  # Label x-axis
        y = "Revenue in Millions ($)",  # Label y-axis
-       title = "Revenue vs. Budget") + # Be sure to title your plots
+       title = "Scatterplot of Revenue vs. Budget for Movies in 2016") + # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
@@ -93,7 +94,7 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
 
 #### Slope {-}
 
-The linear model function in `R` (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `budget_mil` (the $x$-variable name) is the value of $b_1$, the slope.  Run lines 16 -- 19 in the `R` script file to reproduce the linear model output found in the coursepack.
+The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `budget_mil` (the $x$-variable name) is the value of $b_1$, the slope.  Run lines 18--19 in the R script file to reproduce the linear model output found in the coursepack.
 
 
 ```r
@@ -162,11 +163,11 @@ What if we wanted to see if the relationship between movie budget and revenue di
 movies %>% # Data set pipes into...
   filter(content_rating != "Not Rated") %>% # Remove Not Rated movies
   ggplot(aes(x = budget_mil, y = revenue_mil, color = content_rating)) +  # Specify variables
-  geom_point(aes(shape = content_rating), size = 3) +  # Add scatterplot of points
+  geom_point(aes(shape = content_rating), size = 2) +  # Add scatterplot of points
   labs(x = "Budget in Millions ($)",  # Label x-axis
        y = "Revenue in Millions ($)",  # Label y-axis
        color = "content_rating",  # Label legend
-       title = "Revenue vs. Budget") + # Be sure to tile your plots
+       title = "Scatterplot of Revenue vs. Budget by Content Rating for Movies in 2016") + # Be sure to tile your plots
   geom_smooth(method = "lm", se = FALSE, lwd = 2) + # Add regression lines
   scale_color_grey() # Make black and white
 ```
@@ -188,7 +189,7 @@ movies %>% # Data set pipes into...
 
 1.	Two quantitative variables are graphically displayed in a scatterplot.  The explanatory variable is on the $x$-axis and the response variable is on the $y$-axis.  When describing the relationship between two quantitative variables we look at the form (linear or non-linear), direction (positive or negative), strength, and for the presence of outliers. 
 
-2.  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation ($R$), slope of the regression line ($b_1$), and the coefficient of determination ($R^2$).  
+2.  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation ($r$), slope of the regression line ($b_1$), and the coefficient of determination ($r^2$).  
 
 3.  We can use the line of regression to predict values of the response variable for values of the explanatory variable. Do not use values of the explanatory variable that are outside of the range of values in the data set to predict values of the response variable (reflect on why this is true.).  This is called **extrapolation**. 
 

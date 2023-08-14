@@ -2,7 +2,9 @@
 
 ## Week 8 Reading Guide: Hypothesis Testing for a Difference in Proportions
 
-### Section 15.1 (Randomization test for $H_0: \pi_1 - \pi_2 = 0$) and Section 15.2 (Bootstrap confidence interval for $\pi_1 - \pi_2$) {-}
+### Textbook Chapter 15: Inference for comparing two proportions {-}
+
+### Section 15.1: Randomization test for $H_0: \pi_1 - \pi_2 = 0$) and Section 15.2: Bootstrap confidence interval for $\pi_1 - \pi_2$ {-}
 
 You may skip example 15.1.4, which discussed hypothesis testing for **relative risk**.  We will discuss relative risk in Week 14.
 
