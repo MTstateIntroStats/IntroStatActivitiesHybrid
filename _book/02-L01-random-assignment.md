@@ -30,7 +30,7 @@ To review these concepts, see Sections 2.2 through 2.5 in the textbook.
 
 ### General information labs
 
-At the end of each module you will complete a lab. Questions are selected from each lab to be turned in on Gradescope.  The questions to be submitted on Gradescope are bolded in the lab.  As you work through the lab have the Gradescope lab assignment open so that you can answer those questions as you go.
+At the end of each week you will complete a lab. Questions are selected from each lab to be turned in on Gradescope.  The questions to be submitted on Gradescope are bolded in the lab.  As you work through the lab have the Gradescope lab assignment open so that you can answer those questions as you go.
 
 ### Atrial fibrillation 
 
@@ -54,7 +54,7 @@ Suppose 24 subjects with permanent atrial fibrillation have volunteered to parti
 3. Could the scientists fix the problem with the strategy presented in question 2 by creating equal sized groups by putting 4 males and 8 females into the drug group and the remaining 12 males in the placebo group?  Explain your answer.
 \vspace{0.5in}
 
-4. A third strategy would be to **block** on sex.  In this type of study, the scientists would assign 4 females and 8 males to each group.   Using this strategy, what **proportion** of males out of the 12 individuals would be in each group?
+4. A third strategy would be to **block** on sex.  In this type of study, the scientists would assign 4 females and 8 males to each group.   Using this strategy, out of the 12 individuals in each group what **proportion** are males?
 \vspace{0.3in}
 
 5. **Assume the scientists used the strategy in question 4, but they put the four tallest females and eight tallest males into the drug group and the remaining subjects into the placebo group. They found that the proportion of patients whose heart rate stabilized is higher in the drug group than the placebo group.**  
@@ -125,7 +125,7 @@ The diagram below summarizes these ideas about confounding variables and random 
 
 \vspace{0.3in}
 
-14. **Both the sampling method (which we covered last week) and the study design will help to determine the *scope of inference* for a study: To *whom* can we generalize, and can we conclude *causation or only association*? Use your answers to question 12 and 13 and the table on the next page to determine the scope of inference of this trial study described in question 12.**
+14. **Both the sampling method and the study design will help to determine the *scope of inference* for a study: To *whom* can we generalize, and can we conclude *causation or only association*? Use your answers to question 12 and 13 and the table on the next page to determine the scope of inference of this trial study described in question 12.**
 \vspace{0.3in}
 
 

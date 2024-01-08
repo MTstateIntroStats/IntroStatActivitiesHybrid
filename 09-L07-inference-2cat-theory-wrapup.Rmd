@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Week 9 Lab:  Diabetes
 
 \setstretch{1}
@@ -21,7 +26,11 @@
 
 Researchers compared the efficacy of two treatment regimens to achieve durable glycemic control in children and adolescents with recent-onset type 2 diabetes [@zeitler2012].  A convenience sample of patients 10 to 17 years of age with recent-onset type 2 diabetes were randomly assigned to either a medication (rosiglitazone) or a lifestyle-intervention program focusing on weight loss through eating and activity.  Researchers measured whether the patient still needs insulin (failure) or had glycemic control (success).  Of the 233 children who received the Rosiglitazone treatment, 143 had glycemic control, while of the 234 who went through the lifestyle-intervention program, 125 had glycemic control. Is there evidence that there is difference in proportion of patients that achieve durable glycemic control between the two treatments?  Use Rosiglitazone – Lifestyle as the order of subtraction.
 
-Upload and open the R script file for Week 9 lab. Upload and import the csv file, `diabetes`. Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 7. Highlight and run lines 1--8 to get the counts for each combination of categories.
+* Upload and open the R script file for Week 9 lab. Upload and import the csv file, `diabetes`. 
+
+* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 7. 
+
+* Highlight and run lines 1--8 to get the counts for each combination of categories.
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
 glycemic <- datasetname
@@ -36,11 +45,11 @@ glycemic %>% group_by(treatment) %>% count(outcome)
 \begin{center}
 \begin{tabular}{|c|c|c|c|}\hline
  & \multicolumn{2}{|c|}{\textbf{Treatment}} & \\ \hline
-\textbf{Outcome} & Rosiglitazone & Lifestyle & Total \\ \hline
- Glycemic Control & & & \\ 
- & & & \\ \hline
- Insulin Required & & & \\ 
- & & & \\ \hline
+\textbf{Outcome} & \hspace{0.35in} rosiglitazone \hspace{0.35in} & \hspace{0.35in} lifestyle \hspace{0.35in} & \hspace{0.35in} Total \hspace{0.35in} \\ \hline
+ glycemic control & & & \\ 
+ (success) & & & \\ \hline
+ insulin required & & & \\ 
+ (failure) & & & \\ \hline
  Total & & &  \\ 
  & & & \\ \hline  
 \end{tabular}
@@ -58,7 +67,7 @@ glycemic %>% group_by(treatment) %>% count(outcome)
 6. **Calculate the summary statistic (difference in proportions).  Use appropriate notation.**
 \vspace{0.3in}
 
-Fill in the missing values/names in the R script file in the two-proportion_test function to create the null distribution and find the simulation p-value for the test.
+* Fill in the missing values/names in the R script file in the two-proportion_test function to create the null distribution and find the simulation p-value for the test.
 
 ```{r, echo=TRUE, eval=FALSE}
 two_proportion_test(formula = outcome~treatment, # response ~ explanatory
@@ -74,16 +83,16 @@ two_proportion_test(formula = outcome~treatment, # response ~ explanatory
 \vspace{0.3in}
 
 8.  **Will the theory-based p-value be similar to the simulation p-value?  Explain your answer.**
-\vspace{0.8in}
+\vspace{0.7in}
 
 9. **Calculate the number of standard errors the sample difference in proportion is from the null value of zero.**
-\vspace{0.8in}
+\vspace{0.7in}
 
 10.  **Will a 95\% simulation confidence interval contain the null value of zero? Explain your answer.**
-\vspace{0.8in}
+\vspace{0.7in}
 
 11. Calculate the standard error for a difference in proportions to create a 95\% confidence interval.  
-\vspace{1in}
+\vspace{0.8in}
 
 12.  Use the multiplier of $z^*$ = 1.96 and the standard error found in question 11 to calculate a 95\% confidence interval for the parameter of interest.
 \vspace{1in}
@@ -91,6 +100,12 @@ two_proportion_test(formula = outcome~treatment, # response ~ explanatory
 13. Write a paragraph summarizing the results of the study.  Be sure to describe:
 
 * Summary statistic and interpretation
+
+    * Summary measure (in context)
+    
+    * Value of the statistic 
+    
+    * Order of subtraction when comparing two groups
 
 * P-value and interpretation
 

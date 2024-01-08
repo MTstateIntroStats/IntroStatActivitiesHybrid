@@ -1,15 +1,19 @@
+# Basics of Data
+
 ## Activity 1:  Intro to Data
 
 \setstretch{1}
 
 ### Learning outcomes
 
-* Identify observational units, variables, and variable types in a statistical study.
+<!-- * Identify observational units, variables, and variable types in a statistical study. -->
 
-* Identify biased sampling methods.
+<!-- * Identify biased sampling methods. -->
+
+* Creating a data set
 
 ### Terminology review
-Statistics is the study of how best to collect, analyze, and draw conclusions from data.  Today in class you will be introduced to the following terms:
+Statistics is the study of how best to collect, analyze, and draw conclusions from data.  This week in class you will be introduced to the following terms:
 
 * Observational units or cases
 
@@ -35,9 +39,9 @@ As we move through the semester we will work through the six steps of the statis
 
 3. Summarize and visualize the data. *Weeks 3--4*
 
-4. Use statistical analysis methods to draw inferences from the data. *Weeks 6--13*
+4. Use statistical analysis methods to draw inferences from the data. *Weeks 6--14*
 
-5. Communicate the results and answer the research question. *Weeks 6--13*
+5. Communicate the results and answer the research question. *Weeks 6--14*
 
 6. Revisit and look forward.
 
@@ -49,27 +53,29 @@ Today we will focus on the first two steps.
 
 **Observational units** or **cases** are the subjects data are collected on. In a spreadsheet of the data set, each row will represent a single observational unit.  
 
-1. What are the observational units or cases for today's study? 
+<!-- 1. What are the observational units or cases for today's study?  -->
 
-\vspace{0.2in}
+<!-- \vspace{0.2in} -->
 
-2. How many students are in class today? This is the **sample size**.
+<!-- 2. How many students are in class today? This is the **sample size**. -->
 
-\vspace{0.2in}
+<!-- \vspace{0.2in} -->
 
-A **variable** is information collected or measured on each observational unit or case. Each column in a data set will represent a different variable. The rows in a data set represent the observational units. 
+<!-- A **variable** is information collected or measured on each observational unit or case. Each column in a data set will represent a different variable. The rows in a data set represent the observational units.  -->
 
-We will look at two types of variables: **quantitative** and **categorical** (see Figure \@ref(fig:types-of-variables)). 
+<!-- We will look at two types of variables: **quantitative** and **categorical** (see Figure \@ref(fig:types-of-variables)).  -->
 
-Quantitative variables are numerical measurements that can be discrete (whole, non-negative numbers) or continuous (any value within an interval).  The number of pets one owns would be a discrete variable as you can not have a partial pet.  GPA would be a continuous variable ranging from 0 to 4.0. 
+<!-- Quantitative variables are numerical measurements that can be discrete (whole, non-negative numbers) or continuous (any value within an interval).  The number of pets one owns would be a discrete variable as you can not have a partial pet.  GPA would be a continuous variable ranging from 0 to 4.0.  -->
 
-The outcome of a categorical variable is a group or category such as eye color, state of residency, class ranking, or whether or not a student lives on campus. Categorical variables with a natural ordering are considered ordinal variables while those without a natural ordering are considered nominal variables.  All categorical variables will be treated as nominal for analysis in this course. 
+<!-- The outcome of a categorical variable is a group or category such as eye color, state of residency, class ranking, or whether or not a student lives on campus. Categorical variables with a natural ordering are considered ordinal variables while those without a natural ordering are considered nominal variables.  All categorical variables will be treated as nominal for analysis in this course.  -->
 
-```{r types-of-variables, fig.align = "center", out.width="50%", fig.cap="Types of variables."}
-include_graphics("images/variables.png")
-```
+<!-- ```{r types-of-variables, fig.align = "center", out.width="50%", fig.cap="Types of variables."} -->
+<!-- include_graphics("images/variables.png") -->
+<!-- ``` -->
 
-3. One person from each group open the Google sheet linked in D2L and fill in the responses for the following questions for each group member.  When creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes.
+\newpage
+
+1. One person from each group open the Google sheet linked in D2L and fill in the responses for the following questions for each group member.  When creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes.
 
 * Major: what is your declared major?
 
@@ -79,42 +85,52 @@ include_graphics("images/variables.png")
 
 \vspace{0.2in}
 
-* Forearm_Length:  what is the length of your arm in inches from the end of your elbow to the end of your index finger?
+* Num_Credits: how many credits are you taking this semester?
 
 \vspace{0.2in}
 
-* Num_Credits: how many credits are you taking this semester?
+* Dominant_hand: are you left or right-handed?
 
-\newpage
+\vspace{0.2in}
 
-4. The header for each column describes each variable measured on the observational unit. When writing a variable we need to specify what we are measuring.  For example, the column header `Residency` in our data set represents the variable *whether a student has in-state or out-of-state residency* not *what state a student is from*.  For each column of data, fill in the following table to write out the variable we are collecting on each observational unit in this study and the type of each variable.
+* Hand_span:  what is the width of your dominant hand from the tip of your thumb to the tip of your pinky with your hand spread out measured in cm?
 
-\begin{center}
-\begin{tabular}{|l|p{2.5in}|p{1.5in}|} \hline
-Column & Variable & Type of Variable  \\ \hline
-Major & & \\ 
-& & \\ \hline
-Residency & & \\ 
-& & \\ \hline
-Forearm Length & & \\ 
-& & \\ \hline
-Num Credits & & \\ 
-& & \\ \hline
-\end{tabular}
-\end{center}
+\vspace{0.2in}
 
-5. Review the completed data set with your table.  Remember that when creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time to have consistency between responses.  Do not give units of measure for numerical values.  Write down some issues found with the created class data set.
+* Grip_dominant: what is the grip strength measured in lbs for your dominant hand?
 
-\vspace{1in}
+\vspace{0.2in}
+
+* Grip_nondominant: what is the grip strength measured in lbs for your non-dominant hand?
+
+\vspace{0.2in}
+
+<!-- 4. The header for each column describes each variable measured on the observational unit. When writing a variable we need to specify what we are measuring.  For example, the column header `Residency` in our data set represents the variable *whether a student has in-state or out-of-state residency* not *what state a student is from*.  For each column of data, fill in the following table to write out the variable we are collecting on each observational unit in this study and the type of each variable. -->
+
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|l|p{2.5in}|p{1.5in}|} \hline -->
+<!-- Column & Variable & Type of Variable  \\ \hline -->
+<!-- Major & & \\  -->
+<!-- & & \\ \hline -->
+<!-- Residency & & \\  -->
+<!-- & & \\ \hline -->
+<!-- Forearm Length & & \\  -->
+<!-- & & \\ \hline -->
+<!-- Num Credits & & \\  -->
+<!-- & & \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+
+<!-- 5. Review the completed data set with your table.  Remember that when creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time to have consistency between responses.  Do not give units of measure for numerical values.  Write down some issues found with the created class data set. -->
 
 ### Take-home messages
 
-1. There are two types of variables: categorical (groups) and quantitative (numerical measures).
+<!-- 1. There are two types of variables: categorical (groups) and quantitative (numerical measures). -->
 
 
-2. When creating a data set, each row will represent a single observational unit or case. Each column represents a variable collected. It is important to write each variable as a single word or use an underscore between words.
+1. When creating a data set, each row will represent a single observational unit or case. Each column represents a variable collected. It is important to write each variable as a single word or use an underscore between words.
 
-3. Make sure to be consistent with writing each outcome in the data set as R is case sensitive.  All outcomes must be written exactly the same way.
+2. Make sure to be consistent with writing each outcome in the data set as R is case sensitive.  All outcomes must be written exactly the same way.
 
 ### Additional notes
 

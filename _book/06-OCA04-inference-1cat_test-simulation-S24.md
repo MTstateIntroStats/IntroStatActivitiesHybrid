@@ -1,0 +1,271 @@
+## Out-of-Class Activity Week 6:  Helper-Hinderer --- Simulation-based Confidence Interval and Hypothesis Test
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Use bootstrapping to find a confidence interval for a single proportion.
+
+* Interpret a confidence interval for a single proportion.
+
+* Identify the two possible explanations (one assuming the null hypothesis and one assuming the alternative hypothesis) for a relationship seen in sample data.
+
+* Given a research question involving a single categorical variable, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+  
+* Describe and perform a simulation-based hypothesis test for a single proportion.
+
+### Terminology review
+
+In today's activity, we will introduce simulation-based confidence intervals and hypothesis testing for a single categorical variable. Some terms covered in this activity are:
+
+* Parameter of interest
+
+* Bootstrapping
+
+* Confidence interval
+
+* Null hypothesis
+
+* Alternative hypothesis
+
+* Simulation
+
+To review these concepts, see Chapters 9, 10 & 14 in your textbook.
+
+### Steps of the statistical investigation process
+
+We will work through a five-step process to complete a hypothesis test for a single proportion, first introduced in the activity in week 1.
+
+* **Ask a research question** that can be addressed by collecting data. What are the researchers trying to show?
+
+* **Design a study and collect data**. This step involves selecting the people or objects to be studied and how to gather relevant data on them.
+
+* **Summarize and visualize the data**. Calculate summary statistics and create graphical plots that best represent the research question.
+
+* **Use statistical analysis methods to draw inferences from the data**. Choose a statistical inference method appropriate for the data and identify the p-value and/or confidence interval after checking assumptions. In this study, we will focus on using randomization to generate a simulated p-value.
+
+* **Communicate the results and answer the research question**. Using the p-value and confidence interval from the analysis, determine whether the data provide statistical evidence against the null hypothesis. Write a conclusion that addresses the research question.
+
+\newpage
+
+### Helper-Hinderer
+
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy over the hinderer toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+
+
+In this study, the **observational units are the infants ages 6 to 10 months**.  The **variable measured on each observational unit (infant) is whether they chose the helper or the hinderer toy**.  This is a categorical variable so we will be assessing the proportion of infants ages 6 to 10 months that choose the helper toy.  Choosing the helper toy in this study will be considered a success.
+
+
+#### Design a study and collect data {-}
+
+Before using statistical inference methods, we must check that the cases are independent.  The sample observations are independent if the outcome of one observation does not influence the outcome of another. One way this condition is met is if data come from a simple random sample of the target population.
+
+1.  Are the cases independent? Justify your answer.
+
+\vspace{0.8in}
+
+#### Summarize and visualize the data {-}
+
+The following code reads in the data set and gives the number of infants in each level of the variable, whether the infant chose the helper or the hinderer.  Remember to visually display this data we can use either a frequency bar plot or a relative frequency bar plot.  
+
+
+```r
+ # Read in data set
+infants <- read.csv("https://math.montana.edu/courses/s216/data/infantchoice.csv")
+infants %>% count(choice)  # Count number in each choice category
+```
+
+```
+#>     choice  n
+#> 1   helper 14
+#> 2 hinderer  2
+```
+
+$$\hat{p} = \frac{\mbox{number of successes}}{\mbox{total number of observational units}}$$
+\vspace{2mm}
+
+2.  Using the `R` output and the formula given, calculate the summary statistic (sample proportion) to represent the research question.  Recall that `choosing the helper toy` is a considered a success.  Use appropriate notation.  This value is also called the **point estimate.**
+
+\vspace{0.5in}
+\newpage
+
+A **point estimate** (our observed statistic) provides a single plausible value for a parameter. However, a point estimate is rarely perfect; usually there is some error in the estimate. In addition to supplying a point estimate of a parameter, a next logical step would be to provide a plausible *range* of values for the parameter. This plausible range of values for the population parameter is called an **interval estimate** or **confidence interval**. 
+
+For this study, the parameter of interest is the **true or population proportion of infants ages 6--10 months who will choose the helper toy**.
+
+In today's activity, we will use bootstrapping to find a 95\% confidence interval for $\pi$, the parameter of interest.  
+
+3.  In your own words, explain the bootstrapping process.
+\vspace{0.6in}
+
+#### Use statistical analysis methods to draw inferences from the data {-}
+
+To use the computer simulation to create a bootstrap distribution, we will need to enter the 
+
+* "sample size" (the number of observational units or cases in the sample),
+* "number of successes" (the number of cases that choose the helper character), 
+* "number of repetitions" (the number of samples to be generated), and 
+* the "confidence level" (which level of confidence are we using to create the confidence interval).
+
+4.  What values should be entered for each of the following into the simulation to create the bootstrap distribution of sample proportions to find a 95\% confidence interval?
+\vspace{1mm}
+
+* Sample size:
+
+\vspace{.15in}
+ 
+* Number of successes:
+    
+\vspace{.15in}
+* Number of repetitions:
+    
+\vspace{.15in}
+* Confidence level (as a decimal):
+    
+\vspace{.15in}
+
+We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Check that your answers to question 4 match what is entered in the R code.
+
+
+```r
+set.seed(216)
+one_proportion_bootstrap_CI(sample_size = 16, # Sample size
+                    number_successes = 14, # Observed number of successes
+                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    confidence_level = 0.95) # Confidence level as a decimal
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-OCA04-inference-1cat_test-simulation-S24_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+5. What is the value at the center of this bootstrap distribution?  Why does this make sense?
+\vspace{.8in}
+
+6. Explain why the two vertical lines are at the 2.5th percentile and the 97.5th percentile.
+
+\vspace{.7in}
+
+7. Report the 95\% bootstrapped confidence interval for $\pi$.  Use interval notation: (lower value, upper value).
+
+\vspace{0.2in}
+
+8.  Interpret the 95\% confidence interval in context.
+
+\vspace{0.8in}
+
+#### Use statistical analysis methods to draw inferences from the data {-}
+
+In the next part of the activity, we will perform a hypothesis test to assess the research question.
+
+9. Identify the research question for this study.  What are the researchers hoping to show?
+
+\vspace{0.6in}
+
+When performing a hypothesis test, we must first identify the null hypothesis.  The null hypothesis is written about the parameter of interest, or the value that summarizes the variable in the population.  
+
+If the children are just randomly choosing the toy, we would expect half (0.5) of the infants to choose the helper toy.  This is the null value for our study.
+
+10.  Using the parameter of interest given prior to question 3, write out the null hypothesis in words.  That is, what do we assume to be true about the parameter of interest when we perform our simulation? 
+\vspace{0.8in}
+
+The notation used for a population proportion (or probability, or true proportion) is $\pi$.  Since this summarizes a population, it is a parameter. When writing the **null hypothesis** in notation, we set the parameter equal to the null value, $H_0: \pi = \pi_0$.
+
+11. Write the null hypothesis in notation using the null value of 0.5 in place of $\pi_0$ in the equation given above.
+
+\vspace{0.2in}
+
+The **alternative hypothesis** is the claim to be tested and the direction of the claim (less than, greater than, or not equal to) is based on the research question.  
+
+12.  Based on the research question from question 9, are we testing that the parameter is greater than 0.5, less than 0.5 or different than 0.5? 
+
+\vspace{0.2in}
+
+<!-- 8. Write out the alternative hypothesis in words. -->
+
+13.  Write out the alternative hypothesis in notation.
+
+\vspace{0.2in}
+
+Remember that when utilizing a hypothesis test, we are evaluating two competing possibilities. For this study the **two possibilities** are either...
+
+* The true proportion of infants who choose the helper is 0.5 and our results just occurred by random chance; or,
+  
+* The true proportion of infants who choose the helper is greater than 0.5 and our results reflect this.
+  
+Notice that these two competing possibilities represent the null and alternative hypotheses.
+
+We will now simulate a one sample of a **null distribution** of sample proportions. The null distribution is created under the assumption the null hypothesis is true.  In this case, we assume the true proportion of infants who choose the helper is 0.5, so we will create 1000 (or more) different simulations of 16 infants under this assumption.
+
+Let's think about how to use a coin to create one simulation of 16 infants under the assumption the null hypothesis is true.  Let heads equal infant chose the helper toy and tails equal infant chose the hinderer toy.
+
+14. How many times would you flip a coin to simulate the sample of infants?
+
+\vspace{0.3in}
+
+15. Flip a coin 16 times recording the number of times the coin lands on heads.  This represents one simulated sample of 16 infants randomly choosing the toy.  Calculate the proportion of coin flips that resulted in a head.
+
+\vspace{0.3in}
+
+16. Is the value from question 15 closer to 0.5, the null value, or closer to the sample proportion, 0.875? 
+
+\vspace{0.3in}
+
+<!-- 11.  How many cards total do we need?  On how many cards will we write **helper**?  On how many cards will we write **hinderer**?  Remember this should represent the null hypothesis. -->
+
+<!-- \vspace{0.5in} -->
+
+<!-- 12.  Next, we would mix the cards together and draw 1 card, write down if the card says helper or hinderer, and replace the card.  How many times would we need to repeat this process to simulate one sample? -->
+
+<!-- \vspace{0.3in} -->
+
+<!-- 13.  Once we have one simulated sample, what would we calculate and plot on the null distribution?  *Hint*: What statistic are we calculating from the data? -->
+
+<!-- \vspace{0.5in} -->
+
+<!-- 14.  Create one simulation using the cards provided.  Write down your simulated sample proportion.  This is one simulation created under the assumption the null hypothesis is true.  Is this value closer to 0.5, the null value, or closer to the sample proportion, 0.875?  Compare your simulated value to the other groups at your table. -->
+
+<!-- \vspace{0.8in} -->
+
+\newpage
+
+The distribution of the proportion of 16 coin flips from a Spring 2023 class is provided below. 
+
+
+\begin{center}\includegraphics[width=0.75\linewidth]{images/class_simulations_oca06} \end{center}
+
+17. Circle the observed statistic (value from question 2) on the distribution shown above.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
+
+\vspace{0.2in}
+
+18. Is the observed statistic (0.875) likely to happen or unlikely to happen if the true proportion of infants age 6 to 10 months who choose the helper is 0.5?  Explain your answer using the plot. 
+
+\vspace{0.8in}
+
+In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 1000 samples when we assume the null hypothesis is true.
+
+
+### Take-home messages
+
+1.	In a hypothesis test we have two competing hypotheses, the null hypothesis and the alternative hypothesis.  The null hypothesis represents either a skeptical perspective or a perspective of no difference or no effect. The alternative hypothesis represents a new perspective such as the possibility that there has been a change or that there is a treatment effect in an experiment.  
+
+2.  In a simulation-based test, we create a distribution of possible simulated statistics for our sample if the null hypothesis is true.  Then we see if the calculated observed statistic from the data is likely or unlikely to occur when compared to the null distribution.  
+
+3.  To create one simulated sample on the null distribution for a sample proportion, spin a spinner with probability equal to $\pi_0$ (the null value), $n$ times or draw with replacement $n$ times from a deck of cards created to reflect $\pi_0$ as the probability of success. Calculate and plot the proportion of successes from the simulated sample. 
+
+4.	The goal in a hypothesis test is to assess the strength of evidence for an effect, while the goal in creating a confidence interval is to determine how large the effect is.  A **confidence interval** is a range of *plausible* values for the parameter of interest.  
+
+5. A confidence interval is built around the point estimate or observed calculated statistic from the sample.  This means that the sample statistic is always the center of the confidence interval. A confidence interval includes a measure of sample to sample variability represented by the **margin of error**.   
+
+6. In simulation-based methods (bootstrapping), a simulated distribution of possible sample statistics is created showing the possible sample-to-sample variability.  Then we find the middle $X$ percent of the distribution around the sample statistic using the percentile method to give the range of values for the confidence interval.  This shows us that we are $X$% confident that the parameter is within this range, where $X$ represents the level of confidence.
+
+7.  When the null value is within the confidence interval, it is a plausible value for the parameter of interest; thus, we would find a larger p-value for a hypothesis test of that null value.  Conversely, if the null value is NOT within the confidence interval, we would find a small p-value for the hypothesis test and strong evidence against this null hypothesis. 
+
+8. To create one simulated sample on the bootstrap distribution for a sample proportion, label $n$ cards with the original responses.  Draw with replacement $n$ times.  Calculate and plot the resampled proportion of successes.
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage

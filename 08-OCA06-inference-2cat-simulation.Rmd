@@ -7,9 +7,7 @@
 * Given a research question involving two categorical variables, construct the null and alternative hypotheses
   in words and using appropriate statistical symbols.
   
-* Describe and perform a simulation-based hypothesis test for a difference in proportions.
-
-* Interpret and evaluate a p-value for a simulation-based hypothesis test for a difference in proportions.
+* Investigate the process of creating a null distribution for two categorical variables
 
 ### Terminology review
 In today's activity, we will use simulation-based methods to analyze two categorical variables. Some terms covered in this activity are:
@@ -27,14 +25,14 @@ To review these concepts, see Chapter 15 in your textbook.
 
 Researchers at the Princeton University wanted to investigate influences on behavior [@darley1973].  The researchers randomly selected 67 students from the Princeton Theological Seminary to participate in a study.  Only 47 students chose to participate in the study, and the data below includes 40 of those students (7 students were removed from the study for various reasons).  As all participants were theology majors planning a career as a preacher, the expectation was that all would have a similar disposition when it comes to helping behavior.  Each student was then shown a 5-minute presentation on the Good Samaritan, a parable in the Bible which emphasizes the importance of helping others.  After the presentation, the students were told they needed to give a talk on the Good Samaritan parable at a building across campus.  Half the students were told they were late for the presentation; the other half told they could take their time getting across campus (the condition was randomly assigned).  On the way between buildings, an actor pretending to be a homeless person in distress asked the student for help.  The researchers recorded whether the student helped the actor or not.  The results of the study are shown in the table below.  Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation?  Use the order of subtraction hurry – no hurry.
 
-|                    | Hurry Condition | No Hurry Condition | Total |
-|--------------------|-----------------|--------------------|-------|
-| Helped Actor       |        2        |         11         |   13  |
-| Did Not Help Actor |        18       |          9         |   27  |
-| Total              |        20       |         20         |   40  |
-
-
-\newpage
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline
+& Hurry Condition & No Hurry Condition & Total \\ \hline
+Helped Actor & 2 & 11 & 13 \\ \hline
+Did Not Help Actor & 18 & 9 & 27 \\ \hline
+Total & 20 & 20 & 40 \\ \hline
+\end{tabular}
+\end{center}
 
 These counts can be found in R by using the `count()` function:
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, collapse=FALSE}
@@ -64,11 +62,11 @@ randomly ____________ (assigned/selected).
 4.  Put an X in the box that represents the appropriate scope of inference for this study.
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}\hline
-& & Study Type & \\ \hline
-& & Randomized Experiment & Observational Study \\ \hline
-Selection of Cases & Random Sample &  &  \\ \hline
-& No Random Sample & & \\ \hline
+\begin{tabular}{|c|c|c|}\hline
+& Study Type & \\ \hline
+Selection of Cases & Randomized Experiment & Observational Study \\ \hline
+Random Sample (no sampling bias) & & \\ \hline
+Non Random Sample (sampling bias) & & \\ \hline
 \end{tabular}
 \end{center}
 
@@ -80,8 +78,6 @@ Selection of Cases & Random Sample &  &  \\ \hline
 The research question as stated above is: Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation? In order to set up our hypotheses, we need to express this research question in terms of parameters. 
 
 Remember, we define the parameter for a single categorical variable as the true proportion of observational units that are labeled as a "success" in the response variable.  
-
-\newpage
 
 5. Write the two parameters of interest in context of the study.  
 \vspace{1mm}
@@ -96,11 +92,11 @@ When comparing two groups, we assume the two parameters are equal in the null hy
 
 6.  Write the null hypothesis out in words using your answers to question 5.
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 
 7. Based on the research question, fill in the appropriate sign for the alternative hypothesis ($<$, $>$, or $\neq$):
-\vspace{0.1in}
+\vspace{2mm}
 
 |           $H_A: \pi_{\text{hurry}} -\pi_{\text{no hurry}}$ __________ 0
 

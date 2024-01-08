@@ -1,4 +1,6 @@
-## Lecture Notes Week 14: Probability and Relative Risk 
+# Probability and Relative Risk
+
+## Lecture Notes Week 10: Probability and Relative Risk 
 
 
 \setstretch{1}
@@ -92,7 +94,7 @@ $P(B|A) =$
 
 \setstretch{1}
 
-Example: A random sample of people who had ever been married, demonstrating the proportions who smoked and who had ever been divorced. The numbers are shown in the following table. Because this survey was based on a random sample in the United States in the early 1990s, the data should be representative of the adult population who had ever been married at that time. 
+Example for class discussion: Two variables were collected on a random sample of people who had ever been married; whether a person had ever smoked and whether a person had ever been divorced. The data are displayed in the following table. This survey was based on a random sample in the United States in the early 1990s, so the data should be representative of the adult population who had ever been married at that time. 
 
 * Let event D be a person has gone through a divorce
 
@@ -102,11 +104,11 @@ Example: A random sample of people who had ever been married, demonstrating the 
 \begin{tabular}{|c|c|c|c|} \hline
 \hspace{0.8in} & \hspace{0.35in} Has divorced \hspace{.35in} & \hspace{0.35in} Has never divorced  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
 & & & \\ \hline
-Smokes & 238 & 247 & Total 485 \\ 
+Smokes & 238 & 247 & 485 \\ 
 & & & \\ \hline
-Does not smoke & 374 & 810 & Total 1184 \\ 
+Does not smoke & 374 & 810 & 1184 \\ 
 & & & \\ \hline
-Total & 612 & Total 1057 & 1669 \\ 
+Total & 612 & 1057 & 1669 \\ 
 & & & \\ \hline
 \end{tabular}
 \end{center}
@@ -160,7 +162,7 @@ Steps:
 
 \newpage
 
-Example:  An airline has noticed that 30\% of passengers pre-pay for checked bags at the time the ticket is purchased.  The no-show rate among customers that pre-pay for checked bags is 5\%, compared to 15\% among customers that do not pre-pay for checked bags.
+Example for class discussion:  An airline has noticed that 30\% of passengers pre-pay for checked bags at the time the ticket is purchased.  The no-show rate among customers that pre-pay for checked bags is 5\%, compared to 15\% among customers that do not pre-pay for checked bags.
 
 * Let event B = customer pre-pays for checked bag
 * Let event N = customer no shows
@@ -227,7 +229,7 @@ Relative Risk:
 
 * Interpretation:
 
-    * The proportion of ___________________ in group 1 is the RR ________________ the proportion of ____________________ in group 2.
+    * The proportion of successes in group 1 is the $RR$ ________________ the proportion of successes in group 2.
 
 Increase in risk:
 
@@ -235,8 +237,8 @@ Increase in risk:
 
 * Interpretation:
 
-    * The proportion of __________________ in group 1 is the    (RR-1) ______________ 
-higher/lower than the proportion of __________________ in group 2.
+    * The proportion of successes in group 1 is the $(RR-1)$ ______________ 
+higher/lower than the proportion of successes in group 2.
 
 Percent increase in risk:
 
@@ -244,11 +246,11 @@ Percent increase in risk:
 
 * Interpretation:
 
-    * The proportion of ________________  in group 1 is the      (RR-1)*100% higher/lower than the proportion of _________________ in group 2.
+    * The proportion of successes in group 1 is the $(RR-1)\times 100$ __________ higher/lower than the proportion of successes in group 2.
     
 \setstretch{1}
 
-Example: One-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2% of those in the placebo group.
+Example for class discussion: In a study reported in the New England Journal of Medicine [@doit2015], one-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2% of those in the placebo group.
 
 * Calculate the relative risk of desensitization comparing the peanut flour group to the placebo group.
 
@@ -280,7 +282,7 @@ Within the peanut flour group, the percent desensitized within each age group (a
 
 #### Relative risk in the news {-}
 
-People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@WashPost2022]. 
+People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@bhavsar2022]. 
 
 * What was the calculated relative risk of developing shingles when comparing those who has mild COVID-19 to those who had not had COVID-19, among the 50 and older population?
 

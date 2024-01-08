@@ -1,4 +1,6 @@
-## Lecture Notes Week 11: Inference for a Single Mean & Paired Data 
+# Inference for a Quantitative Response with Paired Samples
+
+## Lecture Notes Week 12: Inference for Paired Data 
 
 \setstretch{1}
 
@@ -307,6 +309,10 @@
 <!-- ```{r, echo=TRUE} -->
 <!-- pt(-4.683, df=82, lower.tail=TRUE) -->
 <!-- ``` -->
+### Single categorical, single quantitative variables {-}
+
+* In this week, we will study inference for a ______________________ explanatory variable and a _________________________ response variable where the two groups are ____________________________.
+
 ### Paired vs. Independent Samples {-}
 
 Two groups are paired if an observational unit in one group is connected to an observational unit in another group 
@@ -321,23 +327,34 @@ Examples:
 
 * Change in blood pressure
 
-Example:  Three hundred registered voters were selected at random to participate in a study on attitudes about how well the president is performing. They were each asked to answer a short multiple-choice questionnaire and then they watched a 20-minute video that presented information about the job description of the president. After watching the video, the same 300 selected voters were asked to answer a follow-up multiple-choice questionnaire. 
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/paired_independent} 
+
+}
+
+\caption{Illustration of Independent vs. Paired Samples}(\#fig:pairedindependent)
+\end{figure}
+
+Example 1:  Three hundred registered voters were selected at random to participate in a study on attitudes about how well the president is performing. They were each asked to answer a short multiple-choice questionnaire and then they watched a 20-minute video that presented information about the job description of the president. After watching the video, the same 300 selected voters were asked to answer a follow-up multiple-choice questionnaire. 
 
 * Is this an example of a paired samples or independent samples study?
 
-\vspace{0.2in}
+\vspace{0.3in}
 
-Thirty dogs were selected at random from those residing at the humane society last month. The 30 dogs were split at random into two groups. The first group of 15 dogs was trained to perform a certain task using a reward method. The second group of 15 dogs was trained to perform the same task using a reward-punishment method. 
+\newpage
 
-* Is this an example of a paired samples or independent samples study?
-
-\vspace{0.2in}
-
-Fifty skiers volunteered to study how different waxes impacted their downhill race times. The participants were split into groups of two based on similar race times from the previous race. One of the two then had their skis treated with Wax A while the other was treated with Wax B. The downhill ski race times were then measured for each of the 25 volunteers who used Wax A as well as for each of the 25 volunteers who used Wax B.
+Example 2: Thirty dogs were selected at random from those residing at the humane society last month. The 30 dogs were split at random into two groups. The first group of 15 dogs was trained to perform a certain task using a reward method. The second group of 15 dogs was trained to perform the same task using a reward-punishment method. 
 
 * Is this an example of a paired samples or independent samples study?
 
-\vspace{0.2in}
+\vspace{0.3in}
+
+Example 3: Fifty skiers volunteered to study how different waxes impacted their downhill race times. The participants were split into groups of two based on similar race times from the previous race. One of the two then had their skis treated with Wax A while the other was treated with Wax B. The downhill ski race times were then measured for each of the 25 volunteers who used Wax A as well as for each of the 25 volunteers who used Wax B.
+
+* Is this an example of a paired samples or independent samples study?
+
+\vspace{0.3in}
 	
 For a paired experiment, we look at the difference between responses for each unit (pair), rather than just the average difference between treatment groups
 
@@ -377,7 +394,7 @@ Notation for the Sample Statistics
 
 * Sample standard deviation of the differences: 
 	
-Example: Is there a difference in heights between husbands and wives?  The heights were measured on the husband and wife in a random sample of 199 married couples from Great Britain.  
+Example: Is there a difference in heights between husbands and wives?  The heights were measured on the husband and wife in a random sample of 199 married couples from Great Britain [@gbmarried]. 
 
 Parameter of interest:
 
@@ -439,7 +456,9 @@ hw_diff %>%
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 
-* i.e., 95\% CI = (2.5th percentile, 97.5th percentile)
+    * i.e., 95\% CI = (2.5th percentile, 97.5th percentile)
+
+\newpage
 
 Conditions for inference for paired data:
 
@@ -480,23 +499,7 @@ Interpret the 99\% confidence interval:
 
 #### Theory-based method {-}
 
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.5in}
-
-Conditions for inference using theory-based methods:
-
-- Independence:
-
-\vspace{0.2in}
-
-- Large enough sample size:
-
-\vspace{0.2in}
-
-### $t$-distribution {-}
+#### t-distribution {-}
 
 In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
 
@@ -512,9 +515,39 @@ degrees of freedom to approximate the sampling distribution.
 
 \setstretch{1}
 
-The $t^*$ multiplier is the value at the given percentile of the $t$-distribution with $n - 1$ degrees of freedom.
+Conditions for inference using theory-based methods for paired data (categorical explanatory and quantitative response):
 
-For the height data, we will use a $t$-distribution with _________ df.
+- Independence: (same as for simulation); the difference in outcome for one observational unit will not influence another observation.
+
+- Large enough sample size:
+
+    - Normality: The data should be approximately normal or the sample size should be large.
+
+\rgi \rgi $n < 30$: 
+    
+\vspace{0.2in}
+
+\rgi \rgi $30 \leq n < 100$: 
+    
+\vspace{0.2in}
+
+\rgi \rgi $n \geq 100$: 
+    
+\vspace{0.2in}
+
+Theory-based Confidence Interval
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.5in}
+
+Equation for the standard error for the sample mean difference:
+
+\vspace{0.5in}
+
+The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+
+For the height data, we will use a t-distribution with _________ df.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{11-LN011-paired_files/figure-latex/tstar-1} \end{center}
@@ -645,15 +678,13 @@ Conclusion:
 
 * Calculate the standardized statistic 
 
-* Find the area under the $t$-distribution with $n - 1$ df at least as extreme as the standardized statistic
-
-Equation for the standard error of the mean difference:
-
-\vspace{0.5in}
+* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
 
 Equation for the standardized sample mean difference:
 
 \vspace{0.5in}
+
+\newpage
 
 Reminder of summary statistics for height data:
 
@@ -666,7 +697,7 @@ hw_diff %>%
 
 Calculate the standardized sample mean difference in height:
 
-* First calculate the standard error for the mean difference
+* 1st calculate the standard error of the sample mean difference
 
 \vspace{0.5in}
 

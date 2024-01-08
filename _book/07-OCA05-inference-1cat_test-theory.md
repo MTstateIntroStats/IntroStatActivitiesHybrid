@@ -82,7 +82,6 @@ Conditions for the sampling distribution of $\hat{p}$ to follow an approximate n
 6. Is the success-failure condition met to model the data with the normal distribution?  Explain your answer in context of the problem.
 
 \vspace{1in}
-\newpage
 
 To calculate the standardized statistic we use the general formula 
 
@@ -96,11 +95,11 @@ Z = \frac{\hat{p} - \pi_0}{SE_0(\hat{p})},
 $$
 where the standard error is calculated using the null value:
 
-$$SE_0(\hat{p})=\sqrt{\frac{\pi_0(1-\pi_0)}{n}}$$.
+$$SE_0(\hat{p})=\sqrt{\frac{\pi_0\times(1-\pi_0)}{n}}$$.
 
 The standard error of the sample proportion measures the variability of possible sample proportions from the actual proportion.  In other words, how far each possible sample proportion is from the actual proportion on average.  For this study, the null standard error of the sample proportion is calculated using the null value, 0.1.
 
-$$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
+$$SE_0(\hat{p})=\sqrt{\frac{0.1\times(1-0.1)}{500}} = 0.013$$.
 
 Each sample proportion of male boxers that are left-handed is 0.013 from the true proportion of male boxers that are left-handed, on average.
 
@@ -116,8 +115,6 @@ Each sample proportion of male boxers that are left-handed is 0.013 from the tru
 
 \caption{Standard Normal Curve}(\#fig:Normalcur)
 \end{figure}
-
-\newpage
 
 8.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
 
@@ -222,8 +219,6 @@ pnorm(4.769, # Enter value of standardized statistic
 <!-- c) Using a sample statistic closer to the null value. -->
 
 <!-- \vspace{0.4in} -->
-
-\newpage
 
 ### Take-home messages
 

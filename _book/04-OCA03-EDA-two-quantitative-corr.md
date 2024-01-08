@@ -88,47 +88,32 @@ Another summary measure used to explain the linear relationship between two quan
 
 \vspace{.4in}
 
+\newpage
+
 5.  The variance of the response variable, revenue in \$MM, is about $s_{revenue}^2 = 8024.261$ \$MM$^2$  and the variability in the residuals is about $s_{RES}^2 = 4244.832$ \$MM$^2$.  Use these values to calculate the coefficient of determination.  Verify that your answers to 4 and 5 are the same.
 
 \vspace{1in}
 
 In the next part of the activity we will explore what the coefficient of determination measures. 
 
-In Figure \@ref(fig:horizontal-line), we see the data plotted with a horizontal line. Note that the line has a slope of zero, this shows no relationship between budget and revenue. 
+In the scatterplot below, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between budget and revenue. The value of the y-intercept, 61.87, is the mean of the response variable when there is no relationship between the two variables.  To find the sum of squares total (SST) we find the residual ($residual = y - \hat{y}$) for each response value from the horizontal line (from the value of 61.87).  Each residual is squared and the sum of the squared values is calculated.  The SST gives the **total variability in the response variable, revenue**.  
 
-\begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{images/HorizontalLine} 
+\begin{center}\includegraphics[width=0.7\linewidth]{04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
-}
+The calculated value for the SST is 730207.72.  
 
-\caption{Plot of the data with no slope.}(\#fig:horizontal-line)
-\end{figure}
+<!-- 6.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST). -->
+<!-- \vspace{3mm} -->
 
-6.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST).
-\vspace{3mm}
+<!--     SST =  -->
 
-    SST = 
+This next scatterplot, shows the plotted data with the best fit regression line.  We will learn more about the regression line in the next class. This is the line of best fit between budget and revenue and has the smallest sum of squares error (SSE).  The SSE is calculated by finding the residual from each response value to the regression line.  Each residual is squared and the sum of the squared values is calculated.
 
-\newpage
 
-In Figure \@ref(fig:regression-line), we see the data plotted with the regression line (we will learn more about the regression line in the next class). This is the line of best fit between budget and revenue. 
+\begin{center}\includegraphics[width=0.7\linewidth]{04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{images/Regression_Line} 
-
-}
-
-\caption{Plot of the data showing the regression line.}(\#fig:regression-line)
-\end{figure}
-
-7. Write down the value for SSE from this image.
-\vspace{3mm}
-
-    SSE =  
-
-\vspace{0.2in}
+The calculated value for the SSE is 386279.71.
 
 <!-- * Go to the website www.rossmanchance.com/ISIapplets.html and click on Corr/Regresssion under Quantitative Response.   -->
 
@@ -154,11 +139,11 @@ In Figure \@ref(fig:regression-line), we see the data plotted with the regressio
 
 <!-- \vspace{0.5in} -->
 
-8.  Calculate the value for $r^2$ using the values found for SST and SSE.  
+6.  Calculate the value for $r^2$ using the values for SST and SSE provided below each of the previous graphs.  
 
 \vspace{1in}
 
-9.  Write a sentence interpreting the coefficient of determination in context of the problem.
+7.  Write a sentence interpreting the coefficient of determination in context of the problem.
 
 \newpage
 

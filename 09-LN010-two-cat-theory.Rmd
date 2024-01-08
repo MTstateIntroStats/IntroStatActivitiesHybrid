@@ -1,13 +1,14 @@
-## Lecture Notes Week 9: Theoretical Inference for Two Categorical Variables 
+# Inference for Two Categorical Variables: Theory-based Methods
 
+## Lecture Notes Week 9: Theoretical Inference for Two Categorical Variables 
 
 \setstretch{1}
 
 ### Hypothesis testing using theory-based methods {-}
 
-Conditions for inference using theory-based methods:
+Conditions for inference using theory-based methods for two categorical variables:
 
-- Independence:
+- Independence: the response for one observational unit will not influence another observational unit
 
 \vspace{0.2in}
 
@@ -21,7 +22,7 @@ Conditions for inference using theory-based methods:
 
 Equation for the standard error of the difference in sample proportions assuming the null hypothesis is true:
 
-\vspace{0.5in}
+\vspace{0.8in}
 
 \setstretch{1.5}
 
@@ -31,7 +32,7 @@ Equation for the standard error of the difference in sample proportions assuming
 
 Equation for the standardized difference in sample proportions:
 
-\vspace{0.5in}
+\vspace{0.8in}
 
 \setstretch{1.5}
 
@@ -39,9 +40,7 @@ Equation for the standardized difference in sample proportions:
 
 \setstretch{1}
 
-Example: In the week 3 Lab, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES). A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
-
-\newpage 
+Example for class discussion: In the week 3 Lab, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
 
 Are the conditions met to analyze the university data using theory-based methods?
 
@@ -56,7 +55,8 @@ IPEDS <- IPED %>%
 IPEDS %>% # Data set piped into...
     ggplot(aes(x = LandGrant, fill = Tenure)) +   # This specifies the variables
   geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
-  labs(title = "Segmented Bar Plot of Tenure Availability \n Use by Type of Institution",  
+  labs(title = "Segmented Bar Plot of Tenure Availability 
+       by Type of Institution for Higher Ed Institutions",  
        # Make sure to title your plot 
        x = "Land Grant",   # Label the x axis
        y = "") + # Remove y axis label 
@@ -152,13 +152,13 @@ Conclusion with scope of inference:
 
 \vspace{0.6in}
 
+\newpage 
+
 ### Confidence interval {-}
 
 * Estimate the _______________ in true _______________ 
 
 * $CI = \text{statistic} \pm \text{margin of error}$
-
-\vspace{0.5in}
 
 #### Theory-based method for a two categorical variables {-}
 
@@ -195,8 +195,6 @@ qnorm(0.95, lower.tail=TRUE)
 * Calculate the endpoints of the 90\% confidence interval
 
 \vspace{0.6in}
-
-\newpage
 
 Confidence interval interpretation:
 

@@ -1,6 +1,6 @@
 # Inference for a Quantitative Response with Independent Samples
 
-## Week 12 Reading Guide: Inference for a Difference in Two Means
+## Week 13 Reading Guide: Inference for a Difference in Two Means
 
 ### Textbook Chapter 19 Inference for comparing two independent means {-}
 

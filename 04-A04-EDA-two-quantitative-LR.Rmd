@@ -48,10 +48,15 @@ movies <- read.csv("https://math.montana.edu/courses/s216/data/Movies2016.csv") 
 
 #### Vocabulary review {-}
 
-To look at the relationship between two quantitative variables we will create a scatterplot with the explanatory variable on the x-axis and the response variable on the y-axis.  We can also find three summary measures for the linear relationship between the two variables: regression slope, correlation and the coefficient of determination. 
+To look at the relationship between two quantitative variables we will create a scatterplot with the explanatory variable on the x-axis and the response variable on the y-axis.  
 
+We will look at the relationship between budget and revenue for movies released in 2016. 
 
-We will look at the relationship between budget and revenue for movies released in 2016. Upload and open the provided R script file. Enter the explanatory variable name, `budget_mil`, for `explanatory` and the response variable name, `revenue_mil`, for `response` at line 9 in the R script file to create the scatterplot. Highlight and run lines 1--14.
+* Upload and open the provided R script file. 
+
+* Enter the explanatory variable name, `budget_mil`, for `explanatory` and the response variable name, `revenue_mil`, for `response` at line 9 in the R script file to create the scatterplot. 
+
+* Highlight and run lines 1--14.
 
 ```{r echo=TRUE, fig.height=5,fig.width=12, message = FALSE, eval=FALSE}
 movies %>% # Data set pipes into...
@@ -59,31 +64,33 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
   geom_point() +  # Add scatterplot of points
   labs(x = "Budget in Millions ($)",  # Label x-axis
        y = "Revenue in Millions ($)",  # Label y-axis
-       title = "Scatterplot of Revenue vs. Budget for Movies in 2016") + # Be sure to title your plots
+       title = "Scatterplot of Revenue vs. Budget for Movies 
+       Released in 2016") + 
+    # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
 1. Sketch the scatterplot created from the code.
 
-\vspace{2in}
+\vspace{1.75in}
 
-2. Assess the four features of the scatterplot that describe this relationship. Describe each feature using a complete sentence!
+2. Assess the four features of the scatterplot that describe this relationship. 
 
 * Form (linear, non-linear)
 
-\vspace{.2in}
+\vspace{.075in}
 
 * Direction (positive, negative)
 
-\vspace{.2in}
+\vspace{.075in}
 
 * Strength
 
-\vspace{.2in}
+\vspace{.075in}
 
 * Unusual observations or outliers
 
-\vspace{.2in}
+\vspace{.075in}
 
 
 3. Based on the plot, does there appear to be an association between budget and revenue? Explain.
@@ -92,7 +99,9 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
 
 #### Slope {-}
 
-The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `budget_mil` (the $x$-variable name) is the value of $b_1$, the slope.  Run lines 18--19 in the R script file to reproduce the linear model output found in the coursepack.
+The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `budget_mil` (the $x$-variable name) is the value of $b_1$, the slope.  
+
+* Run lines 18--19 in the R script file to reproduce the linear model output found in the coursepack.
 
 ```{r, echo=TRUE, collapse = FALSE}
 # Fit linear model: y ~ x
@@ -128,14 +137,13 @@ Therefore, the slope predicts how much the line will *rise* for each *run* of +1
 
 #### Residuals {-}
 
-The model we are using assumes the relationship between the two variables follows a straight line. The residuals are the errors, or the variability in the response that hasn't been modeled by the line (model).
+The model we are using assumes the relationship between the two variables follows a straight line. The residuals are the errors, or the variability in the response that hasn't been modeled by the regression line.
 
 \begin{center}
-Data = Model + Residual
 
-$\implies$ Residual = Data $-$ Model
+$\implies$ Residual = actual y value $-$ predicted y value
 
-$e_i=y_i-\hat{y}_i$
+$e=y-\hat{y}$
 \end{center}
 
 9.  The movie *Independence Day: Resurgence* had a budget of 165 \$MM and revenue of 102.315 \$MM.  Find the residual for this movie.
@@ -157,7 +165,9 @@ movies %>% # Data set pipes into...
   labs(x = "Budget in Millions ($)",  # Label x-axis
        y = "Revenue in Millions ($)",  # Label y-axis
        color = "content_rating",  # Label legend
-       title = "Scatterplot of Revenue vs. Budget by Content Rating for Movies in 2016") + # Be sure to tile your plots
+       title = "Scatterplot of Revenue vs. Budget by 
+       Content Rating for Movies Released in 2016") + 
+    # Be sure to title your plot
   geom_smooth(method = "lm", se = FALSE, lwd = 2) + # Add regression lines
   scale_color_grey() # Make black and white
 ```

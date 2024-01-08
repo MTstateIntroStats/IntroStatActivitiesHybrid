@@ -1,3 +1,5 @@
+# Exploring Multivariable Data
+
 ## Lecture Notes Week 4: Regression and Correlation
 
 \setstretch{1}
@@ -92,7 +94,7 @@ Correlation is always between the values of _______ and ________.
 
 * The sign gives the _________________.
 
-The coefficient of determination can be found using the _____________ for each variable or the SSE and SST (sum of squared total)
+The coefficient of determination can be found by squaring the value of correlation, using the _____________ for each variable or using the SSE (sum of squares error) and SST (sum of squares total)
 
 * $r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}$
 
@@ -110,25 +112,30 @@ Notation:
 
 \setstretch{1}
 
-Example: Data was collected from 1236 births between 1960 and 1967 in the San Francisco East Bay area to better understand what variables contributed to child birth weight, as children with low birth weight often suffer from an array of complications later in life.  
+\vspace{1mm}
+
+Example for class discussion: Data were collected from 1236 births between 1960 and 1967 in the San Francisco East Bay area to better understand what variables contributed to child birthweight, as children with low birthweight often suffer from an array of complications later in life [@babies]. There were some missing values in the study and with those observations removed we have a total of 1223 births.
 
 
 ```r
-babies<-read.csv("data/babies.csv")
+babies<-read.csv("data/babies.csv") %>%
+    drop_na(bwt) %>%
+    drop_na(gestation)
 glimpse(babies)
-#> Rows: 1,152
-#> Columns: 7
+#> Rows: 1,223
+#> Columns: 8
+#> $ case      <int> 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ~
 #> $ bwt       <int> 120, 113, 128, 108, 136, 138, 132, 120, 143, 140, 144, 141, ~
 #> $ gestation <int> 284, 282, 279, 282, 286, 244, 245, 289, 299, 351, 282, 279, ~
 #> $ parity    <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-#> $ age       <int> 27, 33, 28, 23, 25, 33, 23, 25, 30, 27, 32, 23, 30, 38, 25, ~
-#> $ height    <int> 62, 64, 64, 67, 62, 62, 65, 62, 66, 68, 64, 63, 63, 63, 65, ~
-#> $ weight    <int> 100, 135, 115, 125, 93, 178, 140, 125, 136, 120, 124, 128, 1~
-#> $ smoke     <int> 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, ~
+#> $ age       <int> 27, 33, 28, 23, 25, 33, 23, 25, 30, 27, 32, 23, 36, 30, 38, ~
+#> $ height    <int> 62, 64, 64, 67, 62, 62, 65, 62, 66, 68, 64, 63, 61, 63, 63, ~
+#> $ weight    <int> 100, 135, 115, 125, 93, 178, 140, 125, 136, 120, 124, 128, 9~
+#> $ smoke     <int> 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, ~
 ```
 
 
-Here you see a glimpse of the data.  The 1236 rows correspond to the sample size.  The case variable is labeling each pregnancy 1 through 1236.  Then 7 variables are recorded.  Birthweight (bwt), length of gestation in days, parity is called an indicator variable telling us if the pregnancy was a first pregnancy (labeled as 0) or not (labeled as 1) were recorded about the child and pregnancy.  The age, height, and weight were recorded for the mother giving birth, as was smoke, another indicator variable where 0 means the mother did not smoke during pregnancy, and 1 indicates that she did smoke while pregnant.  
+Here you see a glimpse of the data.  The 1223 rows correspond to the sample size.  The case variable is labeling each pregnancy 1 through 1223.  Then 7 variables are recorded.  birthweight (bwt), length of gestation in days, parity is called an indicator variable telling us if the pregnancy was a first pregnancy (labeled as 0) or not (labeled as 1) were recorded about the child and pregnancy.  The age, height, and weight were recorded for the mother giving birth, as was smoke, another indicator variable where 0 means the mother did not smoke during pregnancy, and 1 indicates that she did smoke while pregnant.  
 
 The following shows a scatterplot of length of gestation as a predictor of birthweight.
 
@@ -139,7 +146,9 @@ ggplot(aes(x = gestation, y = bwt))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "number of days of gestation",  # Label x-axis
        y = "birthweight (oz)",  # Label y-axis
-       title = "Scatterplot of Gestation vs. Birthweight") + # Be sure to title your plots
+       title = "Scatterplot of Gestation vs. Birthweight for Births
+       between 1960 and 1967 in San Francisco") + 
+    # Be sure to title your plots with the type of plot, observational units, variable(s)
   geom_smooth(method = "lm", se = FALSE) + # Add regression line
     theme_bw()
 ```
@@ -148,7 +157,7 @@ ggplot(aes(x = gestation, y = bwt))+  # Specify variables
 
 \begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
-Describe the scatterplot using the four characteristics.
+Describe the scatterplot using the four characteristics of a scatterplot.
 
 \vspace{1in}
 
@@ -159,9 +168,9 @@ The linear model output for this study is given below:
 # Fit linear model: y ~ x
 babiesLM <- lm(bwt ~ gestation, data=babies)
 summary(babiesLM)$coefficients # Display coefficient summary
-#>               Estimate Std. Error    t value     Pr(>|t|)
-#> (Intercept) -7.5837816 8.64847207 -0.8768926 3.807281e-01
-#> gestation    0.4562854 0.03091203 14.7607695 2.767227e-45
+#>                Estimate Std. Error   t value     Pr(>|t|)
+#> (Intercept) -10.0641842 8.32220357 -1.209317 2.267751e-01
+#> gestation     0.4642626 0.02974366 15.608793 3.224362e-50
 ```
 Write the least squares equation of the line.
 
@@ -175,35 +184,53 @@ Interpret the y-intercept in context of the problem.
 
 \vspace{0.6in}
 
-Predict the birthweight of a baby with 310 days gestation.
+Predict the birthweight for a birth with a baby born at 310 days gestation.
 
 \vspace{0.5in}
 
-Calculate the residual for a baby with a birthweight of 151 ounces and at 310 days gestation.
+Calculate the residual for a birth of a baby with a birthweight of 151 ounces and born at 310 days gestation.
 
 \vspace{0.5in}
 
-Is this value (151, 310) above or below the line of regression?  Did the line of regression overestimate or underestimate the birthweight?
+Is this value (310, 151) above or below the line of regression?  Did the line of regression overestimate or underestimate the birthweight?
 
-\vspace{0.5in}
+\vspace{0.2in}
 
-The following code finds the value of correlation between gestation and birthweight.
+The following code creates a correlation matrix between different quantitative variables in the data set.
 
 
 ```r
-cor(bwt~gestation, data=babies, use="pairwise.complete.obs")
-#> [1] 0.399103
+babies %>%
+    select(c("gestation", "age", "height", "weight", "bwt")) %>%
+    cor(use="pairwise.complete.obs") %>%
+    round(3)
+#>           gestation    age height weight   bwt
+#> gestation     1.000 -0.056  0.064  0.022 0.408
+#> age          -0.056  1.000 -0.005  0.147 0.029
+#> height        0.064 -0.005  1.000  0.436 0.201
+#> weight        0.022  0.147  0.436  1.000 0.154
+#> bwt           0.408  0.029  0.201  0.154 1.000
 ```
-This shows a ___________, _____________ relationship between gestation and birthweight.
+\setstretch{1.5}
 
-The value for SST was found to be 382172.68.  The value for SSE was found to be 321299.00.
+The value of correlation between gestation and birthweight is ______________. This shows a ___________, _____________ relationship between gestation and birthweight.
 
-Calculate and interpret the coefficient of determination between gestation and birthweight.
-
-\vspace{0.8in}
+\setstretch{1}
 
 
-\begin{center}\includegraphics[width=0.9\linewidth]{images/Coef_det} \end{center}
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+The value for SST was calculated as 406753.48.  The value for SSE was calculated as 339092.13.
+
+Calculate the coefficient of determination between gestation and birthweight.
+
+\vspace{0.3in}
+
+Interpret the coefficient of determination between gestation and birthweight.
+
+\vspace{0.5in}
 
 \newpage
 
@@ -230,25 +257,9 @@ ggplot(aes(x = gestation, y = bwt))+  # Specify variables
   geom_point(alpha=0.5, shape=1, aes(size=age)) +  # Add scatterplot of points
   labs(x = "number of days of gestation",  # Label x-axis
        y = "birthweight (oz)",  # Label y-axis
-       title = "Scatterplot of Gestation vs. Birthweight by Age") + # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
-```
-
-
-
-\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-
-Is there an association between maternal age and birthweight?
-
-
-```r
-babies %>% # Data set pipes into...
-ggplot(aes(x = age, y = bwt))+  # Specify variables
-  geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "age",  # Label x-axis
-       y = "birthweight (oz)",  # Label y-axis
-       title = "Scatterplot of Birthweight by Age") + # Be sure to title your plots
+       title = "Scatterplot of Gestation vs. Birthweight by Age 
+       for Births between 1960 and 1967 in San Francisco") + 
+    # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
@@ -256,34 +267,9 @@ ggplot(aes(x = age, y = bwt))+  # Specify variables
 
 \begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
-
-```r
-cor(bwt~age, data=babies, use="pairwise.complete.obs")
-#> [1] 0.02897539
-```
-
-Is there an association between maternal age and gestation?
+\newpage
 
 
-```r
-babies %>% # Data set pipes into...
-ggplot(aes(x = gestation, y = age))+  # Specify variables
-  geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "number of days of gestation",  # Label x-axis
-       y = "age",  # Label y-axis
-       title = "Scatterplot of Gestation vs. Age") + # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
-```
-
-
-
-\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-9-1} \end{center}
-
-
-```r
-cor(age~gestation, data=babies, use="pairwise.complete.obs")
-#> [1] -0.05560369
-```
 Let's add the categorical variable, whether a mother smoked, to the scatterplot between gestation and birthweight.
 
 
@@ -297,7 +283,9 @@ babies %>% # Data set pipes into...
     geom_point(aes(shape = smoke), size = 2) +  #Add scatterplot of points
     labs(x = "number of days of gestation",  #Label x-axis
          y = "birthweight (oz)",  #Label y-axis
-         title = "Scatterplot of Gestation vs. Birthweight by Smoking Status") + 
+         title = "Scatterplot of Gestation vs. Birthweight by 
+         Smoking Status for Births between 1960 and 1967 
+         in San Francisco") + 
     #Be sure to title your plots
     geom_smooth(method = "lm", se = FALSE) + #Add regression line
     scale_color_grey()
@@ -305,7 +293,7 @@ babies %>% # Data set pipes into...
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 Does the relationship between length of gestation and birthweight appear to depend upon maternal smoking status? 
 

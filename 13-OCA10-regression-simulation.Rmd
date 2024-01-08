@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 13:  Prediction of Crocodilian Body Size
+## Out-of-Class Activity Week 14:  Prediction of Crocodilian Body Size
 
 \setstretch{1}
 
@@ -29,7 +29,7 @@ To review these concepts, see Chapter 21 in the textbook.
 
 ### Crocodilian Body Size
 
-Much research surrounds using measurements of animals to estimate body-size of extinct animals.  Many challenges exist in making accurate estimates for extinct crocodilians.  The term crocodilians refers to all members of the family Crocodylidae (“true” crocodiles), family Alligatoridae (alligators and caimans) and family Gavialidae (gharial, Tomistoma). The researchers in this study [@obrien2019] state, "Among extinct crocodilians and their precursors (e.g., suchians), several methods have been developed to predict body size from suites of hard-tissue proxies. Nevertheless, many have limited applications due to the disparity of some major suchian groups and biases in the fossil record. Here, we test the utility of head width (HW) as a broadly applicable body-size estimator in living and fossil suchians."  Data were collected on 76 male and female individuals of different species. Is there evidence that head width is a good predictor of body size for crocodilians? 
+Much research surrounds using measurements of animals to estimate body-size of extinct animals.  Many challenges exist in making accurate estimates for extinct crocodilians.  The term crocodilians refers to all members of the family Crocodylidae (“true” crocodiles), family Alligatoridae (alligators and caimans) and family Gavialidae (gharial, Tomistoma). The researchers in this study [@obrien2019] state, "Among extinct crocodilians and their precursors (e.g., suchians), several methods have been developed to predict body size from suites of hard-tissue proxies. Nevertheless, many have limited applications due to the disparity of some major suchian groups and biases in the fossil record. Here, we test the utility of head width (HW) as a broadly applicable body-size estimator in living and fossil suchians."  Data were collected on 76 male and female individuals of different species. Is there evidence that head width (measured in cm) is a good predictor of total body length (measured in cm) for crocodilians? 
 
 
 ```{r, echo = TRUE, fig.width=7,fig.height=6, collapse=FALSE}
@@ -45,6 +45,7 @@ croc <- croc %>%
 
 \vspace{.5in}
 
+\newpage
 
 To create a scatterplot to examine the relationship between head width and total body length we will use `HW_cm` as the explanatory variable and `TL_cm` as the response variable. 
  
@@ -113,6 +114,8 @@ In this activity, we will focus on using simulation-based methods for inference 
 Let's start by thinking about how one simulation would be created on the null distribution using cards.  First, we would write the values for the response variable, total length, on each card.  Next, we would shuffle these $y$ values while keeping the $x$ values (explanatory variable) in the same order.  Then, find the line of regression for the shuffled $(x,y)$ pairs and calculate either the slope or correlation of the shuffled sample.  
 
 We will use the `regression_test()` function in R (in the `catstats` package) to simulate the null distribution of shuffled slopes (or shuffled correlations) and compute a p-value.  We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as `croc`), the summary measure for the test (either slope or correlation), number of repetitions, the sample statistic (value of slope or correlation), and the direction of the alternative hypothesis.
+
+\newpage
 
 The response variable name is `TL_cm` and the explanatory variable name is `HW_cm` for these data.
 

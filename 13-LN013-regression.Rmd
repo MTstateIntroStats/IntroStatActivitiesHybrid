@@ -1,5 +1,6 @@
-## Lecture Notes Week 13: Inference for Two Quantitative Variables
+# Inference for Two Quantitative Variables
 
+## Lecture Notes Week 14: Inference for Two Quantitative Variables
 
 \setstretch{1}
 
@@ -21,17 +22,17 @@ Scatterplot:
 
 The summary measures for two quantitative variables are:
 
-* ____________________________, interpreted as 
+* ____________________________, interpreted as the on average change in the response variable for a one unit increase in the explanatory variable.
 
-\vspace{0.6in}
+\vspace{1mm}
 
-* ____________________________, which measures the 
+* ____________________________, which measures the strength and direction of the linear relationship between two quantitative variables.
 
-\vspace{0.6in}
+\vspace{1mm}
 
-* ____________________________, interpreted as
+* ____________________________, interpreted as the percent of variability in the response variable that is explained by the relationship with the explanatory variable.
 
-\vspace{0.6in}
+\vspace{1mm}
 
 \setstretch{1}
 
@@ -51,7 +52,7 @@ Notation:
 
 \setstretch{1}
 
-Example:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life.  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature tends to decrease with higher levels of salinity.
+Example for class discussion:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. [@ocean]  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
 
 ```{r, echo=FALSE}
 bottle <- read.csv("data/bottle.csv")
@@ -83,7 +84,6 @@ Linear model output:
 lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
 round(summary(lm.water)$coefficients, 3)
 ```
-\newpage
 
 Correlation:
 
@@ -110,9 +110,7 @@ Calculate and interpret the coefficient of determination:
 
 Conditions:
 
-* Independence:
-
-\vspace{0.3in}
+* Independence: the response for one observational unit will not influence another observational unit
 
 * Linear relationship:
 
@@ -196,7 +194,6 @@ regression_test(T_degC~Salnty, # response ~ explanatory
 Explain why the null distribution is centered at the value of zero:
 
 \vspace{0.5in}
-\newpage
 
 Interpretation of the p-value:
 
@@ -220,6 +217,8 @@ Conclusion:
 
 \vspace{0.6in}
 
+\newpage
+
 #### Theory-based method{-}
 
 Conditions:
@@ -237,8 +236,6 @@ Conditions:
 * Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
 
     * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
-
-\newpage
 
 * Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
 
@@ -271,7 +268,6 @@ Diamonds %>% # Pipe data set into...
     geom_smooth(method = "lm", se = FALSE)  # Add regression line
 
 ```
-\newpage
 
 Diagnostic plots:
 ```{r}
@@ -297,8 +293,6 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 
 ```
-
-\newpage
 
 Diagnostic plots:
 ```{r}
@@ -329,6 +323,11 @@ Equation for the standardized slope:
 
 Calculate the standardized slope for the ocean data
 
+```{r, echo=TRUE}
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+summary(lm.water)$coefficients
+```
+
 \vspace{1in}
 
 ```{r, pvalueoce, echo = F}
@@ -358,6 +357,9 @@ or
 ```{r, echo=TRUE}
 pt(-8.670, df = 98, lower.tail=TRUE)
 ```
+
+\newpage
+
 ### Confidence interval {-}
 
 To estimate the true slope (or true correlation) we will create a confidence interval.
@@ -399,6 +401,8 @@ Confidence interval interpretation:
 
 \vspace{0.8in}
 
+\newpage 
+
 Now we will estimate the true correlation between salinity and temperature of the Pacific Ocean.
 
 ```{r, echo = TRUE}
@@ -422,6 +426,8 @@ Confidence interval interpretation:
 
 \vspace{0.8in}
 
+\newpage
+
 #### Theory-based method {-}
 
 * Calculate the interval centered at the sample statistic
@@ -436,7 +442,13 @@ lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
 round(summary(lm.water)$coefficients, 3)
 ```
 
-Using the ocean data, calculate the confidence interval for the true slope.
+Using the ocean data, calculate a 95\% confidence interval for the true slope.
+
+* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
+
+```{r, echo=TRUE}
+qt(0.975, df=98, lower.tail = TRUE)
+```
 
 \vspace{1in}
 

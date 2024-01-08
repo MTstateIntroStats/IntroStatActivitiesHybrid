@@ -1,5 +1,6 @@
-## Lecture Notes Week 13: Inference for Two Quantitative Variables
+# Inference for Two Quantitative Variables
 
+## Lecture Notes Week 14: Inference for Two Quantitative Variables
 
 \setstretch{1}
 
@@ -21,17 +22,17 @@ Scatterplot:
 
 The summary measures for two quantitative variables are:
 
-* ____________________________, interpreted as 
+* ____________________________, interpreted as the on average change in the response variable for a one unit increase in the explanatory variable.
 
-\vspace{0.6in}
+\vspace{1mm}
 
-* ____________________________, which measures the 
+* ____________________________, which measures the strength and direction of the linear relationship between two quantitative variables.
 
-\vspace{0.6in}
+\vspace{1mm}
 
-* ____________________________, interpreted as
+* ____________________________, interpreted as the percent of variability in the response variable that is explained by the relationship with the explanatory variable.
 
-\vspace{0.6in}
+\vspace{1mm}
 
 \setstretch{1}
 
@@ -51,7 +52,7 @@ Notation:
 
 \setstretch{1}
 
-Example:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life.  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature tends to decrease with higher levels of salinity.
+Example for class discussion:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. [@ocean]  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
 
 
 
@@ -85,7 +86,6 @@ round(summary(lm.water)$coefficients, 3)
 #> (Intercept)  197.156     21.478    9.18        0
 #> Salnty        -5.514      0.636   -8.67        0
 ```
-\newpage
 
 Correlation:
 
@@ -114,9 +114,7 @@ Calculate and interpret the coefficient of determination:
 
 Conditions:
 
-* Independence:
-
-\vspace{0.3in}
+* Independence: the response for one observational unit will not influence another observational unit
 
 * Linear relationship:
 
@@ -210,7 +208,6 @@ regression_test(T_degC~Salnty, # response ~ explanatory
 Explain why the null distribution is centered at the value of zero:
 
 \vspace{0.5in}
-\newpage
 
 Interpretation of the p-value:
 
@@ -234,6 +231,8 @@ Conclusion:
 
 \vspace{0.6in}
 
+\newpage
+
 #### Theory-based method{-}
 
 Conditions:
@@ -251,8 +250,6 @@ Conditions:
 * Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
 
     * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
-
-\newpage
 
 * Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
 
@@ -282,7 +279,6 @@ Diamonds %>% # Pipe data set into...
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-8-1} \end{center}
-\newpage
 
 Diagnostic plots:
 
@@ -308,8 +304,6 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
 
 \begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
-\newpage
-
 Diagnostic plots:
 
 \begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-11-1} \end{center}
@@ -334,6 +328,15 @@ Equation for the standardized slope:
 \vspace{0.8in}
 
 Calculate the standardized slope for the ocean data
+
+
+```r
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+summary(lm.water)$coefficients
+#>               Estimate Std. Error   t value     Pr(>|t|)
+#> (Intercept) 197.156160 21.4778118  9.179527 7.304666e-15
+#> Salnty       -5.513691  0.6359673 -8.669770 9.257446e-14
+```
 
 \vspace{1in}
 
@@ -362,6 +365,9 @@ or
 pt(-8.670, df = 98, lower.tail=TRUE)
 #> [1] 4.623445e-14
 ```
+
+\newpage
+
 ### Confidence interval {-}
 
 To estimate the true slope (or true correlation) we will create a confidence interval.
@@ -394,7 +400,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -407,6 +413,8 @@ Confidence interval interpretation:
 * Order of subtraction when comparing two groups
 
 \vspace{0.8in}
+
+\newpage 
 
 Now we will estimate the true correlation between salinity and temperature of the Pacific Ocean.
 
@@ -422,7 +430,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-LN013-regression_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -435,6 +443,8 @@ Confidence interval interpretation:
 * Order of subtraction when comparing two groups
 
 \vspace{0.8in}
+
+\newpage
 
 #### Theory-based method {-}
 
@@ -454,7 +464,15 @@ round(summary(lm.water)$coefficients, 3)
 #> Salnty        -5.514      0.636   -8.67        0
 ```
 
-Using the ocean data, calculate the confidence interval for the true slope.
+Using the ocean data, calculate a 95\% confidence interval for the true slope.
+
+* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
+
+
+```r
+qt(0.975, df=98, lower.tail = TRUE)
+#> [1] 1.984467
+```
 
 \vspace{1in}
 

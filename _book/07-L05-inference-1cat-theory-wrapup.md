@@ -136,9 +136,7 @@ Now let's investigate how changes in different factors influence the power of a 
 
 
 19.  **Complete the power analysis for this physical therapy company.  The company believes 70% of their patients will return to their sport within 8 months of ACL surgery.  They want to limit the probability of a type 1 error to 10% and the probability of a type 2 error to 15%.  What is the minimum number of athletes the company will need to collect data from in order to meet these goals?  Use the applet to answer this question, then download your image created and upload the file to Gradescope.**
-\vspace{0.25in}
-
-\newpage
+\vspace{0.4in}
 
 20.  Based on the goals outlined in question 19, which mistake below is the company more concerned about?  In other words, which error were the researchers trying to minimize.  Explain your answer.
 

@@ -4,7 +4,7 @@
 
 \setstretch{1}
 
-Use the provided data set from the Islands (ExamReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
+Use the provided data set from the Islands [@islands] (FinalExamReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
 
 | **Variable** 	| **Description** |
 |----	|-------------	|
@@ -12,18 +12,18 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 | `City` | Name of City in which the Islander resides |
 | `Population` | Population of the City |
 | `Name` | Name of Islander |
-| `Consent` | Whether the Islander consented to be in the study |
-| `Gender` | Gender of Islander (M = male, F = Female) |
+| `Consent` | Whether the Islander consented to be in the study (`Declined`, `Consented`)|
+| `Gender` | Gender of Islander (`M` = male, `F` = Female) |
 | `Age` | Age of Islander |
-| `Married` | Marital status of Islander |
-| `Smoking_Status` | Whether the Islander is a current smoker |
-| `Children` | Whether the Islander has children |
+| `Married` | Marital status of Islander (`yes`, `no`) |
+| `Smoking_Status` | Whether the Islander is a current smoker (`nonsmoker`, `smoker`) |
+| `Children` | Whether the Islander has children (`yes`, `no`) |
 | `weight_kg` | Weight measured in kg |
 | `height_cm` | Height measured in cm |
 | `respiratory_rate` | Breaths per minute |
-| `Type_of_Music` | Music type (Classical or Heavy Medal) Islander was randomly assigned to listen to |
+| `Type_of_Music` | Music type Islander was randomly assigned to listen to (`Classical`, `Heavy Metal`)|
 | `After_PuzzleCube` | Time to complete puzzle cube (minutes) after listening to assigned music |
-| `Education_Level` | Highest level of education completed |
+| `Education_Level` | Highest level of education completed (`highschool`, `university`)|
 | `Balance_Test` | Time balanced measured in seconds with eyes closed |
 | `Blood_Glucose_before` | Level of blood glucose (mg/dL) before consuming assigned drink |
 | `Heart_Rate_before` | Heart rate (bpm) before consuming assigned drink |
@@ -34,7 +34,7 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 
 \newpage
 
-1. Use the appropriate Final Exam Review R script file and analyze the following research question, "Does drinking a caffeinated drink increase blood glucose levels, on average?" Use before $-$ after as the order of subtraction.
+1. Use the appropriate Final Exam Review R script file to analyze the following research question, "Does drinking a caffeinated drink increase blood glucose levels, on average?" Use before $-$ after as the order of subtraction.
 
 a. Parameter of Interest:
 \vspace{0.3in}
@@ -123,7 +123,7 @@ r. Does the theory-based p-value and CI match those found using simulation metho
 s. What is the scope of inference for this study?
 \vspace{0.8in}
 
-2. Use the appropriate Final Exam Review R script file and analyze the following research question: "Do Islanders who listen to classical music take less time to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use - classical - heavy metal as the order of subtraction.
+2. Use the appropriate Final Exam Review R script file to analyze the following research question: "Do Islanders who listen to classical music take less time to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use - classical - heavy metal as the order of subtraction.
 
 a. Parameter of Interest:
 \vspace{0.3in}
@@ -214,7 +214,7 @@ r. Does the theory-based p-value and CI match those found using simulation metho
 s. What is the scope of inference for this study?
 \vspace{0.8in}
 
-3. Use the appropriate Final Exam Review R script file and analyze the following research question: "Is there an association between height and balance time for Islanders?"
+3. Use the appropriate Final Exam Review R script file to analyze the following research question: "Can height be used to predict the balance time for Islanders?"
 
 a. Parameter of Interest:
 \vspace{0.3in}

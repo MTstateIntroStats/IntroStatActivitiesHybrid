@@ -1,6 +1,6 @@
 # Group Exam 2 Review
 
-Use the provided data set from the Islands (ExamReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. 
+Use the provided data set from the Islands [@islands] (Exam2ReviewData.csv) and the appropriate Exam 2 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. 
 
 | **Variable** 	| **Description** |
 |----	|-------------	|
@@ -8,18 +8,18 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 | `City` | Name of City in which the Islander resides |
 | `Population` | Population of the City |
 | `Name` | Name of Islander |
-| `Consent` | Whether the Islander consented to be in the study |
-| `Gender` | Gender of Islander (M = male, F = Female) |
+| `Consent` | Whether the Islander consented to be in the study (`Declined`, `Consented`)|
+| `Gender` | Gender of Islander (`M` = male, `F` = Female) |
 | `Age` | Age of Islander |
-| `Married` | Marital status of Islander |
-| `Smoking_Status` | Whether the Islander is a current smoker |
-| `Children` | Whether the Islander has children |
+| `Married` | Marital status of Islander (`yes`, `no`) |
+| `Smoking_Status` | Whether the Islander is a current smoker (`nonsmoker`, `smoker`) |
+| `Children` | Whether the Islander has children (`yes`, `no`) |
 | `weight_kg` | Weight measured in kg |
 | `height_cm` | Height measured in cm |
 | `respiratory_rate` | Breaths per minute |
-| `Type_of_Music` | Music type (Classical or Heavy Medal) Islander was randomly assigned to listen to |
+| `Type_of_Music` | Music type Islander was randomly assigned to listen to (`Classical`, `Heavy Metal`)|
 | `After_PuzzleCube` | Time to complete puzzle cube (minutes) after listening to assigned music |
-| `Education_Level` | Highest level of education completed |
+| `Education_Level` | Highest level of education completed (`highschool`, `university`)|
 | `Balance_Test` | Time balanced measured in seconds with eyes closed |
 | `Blood_Glucose_before` | Level of blood glucose (mg/dL) before consuming assigned drink |
 | `Heart_Rate_before` | Heart rate (bpm) before consuming assigned drink |
@@ -27,8 +27,6 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 | `Heart_Rate_after` | Heart rate (bpm) after consuming assigned drink |
 | `Diff_Heart_Rate` | Difference in heart rate (bpm) for Before - After consuming assigned drink |
 | `Diff_Blood_Glucose` | Difference in blood glucose (mg/dL) for Before - After consuming assigned drink |
-
-\newpage
 
 1. Use the appropriate Exam 2 Review R script file and analyze the following research question: "Is there evidence that those with a higher education level are less likely to smoke?"
 
@@ -79,24 +77,24 @@ e. Calculate the value of the summary statistic to answer the research question.
 
 f. Interpret the value of the summary statistic in context of the problem:
     
-\vspace{0.4in}
+\vspace{0.3in}
     
 g. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
-\vspace{0.8in}
+\vspace{0.5in}
 
     Success-Failure (must be met to use theory-based methods):
-\vspace{0.8in}
+\vspace{0.6in}
     
 h. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
-\vspace{0.3in}
+\vspace{0.2in}
        
 i.  Interpret the p-value in the context of the problem.
-\vspace{0.8in}
+\vspace{0.7in}
         
 j.  Write a conclusion to the research question based on the p-value.
-\vspace{0.8in}
+\vspace{0.7in}
         
 k. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
@@ -105,13 +103,13 @@ l. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.3in}
         
 m. Interpret the 95\% confidence interval in context of the problem.
-\vspace{0.8in}
+\vspace{0.7in}
 
 n. Regardless to your answer in part g, calculate the standardized statistic.
 \vspace{0.4in}
 
 o. Interpret the value of the standardized statistic in context of the problem.
-\vspace{0.8in}
+\vspace{0.7in}
 
 p. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
@@ -120,7 +118,7 @@ q. Use the provided R script file to find the appropriate z* multiplier and calc
 \vspace{0.5in}
 
 r. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
-\vspace{0.8in}
+\vspace{0.7in}
 
 s. What is the scope of inference for this study?
 \vspace{0.8in}

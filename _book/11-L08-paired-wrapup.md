@@ -1,4 +1,4 @@
-## Week 11 Lab:  Swearing
+## Week 12 Lab:  Swearing
 
 \setstretch{1}
 
@@ -18,67 +18,66 @@
 
 * Interpret a confidence interval for a mean difference.
 
-### Type of samples
-
-For each of the following scenarios, determine whether the samples are paired or independent.
-
-1. Researchers interested in studying the effect of a medical treatment on insulin rate measured insulin rates of 30 patients before and after the medical treatment.
-\vspace{0.3in}
-
-2.  **A university is planning to bring emotional support animals to campus during finals week and wants to determine which type of animals are more effective at calming students.  Anxiety levels will be measured before and after each student interacts with either a dog or a cat.  The university will then compare change in anxiety levels between the 'dog' people and the 'cat' people.**
-\vspace{0.3in}
-
-3.  An industry leader is investigating a possible wage gap between male and non-male employees.  Twenty companies within the industry are randomly selected and the average salary for all males and non-males in mid-management positions is recorded for each company.
-\vspace{0.3in}
-
 ### Swearing
 
 Profanity (language considered obscene or taboo) and society's attitude about its acceptableness is a highly debated topic, but does swearing serve a physiological purpose or function? Previous research has shown that swearing produces increased heart rates and higher levels of skin conductivity. It is theorized that since swearing provokes intense emotional responses, it acts as a distracter, allowing a person to withstand higher levels of pain. To explore the relationship between swearing and increased pain tolerance, researchers from Keele University (Staffordshire, UK) recruited 83 native English-speaking participants [@stephens2020]. Each volunteer performed two trials holding a hand in an ice-water bath, once while repeating the “f-word” every three seconds, and once while repeating a neutral word (“table”). The order of the word to repeat was randomly assigned. Researchers recorded the length of time, in seconds, from the moment the participant indicated they were in pain until they removed their hand from the ice water for each trial. They hope to find evidence that pain tolerance is greater (longer times) when a person swears compared to when they say a neutral word, on average. Use Swear – Neutral as the order of subtraction.
 
-4.  What does $\mu_d$ represent in the context of this study?
-
-\vspace{0.8in}
-
-5.  Write out the null hypothesis in proper notation for this study.  
-
-\vspace{0.8in}
-
-6.  What sign ($<$, $>$, or $\neq$) would you use in the alternative hypothesis for this study?  Explain your choice.
+1. What is the explanatory variable for this study?  What is the response?
 
 \vspace{0.5in}
 
-Upload and open the R script file for Week 11 lab. Upload and import the csv file, `pain_tolerance`. Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
+2. What does $\mu_d$ represent in the context of this study?
+
+\vspace{0.8in}
+
+3.  Write out the null hypothesis in proper notation for this study.  
+
+\vspace{0.4in}
+
+4.  What sign ($<$, $>$, or $\neq$) would you use in the alternative hypothesis for this study?  Explain your choice.
+
+\vspace{0.5in}
+
+* Upload and open the R script file for Week 11 lab. 
+
+* Upload and import the csv file, `pain_tolerance`. 
+
+* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. 
+
+* Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
 
 ```r
 swearing <- datasetname
 paired_observed_plot(swearing)
 ```
 
-7. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
+5. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
-Enter the outcome for group 1 (`Swear`) for `measurement_1` and the outcome for group 2 (`Neutral`) for `measurement_2` in line 16.  Highlight and run lines 14--18 to get the summary statistics for the data.
+* Enter the outcome for group 1 (`Swear`) for `group_1` and the outcome for group 2 (`Neutral`) for `group_2` in line 16.  
+
+* Highlight and run lines 14--18 to get the summary statistics for the data.
 
 
 ```r
 swearing_diff <- swearing %>% 
-  mutate(differences = measurement_1 - measurement_2)
+  mutate(differences = group_1 - group_2)
 swearing_diff %>% 
     summarise(favstats(differences))
 ```
 
-8.  What is the value of $\bar{x}_d$?  What is the sample size?
+6.  What is the value of $\bar{x}_d$?  What is the sample size?
 \vspace{0.25in}
 
-9. **How far, on average, is each difference in pain tolerance from the mean of the differences in pain tolerance?  What is the appropriate notation for this value?**
+7. **How far, on average, is each difference in time the participant holds their hand in ice water from the mean of the differences in time?  What is the appropriate notation for this value?**
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 ### Use statistical inferential methods to draw inferences from the data {-}
 
-10.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
+8.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
 
-\vspace{0.8in}
+\vspace{1in}
 
 ### Hypothesis test {-}
 
@@ -86,23 +85,25 @@ Remember that the null distribution is created based on the assumption the null 
 
 We will use the `paired_test()` function in R (in the `catstats` package) to simulate the null distribution of sample mean differences and compute a p-value. 
 
-11.  When using the `paired_test()` function, we need to enter the name of the data set, either the order of subtraction (if the data set has both measurements) or the name of the differences (if the data set contains them).  We will also need to provide R with the observed mean difference, the direction of the alternative hypothesis, and the shift required in order to force the null hypothesis to be true.  The name of the data set as shown above is `swearing_diff` and the column of differences is called `differences`.  What values should be entered for each of the following to create 1000 simulated samples?
+\newpage
+
+9.  When using the `paired_test()` function, we need to enter the name of the data set, either the order of subtraction (if the data set has both measurements) or the name of the differences (if the data set contains them).  We will also need to provide R with the observed mean difference, the direction of the alternative hypothesis, and the shift required in order to force the null hypothesis to be true.  The name of the data set as shown above is `swearing_diff` and the column of differences is called `differences`.  What values should be entered for each of the following to create 1000 simulated samples?
 
 \vspace{1mm}
 * shift:
 
-\vspace{.2in}
+\vspace{.1in}
 * As extreme as:
     
-\vspace{.2in}
+\vspace{.1in}
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
-\vspace{.2in}
+\vspace{.1in}
 * Number of repetitions:
     
-\vspace{.2in}
+\vspace{.1in}
 
-12.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 11 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
+10.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
 
 
 ```r
@@ -120,11 +121,11 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 ### Communicate the results and answer the research question {-}
 
-13.  **Report the p-value. Based off of this p-value and a 1% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?**
+11.  **Report the p-value. Based off of this p-value and a 1% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?**
 
 \vspace{0.5in}
 
-14. Do you expect the 98\% confidence interval to contain the null value of zero?  Explain.
+12. Do you expect the 98\% confidence interval to contain the null value of zero?  Explain.
 
 \vspace{0.8in}
 
@@ -132,7 +133,7 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
 
-15. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
+13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
 
 ```r
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
@@ -140,19 +141,23 @@ paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differen
                     confidence_level = xx,  # Confidence level in decimal form
                     which_first = 1)  # Not needed when entering vector of differences
 ```
-\newpage
+Report the 98\% confidence interval in interval notation.
 
-|        Sketch the bootstrap distribution created using the code.  Report the 98\% confidence interval in interval notation.
+\vspace{0.3in}
 
-\vspace{1.5in}
-
-16. Interpret the *confidence level* of the interval you calculated in question 15. 
+14. Interpret the *confidence level* of the interval found in question 12. 
 
 \vspace{0.8in}
 
-17.  Write a paragraph summarizing the results of the study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
+15.  Write a paragraph summarizing the results of the study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
 
 * Summary statistic and interpretation
+
+    * Summary measure (in context)
+    
+    * Value of the statistic 
+    
+    * Order of subtraction when comparing two groups
 
 * P-value and interpretation
 
@@ -184,17 +189,12 @@ paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differen
     
     * Direction of the alternative hypothesis
 
+\newpage
 
 * Scope of inference
 
     * To what group of observational units do the results apply (target population or observational units similar to the sample)?
 	
     * What type of inference is appropriate (causal or non-causal)?
-
-\vspace{2.6in}
-
-\newpage
-
-Paragraph:
 
 \newpage

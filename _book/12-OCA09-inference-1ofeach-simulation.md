@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 12:  Does behavior impact performance?
+## Out-of-Class Activity Week 13:  Does behavior impact performance?
 
 \setstretch{1}
 
@@ -45,7 +45,8 @@ rude <- read.csv("https://math.montana.edu/courses/s216/data/rude.csv")
 rude %>%
 ggplot(aes(x = condition, y = number_of_uses)) +
     geom_boxplot() + 
-    labs(title = "Number of Uses for a Brick based on Behavior Condition",
+    labs(title = "Number of Uses for a Brick based on Behavior Condition
+         for College Students in a Management Course",
          x = "Behavior") 
 ```
 
@@ -81,8 +82,6 @@ rude %>%
 
 \vspace{.4in}
 
-\newpage
-
 4.  Is this an experiment or an observational study? Justify your answer.
 
 \vspace{1in}
@@ -111,8 +110,6 @@ rude %>%
 
 \vspace{0.5in}
 
-\newpage 
-
 #### Use statistical inferential methods to draw inferences from the data {-}
 
 ##### Hypothesis test {-}
@@ -129,6 +126,8 @@ To demonstrate this simulation, we could create cards to simulate a sample.
 
 \vspace{0.3in}
 
+\newpage
+
 12.  Next, we would mix the cards together and shuffle into two piles.  How many cards will go into each pile?  What should we label the piles?
 
 \vspace{.8in}
@@ -142,8 +141,6 @@ To demonstrate this simulation, we could create cards to simulate a sample.
 \vspace{0.8in}
 
 We will use the `two_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of differences in sample means and compute a p-value. 
-
-\newpage 
 
 15.  When using the `two_mean_test()` function, we need to enter the name of the response variable, `number_of_uses`, and the name of the explanatory variable, `condition`, for the formula.  The name of the data set as shown above is `rude`.  What values should be entered for each of the following to create 1000 simulated samples?
 
@@ -177,9 +174,6 @@ two_mean_test(number_of_uses~condition, #Enter the names of the variables
 
 \begin{center}\includegraphics[width=0.7\linewidth]{12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-
-\newpage
-
 16.  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
 
 \vspace{0.8in}
@@ -206,7 +200,7 @@ two_mean_bootstrap_CI(number_of_uses ~ condition, #Enter the name of the variabl
 
 \vspace{0.3in}
 
-18. Interpret the interval you calculated in question 17. 
+18. Interpret the interval reported in question 17. 
 
 \vspace{1in}
 

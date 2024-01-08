@@ -1,3 +1,5 @@
+# Inference for a Single Categorical Variable: Simulation-based Methods
+
 ## Lecture Notes Week 6: Inference for One Categorical Variable using Simulation-based Methods
 
 
@@ -26,11 +28,17 @@ General steps of a hypothesis test
 
 ### Hypotheses {-}
 
+\setstretch{1.5}
+
 * Two possible outcomes:
 
-\vspace{1in}
+    - Either the _______________ hypothesis is true and the ________________ occurred by _______________ chance.
+    
+    - Or the null hypothesis is _______________ and the sample provides ______________ against the ______________.
 
 * Always written about the __________________ (population)
+
+\setstretch{1}
 
 #### Null hypothesis {-}
 
@@ -40,7 +48,7 @@ General steps of a hypothesis test
 
 Notation:
 
-\vspace{0.1in}
+\vspace{0.2in}
 
 #### Alternative hypothesis {-}
 
@@ -50,7 +58,7 @@ Notation:
 
 Notation:
 
-\vspace{0.1in}
+\vspace{0.2in}
 
 ### Simulation vs. Theory-based Methods {-}
 
@@ -85,15 +93,13 @@ Creation of the null distribution
 
 * What does the p-value measure?
 
-    * Probability of observing the sample ___________________ or more ________________ 
+    * Probability of observing the sample ___________________ or more __________ 
 assuming the ________ hypothesis is __________.
     
 * How much evidence does the p-value provide against the null hypothesis?
 
 
-\begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
-
-\vspace{0.5mm}
+\begin{center}\includegraphics[width=0.75\linewidth]{images/soe_gradient_gray} \end{center}
 
 \rgi \rgi - The __________________the p-value, the ___________________ the evidence against the null hypothesis.
     
@@ -127,6 +133,8 @@ assuming the ________ hypothesis is __________.
 \vspace{0.2in}
 
 \rgi \rgi \rgi - Results are not _____________________ significant.
+
+\setstretch{1}
     
 ### One proportion test {-}
 
@@ -140,8 +148,6 @@ Notation:
 - Population proportion: 
 
 - Sample proportion:
-
-\newpage 
 
 Parameter of Interest:  
 
@@ -161,7 +167,7 @@ Parameter of Interest:
 
 $\pi:$ 
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 #### Hypothesis testing {-}
 
@@ -185,11 +191,11 @@ $H_A:$
 
 * Research question determines the alternative hypothesis.
 
-Example: A 2007 study published in the Behavioral Ecology and Sociobiology journal was titled “Why do blue-eyed men prefer blue-eyed women?” In this study, conducted in Norway, 114 volunteer heterosexual blue-eyed males rated the attractiveness of 120 pictures of females.  The researchers recorded which eye-color (blue, green, or brown) was rated the highest, on average.  In the sample, 51 of the volunteers rated the blue-eyed women the most attractive.  Do blue-eyed heterosexual men tend to find blue-eyed women the most attractive?
+Example for class discussion: A 2007 study published in the Behavioral Ecology and Sociobiology Journal was titled “Why do blue-eyed men prefer blue-eyed women?” [@laeng2007] In this study, conducted in Norway, 114 volunteer heterosexual blue-eyed males rated the attractiveness of 120 pictures of females.  The researchers recorded which eye-color (blue, green, or brown) was rated the highest, on average.  In the sample, 51 of the volunteers rated the blue-eyed women the most attractive.  Do blue-eyed heterosexual men tend to find blue-eyed women the most attractive?
 
 Parameter of interest:
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 Write the null and alternative hypotheses for the blue-eyed study:
 
@@ -197,25 +203,25 @@ In words:
 
 $H_0:$
 
-\vspace{0.5in}
+\vspace{0.45in}
 
 $H_A:$
 
-\vspace{0.5in}
+\vspace{0.45in}
 
 In notation:
 
 $H_0:$
 
-\vspace{0.2in}
+\vspace{0.15in}
 
 $H_A:$
 
-\vspace{0.2in}
+\vspace{0.15in}
 
 Statistic: 
 
-\vspace{0.2in}
+\vspace{0.15in}
 
 Is the independence condition met to analyze these data using a simulation-based approach? 
 
@@ -372,10 +378,10 @@ Confidence interval interpretation:
 Do the results of the confidence interval *match* the results based on the p-value?
 
 \vspace{0.5in}
+\newpage
 
 How does changing the confidence level impact the width of the confidence interval?
 
-\newpage 
 
 95\% Confidence Interval:
 

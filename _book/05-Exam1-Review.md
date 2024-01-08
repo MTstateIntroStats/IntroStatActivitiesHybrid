@@ -1,6 +1,6 @@
 # Group Exam 1 Review
 
-Use the provided data set from the Islands (ExamReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
+Use the provided data set from the Islands [@islands] (Exam1ReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
 
 | **Variable** 	| **Description** |
 |----	|-------------	|
@@ -8,18 +8,18 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 | `City` | Name of City in which the Islander resides |
 | `Population` | Population of the City |
 | `Name` | Name of Islander |
-| `Consent` | Whether the Islander consented to be in the study |
-| `Gender` | Gender of Islander (M = male, F = Female) |
+| `Consent` | Whether the Islander consented to be in the study (`Declined`, `Consented`)|
+| `Gender` | Gender of Islander (`M` = male, `F` = Female) |
 | `Age` | Age of Islander |
-| `Married` | Marital status of Islander |
-| `Smoking_Status` | Whether the Islander is a current smoker |
-| `Children` | Whether the Islander has children |
+| `Married` | Marital status of Islander (`yes`, `no`) |
+| `Smoking_Status` | Whether the Islander is a current smoker (`nonsmoker`, `smoker`) |
+| `Children` | Whether the Islander has children (`yes`, `no`) |
 | `weight_kg` | Weight measured in kg |
 | `height_cm` | Height measured in cm |
 | `respiratory_rate` | Breaths per minute |
-| `Type_of_Music` | Music type (Classical or Heavy Medal) Islander was randomly assigned to listen to |
+| `Type_of_Music` | Music type Islander was randomly assigned to listen to (`Classical`, `Heavy Metal`)|
 | `After_PuzzleCube` | Time to complete puzzle cube (minutes) after listening to assigned music |
-| `Education_Level` | Highest level of education completed |
+| `Education_Level` | Highest level of education completed (`highschool`, `university`)|
 | `Balance_Test` | Time balanced measured in seconds with eyes closed |
 | `Blood_Glucose_before` | Level of blood glucose (mg/dL) before consuming assigned drink |
 | `Heart_Rate_before` | Heart rate (bpm) before consuming assigned drink |
@@ -41,7 +41,11 @@ Use the provided data set from the Islands (ExamReviewData.csv) and the appropri
 
 \vspace{0.5in}
 
-4.  Use the appropriate Exam 1 Review R script file to find the appropriate summary statistic and graphical display of the data to assess the following research question, "Is there a difference in proportion of Islanders who have children for those who completed high school and those that completed university?" Use high school $-$ university as the order of subtraction.
+\newpage
+
+**Complete questions 4a, 4b, 5a, 5b, 6a, and 6b.  Then choose the  scenario for each research question and use the appropriate Exam 1 Review R script file to find the summary statistic(s) and graphical display of the research question.**
+
+4.  Use the appropriate Exam 1 Review R script file to find the summary statistic and graphical display of the data to assess the following research question, "Is there a difference in proportion of Islanders who have children for those who completed high school and those that completed university?" Use high school $-$ university as the order of subtraction.
 
 a. What is the name of the explanatory variable to be assessed in this research question?
 \vspace{0.3in}
@@ -93,9 +97,9 @@ g. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-h. Based on the graph, does there appear to be an association between the two variables? Explain your answer.
+h. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
 
-\vspace{0.5in}
+\vspace{0.8in}
 
 i. Is this an observational study or a randomized experiment? Explain your answer.
 
@@ -142,7 +146,7 @@ c. Use the R script file to get the summary statistics for each level of the exp
 
 d. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
 
-\newpage
+\vspace{0.4in}
 
 e. Interpret the value of the summary statistic in context of the problem:
 
@@ -152,11 +156,13 @@ f. What type of graph(s) would be appropriate for this research question?
 
 \vspace{0.2in}
 
+\newpage
+
 g. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-h. Based on the graph, does there appear to be an association between the two variables? Explain your answer.
+h. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
 
 \vspace{0.8in}
 
@@ -215,15 +221,15 @@ c. Use the R script file to get the summary statistics for this data. Fill in th
 
 d. Interpret the value of slope in context of the problem.
 
-\vspace{0.3in}
+\vspace{0.8in}
 
 e. Calculate the value of the coefficient of determination.
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 f. Interpret the coefficient of determination in context of the problem.
 
-\vspace{0.3in}
+\vspace{0.8in}
 
 g. What type of graph(s) would be appropriate for this research question?
 
@@ -233,7 +239,7 @@ h. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-i. Based on the graph, does there appear to be an association between the two variables? Explain your answer.
+i. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
 
 \vspace{0.8in}
 

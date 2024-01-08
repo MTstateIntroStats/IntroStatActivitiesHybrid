@@ -13,17 +13,27 @@
 
 * Interpret the slope coefficient in context of the problem.
 
-* Calculate and interpret $R^2$, the coefficient of determination, in context of the problem.
+* Calculate and interpret $r^2$, the coefficient of determination, in context of the problem.
 
-* Find the correlation coefficient from R output or from $R^2$ and the sign of the slope.
+* Find the correlation coefficient from R output or from $r^2$ and the sign of the slope.
 
 ### Penguins {-}
 
 The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including bill depth and body mass. The researchers were interested in the relationship between bill depth and body mass and wondered if bill depth could be used to accurately predict the body mass of these three penguin species. 
 
-Upload and import the `Antarctica_Penguins` csv file and the provided R script file for week 4 lab. Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 5.
+* Upload and import the `Antarctica_Penguins` csv file 
 
-First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth (mm) to predict body mass (g).  This makes bill depth the explanatory variable. **Make sure to give your plot a descriptive title between the quotations in line 16.** Highlight and run lines 1--17 in the R script file.  **Upload a copy of your scatterplot to Gradescope.**
+* Upload and open the provided R script file for week 4 lab. 
+
+* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 5.
+
+First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth (mm) to predict body mass (g).  This makes bill depth the explanatory variable. 
+
+* **Make sure to give your plot a descriptive title between the quotations in line 16.  Remember that the title should include the type of plot, the observational units, and the variable(s) plotted.** 
+
+* Highlight and run lines 1--17 in the R script file.  
+
+* **Upload a copy of your scatterplot to Gradescope.**
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
 penguins <- datasetname %>% #Creates the object penguins
@@ -33,9 +43,11 @@ penguins %>%
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "bill depth (mm)",  # Label x-axis
        y = "body mass (g)",  # Label y-axis
-       title = "Title") + # Be sure to title your plots
+       title = "Title") + # Be sure to title your plot
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
+
+\newpage
 
 1. Assess the four features of the scatterplot that describe this relationship.
 \vspace{1mm}
@@ -56,7 +68,9 @@ penguins %>%
 
 \vspace{.1in}
 
-Highlight and run lines 20--24 in the R script file to get the correlation matrix.
+To create the correlation matrix...
+
+* Highlight and run lines 20--24 in the R script file.
 
 ```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
 penguins %>%  # Data set pipes into
@@ -76,9 +90,13 @@ penguins %>%  # Data set pipes into
 
 4. **Interpret the coefficient of determination in context of the problem.**
 
-\vspace{1in}
+\vspace{0.8in}
 
-Enter the variable name `body_mass_g` for `response` and the variable name `bill_depth_mm` for `explanatory` in line 29 in the R script file.  Highlight and run lines 29--30 to get the linear model output.
+To get the linear model output...
+
+* Enter the variable name `body_mass_g` for `response` and the variable name `bill_depth_mm` for `explanatory` in line 29 in the R script file.  
+
+* Highlight and run lines 29--30.
 
 ```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
 # Fit linear model: y ~ x
@@ -104,9 +122,11 @@ summary(penguinsLM)$coefficients # Display coefficient summary
 
 9.  Did the line of regression overestimate or underestimate the body mass for this penguin?
 
-\vspace{0.5in}
+\vspace{0.2in}
 
-Does species change the relationship between bill depth and body mass? Highlight and run lines 34 - 43 to get the multivariable plot.
+Does species change the relationship between bill depth and body mass? 
+
+* Highlight and run lines 34 - 43 to get the multivariable plot.
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
 penguins %>%
@@ -127,7 +147,7 @@ penguins %>%
 \vspace{0.3in}
 
 
-11. **Does adding the variable species change the relationship between bill depth and body mass? Explain your answer.**
+11. **Do species and bill depth appear to interact when predicting body mass of Antarctic penguins? Explain your answer.**
 
 \vspace{0.5in}
 

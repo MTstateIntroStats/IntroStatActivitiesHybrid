@@ -38,14 +38,18 @@ To review these concepts, see Chapter 15 in your textbook.
 
 ### Helmet use and head injuries
 
-In "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], we can see the summary results from a random sample of 3562 skiers and snowboarders involved in accidents in the two-way table below. Is there evidence that safety helmet use is associated with a reduced risk of head injury for skiers and snowboarders? 
+For this activity we will again use the Helmet Use ann Head Injury data set.  In the out-of-class activity we found that the null value of zero was not contained in the 90\% confidence interval.  In today's activity, we will calculate the standardized difference in sample proportion to find the p-value of the test.
+
+A study was reported in "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], on the use of helmets and head injuries for skiers and snowboarders involved in accidents.  The summary results from a random sample of 3562 skiers and snowboarders involved in accidents is shown in the two-way table below. Is there evidence that safety helmet use is associated with a reduced risk of head injury for skiers and snowboarders? 
 
 <!-- |                | Helmet Use | No Helmet Use | Total | -->
 <!-- |:--------------:|:----------:|:-------------:|:-----:| -->
 <!-- | Head Injury    |     96     |      480      |  576  | -->
 <!-- | No Head Injury |     656    |      2330     |  2986 | -->
 <!-- | Total          |     752    |      2810     |  3562 | -->
-For this study the observational units are skiers and snowboarders involved in accidents.  A success will be considered a head injury in this context and we are comparing the groups helmet use (group 1) and no helmet use (group 2).  Use helmet use - no helmet use as the order of subtraction.  Highlight and runs lines 1--6 in the provided Rscript file to create the summary data table. 
+For this study the observational units are skiers and snowboarders involved in accidents.  A success will be considered a head injury in this context and we are comparing the groups helmet use (group 1) and no helmet use (group 2).  Use helmet use - no helmet use as the order of subtraction.  
+
+* Highlight and runs lines 1--6 in the provided Rscript file to create the summary data table. 
 
 
 ```r
@@ -69,7 +73,7 @@ injury %>% group_by(Helmet) %>% count(Outcome)
 \begin{center}
 \begin{tabular}{|c|c|c|c|}\hline
 & \multicolumn{2}{|c|}{\textbf{Helmet Use}} & \\ \hline
-\textbf{Head Injury} & Yes & No & Total \\ \hline
+\textbf{Head Injury} & \hspace{0.35in} Yes \hspace{0.35in} & \hspace{0.35in} No \hspace{0.35in} & \hspace{0.35in} Total \hspace{0.35in} \\ \hline
 Head Injury & & & \\ 
  & & & \\ \hline
 No Head Injury & & & \\ 
@@ -94,11 +98,9 @@ No Head Injury & & & \\
 4. Interpret the difference in sample proportions in context of the study.
 \vspace{1in}
 
-\newpage
-
 #### Use statistical analysis methods to draw inferences from the data {-}
 
-To test the null hypothesis, we could use simulation-based methods as we did in Activity 8A. In this activity, we will focus on theory-based methods.  Like with a single proportion, the sampling distribution of a difference in sample proportions can be mathematically modeled using the normal distribution if certain conditions are met.
+To test the null hypothesis, we could use simulation-based methods as we did in the activities in week 8. In this activity, we will focus on theory-based methods.  Like with a single proportion, the sampling distribution of a difference in sample proportions can be mathematically modeled using the normal distribution if certain conditions are met.
 
 Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
 
@@ -138,23 +140,20 @@ $$
 
 7. Use the value of the null standard error to calculate the standardized statistic (standardized difference in proportion).
 
-\vspace{1in}
-\newpage
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.6\linewidth]{09-A08-inference-2cat_test-theory_files/figure-latex/simpleNormal-1} 
-
-}
-
-\caption{A standard normal curve.}(\#fig:simpleNormal)
-\end{figure}
+\vspace{0.8in}
 
 8. Mark the value of the standardized statistic on the standard normal distribution above and shade the area to find the p-value.
 
-\vspace{0.1in}
 
-We will use the `pnorm()` function in R to find the p-value. Use the provided R script file and enter the value of the standardized statistic found in question 7 at `xx` in line 11; highlight and run lines 11--13.
+\begin{center}\includegraphics[width=0.5\linewidth]{09-A08-inference-2cat_test-theory_files/figure-latex/simpleNormal-1} \end{center}
+
+\newpage 
+
+We will use the `pnorm()` function in R to find the p-value. 
+
+* Use the provided R script file and enter the value of the standardized statistic found in question 7 at `xx` in line 11
+
+* Highlight and run lines 11--13.
 
 
 ```r
@@ -176,12 +175,7 @@ pnorm(xx, # Enter value of standardized statistic
 
 \vspace{0.8in}
 
-12. Would a 90\% confidence interval contain the null value of zero?  Explain your answer.
-
-\vspace{0.8in}
-\newpage
-
-13. What is the scope of inference for this study?
+12. What is the scope of inference for this study?
 
 \vspace{0.8in}
 
@@ -190,11 +184,11 @@ pnorm(xx, # Enter value of standardized statistic
 
 Suppose that we want to show that there is a **difference** in true proportion of head injuries for those that wear helmets and those that do not.
 
-14.  Write out the alternative hypothesis in notation for this new research question.
+13.  Write out the alternative hypothesis in notation for this new research question.
 
 \vspace{0.3in}
 
-15.  How would this impact the p-value?
+14.  How would this impact the p-value?
 
 \vspace{0.2in}
 
@@ -210,11 +204,15 @@ Note that the sample proportions for each group are the same as the smaller samp
 
 $$\hat{p}_h = \frac{135}{1056}=0.127, \hat{p}_n = \frac{674}{3944}=0.171$$
 
-16. The standard error for the difference in proportions for this new sample is 0.013 ($SE(\hat{p}_h - \hat{p}_n) = 0.013$).  Calculate the standardized statistic for this new sample.
+15. The standard error for the difference in proportions for this new sample is 0.013 ($SE(\hat{p}_h - \hat{p}_n) = 0.013$).  Calculate the standardized statistic for this new sample.
 
 \vspace{0.8in}
 
-Use Rstudio to find the p-value for this new sample.  Enter the value of the standardized statistic found in question 16 for xx in line 18.  Highlight and run lines 18--20.
+Use Rstudio to find the p-value for this new sample.  
+
+* Enter the value of the standardized statistic found in question 15 for xx in line 18.
+
+* Highlight and run lines 18--20.
 
 
 ```r
@@ -223,17 +221,19 @@ pnorm(xx, # Enter value of standardized statistic
       lower.tail=TRUE) # Gives a p-value greater than the standardized statistic
 ```
 
-\newpage
-
-17.  How does the increase in sample size affect the p-value?
+16.  How does the increase in sample size affect the p-value?
 
 \vspace{0.4in}
 
-18. Suppose another sample of 3562 skiers and snowboarders was taken.  In this new sample a difference in proportions of head injuries was found to be -0.009, ($\hat{p}_h - \hat{p}_n = -0.009$) with a standard error for the difference in proportions of 0.015, ($SE(\hat{p}_h - \hat{p}_n) = 0.015$).  Calculate the standardized statistic for this new sample.
+17. Suppose another sample of 3562 skiers and snowboarders was taken.  In this new sample a difference in proportions of head injuries was found to be -0.009, ($\hat{p}_h - \hat{p}_n = -0.009$) with a standard error for the difference in proportions of 0.015, ($SE(\hat{p}_h - \hat{p}_n) = 0.015$).  Calculate the standardized statistic for this new sample.
 
 \vspace{0.5in}
 
-Use Rstudio to find the p-value for this new sample.  Enter the value of the standardized statistic found in question 18 for xx in line 25.  Highlight and run lines 25--27.
+Use Rstudio to find the p-value for this new sample.  
+
+* Enter the value of the standardized statistic found in question 17 for xx in line 25.
+
+* Highlight and run lines 25--27.
 
 
 ```r
@@ -242,11 +242,11 @@ pnorm(xx, # Enter value of standardized statistic
       lower.tail=TRUE) # Gives a p-value greater than the standardized statistic
 ```
 
-19.  How does a statistic closer to the null value affect the p-value?
+18.  How does a statistic closer to the null value affect the p-value?
 
 \vspace{0.3in}
 
-20.  Summarize how each of the following affected the p-value:
+19.  Summarize how each of the following affected the p-value:
 
 a) Switching to a two-sided test.
 

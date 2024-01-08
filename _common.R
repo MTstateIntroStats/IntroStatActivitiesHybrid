@@ -29,6 +29,7 @@ suppressMessages(library(igraph))
 suppressMessages(library(ggraph))
 suppressMessages(library(openintro))
 suppressMessages(library(ggmosaic))
+suppressMessages(library(ggpubr))
 
 # dplyr options ----------------------------------------------------------------
 

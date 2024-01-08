@@ -1,4 +1,9 @@
-## Activity 14:  What's the probability?
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+## Activity 10:  What's the probability?
 
 \setstretch{1}
 
@@ -26,26 +31,34 @@ To review these concepts, see Chapter 23 in the textbook.
 ### Probability 
 
 1. In a large general education class, 60\% of students are science majors and 40\% are liberal arts majors.  Twenty percent of the science majors are seniors, while 30\% of the liberal arts majors are seniors. Given the following two-way table answer the following questions.
+\vspace{1mm}
 
-|              | Senior | Not a Senior |    Total   |
-|--------------|--------|--------------|------------|
-| Science      | 12,000 |       48,000 |     60,000 |
-| Liberal Arts | 12,000 |       28,000 |     40,000 |
-| Total        | 24,000 |       76,000 |    100,000 |
+    Let $A$ = the event the student is a senior, and $B$ = the event the student is a science major.
+\vspace{0.1in}
 
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\hspace{0.8in} & \hspace{0.25in} Senior $(A)$ \hspace{.25in} & \hspace{0.25in} Not a Senior ($A^c$) \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
+Science Major ($B$) & 12000 & 48000 & 60000 \\ \hline
+Not a Science Major ($B^c$) & 12000 & 28000 & 40000 \\ \hline
+Total & 24000 & 76000 & 100000 \\ \hline
+\end{tabular}
+\end{center}
+\vspace{.1in}
 
 a. What is the probability that a randomly selected senior is a science major?  Use appropriate probability notation.
 
-\vspace{0.35in}
+\vspace{0.5in}
 
 b. What is the probability that a randomly selected student is both a senior and a science major.  Use appropriate probability notation.
 
-\vspace{0.35in}
+\vspace{0.5in}
 
 c. What is the probability that a randomly selected student is not a senior given they are a liberal arts major.  Use appropriate probability notation.
 
-\vspace{0.35in}
+\vspace{0.55in}
 
+\newpage
 
 2. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A recent study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
 \vspace{1mm}

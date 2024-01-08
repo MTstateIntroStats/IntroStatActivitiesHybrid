@@ -1,3 +1,5 @@
+# Inference for a Single Categorical Variable: Theory-based Methods + Errors and Power
+
 ## Lecture Notes Week 7: Inference for One Categorical Variable using Theory-based Methods
 
 
@@ -15,23 +17,17 @@ The ______________ of distribution of sample proportions (sampling distribution)
 
 Conditions of the CLT:
 
-* Independence:
+* Independence (*also must be met to use simulation methods*): the response for one observational unit will not influence another observational unit
 
-\vspace{0.5in}
+\vspace{1mm}
 
 * Large enough sample size:
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 Normal distribution:
 
-* $N(\mu, \sigma)$
-
 * Bell-shaped and ______________
-
-* $\mu$ is the ___________
-
-* $\sigma$ is the ____________ ______________.
 
 * Standard normal distribution:  $N(0,1)$
 
@@ -46,48 +42,38 @@ Normal distribution:
 
 Standardized statistic: Z - score
 
-* $Z = \frac{x - \mu}{\sigma}$
+\vspace{1mm}
+
+* $Z = \frac{\mbox{statistic} - \mbox{null value}}{\mbox{standard error of the statistic}}$
 
 \vspace{0.5in}
 
-* Measures the ___________ of standard _____________ x is from $\mu$
+* Measures the ___________ of standard _____________ the statistic is from the null value
 
-Example(s):  Heights of Caucasian American adult males are roughly Normally distributed with a mean of 1.72 m and a standard deviation of 0.28 m. Find and interpret the z-score for a man who is 5’4” (1.626 m) tall. Round your answer to three decimal places.
+<!-- Example(s):  Heights of Caucasian American adult males are roughly Normally distributed with a mean of 1.72 m and a standard deviation of 0.28 m. Find and interpret the z-score for a man who is 5’4” (1.626 m) tall. Round your answer to three decimal places. -->
 
-\vspace{0.6in}
+<!-- \vspace{0.6in} -->
 
-Heights of Caucasian American adult females are roughly Normally distributed with a mean of 1.59 meters and a standard deviation of 0.22 meters.  Which is more unusual: a 5’4” (1.626 m) tall male or a 5’9” (1.753 m) tall female?
+<!-- Heights of Caucasian American adult females are roughly Normally distributed with a mean of 1.59 meters and a standard deviation of 0.22 meters.  Which is more unusual: a 5’4” (1.626 m) tall male or a 5’9” (1.753 m) tall female? -->
 
-\vspace{0.6in}
+<!-- \vspace{0.6in} -->
 
-In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.  
+<!-- In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.   -->
 
+<!-- ```{r, echo=TRUE, out.width="60%"} -->
+<!-- library(openintro) -->
+<!-- normTail(m = 1.72, s = 0.28, L = 1.626) -->
+<!-- pnorm(mean = 1.72, sd = 0.28, q = 1.626) -->
+<!-- ``` -->
 
-```r
-library(openintro)
-normTail(m = 1.72, s = 0.28, L = 1.626)
-pnorm(mean = 1.72, sd = 0.28, q = 1.626)
-#> [1] 0.3685432
-```
+<!-- \vspace{1mm} -->
 
+<!-- We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.   -->
 
-
-\begin{center}\includegraphics[width=0.6\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
-
-\vspace{1mm}
-
-We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.  
-
-
-```r
-qnorm(mean = 1.72, sd = 0.28, p = 0.75)
-#> [1] 1.908857
-normTail(m = 1.72, s = 0.28, L = 1.909)
-```
-
-
-
-\begin{center}\includegraphics[width=0.6\linewidth]{07-LN07-1cat_theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+<!-- ```{r, echo=TRUE, out.width="60%"} -->
+<!-- qnorm(mean = 1.72, sd = 0.28, p = 0.75) -->
+<!-- normTail(m = 1.72, s = 0.28, L = 1.909) -->
+<!-- ``` -->
 
 ### 68-95-99.7 Rule {-}
 
@@ -98,9 +84,7 @@ normTail(m = 1.72, s = 0.28, L = 1.909)
 * 99.7% within (mean – 3SD, mean + 3SD)
 
 
-\begin{center}\includegraphics[width=0.65\linewidth]{images/Empirical_Rule} \end{center}
-
-\newpage
+\begin{center}\includegraphics[width=0.65\linewidth]{images/Empirical_Rule_Mark_bw} \end{center}
 
 General steps of a hypothesis test
 
@@ -120,7 +104,8 @@ Conditions for inference using theory-based methods:
 
 - Independence:
 
-\vspace{0.2in}
+    * The outcome of one observation does not influence the outcome of another.
+    * Taking a random sample is one way to satisfy this condition.
 
 - Large enough sample size:
 
@@ -150,7 +135,7 @@ Equation for the standardized sample proportion:
 
 \setstretch{1}
 
-Example:  The American Red Cross reports that 10% of US residents eligible to donate blood actually do donate.  A poll conducted on a representative of 200 Montana residents eligible to donate blood found that 33 had donated blood sometime in their life.  Do Montana residents donate at a different rate than US population?
+Example for Class Discussion:  The American Red Cross reports that 10% of US residents eligible to donate blood actually do donate.  A poll conducted on a representative of 200 Montana residents eligible to donate blood found that 33 had donated blood sometime in their life.  Do Montana residents donate at a different rate than US population?
 
 Are the conditions met to analyze the blood donations data using theory-based methods?
 
@@ -177,6 +162,8 @@ $H_0:$
 $H_A:$
 
 \vspace{0.6in}
+
+\newpage
 
 Calculate the standardized sample proportion of Montana residents that have donated blood sometime in their life.
 
@@ -229,8 +216,6 @@ Decision at a significance level of 0.05 $(\alpha = 0.05)$:
 
 \vspace{0.3in}
 
-\newpage
-
 Generalization:
 
 * Can the results of the study be generalized to the target population?
@@ -261,7 +246,11 @@ qnorm(0.975, lower.tail=TRUE)
 #> [1] 1.959964
 ```
 
+\setstretch{1.5}
+
 * When creating a confidence interval, we no longer assume the _____________ hypothesis is true. Use ________ to calculate the sample to sample variability, rather than $\pi_0$.
+
+\setstretch{1}
 
 Equation for the standard error of the sample proportion *NOT* assuming the null is true:
 
@@ -295,7 +284,7 @@ What does it mean to be 95\% confident in a created confidence interval?
 
 * Our goal is to only take ________ sample from the _____________ to create a _____________ interval.
 
-* Based on the 68-95-99.7 rule, we know that approximately ______\% of samples ______________ will fall within __________ from the parameter.
+* Based on the 68-95-99.7 rule, we know that approximately ______\% of sample ______________ will fall within __________ from the parameter.
 
 * If we create 95\% confidence intervals, ________\% of samples will create a 95\% ______________ interval that will contain the _____________ of interest.
 

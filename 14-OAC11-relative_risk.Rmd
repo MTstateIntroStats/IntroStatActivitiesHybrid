@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 14:  Titanic Survivors --- Relative Risk
+## Out-of-Class Activity Week 10:  Titanic Survivors -- Relative Risk
 
 \setstretch{1}
 
@@ -48,8 +48,6 @@ survive <- survive %>%
 survive %>% group_by(Class_Dept) %>% count(Survived)
 ```
 
-\newpage
-
 #### Data Exploration {-}
 
 1.  Fill in the data from the R output to complete the two-way table.
@@ -68,6 +66,7 @@ survive %>% group_by(Class_Dept) %>% count(Survived)
 \end{tabular}
 \end{center}
 
+\newpage
 
 2.  Calculate the conditional proportion of 1st class passengers that died.
 
@@ -95,11 +94,11 @@ $$\text{relative risk} = \frac{\hat{p}_1}{\hat{p}_2}.$$
 
 6.  Calculate the relative risk of death for 3rd class passengers compared to 1st class passengers.
 
-\vspace{0.8in}
+\vspace{0.7in}
 
 7.  Interpret the value of relative risk in context of the problem.
 
-\vspace{0.8in}
+\vspace{0.7in}
 
 8. Calculate the increase or decrease in risk of death for 3rd class passengers compared to 1st class passengers.
 

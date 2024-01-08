@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # Exploring Multivariable Data
 
 ## Week 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts
@@ -164,21 +169,21 @@ Least squares line:
 \rgs
 
 slope: 
-\rgs
+\vspace{0.1in}
 
 $y$-intercept:  
-\rgs
+\vspace{0.1in}
 
 Extrapolation: 
-\rgs 
+\vspace{0.1in}
 
 Coefficient of determination: 
 
 \rgi $s_y^2$ (or SST) represents 
-\rgs
+\vspace{0.1in}
 
 \rgi $s_{RES}^2$ (or SSE) represents 
-\rgs
+\vspace{0.1in}
 
 #### Notes {-}
 
@@ -413,24 +418,24 @@ True or false: Simpson’s Paradox can only occur when the explanatory, response
 #### Example: SAT scores {-}
 
 1.	What are the observational units?  
-\rgs
+\vspace{0.1in}
 
 2.	Look at the scatterplot in Figure 7.5.
 
 \rgi a)	What is the explanatory variable?  The response variable?
-\rgs
+\vspace{0.1in}
 
 \rgi b)	What is the form of the scatterplot? 
-\rgs
+\vspace{0.1in}
 
 \rgi c)	What is the direction of the scatterplot? 
-\rgs
+\vspace{0.1in}
 
 \rgi d)	What is the strength of the scatterplot? 
-\rgs
+\vspace{0.1in}
 
 \rgi e)	Are there any outliers on the scatterplot?
-\rgs
+\\vspace{0.1in}
 
 3.	What would need to be done to the study design in order to eliminate the confounding variable: percent of eligible students taking the SAT?
 \rgs

@@ -141,7 +141,7 @@ Let's think about how to use a coin to create one simulation of 16 infants under
 
 \vspace{0.2in}
 
-10. Flip a coin 16 times recording the number of times the coin lands on heads.  This represents one simulated sample of 16 infants randomly choosing the toy.
+10. Flip a coin 16 times recording the number of times the coin lands on heads.  This represents one simulated sample of 16 infants randomly choosing the toy.  Calculate the proportion of coin flips that resulted in heads.
 
 \vspace{0.2in}
 
@@ -165,17 +165,18 @@ Let's think about how to use a coin to create one simulation of 16 infants under
 
 <!-- \vspace{0.8in} -->
 
-12.  Report your simulated sample proportion to your instructor via the Google sheet provided on D2L.  Sketch the distribution created by your class below.
+The distribution of the proportion of 16 coin flips from a Spring 2023 class is provided below. 
 
-\vspace{1.5in}
 
-13. Circle the observed statistic (value from question 3) on the distribution you drew in question 15.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
+\begin{center}\includegraphics[width=0.9\linewidth]{images/class_simulations_oca06} \end{center}
+
+12. Circle the observed statistic (value from question 3) on the distribution shown above.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
 
 \vspace{1in}
 
-<!-- 17. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot. -->
+13. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot. 
 
-<!-- \vspace{0.8in} -->
+\vspace{0.8in}
 
 In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 1000 samples when we assume the null hypothesis is true.
 

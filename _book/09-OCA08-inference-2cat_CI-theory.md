@@ -19,7 +19,7 @@ To review these concepts, see Chapter 15 in your textbook.
 
 ### Winter sports helmet use and head injury 
 
-In this activity we will focus on theory-based methods to calculate a confidence interval.  Recall from Activity 9A, the sampling distribution of a difference in proportions can be mathematically modeled using the normal distribution if certain conditions are met.
+In this activity we will focus on theory-based methods to calculate a confidence interval.  The sampling distribution of a difference in proportions can be mathematically modeled using the normal distribution if certain conditions are met.
 
 Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
 
@@ -31,9 +31,7 @@ Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an a
 
 \vspace{1in}
 
-For this activity we will again use the Helmet Use and Head Injury data set. In Activity 9A we saw that there was evidence that helmet use is associated with a reduced risk of head injury.  Today we will estimate the difference in proportion of head injuries for those who wore helmets and those who did not.
-
-In "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], we can see the summary results from a random sample of 3562 skiers and snowboarders involved in accidents in the two-way table below. 
+A study was reported in "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], on the use of helmets and head injuries for skiers and snowboarders involved in accidents.  The summary results from a random sample of 3562 skiers and snowboarders involved in accidents is shown in the two-way table below. 
 
 |                | Helmet Use | No Helmet Use | Total |
 |:--------------:|:----------:|:-------------:|:-----:|
@@ -45,12 +43,16 @@ In "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by S
 
 \vspace{0.8in}
 
+3.  Calculate the difference in sample proportion of skiers and snowboarders involved in accidents with a head injury for those who wear helmets and those who do not.  Use appropriate notation with informative subscripts.
+
+\vspace{0.8in}
+
 To find a confidence interval for the difference in proportions we will add and subtract the margin of error from the point estimate to find the two endpoints.
 
  $$\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2), \hspace{.2cm} \text{where}$$
  $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}$$
  
-Note that the formula changes when calculating the variability around the statistic in order to calculate a confidence interval from the formula used in Activity 9A!  Here, we use the sample proportions for each group to calculate the standard error for the difference in proportions since we are not assuming that the true difference is zero.
+In this formula, we use the sample proportions for each group to calculate the standard error for the difference in proportions since we are not assuming that the true difference is zero.
 
 To calculate the standard error for a difference in proportions to create a 90\% confidence interval we substitute in the two sample proportions and the sample size for each group into the equation above.
 
@@ -62,41 +64,43 @@ Recall that the $z^*$ multiplier is the percentile of a standard normal distribu
 
 
 ```r
-qnorm(0.95) # Multiplier for 90% confidence interval
+qnorm(0.95, lower.tail = TRUE) # Multiplier for 90% confidence interval
 ```
 
 ```
 #> [1] 1.644854
 ```
 
+4. Mark the value of the $z^*$ multiplier and the percentages used to find this multiplier on the standard normal distribution shown below.  
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{09-OCA08-inference-2cat_CI-theory_files/figure-latex/standNormc-1} \end{center}
+
+\vspace{1mm}
+
 \newpage
-
-3. Draw and label a standard normal distribution. Mark the value of the $z^*$ multiplier and the percentages used to find this multiplier.  
-
-\vspace{1.5in}
-
 
 Remember that the margin of error is the value added and subtracted to the sample difference in proportions to find the endpoints for the confidence interval.
 
 $$ME = z^*\times SE(\hat{p}_1 - \hat{p}_2)$$
 
-4. Using the multiplier of $z^*$ = 1.645 and the calculated standard error, calculate the margin of error for a 90\% confidence interval.
-
-\vspace{0.5in}
-
-5. Calculate the 90\% confidence interval for the parameter of interest. 
+5. Using the multiplier of $z^*$ = 1.645 and the calculated standard error, calculate the margin of error for a 90\% confidence interval.
 
 \vspace{0.8in}
 
-6. Interpret the confidence interval found in question 5 in context of the problem.
+6. Calculate the 90\% confidence interval for the parameter of interest. 
 
-\vspace{0.8in}
+\vspace{1in}
 
-7.  Interpret the level of confidence in context of the problem.  What does it mean to be 90% confident in the confidence interval?
+7. Interpret the confidence interval found in question 6 in context of the problem.
 
-\vspace{0.8in}
+\vspace{1in}
 
-8.  What decision (reject or fail to reject the null hypothesis) would you make based on your confidence interval?  Explain your answer.
+8.  Interpret the level of confidence in context of the problem.  What does it mean to be 90% confident in the confidence interval?
+
+\vspace{1in}
+
+9.  What decision (reject or fail to reject the null hypothesis) would you make based on your confidence interval?  Explain your answer.
 \vspace{0.5in}
 \newpage
 
@@ -114,17 +118,17 @@ Note that the sample proportions for each group are the same as the smaller samp
 
 $$\hat{p}_h = \frac{135}{1056}=0.127, \hspace{2mm} \hat{p}_n = \frac{674}{3944}=0.171$$
 
-9. Calculate the standard error for the difference in sample proportions for this new sample.
+10. Calculate the standard error for the difference in sample proportions for this new sample.
 \vspace{0.8in}
 
 
-10. Calculate the margin of error for a 90\% confidence interval using a multiplier of $z^*$ = 1.645 for this new sample.  Is the margin of error larger or smaller than the margin of error for the original study?
+11. Calculate the margin of error for a 90\% confidence interval using a multiplier of $z^*$ = 1.645 for this new sample.  Is the margin of error larger or smaller than the margin of error for the original study?
 \vspace{.8in}
 
-11.  Calculate the 90\% confidence interval for this new study using the margin of error from question 10.  
+12.  Calculate the 90\% confidence interval for this new study using the margin of error from question 10.  
 \vspace{.8in}
 
-12.  Is the confidence interval calculated in question 11 with the larger sample size wider or narrower than the confidence interval in question 5? Why?
+13.  Is the confidence interval calculated in question 12 with the larger sample size wider or narrower than the confidence interval in question 6? Why?
 \vspace{.8in}
 
 \newpage

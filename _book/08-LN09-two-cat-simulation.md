@@ -1,3 +1,5 @@
+# Inference for Two Categorical Variables: Simulation-based Methods
+
 ## Lecture Notes Week 8: Inference for Two Categorical Variables using Simulation-based Methods
 
 
@@ -49,7 +51,7 @@ Notation for the Sample Statistics
 
 \setstretch{1}
 
-Example: In a double-blind experiment on 28 cocaine addicts hoping to overcome their addiction, half were randomly assigned to a drug called desipramine and the other half a placebo.  The addicts were followed for 6 weeks to see whether they were still clean.  Is desipramine more effective at helping cocaine addicts overcome their addiction than the placebo?
+Example for class discussion: In a double-blind experiment [@Weiss1988] on 48 cocaine addicts hoping to overcome their addiction, half were randomly assigned to a drug called desipramine and the other half a placebo.  The addicts were followed for 6 weeks to see whether they were still clean.  Is desipramine more effective at helping cocaine addicts overcome their addiction than the placebo?
 
 Observational units: 
 
@@ -79,6 +81,10 @@ Parameter of interest:
 ```
 Summary statistic:
 
+\vspace{0.4in}
+
+Interpretation:
+
 \vspace{0.5in}
 
 
@@ -86,7 +92,8 @@ Summary statistic:
 cocaine%>%
   ggplot(aes(x = drug, fill = outcome))+
   geom_bar(stat = "count", position = "fill") +
-  labs(title = "Bar plot of Drug, Segmented by Outcome",
+  labs(title = "Bar plot of Type of Drug, Segmented by 
+       Outcome for Cocaine Addicts",
        y = "Relative Frequency",
        x = "Drug or Placebo") +
     scale_fill_grey()
@@ -102,9 +109,7 @@ cocaine%>%
 
 Conditions:
 
-* Independence:
-
-\vspace{0.3in}
+* Independence: the response for one observational unit will not influence another observational unit
 
 Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
 
@@ -112,11 +117,11 @@ Null hypothesis assumes “no effect”, “no difference”, “nothing interes
 
 $H_0:$
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 $H_A:$
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 * Research question determines the alternative hypothesis.
 
@@ -144,7 +149,7 @@ $H_A:$
 
 #### Simulation-based method {-}
 
-* Simulate many samples assuming $H_0: \mu_1 = \mu_2$
+* Simulate many samples assuming $H_0: \pi_1 = \pi_2$
 
     * Write the response variable values on cards
 
@@ -157,6 +162,8 @@ $H_A:$
     * Repeat 1000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $\hat{p}_1 - \hat{p}_2$
+    
+\newpage
     
 
 ```r
@@ -176,7 +183,7 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
 
 Explain why the null distribution is centered at the value of zero:
 
-\vspace{0.5in}
+\vspace{1in}
 
 Interpretation of the p-value:
 
@@ -208,7 +215,7 @@ Conclusion with scope of inference:
 
 ### Confidence interval {-}
 
-To estimate the difference in true mean we will create a confidence interval.
+To estimate the difference in true proportion we will create a confidence interval.
 
 #### Simulation-based method {-}
 

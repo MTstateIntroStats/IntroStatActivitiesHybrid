@@ -1,4 +1,4 @@
-## Activity 11:  COVID-19 and Air Pollution
+## Activity 12:  COVID-19 and Air Pollution
 
 \setstretch{1}
 
@@ -44,7 +44,7 @@ Have high population-density US cities seen the same improved air quality condit
 
 }
 
-\caption{The India Gate in New Delhi, India.}(\#fig:covid)
+\caption{The India Gate in New Delhi, India. Source: Reuters/Anushree Fadnavis/Adnan Abidi}(\#fig:covid)
 \end{figure}
 
 \vspace{.05in}
@@ -114,7 +114,11 @@ To simulate the null distribution of paired sample mean differences we will use 
 
 \vspace{.7in}
 
-We will use the `paired_test()` function in R (in the `catstats` package) to simulate the shifted bootstrap (null) distribution of sample mean differences and compute a p-value. Use the provided R script file and enter the calculated value from question 9 for `xx` to simulate the null distribution and enter the summary statistic from question 7 for `yy` to find the p-value.  Highlight and run lines 1--24.
+We will use the `paired_test()` function in R (in the `catstats` package) to simulate the shifted bootstrap (null) distribution of sample mean differences and compute a p-value. 
+
+* Use the provided R script file and enter the calculated value from question 9 for `xx` to simulate the null distribution and enter the summary statistic from question 7 for `yy` to find the p-value.  
+
+* Highlight and run lines 1--24.
 
 
 ```r
@@ -140,13 +144,15 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 \vspace{.3in}
 
 13. Interpret the p-value in the context of the problem.
-\vspace{.8in}
+\vspace{1in}
 
 14. How much evidence does this provide for improved air quality in US cities?
 \vspace{.3in}
 
 15. If evidence was found for improved air quality in US cities, could we conclude that the stay-at-home directives *caused* the improvement in air quality? Explain.
-\vspace{.5in}
+\vspace{.8in}
+
+\newpage
 
 ##### Confidence interval {-}
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
