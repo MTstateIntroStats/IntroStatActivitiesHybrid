@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 13:  Does behavior impact performance?
+## Out-of-Class Activity Module 13:  Does behavior impact performance?
 
 \setstretch{1}
 

@@ -1,6 +1,6 @@
 # Inference for Two Categorical Variables: Simulation-based Methods
 
-## Lecture Notes Week 8: Inference for Two Categorical Variables using Simulation-based Methods
+## Lecture Notes Module 8: Inference for Two Categorical Variables using Simulation-based Methods
 
 
 \setstretch{1}
@@ -166,7 +166,7 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
     first_in_subtraction = "desipramine", # Order of subtraction: enter the name of Group 1
     number_repetitions = 1000, # Always use a minimum of 1000 repetitions
     response_value_numerator = "clean", # Define which outcome is a success
-    as_extreme_as = 0.416, # Calculated observed statistic (difference in sample proportions)
+    as_extreme_as = 0.417, # Calculated observed statistic (difference in sample proportions)
     direction="greater") # Alternative hypothesis direction ("greater","less","two-sided")
 ```
 

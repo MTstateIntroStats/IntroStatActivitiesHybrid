@@ -1,6 +1,6 @@
 # Inference for a Single Categorical Variable: Simulation-based Methods
 
-## Lecture Notes Week 6: Inference for One Categorical Variable using Simulation-based Methods
+## Lecture Notes Module 6: Inference for One Categorical Variable using Simulation-based Methods
 
 
 \setstretch{1}

@@ -1,4 +1,4 @@
-## Week 13 Lab: Dinosaurs
+## Module 13 Lab: Dinosaurs
 
 \setstretch{1}
 

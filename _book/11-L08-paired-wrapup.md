@@ -1,4 +1,4 @@
-## Week 12 Lab:  Swearing
+## Module 12 Lab:  Swearing
 
 \setstretch{1}
 

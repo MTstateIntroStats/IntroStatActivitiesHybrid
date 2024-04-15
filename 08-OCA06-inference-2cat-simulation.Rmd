@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 8:  The Good Samaritan --- Intro
+## Out-of-Class Module Week 8:  The Good Samaritan --- Intro
 
 \setstretch{1}
 

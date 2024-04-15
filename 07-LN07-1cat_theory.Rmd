@@ -1,6 +1,6 @@
 # Inference for a Single Categorical Variable: Theory-based Methods + Errors and Power
 
-## Lecture Notes Week 7: Inference for One Categorical Variable using Theory-based Methods
+## Lecture Notes Module 7: Inference for One Categorical Variable using Theory-based Methods
 
 
 \setstretch{1}

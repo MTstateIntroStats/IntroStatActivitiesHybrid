@@ -1,4 +1,4 @@
-## Week 14 Lab: Efficacy of the COVID Vaccination
+## Module 14 Lab: Efficacy of the COVID Vaccination
 
 \setstretch{1}
 

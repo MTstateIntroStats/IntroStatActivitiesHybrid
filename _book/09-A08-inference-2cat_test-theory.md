@@ -1,4 +1,4 @@
-## Activity Week 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Hypothesis Test
+## Activity Module 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Hypothesis Test
 
 \setstretch{1}
 

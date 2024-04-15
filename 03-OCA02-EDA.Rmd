@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 3: Summarizing Categorical Variables
+## Out-of-Class Activity Module 3: Summarizing Categorical Variables
 
 \setstretch{1}
 

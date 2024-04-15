@@ -1,4 +1,4 @@
-## Week 2 Lab: Study Design
+## Module 2 Lab: Study Design
 
 \setstretch{1}
 

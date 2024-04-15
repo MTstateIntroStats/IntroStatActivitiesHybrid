@@ -1,4 +1,4 @@
-## Week 8 Lab:  Poisonous Mushrooms 
+## Module 8 Lab:  Poisonous Mushrooms 
 
 \setstretch{1}
 
@@ -36,9 +36,21 @@ mushrooms %>% group_by(gill_size) %>% count(edibility) #finds the counts in each
 
 \vspace{0.5in}
 
-<!-- 3. What is the scope of inference for this study? -->
+3. Write the parameter of interest in words, in context of the study.
 
-3. Fill in the following two-way table using the R output.
+\vspace{1in}
+
+4.  Write the null hypothesis for this study in notation.
+
+\vspace{0.25in}
+
+\newpage
+
+5.  **Using the research question, write the alternative hypothesis in words.**
+
+\vspace{1in}
+
+6. Fill in the following two-way table using the R output.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}\hline
@@ -53,13 +65,7 @@ Edible (e) & & & \\
 \end{tabular}
 \end{center}
 
-\newpage
-
-4. Write the parameter of interest in words, in context of the study.
-
-\vspace{1in}
-
-5. **Calculate the difference in proportion of mushrooms that are poisonous for broad gill mushrooms and narrow gill mushrooms.  Use broad - narrow for the order of subtraction.  Use appropriate notation.**
+7. **Calculate the difference in proportion of mushrooms that are poisonous for broad gill mushrooms and narrow gill mushrooms.  Use broad - narrow for the order of subtraction.  Use appropriate notation.**
 
 \vspace{0.8in}
 
@@ -76,13 +82,7 @@ Edible (e) & & & \\
 <!-- ``` -->
 <!-- 7.  Based on the plot does there appear to be an association between the variables?  Explain your answer. -->
 
-6.  Write the null hypothesis for this study in notation.
 
-\vspace{0.25in}
-
-7.  **Using the research question, write the alternative hypothesis in words.**
-
-\vspace{1in}
 
 * Fill in the missing values/names in the R script file for the `two-proportion_test` function to create the null distribution and find the p-value for the test.
 

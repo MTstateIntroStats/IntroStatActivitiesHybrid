@@ -8,7 +8,7 @@ author: |
     | Jade Schmidt
     | Stacey Hancock
 subtitle: |
-    | Spring 2024
+    | Summer 2024
     | Montana State University
 output: 
     pdf_document:
@@ -18,7 +18,7 @@ biblio-style: apalike
 nocite: '@*'
 site: bookdown::bookdown_site
 documentclass: report
-description: This is the coursepack of in-class activities for STAT 216 Fall 2023.
+description: This is the coursepack of in-class activities for STAT 216 Summer 2024.
 location: Montana State University
 ---
 

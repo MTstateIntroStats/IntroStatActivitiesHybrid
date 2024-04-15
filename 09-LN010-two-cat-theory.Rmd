@@ -1,6 +1,6 @@
 # Inference for Two Categorical Variables: Theory-based Methods
 
-## Lecture Notes Week 9: Theoretical Inference for Two Categorical Variables 
+## Lecture Notes Module 9: Theoretical Inference for Two Categorical Variables 
 
 \setstretch{1}
 

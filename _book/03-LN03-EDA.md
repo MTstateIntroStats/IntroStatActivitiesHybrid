@@ -5,7 +5,7 @@ output:
 ---
 # Exploring Categorical and Quantitative Data
 
-## Lecture Notes Week 3: Exploratory Data Analysis 
+## Lecture Notes Module 3: Exploratory Data Analysis 
 
 \setstretch{1}
 

@@ -1,6 +1,6 @@
 # Study Design
 
-## Lecture Notes Week 2: Study Design
+## Lecture Notes Module 2: Study Design
 
 \setstretch{1}
 

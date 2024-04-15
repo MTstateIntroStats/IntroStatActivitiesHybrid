@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 7:  Handedness of Male Boxers 
+## Out-of-Class Activity Module 7:  Handedness of Male Boxers 
 
 \setstretch{1}
 

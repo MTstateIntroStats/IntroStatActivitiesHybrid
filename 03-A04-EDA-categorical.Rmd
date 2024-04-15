@@ -1,4 +1,4 @@
-## Out of Class Activity Week 3:  Summarizing Variables
+## Out of Class Activity Module 3:  Summarizing Variables
 
 
 \setstretch{1}

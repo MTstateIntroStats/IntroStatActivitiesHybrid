@@ -1,6 +1,6 @@
 # Inference for a Quantitative Response with Paired Samples
 
-## Lecture Notes Week 12: Inference for Paired Data 
+## Lecture Notes Module 12: Inference for Paired Data 
 
 \setstretch{1}
 

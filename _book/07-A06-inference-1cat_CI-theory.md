@@ -44,11 +44,9 @@ Note that we do not include a "0" subscript, since we are not assuming a null hy
 \vspace{0.3in}
 \newpage
 
-We will calculate the margin of error and confidence interval in questions 4 and 5 of this activity.  The following are the equations used to find these values. To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
-$$\text{point estimate}\pm\text{margin of error}$$
-$$\hat{p}\pm z^* \times SE(\hat{p})$$
-$$ME = z^* \times SE(\hat{p})$$
+We will calculate the margin of error and confidence interval in questions 4 and 5 of this activity. **The margin of error (ME)** is the value of the $z^*$ multiplier times the standard error of the statistic.
 
+$$ME = z^* \times SE(\hat{p})$$
 The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
 
 The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 95\% + 2.5\% = 97.5\% percentile). 
@@ -79,8 +77,14 @@ qnorm(xx. lower.tail = TRUE) # Multiplier for 95% confidence interval
 4.  Calculate the margin of error for the 95\% confidence interval.
 \vspace{0.6in}
 
+To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
+$$\text{point estimate}\pm\text{margin of error}$$
+$$\hat{p}\pm z^* \times SE(\hat{p})$$
+
 5.  Calculate the 95\% confidence interval for the parameter of interest.
 \vspace{0.6in}
+
+\newpage
 
 6.  Interpret the 95\% confidence interval in the context of the problem.
 \vspace{1in}

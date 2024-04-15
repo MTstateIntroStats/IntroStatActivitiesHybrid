@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 14:  Prediction of Crocodilian Body Size
+## Out-of-Class Activity Module 14:  Prediction of Crocodilian Body Size
 
 \setstretch{1}
 

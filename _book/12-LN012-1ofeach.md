@@ -1,6 +1,6 @@
 # Inference for a Quantitative Response with Independent Samples
 
-## Lecture Notes Week 13: Inference for Independent Samples 
+## Lecture Notes Module 13: Inference for Independent Samples 
 
 \setstretch{1}
 

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 2: American Indian Address
+## Out-of-Class Activity Module 2: American Indian Address
 
 \setstretch{1}
 

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 10:  Titanic Survivors -- Relative Risk
+## Out-of-Class Activity Module 10:  Titanic Survivors -- Relative Risk
 
 \setstretch{1}
 

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 4:  Movie Profits --- Correlation and Coefficient of Determination
+## Out-of-Class Activity Module 4:  Movie Profits --- Correlation and Coefficient of Determination
 
 \setstretch{1}
 

@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Week 9 Lab:  Diabetes
+## Module 9 Lab:  Diabetes
 
 \setstretch{1}
 

@@ -1,4 +1,4 @@
-## Week 14 Lab: Big Mac Index
+## Module 14 Lab: Big Mac Index
 
 \setstretch{1}
 

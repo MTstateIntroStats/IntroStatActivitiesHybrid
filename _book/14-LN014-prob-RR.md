@@ -1,6 +1,6 @@
 # Probability and Relative Risk
 
-## Lecture Notes Week 10: Probability and Relative Risk 
+## Lecture Notes Module 10: Probability and Relative Risk 
 
 
 \setstretch{1}

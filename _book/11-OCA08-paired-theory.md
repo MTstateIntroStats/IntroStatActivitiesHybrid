@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 12:  Color Interference
+## Out-of-Class Activity Module 12:  Color Interference
 
 <!-- Data set source: http://users.stat.ufl.edu/~winner/datasets.html -->
 <!-- Data simulated to match means and SDs in article. -->

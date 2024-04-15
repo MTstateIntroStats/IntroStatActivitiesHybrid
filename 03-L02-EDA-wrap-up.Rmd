@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Week 3 Lab:  IPEDs
+## Module 3 Lab:  IPEDs
 
 \setstretch{1}
 

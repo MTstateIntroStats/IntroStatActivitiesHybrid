@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 6:  Helper-Hinderer --- Simulation-based Confidence Interval and Hypothesis Test
+## Out-of-Class Activity Module 6:  Helper-Hinderer --- Simulation-based Confidence Interval and Hypothesis Test
 
 \setstretch{1}
 

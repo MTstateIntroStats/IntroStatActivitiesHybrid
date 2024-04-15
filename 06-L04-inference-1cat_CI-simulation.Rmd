@@ -1,4 +1,4 @@
-## Week 6 Lab:  Helper-Hinderer --- Simulation-based Confidence Interval
+## Module 6 Lab:  Helper-Hinderer --- Simulation-based Confidence Interval
 
 \setstretch{1}
 

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 2: American Indian Address
+## Out-of-Class Activity Module 2: American Indian Address
 
 \setstretch{1}
 
@@ -85,7 +85,8 @@ words%>%
     geom_dotplot()+
     labs(title = "Sampling Distribution of Average Word Length", 
          x = "Average word length",
-         y = "Frequency")
+         y = "Frequency") +
+    theme_bw()
 
 ```
 

@@ -1,6 +1,6 @@
 # Inference for Two Quantitative Variables
 
-## Lecture Notes Week 14: Inference for Two Quantitative Variables
+## Lecture Notes Module 14: Inference for Two Quantitative Variables
 
 \setstretch{1}
 

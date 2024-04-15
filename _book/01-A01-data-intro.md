@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Basics of Data
 
 ## Activity 1:  Intro to Data

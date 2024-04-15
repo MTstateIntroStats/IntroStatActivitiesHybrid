@@ -1,4 +1,4 @@
-## Out-of-Class Activity Week 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval
+## Out-of-Class Activity Module 9:  Winter Sports Helmet Use and Head Injuries --- Theory-based Confidence Interval
 
 \setstretch{1}
 
