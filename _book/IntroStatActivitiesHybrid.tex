@@ -12885,7 +12885,7 @@ Profanity (language considered obscene or taboo) and society's attitude about it
 \item
   Enter the outcome for group 1 (\texttt{Swear}) for \texttt{group\_1} and the outcome for group 2 (\texttt{Neutral}) for \texttt{group\_2} in line 16.
 \item
-  Highlight and run lines 14--18 to get the summary statistics for the data.
+  Highlight and run lines 14--25 to get the summary statistics and boxplot of the differences.
 \end{itemize}
 
 \begin{Shaded}
@@ -12894,6 +12894,12 @@ Profanity (language considered obscene or taboo) and society's attitude about it
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{differences =}\NormalTok{ group\_1 }\SpecialCharTok{{-}}\NormalTok{ group\_2)}
 \NormalTok{swearing\_diff }\SpecialCharTok{\%\textgreater{}\%} 
     \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(differences))}
+
+\NormalTok{swearing\_diff }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ differences)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=}\StringTok{"Boxplot of the Difference in Time Participants Held Their Hand }
+\StringTok{         in Ice Water while Swearing or while Saying a Neutral Word (Swearing {-} Neutral)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 

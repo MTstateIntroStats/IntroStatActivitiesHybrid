@@ -56,7 +56,7 @@ paired_observed_plot(swearing)
 
 * Enter the outcome for group 1 (`Swear`) for `group_1` and the outcome for group 2 (`Neutral`) for `group_2` in line 16.  
 
-* Highlight and run lines 14--18 to get the summary statistics for the data.
+* Highlight and run lines 14--25 to get the summary statistics and boxplot of the differences.
 
 
 ```r
@@ -64,6 +64,12 @@ swearing_diff <- swearing %>%
   mutate(differences = group_1 - group_2)
 swearing_diff %>% 
     summarise(favstats(differences))
+
+swearing_diff %>% 
+    ggplot(aes(x = differences)) +
+    geom_boxplot()+
+    labs(title="Boxplot of the Difference in Time Participants Held Their Hand 
+         in Ice Water while Swearing or while Saying a Neutral Word (Swearing - Neutral)")
 ```
 
 6.  What is the value of $\bar{x}_d$?  What is the sample size?
@@ -74,6 +80,7 @@ swearing_diff %>%
 \vspace{0.4in}
 
 ### Use statistical inferential methods to draw inferences from the data {-}
+
 
 8.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
 

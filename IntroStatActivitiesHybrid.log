@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.3)  15 APR 2024 08:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.3)  15 APR 2024 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1595,13 +1595,13 @@ File: 11-A09-paired-simulation_files/figure-latex/unnamed-chunk-2-1.pdf Graphic
 [205] [206] [207] [208] [209] [210] [211] [212] [213] [214] [215]
 Module 13.
 
-Underfull \hbox (badness 3579) in paragraph at lines 13154--13156
+Underfull \hbox (badness 3579) in paragraph at lines 13160--13162
 []\TU/lmr/m/n/10 In this week, we will study inference for a _-_-_-_-_-_-_-_-_-
 _-_-_-_-_-_-_-_-_-_-_-_-_- explanatory
  []
 
 
-Underfull \hbox (badness 1173) in paragraph at lines 13154--13156
+Underfull \hbox (badness 1173) in paragraph at lines 13160--13162
 \TU/lmr/m/n/10 variable and a _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 - response variable where the two groups
  []
@@ -1625,7 +1625,7 @@ File: 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (t
 ype pdf)
 <use 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-5-1.pdf>
 [222] [223]
-Underfull \hbox (badness 1371) in paragraph at lines 13597--13597
+Underfull \hbox (badness 1371) in paragraph at lines 13603--13603
 |[]\TU/lmr/bx/n/14.4 Out-of-Class Activity Module 13: Does behavior impact
  []
 
@@ -1675,7 +1675,7 @@ File: 13-LN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf Graphic fil
 e (type pdf)
 <use 13-LN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf>
 
-Overfull \hbox (28.8399pt too wide) in paragraph at lines 14977--14979
+Overfull \hbox (28.8399pt too wide) in paragraph at lines 14983--14985
 []\TU/lmr/m/n/10 For two quantitative variables we use the _-_-_-_-_-_--distrib
 ution with _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- degrees
  []
@@ -1712,7 +1712,7 @@ File: 13-A11-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf Graphic
  file (type pdf)
 <use 13-A11-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf>
 [260] [261]
-Underfull \hbox (badness 10000) in paragraph at lines 15825--15826
+Underfull \hbox (badness 10000) in paragraph at lines 15831--15832
 
  []
 
@@ -1721,7 +1721,7 @@ Module 15.
 [270
 
 ] [271] [272] [273] [274] [275] [276] [277]
-Underfull \hbox (badness 3333) in paragraph at lines 16712--16712
+Underfull \hbox (badness 3333) in paragraph at lines 16718--16718
 |[]\TU/lmr/bx/n/14.4 Golden Ticket to Descriptive and Inferential Statistical
  []
 
