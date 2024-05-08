@@ -38,7 +38,7 @@ Profanity (language considered obscene or taboo) and society's attitude about it
 
 \vspace{0.5in}
 
-* Upload and open the R script file for Week 11 lab. 
+* Upload and open the R script file for Week 12 lab. 
 
 * Upload and import the csv file, `pain_tolerance`. 
 

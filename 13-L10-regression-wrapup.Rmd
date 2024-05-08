@@ -148,7 +148,7 @@ The response variable name is `log_GDP` and the explanatory variable name is `do
     
 \vspace{.2in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the null distribution with 1000 simulations. 
+Using the R script file for this activity, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 1000 simulations. 
 
 * Highlight and run lines 47--53. 
 

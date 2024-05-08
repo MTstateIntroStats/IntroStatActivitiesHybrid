@@ -71,7 +71,7 @@ Notation for the Sample Statistics
 
 \setstretch{1}
 
-Example for class discussion:  Fifty-one (51) college students volunteered to look at impacts on memorization, specifically if putting letters into recognizable patterns (like FBI, CIA, EDA, CDC, etc.) would increase the number letters memorized. [@miller1956] The college students were randomly assigned to either a recognizable or non-recognizable letter group. After a period of study time, the number of letters memorized was collect on each study.  Is there evidence that putting letters into recognizable letter groups improve memory?
+Example for class discussion:  Fifty-one (51) college students volunteered to look at impacts on memorization, specifically if putting letters into recognizable patterns (like FBI, CIA, EDA, CDC, etc.) would increase the number letters memorized. [@miller1956] The college students were randomly assigned to either a recognizable or non-recognizable letter group. After a period of study time, the number of letters memorized was collected on each study.  Is there evidence that putting letters into recognizable letter groups improve memory?
 
 Why should we treat this as two independent groups rather than paired data?
 
