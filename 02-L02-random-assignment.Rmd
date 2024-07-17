@@ -1,4 +1,4 @@
-## Module 2 Lab: Study Design
+## Week 2 Lab: Study Design
 
 \setstretch{1}
 
@@ -162,7 +162,7 @@ The two main study designs we will cover are **observational studies** and **exp
 
 For the next exercises identify the study design (observational study or experiment), the sampling method, and the scope of inference.
 
-15. The pharmaceutical company Moderna Therapeutics,  working in conjunction with the National Institutes of Health, conducted Phase 3 clinical trials of a vaccine for COVID-19 last fall.  US clinical research sites enrolled 30,000 volunteers without COVID-19 to participate. Participants were randomly assigned to receive either the candidate vaccine or a saline placebo.  They were then followed to assess whether or not they developed COVID-19. The trial was double-blind, so neither the investigators nor the participants knew who was assigned to which group.
+15. The pharmaceutical company Moderna Therapeutics,  working in conjunction with the National Institutes of Health, conducted Phase 3 clinical trials of a vaccine for COVID-19 in the fall of 2021.  US clinical research sites enrolled 30,000 volunteers without COVID-19 to participate. Participants were randomly assigned to receive either the candidate vaccine or a saline placebo.  They were then followed to assess whether or not they developed COVID-19. The trial was double-blind, so neither the investigators nor the participants knew who was assigned to which group.
 \vspace{0.1in}
 
     Study design:

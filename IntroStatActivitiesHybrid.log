@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.3)  17 APR 2024 09:23
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.2.3)  17 JUL 2024 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -424,7 +424,6 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 )
 \cslhangindent=\skip63
 \csllabelwidth=\skip64
-\cslentryspacingunit=\skip65
 
 (C:\Users\Melinda Yager\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geomet
 ry.sty
@@ -459,8 +458,8 @@ LaTeX Info: Redefining \_ on input line 43.
 ec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \ttl@box=\box64
-\beforetitleunit=\skip66
-\aftertitleunit=\skip67
+\beforetitleunit=\skip65
+\aftertitleunit=\skip66
 \ttl@plus=\dimen187
 \ttl@minus=\dimen188
 \ttl@toksa=\toks29
@@ -650,7 +649,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip68
+\Hy@SectionHShift=\skip67
 )
 (C:\Users\Melinda Yager\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-dv
 ipdfm.def
@@ -666,40 +665,40 @@ LaTeX Warning: Label `fig:Normalcur' multiply defined.
 )
 \openout1 = `IntroStatActivitiesHybrid.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 192.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 192.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 192.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 192.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 192.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 202.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 202.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -728,7 +727,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 192.
+(Font)              scaled to size 10.0pt on input line 202.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -767,18 +766,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 192.
+(Font)              scaled to size 10.0pt on input line 202.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 192.
+(Font)              `operators' in the math version `normal' on input line 202.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 192.
+ line 202.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 192.
+(Font)              `operators' in the math version `bold' on input line 202.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 192.
+t line 202.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -865,15 +864,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 192.
+(Font)              `symbols' in the math version `normal' on input line 202.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 192.
+t line 202.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 192.
+(Font)              `symbols' in the math version `bold' on input line 202.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 192.
+t line 202.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -942,23 +941,23 @@ pt=math;language=dflt;"
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 1
-92.
+(Font)              `largesymbols' in the math version `normal' on input line 2
+02.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 192.
+t line 202.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 192
+(Font)              `largesymbols' in the math version `bold' on input line 202
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 192.
-LaTeX Info: Redefining \microtypecontext on input line 192.
-Package microtype Info: Applying patch `item' on input line 192.
-Package microtype Info: Applying patch `toc' on input line 192.
-Package microtype Info: Applying patch `eqnum' on input line 192.
-Package microtype Info: Applying patch `footnote' on input line 192.
-Package microtype Info: Applying patch `verbatim' on input line 192.
+t line 202.
+LaTeX Info: Redefining \microtypecontext on input line 202.
+Package microtype Info: Applying patch `item' on input line 202.
+Package microtype Info: Applying patch `toc' on input line 202.
+Package microtype Info: Applying patch `eqnum' on input line 202.
+Package microtype Info: Applying patch `footnote' on input line 202.
+Package microtype Info: Applying patch `verbatim' on input line 202.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1021,33 +1020,33 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 
 ))
-Package hyperref Info: Link coloring OFF on input line 192.
+Package hyperref Info: Link coloring OFF on input line 202.
 File: images/msu-campus.jpg Graphic file (type bmp)
 <images/msu-campus.jpg>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 194.
+(Font)              scaled to size 12.0pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 194.
+(Font)              scaled to size 8.0pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 194.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-94.
+(Font)              scaled to size 6.0pt on input line 204.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+04.
 (C:\Users\Melinda Yager\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 194.
+(Font)              scaled to size 12.0011pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 194.
+(Font)              scaled to size 8.00073pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 194.
+(Font)              scaled to size 6.00055pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 194.
+(Font)              scaled to size 11.99872pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 194.
+(Font)              scaled to size 7.99915pt on input line 204.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 194.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 194
+(Font)              scaled to size 5.99936pt on input line 204.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 204
 .
 
 (C:\Users\Melinda Yager\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.f
@@ -1058,7 +1057,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 a.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 194
+LaTeX Font Info:    Trying to load font information for U+msb on input line 204
 .
 
 (C:\Users\Melinda Yager\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.f
@@ -1072,21 +1071,21 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 198.
+(Font)              scaled to size 7.0pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 198.
+(Font)              scaled to size 5.0pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 198.
+(Font)              scaled to size 10.00092pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 198.
+(Font)              scaled to size 7.00064pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 198.
+(Font)              scaled to size 5.00046pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 198.
+(Font)              scaled to size 9.99893pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 198.
+(Font)              scaled to size 6.99925pt on input line 208.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 198.
+(Font)              scaled to size 4.99947pt on input line 208.
 [1] (IntroStatActivitiesHybrid.toc [2
 
 ])
@@ -1099,629 +1098,706 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 Module 1.
 [2
 
-] [3] [4]
+] [3] [4] [5] [6] [7] [8]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 488.
-[5]
-Underfull \hbox (badness 2351) in paragraph at lines 590--591
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 670.
+[9]
+Underfull \hbox (badness 2351) in paragraph at lines 770--771
 []\TU/lmr/m/n/10 Always simply _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- or _-_-_-_-_-_-
 _-_-_-_-_-_-_-_-_-_-_-_-; never controlled by
  []
 
 
-Overfull \hbox (28.59686pt too wide) in paragraph at lines 661--663
+Overfull \hbox (28.59686pt too wide) in paragraph at lines 840--842
 []\TU/lmr/m/n/10 Positive association: as one variable _-_-_-_-_-_-_-_-_-_-_-_-
 _-, the other tends to _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- also. 
  []
 
-[6] [7]
-Module 2.
+[10] [11] [12] [13]
+Underfull \hbox (badness 1728) in paragraph at lines 1014--1015
+[]\TU/lmr/m/n/10 Your instructor will use RStudio to create a graph and numeric
+al summaries of the variable
+ []
 
-Overfull \hbox (22.83989pt too wide) in paragraph at lines 781--783
+[14]
+Module 2.
+[15
+
+] [16] [17] [18]
+Overfull \hbox (22.83989pt too wide) in paragraph at lines 1266--1268
 \TU/lmr/m/n/10 GOAL: to have a sample that is _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- of
  the _-_-_-_-_-_-_-_-_-_-_-_-_-_- _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- on
  []
 
-[8
-
-]
-Overfull \hbox (27.70187pt too wide) in paragraph at lines 880--882
+[19]
+Overfull \hbox (27.70187pt too wide) in paragraph at lines 1364--1366
 []\TU/lmr/m/n/10 Random sampling reduces _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- bia
 s, but has no impact on _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- or
  []
 
-[9] [10] [11]
+[20] [21] [22]
 File: images/ScopeOfInferenceGreyscale.png Graphic file (type bmp)
 <images/ScopeOfInferenceGreyscale.png>
-[12] [13]
-File: 02-OCA01-bias_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type
- pdf)
-<use 02-OCA01-bias_files/figure-latex/unnamed-chunk-1-1.pdf>
-[14] [15] [16] [17] [18] [19]
-File: 02-A02-sampling_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (ty
-pe pdf)
-<use 02-A02-sampling_files/figure-latex/unnamed-chunk-1-1.pdf>
-[20] [21] [22] [23] [24] [25] [26]
-File: 02-L01-random-assignment_files/figure-latex/unnamed-chunk-1-1.pdf Graphic
- file (type pdf)
-<use 02-L01-random-assignment_files/figure-latex/unnamed-chunk-1-1.pdf>
+[23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+File: images/confounding.png Graphic file (type bmp)
+<images/confounding.png>
 File: images/ScopeOfInferenceGreyscale.png Graphic file (type bmp)
 <images/ScopeOfInferenceGreyscale.png>
-[27] [28] [29]
+[37] [38] [39]
 Module 3.
+[40
 
-Overfull \hbox (38.48187pt too wide) in paragraph at lines 1954--1957
+] [41] [42] [43] [44] [45]
+Overfull \hbox (38.48187pt too wide) in paragraph at lines 2786--2789
 []\TU/lmr/m/n/10 Categorical data can be reported in a _-_-_-_-_-_-_-_-_-_-_-_-
 table, which plots counts or a _-_-_-_-_-_-_-_-_-_-_-_-_-_- frequency
  []
 
-[30
-
-] [31] [32]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type p
+[46] [47] [48]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type p
 df)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-6-1.pdf>
-[33]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type p
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-6-1.pdf>
+[49]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type p
 df)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-7-1.pdf>
-[34]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type p
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-7-1.pdf>
+[50]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type p
 df)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf>
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type p
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf>
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type p
 df)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf>
-[35]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type 
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf>
+[51]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type 
 pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-10-1.pdf>
-[36]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type 
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-10-1.pdf>
+[52]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type 
 pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-11-1.pdf>
-[37]
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-11-1.pdf>
+[53]
 File: images/SimPara_AB.png Graphic file (type bmp)
 <images/SimPara_AB.png>
 File: images/SimPara_cD.png Graphic file (type bmp)
 <images/SimPara_cD.png>
 File: images/SimPara_EF.png Graphic file (type bmp)
 <images/SimPara_EF.png>
-[38]
-Underfull \hbox (badness 2644) in paragraph at lines 2455--2456
-[]\TU/lmr/m/n/10 Standard deviation: On average _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
--_-_-_- each data point if from the
+[54]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type 
+pdf)
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-15-1.pdf>
+[55]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type 
+pdf)
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-16-1.pdf>
+[56]
+Overfull \hbox (39.36491pt too wide) in paragraph at lines 3322--3323
+[]\TU/lmr/m/n/10 Standard deviation: Average _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+_-_- each data point is from the _-_-_-_-_-_-_-_-_-_-_-_-_-_- of
  []
 
-[39]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type 
+[57]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type 
 pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-15-1.pdf>
-[40]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type 
-pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-16-1.pdf>
-[41]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type 
-pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-17-1.pdf>
-[42]
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-17-1.pdf>
+[58]
 File: images/shape.png Graphic file (type bmp)
 <images/shape.png>
-[43]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type 
+[59]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type 
 pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-20-1.pdf>
-[44]
-File: 03-LN03-EDA_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type 
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-20-1.pdf>
+[60]
+File: 03-VN03-EDA_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type 
 pdf)
-<use 03-LN03-EDA_files/figure-latex/unnamed-chunk-21-1.pdf>
+<use 03-VN03-EDA_files/figure-latex/unnamed-chunk-21-1.pdf>
 
-Underfull \hbox (badness 1460) in paragraph at lines 2721--2722
+Underfull \hbox (badness 1460) in paragraph at lines 3529--3530
 []\TU/lmr/m/n/10 When the distribution is symmetric use the _-_-_-_-_-_-_-_-_-_
 -_-_- as the measure of center and the
  []
 
-[45]
-Underfull \hbox (badness 1292) in paragraph at lines 2730--2730
-|[]\TU/lmr/bx/n/14.4 Out-of-Class Activity Module 3: Summarizing Categorical
- []
-
-[46] [47]
-File: 03-OCA02-EDA_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type 
-pdf)
-<use 03-OCA02-EDA_files/figure-latex/unnamed-chunk-3-1.pdf>
-File: 03-OCA02-EDA_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type 
-pdf)
-<use 03-OCA02-EDA_files/figure-latex/unnamed-chunk-4-1.pdf>
-[48] [49]
-File: 03-OCA02-EDA_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type 
-pdf)
-<use 03-OCA02-EDA_files/figure-latex/unnamed-chunk-8-1.pdf>
-[50]
-File: 03-OCA02-EDA_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type 
-pdf)
-<use 03-OCA02-EDA_files/figure-latex/unnamed-chunk-9-1.pdf>
-[51] [52] [53] [54] [55] [56] [57]
-File: images/IPEDS_Description.png Graphic file (type bmp)
-<images/IPEDS_Description.png>
-[58] [59] [60] [61] [62] [63]
+[61] [62] [63] [64]
+File: 03-GA03-EDA_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type p
+df)
+<use 03-GA03-EDA_files/figure-latex/unnamed-chunk-4-1.pdf>
+[65]
+File: 03-GA03-EDA_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type p
+df)
+<use 03-GA03-EDA_files/figure-latex/unnamed-chunk-5-1.pdf>
+[66] [67]
+File: 03-GA03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type p
+df)
+<use 03-GA03-EDA_files/figure-latex/unnamed-chunk-8-1.pdf>
+[68]
+File: 03-GA03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type p
+df)
+<use 03-GA03-EDA_files/figure-latex/unnamed-chunk-9-1.pdf>
+[69] [70] [71] [72]
+File: 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-2-1.pdf Graphic
+ file (type pdf)
+<use 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-2-1.pdf>
+File: 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1.pdf Graphic
+ file (type pdf)
+<use 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1.pdf>
+[73]
+File: 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-5-1.pdf Graphic
+ file (type pdf)
+<use 03-GA04-EDA-quantitative_files/figure-latex/unnamed-chunk-5-1.pdf>
+[74] [75] [76] [77]
+File: 03-L01-EDA-cat-quan-review_files/figure-latex/unnamed-chunk-1-1.pdf Graph
+ic file (type pdf)
+<use 03-L01-EDA-cat-quan-review_files/figure-latex/unnamed-chunk-1-1.pdf>
+[78]
+File: 03-L01-EDA-cat-quan-review_files/figure-latex/unnamed-chunk-2-1.pdf Graph
+ic file (type pdf)
+<use 03-L01-EDA-cat-quan-review_files/figure-latex/unnamed-chunk-2-1.pdf>
+[79] [80] [81] [82] [83]
 Module 4.
 
-Overfull \hbox (42.7488pt too wide) in paragraph at lines 3863--3865
+Underfull \hbox (badness 10000) in paragraph at lines 4768--4770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4770--4772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4772--4774
+
+ []
+
+[84
+
+] [85] [86] [87] [88]
+Underfull \hbox (badness 2197) in paragraph at lines 5083--5084
+[]\TU/lmr/m/n/10 If _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-, we predict the _-_-_-_-_-_-
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- to equal
+ []
+
+File: 04-RG-multivariate_files/figure-latex/decision-tree-plots-1.pdf Graphic f
+ile (type pdf)
+<use 04-RG-multivariate_files/figure-latex/decision-tree-plots-1.pdf>
+[89] [90]
+Overfull \hbox (42.7488pt too wide) in paragraph at lines 5228--5230
 \TU/lmr/m/n/10 A _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- is used to display the re
 lationship between two _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- variables. 
  []
 
-[64
-
-]
-Overfull \hbox (15.8119pt too wide) in paragraph at lines 3997--3998
-[]\TU/lmr/m/n/10 The coefficient of determination can be found by squaring the 
-value of correlation, using the _-_-_-_-_-_-_-_-_-_-_-_-_- for
- []
-
-
-Overfull \hbox (45.99991pt too wide) in paragraph at lines 4003--4004
+[91]
+File: 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1.pdf Grap
+hic file (type pdf)
+<use 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1.pdf>
+[92] [93] [94]
+Overfull \hbox (45.99991pt too wide) in paragraph at lines 5480--5481
 []\TU/lmr/m/n/10 The coefficient of determination measures the _-_-_-_-_-_-_-_-
 _-_-_-_- of total variation in the _-_-_-_-_-_-_-_-_-_-_- variable
  []
 
-[65]
-File: 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1.pdf Grap
+File: 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1.pdf Grap
 hic file (type pdf)
-<use 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-2-1.pdf>
-[66] [67]
-File: 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1.pdf Grap
+<use 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1.pdf>
+[95]
+File: 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1.pdf Grap
 hic file (type pdf)
-<use 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-6-1.pdf>
-[68]
-File: 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1.pdf Grap
+<use 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1.pdf>
+[96]
+File: 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-8-1.pdf Grap
 hic file (type pdf)
-<use 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-7-1.pdf>
-[69]
-File: 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-8-1.pdf Grap
-hic file (type pdf)
-<use 04-LN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-8-1.pdf>
-[70]
-Overfull \hbox (1.08188pt too wide) in paragraph at lines 4222--4224
+<use 04-VN04-two-quantitativeEDA_files/figure-latex/unnamed-chunk-8-1.pdf>
+[97]
+Overfull \hbox (1.08188pt too wide) in paragraph at lines 5577--5579
 []\TU/lmr/m/n/10 If the slopes are _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-, the two pr
 edictor variables do not _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- to
  []
 
-[71] [72] [73]
-File: 04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1.p
-df Graphic file (type pdf)
-<use 04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1.pd
-f>
-File: 04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-3-1.p
-df Graphic file (type pdf)
-<use 04-OCA03-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-3-1.pd
-f>
-[74] [75] [76] [77] [78] [79]
-File: 04-A04-EDA-two-quantitative-LR_files/figure-latex/unnamed-chunk-4-1.pdf G
-raphic file (type pdf)
-<use 04-A04-EDA-two-quantitative-LR_files/figure-latex/unnamed-chunk-4-1.pdf>
-[80] [81] [82] [83] [84]
+[98] [99]
+File: 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1.pd
+f Graphic file (type pdf)
+<use 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1.pdf
+>
+[100] [101]
+File: 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1.pd
+f Graphic file (type pdf)
+<use 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1.pdf
+>
+[102]
+File: 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1.pd
+f Graphic file (type pdf)
+<use 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1.pdf
+>
+[103]
+File: 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1.pd
+f Graphic file (type pdf)
+<use 04-GA05-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1.pdf
+>
+[104] [105] [106] [107] [108] [109] [110] [111] [112] [113]
 Module 5.
-[85
+[114
 
-] [86] [87] [88] [89] [90] [91]
-Module 6.
-
-Overfull \hbox (29.8399pt too wide) in paragraph at lines 5516--5518
-[]\TU/lmr/m/n/10 Use data collected on a _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-_- to give information about the _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- 
+] [115] [116] [117] [118] [119] [120]
+Overfull \hbox (22.63985pt too wide) in paragraph at lines 7002--7003
+[]\TU/lmr/m/n/10 Not enough evidence against _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+_-_-_-_- -> _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- 
  []
 
-
-Overfull \hbox (23.82983pt too wide) in paragraph at lines 5551--5552
-[]\TU/lmr/m/n/10 Or the null hypothesis is _-_-_-_-_-_-_-_-_-_-_-_-_-_-_- and t
-he sample provides _-_-_-_-_-_-_-_-_-_-_-_-_-_- against
- []
-
-[92
-
-]
-Overfull \hbox (10.84985pt too wide) in paragraph at lines 5644--5646
+[121]
+Overfull \hbox (10.84985pt too wide) in paragraph at lines 7089--7091
 []\TU/lmr/m/n/10 Probability of observing the sample _-_-_-_-_-_-_-_-_-_-_-_-_-
 _-_-_-_-_-_- or more _-_-_-_-_-_-_-_-_-_- assuming
  []
 
 File: images/soe_gradient_gray.png Graphic file (type bmp)
 <images/soe_gradient_gray.png>
-[93] [94] [95]
-File: 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-2-1.pdf Graphic 
+[122] [123] [124]
+File: 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-2-1.pdf Graphic 
 file (type pdf)
-<use 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
-[96] [97]
-File: 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-3-1.pdf Graphic 
+<use 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
+[125] [126]
+File: 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-3-1.pdf Graphic 
 file (type pdf)
-<use 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-3-1.pdf>
-[98]
-File: 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-4-1.pdf Graphic 
+<use 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-3-1.pdf>
+[127]
+File: 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-4-1.pdf Graphic 
 file (type pdf)
-<use 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-4-1.pdf>
-File: 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-5-1.pdf Graphic 
+<use 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-4-1.pdf>
+File: 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-5-1.pdf Graphic 
 file (type pdf)
-<use 06-LN06-1cat_simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
-[99]
-Overfull \hbox (38.19289pt too wide) in paragraph at lines 6047--6047
-|[]\TU/lmr/bx/n/14.4 Out-of-Class Activity Module 6: Helper-Hinderer — Simulati
-on-based
- []
-
-[100] [101]
-File: 06-OCA04-inference-1cat_test-simulation-S24_files/figure-latex/unnamed-ch
-unk-2-1.pdf Graphic file (type pdf)
-<use 06-OCA04-inference-1cat_test-simulation-S24_files/figure-latex/unnamed-chu
-nk-2-1.pdf>
-[102] [103] [104]
-File: images/class_simulations_oca06.png Graphic file (type bmp)
-<images/class_simulations_oca06.png>
-[105] [106] [107] [108]
+<use 05-VN05-1cat_simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
+[128] [129] [130] [131] [132]
+File: 05-GA06-inference-1cat_test-simulation_files/figure-latex/unnamed-chunk-2
+-1.pdf Graphic file (type pdf)
+<use 05-GA06-inference-1cat_test-simulation_files/figure-latex/unnamed-chunk-2-
+1.pdf>
 File: images/soe_gradient_gray.png Graphic file (type bmp)
 <images/soe_gradient_gray.png>
-[109]
-Underfull \hbox (badness 1810) in paragraph at lines 6738--6741
+[133]
+File: 05-GA06-inference-1cat_test-simulation_files/figure-latex/unnamed-chunk-4
+-1.pdf Graphic file (type pdf)
+<use 05-GA06-inference-1cat_test-simulation_files/figure-latex/unnamed-chunk-4-
+1.pdf>
+[134] [135]
+Underfull \hbox (badness 2376) in paragraph at lines 7833--7833
+|[]\TU/lmr/bx/n/14.4 Activity 4: Helper-Hinderer Part 1 — Simulation-based
+ []
+
+[136] [137] [138] [139] [140] [141] [142]
+File: images/soe_gradient_gray.png Graphic file (type bmp)
+<images/soe_gradient_gray.png>
+[143] [144] [145] [146]
+File: 05-A07-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1.
+pdf Graphic file (type pdf)
+<use 05-A07-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1.p
+df>
+[147]
+Underfull \hbox (badness 1810) in paragraph at lines 8674--8677
 \TU/lmr/m/n/10 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-chose the helper toy. A simulation
  null distribution with 1000 simulations
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 6738--6741
+Underfull \hbox (badness 1102) in paragraph at lines 8674--8677
 \TU/lmr/m/n/10 IF we assume ($[][]$ in context) _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-.
  []
 
 
-Underfull \hbox (badness 4792) in paragraph at lines 6738--6741
+Underfull \hbox (badness 4792) in paragraph at lines 8674--8677
 \TU/lmr/m/n/10 that the (true/sample)_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 _-_-_-_- proportion of infants age 6 to 10
  []
 
-[110] [111]
-Module 7.
-File: 07-LN07-1cat_theory_files/figure-latex/simpleNormalc-1.pdf Graphic file (
-type pdf)
-<use 07-LN07-1cat_theory_files/figure-latex/simpleNormalc-1.pdf>
-[112
+[148] [149]
+Module 6.
+[150
 
-]
-File: images/Empirical_Rule_Mark_bw.png Graphic file (type bmp)
-<images/Empirical_Rule_Mark_bw.png>
-[113] [114]
-File: 07-LN07-1cat_theory_files/figure-latex/standNormalc-1.pdf Graphic file (t
-ype pdf)
-<use 07-LN07-1cat_theory_files/figure-latex/standNormalc-1.pdf>
-[115]
-File: 07-LN07-1cat_theory_files/figure-latex/standardNormalcur-1.pdf Graphic fi
-le (type pdf)
-<use 07-LN07-1cat_theory_files/figure-latex/standardNormalcur-1.pdf>
-[116]
-Overfull \hbox (51.89989pt too wide) in paragraph at lines 7118--7120
-[]\TU/lmr/m/n/10 Our goal is to only take _-_-_-_-_-_-_-_- sample from the _-_-
-_-_-_-_-_-_-_-_-_-_-_- to create a _-_-_-_-_-_-_-_-_-_-_-_-_- interval. 
+] [151] [152]
+File: 06-RG-1cat_theory_files/figure-latex/normgt3-1.pdf Graphic file (type pdf
+)
+<use 06-RG-1cat_theory_files/figure-latex/normgt3-1.pdf>
+[153] [154] [155] [156] [157]
+Underfull \hbox (badness 1527) in paragraph at lines 9172--9174
+[]\TU/lmr/m/n/10 If the p-value is small (less than or equal to the significanc
+e level), the decision will be to
  []
 
-
-Overfull \hbox (8.6019pt too wide) in paragraph at lines 7120--7122
+[158] [159] [160] [161]
+File: 06-VN06-1cat_theory_files/figure-latex/simpleNormalc-1.pdf Graphic file (
+type pdf)
+<use 06-VN06-1cat_theory_files/figure-latex/simpleNormalc-1.pdf>
+[162]
+File: 06-VN06-1cat_theory_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file
+ (type pdf)
+<use 06-VN06-1cat_theory_files/figure-latex/unnamed-chunk-1-1.pdf>
+File: 06-VN06-1cat_theory_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file
+ (type pdf)
+<use 06-VN06-1cat_theory_files/figure-latex/unnamed-chunk-2-1.pdf>
+[163]
+File: images/Empirical_Rule_Mark_bw.png Graphic file (type bmp)
+<images/Empirical_Rule_Mark_bw.png>
+[164] [165]
+File: 06-VN06-1cat_theory_files/figure-latex/standNormalc-1.pdf Graphic file (t
+ype pdf)
+<use 06-VN06-1cat_theory_files/figure-latex/standNormalc-1.pdf>
+[166]
+File: 06-VN06-1cat_theory_files/figure-latex/standardNormalcur-1.pdf Graphic fi
+le (type pdf)
+<use 06-VN06-1cat_theory_files/figure-latex/standardNormalcur-1.pdf>
+[167]
+Overfull \hbox (8.6019pt too wide) in paragraph at lines 9748--9750
 []\TU/lmr/m/n/10 Based on the 68-95-99.7 rule, we know that approximately _-_-_
 -_-_-_-% of sample _-_-_-_-_-_-_-_-_-_-_-_-_-_- will
  []
 
 
-Overfull \hbox (29.6419pt too wide) in paragraph at lines 7122--7124
+Overfull \hbox (29.6419pt too wide) in paragraph at lines 9750--9752
 []\TU/lmr/m/n/10 If we create 95% confidence intervals, _-_-_-_-_-_-_-_-% of sa
 mples will create a 95% _-_-_-_-_-_-_-_-_-_-_-_-_-_- interval
  []
 
-[117]
-Underfull \hbox (badness 4291) in paragraph at lines 7186--7187
+[168]
+Underfull \hbox (badness 4291) in paragraph at lines 9811--9812
 []\TU/lmr/m/n/10 Always should write $[][]$ based on the _-_-_-_-_-_-_-_-_-_-_-
 _-_- _-_-_-_-_-_-_-_-_-_-_-_-_- prior to
  []
 
-[118]
-Overfull \hbox (54.92491pt too wide) in paragraph at lines 7252--7255
+[169]
+Overfull \hbox (54.92491pt too wide) in paragraph at lines 9876--9879
 []\TU/lmr/m/n/10 Practically important: the _-_-_-_-_-_-_-_-_-_-_- seen in the 
 data is meaningful and has _-_-_-_-_-_-_-_-_-_-_-_-_- applications. 
  []
 
-[119] [120] [121]
-File: 07-OCA05-inference-1cat_test-theory_files/figure-latex/Normalcur-1.pdf Gr
-aphic file (type pdf)
-<use 07-OCA05-inference-1cat_test-theory_files/figure-latex/Normalcur-1.pdf>
-[122] [123] [124]
-File: 07-A06-inference-1cat_CI-theory_files/figure-latex/Normalcur-1.pdf Graphi
+[170] [171]
+File: 06-GA06-inference-1cat_test-theory_files/figure-latex/unnamed-chunk-2-1.p
+df Graphic file (type pdf)
+<use 06-GA06-inference-1cat_test-theory_files/figure-latex/unnamed-chunk-2-1.pd
+f>
+[172] [173]
+File: 06-GA06-inference-1cat_test-theory_files/figure-latex/Ncurve-1.pdf Graphi
 c file (type pdf)
-<use 07-A06-inference-1cat_CI-theory_files/figure-latex/Normalcur-1.pdf>
-[125] [126] [127] [128] [129] [130] [131]
-Module 8.
-[132
-
-]
-File: 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-3-1.pdf Graph
-ic file (type pdf)
-<use 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-3-1.pdf>
-[133] [134]
-File: 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1.pdf Graph
-ic file (type pdf)
-<use 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1.pdf>
-[135]
-File: 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1.pdf Graph
-ic file (type pdf)
-<use 08-LN09-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
-[136] [137] [138] [139]
-File: 08-OCA06-inference-2cat-simulation_files/figure-latex/unnamed-chunk-2-1.p
-df Graphic file (type pdf)
-<use 08-OCA06-inference-2cat-simulation_files/figure-latex/unnamed-chunk-2-1.pd
-f>
-[140]
-File: 08-OCA06-inference-2cat-simulation_files/figure-latex/unnamed-chunk-3-1.p
-df Graphic file (type pdf)
-<use 08-OCA06-inference-2cat-simulation_files/figure-latex/unnamed-chunk-3-1.pd
-f>
-[141] [142]
-Overfull \hbox (3.43134pt too wide) in paragraph at lines 8631--8631
-|[]\TU/lmr/bx/n/14.4 Activity 8: The Good Samaritan (continued) — Simulation-ba
-sed
- []
-
-[143] [144] [145] [146] [147] [148] [149] [150] [151]
-Module 9.
-
-Underfull \hbox (badness 1845) in paragraph at lines 9247--9247
-|[]\TU/lmr/bx/n/14.4 Lecture Notes Module 9: Theoretical Inference for Two
- []
-
-
-Overfull \hbox (26.9699pt too wide) in paragraph at lines 9303--9304
-[]\TU/lmr/m/n/10 This value measures how many _-_-_-_-_-_-_-_-_-_-_-_-_- deviat
-ions the sample difference in _-_-_-_-_-_-_-_-_-_-_-_-_- is
- []
-
-[152
-
-]
-File: 09-LN010-two-cat-theory_files/figure-latex/unnamed-chunk-1-1.pdf Graphic 
-file (type pdf)
-<use 09-LN010-two-cat-theory_files/figure-latex/unnamed-chunk-1-1.pdf>
-[153]
-File: 09-LN010-two-cat-theory_files/figure-latex/standNormc-1.pdf Graphic file 
-(type pdf)
-<use 09-LN010-two-cat-theory_files/figure-latex/standNormc-1.pdf>
-[154] [155] [156] [157]
-File: 09-OCA08-inference-2cat_CI-theory_files/figure-latex/standNormc-1.pdf Gra
+<use 06-GA06-inference-1cat_test-theory_files/figure-latex/Ncurve-1.pdf>
+[174]
+File: 06-GA06-inference-1cat_test-theory_files/figure-latex/Normalcur-1.pdf Gra
 phic file (type pdf)
-<use 09-OCA08-inference-2cat_CI-theory_files/figure-latex/standNormc-1.pdf>
-[158] [159] [160] [161] [162] [163]
-File: 09-A08-inference-2cat_test-theory_files/figure-latex/simpleNormal-1.pdf G
-raphic file (type pdf)
-<use 09-A08-inference-2cat_test-theory_files/figure-latex/simpleNormal-1.pdf>
-[164] [165] [166] [167] [168] [169] [170] [171]
-Module 10.
+<use 06-GA06-inference-1cat_test-theory_files/figure-latex/Normalcur-1.pdf>
+[175] [176] [177] [178]
+File: 06-A08-inference-1cat-theory_files/figure-latex/Norcur-1.pdf Graphic file
+ (type pdf)
+<use 06-A08-inference-1cat-theory_files/figure-latex/Norcur-1.pdf>
+[179] [180]
+File: 06-A08-inference-1cat-theory_files/figure-latex/Normalcur-1.pdf Graphic f
+ile (type pdf)
+<use 06-A08-inference-1cat-theory_files/figure-latex/Normalcur-1.pdf>
+[181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193] [
+194]
+Module 7.
 
-Underfull \hbox (badness 7667) in paragraph at lines 10464--10467
+Underfull \hbox (badness 2635) in paragraph at lines 11395--11395
+|[]\TU/lmr/bx/n/14.4 Reading Guide: Hypothesis Testing for a Difference in
+ []
+
+[195
+
+] [196] [197] [198] [199] [200] [201] [202]
+File: 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-3-1.pdf Graph
+ic file (type pdf)
+<use 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-3-1.pdf>
+[203]
+File: 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1.pdf Graph
+ic file (type pdf)
+<use 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1.pdf>
+[204] [205]
+File: 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1.pdf Graph
+ic file (type pdf)
+<use 07-VN07-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
+[206] [207] [208]
+File: 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-2-1.pd
+f Graphic file (type pdf)
+<use 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-2-1.pdf
+>
+[209]
+File: 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1.pd
+f Graphic file (type pdf)
+<use 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1.pdf
+>
+[210]
+File: 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1.pd
+f Graphic file (type pdf)
+<use 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1.pdf
+>
+[211]
+File: 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-6-1.pd
+f Graphic file (type pdf)
+<use 07-GA07-inference-2cat-simulation_files/figure-latex/unnamed-chunk-6-1.pdf
+>
+[212] [213] [214] [215] [216] [217]
+Module 8.
+[218
+
+] [219] [220] [221] [222]
+Underfull \hbox (badness 2689) in paragraph at lines 12821--12821
+|[]\TU/lmr/bx/n/14.4 Video Notes: Theoretical Inference for Two Categorical
+ []
+
+[223]
+File: 08-VN010-two-cat-theory_files/figure-latex/unnamed-chunk-1-1.pdf Graphic 
+file (type pdf)
+<use 08-VN010-two-cat-theory_files/figure-latex/unnamed-chunk-1-1.pdf>
+[224]
+File: 08-VN010-two-cat-theory_files/figure-latex/standNormc-1.pdf Graphic file 
+(type pdf)
+<use 08-VN010-two-cat-theory_files/figure-latex/standNormc-1.pdf>
+[225] [226] [227] [228] [229] [230]
+File: 08-GA08-inference-2cat_CI-theory_files/figure-latex/standNormc-1.pdf Grap
+hic file (type pdf)
+<use 08-GA08-inference-2cat_CI-theory_files/figure-latex/standNormc-1.pdf>
+[231]
+File: 08-GA08-inference-2cat_CI-theory_files/figure-latex/simpleNormal-1.pdf Gr
+aphic file (type pdf)
+<use 08-GA08-inference-2cat_CI-theory_files/figure-latex/simpleNormal-1.pdf>
+[232] [233] [234] [235] [236] [237] [238] [239] [240] [241] [242] [243]
+Module 9.
+[244
+
+] [245] [246] [247] [248] [249] [250] [251] [252] [253] [254]
+Underfull \hbox (badness 1881) in paragraph at lines 14699--14700
+[]\TU/lmr/m/n/10 In this module, we will study inference for a _-_-_-_-_-_-_-_-
+_-_-_-_-_-_-_-_-_-_-_-_-_-_- explanatory
+ []
+
+File: images/paired_independent.png Graphic file (type bmp)
+<images/paired_independent.png>
+[255]
+File: 09-VN09-paired_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (typ
+e pdf)
+<use 09-VN09-paired_files/figure-latex/unnamed-chunk-1-1.pdf>
+[256] [257]
+File: 09-VN09-paired_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (typ
+e pdf)
+<use 09-VN09-paired_files/figure-latex/unnamed-chunk-5-1.pdf>
+[258]
+File: 09-VN09-paired_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (typ
+e pdf)
+<use 09-VN09-paired_files/figure-latex/unnamed-chunk-6-1.pdf>
+[259]
+Overfull \hbox (27.4349pt too wide) in paragraph at lines 15025--15028
+[]\TU/lmr/m/n/10 Estimate the population standard deviation, $[][]$, with the _
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- standard
+ []
+
+[260]
+File: 09-VN09-paired_files/figure-latex/pvalueheight-1.pdf Graphic file (type p
+df)
+<use 09-VN09-paired_files/figure-latex/pvalueheight-1.pdf>
+[261]
+File: 09-VN09-paired_files/figure-latex/tstar-1.pdf Graphic file (type pdf)
+<use 09-VN09-paired_files/figure-latex/tstar-1.pdf>
+[262] [263] [264]
+File: 09-GA09-paired-theory_files/figure-latex/tdist-1.pdf Graphic file (type p
+df)
+<use 09-GA09-paired-theory_files/figure-latex/tdist-1.pdf>
+[265]
+File: 09-GA09-paired-theory_files/figure-latex/unnamed-chunk-1-1.pdf Graphic fi
+le (type pdf)
+<use 09-GA09-paired-theory_files/figure-latex/unnamed-chunk-1-1.pdf>
+File: 09-GA09-paired-theory_files/figure-latex/unnamed-chunk-1-2.pdf Graphic fi
+le (type pdf)
+<use 09-GA09-paired-theory_files/figure-latex/unnamed-chunk-1-2.pdf>
+[266] [267]
+File: 09-GA09-paired-theory_files/figure-latex/tstar-1.pdf Graphic file (type p
+df)
+<use 09-GA09-paired-theory_files/figure-latex/tstar-1.pdf>
+[268] [269]
+File: 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-1-1.pdf Graphi
+c file (type pdf)
+<use 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-1-1.pdf>
+[270]
+File: 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-2-1.pdf Graphi
+c file (type pdf)
+<use 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
+[271]
+File: 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-3-1.pdf Graphi
+c file (type pdf)
+<use 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-3-1.pdf>
+[272]
+File: 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-4-1.pdf Graphi
+c file (type pdf)
+<use 09-GA10-paired-simulation_files/figure-latex/unnamed-chunk-4-1.pdf>
+[273] [274] [275] [276] [277] [278] [279]
+Module 10.
+[280
+
+] [281] [282] [283] [284] [285] [286]
+Underfull \hbox (badness 1881) in paragraph at lines 16464--16466
+[]\TU/lmr/m/n/10 In this module, we will study inference for a _-_-_-_-_-_-_-_-
+_-_-_-_-_-_-_-_-_-_-_-_-_-_- explanatory
+ []
+
+[287] [288]
+File: 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (t
+ype pdf)
+<use 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-2-1.pdf>
+File: 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (t
+ype pdf)
+<use 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-3-1.pdf>
+[289] [290]
+File: 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (t
+ype pdf)
+<use 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-4-1.pdf>
+[291]
+File: 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (t
+ype pdf)
+<use 10-VN010-1ofeach_files/figure-latex/unnamed-chunk-6-1.pdf>
+[292] [293] [294] [295] [296]
+File: 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1
+.pdf Graphic file (type pdf)
+<use 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1.
+pdf>
+[297]
+File: 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1
+.pdf Graphic file (type pdf)
+<use 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1.
+pdf>
+[298]
+File: 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-1
+.pdf Graphic file (type pdf)
+<use 10-GA11-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-1.
+pdf>
+[299] [300] [301]
+File: 10-GA12-inference-1ofeach-theory_files/figure-latex/unnamed-chunk-1-1.pdf
+ Graphic file (type pdf)
+<use 10-GA12-inference-1ofeach-theory_files/figure-latex/unnamed-chunk-1-1.pdf>
+
+[302] [303] [304] [305] [306] [307] [308] [309] [310] [311] [312] [313]
+Module 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18049--18051
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18051--18053
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18053--18055
+
+ []
+
+[314
+
+] [315] [316] [317] [318] [319] [320]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file
+ (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-2-1.pdf>
+[321] [322]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file
+ (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-5-1.pdf>
+[323]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file
+ (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-6-1.pdf>
+[324]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file
+ (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-7-1.pdf>
+[325]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file
+ (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-8-1.pdf>
+[326]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-10-1.pdf Graphic fil
+e (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-10-1.pdf>
+[327]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf Graphic fil
+e (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf>
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-12-1.pdf Graphic fil
+e (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-12-1.pdf>
+[328]
+File: 11-VN013-regression_files/figure-latex/unnamed-chunk-13-1.pdf Graphic fil
+e (type pdf)
+<use 11-VN013-regression_files/figure-latex/unnamed-chunk-13-1.pdf>
+
+Overfull \hbox (28.8399pt too wide) in paragraph at lines 18821--18823
+[]\TU/lmr/m/n/10 For two quantitative variables we use the _-_-_-_-_-_--distrib
+ution with _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- degrees
+ []
+
+File: 11-VN013-regression_files/figure-latex/pvalueoce-1.pdf Graphic file (type
+ pdf)
+<use 11-VN013-regression_files/figure-latex/pvalueoce-1.pdf>
+[329] [330] [331]
+File: 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-2-1.pdf Gr
+aphic file (type pdf)
+<use 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
+[332] [333] [334]
+File: 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-5-1.pdf Gr
+aphic file (type pdf)
+<use 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
+File: 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-6-1.pdf Gr
+aphic file (type pdf)
+<use 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-6-1.pdf>
+[335]
+File: 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-7-1.pdf Gr
+aphic file (type pdf)
+<use 11-GA13-regression-simulation_files/figure-latex/unnamed-chunk-7-1.pdf>
+[336] [337]
+File: 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-2-1.pdf Graphi
+c file (type pdf)
+<use 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-2-1.pdf>
+[338]
+File: 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf Graphi
+c file (type pdf)
+<use 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf>
+[339] [340]
+Underfull \hbox (badness 10000) in paragraph at lines 19468--19469
+
+ []
+
+[341]
+File: 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-6-1.pdf Graphi
+c file (type pdf)
+<use 11-GA14-regression-theory_files/figure-latex/unnamed-chunk-6-1.pdf>
+[342] [343] [344] [345] [346] [347] [348]
+Module 12.
+[349
+
+] [350] [351]
+Overfull \hbox (25.23302pt too wide) in paragraph at lines 20129--20139
+ [] 
+ []
+
+[352]
+Underfull \hbox (badness 7667) in paragraph at lines 20206--20209
 []\TU/lmr/m/n/10 An _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-probability is calc
 ulated from the entire population
  []
 
 
-Overfull \hbox (19.52875pt too wide) in paragraph at lines 10493--10496
+Overfull \hbox (19.52875pt too wide) in paragraph at lines 20235--20238
 []\TU/lmr/m/n/10 A _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- probability is ca
 lculated _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- on
  []
 
-[172
 
-]
-Overfull \hbox (25.23302pt too wide) in paragraph at lines 10573--10583
+Overfull \hbox (25.23302pt too wide) in paragraph at lines 20271--20281
  [] 
  []
 
-[173] [174] [175] [176] [177] [178] [179] [180] [181]
-Overfull \hbox (16.87776pt too wide) in paragraph at lines 11224--11230
- [] 
- []
-
-[182] [183] [184] [185]
-Module 11.
-[186
-
-] [187] [188]
-Module 12.
-
-Underfull \hbox (badness 3579) in paragraph at lines 11584--11585
-[]\TU/lmr/m/n/10 In this week, we will study inference for a _-_-_-_-_-_-_-_-_-
-_-_-_-_-_-_-_-_-_-_-_-_-_- explanatory
- []
-
-
-Underfull \hbox (badness 1173) in paragraph at lines 11584--11585
-\TU/lmr/m/n/10 variable and a _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-- response variable where the two groups
- []
-
-File: images/paired_independent.png Graphic file (type bmp)
-<images/paired_independent.png>
-[189
-
-] [190]
-File: 11-LN011-paired_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (ty
-pe pdf)
-<use 11-LN011-paired_files/figure-latex/unnamed-chunk-1-1.pdf>
-[191]
-File: 11-LN011-paired_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (ty
-pe pdf)
-<use 11-LN011-paired_files/figure-latex/unnamed-chunk-6-1.pdf>
-[192]
-Overfull \hbox (27.4349pt too wide) in paragraph at lines 11840--11843
-[]\TU/lmr/m/n/10 Estimate the population standard deviation, $[][]$, with the _
--_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- standard
- []
-
-File: 11-LN011-paired_files/figure-latex/tstar-1.pdf Graphic file (type pdf)
-<use 11-LN011-paired_files/figure-latex/tstar-1.pdf>
-[193] [194]
-File: 11-LN011-paired_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (ty
-pe pdf)
-<use 11-LN011-paired_files/figure-latex/unnamed-chunk-9-1.pdf>
-[195] [196]
-File: 11-LN011-paired_files/figure-latex/pvalueheight-1.pdf Graphic file (type 
-pdf)
-<use 11-LN011-paired_files/figure-latex/pvalueheight-1.pdf>
-[197] [198]
-File: 11-OCA08-paired-theory_files/figure-latex/tdist-1.pdf Graphic file (type 
-pdf)
-<use 11-OCA08-paired-theory_files/figure-latex/tdist-1.pdf>
-[199]
-File: 11-OCA08-paired-theory_files/figure-latex/unnamed-chunk-1-1.pdf Graphic f
-ile (type pdf)
-<use 11-OCA08-paired-theory_files/figure-latex/unnamed-chunk-1-1.pdf>
-File: 11-OCA08-paired-theory_files/figure-latex/unnamed-chunk-1-2.pdf Graphic f
-ile (type pdf)
-<use 11-OCA08-paired-theory_files/figure-latex/unnamed-chunk-1-2.pdf>
-[200] [201] [202]
-File: 11-OCA08-paired-theory_files/figure-latex/tstar-1.pdf Graphic file (type 
-pdf)
-<use 11-OCA08-paired-theory_files/figure-latex/tstar-1.pdf>
-[203] [204]
-File: images/air_pollution_greyscale.png Graphic file (type bmp)
-<images/air_pollution_greyscale.png>
-File: 11-A09-paired-simulation_files/figure-latex/unnamed-chunk-2-1.pdf Graphic
- file (type pdf)
-<use 11-A09-paired-simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
-[205] [206] [207] [208] [209] [210] [211] [212] [213] [214] [215]
+[353] [354] [355] [356] [357] [358] [359] [360] [361]
 Module 13.
+[362
 
-Underfull \hbox (badness 3579) in paragraph at lines 13160--13162
-[]\TU/lmr/m/n/10 In this week, we will study inference for a _-_-_-_-_-_-_-_-_-
-_-_-_-_-_-_-_-_-_-_-_-_-_- explanatory
- []
-
-
-Underfull \hbox (badness 1173) in paragraph at lines 13160--13162
-\TU/lmr/m/n/10 variable and a _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-- response variable where the two groups
- []
-
-[216
-
-] [217]
-File: 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (t
-ype pdf)
-<use 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-2-1.pdf>
-[218]
-File: 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (t
-ype pdf)
-<use 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-3-1.pdf>
-[219] [220]
-File: 12-LN012-1ofeach_files/figure-latex/pvaluepb-1.pdf Graphic file (type pdf
-)
-<use 12-LN012-1ofeach_files/figure-latex/pvaluepb-1.pdf>
-[221]
-File: 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (t
-ype pdf)
-<use 12-LN012-1ofeach_files/figure-latex/unnamed-chunk-5-1.pdf>
-[222] [223]
-Underfull \hbox (badness 1371) in paragraph at lines 13603--13603
-|[]\TU/lmr/bx/n/14.4 Out-of-Class Activity Module 13: Does behavior impact
- []
-
-[224]
-File: 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-
-1.pdf Graphic file (type pdf)
-<use 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1
-.pdf>
-[225] [226]
-File: 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-
-1.pdf Graphic file (type pdf)
-<use 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1
-.pdf>
-[227]
-File: 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-
-1.pdf Graphic file (type pdf)
-<use 12-OCA09-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-1
-.pdf>
-[228] [229] [230] [231] [232] [233] [234] [235] [236] [237] [238]
-Module 14.
-[239
-
-]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file
- (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-2-1.pdf>
-[240] [241]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file
- (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-5-1.pdf>
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file
- (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-6-1.pdf>
-[242] [243]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file
- (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-8-1.pdf>
-[244]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file
- (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-9-1.pdf>
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-10-1.pdf Graphic fil
-e (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-10-1.pdf>
-[245]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf Graphic fil
-e (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-11-1.pdf>
-
-Overfull \hbox (28.8399pt too wide) in paragraph at lines 14983--14985
-[]\TU/lmr/m/n/10 For two quantitative variables we use the _-_-_-_-_-_--distrib
-ution with _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- degrees
- []
-
-[246]
-File: 13-LN013-regression_files/figure-latex/pvalueoce-1.pdf Graphic file (type
- pdf)
-<use 13-LN013-regression_files/figure-latex/pvalueoce-1.pdf>
-[247]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-15-1.pdf Graphic fil
-e (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-15-1.pdf>
-[248]
-File: 13-LN013-regression_files/figure-latex/unnamed-chunk-16-1.pdf Graphic fil
-e (type pdf)
-<use 13-LN013-regression_files/figure-latex/unnamed-chunk-16-1.pdf>
-[249] [250] [251]
-File: 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-2-1.pdf G
-raphic file (type pdf)
-<use 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-2-1.pdf>
-[252] [253]
-File: 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-5-1.pdf G
-raphic file (type pdf)
-<use 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-5-1.pdf>
-[254]
-File: 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-6-1.pdf G
-raphic file (type pdf)
-<use 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-6-1.pdf>
-File: 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-7-1.pdf G
-raphic file (type pdf)
-<use 13-OCA10-regression-simulation_files/figure-latex/unnamed-chunk-7-1.pdf>
-[255] [256] [257] [258] [259]
-File: 13-A11-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf Graphic
- file (type pdf)
-<use 13-A11-regression-theory_files/figure-latex/unnamed-chunk-3-1.pdf>
-[260] [261]
-Underfull \hbox (badness 10000) in paragraph at lines 15831--15832
-
- []
-
-[262] [263] [264] [265] [266] [267] [268] [269]
-Module 15.
-[270
-
-] [271] [272] [273] [274] [275] [276] [277]
-Underfull \hbox (badness 3333) in paragraph at lines 16718--16718
+] [363] [364] [365] [366] [367] [368] [369] [370] [371] [372] [373] [374]
+Underfull \hbox (badness 3333) in paragraph at lines 21264--21264
 |[]\TU/lmr/bx/n/14.4 Golden Ticket to Descriptive and Inferential Statistical
  []
 
@@ -1733,20 +1809,20 @@ File: GoldenTicket_F23.pdf Graphic file (type pdf)
 <use GoldenTicket_F23.pdf, page 1>
 File: GoldenTicket_F23.pdf Graphic file (type pdf)
 <use GoldenTicket_F23.pdf, page 1>
-[278]
+[375]
 File: GoldenTicket_F23.pdf Graphic file (type pdf)
 <use GoldenTicket_F23.pdf, page 1>
 File: GoldenTicket_F23.pdf Graphic file (type pdf)
 <use GoldenTicket_F23.pdf, page 1>
 File: GoldenTicket_F23.pdf Graphic file (type pdf)
 <use GoldenTicket_F23.pdf, page 1>
-[279
+[376
 
 ]
 Missing character: There is no ≥ in font [lmroman10-regular]:mapping=tex-text;!
-[280
+[377
 
-] [281] (IntroStatActivitiesHybrid.aux)
+] [378] (IntroStatActivitiesHybrid.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1756,12 +1832,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22044 strings out of 409673
- 442498 string characters out of 5773081
- 1956630 words of memory out of 5000000
- 43727 multiletter control sequences out of 15000+600000
- 564576 words of font info for 96 fonts, out of 8000000 for 9000
+ 22504 strings out of 409673
+ 463236 string characters out of 5773081
+ 1957630 words of memory out of 5000000
+ 44184 multiletter control sequences out of 15000+600000
+ 564568 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,17n,120p,1467b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,120p,1467b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on IntroStatActivitiesHybrid.pdf (285 pages).
+Output written on IntroStatActivitiesHybrid.pdf (382 pages).

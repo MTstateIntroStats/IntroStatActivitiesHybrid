@@ -17,15 +17,15 @@
 
 * Find the correlation coefficient from R output or from $r^2$ and the sign of the slope.
 
-### Penguins {-}
+### Penguins 
 
 The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including bill depth and body mass. The researchers were interested in the relationship between bill depth and body mass and wondered if bill depth could be used to accurately predict the body mass of these three penguin species. 
 
-* Upload and import the `Antarctica_Penguins` csv file 
+* Upload the `Antarctica_Penguins` csv file 
 
-* Upload and open the provided R script file for week 4 lab. 
+* Upload and open the provided R script file for the module 4 lab. 
 
-* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 5.
+* Enter the name of the data set (`Antarctica_Penguins`) for `datasetname` in the R script file in line 5.  *Note that there are some missing values in the dataset.  Line 6 in the R script file removes the NAs.
 
 First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth (mm) to predict body mass (g).  This makes bill depth the explanatory variable. 
 
@@ -36,8 +36,8 @@ First we will create a scatterplot of the bill depth and body mass.  Notice that
 * **Upload a copy of your scatterplot to Gradescope.**
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
-penguins <- datasetname %>% #Creates the object penguins
-    na.omit() #Removes data points without values
+penguins <- read.csv("datasetname") %>% #Creates the object penguins
+    drop_na(body_mass_g) %>% drop_na(bill_depth_mm) #Removes data points without values
 penguins %>%
   ggplot(aes(x = bill_depth_mm, y = body_mass_g))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
@@ -70,7 +70,7 @@ penguins %>%
 
 To create the correlation matrix...
 
-* Highlight and run lines 20--24 in the R script file.
+* Highlight and run lines 21--25 in the R script file.
 
 ```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
 penguins %>%  # Data set pipes into
@@ -94,14 +94,14 @@ penguins %>%  # Data set pipes into
 
 To get the linear model output...
 
-* Enter the variable name `body_mass_g` for `response` and the variable name `bill_depth_mm` for `explanatory` in line 29 in the R script file.  
+* Enter the variable name `body_mass_g` for `response` and the variable name `bill_depth_mm` for `explanatory` in line 30 in the R script file.  
 
-* Highlight and run lines 29--30.
+* Highlight and run lines 30--31.
 
 ```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
 # Fit linear model: y ~ x
 penguinsLM <- lm(response~explanatory, data=penguins)
-summary(penguinsLM)$coefficients # Display coefficient summary
+round(summary(penguinsLM)$coefficients, 3) # Display coefficient summary
 ```
 
 5.  Write out the least squares regression line using the summary statistics from the R output in context of the problem.
@@ -124,9 +124,11 @@ summary(penguinsLM)$coefficients # Display coefficient summary
 
 \vspace{0.2in}
 
+#### Multivariable plot {-}
+
 Does species change the relationship between bill depth and body mass? 
 
-* Highlight and run lines 34 - 43 to get the multivariable plot.
+* Highlight and run lines 35--44 to get the multivariable plot.
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
 penguins %>%
@@ -136,7 +138,7 @@ penguins %>%
        y = "body mass (g)",  # Label y-axis
        color = "species",
        shape = "species",
-       title = "Scatterplot of Bill Depth and Body Mass by Penguin Species") + 
+       title = "Scatterplot of Bill Depth and Body Mass by Penguin Species") +
     # Enter the title for the plot between the quotations
   geom_smooth(method = "lm", se = FALSE) +  # Add regression line
   scale_color_viridis_d(end=0.8)
@@ -158,6 +160,12 @@ penguins %>%
 13. Notice that the slope of the line between bill depth and body mass for each species is positive while the slope for the line not accounting for species is negative.  What phenomena is this an example of?
 
 \vspace{0.2in}
+
+\newpage
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage
 

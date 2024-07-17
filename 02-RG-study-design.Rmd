@@ -1,6 +1,6 @@
 # Study Design
 
-## Week 2 Reading Guide: Sampling, Study Design, and Scope of Inference
+## Reading Guide: Sampling, Study Design, and Scope of Inference
 
 ### Textbook Chapter 2: Study Design {-}
 

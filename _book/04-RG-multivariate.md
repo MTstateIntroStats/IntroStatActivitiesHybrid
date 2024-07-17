@@ -5,7 +5,7 @@ output:
 ---
 # Exploring Multivariable Data
 
-## Week 4 Reading Guide: Two Quantitative Variables and Multivariable Concepts
+## Reading Guide: Two Quantitative Variables and Multivariable Concepts
 
 ### Textbook Chapter 6: Correlation and regression {-}
 

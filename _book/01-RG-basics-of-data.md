@@ -1,10 +1,8 @@
-# Basics of Data
-
 ## Reading Guides
 
 Reading guides are designed to be completed while reading the required sections in the course textbook (https://mtstateintrostats.github.io/IntroStatTextbook/index.html) to aid students in taking notes.  These reading guides are not turned in in class but will be useful in understanding key concepts each week.  Solutions to the reading guides will be posted on D2L. 
 
-## Week 1 Reading Guide: Basics of Data
+### Module 1 Reading Guide: Basics of Data
 
 ### Textbook Sections 1.1: Case study and 1.2: Data basics {-}
 

@@ -1,0 +1,271 @@
+## Module 3 Lab:  EDA Review
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Identify and create appropriate summary statistics and plots
+  given a data set or research question for different types of data.
+
+* Interpret the following summary statistics in context:
+  median, lower quartile, upper quartile, 
+  standard deviation, interquartile range.
+
+### General information labs
+
+Throughout the semester, labs will be completed at the end of specific modules. Questions are selected from each lab to be turned in on Gradescope.  The questions to be submitted on Gradescope are bolded in the lab.  As you work through the lab have the Gradescope lab assignment open so that you can answer those questions as you go.
+
+### Movies released in 2016
+
+A data set was collected on movies released in 2016 [@imdb].  Here is a list of some of the variables collected on the observational units, movies released in 2016.  
+
+| **Variable** 	| **Description** |
+|----	|-------------	|
+| `budget_mil` | Amount of money (in US $ millions) budgeted for the production of the movie |
+| `revenue_mil` | Amount of money (in US $ millions) the movie made after release|
+| `duration` | Length of the movie (in minutes)|
+| `content_rating` | Rating of the movie (`G`, `PG`, `PG-13`, `R`, `Not Rated`)|
+| `imdb_score` | IMDb user rating score from 1 to 10 |
+| `genres` | Categories the movie falls into (e.g., Action, Drama, etc.) |
+| `facebook_likes` | Number of likes a movie receives on Facebook |
+
+\newpage
+
+#### Robust Statistics {-}
+
+Let’s examine how the presence of outliers affect the values of center and spread. For this part of the activity we will look at the variable revenue in the movies data set.
+
+```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+movies <- read.csv("https://www.math.montana.edu/courses/s216/data/Movies2016_F24.csv")
+
+movies %>% # Data set piped into...
+    summarise(favstats(revenue_mil))
+
+movies %>% # Data set piped into...
+    ggplot(aes(x = revenue_mil)) + # Name variable to plot
+    geom_boxplot() + # Create histogram with specified binwidth
+    labs(title = "Histogram of Revenue of Movies in 2016", # Title for plot
+         x = "Revenue (in Millions)", # Label for x axis
+         y = "Frequency") # Label for y axis
+```
+
+1. Report the two measures of center for these data.
+
+\vspace{0.5in}
+
+2. Report the two measures of spread for these data.
+
+\vspace{0.6in}
+
+To show the effect of outliers on the measures of center and spread, the largest values in the data set were reduced by 100 $MM to decrease the range of the data set. This variable is called `revenue_reduced`
+
+```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+movies %>% # Data set piped into...
+    summarise(favstats(revenue_reduced))
+
+movies %>% # Data set piped into...
+ggplot(aes(x = revenue_reduced)) + # Name variable to plot
+geom_boxplot() + # Create histogram with specified binwidth
+labs(title = "Histogram of Decreased Revenue of Movies in 2016", # Title for plot
+x = "Revenue (in Millions)", # Label for x axis
+y = "Frequency") # Label for y axis
+```
+
+3. Report the two measures of center for this new data set.
+\vspace{0.5in}
+
+4. Report the two measures of spread for this new data set.
+\vspace{0.5in}
+
+5. **Which measure of center is robust to outliers? Explain your answer.**
+\vspace{0.8in}
+
+6. Which measure of spread is robust to outliers? Explain your answer.
+\vspace{0.8in}
+
+\newpage
+
+#### Summary statistics for a single categorical and single quantitative variable{-}
+
+Is there an association between content rating and budget for movies released in 2016?  To use the `favstats()` function in the mosaic package with two variables, we will enter the variables as a formula, response~explanatory.  This function will give the summary statistics for budget for each content rating.
+
+* Enter the variable name `content_rating` for explanatory and `budget` for response in line 33
+
+* Highlight and run lines 31--33 in the provided `R` script file.
+
+```{r, echo=TRUE, collapse=FALSE, eval=FALSE}
+movies %>% # Data set piped into...
+  filter(content_rating != "Not Rated") %>% # Remove Not Rated movies
+  reframe(favstats(response~explanatory)) # Find the summary measures for each content rating
+```
+
+7.  Which content rating has the largest IQR?
+
+\vspace{0.8in}
+
+8.  Report the mean budget amount for the PG rating.  Use appropriate notation.
+
+\vspace{0.3in}
+
+9.  Report the mean budget amount for the R rating.  Use appropriate notation.
+
+\vspace{0.3in}
+
+10. Calculate the difference in mean budget amount for movies released in 2016 with a PG rating minus those with a R rating.  Use appropriate notation with informative subscripts.
+
+\vspace{0.8in}
+
+11. **Interpret the difference in means calculated in question 10 in context of the problem.**
+
+\vspace{0.5in}
+
+12. **Report and interpret the standard deviation of the budget amount for movies released in 2016 with a PG rating.**
+
+\vspace{0.5in}
+
+13. Calculate the $IQR = Q_3 - Q_1$ of the budget amount for movies released in 2016 with a PG rating.
+
+\newpage
+
+#### Displaying a single categorical and single quantitative variable {-}
+
+The boxplot of movie budgets (in millions) by content rating is plotted using the code below.  
+
+* Enter the variable `budget_mil` for `response` and the variable `content_rating` for explanatory at line 30.
+
+* Highlight and run code lines 37--44. This plot compares the budget for different levels of content rating.
+
+```{r, out.width="60%", echo=TRUE, eval=FALSE}
+movies %>%  # Data set piped into...
+  filter(content_rating != "Not Rated") %>% # Remove Not Rated movies
+  ggplot(aes(y = response, x = explanatory))+  # Identify variables
+  geom_boxplot()+  # Tell it to make a box plot
+  labs(title = "Side-by-side Box Plot of Budget by Content Rating for Movies Released in 2016",  
+       # Title
+       x = "Content Rating",    # x-axis label
+       y = "Budget (in Millions)")  # y-axis label
+```
+
+14. Answer the following questions about the box plots created.
+
+   a. Which content rating has the highest center?
+\vspace{0.2in}
+
+   b. Which content rating has the largest spread?
+\vspace{0.2in}
+
+   c. Which content rating has the most skewed distribution?
+\vspace{0.2in}
+
+   d. **Fifty percent of movies released in 2016 with a PG-13 content rating fall below what value?  What is the name of this value?**
+\vspace{0.4in}
+
+   e.  What is the value for the first quartile (Q1) for the PG-13 rating?  Interpret this value in context.
+\vspace{.8in}
+
+
+### Nightlight use and myopia {-}
+
+In the previous part of the activity, the code was provided to import the data set needed directly from the Stat 216 website.  Follow these steps to upload and import the data set for the rest of the lab.
+
+* Download the provided data set `ChildrenLightSight.csv` from D2L
+
+* Upload the data set `ChildrenLightSight` to the RStudio server using the same steps to upload the R script file.  
+
+* Enter the name of the data set for `datasetname` in the R script file in line 48.  Don't forget to include .csv (`ChildrenLightSight.csv`).  
+
+* Highlight and run line 48 in the provided `R` script file to load the data set.  
+
+```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
+# Read in data set
+myopia <- read.csv("datasetname") 
+```
+
+In a study reported in Nature [@quinn1999], a survey of 479 children found that those who had slept with a nightlight or in a fully lit room before the age of two had a higher incidence of nearsightedness (myopia) later in childhood.
+
+In this study, there are two variables studied: `Light`: level of light in room at night (no light, nightlight, full light) and `Sight`: level of myopia developed later in childhood (high myopia, myopia, no myopia).  
+
+#### Displaying two categorical variables {-}
+
+Is there an association between the level of light in a room and the development of myopia?  
+
+* Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 52 in the R script file.
+
+* Highlight and run line 52 to get the counts for each combination of levels of variables. 
+
+```{r, echo=TRUE, eval=FALSE}
+myopia %>% group_by(explanatory) %>% count(response)
+```
+
+15.  Fill in the following table with the values from the R output.
+
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{14pt} % Default value: 6pt
+\renewcommand{\arraystretch}{2} % Default value: 1
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & \multicolumn{3}{|c|}{\textbf{Light Level}} & \\ \hline
+\textbf{Myopia Level} & Full Light & Nightlight & No Light & Total \\ \hline
+ High Myopia & & & & \\ \hline
+ Myopia & & & & \\ \hline
+ No Myopia & & & & \\ \hline
+ Total & & & & \\ \hline  
+\end{tabular}
+\endgroup
+\end{center}
+
+In the following questions, use the table to calculate the described proportions.  Notation is important for each calculation. Since this is sample data, it is appropriate to use statistic notation for the proportion, $\hat{p}$. When calculating a proportion dependent on a single level of a variable, subscripts are needed when reporting the notation.
+
+16.  Calculate the proportion of children with no myopia. Use appropriate notation.
+\vspace{0.3in}
+
+17.  Calculate the proportion of children with no myopia among those that slept with full light. Use appropriate notation.
+\vspace{0.3in}
+
+18.  Calculate the proportion of children with no myopia among those that slept with no light. Use appropriate notation.
+\vspace{0.3in}
+
+19.  **Calculate the difference in proportion of children with no myopia for those that slept with full light minus those who slept with no light. Give the appropriate notation. Use full light minus no light as the order of subtraction.**
+\vspace{0.3in}
+
+\newpage 
+
+To examine the differences in level of myopia for the level of light, we will create a segmented bar plot of `Light` segmented by `Sight`.  
+
+* To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 57. 
+
+* Highlight and run lines 56--63.
+
+```{r, out.width="60%", echo=TRUE, eval=FALSE}
+myopia %>% # Data set piped into...
+ggplot(aes(x = explanatory, fill = response)) +   # This specifies the variables
+  geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
+  labs(title = "Segmented Bar Plot of Night Light Use by Level of Myopia for Children",  
+       # Make sure to title your plot 
+       x = "Level of Light",   # Label the x axis
+       y = "")  + # Remove y axis label
+  scale_fill_viridis_d()  # Make figure color
+```
+
+20. From the segmented bar plot, which level of light has the highest proportion of `No Myopia`?
+
+\vspace{0.5in}
+
+
+<!-- ### Take-home messages -->
+
+<!-- 1.	Histograms, box plots, and dot plots can all be used to graphically display a single quantitative variable.   -->
+
+<!-- 2.  The box plot is created using the five number summary: minimum value, quartile 1, median, quartile 3, and maximum value.  Values in the data set that are less than $\text{Q}_1 - 1.5\times \text{IQR}$ and greater than $\text{Q}_3 + 1.5\times \text{IQR}$ are considered outliers and are graphically represented by a dot outside of the whiskers on the box plot. -->
+
+<!-- 3.  Data should be summarized numerically and displayed graphically to give us information about the study. -->
+
+<!-- 4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  There are two measures of center: mean and the median and two measures of spread: standard deviation and the interquartile range, IQR = Q3 $-$ Q1.  -->
+
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage

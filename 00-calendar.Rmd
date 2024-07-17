@@ -1,4 +1,4 @@
-# Spring 2024 Calendar of Coursepack Activities {-}
+# Fall 2024 Calendar of Coursepack Activities {-}
 
 
 This calendar only lists the lectures, the in-class and out-of-class activities, RStudio labs and exams each week. For required readings as well as due dates for assignments, refer to the calendar at:  
@@ -9,8 +9,8 @@ This calendar only lists the lectures, the in-class and out-of-class activities,
 \textbf{Week}& \textbf{Day}& \textbf{Date}& \textbf{Activity} \\ \hline
 \endhead
 
-1& W& 1/17& Intro to Data \\*
-1& F& 1/19& Data Lecture \\ \hline
+1& W& 8/21& Syllabus Review & Intro to Data \\*
+1& F& 8/23& Guided Activity 1 \\ \hline
 2& M& 1/22& Study Design Lecture \\*
 2& W& 1/24& Complete Out-of-Class Activity Week 2 \\*
 2& W& 1/24& American Indian Address Part 2 \\* 

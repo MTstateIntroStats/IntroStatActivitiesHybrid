@@ -59,7 +59,7 @@ The `favstats()` function from the `mosaic` package gives the summary statistics
 
 ```r
 # Read in data set
-movies <- read.csv("https://math.montana.edu/courses/s216/data/Movies2016.csv") 
+movies <- read.csv("https://math.montana.edu/courses/s216/data/Movies2016_F24.csv") 
 movies %>% # Data set piped into...
   summarise(favstats(imdb_score)) # Apply favstats function to imdb_score
 ```
@@ -112,7 +112,7 @@ ggplot(aes(x = variable)) +   # Name variable to plot
 
 ```
 
-4. What is the shape of the distribution of IMDb scores?
+4. Click the left arrow button on the Plots tab in the lower right-hand corner of the RStudio screen to toggle back to the histogram.  What is the shape of the distribution of IMDb scores?
 
 \vspace{0.2in}
 
@@ -121,12 +121,76 @@ ggplot(aes(x = variable)) +   # Name variable to plot
 
 \vspace{0.2in}
 
-6. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, Q1, median, Q3, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were found.
+6. Click on the right arrow bottom on the Plots tab in the lower right-hand corner of the RStudio screen to toggle back to the boxplot.  Sketch the boxplot created and identify the values of the 5-number summary (minimum value, Q1, median, Q3, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were found.
 
 $$\text{Lower Fence: values} \le \text{Q}1 - 1.5\times\text{IQR}$$
 
 $$\text{Upper Fence: values} \ge \text{Q}3 + 1.5\times\text{IQR}$$
 \vspace{1.8in}
+
+#### Robust Statistics {-}
+
+Let’s examine how the presence of outliers affect the values of center and spread. For this part of the activity we will look at the variable revenue in the movies data set.
+
+
+```r
+movies %>% # Data set piped into...
+    summarise(favstats(revenue_mil))
+#>   min       Q1   median       Q3      max     mean       sd  n missing
+#> 1   0 1.467318 33.02703 73.13457 407.1973 61.87334 89.57824 92       0
+
+movies %>% # Data set piped into...
+    ggplot(aes(x = revenue_mil)) + # Name variable to plot
+    geom_boxplot() + # Create histogram with specified binwidth
+    labs(title = "Histogram of Revenue of Movies in 2016", # Title for plot
+         x = "Revenue (in Millions)", # Label for x axis
+         y = "Frequency") # Label for y axis
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+7. Report the two measures of center for these data.
+
+\vspace{0.5in}
+
+8. Report the two measures of spread for these data.
+
+\vspace{0.5in}
+
+To show the effect of outliers on the measures of center and spread, the largest values in the data set were reduced by 100 $MM. This variable is called `revenue_reduced`
+
+
+```r
+movies %>% # Data set piped into...
+    summarise(favstats(revenue_reduced))
+#>   min       Q1   median       Q3      max    mean       sd  n missing
+#> 1   0 1.467318 33.02703 73.13457 307.1973 55.3516 68.79572 92       0
+
+movies %>% # Data set piped into...
+ggplot(aes(x = revenue_reduced)) + # Name variable to plot
+geom_boxplot() + # Create histogram with specified binwidth
+labs(title = "Histogram of Decreased Revenue of Movies in 2016", # Title for plot
+x = "Revenue (in Millions)", # Label for x axis
+y = "Frequency") # Label for y axis
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-EDA-quantitative_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+9. Report the two measures of center for this new data set.
+\vspace{0.5in}
+
+10. Report the two measures of spread for this new data set.
+\vspace{0.5in}
+
+11. Which measure of center is robust to outliers? Explain your answer.
+\vspace{0.8in}
+
+12. Which measure of spread is robust to outliers? Explain your answer.
+\vspace{0.8in}
 
 #### Summary statistics for a single categorical and single quantitative Variable{-}
 
@@ -148,23 +212,23 @@ movies %>% # Data set piped into...
 #> 3              R 0.0  7.75   19.5  29.625  60 21.09375 16.99926 32       0
 ```
 
-7.  Which content rating has the largest IQR?
+13.  Which content rating has the largest IQR?
 
 \vspace{0.8in}
 
-8.  Report the mean budget amount for the PG rating.  Use appropriate notation.
+14.  Report the mean budget amount for the PG rating.  Use appropriate notation.
 
 \vspace{0.3in}
 
-9.  Report the mean budget amount for the R rating.  Use appropriate notation.
+15.  Report the mean budget amount for the R rating.  Use appropriate notation.
 
 \vspace{0.3in}
 
-10. Calculate the difference in mean budget amount for movies released in 2016 with a PG rating minus those with a R rating.  Use appropriate notation with informative subscripts.
+16. Calculate the difference in mean budget amount for movies released in 2016 with a PG rating minus those with a R rating.  Use appropriate notation with informative subscripts.
 
 \vspace{0.8in}
 
-11. Interpret the difference in means calculated in question 10 in context of the problem.
+17. Interpret the difference in means calculated in question 10 in context of the problem.
 
 \vspace{0.5in}
 
@@ -189,13 +253,7 @@ movies %>%  # Data set piped into...
        y = "Budget (in Millions)")  # y-axis label
 ```
 
-12. Sketch the box plots created using the `R` code.
-
-\vspace{3in}
-
-\newpage
-
-13. Answer the following questions about the box plots created.
+18. Answer the following questions about the box plots created.
 
    a. Which content rating has the highest center?
 \vspace{0.2in}

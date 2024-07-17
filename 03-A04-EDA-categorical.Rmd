@@ -1,4 +1,4 @@
-## Out of Class Activity Module 3:  Summarizing Variables
+## Activity Module 3:  Summarizing Categorical Variables
 
 
 \setstretch{1}
@@ -12,8 +12,6 @@
 * Plots for association between two categorical variables:
   segmented bar plot, mosaic plot.
   
-
-
 ### Terminology review
 
 In today's activity, we will review summary measures and plots for categorical variables.  Some terms covered in this activity are:

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Module 7:  Handedness of Male Boxers 
+## Module 6 Activity 8:  Handedness of Male Boxers 
 
 \setstretch{1}
 
@@ -29,7 +29,7 @@ In this activity, we will introduce theory-based hypothesis tests for a single c
 
 To review these concepts, see Chapter 11 & 14 in your textbook.
 
-Activities from week 6 covered simulation-based methods for hypothesis tests involving a single categorical variable. This activity covers theory-based methods for testing a single categorical variable.  
+Activities from module 5 covered simulation-based methods for hypothesis tests involving a single categorical variable. This activity covers theory-based methods for testing a single categorical variable.  
 
 ### Handedness of male boxers
 

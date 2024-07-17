@@ -1,6 +1,4 @@
-# Inference for Two Categorical Variables: Simulation-based Methods
-
-## Lecture Notes Module 8: Inference for Two Categorical Variables using Simulation-based Methods
+## Lecture Notes Module 7: Inference for Two Categorical Variables using Simulation-based Methods
 
 
 \setstretch{1}

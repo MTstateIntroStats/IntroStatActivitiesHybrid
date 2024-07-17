@@ -1,6 +1,6 @@
 # Exploring Categorical and Quantitative Data
 
-## Week 3 Reading Guide: Introduction to R, Categorical Variables, and a Single Quantitative Variable
+## Reading Guide: Introduction to R, Categorical Variables, and a Single Quantitative Variable
 
 ### Textbook Chapter 3 Applications: Data {-}
 

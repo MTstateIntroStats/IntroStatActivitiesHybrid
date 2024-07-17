@@ -1,0 +1,186 @@
+## Module 8 Lab:  Is yawning contagious?
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Given a research question involving two categorical variables, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+  
+* Assess the conditions to use the normal distribution model for a difference in proportions.
+
+* Describe and perform a simulation-based hypothesis test for a difference in proportions.
+
+* Calculate the Z test statistic for a difference in proportions.
+
+* Find, interpret, and evaluate the p-value for a hypothesis test for a difference in proportions.
+
+* Create and interpret a confidence interval for a difference in proportions.
+
+### Is yawning contagious?
+
+Conventional wisdom says yawns are contagious; when you see someone else yawn, you’re prone to feel sleepy and let out a yawn yourself. How many times have you caught yourself in this situation, or noticed it in someone else? 
+
+The folks at MythBusters, a popular television program on the Discovery Channel, investigated this issue by using a two-way mirror and a hidden camera. Fifty participants who volunteered to be on the show sat in a booth, accompanied only by an experimental attendee. For some of the participants, the attendee yawned (planting a yawn “seed”), while for other participants the attendee did not yawn. The researchers decided in advance, with a random mechanism, which participants would receive the yawn seed and which would not. As time passed, the researchers watched to see which participants yawned.
+
+Is there evidence that planting a "yawn seed" increases the likelihood of a subject to yawn?
+
+* Upload and open the R script file for the Two Categorical Variable Lab. 
+
+* Upload the csv file, `YawnData.csv`.  Enter the name of the data set for `datasetname` in the R script file in line 7. 
+
+* Highlight and run lines 1--8 to get the counts for each combination of categories.
+
+
+```r
+yawn <- read.csv("datasetname")
+yawn %>% group_by(YawnSeed) %>% count(Outcome)
+```
+
+1. Is this an experiment or an observational study?
+\vspace{0.2in}
+
+2. Complete the following two-way table using the R output.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline
+ & \multicolumn{2}{|c|}{\textbf{Treatment}} & \\ \hline
+\textbf{Outcome} & \hspace{0.35in} Yawn Seed \hspace{0.35in} & \hspace{0.35in} No Yawn Seed \hspace{0.35in} & \hspace{0.35in} Total \hspace{0.35in} \\ \hline
+ Yawned & & & \\ 
+  & & & \\ \hline
+ Did Not Yawn & & & \\ 
+  & & & \\ \hline
+ Total & & &  \\ 
+ & & & \\ \hline  
+\end{tabular}
+\end{center}
+
+3. Write the parameter of interest for the research question.
+\vspace{0.6in}
+
+4. Write the null and alternative hypotheses in notation.
+
+\vspace{2mm}
+
+|    $H_0$:
+
+\vspace{0.2in}
+
+|    $H_A$:
+
+\vspace{0.2in}
+
+5. **Calculate the summary statistic (difference in proportions).  Use appropriate notation.**
+\vspace{0.4in}
+
+* Fill in the missing values/names in the R script file in the two-proportion_test function to create the null distribution and find the simulation p-value for the test.
+
+
+```r
+two_proportion_test(formula = response~explanatory, # response ~ explanatory
+         data= yawn, # Name of data set
+         first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
+         number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+         response_value_numerator = "xx", # Define which outcome is a success 
+         as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
+         direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")
+```
+
+6. Report the p-value. How much evidence does the p-value provide against the null hypothesis?
+\vspace{0.3in}
+
+7. **Calculate the number of standard errors the sample difference in proportion is from the null value of zero.**
+\vspace{0.7in}
+
+* Enter the value of Z in the pnorm function in the R script file to find the theory-based p-value.  
+
+
+```r
+pnorm(xx, lower.tail = FALSE)
+```
+
+8. Explain why the theory-based p-value does not match the p-value found using simulation methods.
+
+\vspace{0.8in}
+
+#### Confidence Interval {-}
+
+9.  **Will a 95\% simulation confidence interval contain the null value of zero? Explain your answer.**
+\vspace{0.7in}
+
+\newpage
+
+* Fill in the missing values/names in the R script file in the two-proportion_bootstrap_CI function to create the null distribution and find the 90\% simulation confidence interval.
+
+
+```r
+two_proportion_bootstrap_CI(formula = response~explantory, # response~explanatory,
+                            data = yawn, # Name of data set
+                            first_in_subtraction = "xx", # Order of subtraction; enter the name of Group 1
+                            number_repetitions = 1000, #Always use a minimum of 1000 repetitions
+                            response_value_numerator = "xx", # Define which outcome is a success
+                            confidence_level = xx) #Enter the level of confidence as a decimal)
+```
+
+10. Report the 90\% confidence interval.
+
+\vspace{0.2in}
+
+11. What type of error may have occurred?
+
+\vspace{0.2in}
+
+12. Write a paragraph summarizing the results of the study.  Be sure to describe:
+
+* Summary statistic and interpretation
+
+    * Summary measure (in context)
+    
+    * Value of the statistic 
+    
+    * Order of subtraction when comparing two groups
+
+* P-value and interpretation
+
+    * Statement about probability or proportion of samples
+    
+    * Statistic (summary measure and value)
+    
+    * Direction of the alternative 
+    
+    * Null hypothesis (in context) 
+
+
+* Confidence interval and interpretation
+
+    * How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+    * Parameter of interest
+    
+    * Calculated interval
+    
+    * Order of subtraction when comparing two groups
+
+
+* Conclusion (written to answer the research question)
+
+    * Amount of evidence
+    
+    * Parameter of interest 
+    
+    * Direction of the alternative hypothesis
+
+
+* Scope of inference
+
+    * To what group of observational units do the results apply (target population or observational units similar to the sample)?
+	
+    * What type of inference is appropriate (causal or non-causal)?
+
+**Upload a copy of your group's paragraph to Gradescope.** 
+
+\newpage
+
+Paragraph (continued): 
+
+\newpage

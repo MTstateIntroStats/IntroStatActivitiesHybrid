@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Module 3 Lab:  IPEDs
+## Module 3 Lab: IPEDs
 
 \setstretch{1}
 
@@ -126,42 +126,6 @@ IPEDS %>%
 \vspace{0.3in}
 
 
-#### Robust Statistics {-}
-
-Let's examine how the presence of outliers affect the values of center and spread. 
-
-6.  Report the two measures of center (mean and median) for retention rates given in the R output.
-
-\vspace{0.4in}
-
-7.  Report the value of the standard deviation and calculate the value of the IQR (two measures of spread) for retention rates from the R output.
-
-\vspace{0.4in}
-
-To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the data set were increased by 30%. 
-
-* Highlight and run lines 19--20 in the R script file. 
-
-```{r, out.width="60%", echo=TRUE, eval=FALSE}
-IPEDS %>% # Data set piped into...
-  summarise(favstats(Retention_Inc))
-```
-
-8. Report the two measures of center for this new data set.
-
-\vspace{0.4in}
-
-9. Report the two measures of spread for this new data set.
-
-\vspace{0.4in}
-
-10. **Which measure of center is robust to (not affected by) outliers? Explain your answer.**
-
-\vspace{0.5in}
-
-11.  Which measure of spread is robust to outliers?  Explain your answer.
-
-\vspace{0.5in}
 
 #### Summarizing a single categorical and single quantitative variable {-}
 

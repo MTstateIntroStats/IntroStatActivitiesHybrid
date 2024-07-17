@@ -40,11 +40,11 @@ As we move through the semester we will work through the six steps of the statis
 
 1. Ask a research question.
 
-2. Design a study and collect data.
+2. Design a study and collect data. *Modules 1--2*
 
-3. Summarize and visualize the data. *Weeks 3--4*
+3. Summarize and visualize the data. *Modules 3--4*
 
-4. Use statistical analysis methods to draw inferences from the data. *Weeks 6--14*
+4. Use statistical analysis methods to draw inferences from the data. *Modules 5 - 11*
 
 5. Communicate the results and answer the research question. *Weeks 6--14*
 
@@ -80,7 +80,7 @@ Today we will focus on the first two steps.
 
 \newpage
 
-1. One person from each group open the Google sheet linked in D2L and fill in the responses for the following questions for each group member.  When creating a data set for use in R it is important to use single words or an underscore between words.  Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes.
+1. Open the Google Form linked in D2L and fill in the responses for the following questions.  When creating a data set for use in R it is important to use single words or an underscore between words. Each outcome must be written the same way each time.  Make sure to use all lowercase letters to create this data set to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes.
 
 * Major: what is your declared major?
 

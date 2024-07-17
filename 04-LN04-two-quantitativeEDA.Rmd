@@ -1,6 +1,4 @@
-# Exploring Multivariable Data
-
-## Lecture Notes Module 4: Regression and Correlation
+## Video Notes Module 4: Regression and Correlation
 
 \setstretch{1}
 

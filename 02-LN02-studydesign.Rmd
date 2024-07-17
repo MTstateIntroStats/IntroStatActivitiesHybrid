@@ -1,8 +1,14 @@
 # Study Design
 
-## Lecture Notes Module 2: Study Design
+## Lecture Notes Week 2: Study Design
 
 \setstretch{1}
+
+Read sections 1.2 - 1.3 and 2.1 - 2.5 in the course textbook.  Use the following videos to complete the lecture notes for Week 2.
+
+* 1.2.1and1.2.2
+
+* 1.2.3to1.2.4
 
 ### Sampling Methods: Section 2.1 in the course textbook {-}
 
@@ -233,11 +239,15 @@ Example: It is well known that humans have more difficulty differentiating betwe
 
 \vspace{0.8in}
 
-Purpose of random assignment:
+### Lecture Notes Concept Checks
+
+Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
+
+1. Purpose of random assignment:
 
 \vspace{0.8in}
 
-Purpose of random selection:
+2. Purpose of random selection:
 
 \newpage
 \vspace{0.8in}

@@ -1,0 +1,214 @@
+# Inference for Two Categorical Variables: Theory-based Methods
+
+## Reading Guide: Theory-based Inference for a Difference in Proportions
+
+### Textbook Chapter 15: Inference for comparing two proportions {-}
+
+### Section 15.3: Theory-based inferential methods for $\pi_1 - \pi_2$ {-}
+
+<!-- \setstretch{1} -->
+
+<!-- **Videos**   -->
+
+<!-- * 15.3Tests -->
+<!-- * 15.3Intervals -->
+
+\setstretch{1.25}
+
+#### Reminders from previous sections {-}
+
+
+$n$ = sample size
+
+$\hat{p}$ = sample proportion
+
+$\pi$ = population proportion
+
+General steps of a hypothesis test:
+
+1. Frame the research question in terms of hypotheses.
+
+2. Collect and summarize data using a test statistic.
+	
+3. Assume the null hypothesis is true, and simulate or mathematically model a null distribution for the test statistic.
+
+4. Compare the observed test (standardized) statistic to the null distribution to calculate a p-value.
+
+5. Make a conclusion based on the p-value and write the conclusion in context.
+
+Parameter: a value summarizing a variable(s) for a population.
+
+Statistic: a value summarizing a variable(s) for a sample.
+
+Sampling distribution: plot of statistics from 1000s of samples of the same size taken from the same population.
+
+Standard deviation of a statistic: the variability of statistics from 1000s of samples; how far, on average, each statistic is from the true value of the parameter.
+
+Standard error of a statistic: estimated standard deviation of a statistic.
+
+Hypothesis test: a process to determine how strong the evidence of an effect is.
+		
+\rgi Also called a ‘significance test’.
+
+Theory-based method: Develop a mathematical model for the sampling distribution of the statistic under the null hypothesis and use the model to calculate the probability of the observed sample statistic (or one more extreme) occurring.
+
+Null hypothesis ($H_0$): the skeptical perspective; no difference; no change; no effect; random chance; what the researcher hopes to prove is **wrong**.
+
+Alternative hypothesis ($H_A$): the new perspective; a difference/increase/decrease; an effect; not random chance; what the researcher hopes to prove is **correct**.
+
+Null value: the value of the parameter when we assume the null hypothesis is true (labeled as $parameter_0$).
+
+Null distribution:  the simulated or modeled distribution of statistics (sampling distribution) we would expect to occur if the null hypothesis is true.
+
+P-value: probability of seeing the observed sample data, or something more extreme, assuming the null hypothesis is true.
+
+$\implies$ Lower the p-value the stronger the evidence AGAINST the null hypothesis and FOR the alternative hypothesis.
+
+Decision: a determination of whether to 'reject' or 'fail to reject' a null hypothesis based on a p-value and a pre-set level of significance.
+
+Significance level ($\alpha$): a threshold used to determine if a p-value provides enough evidence to reject the null hypothesis or not.
+
+\rgi Common levels of $\alpha$ include 0.01, 0.05, and 0.10.
+
+Statistically significant: results are considered statistically significant if the p-value is below the significance level.
+
+Confidence interval: a process to determine how large an effect is; a range of plausible values for the parameter. Also called ‘estimation’.
+
+Margin of error: the value that is added to and subtracted from the sample statistic to create a confidence interval; half the width of a confidence interval.
+
+Confidence level: how confident we are that the confidence interval will capture the parameter.
+
+#### Notes {-}
+
+Conditions for the Central Limit Theorem to apply for a difference in proportions
+
+\rgi Independence: 
+\rgs
+
+\rgi \rgi Checked by: 
+\rgs
+
+\rgi Success-failure condition: 
+\rgs
+
+\rgi \rgi Checked by: 
+\rgs
+
+#### Formulas {-}
+
+$SD(\hat{p_1} - \hat{p_2})=$
+\rgs
+
+Null standard error of the difference in sample proportions:
+$SE_0(\hat{p_1} - \hat{p_2})=$
+\rgs
+
+Standardized statistic (or standardized difference in sample proportions):
+$Z=$
+\rgs
+
+Standard error of the difference in sample proportions when we do not assume the null hypothesis is true:
+$SE(\hat{p_1} - \hat{p_2})=$
+\rgs
+
+Theory-based confidence interval for a difference in proportions: 
+\rgs
+
+Margin of error of a confidence interval for a difference in proportions: 
+\rgs
+
+#### Notation {-}
+Overall (pooled) proportion of successes:
+\rgs
+
+#### Example: CPR and blood thinners {-}
+
+1. What are the observational units?
+\rgs
+
+2. What type of study design was used?  Justify your answer.
+\rgs
+
+3. What is the appropriate scope of inference for these data?
+\rgs
+
+4. What is the sample difference in proportions presented in this example?  What notation would be used to represent this value?
+\rgs
+
+5. What is the parameter (using a difference in proportions) representing in the context of this problem?  What notation would be used to represent this parameter?
+\rgs
+
+6. Is it valid to use theory-based methods to analyze these data?
+\rgs
+\rgs
+
+6. Calculate the standard error of the difference in sample proportions without assuming a null hypothesis.
+\rgs
+\rgs
+
+8. Calculate the 90% confidence interval using $z^*=1.65$ as the multiplier.
+\rgs
+\rgs
+
+*Note: A confidence interval interpretation and confidence level interpretation for this example can be found in the Reading Guide solutions for Sections 15.1 and 15.2.*
+
+#### Example: Mammograms {-}
+
+1. What are the observational units?
+\rgs
+
+2. What type of study design was used?  Justify your answer.
+\rgs
+
+3. What is the appropriate scope of inference for these data?
+\rgs
+
+4. What is the sample difference in proportions presented in this example?  What notation would be used to represent this value?
+\rgs
+
+5. What is the parameter (using a difference in proportions) representing in the context of this problem?  What notation would be used to represent this parameter?
+\rgs
+
+6. Write the null and the alternative hypotheses in words.
+\rgs
+\rgs
+
+7. Write the null and the alternative hypotheses in notation.
+\rgs
+
+8. Is it valid to use theory-based methods to analyze these data?
+\rgs
+\rgs
+
+9. Calculate the pooled or overall proportion of successes. What notation would be used to represent this value?
+\rgs
+\rgs
+
+10. Calculate the null standard error of the difference in sample proportions.
+\rgs
+\rgs
+
+11.	Calculate the standardized statistic.
+\rgs
+\rgs
+
+12. Interpret the standardized statistic in the context of the problem.
+\rgs
+\rgs
+
+13. Explain how the p-value for this test was calculated.
+\rgs
+
+14. Interpret the p-value in the context of the study.
+\rgs
+\rgs
+
+15. At the 10% significance level, what decision should be made?
+\rgs
+
+16. Write a conclusion for the research question.
+\rgs
+\rgs
+
+
+\newpage

@@ -1,4 +1,4 @@
-## Out-of-Class Activity Module 4:  Movie Profits --- Correlation and Coefficient of Determination
+## Activity Module 4:  Movie Profits --- Correlation and Coefficient of Determination
 
 \setstretch{1}
 

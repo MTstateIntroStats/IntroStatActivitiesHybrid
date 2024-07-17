@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Lecture Notes Module 1: Intro to data
+## Lecture Notes Week 1: Intro to data
 
 \setstretch{1}
 
