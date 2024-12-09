@@ -52,9 +52,9 @@ We will use the notation P(event) to represent the probability of an event and u
 
 * $P(A)$ represents the probability of event A
 
-* $P(A^c)$ represents the probability of the complement of event A
+* $P(A^C)$ represents the probability of the complement of event A
 
-    * $P(A^c) = 1 - P(A)$
+    * $P(A^C) = 1 - P(A)$
     
 * $P(A and B)$ represents the probability of events A and B
 
@@ -129,9 +129,9 @@ Let $A$ = Bob Ross painting contains a happy tree, and $B$ = Bob Ross painting c
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.25in}  $A$ \hspace{.25in} & \hspace{0.25in} $A^c$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
+\hspace{0.8in} & \hspace{0.25in}  $A$ \hspace{.25in} & \hspace{0.25in} $A^C$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
  $B$ & 40850 & 500 & 41350 \\ \hline
- $B^c$ & 54150 & 4500 & 58650 \\ \hline
+ $B^C$ & 54150 & 4500 & 58650 \\ \hline
 Total & 95000 & 5000 & 100000 \\ \hline
 \end{tabular}
 \end{center}
@@ -173,11 +173,11 @@ c. What is the probability that a selected Bob Ross painting does not contain a 
     
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^c$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
+\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
 & & & \\ \hline
 $B$& & & \\ 
 & & & \\ \hline
-$B^c$& & & \\ 
+$B^C$& & & \\ 
 & & & \\ \hline
 Total & & & 100,000 \\ 
 & & & \\ \hline
