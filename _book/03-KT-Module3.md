@@ -4,9 +4,11 @@
 
 Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single categorical variable.
 
-* **Summary statistic (point estimate)**: the summary statistic is the value calculated from the data 
+* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data 
 
-    * For a single categorical variable a proportion is calculated
+    * Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line
+
+    * For a single categorical variable, a proportion is calculated
 
     * To interpret in context include:
 
@@ -14,7 +16,9 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
     
         - Value of the statistic 
     
-* **Parameter of interest**: what we are interested in about the population
+* **Parameter of interest**: a numerical summary measure of the entire _population_ in which we are interested
+
+    * The value of the parameter of interest is unknown (unless we have access to the entire population)
 
     * To write in context:
 
@@ -28,37 +32,41 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
             - Variable(s)
 
-* **Frequency bar plot**: plots the count for each level of a categorical variable
+* **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable
 
-* **Relative frequency bar plot**: plots the proportion of each level of a categorical variable
+* **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable
 
-* **Hypothesis testing**:  a formal technique for evaluating two competing possibilities, the null and alternative
+* **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis
 
-    * When we observe an effect in a sample, we would like to determine if this observed effect represents an actual effect in the population, or whether it was simply due to chance.
+    * When we observe an effect in a sample, we would like to determine if this observed effect represents an actual effect in the population, or whether it was simply due to random chance.
+    
+    * A hypothesis test helps us answer the following question about the population: How strong is the _evidence_ of an effect?
 
-* **Null hypothesis**: represents either a skeptical perspective or a claim to be tested.  
+* **Null hypothesis**: typically represents a statement of "no difference", "no effect", or the status quo
+
+    * The null hypothesis is what we assume is true when calculating the p-value. Thus, we can never have evidence _for_ the null hypothesis---we cannot "accept" a null hypothesis---we can only find evidence _against_ the null hypothesis if the observed data is very unlikely to have occurred under the assumption that the null hypothesis is true.
 
 * **Alternative hypothesis**: represents an alternative claim under consideration and is often represented by a range of possible values for the parameter of interest.
 
-* **Simulation methods to create the null distribution**: a process of using a computer program (R) to simulate many copies of samples we would expect based on the null hypothesis.
+    * The alternative hypothesis is determined by the research question.
 
-* **Null Distribution**: a simulated distribution created under the assumption the null hypothesis is true
+* **Null Distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 
-\newpage
+* **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
 
-* R code to use for simulation methods for one categorical variable to find the p-value, one_proportion_test, is shown below.  
+    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test`, is shown below.  
 
-
-``` r
-one_proportion_test(probability_success = xx, # Null hypothesis value
+    
+    ``` r
+    one_proportion_test(probability_success = xx, # Null hypothesis value
           sample_size = xx, # Enter sample size
           number_repetitions = 1000, # Enter number of simulations
           as_extreme_as = xx, # Observed statistic
           direction = "xx", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
-```
+    ```
 
-* **P-value**: measures the probability of the sample statistic or more extreme if the null hypothesis is true
+* **P-value**: the probability of the value of the observed sample statistic or a value more extreme, if the null hypothesis were true
 
     * To write in context include:
 
@@ -70,7 +78,13 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
     
         - Null hypothesis (in context) 
 
-* **Conclusion**: answers the research question.  How much evidence is there in support of the alternative hypothesis?
+* **Strength of evidence**: the p-value indicates the amount of evidence there is against the null hypothesis.  The smaller the p-value the more evidence there is against the null hypothesis.
+
+
+
+\begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
+    
+* **Conclusion** (to a hypothesis test): answers the research question.  How much evidence is there in support of the alternative hypothesis?
 
     * To write in context include:
 
@@ -80,27 +94,32 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
     
         - Direction of the alternative hypothesis
     
-* **Strength of evidence**: the p-value indicates the amount of evidence there is against the null hypothesis.  The smaller the p-value the more evidence there is against the null hypothesis.
+* **Confidence interval**: an interval estimate for the parameter of interest
 
+    * A confidence interval helps us answer the following question about the population: How _large_ is the effect?
 
+    * To write in context include:
 
-\begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
+        - How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* **Bootstrapping**: sampling with replacement from a given sample
+        - Parameter of interest
+    
+        - Calculated interval
 
-* **Simulation methods to create the bootstrap distribution**: a process of using a computer program (R) to simulate many copies of samples by sampling with replacement from the original sample.
+* **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample
 
-* R code to use for simulation methods for one categorical variable to find a confidence interval, one_proportion_bootstrap_CI, is shown below. 
+* **Simulation methods to create the bootstrap distribution**: a process of using a computer program (e.g., R) to simulate many bootstrapped samples.
 
+    R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI`, is shown below. 
 
-``` r
-one_proportion_bootstrap_CI(sample_size = xx, # Sample size
+    
+    ``` r
+    one_proportion_bootstrap_CI(sample_size = xx, # Sample size
                     number_successes = xx, # Observed number of successes
                     number_repetitions = 1000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
-```
+    ```
 
-\newpage
 
 * **Percentile method**: process to find the confidence interval from the bootstrap distribution
 
@@ -110,15 +129,6 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
     * A 99\% confidence interval will be found between the 0.5th and 99.5th percentiles
 
-* **Confidence interval**: an interval estimate for the parameter of interest
-
-    * To write in context include:
-
-        - How confident you are (e.g., 90%, 95%, 98%, 99%)
-    
-        - Parameter of interest
-    
-        - Calculated interval
 
 ### Key topics
 
