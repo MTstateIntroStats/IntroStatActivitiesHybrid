@@ -38,8 +38,8 @@ To review these concepts, see Chapter 23 in the textbook.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.25in} $A$ \hspace{.25in} & \hspace{0.25in} $A^c$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline $B$ & 27700.8 & 34940.1 & 62640.9 \\ \hline
- $B^c$ & 31999.2 & 5359.9 & 37359.1 \\ \hline
+\hspace{0.8in} & \hspace{0.25in} $A$ \hspace{.25in} & \hspace{0.25in} $A^C$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline $B$ & 27700.8 & 34940.1 & 62640.9 \\ \hline
+ $B^C$ & 31999.2 & 5359.9 & 37359.1 \\ \hline
 Total & 59700 & 40300 & 100000 \\ \hline
 \end{tabular}
 \end{center}
@@ -81,11 +81,11 @@ c. What is the probability that a randomly selected NBA player is not above aver
     
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^c$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
+\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
 & & & \\ \hline
 $B$& & & \\ 
 & & & \\ \hline
-$B^c$& & & \\ 
+$B^C$& & & \\ 
 & & & \\ \hline
 Total & & & 100,000 \\ 
 & & & \\ \hline
@@ -128,11 +128,11 @@ Total & & & 100,000 \\
 
 <!-- \begin{center} -->
 <!-- \begin{tabular}{|c|c|c|c|} \hline -->
-<!-- \hspace{0.8in} & \hspace{0.35in} $L$ \hspace{0.35in} & \hspace{0.35in} $L^c$ \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\  -->
+<!-- \hspace{0.8in} & \hspace{0.35in} $L$ \hspace{0.35in} & \hspace{0.35in} $L^C$ \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\  -->
 <!-- & & & \\ \hline -->
 <!-- $S$ & & & \\  -->
 <!-- & & & \\ \hline -->
-<!-- $S^c$ & & & \\ -->
+<!-- $S^C$ & & & \\ -->
 <!-- & & & \\ \hline -->
 <!-- Total & & & 100,000 \\  -->
 <!-- & & & \\ \hline -->
