@@ -151,7 +151,7 @@ set.seed(216)
 two_mean_test(Memorized~Grouped, #Enter the names of the variables
               data = letters,  # Enter the name of the dataset
               first_in_subtraction = "Recognizable", # First outcome in order of subtraction
-              number_repetitions = 1000,  # Number of simulations
+              number_repetitions = 10000,  # Number of simulations
               as_extreme_as = 3.166,  # Observed statistic
               direction = "greater")  # Direction of alternative: "greater", "less", or "two-sided"
 ```
@@ -209,7 +209,7 @@ set.seed(216)
 two_mean_bootstrap_CI(Memorized ~ Grouped, #Enter the name of the variables
                       data = letters,  # Enter the name of the data set
                       first_in_subtraction = "Recognizable", # First value in order of subtraction
-                      number_repetitions = 1000,  # Number of simulations
+                      number_repetitions = 10000,  # Number of simulations
                       confidence_level = 0.95)
 ```
 

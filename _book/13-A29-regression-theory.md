@@ -165,7 +165,7 @@ qt(xx, yy, lower.tail = TRUE) # 95% t* multiplier
 
 #### Communicate the results and answer the research question {-}
 
-9. Write a conclusion to answer the research question in context of the problem.
+10. Write a conclusion to answer the research question in context of the problem.
 
 \vspace{.8in}
 
@@ -191,12 +191,12 @@ golf %>%
 
 \begin{center}\includegraphics[width=0.6\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
-10. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
+11. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
 \vspace{1in}
 
 
 
-11.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q9 to explain your answer.
+12.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q9 to explain your answer.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}

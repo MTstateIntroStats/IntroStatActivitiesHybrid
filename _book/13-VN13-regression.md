@@ -548,7 +548,7 @@ regression_test(T_degC ~ Salnty, # response ~ explanatory
                direction = "less", # Sign in alternative ("greater", "less", "two-sided")
                summary_measure = "slope", # "slope" or "correlation"
                as_extreme_as = -5.514, # Observed slope or correlation
-               number_repetitions = 1000) # Number of simulated samples for null distribution
+               number_repetitions = 10000) # Number of simulated samples for null distribution
 ```
 
 
@@ -566,7 +566,7 @@ regression_test(T_degC~Salnty, # response ~ explanatory
                direction = "less", # Sign in alternative ("greater", "less", "two-sided")
                summary_measure = "correlation", # "slope" or "correlation"
                as_extreme_as = -0.659, # Observed slope or correlation
-               number_repetitions = 1000) # Number of simulated samples for null distribution
+               number_repetitions = 10000) # Number of simulated samples for null distribution
 ```
 
 
@@ -626,7 +626,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
    data = water, # Name of data set
    confidence_level = 0.95, # Confidence level as decimal
    summary_measure = "slope", # Slope or correlation
-   number_repetitions = 1000) # Number of simulated samples for bootstrap distribution
+   number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
 ```
 
 
@@ -654,7 +654,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
    data = water, # Name of data set
    confidence_level = 0.95, # Confidence level as decimal
    summary_measure = "correlation", # Slope or correlation
-   number_repetitions = 1000) # Number of simulated samples for bootstrap distribution
+   number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
 ```
 
 

@@ -101,6 +101,10 @@ regression_test(response~explanatory, # response ~ explanatory
                number_repetitions = 10000) # Number of simulated samples for null distribution
 ```
 
+
+### Conditions necessary to use theory-based methods {-}
+
+
 ### Theory-based Methods to find the p-value {-}
 
 * To find the value of the standardized statistic to test the slope we will use, 

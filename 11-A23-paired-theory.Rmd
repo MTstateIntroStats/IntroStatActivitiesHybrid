@@ -55,16 +55,16 @@ The article reports on the results of a study in which seventy college undergrad
 1. Should these observations be considered paired or independent?  Explain your answer.
 \vspace{0.5in}
 
-<!-- 2.  Based on your answer to question 1, is the appropriate summary measure to be used to analyze these data the difference in mean times or the mean difference in times? -->
-<!-- \vspace{0.25in} -->
+2.  Based on your answer to question 1, is the appropriate summary measure to be used to analyze these data the difference in mean times or the mean difference in times?
+\vspace{0.25in}
 
 #### Ask a research question {-}
 
-2. Write out the null hypothesis in words, in the context of this study.  
+3. Write out the null hypothesis in words, in the context of this study.  
 
 \vspace{0.8in}
 
-3. Write out the alternative hypothesis in proper notation for this study.
+4. Write out the alternative hypothesis in proper notation for this study.
 
 \vspace{0.5in}
 
@@ -121,6 +121,10 @@ Since the original data from the study are not available, we simulated data to m
 
 The following code plots each subject's time to read the colored words (above) and time to read the black words (below) connected by a grey line, a histogram of the differences in time to read words between the two conditions, and a boxplot displaying the pairwise differences in time (color $-$ black).
 
+* Download the R script file for this activity and upload to the R studio server.
+
+* Follow the instructions given in the R file.
+
 ```{r, echo=TRUE, eval=TRUE}
 color <- read.csv("https://math.montana.edu/courses/s216/data/interference.csv")
 paired_observed_plot(color)
@@ -144,10 +148,10 @@ color_diff %>%
 
 #### Check theoretical conditions {-}
 
-4.  How do you know the independence condition is met for these data?
+5.  How do you know the independence condition is met for these data?
 \vspace{0.8in}
 
-5. Is the normality condition met to use the theory-based methods for analysis?  Explain your answer.
+6. Is the normality condition met to use the theory-based methods for analysis?  Explain your answer.
 \vspace{1in}
 
 #### Use statistical inferential methods to draw inferences from the data {-}
@@ -160,31 +164,47 @@ where the standard error of the sample mean difference is:
 
 $$SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.$$
 
-6.  Calculate the standard error of the sample mean difference.
+7.  Calculate the standard error of the sample mean difference.
 
 \vspace{0.5in}
 
-7.  How many standard errors is the observed mean difference from the null mean difference?
+8.  How many standard errors is the observed mean difference from the null mean difference?
 
 \vspace{0.5in}
 
-To find the p-value we enter the value for the standardized statistic (T = 2.464) into the pt function in R.  If you did not get his answer for question 7, double check your work.  For a single sample or paired data, degrees of freedom are found by subtracting 1 from the sample size.  You should therefore use `df` = $n-1 = 70 - 1 = 69$ and `lower.tail = FALSE` to find the p-value.    
+To find the p-value 
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
-pt(2.464, df=69, lower.tail=FALSE)
+* Enter the value for the standardized statistic for xx in the pt function.  
+
+* For a single sample or paired data, degrees of freedom are found by subtracting 1 from the sample size.  You should therefore use `df` = $n-1 = 70 - 1 = 69$ and `lower.tail = FALSE` to find the p-value.  
+
+* Enter the df for yy in the pt function.
+
+* Highlight and run line 27
+
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+pt(xx, df=yy, lower.tail=FALSE)
 ```
-8.  What does this p-value mean, in the context of the study?  Hint: it is the probability of what...assuming what?
+9.  What does this p-value mean, in the context of the study?  Hint: it is the probability of what...assuming what?
 \vspace{1in}
 
 Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
 
 $$\bar{x}_d\pm t^* \times SE(\bar{x}_d).$$
 
-We will need to find the $t^*$ multiplier using the function `qt()`. The code below will return the 95th percentile of the $t$ distribution with `df` = $n_d - 1 = 70 - 1 = 69$. 
+We will need to find the $t^*$ multiplier using the function `qt()`. 
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
-qt(0.95, df = 69, lower.tail=TRUE)
+* Enter the appropriate percentile in the R code to find the multiplier for a 90\% confidence interval.
+
+* Enter the df for yy. 
+
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+qt(percentile, df = yy, lower.tail=TRUE)
 ```
+
+
+11. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
+\vspace{1mm}
 
 ```{r tstar, echo = F, fig.cap = "t-distribution with 69 degrees of freedom"}
 
@@ -197,25 +217,25 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
 
 ```
 
-9.  Calculate the margin of error for the true paired mean difference using theory-based methods.
+12.  Calculate the margin of error for the true paired mean difference using theory-based methods.
 
 \vspace{0.6in}
 
-10.  Calculate the confidence interval for the true paired mean difference using theory-based methods.
+13.  Calculate the confidence interval for the true paired mean difference using theory-based methods.
 
 \vspace{0.6in}
 
 
-11.  Interpret the confidence interval in context of the study.
+14.  Interpret the confidence interval in context of the study.
 
 \vspace{1in}
 
-12.  Write a conclusion to the test in context of the study.
+15.  Write a conclusion to the test in context of the study.
 \vspace{0.6in}
 
 
-<!-- 17.  The abstract states, that the conflicting color stimuli "caused an increase of 2.3 seconds or 5.6% over the normal time for reading the same words printed in black." Is this statement valid? Explain. -->
-<!-- \vspace{0.6in} -->
+16.  The abstract states, that the conflicting color stimuli "caused an increase of 2.3 seconds or 5.6% over the normal time for reading the same words printed in black." Is this statement valid? Explain.
+\vspace{0.6in}
 
 
 

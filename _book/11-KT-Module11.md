@@ -2,29 +2,86 @@
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of .
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of paired data.  Module 11 will cover inference using both simulation and theory-based methods.
 
-Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
+* The **summary measure** for one quantitative variable is the **mean difference**
 
-* **Independence**: The data are independent within and between the two groups. (*Remember*: This also must be true to use simulation methods!)
+* Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used.
 
-* **Success-failure condition**: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
-
-* Calculation of standard error assuming the null is true:
-
-$$SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}_{pooled} \times (1-\hat{p}_{pooled}) \times (\frac{1}{n_1}+\frac{1}{n_2})}$$
-
-* Calculation of the standardized difference in sample proportion:
-
-$$t = \frac{\hat{p}_1-\hat{p}_2-0}{SE(\hat{p}_1 - \hat{p}_2)}$$
-
-* Measures the number of standard errors the sample difference in proportions is above or below the null value of zero
-    
-* Calculation of the difference in sample proportion not assuming the null is true
+* R code to find the summary statistics for a paired differences
 
 
- $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}$$
-* Calculation of the confidence interval for a difference in sample proportions
 
-$$\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2)$$
+### Simulation Hypothesis Testing {-}
+
+Hypotheses:
+
+$$H_0: \mu_d = 0$$
+$$H_A: \mu_d\left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+0 $$
+
+* R code to use for **simulation methods** for one paired data to find the p-value, `paired_test`, is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
+
+
+``` r
+paired_test(data = object$differences,   # Vector of differences 
+                                         # or data set with column for each group
+            shift = xx,   # Shift needed for bootstrap hypothesis test
+            as_extreme_as = xx,  # Observed statistic
+            direction = "xx",  # Direction of alternative
+            number_repetitions = 10000,  # Number of simulated samples for null distribution
+            which_first = 1)  # Not needed when using calculated differences
+```
+
+### Simulation Confidence Interval {-}
+
+* R code to find the simulation confidence interval using the `paired_bootstrap_CI` function from the `catstats` package.
+
+
+``` r
+paired_bootstrap_CI(data = object$differences, # Enter vector of differences
+                    number_repetitions = 10000, # Number of bootstrap samples for CI
+                    confidence_level = xx,  # Confidence level in decimal form
+                    which_first = 1)  # Not needed when entering vector of differences
+```
+
+* The interpretation of the confidence interval is very similar for that of a single mean. Just make sure to add the order of subtraction for the differences.
+
+
+### Theory-based Methods {-}
+
+* **Conditions for the sampling distribution of $\bar{x}_d$ to follow an approximate normal distribution**:
+
+    * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
+
+     * **Large enough sample size: Normality Condition**: The sample observations come from a normally distributed population.  To check use the the following rules of thumb:
+     
+         - $n < 30$: The distribution of the sample must be approximately normal with no outliers
+         
+         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
+         
+         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribuion of individual observationals is not
+         
+* **t-distribution**: a theoretical distribution that is symmetric with a given degrees of freedom ($n-1$)
+
+    * $t_{n-1}$
+
+* Calculation of standard error:
+
+$$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
+
+* Calculation of the standardized difference in sample mean:
+
+$$t = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+
+
+* Calculation of the confidence interval for a difference in sample means
+
+$$\bar{x}_1-\bar{x}_2\pm t^*\times SE(\bar{x}_1-\bar{x}_2)$$
 \newpage

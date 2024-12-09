@@ -201,7 +201,7 @@ paired_test(data = hw_diff$ht_diff,   # Vector of differences
             shift = -130.543,   # Shift needed for bootstrap hypothesis test
             as_extreme_as = 130.543,  # Observed statistic
             direction = "two-sided",  # Direction of alternative
-            number_repetitions = 1000,  # Number of simulated samples for null distribution
+            number_repetitions = 10000,  # Number of simulated samples for null distribution
             which_first = 1)  # Not needed when using calculated differences
 ```
 
@@ -255,7 +255,7 @@ Simulated bootstrap distribution:
 ``` r
 set.seed(216)
 paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
-            number_repetitions = 1000, # Number of bootstrap samples for CI
+            number_repetitions = 10000, # Number of bootstrap samples for CI
             confidence_level = 0.95,  # Confidence level in decimal form
             which_first = 1)  # Not needed when entering vector of differences
 ```

@@ -62,18 +62,15 @@ rude %>%
 1. Compare the distributions of the number of bricks between the two treatment conditions.
 
     - What is the shape of each group?
-    
 \vspace{0.3in}
 
     - Which group has the higher center?
-    
 \vspace{0.3in}
 
     - What group has the larger spread?
 \vspace{0.3in}
 
     - Does either distribution have outliers?
-
 \vspace{.3in}
 
 2.  Is this an experiment or an observational study? Justify your answer.
