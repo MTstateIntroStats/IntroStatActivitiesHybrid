@@ -3,6 +3,8 @@ output:
   pdf_document: default
   html_document: default
 ---
+# Exploring Categorical and Quantitative Data
+
 ## Video Notes: Exploratory Data Analysis of Categorical and Quantitative Variables
 
 Read Chapters 3, 4, and 5 in the course textbook.  Use the following videos to complete the video notes for Module 3.

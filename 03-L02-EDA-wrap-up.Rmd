@@ -207,6 +207,70 @@ IPEDS %>%
 
 \vspace{0.5in}
 
+
+#### Summarizing one categorical and one quantitative variable {-}
+
+Is there a difference in retention rates for public and private 4-year institutions? In this part of the activity we will compare retention rates for public and private 4-year institutions.  Note that this variable (public or private) is labelled `Sector` in the data set.
+
+3.  Based on the research question, which variable will we treat as the explanatory variable?  Response variable?
+
+\vspace{0.3in}
+
+The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The summary statistics give the two measures of center and two measures of spread for retention rates between sector for 4-year institutions.
+
+* To assess the research question described before question 3, enter the name of the explanatory variable and the name of the response variable in line 35 of the R script file.  Remember that the variable name must be typed in EXACTLY as it is written in the data set.
+
+* Highlight and run lines 37--38
+
+```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+IPEDS %>%
+  reframe(favstats(Retention~Sector)) # Gives the summary statistics
+```
+
+* To create a side-by-side boxplot, enter the name of the explanatory variable and the name of the response variable in line 41 of the R script file.
+
+* Highlight and run lines 42 -- 48.
+
+```{r, out.width="60%", echo=TRUE, eval=TRUE, warning=FALSE}
+IPEDS %>%  # Data set piped into...
+  ggplot(aes(y = Retention, x = Sector))+  #Identify variables
+  geom_boxplot()+  #Create box plot
+  labs(title = "Side-by-side Boxplot of Retention Rate among Public and
+       Private 4-year Institutions",  
+       #A title should include: type of plot,variable or variables plotted, and observational units
+       x = "Sector",    #x-axis label
+       y = "Retention Rates")  #y-axis label
+```
+
+\newpage 
+
+4.  Compare the two boxplots.
+    
+     Which sector of university has the highest center?
+     \vspace{0.3in}
+     
+     Largest spread?
+     \vspace{0.3in}
+     
+     What is the shape of each distribution?
+     \vspace{0.3in}
+     
+     Does either distribution have potential outliers?
+     \vspace{0.3in}
+     
+5. Report the difference in mean retention rates for private and public universities.  Use private minus public as the order of subtraction.  Use the appropriate notation.
+
+\vspace{0.8in}
+
+6. Interpret the difference in mean retention rates found in question 5.
+
+\vspace{0.8in}
+
+7.  Does there appear to be an association between retention rates and type of university?  Explain your answer using the boxplots and summary statistic.
+
+\vspace{0.8in}
+
+
 <!-- ### Take-home messages -->
 
 <!-- 1.	Histograms, box plots, and dot plots can all be used to graphically display a single quantitative variable.   -->

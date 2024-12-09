@@ -36,7 +36,7 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 \vspace{0.3in}
 
-4. **Can theory-based methods be used to analyze these data?  Explain your answer.**
+4. **Will theory-based methods give the sample results as simulation based methods?  Explain your answer.**
 
 \vspace{0.6in}
 
@@ -71,7 +71,7 @@ To use the computer simulation, we will need to enter the
 We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 1--12.
 
 
-```r
+``` r
 one_proportion_test(probability_success = xx, # Null hypothesis value
           sample_size = xx, # Enter sample size
           number_repetitions = 1000, # Enter number of simulations
@@ -92,7 +92,7 @@ The `qnorm()` function in R will tell us the $z^*$ value for the desired percent
 * Highlight and run line 17. This will give the value of the multiplier for a 90\% confidence interval.
 
 
-```r
+``` r
 qnorm(xx. lower.tail = TRUE) # Multiplier for 90% confidence interval
 ```
 

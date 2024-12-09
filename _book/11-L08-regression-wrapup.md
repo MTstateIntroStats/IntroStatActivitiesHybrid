@@ -27,7 +27,7 @@ Can the relative cost of a Big Mac across different countries be used to predict
 * Highlight and run lines 1--9 to load the data.
 
 
-```r
+``` r
 # Read in data set 
 mac <- read.csv("datasetname")
 ```
@@ -37,7 +37,7 @@ mac <- read.csv("datasetname")
 * To find the correlation between the variables, `log_GDP` and `dollar_price` highlight and run lines 13--16 in the R script file.
 
 
-```r
+``` r
 mac %>% 
   select(c("log_GDP", "dollar_price")) %>%
   cor(use="pairwise.complete.obs") %>%
@@ -60,7 +60,7 @@ In the next part of the activity we will assess the linear model between Big Mac
 * Highlight and run lines 22--23 to get the linear model output. 
 
 
-```r
+``` r
 # Fit linear model: y ~ x
 bigmacLM <- lm(response~explanatory, data=mac)
 round(summary(bigmacLM)$coefficients,3) # Display coefficient summary
@@ -78,7 +78,7 @@ round(summary(bigmacLM)$coefficients,3) # Display coefficient summary
 * Highlight and run lines 28--33 to create the scatterplot to check for linearity.
 
 
-```r
+``` r
 #Scatterplot
 mac %>% # Pipe data set into...
   ggplot(aes(x = dollar_price, y = log_GDP))+  # Specify variables
@@ -97,7 +97,7 @@ mac %>% # Pipe data set into...
 * Highlight and run lines 38--42 to produce the diagnostic plots needed to assess conditions to use theory-based methods. 
 
 
-```r
+``` r
 #Diagnostic plots
 bigmacLM <- lm(log_GDP~dollar_price, data = mac) # Fit linear regression model
 par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
@@ -160,7 +160,7 @@ Using the R script file for this activity, enter your answers for question 9 in 
 * **Upload a copy of your plot showing the p-value to Gradescope for your group.**
 
 
-```r
+``` r
 regression_test(log_GDP~dollar_price, # response ~ explanatory
                data = mac, # Name of data set
                direction = "xx", # Sign in alternative ("greater", "less", "two-sided")
@@ -183,7 +183,7 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 * Highlight and run lines 58--62. 
 
 
-```r
+``` r
 regression_bootstrap_CI(log_GDP~dollar_price, # response ~ explanatory
    data = mac, # Name of data set
    confidence_level = xx, # Confidence level as decimal

@@ -1,4 +1,4 @@
-## Activity 9:  Errors and Power
+## Activity ...:  Errors and Power
 
 \setstretch{1}
 
@@ -32,7 +32,7 @@ To review these concepts, see Chapter 12 in the textbook.
 
 ### ACL recovery
 
-It is widely reported that the median recovery time for athletes who undergo surgery to repair a torn anterior cruciate ligament (ACL) is 8 months, indicating that 50% of athletes return to their sport within 8 months after an ACL surgery.  Suppose a local physical therapy company hopes to advertise that their rehabilitation program can increase this percentage.  
+It is widely reported that the average recovery time for athletes who undergo surgery to repair a torn anterior cruciate ligament (ACL) is 8 months.  Suppose a local physical therapy company hopes to advertise that their rehabilitation program can shorten this average time to recover.  
 
 1. Write the parameter of interest ($\pi$) in words, in the context of this problem.
 \vspace{0.5in}
@@ -44,11 +44,13 @@ After determining hypotheses and prior to collecting data, researchers should se
 
 As you have already learned in this course, sample size of a study is extremely important.  Often times, researchers will conduct what is called a power analysis to determine the appropriate sample size based on the goals of their research, including a desired **power** of their test.  Power is the probability of correctly rejecting the null hypothesis, or the probability of the data providing strong evidence against the null hypothesis *when the null hypothesis is false*.
 
-The remainder of this lab will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
+The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
 
 * Navigate to https://istats.shinyapps.io/power/.  *Please note that this applet uses $p_0$ to represent the null value rather than $\pi_0$.*
 
-* Use the scale under "Null Hypothesis value $p_0$" to change the value to your null value from question 2.
+* Choose......
+
+* Use the scale under "Null Hypothesis value $_0$" to change the value to your null value from question 2.
 
 * Change the "Alternative Hypothesis" to the direction you wrote in question 2.
 

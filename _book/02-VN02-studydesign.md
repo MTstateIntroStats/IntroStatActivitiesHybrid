@@ -1,14 +1,14 @@
-## Video Notes: Study Design
+# Sampling Methods
+
+## Video Notes: Sampling Methods
 
 \setstretch{1}
 
-Read sections 2.1 - 2.5 in the course textbook.  Use the following videos to complete the video notes for Module 2.
+Read section 2.1 in the course textbook.  Use the following video to complete the video notes for Module 2.
 
 ### Course Videos
 
 * 2.1
-
-* 2.2to2.4
 
 ### Sampling Methods: Video 2.1 {-}
 
@@ -57,8 +57,6 @@ ______________ _______________ on the variable(s) of interest
 
 \vspace{0.5in}
 
-\newpage
-
 Example of Selection Bias: Newspaper article from 1936 reported that Landon won the presidential election over Roosevelt based on a poll of 10 million voters. Roosevelt was the actual winner.  What was wrong with this poll?  Poll was completed using a telephone survey and not all people in 1936 had a telephone.  Only a certain subset of the population owned a telephone so this subset was over-represented in the telephone survey. The results of the study, showing that Landon would win, did not represent the target population of all US voters.
 
 * Non-response bias:  
@@ -99,6 +97,8 @@ accessible; online polls
 has no impact on ________________ or ______________ bias.
 
 \setstretch{1}
+
+\newpage
 
 #### Video Example {-}
 
@@ -144,111 +144,12 @@ A police detective interested in determining the extent of drug use by high scho
 
 \vspace{0.25in}
     
-### Observational studies, experiments, and scope of inference: Video 2.2to2.4 {-}
-
-* Review
-
-    - Explanatory variable: the variable researchers think *may be* effecting the other variable.
-    
-    - Response variable: the variable researchers think *may be* influenced by the other variable.
-
-* Confounding variable: 
-    - associated with both the explanatory and the response variable
-    - explains the association shown by the data 
-
-Example: 
-
-\vspace{0.8in}
-
-#### Study design {-}
-
-* Observational study: 
-
-\vspace{0.5in}
-
-* Experiment: 
-
-\vspace{0.5in}
-
-\newpage
-
-Principles of experimental design
-
-* Control: hold other differences constant across groups
-\vspace{0.1in}
-
-* Randomization: randomized experiment
-\vspace{0.1in}
-
-* Replication: large sample size or repeat of study
-\vspace{0.1in}
-
-* Blocking: group based on certain characteristics
-
-\vspace{0.1in}
-    
-
-Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
-
-* What is the study design?
-    
-\vspace{0.5in}
-
-
-Example: In the Physician's Health Study [@physhealth], male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack. 
-
-* What is the study design?
-    
-\vspace{0.5in}
-
-* Assuming these data provide evidence that the low-dose aspirin group had a lower rate of heart attacks than the placebo group, is it valid for the researchers to conclude the lower rate of heart attacks was caused by the daily low-dose aspirin regimen?
-
-\vspace{0.5in}
-    
-#### Scope of Inference {-}
-
-1. How was the sample selected?
-
-* Random sample with no sampling bias:
-
-\vspace{0.35in}
-
-* Non-random sample with sampling bias:
-
-\vspace{0.35in}
-
-\newpage
-
-2. What is the study design?
-
-* Randomized experiment:
-    
-\vspace{0.35in}
-
-* Observational study:
-    
-\vspace{0.35in}
-
-Scope of Inference Table:
-
-
-\begin{center}\includegraphics[width=0.65\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
-
-Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
-
-* What is the scope of inference for this study?
-
-\vspace{0.5in}
 
 ### Concept Check
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
-1. Purpose of random assignment:
-
-\vspace{0.6in}
-
-2. Purpose of random selection:
+1. Purpose of random selection:
 \vspace{0.6in}
 
 \newpage

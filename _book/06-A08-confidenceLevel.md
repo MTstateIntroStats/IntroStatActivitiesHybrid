@@ -1,4 +1,4 @@
-## Activity 8:  What does confidence mean?
+## Activity 10:  Confidence interval and what confidence means
 
 \setstretch{1}
 
@@ -28,7 +28,7 @@ Left-handedness is a trait that is found in about 10\% of the general population
 
 
 
-```r
+``` r
  # Read in data set
 boxers <- read.csv("https://math.montana.edu/courses/s216/data/Male_boxers_sample.csv")
 boxers %>% count(Stance)  # Count number in each Stance category
@@ -44,7 +44,7 @@ boxers %>% count(Stance)  # Count number in each Stance category
 
 In the interpretation of a 95\% confidence interval, we say that we are 95\% confident that the parameter is within the confidence interval.  Why are we able to make that claim?  What does it mean to say "we are 95\% confident"?
 
-1. In the last activity we found a 95\% confidence interval for the parameter of interest.  As a class, determine a plausible value for the true proportion of male boxers that are left-handed. *Note: we are making assumptions about the population here. This is not based on our calculated data, but we will use this applet to better understand what happens when we take many, many samples from this believed population.*
+1. In the last activity we found very strong evidence that the true proportion of male professional boxers that are left-handed is greater than 0.1.  As a class, determine a plausible value for the true proportion of male boxers that are left-handed. *Note: we are making assumptions about the population here. This is not based on our calculated data, but we will use this applet to better understand what happens when we take many, many samples from this believed population.*
 
 \vspace{0.2in}
 
@@ -78,91 +78,69 @@ In the interpretation of a 95\% confidence interval, we say that we are 95\% con
 
 \vspace{0.8in}
 
-### Impacts on the P-value {-}
+#### Theory-based confidence interval {-}
 
-Suppose that we want to show that the true proportion of male boxers **differs** from that in the general population.
+To calculate a theory-based 95\% confidence interval for $\pi$, we will first find the **standard error** of $\hat{p}$ by plugging in the value of $\hat{p}$ for $\pi$ in $SD(\hat{p})$:
 
-7.  Write out the alternative hypothesis in notation for this new research question.
+$$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
+
+Note that we do not include a "0" subscript, since we are not assuming a null hypothesis. 
+
+7.  Calculate the standard error of the sample proportion to find a 95\% confidence interval.
 
 \vspace{0.5in}
 
-8.  How would this impact the p-value?
+We will calculate the margin of error and confidence interval in questions 10 and 11 of this activity. **The margin of error (ME)** is the value of the $z^*$ multiplier times the standard error of the statistic.
 
+$$ME = z^* \times SE(\hat{p})$$
+The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
+
+The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 95\% + 2.5\% = 97.5\% percentile). 
+
+* Enter the value of 0.975 for xx in the provided R script file. 
+
+* Highlight and run line 12. This will give the value of the multiplier for a 95\% confidence interval.
+
+
+``` r
+qnorm(xx, lower.tail = TRUE) # Multiplier for 95% confidence interval
+```
+
+8. Report the value of the multiplier needed to calculate the 95\% confidence interval for the true proportion of male boxers that are left-handed.
 \vspace{0.2in}
 
-9.  How much evidence would this p-value provide against the null hypothesis?
+9. Fill in the normal distribution shown below to show how R found the $z^*$ multiplier.
 
-\vspace{0.3in}
+\begin{figure}
 
-Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.182$) of male boxers that are left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as below:
+{\centering \includegraphics[width=0.45\linewidth]{06-A08-confidenceLevel_files/figure-latex/Normalcur-1} 
 
-$$SE_0(\hat{p})=\sqrt{\frac{0.1\times(1-0.1)}{300}} = 0.017$$.
+}
 
-\newpage
+\caption{Standard Normal Curve}(\#fig:Normalcur)
+\end{figure}
 
-10. Calculate the standardized statistic for this new sample.
+10.  Calculate the margin of error for the 95\% confidence interval.
+\vspace{0.6in}
 
-\vspace{0.8in}
+To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
+$$\text{point estimate}\pm\text{margin of error}$$
+$$\hat{p}\pm z^* \times SE(\hat{p})$$
 
-Use Rstudio to find the p-value for this new sample.  Enter the value of the standardized statistic found in question 10 for xx in line 4.  Highlight and run lines 4--6.
-
-
-```r
-pnorm(xx, # Enter value of standardized statistic
-      m=0, s=1, # Using the standard normal mean = 0, sd = 1
-      lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
-```
-
-11.  How does the decrease in sample size affect the p-value?
-
-\vspace{0.3in}
-
-Suppose another sample of 500 male boxers was taken and 68 were found to be left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as before:
-
-$$SE_0(\hat{p})=\sqrt{\frac{0.1\times(1-0.1)}{500}} = 0.013$$.
+11.  Calculate the 95\% confidence interval for the parameter of interest.
+\vspace{0.6in}
 
 
-12. Calculate the standardized statistic for this new sample.
+12.  Interpret the 95\% confidence **interval** in the context of the problem.
+\vspace{1in}
 
-\vspace{0.8in}
-
-Use Rstudio to find the p-value for this new sample.
-
-
-```r
-pnorm(xx, # Enter value of standardized statistic
-      m=0, s=1 # Using the standard normal mean = 0, sd = 1
-      lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
-```
-
-13.  How does a statistic closer to the null value affect the p-value?
-
-\vspace{0.3in}
-
-14.  Summarize how each of the following affected the p-value:
-
-a) Switching to a two-sided test.
-
-\vspace{0.4in}
-
-b) Using a smaller sample size.
-
-\vspace{0.4in}
-
-c) Using a sample statistic closer to the null value.
-
-\vspace{0.4in}
 
 
 ### Take-home messages
 
 1.  If repeat samples of the same size are selected from the population, approximately 95\% of samples will create a 95\% confidence interval that contains the parameter of interest.
 
-2.  The p-value for a two-sided test is approximately two times the value for a one-sided test.  A two-sided test provides less evidence against the null hypothesis.
-
-3.  The larger the sample size, the smaller the sample to sample variability.  This will result in a larger standardized statistic and more evidence against the null hypothesis.
-
-4.  The farther the statistic is from the null value, the larger the standardized statistic.  This will result in a smaller p-value and more evidence against the null hypothesis.
+2.  The calculation of the confidence interval uses the standard error calculated using the sample proportion rather than the null value.
 
 ### Additional notes
 

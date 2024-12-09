@@ -1,4 +1,4 @@
-## Module 12 Lab:  Swearing
+## Module 11 Lab:  Swearing
 
 \setstretch{1}
 
@@ -46,7 +46,7 @@ Profanity (language considered obscene or taboo) and society's attitude about it
 
 * Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
 
-```r
+``` r
 swearing <- datasetname
 paired_observed_plot(swearing)
 ```
@@ -59,7 +59,7 @@ paired_observed_plot(swearing)
 * Highlight and run lines 14--25 to get the summary statistics and boxplot of the differences.
 
 
-```r
+``` r
 swearing_diff <- swearing %>% 
   mutate(differences = group_1 - group_2)
 swearing_diff %>% 
@@ -113,7 +113,7 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 10.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
 
 
-```r
+``` r
 paired_test(data = swearing$differences,   # Vector of differences 
                                  # or data set with column for each group
         shift = xx,   # Shift needed for bootstrap hypothesis test
@@ -142,7 +142,7 @@ We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package
 
 13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
 
-```r
+``` r
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
                     number_repetitions = 1000, # Number of bootstrap samples for CI
                     confidence_level = xx,  # Confidence level in decimal form

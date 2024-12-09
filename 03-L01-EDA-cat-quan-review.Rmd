@@ -43,10 +43,12 @@ movies %>% # Data set piped into...
 
 movies %>% # Data set piped into...
     ggplot(aes(x = revenue_mil)) + # Name variable to plot
-    geom_boxplot() + # Create histogram with specified binwidth
-    labs(title = "Histogram of Revenue of Movies in 2016", # Title for plot
+    geom_boxplot() + # Create boxplot with specified binwidth
+    labs(title = "Boxplot of Revenue of Movies in 2016", # Title for plot
          x = "Revenue (in Millions)", # Label for x axis
-         y = "Frequency") # Label for y axis
+         y = "") + # Remove label for y axis
+    theme(axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank()) # Remove y axis ticks
 ```
 
 1. Report the two measures of center for these data.
@@ -64,11 +66,13 @@ movies %>% # Data set piped into...
     summarise(favstats(revenue_reduced))
 
 movies %>% # Data set piped into...
-ggplot(aes(x = revenue_reduced)) + # Name variable to plot
-geom_boxplot() + # Create histogram with specified binwidth
-labs(title = "Histogram of Decreased Revenue of Movies in 2016", # Title for plot
+    ggplot(aes(x = revenue_reduced)) + # Name variable to plot
+    geom_boxplot() + # Create boxplot 
+    labs(title = "Boxplot of Decreased Revenue of Movies in 2016", # Title for plot
 x = "Revenue (in Millions)", # Label for x axis
-y = "Frequency") # Label for y axis
+y = "") + # Remove label for y axis
+    theme(axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank()) # Remove y-axis ticks
 ```
 
 3. Report the two measures of center for this new data set.
@@ -89,9 +93,9 @@ y = "Frequency") # Label for y axis
 
 Is there an association between content rating and budget for movies released in 2016?  To use the `favstats()` function in the mosaic package with two variables, we will enter the variables as a formula, response~explanatory.  This function will give the summary statistics for budget for each content rating.
 
-* Enter the variable name `content_rating` for explanatory and `budget` for response in line 33
+* Enter the variable name `content_rating` for explanatory and `budget_mil` for response in line 37
 
-* Highlight and run lines 31--33 in the provided `R` script file.
+* Highlight and run lines 35--37 in the provided `R` script file.
 
 ```{r, echo=TRUE, collapse=FALSE, eval=FALSE}
 movies %>% # Data set piped into...
@@ -131,15 +135,15 @@ movies %>% # Data set piped into...
 
 The boxplot of movie budgets (in millions) by content rating is plotted using the code below.  
 
-* Enter the variable `budget_mil` for `response` and the variable `content_rating` for explanatory at line 30.
+* Enter the variable `budget_mil` for `response` and the variable `content_rating` for explanatory at line 43.
 
-* Highlight and run code lines 37--44. This plot compares the budget for different levels of content rating.
+* Highlight and run code lines 41--48. This plot compares the budget for different levels of content rating.
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
-movies %>%  # Data set piped into...
+movies %>%  #Data set piped into...
   filter(content_rating != "Not Rated") %>% # Remove Not Rated movies
   ggplot(aes(y = response, x = explanatory))+  # Identify variables
-  geom_boxplot()+  # Tell it to make a box plot
+  geom_boxplot()+  # Create boxplot
   labs(title = "Side-by-side Box Plot of Budget by Content Rating for Movies Released in 2016",  
        # Title
        x = "Content Rating",    # x-axis label
@@ -172,12 +176,12 @@ In the previous part of the activity, the code was provided to import the data s
 
 * Upload the data set `ChildrenLightSight` to the RStudio server using the same steps to upload the R script file.  
 
-* Enter the name of the data set for `datasetname` in the R script file in line 48.  Don't forget to include .csv (`ChildrenLightSight.csv`).  
+* Enter the name of the data set for `datasetname` in the R script file in line 52.  Don't forget to include .csv (`ChildrenLightSight.csv`).  
 
-* Highlight and run line 48 in the provided `R` script file to load the data set.  
+* Highlight and run line 52 in the provided `R` script file to load the data set.  
 
 ```{r, echo=TRUE, collapse = FALSE, eval=FALSE}
-# Read in data set
+#Read in data set
 myopia <- read.csv("datasetname") 
 ```
 
@@ -189,9 +193,9 @@ In this study, there are two variables studied: `Light`: level of light in room 
 
 Is there an association between the level of light in a room and the development of myopia?  
 
-* Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 52 in the R script file.
+* Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 56 in the R script file.
 
-* Highlight and run line 52 to get the counts for each combination of levels of variables. 
+* Highlight and run line 56 to get the counts for each combination of levels of variables. 
 
 ```{r, echo=TRUE, eval=FALSE}
 myopia %>% group_by(explanatory) %>% count(response)
@@ -233,14 +237,14 @@ In the following questions, use the table to calculate the described proportions
 
 To examine the differences in level of myopia for the level of light, we will create a segmented bar plot of `Light` segmented by `Sight`.  
 
-* To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 57. 
+* To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 61. 
 
-* Highlight and run lines 56--63.
+* Highlight and run lines 60--67.
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
-myopia %>% # Data set piped into...
+myopia %>% #Data set piped into...
 ggplot(aes(x = explanatory, fill = response)) +   # This specifies the variables
-  geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
+  geom_bar(stat = "count", position = "fill") +  # Create barplot
   labs(title = "Segmented Bar Plot of Night Light Use by Level of Myopia for Children",  
        # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis

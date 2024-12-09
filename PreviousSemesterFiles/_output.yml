@@ -1,0 +1,13 @@
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  keep_tex: yes
+  highlight: tango
+  toc: false
+  toc_depth: 2
+  toc_bib: true
+  number_sections: true
+  split_by: chapter
+
+

@@ -1,10 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-# Basics of Data
-
 ## Activity 1:  Intro to Data
 
 \setstretch{1}
@@ -40,13 +33,13 @@ As we move through the semester we will work through the six steps of the statis
 
 1. Ask a research question.
 
-2. Design a study and collect data. *Modules 1--2*
+2. Design a study and collect data. 
 
-3. Summarize and visualize the data. *Modules 3--4*
+3. Summarize and visualize the data. 
 
-4. Use statistical analysis methods to draw inferences from the data. *Modules 5 - 11*
+4. Use statistical analysis methods to draw inferences from the data. 
 
-5. Communicate the results and answer the research question. *Weeks 6--14*
+5. Communicate the results and answer the research question. 
 
 6. Revisit and look forward.
 

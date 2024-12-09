@@ -1,3 +1,5 @@
+# Exploring Multivariable Data
+
 ## Video Notes: Regression and Correlation
 
 Read Chapters 6, 7, and 8 in the course textbook.  Use the following videos to complete the video notes for Module 4.

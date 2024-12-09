@@ -104,7 +104,7 @@ $H_A:$
 \vspace{0.2in}
 
 
-```r
+``` r
 letters<-read.csv("data/letters.csv")
 letters %>%
     reframe(favstats(Memorized~Grouped))
@@ -125,7 +125,7 @@ Interpret the summary statistic in context of the problem:
 \vspace{0.4in}
 
 
-```r
+``` r
 letters%>%
   ggplot(aes(y = Memorized, x = Grouped))  + #Enter the name of the explanatory and response variable
   geom_boxplot()+
@@ -159,7 +159,7 @@ letters%>%
 \vspace{1mm}
 
 
-```r
+``` r
 set.seed(216)
 two_mean_test(Memorized~Grouped, #Enter the names of the variables
               data = letters,  # Enter the name of the dataset
@@ -222,7 +222,7 @@ To estimate the difference in true mean we will create a confidence interval.
 For the letters example, we will estimate the difference in true mean number of letters recognized for students given  recognizable letter groupings and students given non-recognizable letter groupings.
 
 
-```r
+``` r
 set.seed(216)
 two_mean_bootstrap_CI(Memorized ~ Grouped, #Enter the name of the variables
                       data = letters,  # Enter the name of the data set
@@ -262,7 +262,7 @@ $H_A:$
 \vspace{0.2in}
 
 
-```r
+``` r
 butterfly <-read.csv("data/butterfly1.csv")
 
 butterflies <- butterfly %>% na.omit() %>%
@@ -337,7 +337,7 @@ What theoretical distribution should we use to find the p-value?
 To find the theory-based p-value:
 
 
-```r
+``` r
 pt(-5, df=39, lower.tail=FALSE)*2
 ```
 
@@ -366,7 +366,7 @@ Conclusion:
 Using the butterfly data, calculate the 99\% confidence interval.
 
 
-```r
+``` r
 butterflies %>%
     reframe(favstats(MaxGrip~Monarch_Group))
 ```
@@ -380,7 +380,7 @@ butterflies %>%
 * Need the $t^*$ multiplier for a 99\% confidence interval from a t-distribution with _________ df.
 
 
-```r
+``` r
 qt(0.995, df=39, lower.tail = TRUE)
 ```
 

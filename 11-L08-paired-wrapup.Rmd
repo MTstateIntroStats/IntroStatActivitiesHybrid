@@ -1,4 +1,4 @@
-## Module 12 Lab:  Swearing
+## Module 11 Lab:  Swearing
 
 \setstretch{1}
 

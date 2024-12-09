@@ -41,7 +41,7 @@ Some of the variables collected and their descriptions are below. Note that seve
 | `State` | State abbreviation |
 | `Sector` | whether public or private |
 | `LandGrant` | Is this a land-grant institution (Yes/No) |
-| `Size` | Institution size category based on total student enrolled for credit, Fall 2018: Under 1,000, 1,000 - 4,999, 5,000 - 9,999, 10,000 - 19,999, 20,000 and above |
+| `Size` | Institution size category based on total student enrolled for credit, Fall 2018: Under 1,000, 1,000$-$4,999, 5,000$-$9,999, 10,000$-$19,999, 20,000 and above |
 | `Cost_OutofState` | Cost of attendance for full-time out-of-state undergraduate students |
 | `Cost_InState` | Cost of attendance for full-time in-state undergraduate students |
 | `Retention` | Retention rate is the percent of the undergraduate students that re-enroll in the next year |
@@ -51,7 +51,7 @@ Some of the variables collected and their descriptions are below. Note that seve
 
 \newpage
 
-#### Identifing Variables in a data set {-}
+#### Identifying Variables in a data set {-}
 
 Look through the provided chart showing the description of variables measured.  The UnitID and Name are identifiers for each observational unit, *US degree granting institutions in 2018*.  
 
@@ -67,7 +67,7 @@ The following are the steps to upload the necessary R script file for this activ
 * Click "Upload" in the "Files" tab in the bottom right window of RStudio. In the pop-up window, click "Choose File", and navigate to the folder where the IPEDS Activity R script file is saved (most likely in your downloads folder). Click "Open"; then click "Ok". 
 * You should see the uploaded file appear in the list of files in the bottom right window. Click on the file name to open the file in the Editor window (upper left window).
 
-Notice that the first four lines of code contain a prompt called, `library`.  Packages needed to run functions in R are stored in directories called libraries.  When using the MSU RStudio server, all the packages needed for the class are already installed.  We simply must tell R which packages we need for each R script file.  We use the prompt `library` to load each **package** (or library) needed for each activity. Note, these `library` lines MUST be run each time you open a R script file in order for the functions in R to work. 
+Notice that the first four lines of code contain a prompt called `library`.  Packages needed to run functions in R are stored in directories called libraries.  When using the MSU RStudio server, all the packages needed for the class are already installed.  We simply must tell R which packages we need for each R script file.  We use the prompt `library` to load each **package** (or library) needed for each activity. Note, these `library` lines MUST be run each time you open a R script file in order for the functions in R to work. 
 
 * Highlight and run lines 1--4 to load the packages needed for this activity. Notice the use of the \# symbol in the R script file.  This symbol is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
 R will ignore everything after a \# symbol when executing the code. Refer to the instructions following the \# symbol to understand what you need to enter in the code.
@@ -212,13 +212,13 @@ In the following questions, use the table to calculate the described proportions
 7.  Calculate the proportion of institutions that are public. Use appropriate notation.
 \vspace{0.4in}
 
-8.  Calculate the proportion of public institutions that have 1000 - 4999 students. Use appropriate notation.
+8.  Calculate the proportion of public institutions that have 1000$-$4999 students. Use appropriate notation.
 \vspace{0.4in}
 
-9.  Calculate the proportion of private institutions that have 1000 - 4999 students. Use appropriate notation.
+9.  Calculate the proportion of private institutions that have 1000$-$4999 students. Use appropriate notation.
 \vspace{0.4in}
 
-10.  Calculate the difference in proportion of institutions that have 1000 - 4999 students for those that are public minus those that are private. Give the appropriate notation. Use public minus private as the order of subtraction.
+10.  Calculate the difference in proportion of institutions that have 1000$-$4999 students for those that are public minus those that are private. Give the appropriate notation. Use public minus private as the order of subtraction.
 \vspace{0.5in}
 
 11.  Interpret the difference in proportion calculated in question 9 in context of the study.
@@ -239,11 +239,11 @@ ggplot(aes(x = Sector, fill = Size)) +   # This specifies the variables
        Sector for 4-year Institutions",  # Make sure to title your plot 
        x = "Sector",   # x axis label
        y = "Relative Frequency")  + # y axis label
-  scale_fill_grey()  # Make figure color
+  scale_fill_grey()  # Make figure black and white
 ```
 
 
-12. From the segmented bar plot, which sector has the highest proportion of student population size of 1000 - 4999?
+12. From the segmented bar plot, which sector has the highest proportion of student population size of 1000$-$4999?
 
 \vspace{0.5in}
 \newpage
@@ -258,7 +258,7 @@ IPEDS %>% #Data set piped into...
        Sector for 4-year Institutions", #Make sure to title your plot 
        x = "Sector",   #Label the x axis
        y = "") + #Remove y axis label
-scale_fill_grey()  # Make figure bw
+scale_fill_grey()  # Make figure black and white
 ```
 
 13.  What is similar and what is different between the segmented bar chart and the mosaic bar chart?

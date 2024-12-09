@@ -14,17 +14,37 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 #### Activity intro {-}
 
+* Download the R script file and the data file (US_dogs.csv) from D2L
+
+* Upload both files to D2L and open the R script file
+
+* Enter the name of the dataset for datasetname.csv.
+
+* Highlight and run lines 1 - 6 
+
 1.  What is the value of the point estimate?
 
 \vspace{0.3in}
 
+2. Create a plot of the data using the R code. Make sure to include an appropriate title with type of plot, observational units, and variable.  **Upload the plot to Gradescope**.
+
+```{r, out.width="50%", echo=TRUE, eval=FALSE}
+dogs %>% # Data set piped into...
+    ggplot(aes(x = variable)) +   # This specifies the variable
+    geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
+    labs(title = "Don't forget to title your plot",  
+       # Give your plot a title
+       x = "Breed of Dog",   # Label the x axis
+       y = "Relative Frequency")  # Label the y axis
+```
+
 #### Use statistical analysis methods to draw inferences from the data {-}
 
-2.  **Write out the parameter of interest in words, in context of the study.**  
+3.  **Write out the parameter of interest in words, in context of the study.**  
 
 \vspace{0.5in}
 
-3.  Write out the null and alternative hypotheses in notation.
+4.  Write out the null and alternative hypotheses in notation.
 
 \vspace{1mm}
 
@@ -36,39 +56,20 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 \vspace{0.3in}
 
-4. **Can theory-based methods be used to analyze these data?  Explain your answer.**
+5. **Will theory-based methods give the sample results as simulation based methods?  Explain your answer.**
 
 \vspace{0.6in}
 
 \newpage
 
 To use the computer simulation, we will need to enter the 
-
 * assumed "probability of success" ($\pi_0$), 
 * "sample size" (the number of observational units or cases in the sample),
 * "number of repetitions" (the number of samples to be generated), 
 * "as extreme as" (the observed statistic), and 
 * the "direction" (matches the direction of the alternative hypothesis).
 
-
-5.  What values should be entered for each of the following into the one proportion test to create 1000 simulations?
-
-\vspace{1mm}
-* Probability of success:
-
-\vspace{.2in}
-* Sample size:
-    
-\vspace{.2in}
-* Number of repetitions:
-    
-\vspace{.2in}
-* As extreme as:
-    
-\vspace{.2in}
-* Direction (`"greater"`, `"less"`, or `"two-sided"`):
-
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 1--12.
+We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 21--26.
 
 ```{r, echo=TRUE, eval = FALSE}
 one_proportion_test(probability_success = xx, # Null hypothesis value
@@ -82,13 +83,11 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
 
 \vspace{0.2in}
 
-The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
+The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. 
 
-The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 90\% + 5\% = 95\% percentile). 
+* Enter the value of the appropriate percentile for xx in the provided R script file to find the multiplier for a 90\% confidence interval. 
 
-* Enter the value of 0.95 for xx in the provided R script file. 
-
-* Highlight and run line 17. This will give the value of the multiplier for a 90\% confidence interval.
+* Highlight and run line 17
 
 ```{r, echo=TRUE, eval=FALSE}
 qnorm(xx. lower.tail = TRUE) # Multiplier for 90% confidence interval
@@ -98,23 +97,13 @@ qnorm(xx. lower.tail = TRUE) # Multiplier for 90% confidence interval
 
 \vspace{0.5in}
 
-\newpage
-
 8. Calculate a 90\% confidence interval.
-
-\vspace{0.6in}
-
-9. What type of error may have occurred?
-
-\vspace{0.2in}
-
-10. Describe this error in the context of the study?
 
 \vspace{0.6in}
 
 #### Summarize the results of the study {-}
 
-11. Write a paragraph summarizing the results of the study.  Be sure to describe:
+9. Write a paragraph summarizing the results of the study.  Be sure to describe:
 
 * Summary statistic and interpretation
 

@@ -8,7 +8,7 @@ author: |
     | Jade Schmidt
     | Stacey Hancock
 subtitle: |
-    | Fall 2024
+    | Spring 2025
     | Montana State University
 output: 
     pdf_document:
@@ -18,7 +18,7 @@ biblio-style: apalike
 nocite: '@*'
 site: bookdown::bookdown_site
 documentclass: report
-description: This is the coursepack of in-class activities for STAT 216 Fall 2024.
+description: This is the coursepack of in-class activities for STAT 216 Spring 2025.
 location: Montana State University
 ---
 
@@ -57,7 +57,7 @@ This resource is released under a [Creative Commons BY-NC-SA 4.0](https://creati
 This coursepack accompanies the textbook for STAT 216: Montana State Introductory Statistics with R, which can be found at [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/). The syllabus for the course (including the course calendar), data sets, and links to D2L Brightspace, Gradescope, and the MSU RStudio server can be found on the course webpage: [https://math.montana.edu/courses/s216/](https://math.montana.edu/courses/s216/).
 Other notes and review materials are linked in D2L.
 
-Each of the activities in this workbook is designed to target specific learning outcomes of the course, giving you practice with important statistical concepts in a group setting with instructor guidance. In addition to the in-class activities for the course, reading guides are provided to aid in taking notes while you complete the required readings, as well as video notes to be completed while watching the required videos. Bring this workbook with you to class each class period, and take notes in the workbook as you would your own notes. A well-written completed workbook will provide an optimal study guide for exams!  
+Each of the activities in this workbook is designed to target specific learning outcomes of the course, giving you practice with important statistical concepts in a group setting with instructor guidance. In addition to the in-class activities for the course, video notes are provided to aid in taking notes while you complete the required videos. Bring this workbook with you to class each class period, and take notes in the workbook as you would your own notes. A well-written completed workbook will provide an optimal study guide for exams!  
 
 All activities and labs in this coursepack will be completed during class time.  Parts of each lab will be turned in on Gradescope. To aid in your understanding, read through the introduction for each activity before attending class each day.  
 

@@ -1,4 +1,4 @@
-## Activity 6:  Helper-Hinderer --- Simulation-based Confidence Interval
+## Activity 8:  Helper-Hinderer --- Simulation-based Confidence Interval
 
 \setstretch{1}
 
@@ -45,9 +45,25 @@ In today's activity, we will use bootstrapping to find a 95\% confidence interva
 
 #### Use statistical analysis methods to draw inferences from the data {-}
 
-4.  Write out the parameter of interest in words, in context of the study.  *Hint: this is the same as in Activity 4 and 5.*
+4.  Write out the parameter of interest in words, in context of the study.  *Hint: this is the same as in Activity 6 and 7.*
 
 \vspace{0.5in}
+
+To create the null distribution we flipped a coin 16 times to simulate infants randomly choosing the helper toy with a probability of 50\%.  
+
+5. Why can't we use a coin to simulate the bootstrap distribution.
+
+\vspace{0.7in}
+
+To create the bootstrap distribution.
+
+* First we would label the cards to represent the sample statistic: 14 helper and 2 hinderer.
+
+* Sample with replacement 16 times
+
+6. Using the cards provided by your instructor, create one bootstrap sample.  Report your simulated sample proportion on the whiteboard.
+
+\vspace{0.3in}
 
 To use the computer simulation to create a bootstrap distribution, we will need to enter the 
 
@@ -56,7 +72,7 @@ To use the computer simulation to create a bootstrap distribution, we will need 
 * "number of repetitions" (the number of samples to be generated), and 
 * the "confidence level" (which level of confidence are we using to create the confidence interval).
 
-5.  What values should be entered for each of the following into the simulation to create the bootstrap distribution of sample proportions to find a 95\% confidence interval?
+7.  What values should be entered for each of the following into the simulation to create the bootstrap distribution of sample proportions to find a 95\% confidence interval?
 \vspace{1mm}
 
 * Sample size:
@@ -76,35 +92,37 @@ To use the computer simulation to create a bootstrap distribution, we will need 
 We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 1000 simulations. Then highlight and run lines 1--9.
 
 
-```r
+``` r
 one_proportion_bootstrap_CI(sample_size = xx, # Sample size
                     number_successes = xx, # Observed number of successes
                     number_repetitions = 1000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
 ```
 
-6.  Sketch the bootstrap distribution created below.
+\newpage
+
+8.  Sketch the bootstrap distribution created below.
 
 \vspace{1.8in}
 
-7. What is the value at the center of this bootstrap distribution?  Why does this make sense?
+9. What is the value at the center of this bootstrap distribution?  Why does this make sense?
 \vspace{.8in}
 
-8. Explain why the two vertical lines are at the 2.5th percentile and the 97.5th percentile.
+10. Explain why the two vertical lines are at the 2.5th percentile and the 97.5th percentile.
 
 \vspace{.4in}
 
-9. Report the 95\% bootstrapped confidence interval for $\pi$.  Use interval notation: (lower value, upper value).
+11. Report the 95\% bootstrapped confidence interval for $\pi$.  Use interval notation: (lower value, upper value).
 
 \vspace{0.2in}
 
-10.  Interpret the 95\% confidence interval in context.
+12.  Interpret the 95\% confidence interval in context.
 
 \vspace{.6in}
 
 #### Communicate the results and answer the research question {-}
 
-11.  Is the value 0.5 (the null value) in the 95\% confidence interval?
+13.  Is the value 0.5 (the null value) in the 95\% confidence interval?
 
 \vspace{.2in}
 
@@ -114,14 +132,14 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 #### Effect of confidence level {-}
 
-12.  Suppose instead of finding a 95\% confidence interval, we found a 90\% confidence interval.  Would you expect the 90\% confidence interval to be narrower or wider?  Explain your answer.
+14.  Suppose instead of finding a 95\% confidence interval, we found a 90\% confidence interval.  Would you expect the 90\% confidence interval to be narrower or wider?  Explain your answer.
 
 \vspace{0.4in}
 
-13.  The following R code produced the bootstrap distribution with 1000 simulations that follows.  Circle the value that changed in the code. 
+15.  The following R code produced the bootstrap distribution with 1000 simulations that follows.  Circle the value that changed in the code. 
 
 
-```r
+``` r
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 1000, # Number of bootstrap samples to use
@@ -133,25 +151,23 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 \begin{center}\includegraphics[width=0.7\linewidth]{05-A07-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 
-14.  Report both the 95\% confidence interval (question 9) and the 90\% confidence interval (question 13).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
+16.  Report both the 95\% confidence interval (question 9) and the 90\% confidence interval (question 13).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
 
 \vspace{0.5in}
 
-15.  Explain why the upper value of the confidence interval is truncated at 1.
+17.  Explain why the upper value of the confidence interval is truncated at 1.
 
 \vspace{0.3in}
 
 \setstretch{1.5}
 
-16. Fill in the blanks below to write a paragraph summarizing the results of the study as if writing a press release.  
+18. Fill in the blanks below to write a paragraph summarizing the results of the study as if writing a press release.  
 
 Researchers were interested if infants observe social cues and would be more likely to choose the helper toy over the hinderer toy.  In a sample of (sample  size) _____________infants, (number of successes) _______________chose the helper toy.  A simulation null distribution with 1000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of (value of p-value)_______________.  We would observe a sample proportion of (value of the sample proportion) ______________________ or (greater, less, more extreme) _____________________ with a probability of (value of p-value)___________________  
 IF we assume ($H_0$ in context) ____________________________________________.
 Based on this p-value, there is (very strong/little to no) ______________________ evidence that the (sample/true)_____________________ proportion of infants age 6 to 10 months who will choose the helper toy is (greater than, less than, not equal to) _____________________ 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the (true/sample)_________________________ proportion of infants age 6 to 10 months who will choose the helper toy is between (lower value)________________ and (upper value)____________________. The results of this study can be generalized to (all infants age 6 to 10 months/infants similar to those in this study)___________________________ as the researchers (did/did not)_____________________ select a random sample.
 
 \setstretch{1}
-
-\newpage
 
 ### Take-home messages
 

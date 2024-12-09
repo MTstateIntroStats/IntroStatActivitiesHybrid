@@ -44,7 +44,7 @@ After determining hypotheses and prior to collecting data, researchers should se
 
 As you have already learned in this course, sample size of a study is extremely important.  Often times, researchers will conduct what is called a power analysis to determine the appropriate sample size based on the goals of their research, including a desired **power** of their test.  Power is the probability of correctly rejecting the null hypothesis, or the probability of the data providing strong evidence against the null hypothesis *when the null hypothesis is false*.
 
-The remainder of this lab will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
+The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
 
 * Navigate to https://istats.shinyapps.io/power/.  *Please note that this applet uses $p_0$ to represent the null value rather than $\pi_0$.*
 

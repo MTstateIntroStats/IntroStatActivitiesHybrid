@@ -1,3 +1,5 @@
+# Inference for a Single Categorical Variable: Simulation-based Methods
+
 ## Video Notes: Inference for One Categorical Variable using Simulation-based Methods
 
 Read Chapters 9 and 10 and Sections 14.1 and 14.2 in the course textbook.  Use the following videos to complete the video notes for Module 5.

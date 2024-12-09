@@ -1,4 +1,4 @@
-## Guided Activity 16: Golf Driving Distance
+## Activity 29: Golf Driving Distance
 
 \setstretch{1}
 
@@ -32,7 +32,7 @@ To review these concepts, see Chapter 21 in the textbook.
 In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 
-```r
+``` r
 # Read in data set
 golf <- read.csv("https://math.montana.edu/courses/s216/data/golf.csv")
 ```
@@ -42,7 +42,7 @@ golf <- read.csv("https://math.montana.edu/courses/s216/data/golf.csv")
 Following is a scatterplot showing the relationship between the driving distance and percent accuracy for professional golfers.  
 
 
-```r
+``` r
 golf %>% # Pipe data set into...
 ggplot(aes(x = Driving_Distance, y = Percent_Accuracy))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
@@ -98,7 +98,7 @@ The scatterplot generated earlier and the residual plots shown below will be use
 The linear model output for this study is shown below.
 
 
-```r
+``` r
 lm.golf <- lm(Percent_Accuracy~Driving_Distance, data=golf) # lm(response~explanatory)
 round(summary(lm.golf)$coefficients, 3)
 ```
@@ -141,7 +141,7 @@ $$b_1 \pm t^* \times SE(b_1).$$
 The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom.  Recall for a 95\% confidence interval, we use the 97.5\% percentile (95\% of the distribution is in the middle, leaving 2.5\% in each tail).  The sample size for this study is 354 so we will use the degrees of freedom 352 ($n-2$).
 
 
-```r
+``` r
 qt(0.975, 352, lower.tail = TRUE) # 95% t* multiplier 
 ```
 
@@ -167,7 +167,7 @@ qt(0.975, 352, lower.tail = TRUE) # 95% t* multiplier
 Another variable that may affect the percent accuracy is the which league the golfer is part of. We will look at how this variable may change the relationship between driving distance and percent accuracy. 
 
 
-```r
+``` r
 golf %>%
   ggplot(aes(x = Driving_Distance, y = Percent_Accuracy, color=League))+  # Specify variables
   geom_point(aes(shape = League), size = 2, alpha=0.5) +  # Add scatterplot of points
@@ -186,6 +186,9 @@ golf %>%
 
 10. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.
 \vspace{1in}
+
+
+
 
 11.  Explain the association between league and each of the other two variables.
 

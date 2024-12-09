@@ -1,6 +1,6 @@
 ## Video Notes: Inference for One Categorical Variable using Theory-based Methods
 
-Read Chapters 11, 12, and 13 and Sections 14.3 and 14.4 in the course textbook.  Use the following videos to complete the video notes for Module 6.
+Read Chapters 11 and 13 and Sections 14.3 and 14.4 in the course textbook.  Use the following videos to complete the video notes for Module 4.
 
 ### Course Videos
 
@@ -10,7 +10,7 @@ Read Chapters 11, 12, and 13 and Sections 14.3 and 14.4 in the course textbook. 
 
 * 14.3TheoryIntervals
 
-* Chapter12
+<!-- * Chapter12 -->
 
 \setstretch{1}
 
@@ -66,7 +66,7 @@ Heights of Caucasian American adult females are roughly Normally distributed wit
 In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.
 
 
-```r
+``` r
 library(openintro)
 normTail(m = 1.72, s = 0.28, L = 1.626)
 pnorm(mean = 1.72, sd = 0.28, q = 1.626)
@@ -82,7 +82,7 @@ pnorm(mean = 1.72, sd = 0.28, q = 1.626)
 We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.
 
 
-```r
+``` r
 qnorm(mean = 1.72, sd = 0.28, p = 0.75)
 #> [1] 1.908857
 normTail(m = 1.72, s = 0.28, L = 1.909)
@@ -198,7 +198,7 @@ Interpret the standardized statistic
 To find the p-value, find the area under the standard normal distribution at the standardized statistic and more extreme.
 
 
-```r
+``` r
 pnorm(3.064, lower.tail = FALSE)*2
 ```
 
@@ -256,7 +256,7 @@ Generalization:
 
 For a 95\% confidence interval:
 
-```r
+``` r
 qnorm(0.975, lower.tail=TRUE)
 ```
 
@@ -318,90 +318,90 @@ Interpret the confidence **level** for the blood donation study.
 
 \newpage
 
-### Errors, power, and practical importance - Video Chapter12 {-}
+<!-- ### Errors, power, and practical importance - Video Chapter12 {-} -->
 
-\setstretch{1.5}
+<!-- \setstretch{1.5} -->
 
-Type 1 Error: ___________ the null hypothesis, when the null is ____________.
+<!-- Type 1 Error: ___________ the null hypothesis, when the null is ____________. -->
 
-* Only can have a Type 1 Error when we make the ____________ to ____________ the null hypothesis.
+<!-- * Only can have a Type 1 Error when we make the ____________ to ____________ the null hypothesis. -->
 
-* The probability of a Type 1 Error is $\alpha$, the ____________ level
+<!-- * The probability of a Type 1 Error is $\alpha$, the ____________ level -->
 
-Type 2 Error: ___________ to reject the null hypothesis, when the null is __________.
+<!-- Type 2 Error: ___________ to reject the null hypothesis, when the null is __________. -->
 
-* Only can have a Type 2 Error when we make the ____________ to ____________ to reject the null hypothesis.
+<!-- * Only can have a Type 2 Error when we make the ____________ to ____________ to reject the null hypothesis. -->
 
-Power: probability of ___________ the null hypothesis, when the null is _____________.
+<!-- Power: probability of ___________ the null hypothesis, when the null is _____________. -->
 
-Increasing power:
+<!-- Increasing power: -->
 
-* Increase _______________ _______________
+<!-- * Increase _______________ _______________ -->
 
-* Increase _______________ _______________
+<!-- * Increase _______________ _______________ -->
 
-* Use a __________ alternative vs. a ______________ alternative
+<!-- * Use a __________ alternative vs. a ______________ alternative -->
 
-* Increase the ___________ size, the ______________ between the believed true value and the null value
+<!-- * Increase the ___________ size, the ______________ between the believed true value and the null value -->
 
-Confirmation bias: looking for _________ that supports our ideas
+<!-- Confirmation bias: looking for _________ that supports our ideas -->
 
-* Always should write $H_A$ based on the _____________ _____________ prior to _________ collection!
+<!-- * Always should write $H_A$ based on the _____________ _____________ prior to _________ collection! -->
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-Recall from the blood donation study, that we concluded there was very strong evidence that the true proportion of Montana residents who are eligible to donate blood differs from 0.10.
+<!-- Recall from the blood donation study, that we concluded there was very strong evidence that the true proportion of Montana residents who are eligible to donate blood differs from 0.10. -->
 
-\setstretch{1.5}
+<!-- \setstretch{1.5} -->
 
-Since, we made the decision to ____________ the null hypothesis, we have the possibility of a _____________ error.
+<!-- Since, we made the decision to ____________ the null hypothesis, we have the possibility of a _____________ error. -->
 
-\setstretch{1}
+<!-- \setstretch{1} -->
 
-* What is the probability of this error?
+<!-- * What is the probability of this error? -->
 
-\vspace{0.2in}
+<!-- \vspace{0.2in} -->
 
-* Write the error in context of the problem.
+<!-- * Write the error in context of the problem. -->
 
-\vspace{0.5in}
+<!-- \vspace{0.5in} -->
 
-For each of the following changes to the blood donation study, determine whether the power of the test would increase or decrease.
+<!-- For each of the following changes to the blood donation study, determine whether the power of the test would increase or decrease. -->
 
-\setstretch{1.5}
-* If we decreased the sample size from 200 to 100, power would __________.
+<!-- \setstretch{1.5} -->
+<!-- * If we decreased the sample size from 200 to 100, power would __________. -->
 
-* If we decreased the significance level from 0.05 to 0.01, power would __________.
+<!-- * If we decreased the significance level from 0.05 to 0.01, power would __________. -->
 
-* If we changed the research question to only asking if the probability a Montana resident eligible to donate blood actually does so is greater than 0.10, power would ____________. 
+<!-- * If we changed the research question to only asking if the probability a Montana resident eligible to donate blood actually does so is greater than 0.10, power would ____________.  -->
 
-    * This is an example of ____________ ______________.
+<!--     * This is an example of ____________ ______________. -->
 
-\setstretch{1}    
+<!-- \setstretch{1}     -->
 
-#### Practical importance {-}
+<!-- #### Practical importance {-} -->
 
-* A result can be ______________ significant but not _____________ important.
+<!-- * A result can be ______________ significant but not _____________ important. -->
 
-* Statistically significant: $\text{p-value} < \alpha$
+<!-- * Statistically significant: $\text{p-value} < \alpha$ -->
 
-    * Depends on the _____________, the __________ ___________, and the selected ______________ level.
-    
-* Practically important: the ___________ seen in the data is
-meaningful and has _____________ 
-applications.
+<!--     * Depends on the _____________, the __________ ___________, and the selected ______________ level. -->
 
-    * Depends on the __________ and subjective opinion.
-    
-Example: An Austrian study of heights of 507,125 military recruits reported that men born in spring were statistically significantly taller than men born in the fall (p-value < 0.0001). A confidence interval for the true difference in mean height between men born in spring and men born in fall was (0.598, 0.602) cm. 
+<!-- * Practically important: the ___________ seen in the data is -->
+<!-- meaningful and has _____________  -->
+<!-- applications. -->
 
-Is there statistical significance?
+<!--     * Depends on the __________ and subjective opinion. -->
 
-\vspace{0.3in}
+<!-- Example: An Austrian study of heights of 507,125 military recruits reported that men born in spring were statistically significantly taller than men born in the fall (p-value < 0.0001). A confidence interval for the true difference in mean height between men born in spring and men born in fall was (0.598, 0.602) cm.  -->
 
-Is there practical importance? 
+<!-- Is there statistical significance? -->
 
-\vspace{0.3in}
+<!-- \vspace{0.3in} -->
+
+<!-- Is there practical importance?  -->
+
+<!-- \vspace{0.3in} -->
 
 ### Concept Check
 
@@ -415,9 +415,9 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \vspace{0.6in}
 
-3. What is the difference between statistical significance and practical importance?
+<!-- 3. What is the difference between statistical significance and practical importance? -->
 
-\vspace{0.6in}
+<!-- \vspace{0.6in} -->
 
 
 \newpage

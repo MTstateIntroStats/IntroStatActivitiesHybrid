@@ -1,4 +1,4 @@
-## Module 4 Lab:  Penguins
+## Module 4 Lab: Penguins
 
 \setstretch{1}
 
@@ -25,7 +25,7 @@ The Palmer Station Long Term Ecological Research Program sampled three penguin s
 
 * Upload and open the provided R script file for the module 4 lab. 
 
-* Enter the name of the data set (`Antarctica_Penguins`) for `datasetname` in the R script file in line 5.  *Note that there are some missing values in the dataset.  Line 6 in the R script file removes the NAs.
+* Enter the name of the data set (`Antarctica_Penguins.csv`) for `datasetname` in the R script file in line 5.  *Note that there are some missing values in the dataset.  Line 6 in the R script file removes the NAs for variables body mass and bill depth.
 
 First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth (mm) to predict body mass (g).  This makes bill depth the explanatory variable. 
 
@@ -36,14 +36,14 @@ First we will create a scatterplot of the bill depth and body mass.  Notice that
 * **Upload a copy of your scatterplot to Gradescope.**
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE}
-penguins <- read.csv("datasetname") %>% #Creates the object penguins
+penguins <- read.csv("datasetname.csv") %>% #Creates the object penguins
     drop_na(body_mass_g) %>% drop_na(bill_depth_mm) #Removes data points without values
 penguins %>%
   ggplot(aes(x = bill_depth_mm, y = body_mass_g))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "bill depth (mm)",  # Label x-axis
        y = "body mass (g)",  # Label y-axis
-       title = "Title") + # Be sure to title your plot
+       title = "Give your plot an information title") + # Be sure to title your plot
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 

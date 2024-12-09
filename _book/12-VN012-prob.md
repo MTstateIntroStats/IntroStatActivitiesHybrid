@@ -1,3 +1,5 @@
+# Probability 
+
 ## Video Notes: Probability 
 
 Read Chapters 22 in the course textbook.  Use the following videos to complete the video notes for Module 12.

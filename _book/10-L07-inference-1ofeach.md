@@ -19,7 +19,7 @@
 
 ### Trustworthiness
 
-Researchers in India wanted to find out how trustworthy famous YouTubers are [@kalra2022]. They went through a process in which they collected data on many videos from famous YouTubers to determine a trustworthiness score. Scientists randomly selected videos from famous YouTubers (>1000 subscribers) to include in the study. There were many different factors that went into calculating the trustworthiness score. Researchers also recorded if YouTubers were a subject matter expert (SME) or not a subject matter expert (non-SME).  An example of an SME would be if one of your statistics professors made a YouTube video of how to do hypothesis testing. An example of someone who isn’t an SME would be if one of your friends who has never taken a civil engineering class in their life decided to make a YouTube video about how to build a bridge. There were 621 Youtubers who are SMEs in the sample and 1026 who aren’t SMEs. Is there evidence of a difference in trustworthiness score between subject matter experts (SME) YouTubers and non-SME YouTubers?  Use SME – Non -SME as the order of subtraction  
+Researchers in India wanted to find out how trustworthy famous YouTubers are [@kalra2022]. They went through a process in which they collected data on many videos from famous YouTubers to determine a trustworthiness score. Scientists randomly selected videos from famous YouTubers (>1000 subscribers) to include in the study. There were many different factors that went into calculating the trustworthiness score. Researchers also recorded if YouTubers were a subject matter expert (SME) or not a subject matter expert (non-SME).  An example of an SME would be if one of your statistics professors made a YouTube video of how to do hypothesis testing. An example of someone who isn’t an SME would be if one of your friends who has never taken a civil engineering class in their life decided to make a YouTube video about how to build a bridge. There were 621 Youtubers who are SMEs in the sample and 1026 who aren’t SMEs. Is there evidence of a difference in mean trustworthiness score between subject matter experts (SME) YouTubers and non-SME YouTubers?  Use SME – Non -SME as the order of subtraction  
 
 1. **Write out the parameter of interest in words in context of the study.**
 
@@ -56,7 +56,7 @@ Conditions for the sampling distribution of $\bar{x}_1-\bar{x}_2$ to follow an a
 * Highlight and run lines 1--16 to load the data and create plots of the data.
 
 
-```r
+``` r
 trust <- read.csv("datasetname")
 trust %>%  # Data set piped into...
   ggplot(aes(y = Trustworthiness_Video, x = Creator_SME))+  # Identify variables
@@ -80,7 +80,7 @@ trust %>%  # Data set piped into...
 * Highlight and run lines 21--22 to get the summary statistics for the data.
 
 
-```r
+``` r
 trust %>%
   reframe(favstats(response~explantory))
 ```
@@ -114,7 +114,7 @@ $$SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.$$
 10. Using the provided R script file, enter the T-score (for `xx`) and the `df` calculated in question 9 for `yy` into the `pt()` function to find the p-value.  Highlight and run line 27.  Report the p-value calculated. 
 
 
-```r
+``` r
 2*pt(xx, df=yy, lower.tail=FALSE)
 ```
 \vspace{0.2in}
@@ -135,7 +135,7 @@ We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\%
 * Enter the appropriate percentile value (as a decimal) for `xx` and degrees of freedom for `yy` into the `qt()` function at line 32 to find the appropriate $t^*$ multiplier
 
 
-```r
+``` r
 qt(xx, df = yy, lower.tail=FALSE)
 ```
 13. Report the $t^*$ multiplier for the 95\% confidence interval.
