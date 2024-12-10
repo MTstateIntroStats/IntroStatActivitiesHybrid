@@ -107,6 +107,19 @@ regression_test(response~explanatory, # response ~ explanatory
 
 ### Conditions necessary to use theory-based methods {-}
 
+When performing inference on a least squares line, the follow conditions are generally required:
+
+* *Independent observations* (for both simulation-based and theory-based methods): individual data points must be independent.
+    - Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
+    
+* *Linearity* (for both simulation-based and theory-based methods): the data should follow a linear trend.
+    - Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The pattern in the residual plot should display a horizontal line.
+
+* *Constant variability* (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+    - Check this assumption by examining a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
+
+* *Nearly normal residuals* (for theory-based methods only: residuals must be nearly normal.
+    - Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
 
 ### Theory-based Methods to find the p-value {-}
 
@@ -115,7 +128,7 @@ regression_test(response~explanatory, # response ~ explanatory
 $$
 T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
 $$
-* Use the standard error estimate from the linear model output
+* Use the standard error estimate of the slope from the linear model output
 
 * The p-value can be found from the linear model output or by using the pt function.
 
@@ -145,9 +158,9 @@ regression_bootstrap_CI(response~explanatory, # response ~ explanatory
 
 * R code to find the multiplier for the confidence interval using theory-based methods.
 
-    * pt will give you a p-value using the t-distribution with n-2 df (enter for yy)
+    * qt will give you the multiplier using the t-distribution with n-2 df (enter for yy)
     
-    * Enter the value of the standardized statistic for xx
+    * Enter the percentile for the given confidence level
 
     * If a greater than alternative, change lower.tail = TRUE to FALSE.
     
@@ -155,7 +168,7 @@ regression_bootstrap_CI(response~explanatory, # response ~ explanatory
 
 
 ``` r
-pt(xx, df=yy, lower.tail=FALSE)
+qt(xx, df=yy, lower.tail=FALSE)
 ```
 
 \newpage

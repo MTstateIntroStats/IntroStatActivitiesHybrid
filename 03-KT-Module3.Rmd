@@ -49,6 +49,18 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 * **Alternative hypothesis**: represents an alternative claim under consideration and is often represented by a range of possible values for the parameter of interest.
 
     * The alternative hypothesis is determined by the research question.
+    
+Hypotheses:
+
+$$H_0: \pi = \pi_0$$
+$$H_A: \pi \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\pi_0 $$
 
 * **Null Distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 

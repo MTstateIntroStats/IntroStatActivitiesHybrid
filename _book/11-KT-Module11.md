@@ -74,14 +74,39 @@ paired_bootstrap_CI(data = object$differences, # Enter vector of differences
 
 * Calculation of standard error:
 
-$$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
+$$SE(\bar{x}_d) = \frac{s_d}{\sqrt{n}}$$
 
-* Calculation of the standardized difference in sample mean:
+* Calculation of the standardized sample mean difference:
 
-$$t = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+$$t = \frac{\bar{x}_d-0}{SE(\bar{x}d)}$$
 
+* The following R code is used to find the p-value using theory based methods for a paired data.
+
+    * pt will give you a p-value using the t-distribution with n-1 df (enter for yy)
+    
+    * Enter the value of the standardized statistic for xx
+
+    * If a greater than alternative, change lower.tail = TRUE to FALSE.
+    
+    * If a two-sided test, multiply by 2.
+    
+
+``` r
+pt(xx, df = yy, lower.tail=TRUE)
+```
 
 * Calculation of the confidence interval for a difference in sample means
 
-$$\bar{x}_1-\bar{x}_2\pm t^*\times SE(\bar{x}_1-\bar{x}_2)$$
+$$\bar{x}_d\pm t^*\times SE(\bar{x}_d)$$
+* R code to find the multiplier for the confidence interval using theory-based methods.
+
+    * qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
+    
+    * Enter the percentile for the given confidence level
+
+
+``` r
+qt(percentile, df=yy, lower.tail=FALSE)
+```
+
 \newpage

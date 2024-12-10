@@ -106,6 +106,8 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
 
 * Review how to interpret the confidence interval for two groups from Module 8
 
+### Theory-based methods {-}
+
 * **Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
 
     * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
@@ -120,8 +122,47 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
          
 * **t-distribution**: a theoretical distribution that is symmetric with a given degrees of freedom smallest sample size minus 1 ($n-1$)
 
-    * $t_{n-1}$
+$$t_{n-1}$$
 
+* Calculation of standard error:
+
+$$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
+
+* Calculation of the standardized difference in sample mean:
+
+$$t = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+
+* The p-value can be found by using the pt function.
+
+    * Enter the value of the standardized statistic for xx
+    
+    * Enter the df smallest $(n-1)$ for yy
+    
+    * If a greater than alternative, change lower.tail = TRUE to FALSE.
+    
+    * If a two-sided test, multiply by 2.
+
+
+``` r
+pt(xx, df = yy, lower.tail=TRUE)
+```
+
+### Theory-based methods to find the confidence interval {-}
+
+* Calculation of the confidence interval for a difference in sample means
+
+$$\bar{x}_1-\bar{x}_2\pm t^*\times SE(\bar{x}_1-\bar{x}_2)$$
+
+* R code to find the multiplier for the confidence interval using theory-based methods.
+
+    * qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
+    
+    * Enter the percentile for the given confidence level
+
+
+``` r
+qt(percentile, df=yy, lower.tail=FALSE)
+```
 
 
 \newpage
