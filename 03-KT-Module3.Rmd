@@ -74,7 +74,7 @@ object %>% # Data set piped into...
 
     * The alternative hypothesis is determined by the research question.
     
-Hypotheses for a single categorical variable:
+* **Hypotheses in notation for a single proportion**: In the hypotheses below, $\pi_0$ is the **null value**.
 
 $$H_0: \pi = \pi_0$$
 $$H_A: \pi \left\{
@@ -167,27 +167,7 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 ### Key topics
 
-#### Exploratory data analysis {-}
-
-At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
-
-* Notation for a sample proportion: $\hat{p}$
-
-* Notation for a population proportion: $\pi$
-
-* Types of plots for a single categorical variable:
-
-    * Frequency bar plot
-    
-    * Relative frequency bar plot
-
-### Inference {-}
-
-Additionally, we will use simulation methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval**.
-
-This is steps 4 and 5 from the steps of the statistical investigation process.
-
-### Steps of the statistical investigation process {-}
+#### Steps of the statistical investigation process {-}
 
 As we move through the semester we will work through the six steps of the statistical investigation process.  
 
@@ -202,6 +182,27 @@ As we move through the semester we will work through the six steps of the statis
 5. Communicate the results and answer the research question. 
 
 6. Revisit and look forward.
+
+#### Exploratory data analysis {-}
+
+At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
+
+* Notation for a sample proportion: $\hat{p}$
+
+* Notation for a population proportion: $\pi$
+
+* Types of plots for a single categorical variable:
+
+    * Frequency bar plot
+    
+    * Relative frequency bar plot
+
+#### Inference {-}
+
+We will use simulation methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
+
+These are steps 4 and 5 from the steps of the statistical investigation process.
+
 
 
 \newpage
