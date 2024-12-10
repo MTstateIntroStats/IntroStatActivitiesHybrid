@@ -7,9 +7,9 @@ output:
 
 ## Vocabulary Review and Key Topics 
 
-At the beginning of each module is a list of new vocabulary terms and key topics for that module.  As you read through the material in the text book and watch the videos prior to class, look for these terms.  Reference the following definitions to guide your understanding.
+At the beginning of each module is a list of new vocabulary terms and key topics for that module.  As you read through the material in the textbook and watch the videos prior to class, look for these terms.  Reference the following definitions to guide your understanding.
 
-### Module 1 Vocabulary
+### Vocabulary
 
 * **Data**: observations used to answer research questions
 
