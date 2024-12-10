@@ -29,7 +29,7 @@ To review these concepts, see Chapter 5 in the textbook.
 
 ### The Integrated Postsecondary Education Data System (IPEDS)
 
-These data were collected on a subset of institutions that met the following selection criteria [@ipeds]:
+These data were collected on a subset of higher education institutions that met the following selection criteria [@ipeds]:
 
 * Degree granting 
 
@@ -60,20 +60,20 @@ Some of the variables collected and their descriptions are below. Note that seve
 | `SATMath_75` | 75th percentile Math SAT score |
 | `ACT_75` | 75th percentile ACT score |
 
-#### Identifying Variables in a data set {-}
+#### Identifying variables in a data set {-}
 
-Look through the provided chart showing the description of variables measured.  The UnitID and Name are identifiers for each observational unit, *US degree granting institutions in 2018*.  
+Look through the provided table of variable descriptions.  The `UnitID` and `Name` are identifiers for each observational unit, *US degree-granting higher education institutions in 2018*.  
 
-1. Identify in the chart which variables collected on the US institutions are categorical (C) and which variables are quantitative (Q).
+1. Identify in the table which variables collected on the US institutions are categorical (C) and which variables are quantitative (Q).
 
 
 #### Summarizing quantitative variables {-}
 
-The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for IMDb score. 
+The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate. 
 
-* Highlight and run lines 1 -- 12 in the provided `R` script file to load the data set.  Check that the summary statistics match the output given in the coursepack.
+* Highlight and run lines 1--12 in the provided `R` script file to load the data set.  Check that the summary statistics match the output given in the coursepack.
 
-* Notice that the 2-year institutions were removed so the observational units for this study are **4-year higher education institutions.**
+* Notice that the 2-year institutions were removed so the observational units for this study are **4-year US degree-granting higher education institutions in 2018.**
 
 
 ``` r
@@ -96,7 +96,7 @@ IPEDS %>%
 \vspace{0.5in}
 
 
-3. Calculate the interquartile range (IQR = Q3 $-$ Q1) of Graduation Rates.
+3. Calculate the interquartile range ($IQR = Q_3 - Q_1$) of graduation rates.
 
 \vspace{0.5in}
 
@@ -109,7 +109,7 @@ IPEDS %>%
 
 #### Displaying a single quantitative variable {-}
 
-There are three type of plots used to plot a single quantitative variable: a dotplot, a histogram or a boxplot.  A dotplot of graduation rate would plot a dot for the graduation rate for each 4-year US higher education institution.
+There are three type of plots used to plot a single quantitative variable: a dotplot, a histogram or a boxplot.  A dotplot of graduation rates would plot a dot for the graduation rate for each 4-year US higher education institution.
 
 First, let's create a histogram of the variable `Graduation_Rate`.
 
@@ -117,7 +117,7 @@ First, let's create a histogram of the variable `Graduation_Rate`.
 
 * Replace the word title for the plot in line 21 between the quotations with a descriptive title.  **A title should include: type of plot, variable or variables plotted, and observational units.**  
 
-* Highlight and run lines 18 -- ?? to create the histogram. 
+* Highlight and run the following lines to create the histogram. 
 
 
 ``` r
@@ -140,25 +140,27 @@ Next we will create a boxplot of the variable `Graduation_Rate`.
 
 * Enter the name of the variable in line 19 for `variable` in the R script file.  
 
-* Highlight and run lines....
+* Highlight and run the following lines to create the boxplot.
 
 
 ``` r
 IPEDS %>% # Data set piped into...
 ggplot(aes(x = variable)) +   # Name variable to plot
   geom_boxplot() +  # Create boxplot with specified binwidth
-  labs(title = "Boxplot of Graduation Rates for 4-year Higher Education Institutions", # Title for plot
+  labs(title = "Boxplot of Graduation Rates for \n 4-year Higher Education Institutions", 
+           # Title for plot
+           # Note the \n starts a new line
        x = "Graduation_Rate", # Label for x axis
        y = "") + # Remove y axis label
     theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
-7. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, Q1, median, Q3, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were found.
+7. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, $Q_1$, median, $Q_3$, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
 
-$$\text{Lower Fence: values} \le \text{Q}1 - 1.5\times\text{IQR}$$
+$$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR$$
 
-$$\text{Upper Fence: values} \ge \text{Q}3 + 1.5\times\text{IQR}$$
+$$\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.8in}
 
 When describing plots of quantitative variables we discuss the shape (symmetric or skewed), the center (mean or median), spread (standard deviation or IQR), and if there are outliers present.
@@ -175,7 +177,7 @@ When describing plots of quantitative variables we discuss the shape (symmetric 
 
 \vspace{0.3in}
 
-#### Robust Statistics {-}
+#### Robust statistics {-}
 
 Let’s examine how the presence of outliers affect the values of center and spread. For this part of the activity we will look at the variable retention rate in the IPEDS data set.  
 
@@ -252,7 +254,7 @@ y = "Frequency") # Label for y axis
 
 3.  Data should be summarized numerically and displayed graphically to give us information about the study.
 
-4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  There are two measures of center: mean and the median and two measures of spread: standard deviation and the interquartile range, IQR = Q3 $-$ Q1. 
+4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  There are two measures of center: mean and the median and two measures of spread: standard deviation and the interquartile range, $IQR = Q_3 - Q_1$. 
 
 
 ### Additional notes
