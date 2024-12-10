@@ -1,8 +1,6 @@
-## Unit 3 Review
+## Key Topics Exam 3
 
-### Key Topics Exam 3
-
-#### Descriptive statistics and study design {-}
+### Descriptive statistics and study design {-}
 
 1.	Identify the observational units.
 
@@ -28,7 +26,7 @@
 
 12. Calculate and interpret coefficient of determination.
 
-#### Hypothesis testing {-}
+### Hypothesis testing {-}
 
 13.	Identify which of the three scenarios applies to the study: paired data, independent groups, or two quantitative variables.
 
@@ -64,7 +62,7 @@
 
 29.	Given a significance level, what decision can be made about the research question based on the p-value.
 
-#### Confidence interval {-}
+### Confidence interval {-}
 
 30.	Describe how to simulate one bootstrapped sample using cards.
 
