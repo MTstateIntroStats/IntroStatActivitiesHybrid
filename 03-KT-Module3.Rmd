@@ -40,17 +40,17 @@ At the end of this module, you should understand how to calculate a summary stat
 
 #### Inference {-}
 
-We will use simulation methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
+We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
 
 These are steps 4 and 5 from the steps of the statistical investigation process.
 
 ### Vocabulary
 
-* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data 
+* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data.
 
-    * Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line
+    * Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line.
 
-    * For a single categorical variable, a proportion is calculated
+    * For a single categorical variable, a proportion is calculated.
 
     * To interpret in context include:
 
@@ -58,9 +58,9 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
     
         - Value of the statistic 
     
-* **Parameter of interest**: a numerical summary measure of the entire _population_ in which we are interested
+* **Parameter of interest**: a numerical summary measure of the entire _population_ in which we are interested.
 
-    * The value of the parameter of interest is unknown (unless we have access to the entire population)
+    * The value of the parameter of interest is unknown (unless we have access to the entire population).
 
     * To write in context:
 
@@ -74,9 +74,9 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
 
             - Variable(s)
 
-* **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable
+* **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable.
 
-* R code to create a frequency bar plot
+* R code to create a frequency bar plot:
 
     ```{r, echo=TRUE, eval=FALSE}
 object %>% # Data set piped into...
@@ -88,9 +88,9 @@ object %>% # Data set piped into...
        y = "Frequency")  # Label the y axis
     ```
 
-* **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable
+* **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable.
 
-* R code to create a relative frequency bar plot
+* R code to create a relative frequency bar plot:
 
     ```{r, echo=TRUE, eval=FALSE}
 object %>% # Data set piped into...
@@ -102,13 +102,13 @@ object %>% # Data set piped into...
        y = "Relative Frequency")  # Label the y axis
     ```
 
-* **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis
+* **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis.
 
     * When we observe an effect in a sample, we would like to determine if this observed effect represents an actual effect in the population, or whether it was simply due to random chance.
     
     * A hypothesis test helps us answer the following question about the population: How strong is the _evidence_ of an effect?
 
-* **Null hypothesis**: typically represents a statement of "no difference", "no effect", or the status quo
+* **Null hypothesis**: typically represents a statement of "no difference", "no effect", or the status quo.
 
     * The null hypothesis is what we assume is true when calculating the p-value. Thus, we can never have evidence _for_ the null hypothesis---we cannot "accept" a null hypothesis---we can only find evidence _against_ the null hypothesis if the observed data is very unlikely to have occurred under the assumption that the null hypothesis is true.
 
@@ -143,7 +143,7 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
           summary_measure = "proportion") # Reporting proportion or number of successes?
     ```
 
-* **P-value**: the probability of the value of the observed sample statistic or a value more extreme, if the null hypothesis were true
+* **P-value**: the probability of the value of the observed sample statistic or a value more extreme, if the null hypothesis were true.
 
     * To write in context include:
 
@@ -172,7 +172,7 @@ include_graphics("images/soe_gradient_gray.png")
     
         - Direction of the alternative hypothesis
     
-* **Confidence interval**: an interval estimate for the parameter of interest
+* **Confidence interval**: an interval estimate for the parameter of interest.
 
     * A confidence interval helps us answer the following question about the population: How _large_ is the effect?
 
@@ -184,7 +184,7 @@ include_graphics("images/soe_gradient_gray.png")
     
         - Calculated interval
 
-* **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample
+* **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample.
 
 * **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
@@ -198,13 +198,13 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
     ```
 
 
-* **Percentile method**: process to find the confidence interval from the bootstrap distribution
+* **Percentile method**: process to find the confidence interval from the bootstrap distribution.
 
-    * A 90\% confidence interval will be found between the 5th and 95th percentiles
+    * A 90\% confidence interval will be found between the 5th and 95th percentiles of the bootstrap distribution.
 
-    * A 95\% confidence interval will be found between the 2.5th and 97.5th percentiles
+    * A 95\% confidence interval will be found between the 2.5th and 97.5th percentiles of the bootstrap distribution.
 
-    * A 99\% confidence interval will be found between the 0.5th and 99.5th percentiles
+    * A 99\% confidence interval will be found between the 0.5th and 99.5th percentiles of the bootstrap distribution.
 
 
 
