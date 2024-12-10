@@ -491,21 +491,17 @@ Read Chapters 5 and 17 in the course textbook. Use the following videos to compl
 \subsection{Course Videos}\label{course-videos}
 
 \begin{itemize}
-\tightlist
 \item
   QuantitativeData
-\end{itemize}
-
-*5.2to5.4
-
-\begin{itemize}
 \item
   5.5to5.6
 \item
   5.7
+\item
+  17.2
+\item
+  17.3TheoryTests
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \setstretch{1}
 
@@ -1968,7 +1964,7 @@ The following code is used to create a boxplot of the data.
   Report the sample size of the study. Give appropriate notation.
 \end{enumerate}
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1978,7 +1974,7 @@ The following code is used to create a boxplot of the data.
   Report the sample mean of the study. Give appropriate notation.
 \end{enumerate}
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1990,6 +1986,8 @@ The following code is used to create a boxplot of the data.
   Is the normality condition met to use the theory-based methods for analysis? Explain your answer.
   \vspace{1in}
 \end{enumerate}
+
+\newpage
 
 \subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
@@ -2050,6 +2048,7 @@ where the standard error of the sample mean difference is:
 \end{enumerate}
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/tdistmean-1} \end{center}
+\newpage
 
 To find the p-value for the theory-based test:
 
@@ -2162,6 +2161,1066 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 \subsection{Additional notes}\label{additional-notes-2}
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered
+
+\newpage
+
+\chapter{Inference for a Single Quantitative Variable}\label{inference-for-a-single-quantitative-variable-1}
+
+\section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics-1}
+
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single quantitative variable. Module 7 will cover creating confidence interval using both simulation and theory-based methods. Additionally, we learn about errors and power.
+
+\subsection*{Simulation Confidence Interval}\label{simulation-confidence-interval}
+\addcontentsline{toc}{subsection}{Simulation Confidence Interval}
+
+\begin{itemize}
+\tightlist
+\item
+  R code to find the simulation confidence interval using the \texttt{onemean\_CI} function from the \texttt{catstats} package.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_CI}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
+            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
+            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+            \AttributeTok{confidence\_level =}\NormalTok{ xx)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed
+
+  \begin{itemize}
+  \item
+    To write in context include:
+
+    \begin{itemize}
+    \item
+      How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+    \item
+      Parameter of interest
+    \item
+      Calculated interval
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Theory-based Confidence Interval}\label{theory-based-confidence-interval}
+\addcontentsline{toc}{subsection}{Theory-based Confidence Interval}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculation of the confidence interval for a sample mean
+\end{itemize}
+
+\[\bar{x}\pm t^*\times SE(\bar{x})\]
+
+\begin{itemize}
+\item
+  R code to find the multiplier for the confidence interval using theory-based methods.
+
+  \begin{itemize}
+  \item
+    qt will give you the multiplier using the t-distribution with \(n-1\) df (enter for yy)
+  \item
+    Enter the percentile for the given confidence level
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection*{Errors and Power}\label{errors-and-power}
+\addcontentsline{toc}{subsection}{Errors and Power}
+
+\begin{itemize}
+\item
+  **Significance level (\(\alpha\)): a given cut-off value that we compare the p-value to determine a decision of a test.
+\item
+  \textbf{Decisions}:
+
+  \begin{itemize}
+  \item
+    If the p-value is less than the significance level, we make the decision to reject the null hypothesis
+  \item
+    If the p-value is greater than the significance level, we make the decision to fail to reject the null hypothesis
+  \end{itemize}
+\item
+  \textbf{Type I Error}: concluding there is evidence to reject the null hypothesis, when the null is actually true.
+\item
+  \textbf{Type II Error}: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
+\item
+  \textbf{Power}: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false
+\end{itemize}
+
+\newpage
+
+\section{Video Notes: Theory-based Inference for a single quantitative variable}\label{video-notes-theory-based-inference-for-a-single-quantitative-variable}
+
+Read Chapters 5 and 17 in the course textbook. Use the following videos to complete the video notes for Module 7.
+
+\subsection{Course Videos}\label{course-videos-1}
+
+\begin{itemize}
+\item
+  17.1
+\item
+  17.3TheoryIntervals
+\end{itemize}
+
+\setstretch{1}
+
+\subsection{Single quantitative variable}\label{single-quantitative-variable}
+
+\begin{itemize}
+\item
+  Reminder: review summary measures and plots discussed in the Module 6 material and Chapter 5 of the textbook.
+\item
+  The summary measure for a single quantitative variable is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+\end{itemize}
+
+\setstretch{1.5}
+
+Notation:
+
+\begin{itemize}
+\item
+  Population mean:
+\item
+  Population standard deviation:
+\item
+  Sample mean:
+\item
+  Sample standard deviation:
+\item
+  Sample size:
+\end{itemize}
+
+\setstretch{1}
+
+Example: What is the average weight of adult male polar bears? The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pb }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/polarbear.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Plots of the data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Weight)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histogram of Male Polar Bear Weight"}\NormalTok{, }\CommentTok{\# Title for plot}
+       \AttributeTok{x =} \StringTok{"Weight (kg)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+       \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+
+\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Weight)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Male Polar Bear Weight"}\NormalTok{, }\CommentTok{\# Title for plot}
+       \AttributeTok{x =} \StringTok{"Weight (kg)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+       \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-2} \end{center}
+
+Summary Statistics:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Weight)) }\CommentTok{\#Gives the summary statistics}
+\CommentTok{\#\textgreater{}     min    Q1 median     Q3   max     mean       sd  n missing}
+\CommentTok{\#\textgreater{} 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection*{Confidence interval}\label{confidence-interval}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\subsubsection*{Simulation-based method}\label{simulation-based-method-1}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\begin{itemize}
+\item
+  Label cards with the values from the data set
+\item
+  Sample with replacement (bootstrap) from the original sample \(n\) times
+\item
+  Plot the simulated sample mean on the bootstrap distribution
+\item
+  Repeat at least 1000 times (simulations)
+\item
+  Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
+\item
+  ie. 95\% CI = (2.5th percentile, 97.5th percentile)
+\end{itemize}
+
+Conditions for inference for a single mean:
+
+\begin{itemize}
+\tightlist
+\item
+  Independence:
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{one\_mean\_CI}\NormalTok{(pb}\SpecialCharTok{$}\NormalTok{Weight,}
+  \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{,}
+  \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,}
+  \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+The confidence interval estimates the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+
+Confidence interval interpretation:
+
+\begin{itemize}
+\item
+  How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+\item
+  Parameter of interest
+\item
+  Calculated interval
+\item
+  Order of subtraction when comparing two groups
+\end{itemize}
+
+\vspace{0.8in}
+
+\newpage
+
+\subsubsection*{Theory-based method}\label{theory-based-method-1}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the interval centered at the sample statistic
+\end{itemize}
+
+\rgi \(\text{statistic} \pm \text{margin of error}\)
+
+\vspace{0.5in}
+
+Conditions for inference using theory-based methods:
+
+\begin{itemize}
+\tightlist
+\item
+  Independence:
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Large enough sample size:
+\end{itemize}
+
+\vspace{0.2in}
+
+\subsection*{T - distribution}\label{t---distribution-1}
+\addcontentsline{toc}{subsection}{T - distribution}
+
+In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under \(H_0\) and with standard deviation \(\frac{\sigma}{\sqrt{n}}\).
+
+\[\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})\]
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  Estimate the population standard deviation, \(\sigma\), with the
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ standard deviation, \_\_\_\_\_\_\_\_.
+\item
+  For a single quantitative variable we use the \_\_\_\_ - distribution
+  with \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+  degrees of freedom to approximate the sampling distribution.
+\end{itemize}
+
+\setstretch{1}
+
+The \(t^*\) multiplier is the value at the given percentile of the t-distribution with \(n - 1\) degrees of freedom.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/tstarpb-1} \end{center}
+
+\newpage
+
+To find the \(t^*\) multiplier for a 95\% confidence interval:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{82}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 1.989319}
+\end{Highlighting}
+\end{Shaded}
+
+Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
+
+\vspace{0.8in}
+
+\newpage
+
+\section{Activity 14: Danceability of Songs}\label{activity-14-danceability-of-songs}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-3}
+
+\begin{itemize}
+\item
+  Use simulation methods to find a confidence interval for a single mean
+\item
+  Use theory-based methods to find a confidence interval for a single mean.
+\item
+  Interpret a confidence interval for a single mean.
+\item
+  Use a confidence interval to determine the conclusion of a hypothesis test.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-3}
+
+In today's activity, we will estimate the parameter of interest using simulation and theory-based methods. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Bootstrap distribution
+\item
+  \(t\)-distribution
+\item
+  Degrees of freedom
+\item
+  T-score
+\end{itemize}
+
+To review these concepts, see Chapter 15 in the textbook.
+
+\subsection{Danceability}\label{danceability}
+
+Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs. One of the variables measured on these songs is Danceability. Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song. Estimate the average danceability of top songs from Spotify.
+
+\begin{itemize}
+\item
+  Download the R script file for this activity from D2L and upload to the RStudio server
+\item
+  Open the R script file, highlight and run
+\end{itemize}
+
+\begin{verbatim}
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1   0 57     66 73  97 64.37977 13.37872 603       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{songs }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Danceability)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Danceability Score for Top Spotify Songs"}\NormalTok{, }\CommentTok{\# Title for plot}
+         \AttributeTok{x =} \StringTok{"danceability score (points)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+         \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
+          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Summarizing quantitative variables}\label{summarizing-quantitative-variables-2}
+\addcontentsline{toc}{subsubsection}{Summarizing quantitative variables}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Describe the boxplot of danceability of top songs over the past 10 years on Spotify.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write the parameter of interest in context of the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsection*{Simulation methods to create a confidence interval}\label{simulation-methods-to-create-a-confidence-interval}
+\addcontentsline{toc}{subsection}{Simulation methods to create a confidence interval}
+
+Unlike creation of the null, the bootstrap distribution is found by sampling with replacement from the original sample.
+
+\begin{itemize}
+\item
+  Write the original values for the variable on the cards
+\item
+  Sample with replacement \(n\) times
+\item
+  Plot the mean from each resampled sample on the distribution
+\end{itemize}
+
+Use the provided R script file to find a 95\% confidence interval
+
+\begin{itemize}
+\item
+  Enter the name of the variable for variable
+\item
+  Enter the appropriate confidence interval
+\item
+  Highlight and run lines 22--25
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_CI}\NormalTok{(songs}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
+            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
+            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+            \AttributeTok{confidence\_level =}\NormalTok{ xx)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Report the 95\% confidence interval for the parameter of interest.
+\end{enumerate}
+
+\vspace{0.2in}
+
+\subsection*{Theory-based methods to create a confidence interval}\label{theory-based-methods-to-create-a-confidence-interval}
+\addcontentsline{toc}{subsection}{Theory-based methods to create a confidence interval}
+
+\begin{itemize}
+\item
+  \textbf{Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution}:
+
+  \begin{itemize}
+  \item
+    \textbf{Independence}: The sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
+  \item
+    \textbf{Large enough sample size: Normality Condition}: The sample observations come from a normally distributed population. To check use the the following rules of thumb:
+
+    \begin{itemize}
+    \item
+      \(n < 30\): The distribution of the sample must be approximately normal with no outliers
+    \item
+      \(30 \ge n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
+    \item
+      \(n > 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribuion of individual observational is not
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Next we will calculate a theory-based confidence interval. To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
+
+\[\bar{x}\pm t^* \times SE(\bar{x}).\]
+
+We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+
+\begin{itemize}
+\item
+  Enter the appropriate percentile in the R code to find the multiplier for a 95\% confidence interval.
+\item
+  Enter the df for yy. \emph{The degrees of freedom for a single mean is \(n-1\)}
+\item
+  Highlight and run line 31
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Mark on the t-distribution found below the values of \(\pm t^*\). Draw a line at each multiplier and write the percentiles used to find each.
+  \vspace{1mm}
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{07-A14-onemean-CI_files/figure-latex/tstar-1} 
+
+}
+
+\caption{t-distribution with 602 degrees of freedom}\label{fig:tstar}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Calculate the margin of error for the true mean using theory-based methods.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Calculate the confidence interval for the true mean using theory-based methods.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Interpret the confidence interval in context of the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Explain why the CI with theory-based methods is similar to the simulation CI.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsection{Take-home messages}\label{take-home-messages-3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In order to use theory-based methods for a single mean, the independent observational units and normality conditions must be met.
+\item
+  The simulation based confidence interval and theory-based confidence interval should be similar if the normality condtion is met.
+\item
+  A \(t^*\) multiplier is found by obtaining the bounds of the middle X\% (X being the desired confidence level) of a \(t\)-distribution with \(n - 1\) df.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-3}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered
+
+\newpage
+
+\section{Activity 15: Errors and Power}\label{activity-15-errors-and-power}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-4}
+
+\begin{itemize}
+\item
+  Explain Type I and Type 2 Errors in the context of a study.
+\item
+  Explain the power of a test in the context of a study.
+\item
+  Understand how changes in sample size, significance level, and the difference between the null value and the parameter value impact the power of a test.
+\item
+  Understand how significance level impacts the probability of a Type 1 Error.
+\item
+  Understand the relationship between the probability of a Type 2 Error and power.
+\item
+  Be able to distinguish between practical importance and statistical significance.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-4}
+
+In this activity, we will examine the possible errors that can be made based on the decision in a hypothesis test as well as factors influencing the power of the test. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Significance level
+\item
+  Type 1 Error
+\item
+  Type 2 Error
+\item
+  Power
+\end{itemize}
+
+To review these concepts, see Chapter 12 in the textbook.
+
+\subsection{College Textbook Cost}\label{college-textbook-cost}
+
+A college student spends on average \$280 on textbooks per year. Many universities have starting using opensource resources to help defray the cost of textbooks. One such university is hoping to show they have successfully reduced costs by \$100, on average.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Write the parameter of interest (\(\mu\)) in words, in the context of this problem.
+  \vspace{0.5in}
+\item
+  Use proper notation to write the null and alternative hypothesis the university would need to test in order to check their claim.
+  \vspace{0.5in}
+\end{enumerate}
+
+After determining hypotheses and prior to collecting data, researchers should set a \textbf{significance level} for a hypothesis test. The significance level, represented by \(\alpha\) and most commonly 0.01, 0.05, or 0.10, is a cut-off for determining whether a p-value is small or not. The \emph{smaller} the p-value, the \emph{stronger} the evidence against the null hypothesis, so a p-value that is smaller than or equal to the significance level is strong enough evidence to \emph{reject the null hypothesis}. Similarly, the \emph{larger} the p-value, the \emph{weaker} the evidence against the null hypothesis, so a p-value that is larger than the significance level does not provide enough evidence against the null hypothesis and the researcher would \emph{fail to reject the null hypothesis}. Rejecting the null hypothesis or failing to reject the null hypothesis are the two \textbf{decisions} that can be made based on the data collected.
+
+As you have already learned in this course, sample size of a study is extremely important. Often times, researchers will conduct what is called a power analysis to determine the appropriate sample size based on the goals of their research, including a desired \textbf{power} of their test. Power is the probability of correctly rejecting the null hypothesis, or the probability of the data providing strong evidence against the null hypothesis \emph{when the null hypothesis is false}.
+
+The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
+
+\begin{itemize}
+\item
+  Navigate to \url{https://istats.shinyapps.io/power/}.
+\item
+  Choose the tab \texttt{Population\ Mean}
+\item
+  Use the scale under ``Null Hypothesis value \(\mu_0\)'' to change the value to your null value from question 2. *Note we will convert this to a scale \$100 dollars. In other words, use the null value of 2.8.
+\item
+  Change the ``Alternative Hypothesis'' to the direction you wrote in question 2.
+\item
+  Leave all boxes un-checked.
+\item
+  Set the ``True value of \(\mu\)'' to 2.8 as well
+\item
+  Do not change the scales for ``Sample size n'' or ``Type I Error \(\alpha\)''
+\end{itemize}
+
+The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was 30 and the significance level was 0.05. This means the red distribution is showing the probability of each possible sample mean of college students who spent \$280 on textbooks per year (\(\bar{x}\)) if we assume the null hypothesis is true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Based off this distribution and your alternative hypothesis, give one possible sample mean which you think would lead to rejecting the null hypothesis. Explain how you decided on your value.
+  \vspace{0.25in}
+\item
+  Check the box for ``Show Critical Value(s) and Rejection Region(s)''. You will now see a vertical line on the plot indicating the \emph{minimum} sample mean which would lead to reject the null hypothesis. What is this value?\\
+  \vspace{0.25in}
+\item
+  Notice that there are some sample means under the red line (when the null hypothesis is true) which would lead us to reject the null hypothesis. Give the range of sample means which would lead to rejecting the null hypothesis when the null hypothesis is true? What is the statistical name for this mistake?
+  \vspace{0.4in}
+\end{enumerate}
+
+Check the ``Type I Error'' box under \textbf{Display}. This should verify (or correct) your answer to question 5! The area shaded in red represents the probability of making a \textbf{Type 1 Error} in our hypothesis test. Recall that a Type 1 Error is when we reject the null hypothesis even though the null hypothesis is true. To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level. Therefore the significance level is the maximum probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a Type 1 Error in a hypothesis test!
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Based on the current applet settings, What percent of the null distribution is shaded red (what is the probability of making a Type 1 Error)?
+  \vspace{0.25in}
+\end{enumerate}
+
+Let's say this university believes their program can reduce the cost of textbooks for college students by \$100 per year. In the applet, set the scale under ``True value of \(\mu\)'' to 1.8.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Where is the blue distribution centered?
+  \vspace{0.25in}
+\end{enumerate}
+
+The blue distribution that appears represents what the university believes, that \$180 (not \$280) is the true mean textbook cost for college students at this university. This blue distribution represents the idea that the \textbf{null hypothesis is false}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Consider the definition of power provided earlier in this lab. Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know? What about the probability of making a Type 2 Error?
+  \vspace{1in}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Check the ``Type II Error'' and ``Power'' boxes under \textbf{Display}. This should verify (or correct) your answers to question 8! The area shaded in blue represents the probability of making a \textbf{Type 2 Error} in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false). The area shaded in green represents the power of the test. Notice that the Type 1 and Type 2 Error rates and the power of the test are provided above the distribution.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Complete the following equation: Power + Type 2 Error Rate = . Explain why that equation makes sense. \emph{Hint: Consider what power and Type 2 Error are conditional on.}
+  \vspace{0.6in}
+\end{enumerate}
+
+Now let's investigate how changes in different factors influence the power of a test.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\item
+  Using the same sample size and significance level, change the ``True value of \(\mu\)'' to see the effect on Power.
+  \setlength\tabcolsep{0.5cm}
+
+  \begin{longtable}{|l|c|c|c|c|}
+  \hline
+  \textbf{True value of $p$}& 2.0 & 1.5 & 1.0 & 0.05\\ \hline
+  \textbf{Power} & & & &  \\ \hline
+  \end{longtable}
+\item
+  What is changing about the simulated distributions pictured as you change the ``True value of \(\mu\)''?
+  \vspace{0.5in}
+\item
+  How does increasing the distance between the null and believed true mean affect the power of the test?
+  \vspace{0.5in}
+\item
+  Using the same significance level, set the ``True value of \(mu\)'' to 1.8 and change the sample size to see the effect on Power.
+\end{enumerate}
+
+\setlength\tabcolsep{0.6cm}
+\begin{longtable}{|l|c|c|c|c|c|}
+\hline
+\textbf{Sample Size}& 20 & 40 & 50 & 60 & 80 \\ \hline
+\textbf{Power} & & & & &  \\ \hline
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\item
+  What is changing about the simulated distributions pictured as you change the sample size?
+  \vspace{0.5in}
+\item
+  How does increasing the sample size affect the power of the test?
+  \vspace{0.5in}
+\item
+  Using the same ``True value of \(\mu\)'', set the sample size to 30 and change the ``Type I Error \(\alpha\)'' to see the effect on Power.
+\end{enumerate}
+
+\setlength\tabcolsep{0.5cm}
+\begin{longtable}{|l|c|c|c|c|c|}
+\hline
+\textbf{Type I Error $\alpha$}& 0.01 & 0.03 & 0.05 & 0.10 & 0.15 \\ \hline
+\textbf{Power} & & & & &  \\ \hline
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\item
+  What is changing about the simulated distributions pictured as you change the significance level?
+  \vspace{0.5in}
+\item
+  How does increasing the significance level affect the power of the test?
+  \vspace{0.5in}
+\item
+  Complete the power analysis for this university. The university believes they can reduce the cost of textbooks for their students by \$100. They want to limit the probability of a type 1 error to 10\% and the probability of a type 2 error to 15\%. What is the minimum number of students the university will need to collect data from in order to meet these goals? Use the applet to answer this question, then download your image created and upload the file to Gradescope.
+  \vspace{0.4in}
+\item
+  Based on the goals outlined in question 19, which mistake below is the university more concerned about? In other words, which error were the researchers trying to minimize. Explain your answer.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Not being able to show their textbook cost is lower, on average, when their textbook cost really is lower.
+\item
+  Advertising their textbook cost is lower, on average, even though it is not.
+\end{itemize}
+
+\vspace{0.8in}
+
+\subsection{Take-home messages}\label{take-home-messages-4}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  There is a possibility of Type I Error when we make the decision to reject the null hypothesis. Type I Error - reject the null hypothesis when the null hypothesis is true.
+\item
+  There is a possibility of Type II Error when we make the decision to fail to reject the null hypothesis. Type II Error - fail to reject the null hypothesis when the null hypothesis is false.
+\item
+  Increasing the sample size will increase the power of the test.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-4}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Module 6 and 7 Lab: Arsenic}\label{module-6-and-7-lab-arsenic}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-5}
+
+\subsection{Arsenic}\label{arsenic}
+
+Scientists have devised a new way to measure a person's level of arsenic poisoning by examining toenail clippings. Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire (data in the table below). An arsenic level greater than 0.150 ppm is considered hazardous. Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)? How high is the arsenic concentration for New Hampshire residents with a private well?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What does \(\mu\) represent in the context of this study?
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Notice that there are two research questions for this study. Identify which research question is best answered by finding a confidence interval and which is best answered by completing a hypothesis test?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Write out the null hypothesis in proper notation for this study.
+\end{enumerate}
+
+\vspace{0.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  What sign (\(<\), \(>\), or \(\neq\)) would you use in the alternative hypothesis for this study? Explain your choice.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\item
+  Upload and open the R script file for Week 12 lab.
+\item
+  Upload and import the csv file, \texttt{arsenic}.
+\item
+  Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8.
+\item
+  Highlight and run lines 1--9 to load the data and create a paired plot of the data.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{swearing }\OtherTok{\textless{}{-}}\NormalTok{ datasetname}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis? How do you know?
+  \vspace{0.4in}
+\item
+  What is the value of \(\bar{x}\)? What is the sample size?
+  \vspace{0.25in}
+\item
+  \textbf{How far, on average, is each arsenic level from the mean arsenic level? What is the appropriate notation for this value?}
+\end{enumerate}
+
+\vspace{0.4in}
+
+\subsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-1}
+\addcontentsline{toc}{subsection}{Use statistical inferential methods to draw inferences from the data}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data. Explain your reasoning.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsection*{Hypothesis test}\label{hypothesis-test}
+\addcontentsline{toc}{subsection}{Hypothesis test}
+
+Remember that the null distribution is created based on the assumption the null hypothesis is true. In this study, the null hypothesis states that swearing does not affect pain tolerance, or that the length of time a subject kept their hand in the water would be the same whether the patient was swearing or not.
+
+We will use the \texttt{one\_mean\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample mean differences and compute a p-value.
+
+\newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations. Highlight and run lines 23--29.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_test}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{variable,   }\CommentTok{\# Vector of differences }
+                                 \CommentTok{\# or data set with column for each group}
+        \AttributeTok{shift =}\NormalTok{ xx,   }\CommentTok{\# Shift needed for bootstrap hypothesis test}
+        \AttributeTok{as\_extreme\_as =}\NormalTok{ xx,  }\CommentTok{\# Observed statistic}
+        \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{,  }\CommentTok{\# Direction of alternative}
+        \AttributeTok{number\_repetitions =}\NormalTok{ xx,  }\CommentTok{\# Number of simulated samples for null distribution}
+        \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\# Not needed when using calculated differences}
+\end{Highlighting}
+\end{Shaded}
+
+~~~~~~~Sketch the null distribution created using the \texttt{paired\_test} code.
+
+\vspace{1.5in}
+
+\subsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question}
+\addcontentsline{toc}{subsection}{Communicate the results and answer the research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  \textbf{Report the p-value. Based off of this p-value and a 1\% significance level, what decision would you make about the null hypothesis? What potential error might you be making based on that decision?}
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Do you expect the 98\% confidence interval to contain the null value of zero? Explain.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\subsection*{Confidence interval}\label{confidence-interval-1}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+We will use the \texttt{paired\_bootstrap\_CI()} function in R (in the \texttt{catstats} package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the \texttt{paired\_bootstrap\_CI()} function to create the 98\% confidence interval. Highlight and run lines 34--37. \textbf{Upload a copy of the bootstrap distribution created to Gradescope for your group.}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ swearing\_diff}\SpecialCharTok{$}\NormalTok{differences, }\CommentTok{\# Enter vector of differences}
+                    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples for CI}
+                    \AttributeTok{confidence\_level =}\NormalTok{ xx,  }\CommentTok{\# Confidence level in decimal form}
+                    \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\# Not needed when entering vector of differences}
+\end{Highlighting}
+\end{Shaded}
+
+Report the 98\% confidence interval in interval notation.
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Interpret the \emph{confidence level} of the interval found in question 12.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Write a paragraph summarizing the results of the study. \textbf{Upload a copy of your group's paragraph to Gradescope.} Be sure to describe:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Summary statistic and interpretation
+
+  \begin{itemize}
+  \item
+    Summary measure (in context)
+  \item
+    Value of the statistic
+  \item
+    Order of subtraction when comparing two groups
+  \end{itemize}
+\item
+  P-value and interpretation
+
+  \begin{itemize}
+  \item
+    Statement about probability or proportion of samples
+  \item
+    Statistic (summary measure and value)
+  \item
+    Direction of the alternative
+  \item
+    Null hypothesis (in context)
+  \end{itemize}
+\item
+  Confidence interval and interpretation
+
+  \begin{itemize}
+  \item
+    How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+  \item
+    Parameter of interest
+  \item
+    Calculated interval
+  \item
+    Order of subtraction when comparing two groups
+  \end{itemize}
+\item
+  Conclusion (written to answer the research question)
+
+  \begin{itemize}
+  \item
+    Amount of evidence
+  \item
+    Parameter of interest
+  \item
+    Direction of the alternative hypothesis
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+\item
+  Scope of inference
+
+  \begin{itemize}
+  \item
+    To what group of observational units do the results apply (target population or observational units similar to the sample)?
+  \item
+    What type of inference is appropriate (causal or non-causal)?
+  \end{itemize}
+\end{itemize}
 
 \newpage
 

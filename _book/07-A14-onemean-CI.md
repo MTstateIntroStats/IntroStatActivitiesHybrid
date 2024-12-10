@@ -34,13 +34,14 @@ Spotify created a list of the top songs around the world for the past 10 years a
 
 * Open the R script file, highlight and run
 
-```{r}
-songs <- read.csv("https://math.montana.edu/courses/s216/data/top10s.csv")
-songs %>%
-    summarise(favstats(Danceability))
+
+```
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1   0 57     66 73  97 64.37977 13.37872 603       0
 ```
 
-```{r, echo=TRUE, eval=FALSE, warning=FALSE}
+
+``` r
 songs %>% # Data set piped into...
     ggplot(aes(x = Danceability)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
@@ -78,7 +79,8 @@ Use the provided R script file to find a 95\% confidence interval
 
 * Highlight and run lines 22--25
 
-```{r, eval=FALSE, echo=TRUE}
+
+``` r
 one_mean_CI(songs$variable, #Enter the name of the variable
             summary_measure = "mean", #choose the mean or median
             number_repetitions = 10000,  # Number of simulations
@@ -116,7 +118,8 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Highlight and run line 31
 
-```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+
+``` r
 qt(percentile, df = yy, lower.tail=TRUE)
 ```
 
@@ -124,16 +127,14 @@ qt(percentile, df = yy, lower.tail=TRUE)
 4. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
-```{r tstar, echo = F, fig.cap = "t-distribution with 602 degrees of freedom"}
+\begin{figure}
 
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 602)
-degf <- 602
+{\centering \includegraphics[width=0.7\linewidth]{07-A14-onemean-CI_files/figure-latex/tstar-1} 
 
-plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
-  ylab="Density", main="t Distribution with 69 df")
+}
 
-```
+\caption{t-distribution with 602 degrees of freedom}(\#fig:tstar)
+\end{figure}
 
 5.  Calculate the margin of error for the true mean using theory-based methods.
 
