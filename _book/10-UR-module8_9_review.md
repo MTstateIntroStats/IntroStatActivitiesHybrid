@@ -1,8 +1,20 @@
 ## Module 8 - 9  Review
 
-```{r, echo=TRUE, warning=FALSE, message=FALSE, collapse=FALSE}
+
+``` r
 allergy <- read.csv("https://math.montana.edu/courses/s216/data/PeanutAllergy.csv") 
 allergy %>% group_by(Treatment) %>% count(Allergy)
+```
+
+```
+#> # A tibble: 4 x 3
+#> # Groups:   Treatment [2]
+#>   Treatment Allergy     n
+#>   <chr>     <chr>   <int>
+#> 1 Avoiders  No        220
+#> 2 Avoiders  Yes        35
+#> 3 Peanuts   No        240
+#> 4 Peanuts   Yes         5
 ```
 
 In the last 10 years, the proportion of children who are allergic to peanuts has doubled in Western countries. However, the allergy is not very common in some other countries where peanut protein is an important part of peoples' diets. The LEAP randomized trial, reported by Du Toit, et.al in the New England Journal of Medicine in February 2015 identified over 500 children ages 4 to 10 months who showed some sensitivity to peanut protein. They randomly assigned them to two groups: 
@@ -69,7 +81,8 @@ The variable whether or not a child developed a peanut allergy is the __________
 \vspace{0.8in}
 \newpage
 
-```{r, echo=TRUE}
+
+``` r
 two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
                     data=allergy, #name of dataset
                     first_in_subtraction = "Avoiders", #order of subtraction: avoiders - peanuts
@@ -78,6 +91,10 @@ two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
                     as_extreme_as = 0.117, #type your calculated observed statistic (difference in sample proportions)
                     direction="greater") #type your selected direction to match the alternative hypothesis direction
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 11.  Interpret the p-value in context of the problem:
 
 \vspace{1in}
@@ -90,7 +107,8 @@ two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
 
 We will use the `two_proportion_bootstrap_CI()` function in `R` (in the `catstats` package) to simulate the bootstrap distribution of differences in sample proportions and calculate a confidence interval. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as `allergy`), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (what the numerator counts when calculating a sample proportion), and the confidence level as a decimal.
 
-```{r, echo=TRUE, eval=TRUE}
+
+``` r
 two_proportion_bootstrap_CI(formula = Allergy~Treatment, 
         data=allergy, # Name of data set
         first_in_subtraction = "Avoiders", # Order of subtraction: enter the name of Group 1
@@ -98,6 +116,10 @@ two_proportion_bootstrap_CI(formula = Allergy~Treatment,
         number_repetitions = 1000, # Always use a minimum of 1000 repetitions
         confidence_level = 0.90) # Enter the level of confidence as a decimal
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 13. Interpret the 90\% confidence interval in context of the problem.
 
@@ -141,8 +163,10 @@ $$
 
 \vspace{1in}
 
-```{r, echo=TRUE}
+
+``` r
 pnorm(4.814, lower.tail = FALSE)
+#> [1] 7.39694e-07
 ```
 
 \newpage
@@ -153,8 +177,10 @@ $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\f
 
 \vspace{1in}
 
-```{r, echo=TRUE}
+
+``` r
 qnorm(0.90, lower.tail = TRUE)
+#> [1] 1.281552
 ```
 
 

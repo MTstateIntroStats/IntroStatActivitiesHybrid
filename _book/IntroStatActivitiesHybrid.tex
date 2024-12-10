@@ -2591,7 +2591,7 @@ Use the provided R script file to find a 95\% confidence interval
   \end{itemize}
 \end{itemize}
 
-Next we will calculate a theory-based confidence interval. To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
+Next we will calculate a theory-based confidence interval. To calculate a theory-based confidence interval for the a single mean, use the following formula:
 
 \[\bar{x}\pm t^* \times SE(\bar{x}).\]
 
@@ -6010,6 +6010,829 @@ Edible (e) & & & \\
 \newpage
 
 Paragraph:
+
+\newpage
+
+\chapter{Unit 2 Review}\label{unit-2-review}
+
+The following section contains both a list of key topics covered in Unit 2 as well as Module Review Worksheets.
+
+\subsection{Key Topics}\label{key-topics-4}
+
+Review the key topics for Unit 2 to review prior to the first exams. All of these topics will be covered in Modules 6--9.
+
+\subsection{Module Review}\label{module-review}
+
+\setstretch{1}
+
+The following worksheets review each of the modules. These worksheets will be completed during Melinda's Study Sessions each week. Solutions will be posted on D2L in the Unit 2 Review folder after the study sessions.
+
+\newpage
+
+\section{Module 6 Review - One Mean Testing}\label{module-6-review---one-mean-testing}
+
+There are about 4 million tourists to Yellowstone National Park per year. One of the most visited sites within the park is the Old Faithful Geyser. The reason this geyser is called old faithful is because of the regularity of eruptions. Tourists report a typical wait time of 30 minutes, on average. A sample of 299 tourists reported their wait time to see Old Faithful erupt. Is there evidence that the average wait time differs from 30 minutes?
+
+\begin{verbatim}
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1  43 59     76 83 108 72.31438 13.89032 299       0
+\end{verbatim}
+
+The following code created the boxplot of waiting time.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Report and interpret the value of \(Q_1\) in context of the study.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Report and interpret the standard deviation of wait time in context of the study.
+  \vspace{0.2in}
+\item
+  Descripe the plot using the four characteristics for boxplots.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Write the parameter of interest for this study in context of the study.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Write the null hypothesis in notation.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Write the alternative hypothesis in words.
+\end{enumerate}
+
+\vspace{0.8in}
+
+We will start with simulation methods.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Calculate the difference \(\mu_0 - \bar{x}\). Will we need to shift the data up or down?
+  \vspace{0.5in}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{one\_mean\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ geyser}\SpecialCharTok{$}\NormalTok{waiting,   }\CommentTok{\#Object and variable}
+              \AttributeTok{null\_value =} \DecValTok{30}\NormalTok{, }\CommentTok{\#null value for the study}
+              \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{42.31438}\NormalTok{,   }\CommentTok{\#Shift needed for bootstrap hypothesis test}
+              \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }
+              \AttributeTok{as\_extreme\_as =} \FloatTok{72.314}\NormalTok{,  }\CommentTok{\#Observed statistic}
+              \AttributeTok{direction =} \StringTok{"two{-}sided"}\NormalTok{,  }\CommentTok{\#Direction of alternative}
+              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)  }\CommentTok{\#Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Interpret the p-value of the test.
+\end{enumerate}
+
+\vspace{1in}
+
+Now let's focus on theory-based methods.
+
+Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate Normal distribution:
+
+\begin{itemize}
+\item
+  \textbf{Independence}: The sample's observations are independent. For paired data, that means each pairwise difference should be independent.
+\item
+  \textbf{Normality}: The data should be approximately normal or the sample size should be large.
+
+  \begin{itemize}
+  \item
+    \(n < 30\): If the sample size \(n\) is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
+  \item
+    \(30 \leq n < 100\): If the sample size \(n\) is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \item
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Is the independence condition met?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Is the normality condition met to use theory-based methods?
+\end{enumerate}
+
+\vspace{1in}
+
+To find the standardized statistic for the mean we will use the following formula:
+
+\[T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},\]
+where the standard error of the sample mean difference is:
+
+\[SE(\bar{x})=\frac{s}{\sqrt{n}}.\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Calculate the standard error of the sample mean.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Calculate the standardized mean for the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Mark on the t-distribution shown below on how to find the p-value of the test.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/tdistave-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Interpret the standardized mean in context of the study.
+  \vspace{1in}
+\end{enumerate}
+
+The following code calculates the p-value for the study.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{52.676}\NormalTok{, }\AttributeTok{df=}\DecValTok{298}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 5.045442e{-}153}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Write a conclusion to the test.
+\end{enumerate}
+
+\vspace{1in}
+
+\newpage
+
+\section{Module 7 Review - One Mean Confidence Interval}\label{module-7-review---one-mean-confidence-interval}
+
+There are about 4 million tourists to Yellowstone National Park per year. One of the most visited sites within the park is the Old Faithful Geyser. The reason this geyser is called old faithful is because of the regularity of eruptions. Tourists report a typical wait time of 30 minutes, on average. A sample of 299 tourists reported their wait time to see Old Faithful erupt. How long, on average, do tourists wait for Old Faithful to erupt?
+
+\begin{verbatim}
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1  43 59     76 83 108 72.31438 13.89032 299       0
+\end{verbatim}
+
+The following code created the boxplot of waiting time.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module7_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write the parameter of interest in context of the study.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  In the last module review, we saw very strong evidence that the true mean wait time reported by tourists for Old Faithful to erupt differs from 30 minutes. Do you expect the 99\% confidence inteval to contain the null value of zero? Explain your answer.
+\end{enumerate}
+
+\vspace{1in}
+
+We will start with simulation methods to create the 99\% confidence interval.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{one\_mean\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ geyser}\SpecialCharTok{$}\NormalTok{waiting,   }\CommentTok{\#Object and variable}
+            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }
+            \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{, }\CommentTok{\#Level of context as a decimal}
+            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)  }\CommentTok{\#Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module7_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  How many simulations are at and below the value of 70.241?
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Report the 99\% confidence interval.
+\end{enumerate}
+
+\vspace{1in}
+
+Now let's focus on theory-based methods. \textbf{In the last module review, we verified the normality conditions were met.}
+
+Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate Normal distribution:
+
+\begin{itemize}
+\item
+  \textbf{Independence}: The sample's observations are independent. For paired data, that means each pairwise difference should be independent.
+\item
+  \textbf{Normality}: The data should be approximately normal or the sample size should be large.
+
+  \begin{itemize}
+  \item
+    \(n < 30\): If the sample size \(n\) is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
+  \item
+    \(30 \leq n < 100\): If the sample size \(n\) is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \item
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+To calculate a theory-based confidence interval for the a single mean, use the following formula:
+
+\[\bar{x}\pm t^* \times SE(\bar{x}).\]
+
+We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+
+\begin{itemize}
+\item
+  Enter the appropriate percentile (0.995) in the R code to find the multiplier for a 99\% confidence interval.
+\item
+  Enter the df \(n - 1 = 299 - 1 = 298\)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(}\FloatTok{0.995}\NormalTok{, }\AttributeTok{df =} \DecValTok{298}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#> [1] 2.592428
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Mark on the t-distribution found below the values of \(\pm t^*\). Draw a line at each multiplier and write the percentiles used to find each.
+  \vspace{1mm}
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{10-UR-module7_review_files/figure-latex/tstarmean-1} 
+
+}
+
+\caption{t-distribution with 602 degrees of freedom}\label{fig:tstarmean}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  Calculate the 99\% confidence interval using theory-based methods.
+  \vspace{1in}
+\item
+  Interpret the confidence interval in context of the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\newpage
+
+Types of Errors:
+
+\vspace{3.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  What type of error may have occurred for this study?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Interpret this error in context of the study.
+\end{enumerate}
+
+\newpage
+
+\section{Module 8 - 9 Review}\label{module-8---9-review}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{allergy }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/PeanutAllergy.csv"}\NormalTok{) }
+\NormalTok{allergy }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Treatment) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(Allergy)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#> # A tibble: 4 x 3
+#> # Groups:   Treatment [2]
+#>   Treatment Allergy     n
+#>   <chr>     <chr>   <int>
+#> 1 Avoiders  No        220
+#> 2 Avoiders  Yes        35
+#> 3 Peanuts   No        240
+#> 4 Peanuts   Yes         5
+\end{verbatim}
+
+In the last 10 years, the proportion of children who are allergic to peanuts has doubled in Western countries. However, the allergy is not very common in some other countries where peanut protein is an important part of peoples' diets. The LEAP randomized trial, reported by Du Toit, et.al in the New England Journal of Medicine in February 2015 identified over 500 children ages 4 to 10 months who showed some sensitivity to peanut protein. They randomly assigned them to two groups:
+
+• Peanut avoiders: parents were told to not give their kids any food which contained peanuts
+
+• Peanut eaters: parents were given a snack containing peanut protein and told to feed it to their child several times per week (target dose was at least 6g of peanut protein per week).
+
+At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). Is there evidence that exposure to peanuts reduces the likelihood of developing peanut allergies?
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2405}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3038}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2785}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1772}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Peanut Avoiders
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Peanut Eaters
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Total
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Allergy & 35 & 5 & 40 \\
+No Allergy & 220 & 240 & 460 \\
+Total & 255 & 245 & 500 \\
+\end{longtable}
+
+For this study we will use the order of subtraction avoiders -- eaters.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Fill in the blanks with one answer from each set of parentheses:
+\end{enumerate}
+
+The variable whether or not a child is given peanut protein is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (explanatory/response) variable and it is \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (categorical/quantitative).
+
+The variable whether or not a child developed a peanut allergy is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (explanatory/response) variable and it is \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (categorical/quantitative).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write the parameter of interest for this study.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Write the null hypothesis in notation.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Write the alternative hypothesis in words.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Calculate the conditional proportion of children that developed a peanut allergy among those that avoided peanuts. Use proper notation.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Calculate the conditional proportion of children that developed a peanut allergy among those that ate peanuts. Use proper notation.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Calculate the difference in proportion of children that developed a peanut allergy for those that avoided peanuts and those who ate peanuts. Use proper notation.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  First, let's think about how one simulation would be created on the null distribution using cards.
+
+  How many cards would you need?
+  \vspace{0.1in}
+
+  What would be written on each card?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Next, we would mix the cards together and shuffle into two piles. How many cards would be in each pile? What would each pile represent?
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Once we have one simulated sample, what would we calculate and plot on the null distribution? \emph{Hint}: What statistic are we calculating from the data?
+\end{enumerate}
+
+\vspace{0.8in}
+\newpage
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Allergy }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Treatment, }\CommentTok{\#response\textasciitilde{}explanatory}
+                    \AttributeTok{data=}\NormalTok{allergy, }\CommentTok{\#name of dataset}
+                    \AttributeTok{first\_in\_subtraction =} \StringTok{"Avoiders"}\NormalTok{, }\CommentTok{\#order of subtraction: avoiders {-} peanuts}
+                    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\#always use a minimum of 1000 repetitions}
+                    \AttributeTok{response\_value\_numerator =} \StringTok{"Yes"}\NormalTok{, }\CommentTok{\#define a success as having an allergy}
+                    \AttributeTok{as\_extreme\_as =} \FloatTok{0.117}\NormalTok{, }\CommentTok{\#type your calculated observed statistic (difference in sample proportions)}
+                    \AttributeTok{direction=}\StringTok{"greater"}\NormalTok{) }\CommentTok{\#type your selected direction to match the alternative hypothesis direction}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Interpret the p-value in context of the problem:
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Write a conclusion to the test in context of the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\newpage
+
+We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in \texttt{R} (in the \texttt{catstats} package) to simulate the bootstrap distribution of differences in sample proportions and calculate a confidence interval. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{allergy}), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (what the numerator counts when calculating a sample proportion), and the confidence level as a decimal.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{two\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Allergy}\SpecialCharTok{\textasciitilde{}}\NormalTok{Treatment, }
+        \AttributeTok{data=}\NormalTok{allergy, }\CommentTok{\# Name of data set}
+        \AttributeTok{first\_in\_subtraction =} \StringTok{"Avoiders"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
+        \AttributeTok{response\_value\_numerator =} \StringTok{"Yes"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
+        \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+        \AttributeTok{confidence\_level =} \FloatTok{0.90}\NormalTok{) }\CommentTok{\# Enter the level of confidence as a decimal}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Interpret the 90\% confidence interval in context of the problem.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\newpage
+
+\textbf{Theory-based Methods}
+
+Conditions for the sampling distribution of \(\hat{p}_1-\hat{p}_2\) to follow an approximate normal distribution:
+
+\begin{itemize}
+\item
+  \textbf{Independence}: The data are independent within and between the two groups. (\emph{Remember}: This also must be true to use simulation methods!)
+\item
+  \textbf{Success-failure condition}: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Are the conditions met to use theory-based methods?
+\end{enumerate}
+
+\vspace{1in}
+
+To calculate the standardized statistic we use:
+
+\[
+Z = \frac{(\hat{p_1} - \hat{p_2}) - \text{null value}}{SE_0(\hat{p_1}-\hat{p}_2)},
+\]
+
+where the null standard error is calculated using the pooled proportion of successes:
+
+\[
+SE_0(\hat{p}_1-\hat{p}_2)=\sqrt{\hat{p}_{pool}\times (1-\hat{p}_{pool})\times \left(\frac{1}{n_1}+\frac{1}{n_2}\right)}.
+\]
+15. Calculate the null standard error of the difference in proportion.
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  Calculate the standardized statistic.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  Interpret the standardized statistic in context of the problem.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{4.814}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{FALSE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 7.39694e{-}07}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage
+
+\[\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2), \hspace{.2cm} \text{where}\]
+\[SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}\]
+18. Calculate the standard error of the difference in proportions to calculate the confidence interval.
+
+\vspace{1in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.90}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 1.281552}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  Calculate the 90\% confidence interval.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  What is the scope of inference for this study?
+\end{enumerate}
+
+\newpage
+
+\section{Key Topics Exam 2}\label{key-topics-exam-2}
+
+\subsection*{Descriptive statistics and study design}\label{descriptive-statistics-and-study-design}
+\addcontentsline{toc}{subsection}{Descriptive statistics and study design}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Identify the observational units.
+\item
+  Identify the types of variables (categorical or quantitative).
+\item
+  Identify the explanatory variable (if present) and the response variable (roles of variables).
+\item
+  Identify the appropriate type of graph and summary measure.
+\item
+  Identify the study design (observational study or randomized experiment).
+\item
+  Identify the sampling method and potential types of sampling bias (non-response, response, selection).
+\item
+  Calculate and interpret the difference in proportions, relative risk, and percent increase/decrease in risk for a study involving two categorical variables.
+\end{enumerate}
+
+\subsection*{Hypothesis testing}\label{hypothesis-testing-2}
+\addcontentsline{toc}{subsection}{Hypothesis testing}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  Identify which of the two scenarios applies to the study: one quantitative variable or two categorical variables.
+\item
+  Write the parameter of interest in words and correct notation.
+\item
+  Find the value of the observed statistic (point estimate, summary statistic). Use correct notation.
+\item
+  State the null and alternative hypotheses in words and in correct notation.
+\item
+  Verify the validity condition is met to use simulation-based methods to find a p-value.
+\item
+  Verify the validity conditions are met to use theory-based methods to find a p-value from the theoretical distribution.
+\item
+  In a simulation-based hypothesis test, describe how to create one dot on a dotplot of the null distribution using coins, cards, or spinners.
+\item
+  Explain where the null distribution is centered and why.
+\item
+  Describe and illustrate how R calculates the p-value for a simulation-based test.
+\item
+  Describe and illustrate how R calculates the p-value for a theory-based test.
+\item
+  Type of theoretical distribution (standard normal distribution or t-distribution with appropriate degrees of freedom) used to model the standardized statistic in a theory-based hypothesis test.
+\item
+  Calculate and interpret the standard error of the statistic under the null using the correct formula on the Golden ticket.
+\item
+  Calculate and interpret the appropriate standardized statistic using the correct formula on the Golden ticket.
+\item
+  Interpret the p-value in context of the study: it is the probability of \_\_\_\_, assuming \_\_\_\_.
+\item
+  Evaluate the p-value for strength of evidence against the null: how much evidence does the p-value provide against the null?
+\item
+  Write a conclusion about the research question based on the p-value.
+\item
+  Given a significance level, what decision can be made about the research question based on the p-value.
+\item
+  Describe which features of the study could be changed to increase power and how.
+\item
+  Describe which features of the study impact the p-value and how.
+\item
+  Write a Type I error in context of the problem.
+\item
+  Write a Type II error in context of the problem.
+\item
+  Interpret power in context of the problem.
+\item
+  Based on your p-value, identify what type of error could have occurred.
+\end{enumerate}
+
+\subsection*{Confidence interval}\label{confidence-interval-2}
+\addcontentsline{toc}{subsection}{Confidence interval}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{30}
+\item
+  Describe how to simulate one bootstrapped sample using cards.
+\item
+  Explain where the bootstrap distribution is centered and why.
+\item
+  Find an appropriate percentile confidence interval using a bootstrap distribution from R output.
+\item
+  Verify the validity condition is met to use simulation-based methods to find the confidence interval.
+\item
+  Verify the validity conditions are met to use theory-based methods to calculate a confidence interval.
+\item
+  Describe and illustrate how the bootstrap distribution is used to find the confidence interval for a given confidence level.
+\item
+  Describe and illustrate how the standard normal distribution or t-distribution is used to find the multiplier for a given confidence level.
+\item
+  Calculate and interpret the standard error of the statistic (not assuming the null hypothesis) using the correct formula on the Golden ticket
+\item
+  Calculate the appropriate margin of error and confidence interval using theory-based methods.
+\item
+  Interpret the confidence interval in context of the study.
+\item
+  Based on the interval, what decision can you make about the null hypothesis? Does the confidence interval agree with the results of the hypothesis test? Justify your answer.
+\item
+  Interpret the confidence level in context of the study. What does ``confidence'' mean?
+\item
+  Describe which features of the study have an effect on the width of the confidence interval and how.
+\end{enumerate}
 
 \newpage
 
