@@ -1,0 +1,133 @@
+## Activity 14: Danceability of Songs
+
+\setstretch{1}
+
+### Learning outcomes
+
+* Use simulation methods to find a confidence interval for a single mean
+
+* Use theory-based methods to find a confidence interval for a single mean.
+
+* Interpret a confidence interval for a single mean.
+
+* Use a confidence interval to determine the conclusion of a hypothesis test.
+
+### Terminology review
+
+In today's activity, we will estimate the parameter of interest using simulation and theory-based methods. Some terms covered in this activity are:
+
+* Bootstrap distribution
+
+* $t$-distribution
+
+* Degrees of freedom
+
+* T-score
+
+To review these concepts, see Chapter 15 in the textbook.
+
+### Danceability
+
+Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  One of the variables measured on these songs is Danceability.  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Estimate the average danceability of top songs from Spotify.
+
+```{r}
+songs <- read.csv("data/top10s.csv")
+
+songs %>%
+    summarise(favstats(Danceability))
+```
+
+```{r, echo=TRUE, eval=FALSE, warning=FALSE}
+songs %>% # Data set piped into...
+    ggplot(aes(x = Danceability)) +   # Name variable to plot
+    geom_boxplot() +  # Create boxplot with specified binwidth
+    labs(title = "Boxplot of 216 Students Sleep Hours", # Title for plot
+       x = "Amount of sleep (hrs)", # Label for x axis
+       y = "") + # Remove y axis label
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+```
+Describe the boxplot of danceability of top songs over the past 10 years on Spotify.
+
+\vspace{1in}
+
+Write the parameter of interest in context of the study.
+
+\vspace{1in}
+
+Unlike creation of the null, the bootstrap distribution is found by sampling with replacement from the original sample.
+
+
+```{r, eval=FALSE, echo=TRUE}
+one_mean_CI(songs$Danceability, #Enter the name of the variable
+            summary_measure = "mean", #choose the mean or median
+            number_repetitions = 10000,  # Number of simulations
+            confidence_level = 0.95)
+```
+
+
+7.  Calculate the standard error of the sample mean.
+
+\vspace{0.5in}
+
+
+
+Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
+
+$$\bar{x}\pm t^* \times SE(\bar{x}).$$
+
+We will need to find the $t^*$ multiplier using the function `qt()`. 
+
+* Enter the appropriate percentile in the R code to find the multiplier for a 95\% confidence interval.
+
+* Enter the df for yy. 
+
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+qt(percentile, df = yy, lower.tail=TRUE)
+```
+
+
+11. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
+\vspace{1mm}
+
+```{r tstar, echo = F, fig.cap = "t-distribution with 69 degrees of freedom"}
+
+x <- seq(-4, 4, length=100)
+hx<-dt(x, 69)
+degf <- 69
+
+plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
+  ylab="Density", main="t Distribution with 69 df")
+
+```
+
+12.  Calculate the margin of error for the true mean using theory-based methods.
+
+\vspace{0.6in}
+
+13.  Calculate the confidence interval for the true mean using theory-based methods.
+
+\vspace{0.6in}
+
+
+14.  Interpret the confidence interval in context of the study.
+
+\vspace{1in}
+
+15. Explain why the CI with theory-based methods is similar to the simulation CI.
+
+
+### Take-home messages
+
+1.  In order to use theory-based methods for dependent groups (paired data), the independent observational units and normality conditions must be met.  
+
+2.  A T-score is compared to a $t$-distribution with $n - 1$ df in order to calculate a one-sided p-value. To find a two-sided p-value using theory-based methods we need to multiply the one-sided p-value by 2.  
+
+3.  A $t^*$ multiplier is found by obtaining the bounds of the middle X% (X being the desired confidence level) of a $t$-distribution with $n - 1$ df.
+
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered
+
+\newpage

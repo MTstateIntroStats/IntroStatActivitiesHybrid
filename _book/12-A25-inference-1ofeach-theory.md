@@ -34,6 +34,12 @@ To review these concepts, see Chapter 19 in the textbook.
 
 In a study comparing immersive virtual reality (VR) to traditional hands-on methods, researchers recruited 115 undergraduate students to assess the effectiveness of these approaches in teaching complex scientific concepts like Moon phases [@madden2020]. Participants were randomly assigned to experience either a VR simulation replicating the Sun-Earth-Moon system or a hands-on activity where they physically manipulated models to observe Moon phases. The students were given a 14 multiple choice question quiz about Moon phases and the Moon’s motion relative to the Earth to evaluate their understanding of Moon phases and the Moon's motion. Each question had only one correct answer, and the participant’s score was the sum of the number of correct answers, with all questions weighted equally (with a maximum score of 14).  Is there evidence of a difference, on average, in student learning comparing those using VR methods to those using the traditional method? Use order of subtraction VR – Hands-on. 
 
+* Download the RScript file and dataset from D2L and upload to the RStudio server
+
+* Open the RScript file
+
+* Enter the name of the dataset for datasetname in line 
+
 1. Write out the parameter of interest in words in context of the study.
 
     * To write in context:
@@ -70,7 +76,13 @@ Conditions for the sampling distribution of $\bar{x}_1-\bar{x}_2$ to follow an a
     - $30 \le n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
      - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
-    
+
+To create the plots of the data:
+
+* Enter a title in line 15 for the plot between the quotations
+
+* Highlight and run lines 12 - 17
+
 
 ``` r
 moon <- read.csv("data/Moon_VR.csv")
@@ -83,19 +95,16 @@ moon %>%  # Data set piped into...
        y = "Test Score (points)")  # y-axis label
 ```
 
+To find the summary statistic:
 
+* Enter the response and explanatory variable names in line 22
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A25-inference-1ofeach-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+* Highlight and run lines 21--22
+
 
 ``` r
 moon %>%
-  reframe(favstats(TestScore~Method))
-```
-
-```
-#>     Method min   Q1 median   Q3 max     mean       sd  n missing
-#> 1 Hands-on   2 6.00    8.0  9.5  12 7.694915 2.647408 59       0
-#> 2       VR   3 5.75    8.5 10.0  12 7.982143 2.370202 56       0
+  reframe(favstats(response~explanatory))
 ```
 
 4.  Can theory-based methods be used to analyze these data?
@@ -132,6 +141,8 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 
 * Enter the df for yy
 
+* Highlight and run line 28
+
 
 ``` r
 2*pt(xx, df=yy, lower.tail=FALSE)
@@ -146,21 +157,27 @@ To calculate a theory-based 95\% confidence interval for a difference in means, 
 
 $$(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))$$
 
-We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with (`df` = minimum of $n_1 - 1$ or  $n_2 - 1$).
+We will need to find the $t^*$ multiplier using the function `qt()`.  
+
+* Enter the percentile to find the multiplier for a 95\% confidence level
+
+* Enter the degrees of freedom for yy
+
+* Highlight and run line 34
 
 
 ``` r
-qt(0.975, df = 55, lower.tail=TRUE)
+qt(percentile, df = yy, lower.tail=TRUE)
 ```
-
-```
-#> [1] 2.004045
-```
-9.  Calculate the 95\% confidence interval using theory-based methods.
+9.  Calculate the margin of error for a 95\% confidence interval.
 
 \vspace{0.5in}
 
-10. Write a conclusion to the test.
+10. Calculate the 95\% confidence interval.
+
+\vspace{0.6in}
+
+11. Write a conclusion to the test.
 \vspace{0.7in}
 
 ### Take-home messages

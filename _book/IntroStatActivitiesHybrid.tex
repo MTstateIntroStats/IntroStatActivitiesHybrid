@@ -279,7 +279,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 \begin{itemize}
 \item
-  The \textbf{summary measure} for one quantitative variable is the \textbf{mean difference}
+  The \textbf{summary measure} for paired data is the \textbf{mean difference}
 \item
   Paired differences are treated as a single mean. Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used.
 \item
@@ -416,13 +416,18 @@ Hypotheses:
 \end{itemize}
 
 \[\bar{x}_d\pm t^*\times SE(\bar{x}_d)\]
-* R code to find the multiplier for the confidence interval using theory-based methods.
 
-\begin{verbatim}
-* qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
+\begin{itemize}
+\item
+  R code to find the multiplier for the confidence interval using theory-based methods.
 
-* Enter the percentile for the given confidence level
-\end{verbatim}
+  \begin{itemize}
+  \item
+    qt will give you the multiplier using the t-distribution with smallest \(n-1\) df (enter for yy)
+  \item
+    Enter the percentile for the given confidence level
+  \end{itemize}
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1538,6 +1543,8 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 \end{Highlighting}
 \end{Shaded}
 
+\newpage
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{10}
@@ -2041,8 +2048,8 @@ Summary measure
 \end{Highlighting}
 \end{Shaded}
 
-\subsection*{Simulation Hypothesis Testing}\label{simulation-hypothesis-testing-1}
-\addcontentsline{toc}{subsection}{Simulation Hypothesis Testing}
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-1}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
 
 Hypotheses:
 
@@ -2064,6 +2071,9 @@ Hypotheses:
 \end{array}
 \right\}
 \mu_2 \]
+
+\subsection*{Simulation Hypothesis Testing}\label{simulation-hypothesis-testing-1}
+\addcontentsline{toc}{subsection}{Simulation Hypothesis Testing}
 
 \begin{itemize}
 \tightlist
@@ -2294,7 +2304,7 @@ Why should we treat this as two independent groups rather than paired data?
 
 \vspace{0.6in}
 
-\subsection*{Hypothesis Testing}\label{hypothesis-testing-1}
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-2}
 \addcontentsline{toc}{subsection}{Hypothesis Testing}
 
 Conditions:
@@ -2720,12 +2730,15 @@ Be prepared for group discussion in the next class. One member from the table sh
 \subsection{Learning outcomes}\label{learning-outcomes-4}
 
 \begin{itemize}
-\tightlist
 \item
   Create a side-by-side boxplot of one categorical explanatory variable and one quantitative response variable
-\end{itemize}
-
-\begin{itemize}
+\item
+  Given a research question involving one categorical explanatory variable and one quantitative response variable, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Describe and perform a simulation-based hypothesis test for a difference in means.
+\item
+  Interpret and evaluate a p-value for a simulation-based hypothesis test for a difference in means.
 \item
   Use bootstrapping to find a confidence interval for a difference in means.
 \item
@@ -2751,6 +2764,13 @@ To review these concepts, see Chapter 19 in the textbook.
 
 A study in the Academy of Management Journal (Porath 2017) investigated how rude behaviors influence a victim's task performance. Randomly selected college students enrolled in a management course were randomly assigned to one of two experimental conditions: rudeness condition (45 students) and control group (53 students). Each student was asked to write down as many uses for a brick as possible in five minutes; this value (total number of uses) was used as a performance measure for each student, where higher values indicate better performance. During this time another individual showed up late for class. For those students in the rudeness condition, the facilitator displayed rudeness by berating the students in general for being irresponsible and unprofessional (due to the late-arriving person). No comments were made about the late-arriving person for students in the control group. Is there evidence that the average performance score for students in the rudeness condition is lower than for students in the control group? Use the order of subtraction of rudeness -- control.
 
+\begin{itemize}
+\item
+  Download the R script file from D2L and upload to the RStudio server
+\item
+  Highlight and run lines 1--7
+\end{itemize}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Read in data set}
@@ -2759,6 +2779,12 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
 \end{Shaded}
 
 \newpage
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 11--19
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2769,24 +2795,16 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
     \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Number of Uses for a Brick based on Behavior Condition}
 \StringTok{         for College Students in a Management Course"}\NormalTok{,}
          \AttributeTok{x =} \StringTok{"Behavior"}\NormalTok{) }
+\CommentTok{\# Summary statistics}
+\NormalTok{rude }\SpecialCharTok{\%\textgreater{}\%} 
+     \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(number\_of\_uses }\SpecialCharTok{\textasciitilde{}}\NormalTok{ condition))}
+\CommentTok{\#\textgreater{}   condition min Q1 median Q3 max      mean       sd  n missing}
+\CommentTok{\#\textgreater{} 1   control   0  6     12 17  30 11.811321 7.382559 53       0}
+\CommentTok{\#\textgreater{} 2  rudeness   0  6      9 11  18  8.511111 3.992164 45       0}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A24-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Summary statistics}
-\NormalTok{rude }\SpecialCharTok{\%\textgreater{}\%} 
-     \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(number\_of\_uses }\SpecialCharTok{\textasciitilde{}}\NormalTok{ condition))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#>   condition min Q1 median Q3 max      mean       sd  n missing
-#> 1   control   0  6     12 17  30 11.811321 7.382559 53       0
-#> 2  rudeness   0  6      9 11  18  8.511111 3.992164 45       0
-\end{verbatim}
 
 \subsubsection*{Quantitative variables review}\label{quantitative-variables-review}
 \addcontentsline{toc}{subsubsection}{Quantitative variables review}
@@ -2825,12 +2843,37 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
   \vspace{1in}
 \end{enumerate}
 
+\subsubsection*{Ask a research question}\label{ask-a-research-question-2}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+In this study we are assessing the difference in true mean number of uses for a brick given by college students enrolled in a management course assigned to a rudeness condition and for those assigned to a control group.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  What assumption are we making about the difference in true mean?
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Write the alternative hypothesis in notation.
+\end{enumerate}
+
+\vspace{0.5in}
+
 \subsubsection*{Numerically Summarize the data}\label{numerically-summarize-the-data}
 \addcontentsline{toc}{subsubsection}{Numerically Summarize the data}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
+\setcounter{enumi}{5}
 \tightlist
 \item
   Calculate the summary statistic of interest (difference in means). What is the appropriate notation for this statistic?
@@ -2844,7 +2887,7 @@ Interpret this calculated value.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
+\setcounter{enumi}{6}
 \item
   Write out the parameter of interest for this study in context of the study.
 
@@ -2871,8 +2914,59 @@ Interpret this calculated value.
   \end{itemize}
 \end{enumerate}
 
+In this study we are assessing the difference in true mean number of uses for a brick given by college students enrolled in a management course assigned to a rudeness condition and for those assigned to a control group.
+
 \subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-3}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\paragraph*{Hypothesis test}\label{hypothesis-test-2}
+\addcontentsline{toc}{paragraph}{Hypothesis test}
+
+Remember that the null distribution is created based on the assumption the null hypothesis is true. In this study, the null hypothesis states that there is no association between the two variables. This means that the values observed in the data set would have been the same regardless of the behavior condition.
+
+To demonstrate this simulation, we could create cards to simulate a sample.
+
+\begin{itemize}
+\item
+  Write the number of uses for a brick given by each student on one card.
+\item
+  Mix together and shuffle into two piles, one with 45 cards to represent the rudeness condition and one with 53 cards to represent the control group.
+\item
+  Calculate the difference in mean number of uses for a brick (rudeness - control)
+\end{itemize}
+
+We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of differences in sample means and compute a p-value.
+
+\begin{itemize}
+\item
+  Fill in the response and explanatory variable names
+\item
+  Fill in the missing values/names for the xx's in the R script file
+\item
+  Highlight and run lines 25--30
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{two\_mean\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\#Enter the names of the variables}
+              \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the dataset}
+              \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction}
+              \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+              \AttributeTok{as\_extreme\_as =}\NormalTok{ xx,  }\CommentTok{\# Observed statistic}
+              \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
+\end{enumerate}
+
+\vspace{0.8in}
 
 \paragraph*{Confidence interval}\label{confidence-interval-4}
 \addcontentsline{toc}{paragraph}{Confidence interval}
@@ -2883,7 +2977,7 @@ The response variable name is \texttt{number\_of\_uses} and the explanatory vari
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
+\setcounter{enumi}{8}
 \tightlist
 \item
   What values should be entered for each of the following into the simulation to create a 99\% confidence interval?
@@ -2914,7 +3008,7 @@ The response variable name is \texttt{number\_of\_uses} and the explanatory vari
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 6 in place of the \texttt{xx}'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 16--21.
+Using the R script file for this activity, enter your answers for question 9 in place of the \texttt{xx}'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 35--39.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2928,7 +3022,7 @@ Using the R script file for this activity, enter your answers for question 6 in 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
+\setcounter{enumi}{9}
 \tightlist
 \item
   Where is the bootstrap distribution centered? Explain why.
@@ -2938,7 +3032,7 @@ Using the R script file for this activity, enter your answers for question 6 in 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
+\setcounter{enumi}{10}
 \tightlist
 \item
   Report the bootstrap 99\% confidence interval.
@@ -2948,7 +3042,7 @@ Using the R script file for this activity, enter your answers for question 6 in 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
+\setcounter{enumi}{11}
 \tightlist
 \item
   What percentile of the bootstrap distribution does the upper value of the confidence interval represent?
@@ -2958,7 +3052,7 @@ Using the R script file for this activity, enter your answers for question 6 in 
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
+\setcounter{enumi}{12}
 \tightlist
 \item
   Interpret the 99\% confidence interval.
@@ -3025,6 +3119,15 @@ To review these concepts, see Chapter 19 in the textbook.
 
 In a study comparing immersive virtual reality (VR) to traditional hands-on methods, researchers recruited 115 undergraduate students to assess the effectiveness of these approaches in teaching complex scientific concepts like Moon phases (Madden 2020). Participants were randomly assigned to experience either a VR simulation replicating the Sun-Earth-Moon system or a hands-on activity where they physically manipulated models to observe Moon phases. The students were given a 14 multiple choice question quiz about Moon phases and the Moon's motion relative to the Earth to evaluate their understanding of Moon phases and the Moon's motion. Each question had only one correct answer, and the participant's score was the sum of the number of correct answers, with all questions weighted equally (with a maximum score of 14). Is there evidence of a difference, on average, in student learning comparing those using VR methods to those using the traditional method? Use order of subtraction VR -- Hands-on.
 
+\begin{itemize}
+\item
+  Download the RScript file and dataset from D2L and upload to the RStudio server
+\item
+  Open the RScript file
+\item
+  Enter the name of the dataset for datasetname in line
+\end{itemize}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -3087,6 +3190,15 @@ Conditions for the sampling distribution of \(\bar{x}_1-\bar{x}_2\) to follow an
   \end{itemize}
 \end{itemize}
 
+To create the plots of the data:
+
+\begin{itemize}
+\item
+  Enter a title in line 15 for the plot between the quotations
+\item
+  Highlight and run lines 12 - 17
+\end{itemize}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{moon }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/Moon\_VR.csv"}\NormalTok{)}
@@ -3100,20 +3212,21 @@ Conditions for the sampling distribution of \(\bar{x}_1-\bar{x}_2\) to follow an
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A25-inference-1ofeach-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+To find the summary statistic:
+
+\begin{itemize}
+\item
+  Enter the response and explanatory variable names in line 22
+\item
+  Highlight and run lines 21--22
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{moon }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(TestScore}\SpecialCharTok{\textasciitilde{}}\NormalTok{Method))}
+  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory))}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-#>     Method min   Q1 median   Q3 max     mean       sd  n missing
-#> 1 Hands-on   2 6.00    8.0  9.5  12 7.694915 2.647408 59       0
-#> 2       VR   3 5.75    8.5 10.0  12 7.982143 2.370202 56       0
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3175,6 +3288,8 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
   Enter the value of the standardized statistic for xx
 \item
   Enter the df for yy
+\item
+  Highlight and run line 28
 \end{itemize}
 
 \begin{Shaded}
@@ -3199,24 +3314,29 @@ To calculate a theory-based 95\% confidence interval for a difference in means, 
 
 \[(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))\]
 
-We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. For a 95\% confidence level, we are finding the \(t^*\) value at the 97.5th percentile with (\texttt{df} = minimum of \(n_1 - 1\) or \(n_2 - 1\)).
+We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+
+\begin{itemize}
+\item
+  Enter the percentile to find the multiplier for a 95\% confidence level
+\item
+  Enter the degrees of freedom for yy
+\item
+  Highlight and run line 34
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{55}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-#> [1] 2.004045
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{8}
 \tightlist
 \item
-  Calculate the 95\% confidence interval using theory-based methods.
+  Calculate the margin of error for a 95\% confidence interval.
 \end{enumerate}
 
 \vspace{0.5in}
@@ -3224,6 +3344,16 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. Fo
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{9}
+\tightlist
+\item
+  Calculate the 95\% confidence interval.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
 \tightlist
 \item
   Write a conclusion to the test.
@@ -3598,7 +3728,7 @@ R code to create a scatterplot:
 \end{Highlighting}
 \end{Shaded}
 
-Summary measures
+Summary measures:
 
 \begin{itemize}
 \tightlist
@@ -3788,6 +3918,14 @@ T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
 \addcontentsline{toc}{subsection}{Theory-based methods to find the confidence interval}
 
 \begin{itemize}
+\tightlist
+\item
+  Calculation of the confidence interval for slope
+\end{itemize}
+
+\[b_1\pm t^*\times SE(b_1)\]
+
+\begin{itemize}
 \item
   R code to find the multiplier for the confidence interval using theory-based methods.
 
@@ -3796,16 +3934,12 @@ T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
     qt will give you the multiplier using the t-distribution with n-2 df (enter for yy)
   \item
     Enter the percentile for the given confidence level
-  \item
-    If a greater than alternative, change lower.tail = TRUE to FALSE.
-  \item
-    If a two-sided test, multiply by 2.
   \end{itemize}
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(xx, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4347,7 +4481,7 @@ Notation:
 
 Example: Oceanic temperature is important for sea life. The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. ({``Ocean Temperature and Salinity Study,''} n.d.) For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
 
-\subsection*{Hypothesis Testing}\label{hypothesis-testing-2}
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-3}
 \addcontentsline{toc}{subsection}{Hypothesis Testing}
 
 Null hypothesis assumes ``no effect'', ``no difference'', ``nothing interesting happening'', etc.
@@ -6014,7 +6148,7 @@ The scatterplot generated earlier and the residual plots shown below will be use
 
 \vspace{3in}
 
-\subsubsection*{Ask a research question}\label{ask-a-research-question-2}
+\subsubsection*{Ask a research question}\label{ask-a-research-question-3}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
 
 \begin{enumerate}
@@ -6068,7 +6202,7 @@ The linear model output for this study is shown below.
 \subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-7}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
 
-\paragraph*{Hypothesis test}\label{hypothesis-test-2}
+\paragraph*{Hypothesis test}\label{hypothesis-test-3}
 \addcontentsline{toc}{paragraph}{Hypothesis test}
 
 To find the value of the standardized statistic to test the slope we will use,
@@ -6388,7 +6522,7 @@ In the next part of the activity we will assess the linear model between Big Mac
 
 \newpage
 
-\subsubsection*{Ask a research question}\label{ask-a-research-question-3}
+\subsubsection*{Ask a research question}\label{ask-a-research-question-4}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
 
 \begin{enumerate}
@@ -6412,7 +6546,7 @@ In the next part of the activity we will assess the linear model between Big Mac
 \subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-8}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
 
-\subsubsection*{Hypothesis test}\label{hypothesis-test-3}
+\subsubsection*{Hypothesis test}\label{hypothesis-test-4}
 \addcontentsline{toc}{subsubsection}{Hypothesis test}
 
 Use the \texttt{regression\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample \textbf{correlations} and compute a p-value. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{mac}), the summary measure used for the test, number of repetitions, the sample statistic (value of correlation), and the direction of the alternative hypothesis.

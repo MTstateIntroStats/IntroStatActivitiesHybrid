@@ -55,7 +55,7 @@ object %>%
   reframe(favstats(response~explantory))
 ```
 
-### Simulation Hypothesis Testing {-}
+### Hypothesis Testing {-}
 
 Hypotheses:
 
@@ -77,6 +77,8 @@ $$H_A: \mu_1 - \mu_2 \left\{
 \end{array}
 \right\}
 \mu_2 $$
+
+### Simulation Hypothesis Testing {-}
 
 * R code for simulation methods to find the p-value using the `two_mean_test` function in the `catstats` package.
 

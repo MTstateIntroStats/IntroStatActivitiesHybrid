@@ -63,60 +63,57 @@ object %>% # Data set piped into...
     - Spread
     
     - Outliers?
+    
+### Simulation Hypothesis Testing {-}
+
+Hypotheses:
+
+$$H_0: \mu = \mu_0$$
+$$H_A: \mu\left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\mu_0 $$
 
 * R code to use for **simulation methods** for one quantitative variable to find the p-value, one_mean_test, is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
 
 ```{r, eval=FALSE, echo=TRUE}
 one_mean_test(object$variable,#Enter the object name and variable
-  summary_measure = "mean",  #Can choose between mean or median
-  shift = xx, #Difference between the null value and the sample mean
-  as_extreme_as = xx, #Value of the summary statistic
-  direction = "xx", #Specify direction of alternative hypothesis
-  number_repetitions = 10000,
-  add_normal = FALSE)
+              null_value = xx, #Enter the null value for the study
+              summary_measure = "mean",  #Can choose between mean or median
+              shift = xx, #Difference between the null value and the sample mean
+              as_extreme_as = xx, #Value of the summary statistic
+              direction = "xx", #Specify direction of alternative hypothesis
+              number_repetitions = 10000,
+              add_normal = FALSE)
 ```
 
-* **Theory-based methods**: when specific conditions are met, a data can be fit with a theoretical distribution
+### Simulation Confidence Interval {-}
 
-* **Conditions for the sampling distribution of $\bar{x}$ to follow an approximate normal distribution**:
+* R code to find the simulation confidence interval using the `onemean_CI` function from the `catstats` package.
 
-    * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Large enough sample size: Normality Condition**: The sample observations come from a normally distributed population.  To check use the the following rules of thumb:
-     
-         - $n < 30$: The distribution of the sample must be approximately normal with no outliers
-         
-         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
-         
-         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribuion of individual observationals is not
-         
-* **t-distribution**: a theoretical distribution that is symmetric with a given degrees of freedom ($n-1$)
-
-    * $t_{n-1}$
-
-* **Standardized sample mean**: standardized statistic for a single quantitative variable calculated using:
-
-$$
-T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
-$$
-
-* **Standard error of the sample mean assuming the null is true**: measures the how far each possible sample mean is from the true mean, on average and is calculated using the formula below:
-
-$$SE(\bar{x})=\frac{s}{\sqrt{n}}$$
-
-* The following R code is used to find the p-value using theory based methods for a single quantitative variables.
-
-    * pt will give you a p-value using the t-distribution with n-1 df (enter for yy)
-    
-    * Enter the value of the standardized statistic for xx
-
-    * If a greater than alternative, change lower.tail = TRUE to FALSE.
-    
-    * If a two-sided test, multiply by 2.
-    
-```{r, eval = FALSE}
-pt(xx, df = yy, lower.tail=TRUE)
+```{r, eval=FALSE, echo=TRUE}
+one_mean_CI(object$variable, #Enter the name of the variable
+            summary_measure = "mean", #choose the mean or median
+            number_repetitions = 10000,  # Number of simulations
+            confidence_level = xx)
 ```
+
+
+* Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed
+
+    * To write in context include:
+
+        - How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+        - Parameter of interest
+    
+        - Calculated interval
+
 
 #### Exploratory data analysis {-}
 

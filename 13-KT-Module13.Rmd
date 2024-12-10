@@ -32,7 +32,7 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
 ```
 
 
-Summary measures
+Summary measures:
 
 * **Slope of the regression line**: measures the magnitude and direction of the linear relationship between two quantitative variables
 
@@ -151,18 +151,18 @@ regression_bootstrap_CI(response~explanatory, # response ~ explanatory
 
 ### Theory-based methods to find the confidence interval {-}
 
+* Calculation of the confidence interval for slope
+
+$$b_1\pm t^*\times SE(b_1)$$
+
 * R code to find the multiplier for the confidence interval using theory-based methods.
 
     * qt will give you the multiplier using the t-distribution with n-2 df (enter for yy)
     
     * Enter the percentile for the given confidence level
 
-    * If a greater than alternative, change lower.tail = TRUE to FALSE.
-    
-    * If a two-sided test, multiply by 2.
-
 ```{r, eval=FALSE, echo=TRUE}
-qt(xx, df=yy, lower.tail=FALSE)
+qt(percentile, df=yy, lower.tail=FALSE)
 ```
 
 \newpage

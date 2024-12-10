@@ -201,6 +201,7 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 qt(percentile, df = yy, lower.tail=TRUE)
 ```
 
+\newpage
 
 11. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}

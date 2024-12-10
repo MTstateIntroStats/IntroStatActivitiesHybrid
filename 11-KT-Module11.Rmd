@@ -4,7 +4,7 @@
 
 Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of paired data.  Module 11 will cover inference using both simulation and theory-based methods.
 
-* The **summary measure** for one quantitative variable is the **mean difference**
+* The **summary measure** for paired data is the **mean difference**
 
 * Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used.
 
@@ -95,14 +95,15 @@ $$t = \frac{\bar{x}_d-0}{SE(\bar{x}d)}$$
 pt(xx, df = yy, lower.tail=TRUE)
 ```
 
-* Calculation of the confidence interval for a difference in sample means
+* Calculation of the confidence interval for a mean difference
 
 $$\bar{x}_d\pm t^*\times SE(\bar{x}_d)$$
+
 * R code to find the multiplier for the confidence interval using theory-based methods.
 
-    * qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
+   - qt will give you the multiplier using the t-distribution with $n-1$ df (enter for yy)
     
-    * Enter the percentile for the given confidence level
+   - Enter the percentile for the given confidence level
 
 ```{r, eval=FALSE, echo=TRUE}
 qt(percentile, df=yy, lower.tail=FALSE)
