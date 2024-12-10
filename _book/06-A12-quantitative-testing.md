@@ -23,7 +23,7 @@ To review these concepts, see Chapter 17 in the textbook.
 
 ### College student sleep habits
 
-According to the National Institutes of Health (NIH) (*add reference*), experts recommend adults (>18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits.  Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
+According to the an article in *Sleep* [@watson2015], experts recommend adults (>18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits.  Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
 
 #### Summarizing quantitative variables {-}
 
@@ -36,6 +36,9 @@ According to the National Institutes of Health (NIH) (*add reference*), experts 
 * Highlight and run lines 1--8 to load the data
 
 
+``` r
+sleep <- read.csv("datasetname.csv")
+```
 
 #### Ask a research question {-}
 
@@ -62,12 +65,7 @@ The `favstats()` function from the `mosaic` package gives the summary statistics
 
 ``` r
 sleep %>%
-    summarize(favstats(SleepHours))
-```
-
-```
-#>   min Q1 median  Q3 max     mean       sd   n missing
-#> 1   3  6      7 7.8  13 6.919376 1.467231 123       0
+    summarize(favstats(variable))
 ```
 4. How far is each number of hours of sleep for a Stat 216 student from the mean number of hours of sleep, on average?
 
@@ -75,15 +73,18 @@ sleep %>%
 
 Create a boxplot of the variable `SleepHours`.
 
-* Enter the name of the variable in line 19 for `variable` in the R script file.  
+* Enter the name of the variable in line 19 for `variable` in the R script file. 
 
+* Enter a title in line 21 for the plot between the quotations
+
+* Highlight and run lines 18 - 25
 
 
 ``` r
 sleep %>% # Data set piped into...
-    ggplot(aes(x = SleepHours)) +   # Name variable to plot
+    ggplot(aes(x = variable)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
-    labs(title = "Boxplot of 216 Students Sleep Hours", # Title for plot
+    labs(title = "Don't forget to title your plot!", # Title for plot
        x = "Amount of sleep (hrs)", # Label for x axis
        y = "") + # Remove y axis label
     theme(axis.text.y = element_blank(), 
@@ -112,16 +113,13 @@ To simulate the null distribution of sample means we will use a bootstrapping me
 
 * Find the favstats of the variable, Shift
 
+* Highlight and run lines 30--32
+
 
 ``` r
-sleep2 <- read.csv("data/sleep_college2.csv")
-sleep2 %>%
+sleep <- read.csv("sleep_college.csv")
+sleep %>%
     summarize(favstats(Shift))
-```
-
-```
-#>     min    Q1 median    Q3    max     mean       sd   n missing
-#> 1 3.081 6.081  7.081 7.881 13.081 7.000376 1.467231 123       0
 ```
 7. Report the mean of the Shift variable.  Why does it make sense that this value is the same as the null value?
 
@@ -155,10 +153,22 @@ sleep2 %>%
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+Using the R script file for this activity...
+
+* Enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations
+
+* Highlight and run lines 361--42.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{06-A12-quantitative-testing_files/figure-latex/unnamed-chunk-5-1} \end{center}
+``` r
+one_mean_test(sleep$SleepHours,#Enter the object name and variable
+              null_value = xx,
+              summary_measure = "xx",  #Can choose between mean or median
+              shift = xx, #Difference between the null value and the sample mean
+              as_extreme_as = xx, #Value of the summary statistic
+              direction = "xx", #Specify direction of alternative hypothesis
+              number_repetitions = 10000)
+```
 10. Interpret the p-value of the test in context of the problem.
 
 \vspace{1in}

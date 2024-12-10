@@ -73,26 +73,27 @@ As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and 
 
 The following code is used to create a boxplot of the data.
 
-* Download the R script file for this activity and upload to the R studio server.
+* Download the R script file upload to the R studio server.
 
-* Open the file and follow the instructions given in the R file.
+* Open the R script file and highlight and run lines 1--14
 
 
 ``` r
-bodytemp <- read.csv("data/normal_temperature.csv")
+bodytemp <- read.csv("https://math.montana.edu/courses/s216/data/normal_temperature.csv")
 bodytemp %>%
   ggplot(aes(x = Temp))+
   geom_boxplot()+
-  labs(title="Boxplot of the Difference in Time to Read Words 
-       Between Color and Black for College Undergraduates",
-       x = "Differences in time to read words (Color - Black)")
+  labs(title="Boxplot of Body Temperatures for Stat 216 Students",
+       x = "body temperature (*F)") +
+        theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-The following code gives the summary statistics for the pairwise differences.
+* Highlight and run lines 17 - 18 to get the summary statistics for the variable Temp.
 
 
 ``` r
@@ -157,7 +158,7 @@ To find the p-value for the theory-based test:
 
 * Enter the df for yy in the pt function.
 
-* Highlight and run line 27
+* Highlight and run line 24
 
 
 ``` r
@@ -177,7 +178,7 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the df for yy. 
 
-* Highlight and run lines ...
+* Highlight and run line 30
 
 
 ``` r
