@@ -106,7 +106,7 @@ one_mean_CI(songs$variable, #Enter the name of the variable
          - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observational is not
          
 
-Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
+Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the a single mean, use the following formula:
 
 $$\bar{x}\pm t^* \times SE(\bar{x}).$$
 

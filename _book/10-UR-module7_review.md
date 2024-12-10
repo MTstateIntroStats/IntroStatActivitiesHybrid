@@ -4,22 +4,15 @@ There are about 4 million tourists to Yellowstone National Park per year.  One o
 
 
 
-```{r}
-library(MASS)
-geyser %>%
-  summarise(fav_stats(waiting))
+
+```
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1  43 59     76 83 108 72.31438 13.89032 299       0
 ```
 
 The following code created the boxplot of waiting time. 
-```{r, out.width="60%"}
-geyser %>% # Pipe data set into...
-  ggplot(aes(y = waiting)) + #Variables to be used
-    geom_boxplot() + #make a boxplot
-    labs(title = "Boxplot of Tourist Reported Wait Time for Old Faithrul to Erupt",  #Title plot
-         y = "wait time (minutes)") +
-  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
-  coord_flip()
-```
+
+\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module7_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 	
 1. Write the parameter of interest in context of the study.  
@@ -32,13 +25,18 @@ geyser %>% # Pipe data set into...
 
 We will start with simulation methods to create the 99\% confidence interval. 
 	
-```{r, echo=TRUE, eval=TRUE, warning = FALSE}
+
+``` r
 set.seed(216)
 one_mean_CI(data = geyser$waiting,   #Object and variable
             summary_measure = "mean", 
             confidence_level = 0.99, #Level of context as a decimal
             number_repetitions = 10000)  #Number of simulated samples for null distribution
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module7_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 3.  How many simulations are at and below the value of 70.241?
 
@@ -74,22 +72,25 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the df $n - 1 = 299 - 1 = 298$
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+
+``` r
 qt(0.995, df = 298, lower.tail=TRUE)
+```
+
+```
+#> [1] 2.592428
 ```
 5. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
-```{r tstarmean, echo = F, fig.cap = "t-distribution with 602 degrees of freedom"}
+\begin{figure}
 
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 298)
-degf <- 298
+{\centering \includegraphics[width=0.7\linewidth]{10-UR-module7_review_files/figure-latex/tstarmean-1} 
 
-plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
-  ylab="Density", main="t Distribution with 298 df")
+}
 
-```
+\caption{t-distribution with 602 degrees of freedom}(\#fig:tstarmean)
+\end{figure}
 6. Calculate the 99\% confidence interval using theory-based methods.
 \vspace{1in}
 
