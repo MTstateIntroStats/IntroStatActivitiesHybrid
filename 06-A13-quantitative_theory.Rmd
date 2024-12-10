@@ -181,42 +181,13 @@ pt(xx, df=yy, lower.tail=FALSE)
 12.  What does this p-value mean, in the context of the study?  Hint: it is the probability of what...assuming what?
 \vspace{1in}
 
-Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
-
-$$\bar{x}\pm t^* \times SE(\bar{x}).$$
-
-We will need to find the $t^*$ multiplier using the function `qt()`. 
-
-* Enter the appropriate percentile in the R code to find the multiplier for a 90\% confidence interval.
-
-* Enter the df for yy. 
-
-* Highlight and run line 30
-
-```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
-qt(percentile, df = yy, lower.tail=TRUE)
-```
-
-
-13. Report the $t^*$ multiplier for the 90\% confidence interval.
-
-\vspace{0.2in}
-
-14.  Calculate the margin of error for the true mean using theory-based methods.
+13.  Write a conclusion to the test in context of the study.
 
 \vspace{0.6in}
 
-15.  Calculate the confidence interval.
+14. Can we generalize the results of the study be generalized to all adults? Explain your answer.
 
-\vspace{0.6in}
-
-
-16.  Interpret the confidence interval in context of the study.
-
-\vspace{1in}
-
-17.  Write a conclusion to the test in context of the study.
-\vspace{0.6in}
+\vspace{0.5in}
 
 ### Take-home messages
 

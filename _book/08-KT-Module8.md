@@ -1,8 +1,12 @@
-# Inference for a Two Categorical Variable: Simulation Methods
+# Exploratory Data Analysis and Simulation-based Inference for Two Categorical Variables
 
 ## Vocabulary Review and Key Topics
 
 Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two categorical variables.
+
+### Key topics
+
+Module 8 will introduce exploratory data analysis and simulation-based inference for two categorical variables. We also explore study design and confounding variables.
 
 Types of plots for two categorical variables
 

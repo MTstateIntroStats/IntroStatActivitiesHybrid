@@ -47,9 +47,11 @@ $$\bar{x}\pm t^*\times SE(\bar{x})$$
 qt(percentile, df=yy, lower.tail=FALSE)
 ```
 
+\newpage
+
 ### Errors and Power {-}
 
-* **Significance level ($\alpha$): a given cut-off value that we compare the p-value to determine a decision of a test.
+* **Significance level ($\alpha$)**: a given cut-off value that we compare the p-value to determine a decision of a test.
 
 * **Decisions**: 
 

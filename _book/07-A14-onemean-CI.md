@@ -103,12 +103,14 @@ one_mean_CI(songs$variable, #Enter the name of the variable
          
          - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
          
-         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribuion of individual observational is not
+         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observational is not
          
 
 Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the paired mean difference, use the following formula:
 
 $$\bar{x}\pm t^* \times SE(\bar{x}).$$
+
+\newpage
 
 We will need to find the $t^*$ multiplier using the function `qt()`. 
 

@@ -1,8 +1,12 @@
-# Inference for a Single Quantitative Variable
+# Confidence Intervals for a Single Quantitative Variable
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single quantitative variable.  Module 7 will cover creating confidence interval using both simulation and theory-based methods. Additionally, we learn about errors and power.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single quantitative variable.  
+
+### Key topics
+
+Module 7 will cover creating confidence intervals using both simulation-based and theory-based methods. Additionally, we learn about types of errors and power in hypothesis testing.
 
 ### Simulation Confidence Interval {-}
 
@@ -45,9 +49,11 @@ $$\bar{x}\pm t^*\times SE(\bar{x})$$
 qt(percentile, df=yy, lower.tail=FALSE)
 ```
 
+\newpage
+
 ### Errors and Power {-}
 
-* **Significance level ($\alpha$): a given cut-off value that we compare the p-value to determine a decision of a test.
+* **Significance level ($\alpha$)**: a given cut-off value that we compare the p-value to determine a decision of a test.
 
 * **Decisions**: 
 

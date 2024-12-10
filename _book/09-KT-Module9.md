@@ -4,6 +4,10 @@
 
 Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two categorical variables.
 
+### Key topics
+
+Module 9 introduces theory-based hypothesis testing methods and both simulation-based and theory-based confidence intervals for two categorical variables.
+
 Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
 
 * **Independence**: The data are independent within and between the two groups. (*Remember*: This also must be true to use simulation methods!)
