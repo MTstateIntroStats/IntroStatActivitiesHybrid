@@ -7,7 +7,11 @@ output:
 
 ## Vocabulary Review and Key Topics 
 
-At the beginning of each module is a list of new vocabulary terms and key topics for that module.  As you read through the material in the textbook and watch the videos prior to class, look for these terms.  Reference the following definitions to guide your understanding.
+At the beginning of each module is a summary of key topics and new vocabulary terms for that module. As you read through the material in the textbook and watch the videos prior to class, look for these terms.  Reference the definitions to guide your understanding.
+
+### Key topics
+
+Module 1 introduces the foundations of data: observational units, types of variables, and how to collect sample data from a population of interest in a way that allows us to generalize our results back to the population.
 
 ### Vocabulary
 

@@ -1,8 +1,8 @@
 ## Unit 1 Review
 
-## Key Topics Exam 1
+### Key Topics Exam 1
 
-Descriptive statistics and study design:
+#### Descriptive statistics and study design {-}
 
 1.	Identify the observational units.
 
@@ -26,7 +26,7 @@ Descriptive statistics and study design:
 
 11. Identify the type(s) of graph(s) that could be used to plot the given variable(s).
 
-Hypothesis testing:
+#### Hypothesis testing {-}
 
 12. Write the parameter of interest in context of the problem.
 
@@ -59,7 +59,7 @@ Hypothesis testing:
 26.	Describe which features of the study impact the p-value and how.
 
 
-Confidence interval:
+#### Confidence intervals
 
 27.	Describe how to simulate one bootstrapped sample using cards.
 

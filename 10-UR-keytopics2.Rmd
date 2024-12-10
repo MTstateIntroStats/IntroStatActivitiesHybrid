@@ -2,7 +2,7 @@
 
 ### Key Topics Exam 2
 
-Descriptive statistics and study design:
+#### Descriptive statistics and study design {-}
 
 1.	Identify the observational units.
 
@@ -18,7 +18,7 @@ Descriptive statistics and study design:
 
 7.	Calculate and interpret the difference in proportions, relative risk, and percent increase/decrease in risk for a study involving two categorical variables.
 
-Hypothesis testing:
+#### Hypothesis testing {-}
 
 8.	Identify which of the two scenarios applies to the study: one quantitative variable or two categorical variables.
 
@@ -66,7 +66,7 @@ Hypothesis testing:
 
 30.	Based on your p-value, identify what type of error could have occurred.
 
-Confidence interval:
+#### Confidence interval {-}
 
 31.	Describe how to simulate one bootstrapped sample using cards.
 
