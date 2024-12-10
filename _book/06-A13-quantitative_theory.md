@@ -109,17 +109,19 @@ bodytemp %>%
 
 3. Report the sample size of the study. Give appropriate notation.
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 4. Report the sample mean of the study.  Give appropriate notation.
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 5.  How do you know the independence condition is met for these data?
 \vspace{0.8in}
 
 6. Is the normality condition met to use the theory-based methods for analysis?  Explain your answer.
 \vspace{1in}
+
+\newpage
 
 #### Use statistical inferential methods to draw inferences from the data {-}
 
@@ -151,6 +153,7 @@ $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/tdistmean-1} \end{center}
+\newpage
 
 To find the p-value for the theory-based test: 
 

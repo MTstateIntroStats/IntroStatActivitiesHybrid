@@ -33,7 +33,8 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 * Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. 
 
 * Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
-```{r, echo=TRUE, eval=FALSE}
+
+``` r
 swearing <- datasetname
 ```
 
@@ -65,7 +66,8 @@ We will use the `one_mean_test()` function in R (in the `catstats` package) to s
 
 10.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
 
-```{r, echo = TRUE, eval = FALSE}
+
+``` r
 one_mean_test(object$variable,   # Vector of differences 
                                  # or data set with column for each group
         shift = xx,   # Shift needed for bootstrap hypothesis test
@@ -93,7 +95,8 @@ one_mean_test(object$variable,   # Vector of differences
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
 
 13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
-```{r, echo = TRUE, eval = FALSE}
+
+``` r
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
                     number_repetitions = 1000, # Number of bootstrap samples for CI
                     confidence_level = xx,  # Confidence level in decimal form

@@ -35,13 +35,15 @@ Notation:
 
 Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
 
-```{r, echo=TRUE}
+
+``` r
 pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
 ```
 
 Plots of the data:
 
-```{r, echo=TRUE, out.width="60%"}
+
+``` r
 pb %>%
     ggplot(aes(x = Weight)) +   # Name variable to plot
     geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
@@ -57,11 +59,18 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
        y = "Frequency") # Label for y axis
 ```
 
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-2} \end{center}
+
 Summary Statistics:
 
-```{r, echo=TRUE}
+
+``` r
 pb %>%
   summarise(favstats(Weight)) #Gives the summary statistics
+#>     min    Q1 median     Q3   max     mean       sd  n missing
+#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
 ### Confidence interval {-}
 
@@ -85,13 +94,18 @@ Conditions for inference for a single mean:
 
 \vspace{0.5in}
 
-```{r, echo=TRUE, warning=FALSE}
+
+``` r
 set.seed(216)
 one_mean_CI(pb$Weight,
   summary_measure = "mean",
   number_repetitions = 10000,
   confidence_level = 0.95)
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-4-1} \end{center}
 The confidence interval estimates the ________________
 of ____________________.
 
@@ -145,22 +159,16 @@ degrees of freedom to approximate the sampling distribution.
 
 The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
 
-```{r, tstarpb, echo = F}
 
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 82)
-degf <- 82
-
-plot(x, hx, type="l", lty=1, lwd=3, xlab="",
-  ylab="Density", main="t-distribution with 82 df")
-
-```
+\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/tstarpb-1} \end{center}
 
 \newpage
 To find the $t^*$ multiplier for a 95\% confidence interval:
 
-```{r, echo=TRUE}
+
+``` r
 qt(0.975, df = 82)
+#> [1] 1.989319
 ```
 Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
 

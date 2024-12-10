@@ -11,13 +11,13 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 * QuantitativeData
 
-*5.2to5.4
-
 * 5.5to5.6
 
 * 5.7
 
-***
+* 17.2
+
+* 17.3TheoryTests
 
 \setstretch{1}
 
