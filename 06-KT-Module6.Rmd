@@ -87,33 +87,8 @@ one_mean_test(object$variable,#Enter the object name and variable
               shift = xx, #Difference between the null value and the sample mean
               as_extreme_as = xx, #Value of the summary statistic
               direction = "xx", #Specify direction of alternative hypothesis
-              number_repetitions = 10000,
-              add_normal = FALSE)
+              number_repetitions = 10000)
 ```
-
-### Simulation Confidence Interval {-}
-
-* R code to find the simulation confidence interval using the `onemean_CI` function from the `catstats` package.
-
-
-```{r, eval=FALSE, echo=TRUE}
-one_mean_CI(object$variable, #Enter the name of the variable
-            summary_measure = "mean", #choose the mean or median
-            number_repetitions = 10000,  # Number of simulations
-            confidence_level = xx)
-```
-
-
-* Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed
-
-    * To write in context include:
-
-        - How confident you are (e.g., 90%, 95%, 98%, 99%)
-    
-        - Parameter of interest
-    
-        - Calculated interval
-
 
 #### Exploratory data analysis {-}
 
