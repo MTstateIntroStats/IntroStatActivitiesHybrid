@@ -74,9 +74,9 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
 
             - Variable(s)
 
-* **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable.
+#### Plotting one categorical variable {-}
 
-* R code to create a frequency bar plot:
+* **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable. R code to create a frequency bar plot:
 
     ```{r, echo=TRUE, eval=FALSE}
 object %>% # Data set piped into...
@@ -88,9 +88,7 @@ object %>% # Data set piped into...
        y = "Frequency")  # Label the y axis
     ```
 
-* **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable.
-
-* R code to create a relative frequency bar plot:
+* **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable. R code to create a relative frequency bar plot:
 
     ```{r, echo=TRUE, eval=FALSE}
 object %>% # Data set piped into...
@@ -101,6 +99,9 @@ object %>% # Data set piped into...
        x = "x-axis label",   # Label the x axis
        y = "Relative Frequency")  # Label the y axis
     ```
+
+
+#### Inference {-}
 
 * **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis.
 
