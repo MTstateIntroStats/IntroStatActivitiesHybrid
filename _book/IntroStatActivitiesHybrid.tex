@@ -283,9 +283,9 @@ Module 6 will introduce hypothesis testing using both simulation-based and theor
 
 \begin{itemize}
 \item
-  The \textbf{summary measure} for one quantitative variable is the \textbf{mean}
+  The \textbf{summary measure} for one quantitative variable is the \textbf{mean}.
 \item
-  Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation
+  Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation.
 \end{itemize}
 
 \subsubsection*{Exploratory data analysis}\label{exploratory-data-analysis}
@@ -296,6 +296,8 @@ At the end of this module, you should understand how to calculate a summary stat
 \begin{itemize}
 \item
   Notation for a sample mean: \(\bar{x}\)
+\item
+  Notation for a sample standard deviation: \(s\)
 \item
   Notation for a population mean: \(\mu\)
 \item
@@ -310,7 +312,7 @@ At the end of this module, you should understand how to calculate a summary stat
     Dotplot
   \end{itemize}
 \item
-  R code to find the summary statistics for a quantitative variable
+  R code to find the summary statistics for a quantitative variable:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -323,7 +325,11 @@ At the end of this module, you should understand how to calculate a summary stat
 \subsubsection*{Simulation-based Hypothesis Testing}\label{simulation-based-hypothesis-testing}
 \addcontentsline{toc}{subsubsection}{Simulation-based Hypothesis Testing}
 
-Hypotheses for a single quantitative variable:
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hypotheses in notation for a single mean}: In the hypotheses below, \(\mu_0\) is the \textbf{null value}.
+\end{itemize}
 
 \[H_0: \mu = \mu_0\]
 \[H_A: \mu\left\{
@@ -337,7 +343,7 @@ Hypotheses for a single quantitative variable:
 
 \begin{itemize}
 \item
-  R code to use for \textbf{simulation methods} for one quantitative variable to find the p-value, one\_mean\_test, is shown below. Review the comments (instructions after the \#) to see what each should be entered for each line of code.
+  R code to use for \textbf{simulation-based methods} for one quantitative variable to find the p-value, \texttt{one\_mean\_test}, is shown below. Review the comments (instructions after the \#) to see what each should be entered for each line of code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -357,7 +363,7 @@ Hypotheses for a single quantitative variable:
 
 \begin{itemize}
 \item
-  \textbf{Theory-based methods}: when specific conditions are met, the distribution of sample statistics if we were to repeatedly sample from the population can be fit with a theoretical distribution
+  Theory-based methods should give the same results as simulation-based methods if conditions are met. For a single quantitative variable, conditions are met if either the data themselves follow a normal distribution or if the sample size is large enough. We call this the ``normality condition.''
 \item
   \textbf{Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution}:
 
@@ -365,25 +371,28 @@ Hypotheses for a single quantitative variable:
   \item
     \textbf{Independence}: The sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
   \item
-    \textbf{Large enough sample size: Normality Condition}: The sample observations come from a normally distributed population. To check use the the following rules of thumb:
+    \textbf{Normality Condition}: Either the sample observations come from a normally distributed population or we have a large enough sample size. To check this condition, use the the following rules of thumb:
 
     \begin{itemize}
     \item
-      \(n < 30\): The distribution of the sample must be approximately normal with no outliers
+      \(n < 30\): The distribution of the sample must be approximately normal with no outliers.
     \item
-      \(30 \ge n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
+      \(30 \ge n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
     \item
-      \(n > 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribuion of individual observationals is not
+      \(n > 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
     \end{itemize}
   \end{itemize}
 \item
-  \textbf{t-distribution}: a theoretical distribution that is symmetric with a given degrees of freedom (\(n-1\))
+  \textbf{t-distribution}: a theoretical distribution that is bell-shaped with mean zero. Its degrees of freedom determine the variability of the distribution. For very large degrees of freedom, the \(t\)-distribution is close to a standard normal distribution. For a single quantitative variable, the degrees of freedom are calculated by subtracting one from the sample size: \(n-1\). A \(t\)-distribution with \(n-1\) degrees of freedom is denoted by: \(t_{n-1}\).
+\item
+  \textbf{Standard error of the sample mean}: measures the how far each possible sample mean is from the true mean, on average, and is calculated using the formula below:
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    \(t_{n-1}\)
-  \end{itemize}
+\[SE(\bar{x})=\frac{s}{\sqrt{n}}\]
+where \(s\) is the sample standard deviation.
+
+\begin{itemize}
+\tightlist
 \item
   \textbf{Standardized sample mean}: standardized statistic for a single quantitative variable calculated using:
 \end{itemize}
@@ -391,14 +400,7 @@ Hypotheses for a single quantitative variable:
 \[
 T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 \]
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Standard error of the sample mean assuming the null is true}: measures the how far each possible sample mean is from the true mean, on average and is calculated using the formula below:
-\end{itemize}
-
-\[SE(\bar{x})=\frac{s}{\sqrt{n}}\]
+If the conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution are met, and if the true value of \(\mu\) is equal to the null value of \(\mu_0\), the standardized sample mean, \(T\), will have an approximate \(t\)-distribution with \(n-1\) degrees of freedom.
 
 \begin{itemize}
 \item
@@ -406,11 +408,11 @@ T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 
   \begin{itemize}
   \item
-    \texttt{pt} will give you a p-value using the t-distribution with n-1 df (enter for yy)
+    \texttt{pt} will give you a p-value using the \(t\)-distribution with \(n-1\) df (enter for \texttt{yy})
   \item
-    Enter the value of the standardized statistic for xx
+    Enter the value of the standardized statistic for \texttt{xx}
   \item
-    If a greater than alternative, change lower.tail = TRUE to FALSE.
+    If a greater than alternative, change \texttt{lower.tail\ =\ TRUE} to FALSE.
   \item
     If a two-sided test, multiply by 2.
   \end{itemize}
@@ -424,64 +426,87 @@ T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 
 \subsection{Vocabulary}\label{vocabulary}
 
-\begin{itemize}
-\item
-  Quartile 1, \(Q_1\): value at the 25th percentile; approximately 25\% of data values are at and below the value of \(Q_1\)
-\item
-  Quartile 2, \(Q_3\): value at the 75th percentile; approximately 75\% of data values are at and below the value of \(Q_3\)
-\item
-  Sample standard deviation, \(s\): on average, each value in the data set is s units from the mean of the data set
-\item
-  \textbf{Interquartile range}: \(IQR = Q_3-Q_1\)
-\end{itemize}
-
-Types of plot for one quantitative variables:
+\subsubsection*{Sample statistics for a single quantitative variable}\label{sample-statistics-for-a-single-quantitative-variable}
+\addcontentsline{toc}{subsubsection}{Sample statistics for a single quantitative variable}
 
 \begin{itemize}
 \item
-  \textbf{Histogram}: sorts a quantitative variable into bins of a certain width
+  \textbf{Mean}, \(\bar{x}\): the average
+  \[ 
+  \bar{x} = \frac{\sum_{x_1 + x_2 + \cdots + x_n}}{n},
+  \]
+  where \(x_1, x_2, \ldots, x_n\) are the data values and \(n\) is the sample size.
 \item
-  R code to create a histogram
+  \textbf{Median}: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
+\item
+  \textbf{Quartile 1} (lower quartile), \(Q_1\): value at the 25th percentile; approximately 25\% of data values are at or below the value of \(Q_1\).
+\item
+  \textbf{Quartile 3} (upper quartile), \(Q_3\): value at the 75th percentile; approximately 75\% of data values are at or below the value of \(Q_3\).
+\item
+  \textbf{Sample standard deviation}, \(s\): on average, each value in the data set is \(s\) units from the mean of the data set (\(\bar{x}\)). We will always calculate \(s\) using R, but it is calculated using the following formula:
+  \[
+  \bar{x} = \frac{\sum_{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}}{n},
+  \]
+  where \(x_1, x_2, \ldots, x_n\) are the data values, \(\bar{x}\) is the sample mean, and \(n\) is the sample size.
+\item
+  \textbf{Interquartile range}: the range of the data between the two quartiles: \(IQR = Q_3-Q_1\).
 \end{itemize}
+
+\subsubsection*{Plotting one quantitative variables}\label{plotting-one-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Plotting one quantitative variables}
+
+\begin{itemize}
+\item
+  \textbf{Histogram}: sorts a quantitative variable into bins of a certain width.
+\item
+  R code to create a histogram:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-        \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
-        \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
-        \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
-            \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
-            \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{itemize}
 \item
-  \textbf{Boxplot}: plots the values of the five number summary and shows any outliers in the data set
+  \textbf{Boxplot}: plots the values of the five-number summary and shows any outliers in the data set.
 \item
-  R code to create a boxplot
-\end{itemize}
+  R code to create a boxplot:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{    object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-        \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
-        \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create boxplot }
-        \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
-            \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
-            \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create boxplot }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
 \end{Highlighting}
 \end{Shaded}
+\item
+  \textbf{Dotplot}: plots each value as a dot along the \(x\)-axis.
+\item
+  R code to create a dotplot:
 
-\begin{itemize}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_dotplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create dotplot }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
 \item
-  \textbf{Dotplot}: plots each value as a dot along the x-axis
-\item
-  Four characteristics of boxplots
+  Four characteristics of a distribution of a single quantitative variable:
 
   \begin{itemize}
   \item
-    Shape (symmetric or skewed)
+    Shape (symmetric, skewed left, or skewed right)
   \item
     Center
   \item
@@ -2126,27 +2151,23 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 Module 7 will cover creating confidence intervals using both simulation-based and theory-based methods. Additionally, we learn about types of errors and power in hypothesis testing.
 
-\subsection*{Simulation Confidence Interval}\label{simulation-confidence-interval}
-\addcontentsline{toc}{subsection}{Simulation Confidence Interval}
+\subsubsection*{Simulation-based Confidence Interval}\label{simulation-based-confidence-interval}
+\addcontentsline{toc}{subsubsection}{Simulation-based Confidence Interval}
 
 \begin{itemize}
-\tightlist
 \item
-  R code to find the simulation confidence interval using the \texttt{onemean\_CI} function from the \texttt{catstats} package.
-\end{itemize}
+  R code to find the simulation-based confidence interval using the \texttt{onemean\_CI} function from the \texttt{catstats} package.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{one\_mean\_CI}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
-            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
-            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-            \AttributeTok{confidence\_level =}\NormalTok{ xx)}
+        \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
+        \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+        \AttributeTok{confidence\_level =}\NormalTok{ xx)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{itemize}
 \item
-  Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed
+  Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed.
 
   \begin{itemize}
   \item
@@ -2163,13 +2184,13 @@ Module 7 will cover creating confidence intervals using both simulation-based an
   \end{itemize}
 \end{itemize}
 
-\subsection*{Theory-based Confidence Interval}\label{theory-based-confidence-interval}
-\addcontentsline{toc}{subsection}{Theory-based Confidence Interval}
+\subsubsection*{Theory-based Confidence Interval}\label{theory-based-confidence-interval}
+\addcontentsline{toc}{subsubsection}{Theory-based Confidence Interval}
 
 \begin{itemize}
 \tightlist
 \item
-  Calculation of the confidence interval for a sample mean
+  Calculation of the confidence interval for a sample mean:
 \end{itemize}
 
 \[\bar{x}\pm t^*\times SE(\bar{x})\]
@@ -2180,22 +2201,22 @@ Module 7 will cover creating confidence intervals using both simulation-based an
 
   \begin{itemize}
   \item
-    qt will give you the multiplier using the t-distribution with \(n-1\) df (enter for yy)
+    \texttt{qt} will give you the multiplier using the t-distribution with \(n-1\) df (enter for yy)
   \item
     Enter the percentile for the given confidence level
   \end{itemize}
-\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+\end{itemize}
 
 \newpage
 
-\subsection*{Errors and Power}\label{errors-and-power}
-\addcontentsline{toc}{subsection}{Errors and Power}
+\subsection*{Vocabulary}\label{vocabulary-1}
+\addcontentsline{toc}{subsection}{Vocabulary}
 
 \begin{itemize}
 \item
