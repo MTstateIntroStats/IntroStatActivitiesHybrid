@@ -170,7 +170,7 @@ Interpret the value of s for the age of buyers.
 * Shape: overall pattern of the data
 
 ```{r, out.width="80%"}
-include_graphics("images/shape.png")
+include_graphics("images/shape2.png")
 ```
 
 \rgi \rgi - What is the shape of the distribution of age of buyers for Gallatin County home sales?
