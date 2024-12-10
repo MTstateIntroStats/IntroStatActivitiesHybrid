@@ -1527,7 +1527,7 @@ To review these concepts, see Chapter 17 in the textbook.
 
 \subsection{College student sleep habits}\label{college-student-sleep-habits}
 
-According to the National Institutes of Health (NIH) (\emph{add reference}), experts recommend adults (\textgreater18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits. Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
+According to the an article in \emph{Sleep} (Watson 2015), experts recommend adults (\textgreater18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits. Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
 
 \subsubsection*{Summarizing quantitative variables}\label{summarizing-quantitative-variables-1}
 \addcontentsline{toc}{subsubsection}{Summarizing quantitative variables}
@@ -1542,6 +1542,12 @@ According to the National Institutes of Health (NIH) (\emph{add reference}), exp
 \item
   Highlight and run lines 1--8 to load the data
 \end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \subsubsection*{Ask a research question}\label{ask-a-research-question}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
@@ -1590,14 +1596,9 @@ The \texttt{favstats()} function from the \texttt{mosaic} package gives the summ
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(SleepHours))}
+    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(variable))}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-#>   min Q1 median  Q3 max     mean       sd   n missing
-#> 1   3  6      7 7.8  13 6.919376 1.467231 123       0
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1612,17 +1613,20 @@ The \texttt{favstats()} function from the \texttt{mosaic} package gives the summ
 Create a boxplot of the variable \texttt{SleepHours}.
 
 \begin{itemize}
-\tightlist
 \item
   Enter the name of the variable in line 19 for \texttt{variable} in the R script file.
+\item
+  Enter a title in line 21 for the plot between the quotations
+\item
+  Highlight and run lines 18 - 25
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SleepHours)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
     \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of 216 Students Sleep Hours"}\NormalTok{, }\CommentTok{\# Title for plot}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title your plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
        \AttributeTok{x =} \StringTok{"Amount of sleep (hrs)"}\NormalTok{, }\CommentTok{\# Label for x axis}
        \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
     \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
@@ -1666,20 +1670,17 @@ To simulate the null distribution of sample means we will use a bootstrapping me
   Save the file and upload again to the RStudio server
 \item
   Find the favstats of the variable, Shift
+\item
+  Highlight and run lines 30--32
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sleep2 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/sleep\_college2.csv"}\NormalTok{)}
-\NormalTok{sleep2 }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sleep\_college.csv"}\NormalTok{)}
+\NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Shift))}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-#>     min    Q1 median    Q3    max     mean       sd   n missing
-#> 1 3.081 6.081  7.081 7.881 13.081 7.000376 1.467231 123       0
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1758,9 +1759,26 @@ To simulate the null distribution of sample means we will use a bootstrapping me
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+Using the R script file for this activity\ldots{}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{06-A12-quantitative-testing_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{itemize}
+\item
+  Enter your answers for question 9 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations
+\item
+  Highlight and run lines 361--42.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_test}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{SleepHours,}\CommentTok{\#Enter the object name and variable}
+              \AttributeTok{null\_value =}\NormalTok{ xx,}
+              \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{,  }\CommentTok{\#Can choose between mean or median}
+              \AttributeTok{shift =}\NormalTok{ xx, }\CommentTok{\#Difference between the null value and the sample mean}
+              \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\#Value of the summary statistic}
+              \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\#Specify direction of alternative hypothesis}
+              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1901,26 +1919,31 @@ The following code is used to create a boxplot of the data.
 
 \begin{itemize}
 \item
-  Download the R script file for this activity and upload to the R studio server.
+  Download the R script file upload to the R studio server.
 \item
-  Open the file and follow the instructions given in the R file.
+  Open the R script file and highlight and run lines 1--14
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bodytemp }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/normal\_temperature.csv"}\NormalTok{)}
+\NormalTok{bodytemp }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/normal\_temperature.csv"}\NormalTok{)}
 \NormalTok{bodytemp }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Temp))}\SpecialCharTok{+}
   \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=}\StringTok{"Boxplot of the Difference in Time to Read Words }
-\StringTok{       Between Color and Black for College Undergraduates"}\NormalTok{,}
-       \AttributeTok{x =} \StringTok{"Differences in time to read words (Color {-} Black)"}\NormalTok{)}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=}\StringTok{"Boxplot of Body Temperatures for Stat 216 Students"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"body temperature (*F)"}\NormalTok{) }\SpecialCharTok{+}
+        \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
+          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-The following code gives the summary statistics for the pairwise differences.
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 17 - 18 to get the summary statistics for the variable Temp.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2036,7 +2059,7 @@ To find the p-value for the theory-based test:
 \item
   Enter the df for yy in the pt function.
 \item
-  Highlight and run line 27
+  Highlight and run line 24
 \end{itemize}
 
 \begin{Shaded}
@@ -2066,7 +2089,7 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 \item
   Enter the df for yy.
 \item
-  Highlight and run lines \ldots{}
+  Highlight and run line 30
 \end{itemize}
 
 \begin{Shaded}
@@ -2154,7 +2177,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
 Banton, et al, S. 2022. {``Jog with Your Dog: Dog Owner Exercise Routines Predict Dog Exercise Routines and Perception of Ideal Body Weight.''} \emph{PLoS ONE} 17(8).
 
 \bibitem[\citeproctext]{ref-bhavsar2022}
-Bhavsar, et al, A. 2022. {``Increased Risk of Herpes Zoster in Adults ≥50 Years Old Diagnosed with COVID-19 in the United States.''} \emph{Open Forum Infectious Diseases} 9(5).
+Bhavsar, et al, A. 2022. {``Increased Risk of Herpes Zoster in Adults \(\geq\)50 Years Old Diagnosed with COVID-19 in the United States.''} \emph{Open Forum Infectious Diseases} 9(5).
 
 \bibitem[\citeproctext]{ref-islands}
 Bulmer, M. n.d. {``Islands in Schools Project.''} \url{https://sites.google.com/site/islandsinschoolsprojectwebsite/home}.
@@ -2278,6 +2301,9 @@ US Environmental Protection Agency. n.d. {``Air Data -- Daily Air Quality Tracke
 
 \bibitem[\citeproctext]{ref-wahlstrom2014}
 Wahlstrom, et al, K. 2014. {``Examining the Impact of Later School Start Times on the Health and Academic Performance of High School Students: A Multi-Site Study.''} \emph{Center for Applied Research and Educational Improvement}.
+
+\bibitem[\citeproctext]{ref-watson2015}
+Watson, et al., N. 2015. {``Recommended Amount of Sleep for a Heathy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society.''} \emph{Sleep} 38(6).
 
 \bibitem[\citeproctext]{ref-Weiss1988}
 Weiss, R. D. 1988. {``Relapse to Cocaine Abuse After Initiating Desipramine Treatment.''} \emph{JAMA} 260(17).

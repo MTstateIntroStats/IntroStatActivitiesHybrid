@@ -23,7 +23,7 @@ To review these concepts, see Chapter 17 in the textbook.
 
 ### College student sleep habits
 
-According to the National Institutes of Health (NIH) (*add reference*), experts recommend adults (>18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits.  Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
+According to the an article in *Sleep* [@watson2015], experts recommend adults (>18) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits.  Is there evidence that sleep college students get less than the recommended 7 hours of sleep per night, on average?
 
 #### Summarizing quantitative variables {-}
 
@@ -35,8 +35,8 @@ According to the National Institutes of Health (NIH) (*add reference*), experts 
 
 * Highlight and run lines 1--8 to load the data
 
-```{r}
-sleep <- read.csv("data/sleep_college.csv")
+```{r, echo=TRUE, eval=FALSE}
+sleep <- read.csv("datasetname.csv")
 ```
 
 #### Ask a research question {-}
@@ -61,9 +61,9 @@ The `favstats()` function from the `mosaic` package gives the summary statistics
 
 * Highlight and run lines 12--13
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 sleep %>%
-    summarize(favstats(SleepHours))
+    summarize(favstats(variable))
 ```
 4. How far is each number of hours of sleep for a Stat 216 student from the mean number of hours of sleep, on average?
 
@@ -71,14 +71,17 @@ sleep %>%
 
 Create a boxplot of the variable `SleepHours`.
 
-* Enter the name of the variable in line 19 for `variable` in the R script file.  
+* Enter the name of the variable in line 19 for `variable` in the R script file. 
 
+* Enter a title in line 21 for the plot between the quotations
+
+* Highlight and run lines 18 - 25
 
 ```{r, echo=TRUE, eval=FALSE, warning=FALSE}
 sleep %>% # Data set piped into...
-    ggplot(aes(x = SleepHours)) +   # Name variable to plot
+    ggplot(aes(x = variable)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
-    labs(title = "Boxplot of 216 Students Sleep Hours", # Title for plot
+    labs(title = "Don't forget to title your plot!", # Title for plot
        x = "Amount of sleep (hrs)", # Label for x axis
        y = "") + # Remove y axis label
     theme(axis.text.y = element_blank(), 
@@ -107,9 +110,11 @@ To simulate the null distribution of sample means we will use a bootstrapping me
 
 * Find the favstats of the variable, Shift
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
-sleep2 <- read.csv("data/sleep_college2.csv")
-sleep2 %>%
+* Highlight and run lines 30--32
+
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+sleep <- read.csv("sleep_college.csv")
+sleep %>%
     summarize(favstats(Shift))
 ```
 7. Report the mean of the Shift variable.  Why does it make sense that this value is the same as the null value?
@@ -144,15 +149,19 @@ sleep2 %>%
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 7 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+Using the R script file for this activity...
 
-```{r}
+* Enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations
+
+* Highlight and run lines 361--42.
+
+```{r, echo=TRUE, eval=FALSE}
 one_mean_test(sleep$SleepHours,#Enter the object name and variable
-              null_value = 7,
-              summary_measure = "mean",  #Can choose between mean or median
-              shift = 7-6.919, #Difference between the null value and the sample mean
-              as_extreme_as = 6.919, #Value of the summary statistic
-              direction = "two-sided", #Specify direction of alternative hypothesis
+              null_value = xx,
+              summary_measure = "xx",  #Can choose between mean or median
+              shift = xx, #Difference between the null value and the sample mean
+              as_extreme_as = xx, #Value of the summary statistic
+              direction = "xx", #Specify direction of alternative hypothesis
               number_repetitions = 10000)
 ```
 10. Interpret the p-value of the test in context of the problem.
