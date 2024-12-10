@@ -50,7 +50,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
     * The alternative hypothesis is determined by the research question.
     
-Hypotheses:
+* **Hypotheses in notation for a single proportion**: In the hypotheses below, $$\pi_0$$ is the **null value**.
 
 $$H_0: \pi = \pi_0$$
 $$H_A: \pi \left\{
