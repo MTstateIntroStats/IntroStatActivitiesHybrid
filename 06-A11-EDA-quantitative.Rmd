@@ -173,7 +173,7 @@ When describing distributions of quantitative variables we discuss the **shape**
 
 Let’s examine how the presence of outliers affects the different summary measures for center and spread. For this part of the activity, we will look at the retention rate variable (`Retention`) in the IPEDS data set.  
 
-```{r, echo=TRUE, eval=TRUE, warnings=FALSE}
+```{r, echo=TRUE, eval=TRUE, warning=FALSE, message = FALSE}
 IPEDS %>% # Data set piped into...
     summarise(favstats(Retention))
 
@@ -198,7 +198,7 @@ IPEDS %>% # Data set piped into...
 To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the
 data set were increased by 30%. This variable is called `Retention_Inc`.
 
-```{r, echo=TRUE, eval=TRUE}
+```{r, echo=TRUE, eval=TRUE, warning=FALSE, message = FALSE}
 IPEDS %>% # Data set piped into...
     summarise(favstats(Retention_Inc))
 
