@@ -11,12 +11,6 @@
 
 * Interpret and evaluate a p-value for a theory-based hypothesis test for a single mean.
 
-* Use theory-based methods to find a confidence interval for a single mean.
-
-* Interpret a confidence interval for a single mean.
-
-* Use a confidence interval to determine the conclusion of a hypothesis test.
-
 ### Terminology review
 
 In today's activity, we will analyze quantitative data using theory-based methods. Some terms covered in this activity are:

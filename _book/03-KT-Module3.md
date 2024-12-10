@@ -49,6 +49,18 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 * **Alternative hypothesis**: represents an alternative claim under consideration and is often represented by a range of possible values for the parameter of interest.
 
     * The alternative hypothesis is determined by the research question.
+    
+Hypotheses:
+
+$$H_0: \pi = \pi_0$$
+$$H_A: \pi \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\pi_0 $$
 
 * **Null Distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 
@@ -108,7 +120,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 * **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample
 
-* **Simulation methods to create the bootstrap distribution**: a process of using a computer program (e.g., R) to simulate many bootstrapped samples.
+* **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
     R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI`, is shown below. 
 
@@ -168,14 +180,5 @@ As we move through the semester we will work through the six steps of the statis
 
 6. Revisit and look forward.
 
-* Null hypothesis notation for a single proportion:
-
-    * $H_0: \pi = \pi_0$, where $\pi_0$ represents the null value for the study.
-
-* Alternative hypothesis notation for a single proportion:
-
-    * $H_A: \pi \{< \ne > \} \pi_0$
-    
-    * Use the research question to determine the direction of the alternative.
 
 \newpage

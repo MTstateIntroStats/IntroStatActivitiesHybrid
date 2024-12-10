@@ -45,7 +45,7 @@ To use the computer simulation, we will need to enter the
 
 * assumed "probability of success" ($\pi_0$), 
 * "sample size" (the number of observational units or cases in the sample),
-* "number of repetitions" (the number of samples to be generated), 
+* "number of repetitions" (the number of samples to be generated - typically we use 10000), 
 * "as extreme as" (the observed statistic), and 
 * the "direction" (matches the direction of the alternative hypothesis).
 
@@ -73,7 +73,7 @@ We will use the `one_proportion_test()` function in `R` (in the `catstats` packa
 ``` r
 one_proportion_test(probability_success = xx, # Null hypothesis value
           sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
+          number_repetitions = 10000, # Enter number of simulations
           as_extreme_as = xx, # Observed statistic
           direction = "xx", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?

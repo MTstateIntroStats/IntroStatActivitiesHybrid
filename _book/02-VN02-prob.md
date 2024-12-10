@@ -114,11 +114,11 @@ Calculate and interpret each of the following:
 
 \setstretch{1.5}
 
-* $P(S^c)=$
+* $P(S^C)=$
 
 \vspace{0.6in}
 
-* $P(D^c|S^c)=$
+* $P(D^C|S^C)=$
 
 \vspace{0.6in}
 
@@ -126,13 +126,13 @@ Calculate and interpret each of the following:
 
 <!-- \begin{center} -->
 <!-- \begin{tabular}{|c|c|c|c|} \hline -->
-<!-- \hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^c$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ -->
+<!-- \hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ -->
 <!-- & & & \\ \hline -->
-<!-- $B$& $A$ and $B$ & $A^c$ and $B$ & Total $B$ \\ -->
+<!-- $B$& $A$ and $B$ & $A^C$ and $B$ & Total $B$ \\ -->
 <!-- & & & \\ \hline -->
-<!-- $B^c$& $A$ and $B^c$ & $A^c$ and $B^c$ & Total $B^c$ \\ -->
+<!-- $B^C$& $A$ and $B^C$ & $A^C$ and $B^C$ & Total $B^C$ \\ -->
 <!-- & & & \\ \hline -->
-<!-- Total & Total $A$ & Total $A^c$ & TOTAL \\ -->
+<!-- Total & Total $A$ & Total $A^C$ & TOTAL \\ -->
 <!-- & & & \\ \hline -->
 <!-- \end{tabular} -->
 <!-- \end{center} -->
@@ -146,7 +146,7 @@ Calculate and interpret each of the following:
 
 <!-- \vspace{0.2in} -->
 
-<!-- $P(A$ and $B^c) =$ -->
+<!-- $P(A$ and $B^C) =$ -->
 
 <!-- \vspace{0.2in} -->
 
@@ -208,11 +208,11 @@ Start by identifying the probability notation for each value given.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.35in} $B$ \hspace{.35in} & \hspace{0.35in} $B^c$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
+\hspace{0.8in} & \hspace{0.35in} $B$ \hspace{.35in} & \hspace{0.35in} $B^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
 & & & \\ \hline
 $N$& & & \\ 
 & & & \\ \hline
-$N^c$& & & \\ 
+$N^C$& & & \\ 
 & & & \\ \hline
 Total & & & 100,000 \\ 
 & & & \\ \hline
@@ -333,7 +333,7 @@ Total & & & 100,000 \\
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
-1. Calculate and interpret the following: $P(D^c|S^c)=$.
+1. Calculate and interpret the following: $P(D^C|S^C)=$.
 
 \vspace{1in}
 

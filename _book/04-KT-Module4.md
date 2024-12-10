@@ -18,7 +18,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 * **Standard normal distribution**: a theoretical distribution that is symmetric centered on the mean of zero with a standard deviation of one
 
-    * $N(0,1)$
+$$N(0,1)$$
 
 * **Standardized sample proportion**: standardized statistic for a single categorical variable calculated using:
 
@@ -30,6 +30,16 @@ $$
 
 $$SE_0(\hat{p})=\sqrt{\frac{\pi_0\times(1-\pi_0)}{n}}$$.
 
+* The p-value can be found by using the pnorm function.
+
+    * Enter the value of the standardized statistic for xx
+    
+
+``` r
+pnorm(xx, lower.tail=TRUE)
+```
+
+
 * **Margin of error**: half the width of the confidence interval
 
 $$ME = z^* \times SE(\hat{p})$$
@@ -38,11 +48,21 @@ $$ME = z^* \times SE(\hat{p})$$
 
 $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
 
-\newpage
-
 * To find the confidence interval add and subtract the margin of error to the sample statistic
 
 $$\hat{p} \pm ME$$
+
+* R code to find the multiplier for the confidence interval using theory-based methods.
+
+    * qnorm will give you the multiplier using the standard normal distribution
+    
+    * Enter the percentile for the given level of confidence
+
+
+``` r
+qnorm(percentile, lower.tail=FALSE)
+```
+
     
 ### Key topics
 

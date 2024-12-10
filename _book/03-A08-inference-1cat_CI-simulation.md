@@ -95,8 +95,8 @@ We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats`
 ``` r
 one_proportion_bootstrap_CI(sample_size = xx, # Sample size
                     number_successes = xx, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
-                    confidence_level = 0.95) # Confidence level as a decimal
+                    number_repetitions = 10000, # Number of bootstrap samples to use
+                    confidence_level = xx) # Confidence level as a decimal
 ```
 
 \newpage

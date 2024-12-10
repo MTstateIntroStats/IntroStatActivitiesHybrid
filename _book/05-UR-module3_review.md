@@ -98,7 +98,7 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 1753, # Sample size
                     number_successes = 328, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
 ```
 

@@ -95,13 +95,13 @@ $$t = \frac{\bar{x}_d-0}{SE(\bar{x}d)}$$
 pt(xx, df = yy, lower.tail=TRUE)
 ```
 
-* Calculation of the confidence interval for a difference in sample means
+* Calculation of the confidence interval for a mean difference
 
 $$\bar{x}_d\pm t^*\times SE(\bar{x}_d)$$
 
 * R code to find the multiplier for the confidence interval using theory-based methods.
 
-   - qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
+   - qt will give you the multiplier using the t-distribution with $n-1$ df (enter for yy)
     
    - Enter the percentile for the given confidence level
 

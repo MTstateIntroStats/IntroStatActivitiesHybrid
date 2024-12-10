@@ -179,14 +179,5 @@ As we move through the semester we will work through the six steps of the statis
 
 6. Revisit and look forward.
 
-* Null hypothesis notation for a single proportion:
-
-    * $H_0: \pi = \pi_0$, where $\pi_0$ represents the null value for the study.
-
-* Alternative hypothesis notation for a single proportion:
-
-    * $H_A: \pi \{< \ne > \} \pi_0$
-    
-    * Use the research question to determine the direction of the alternative.
 
 \newpage

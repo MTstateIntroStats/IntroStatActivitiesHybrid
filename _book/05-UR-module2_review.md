@@ -20,9 +20,9 @@ b. Fill in the table below to represent the situation:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.25in}  $N$ \hspace{.25in} & \hspace{0.25in} $N^c$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
+\hspace{0.8in} & \hspace{0.25in}  $N$ \hspace{.25in} & \hspace{0.25in} $N^C$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
  $C$ &  &  &  \\ \hline
- $C^c$ &  & &  \\ \hline
+ $C^C$ &  & &  \\ \hline
 Total &  &  & 100000 \\ \hline
 \end{tabular}
 \end{center}
@@ -67,9 +67,9 @@ b. Fill in the table below to represent the situation:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.25in}  $A$ \hspace{.25in} & \hspace{0.25in} $A^c$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
+\hspace{0.8in} & \hspace{0.25in}  $A$ \hspace{.25in} & \hspace{0.25in} $A^C$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
  $B$ &  &  &  \\ \hline
- $B^c$ &  & &  \\ \hline
+ $B^C$ &  & &  \\ \hline
 Total &  &  & 100000 \\ \hline
 \end{tabular}
 \end{center}
@@ -89,7 +89,7 @@ e. Of the population of freshman that attended public school, what is the probab
 \vspace{1in}
 
 
-f. Find the value of $P(A \text{and} B^c)$.  Write this probability in context of the problem.
+f. Find the value of $P(A \text{and} B^C)$.  Write this probability in context of the problem.
 
 
 \newpage

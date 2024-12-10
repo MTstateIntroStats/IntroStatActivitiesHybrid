@@ -2,33 +2,33 @@
 
 ## Vocabulary Review and Key Topics
 
-* **Probability**: the long-run proportion of an event
+* **Probability** (of an event): the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions)
 
-* **Conditional probability**: probabilities calculated dependent on a another event
+* **Conditional probability** (of an event _given_ another event): probability of an event calculated dependent on another event having occurred
 
 * **Probability notation**:
 
     * $P(A)$: the probability of event A
     
-        - This is a single event, unconditional probability calculated out of the overall population
+        - This is the probability of a single event, _unconditional_ probability calculated out of the overall population
         
-    * $P(A \text{and} B)$:the probability of event A and B
+    * $P(A^C)$: the probability of the **complement** of event A, or "A complement"
     
-        - The is an "and" event, unconditional probability calculated out of the overall population
+        - This is the probability of the opposite of event A, or "not A"
+        
+        - $P(A^C) = 1 - P(A)$
+        
+    * $P(A\text{ and }B)$: the probability of event A and B
+    
+        - The is the probability of an "and" event, _unconditional_ probability calculated out of the overall population
         
     * $P(A|B)$: the probability of event A given (conditional on) event B
     
-        - This is a conditional probability calculated out of the total for event B
+        - This is a _conditional_ probability calculated out of the total population for which event B occurred
         
-    * $P(B^c)$: the probability of event B complement
-    
-        - This is the opposite of event B
+
         
-        - $P(B^c) = 1 - P(B)$
-        
-    * $P(B^c|A)$: the probability of event B complement given event A
-    
-        - This is a conditional probability calculated out of the total for event A
+
     
     
 \newpage

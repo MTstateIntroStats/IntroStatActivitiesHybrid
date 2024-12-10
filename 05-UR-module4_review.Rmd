@@ -140,7 +140,7 @@ Simulation Methods:
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 2124, # Sample size
                     number_successes = 709, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
 ```
 
