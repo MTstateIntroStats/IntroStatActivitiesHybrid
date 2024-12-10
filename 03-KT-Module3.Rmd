@@ -34,7 +34,31 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 * **Frequency bar plot**: plots the count (frequency) of observational units in each level of a categorical variable
 
+* R code to create a frequency bar plot
+
+    ```{r, echo=TRUE, eval=FALSE}
+object %>% # Data set piped into...
+    ggplot(aes(x = variable)) +   # This specifies the variable
+    geom_bar(stat = "count") +  # Tell it to make a bar plot
+    labs(title = "Don't forget to title your plot!",  
+       # Give your plot a title
+       x = "x-axis label",   # Label the x axis
+       y = "Frequency")  # Label the y axis
+    ```
+
 * **Relative frequency bar plot**: plots the proportion (relative frequency) of observational units in each level of a categorical variable
+
+* R code to create a relative frequency bar plot
+
+    ```{r, echo=TRUE, eval=FALSE}
+object %>% # Data set piped into...
+    ggplot(aes(x = variable)) +   # This specifies the variable
+    geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
+    labs(title = "Don't forget to title your plot!",  
+       # Give your plot a title
+       x = "x-axis label",   # Label the x axis
+       y = "Relative Frequency")  # Label the y axis
+    ```
 
 * **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis
 
@@ -50,7 +74,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
     * The alternative hypothesis is determined by the research question.
     
-Hypotheses:
+Hypotheses for a single categorical variable:
 
 $$H_0: \pi = \pi_0$$
 $$H_A: \pi \left\{

@@ -9,7 +9,9 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 ### Course Videos
 
-* 5.2to5.4
+* QuantitativeData
+
+*5.2to5.4
 
 * 5.5to5.6
 
@@ -25,11 +27,14 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 We will revisit the moving to Montana data set and plot the age of the buyers.
 
+
+
 Dotplot:
 
 \vspace{0.5in}
 
-```{r, echo=TRUE, out.width="75%"}
+
+``` r
 moving %>%
   ggplot(aes(x = Age))+ #Enter variable to plot
   geom_dotplot() + 
@@ -39,13 +44,18 @@ moving %>%
        y = "Proportion") #y-axis label
 ```
 
+
+
+\begin{center}\includegraphics[width=0.75\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
 \newpage
 
 Histogram:
 
 \vspace{0.2in}
 
-```{r, echo=TRUE, out.width="70%"}
+
+``` r
 moving %>%
   ggplot(aes(x = Age))+
   geom_histogram(binwidth = 7) + 
@@ -55,6 +65,10 @@ moving %>%
        x = "Age",
        y = "Count")
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \setstretch{1.5}
 
@@ -133,7 +147,8 @@ Boxplot (3rd type of plot for quantitative variables)
 
 \vspace{0.3in}
 
-```{r, echo=TRUE, out.width="70%"}
+
+``` r
 moving %>%
   ggplot(aes(x = Age))+ #Enter variable to plot
   geom_boxplot() + 
@@ -144,8 +159,18 @@ moving %>%
 
 ```
 
-```{r, echo=TRUE, collapse=FALSE}
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+
+``` r
 favstats(moving$Age)
+```
+
+```
+#>  min Q1 median    Q3 max  mean       sd   n missing
+#>   20 28     36 49.25  77 39.77 14.35471 100       0
 ```
 
 
@@ -163,9 +188,8 @@ Interpret the value of s for the age of buyers.
 
 * Shape: overall pattern of the data
 
-```{r, out.width="80%"}
-include_graphics("images/shape.png")
-```
+
+\begin{center}\includegraphics[width=0.8\linewidth]{images/shape} \end{center}
 
 \rgi \rgi - What is the shape of the distribution of age of buyers for Gallatin County home sales?
 
@@ -200,7 +224,8 @@ include_graphics("images/shape.png")
 
 Let's look at side-by-side boxplot of the variable age by state of origin moved from.
 
-```{r, echo=TRUE, out.width="85%"}
+
+``` r
 moving %>%  # Data set piped into...
   ggplot(aes(y = Age, x = From))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
@@ -209,6 +234,10 @@ moving %>%  # Data set piped into...
        x = "State of Origin",    # x-axis label
        y = "Age")  # y-axis label
 ```
+
+
+
+\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 * Which state of origin had the oldest median age of buyers from sampled home sales?
 
@@ -232,18 +261,13 @@ moving %>%  # Data set piped into...
 
 Let's review the summary statistics and histogram of age of buyers from sampled home sales.
 
-```{r, echo=FALSE, out.width="85%"}
-moving %>%
-  ggplot(aes(x = Age))+
-  geom_histogram(binwidth = 7) + 
-  labs(title = "Histogram of Age of Buyers from Gallatin 
-       County Home Sales", 
-       x = "Age",
-       y = "Count")
-```
 
-```{r, echo=FALSE, collapse=FALSE}
-favstats(moving$Age)
+\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+
+```
+#>  min Q1 median    Q3 max  mean       sd   n missing
+#>   20 28     36 49.25  77 39.77 14.35471 100       0
 ```
 
 \setstretch{1.5}
@@ -270,13 +294,15 @@ When the distribution is skewed with outliers use the _____________ as the measu
 
 Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
 
-```{r, echo=TRUE}
+
+``` r
 pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
 ```
 
 Plots of the data:
 
-```{r, echo=TRUE, out.width="60%"}
+
+``` r
 pb %>%
     ggplot(aes(x = Weight)) +   # Name variable to plot
     geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
@@ -292,114 +318,21 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
        y = "Frequency") # Label for y axis
 ```
 
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-11-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-11-2} \end{center}
+
+\newpage
+
 Summary Statistics:
 
-```{r, echo=TRUE}
+
+``` r
 pb %>%
   summarise(favstats(Weight)) #Gives the summary statistics
+#>     min    Q1 median     Q3   max     mean       sd  n missing
+#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
-### Confidence interval {-}
-
-#### Simulation-based method{-}
-
-* Label cards with the values from the data set
-
-* Sample with replacement (bootstrap) from the original sample $n$ times
-
-* Plot the simulated sample mean on the bootstrap distribution
-
-* Repeat at least 1000 times (simulations)
-
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
-
-* ie. 95% CI = (2.5th percentile, 97.5th percentile)
-
-Conditions for inference for a single mean:
-
-- Independence:
-
-\vspace{0.5in}
-
-```{r, echo=TRUE, warning=FALSE}
-set.seed(216)
-paired_bootstrap_CI(data = pb$Weight, # Enter vector of differences
-            number_repetitions = 1000, # Number of bootstrap samples for CI
-            confidence_level = 0.95,  # Confidence level in decimal form
-            which_first = 1)  # Not needed when entering vector of differences
-```
-The confidence interval estimates the ________________
-of ____________________.
-
-Confidence interval interpretation:
-
-* How confident you are (e.g., 90%, 95%, 98%, 99%)
-
-* Parameter of interest
-
-* Calculated interval
-
-* Order of subtraction when comparing two groups
-
-\vspace{0.8in}
-
-\newpage
-
-#### Theory-based method {-}
-
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.5in}
-
-Conditions for inference using theory-based methods:
-
-- Independence:
-
-\vspace{0.2in}
-
-- Large enough sample size:
-
-\vspace{0.2in}
-
-### T - distribution {-}
-
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
-
-$$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$
-\setstretch{1.5}
-
-* Estimate the population standard deviation, $\sigma$, with the
-___________________________ standard deviation, ________.
-
-* For a single quantitative variable we use the ____ - distribution
-with _______________
-degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
-
-```{r, tstarpb, echo = F}
-
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 82)
-degf <- 82
-
-plot(x, hx, type="l", lty=1, lwd=3, xlab="",
-  ylab="Density", main="t-distribution with 82 df")
-
-```
-
-\newpage
-To find the $t^*$ multiplier for a 95\% confidence interval:
-
-```{r, echo=TRUE}
-qt(0.975, df = 82)
-```
-Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
-
-\vspace{0.8in}
 
 ### Hypothesis testing {-}
 
@@ -469,24 +402,32 @@ $H_A:$
 
 Reminder of summary statistics:
 
-```{r, echo=TRUE}
+
+``` r
 pb %>%
   summarise(favstats(Weight)) #Gives the summary statistics
+#>     min    Q1 median     Q3   max     mean       sd  n missing
+#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
 Find the difference:
 
 $\mu_0 - \bar{x} =$
 
-```{r, echo=TRUE, warning=FALSE, out.width="60%"}
+
+``` r
 set.seed(216)
-paired_test(data = pb$Weight,   # Vector of differences
-                                         # or data set with column for each group
-            shift = 45.4,   # Shift needed for bootstrap hypothesis test
-            as_extreme_as = 324.6,  # Observed statistic
-            direction = "less",  # Direction of alternative
-            number_repetitions = 1000,  # Number of simulated samples for null distribution
-            which_first = 1)  # Not needed when using calculated differences
+one_mean_test(pb$Weight,   #Enter the object name and variable
+              null_value = 370, #Enter null value for the study
+              summary_measure = "mean",  #Can choose between mean or median
+              shift = 45.4,   # Shift needed for bootstrap hypothesis test
+              as_extreme_as = 324.6,  # Observed statistic
+              direction = "less",  # Direction of alternative
+              number_repetitions = 10000)  # Number of simulated samples for null distribution
 ```
+
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
 \newpage
 
@@ -515,6 +456,37 @@ Conclusion:
 
 #### Theory-based method {-}
 
+Conditions for inference using theory-based methods:
+
+- Independence:
+
+\vspace{0.2in}
+
+- Large enough sample size:
+
+\vspace{0.2in}
+
+### T - distribution {-}
+
+In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
+
+$$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$
+\setstretch{1.5}
+
+* Estimate the population standard deviation, $\sigma$, with the
+___________________________ standard deviation, ________.
+
+* For a single quantitative variable we use the ____ - distribution
+with _______________
+degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/tstarpb-1} \end{center}
+
 * Calculate the standardized statistic
 
 * Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
@@ -531,16 +503,8 @@ Calculate the standardized sample mean weight of adult male polar bears:
 
 \vspace{0.4in}
 
-```{r, pvaluepb, echo = F}
 
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 82)
-degf <- 82
-
-plot(x, hx, type="l", lty=1, lwd=3, xlab="",
-  ylab="Density", main="t-distribution with 82 df")
-
-```
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/pvaluepb-1} \end{center}
 
 Interpret the standardized sample mean weight:
 
@@ -548,8 +512,10 @@ Interpret the standardized sample mean weight:
 
 To find the theory-based p-value:
 
-```{r, echo=TRUE}
+
+``` r
 pt(-4.683, df=82, lower.tail=TRUE)
+#> [1] 5.531605e-06
 ```
 
 ### Concept Check
