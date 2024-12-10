@@ -173,14 +173,15 @@ When describing distributions of quantitative variables we discuss the **shape**
 
 Let’s examine how the presence of outliers affects the different summary measures for center and spread. For this part of the activity, we will look at the retention rate variable (`Retention`) in the IPEDS data set.  
 
-```{r, echo=TRUE, eval=TRUE}
+```{r, echo=TRUE, eval=TRUE, warnings=FALSE}
 IPEDS %>% # Data set piped into...
     summarise(favstats(Retention))
 
 IPEDS %>% # Data set piped into...
     ggplot(aes(x = Retention)) + # Name variable to plot
     geom_boxplot() + # Create boxplot 
-    labs(title = "Boxplot of Retention Rates for 4-year Higher Education Institutions", # Title for plot
+    labs(title = "Boxplot of Retention Rates for \n 4-year Higher Education Institutions",
+           # Title for plot
          x = "Retention Rates (%)", # Label for x axis
          y = "Frequency") # Label for y axis
 
@@ -204,9 +205,10 @@ IPEDS %>% # Data set piped into...
 IPEDS %>% # Data set piped into...
     ggplot(aes(x = Retention_Inc)) + # Name variable to plot
     geom_boxplot() + # Create histogram 
-labs(title = "Boxplot of Increased Retention Rates for 4-year Higher Education Institutions", # Title for plot
-x = "Retention Rates (%)", # Label for x axis
-y = "Frequency") # Label for y axis
+    labs(title = "Boxplot of Increased Retention Rates for \n 4-year Higher Education Institutions", 
+        # Title for plot
+        x = "Retention Rates (%)", # Label for x axis
+        y = "Frequency") # Label for y axis
 ```
 
 13. Report the values for the two measures of center for this new data set.
