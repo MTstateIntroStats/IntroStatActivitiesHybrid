@@ -4,6 +4,46 @@
 
 Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single categorical variable.
 
+### Key topics
+
+Module 3 introduces the steps of the statistical investigation process. We explore exploratory data analysis (summary statistics and plots) and simulation-based inference (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+
+#### Steps of the statistical investigation process {-}
+
+As we move through the semester we will work through the six steps of the statistical investigation process.  
+
+1. Ask a research question.
+
+2. Design a study and collect data. 
+
+3. Summarize and visualize the data. 
+
+4. Use statistical analysis methods to draw inferences from the data. 
+
+5. Communicate the results and answer the research question. 
+
+6. Revisit and look forward.
+
+#### Exploratory data analysis {-}
+
+At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
+
+* Notation for a sample proportion: $\hat{p}$
+
+* Notation for a population proportion: $\pi$
+
+* Types of plots for a single categorical variable:
+
+    * Frequency bar plot
+    
+    * Relative frequency bar plot
+
+#### Inference {-}
+
+We will use simulation methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
+
+These are steps 4 and 5 from the steps of the statistical investigation process.
+
 ### Vocabulary
 
 * **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data 
@@ -88,7 +128,7 @@ $$H_A: \pi \left\{
 \right\}
 \pi_0 $$
 
-* **Null Distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
+* **Null distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 
 * **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
 
@@ -166,44 +206,6 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
     * A 99\% confidence interval will be found between the 0.5th and 99.5th percentiles
 
-
-### Key topics
-
-#### Steps of the statistical investigation process {-}
-
-As we move through the semester we will work through the six steps of the statistical investigation process.  
-
-1. Ask a research question.
-
-2. Design a study and collect data. 
-
-3. Summarize and visualize the data. 
-
-4. Use statistical analysis methods to draw inferences from the data. 
-
-5. Communicate the results and answer the research question. 
-
-6. Revisit and look forward.
-
-#### Exploratory data analysis {-}
-
-At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
-
-* Notation for a sample proportion: $\hat{p}$
-
-* Notation for a population proportion: $\pi$
-
-* Types of plots for a single categorical variable:
-
-    * Frequency bar plot
-    
-    * Relative frequency bar plot
-
-#### Inference {-}
-
-We will use simulation methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
-
-These are steps 4 and 5 from the steps of the statistical investigation process.
 
 
 

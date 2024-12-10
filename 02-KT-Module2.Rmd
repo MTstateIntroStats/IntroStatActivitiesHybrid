@@ -2,6 +2,12 @@
 
 ## Vocabulary Review and Key Topics
 
+### Key topics
+
+Module 2 introduces the concept of probability as a long-run relative frequency and demonstrates how to use hypothetical two-way tables to set up a probability problem and solve for unconditional and conditional probabilities.
+
+### Vocabulary
+
 * **Probability** (of an event): the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions)
 
 * **Conditional probability** (of an event _given_ another event): probability of an event calculated dependent on another event having occurred
