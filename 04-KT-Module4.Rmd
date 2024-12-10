@@ -10,7 +10,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
     * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Large enough sample size: Success-failure condition**: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}≥10$  and $n(1-\hat{p})≥10$.
+     * **Large enough sample size: Success-failure condition**: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}\geq10$  and $n(1-\hat{p})\geq10$.
 
 * **Standardized statistic**: calculation to standardize the sample statistic in order to compare the standardized value to the theoretical distribution
 
