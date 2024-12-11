@@ -32,13 +32,11 @@ Follow these steps to upload the necessary R script file for today's activity:
 
 * Download the RScript file for this Activity from D2L
 
-* Upload and open the file on the server
+* Upload the file to the RStudio server
 
-the  R script file from D2L
+* Open the RScript file 
 
-* Enter the name of the dataset ("myopia.csv") in line 6
-
-Highlight and run lines 1--3 to load the packages needed for today's activity. Notice the use of the \# symbol in the R script file.  The \# sign is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
+Highlight and run lines 1--2 to load the packages needed for today's activity and load the data set. Notice the use of the \# symbol in the R script file.  The \# sign is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
 
 R will ignore everything after a \# sign when executing the code. Refer to the instructions following the \# sign to understand what you need to enter in the code.
 
@@ -56,7 +54,7 @@ An important part of understanding data is to create visual pictures of what the
 
 #### R code {-}
 
-The line of code shown below (line 6 in the R script file) reads in the data set and names the data set `myopia`.  Highlight and run line 6 in the R script file to load the data from the Stat 216 webpage.
+The line of code shown below (line 5 in the R script file) reads in the data set and names the data set `myopia`.  Highlight and run line 5 in the R script file to load the data from the Stat 216 webpage.
 
 
 ``` r
@@ -70,7 +68,7 @@ myopia <- read.csv("https://math.montana.edu/courses/s216/data/ChildrenLightSigh
 
 #### Summarizing two categorical variables {-}
 
-Is there an association between the level of light in a room and the development of myopia?  Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 29 in the R script file, highlight and run line 29 to get the counts for each combination of levels of variables. 
+Is there an association between the level of light in a room and the development of myopia?  Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 9 in the R script file, highlight and run line 9 to get the counts for each combination of levels of variables. 
 
 
 ``` r
@@ -115,7 +113,7 @@ In the following questions, use the table to calculate the described proportions
 
 #### Displaying two categorical variables {-}
 
-Two types of plots can be created to display two categorical variables.  To examine the differences in level of myopia for the level of light, we will first create a segmented bar plot of `Light` segmented by `Sight`.  To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 35. Highlight and run lines 34--40.
+Two types of plots can be created to display two categorical variables.  To examine the differences in level of myopia for the level of light, we will first create a segmented bar plot of `Light` segmented by `Sight`.  To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 14. Highlight and run lines 13--20.
 
 
 ``` r
@@ -126,7 +124,7 @@ ggplot(aes(x = explanatory, fill = response)) +   # This specifies the variables
        # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis
        y = "")  + # Remove y axis label
-  scale_fill_viridis_d()  # Make figure color
+  scale_fill_grey()  # Make figure black and weight
 ```
 
 9. Sketch the segmented bar plot created here. Be sure to label the axes.  

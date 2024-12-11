@@ -8,40 +8,43 @@
 \contentsline {subsection}{Observational studies, experiments, and scope of inference: Video 2.2to2.4}{4}{subsection.1.2.1}%
 \contentsline {subsubsection}{Study design}{4}{subsection.1.2.1}%
 \contentsline {subsubsection}{Scope of Inference}{5}{subsection.1.2.1}%
-\contentsline {subsection}{Two categorical variables - Video 15.1}{7}{Item.2}%
-\contentsline {subsection}{Hypothesis Testing}{8}{Item.2}%
-\contentsline {subsubsection}{Summary statistics and plot}{8}{Item.2}%
-\contentsline {subsubsection}{Simulation-based method}{9}{Item.2}%
-\contentsline {subsection}{Confidence interval - Video 15.2}{11}{Item.2}%
-\contentsline {subsubsection}{Simulation-based method}{11}{Item.2}%
-\contentsline {subsection}{Relative Risk - Video RelativeRisk}{12}{Item.2}%
-\contentsline {subsubsection}{Relative risk in the news}{13}{Item.2}%
-\contentsline {subsubsection}{Testing Relative Risk}{13}{Item.2}%
-\contentsline {subsection}{\numberline {1.2.2}Concept Check}{14}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Activity 16: Study Design}{15}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{15}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Terminology review}{15}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Atrial fibrillation}{15}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Scope of Inference}{19}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Take-home messages}{20}{subsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.3.6}Additional notes}{20}{subsection.1.3.6}%
-\contentsline {section}{\numberline {1.4}Activity 17: Summarizing Two Categorical Variables}{21}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{21}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Terminology review}{21}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Graphing categorical variables}{21}{subsection.1.4.3}%
-\contentsline {subsection}{Nightlight use and myopia}{21}{subsection.1.4.3}%
-\contentsline {subsubsection}{R code}{22}{Item.27}%
-\contentsline {subsubsection}{Summarizing two categorical variables}{22}{Item.28}%
-\contentsline {subsubsection}{Displaying two categorical variables}{23}{Item.34}%
-\contentsline {subsubsection}{Relative Risk}{25}{Item.39}%
-\contentsline {subsection}{\numberline {1.4.4}Take-home messages}{25}{subsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.4.5}Additional notes}{25}{subsection.1.4.5}%
-\contentsline {section}{\numberline {1.5}Activity 18: The Good Samaritan}{26}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{26}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Terminology review}{26}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}The Good Samaritan}{26}{subsection.1.5.3}%
-\contentsline {subsubsection}{Ask a research question}{27}{subsection.1.5.3}%
-\contentsline {subsubsection}{Summarize and visualize the data}{27}{Item.48}%
-\contentsline {subsubsection}{Hypothesis Test}{28}{Item.52}%
-\contentsline {subsection}{\numberline {1.5.4}Take-home messages}{30}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Additional notes}{30}{subsection.1.5.5}%
+\contentsline {subsection}{Summarizing two categorical variables - Video 4.1\_TwoProp}{7}{Item.2}%
+\contentsline {subsection}{Plots for two categorical variables - Video 4.2\_TwoProp}{9}{Item.2}%
+\contentsline {subsubsection}{Simpson's paradox - Video 4.4}{11}{Item.2}%
+\contentsline {subsection}{Two categorical variables - Video 15.1}{13}{Item.2}%
+\contentsline {subsection}{Hypothesis Testing}{13}{Item.2}%
+\contentsline {subsubsection}{Summary statistics and plot}{14}{Item.2}%
+\contentsline {subsubsection}{Simulation-based method}{15}{Item.2}%
+\contentsline {subsection}{Confidence interval - Video 15.2}{17}{Item.2}%
+\contentsline {subsubsection}{Simulation-based method}{17}{Item.2}%
+\contentsline {subsection}{Relative Risk - Video RelativeRisk}{18}{Item.2}%
+\contentsline {subsubsection}{Relative risk in the news}{19}{Item.2}%
+\contentsline {subsubsection}{Testing Relative Risk}{19}{Item.2}%
+\contentsline {subsection}{\numberline {1.2.2}Concept Check}{20}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Activity 16: Study Design}{21}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{21}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Terminology review}{21}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Atrial fibrillation}{21}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Scope of Inference}{25}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Take-home messages}{26}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Additional notes}{26}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.4}Activity 17: Summarizing Two Categorical Variables}{27}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{27}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Terminology review}{27}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Graphing categorical variables}{27}{subsection.1.4.3}%
+\contentsline {subsection}{Nightlight use and myopia}{27}{subsection.1.4.3}%
+\contentsline {subsubsection}{R code}{28}{Item.29}%
+\contentsline {subsubsection}{Summarizing two categorical variables}{28}{Item.30}%
+\contentsline {subsubsection}{Displaying two categorical variables}{29}{Item.36}%
+\contentsline {subsubsection}{Relative Risk}{31}{Item.41}%
+\contentsline {subsection}{\numberline {1.4.4}Take-home messages}{31}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Additional notes}{31}{subsection.1.4.5}%
+\contentsline {section}{\numberline {1.5}Activity 18: The Good Samaritan}{32}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{32}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Terminology review}{32}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}The Good Samaritan}{32}{subsection.1.5.3}%
+\contentsline {subsubsection}{Ask a research question}{33}{subsection.1.5.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{33}{Item.50}%
+\contentsline {subsubsection}{Hypothesis Test}{34}{Item.54}%
+\contentsline {subsection}{\numberline {1.5.4}Take-home messages}{36}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Additional notes}{36}{subsection.1.5.5}%

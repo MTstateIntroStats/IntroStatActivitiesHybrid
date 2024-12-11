@@ -42,9 +42,9 @@ Total & 20 & 20 & 40 \\ \hline
 
 These counts can be found in R by using the `count()` function:
 
-* Download the R script file from D2L and upload to the RStudio server
+* Download the R script file from D2L and upload to the RStudio server.
 
-* Highlight and run lines.....to get the counts for each group
+* Highlight and run lines 1--7 to get the counts for each group.
 
 
 ``` r
@@ -95,16 +95,16 @@ To create the segmented bar plot:
 
 * Enter the name of the explanatory variable for explanatory
 
-* Enter the name of the response variable for reponse
+* Enter the name of the response variable for response
 
-* Highlight and run lines.....
+* Highlight and run lines 13--20
 
 
 ``` r
 good %>%
   ggplot(aes(x = explanatory, fill = response))+ #Enter the variables to plot
   geom_bar(stat = "count", position = "fill") +
-  labs(title = "Segmented bar plot of Condition of Seminary \n Students by Behavior", #Title your plot
+  labs(title = "Segmented Bar Plot of Princeton Seminary Students that Help the actor \nbetween those that were in a Hurry and those that were Not in a Hurry",  #Title your plot
        y = "Relative Frequency", #y-axis label
        x = "Condition") + #x-axis label
   scale_fill_grey()
@@ -134,7 +134,7 @@ The proportion of Princeton Theological Seminary students that helped the actor 
 
 We will now simulate a **null distribution** of sample differences in proportions. The null distribution is created under the assumption the null hypothesis is true.
 
-Using the cards provided by your instructor, simulate one sample under the assumption the null hypothesis is true.
+7. Using the cards provided by your instructor, simulate one sample under the assumption the null hypothesis is true.
 
 * Start with 40 cards (13 labeled helped, 27 labeled did not help)
 
@@ -178,7 +178,7 @@ The response variable name is `Behavior` and the explanatory variable name is `C
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 16 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+Using the R script file for this activity, enter your answers for question 8 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 24--30.
 
 
 ``` r
