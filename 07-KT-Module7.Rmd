@@ -61,8 +61,12 @@ qt(percentile, df=yy, lower.tail=FALSE)
 
 * **Type I Error**: concluding there is evidence to reject the null hypothesis, when the null is actually true.
 
+    * The probability of making a Type I error when the null is actually true is equal to the significance level, $\alpha$.
+
 * **Type II Error**: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
 
-* **Power**: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false
+* **Power**: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false.
+
+    * When the null is actually false, the event "reject the null hypothesis" is the _complement_ of the event "fail to reject the null hypothesis." Thus, power is equal to 1 minus the probability of a Type II error.
 
 \newpage
