@@ -90,14 +90,12 @@ paired_bootstrap_CI(data = object$differences, # Enter vector of differences
 $$SE(\bar{x}_d) = \frac{s_d}{\sqrt{n}}$$
 
 * **Standardized sample mean difference**:
-
 $$T = \frac{\bar{x}_d-0}{SE(\bar{x}_d)}$$
-
     * Use the `pt` function in R to find a theory-based p-value for a hypothesis test involving a mean difference by finding the area under a $t$-distribution with $n-1$ degrees of freedom where $T$ is as or more extreme as the value observed (in the direction of $H_A$).
 
 * **Margin of error**: half the width of the confidence interval. For a mean difference, the margin of error is:
 $$ME = t^* \times SE(\bar{x}_d)$$
-where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $n-1$ degrees of freedom.$$ 
+where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $n-1$ degrees of freedom. 
 
     * Use the `qt` function in R to find the $t^*$ multiplier with $n-1$ degrees of freedom.
 
