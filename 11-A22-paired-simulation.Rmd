@@ -37,9 +37,9 @@ To review these concepts, see Section 18 in the textbook.
  
 * Download the R script file and csv file from D2L and upload both to the RStudio server
 
-* Open the R script file and enter the name of the dataset for datasetname.csv
+* Open the R script file and enter the name of the data set for datasetname.csv
 
-* Highlight and run lines 1 - 7
+* Highlight and run lines 1 - 9
 
 ```{r, echo=TRUE, eval=FALSE}
 snakes <- read_csv("datasetname.csv")
@@ -48,9 +48,9 @@ paired_observed_plot(snakes)
 
 To find the difference in distance traveled in the circular maze vs in open spaces for each snake we will create the variable differences. 
 
-* Enter `DistanceMaze` for measurement_1 and `DistanceOpen` for measurement_2 in line 14
+* Enter `DistanceMaze` for measurement_1 and `DistanceOpen` for measurement_2 in line 16
 
-* Highlight and run 12--22
+* Highlight and run 14--22
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 snakes_diff <- snakes %>% 
@@ -119,6 +119,7 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 \vspace{1in}
 
 ##### Confidence interval {-}
+
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a 99\% confidence interval. 
 
 * Enter missing values for xx

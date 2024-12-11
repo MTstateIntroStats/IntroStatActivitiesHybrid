@@ -93,7 +93,7 @@ The following code plots each subject's time to read the colored words (above) a
 
 * Download the R script file for this activity and upload to the R studio server.
 
-* Follow the instructions given in the R file.
+* Follow the instructions given in the R file to create the paired plot and boxplot of the differences.
 
 ```{r, echo=TRUE, eval=TRUE}
 color <- read.csv("https://math.montana.edu/courses/s216/data/interference.csv")
@@ -111,7 +111,11 @@ color_diff %>%
 
 The following code gives the summary statistics for the pairwise differences.
 
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+* Enter the variable `differences` for variable 
+
+* Highlight and run lines 22 - 23
+
+```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 color_diff %>% 
   summarise(favstats(differences))
 ```
@@ -150,7 +154,7 @@ To find the p-value
 
 * Enter the df for yy in the pt function.
 
-* Highlight and run line 27
+* Highlight and run line 28
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 pt(xx, df=yy, lower.tail=FALSE)
@@ -168,16 +172,18 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the df for yy. 
 
+* Highlight and run line 34
+
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 qt(percentile, df = yy, lower.tail=TRUE)
 ```
 
-\newpage
+\vspace{1mm}
 
 11. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
-```{r tstar, echo = F, fig.cap = "t-distribution with 69 degrees of freedom"}
+```{r tstar3, echo = F, fig.cap = "t-distribution with 69 degrees of freedom"}
 
 x <- seq(-4, 4, length=100)
 hx<-dt(x, 69)

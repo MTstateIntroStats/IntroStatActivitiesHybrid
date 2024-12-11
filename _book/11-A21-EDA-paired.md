@@ -64,7 +64,10 @@ The popularity of tattoos has increased tremendously in the last 10 years partic
 * Run lines 1--9 to create the paired plot
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A21-EDA-paired_files/figure-latex/unnamed-chunk-1-1} \end{center}
+``` r
+tats <- read.csv("data/tattoos.csv")
+paired_observed_plot(tats) 
+```
 
 6. What is the value of the mean difference?  Give the appropriate notation.
 
@@ -74,7 +77,7 @@ The popularity of tattoos has increased tremendously in the last 10 years partic
 
 \vspace{0.2in}
 
-8.  You may notice that the difference in the means (lllll ) is equal to the mean difference you reported in Q6.  That is not true for the standard deviations.  Explain why?
+8.  You may notice that the difference in the means ($0.178 - 0.345 = -0.167$) is equal to the mean difference you reported in Q6.  That is not true for the standard deviations.  Explain why?
 
 \vspace{0.8in}
 
@@ -90,17 +93,21 @@ To find the differences to continue to assess this data and create a boxplot of 
 
 * Enter Tattoo for measurement_1 and No_Tattoo for measurement_2 in line 15
 
-* Highlight and run lines 13 - 23
+* Highlight and run lines 13 - 21
 
+
+``` r
+tat_diff <- tats %>% 
+    mutate(differences = Tattoo - No_Tattoo) 
+tat_diff %>% 
+    summarise(favstats(differences))
+tat_diff %>% 
+    ggplot(aes(x = differences)) +
+    geom_boxplot()+
+    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2) per min for Adult Men 
+         with Tattoos comparing Tattooed and Untattooed Skin (tat-notat)") 
 
 ```
-#>       min     Q1  median     Q3     max     mean       sd  n missing
-#> 1 -0.4032 -0.232 -0.1296 -0.104 -0.0416 -0.16704 0.110962 10       0
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A21-EDA-paired_files/figure-latex/unnamed-chunk-2-1} \end{center}
 11. What four characteristics do we use to describe the plot of a quantitative variable?
 
 \vspace{0.6in}

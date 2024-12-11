@@ -4,7 +4,7 @@ The following section contains both a list of key topics covered in Unit 2 as we
 
 ### Key Topics
 
-Review the key topics for Unit 2 to review prior to the first exams.  All of these topics will be covered in Modules 6--9.
+Review the key topics for Unit 2 to review prior to the exams.  All of these topics will be covered in Modules 6--9.
 
 ### Module Review
 
