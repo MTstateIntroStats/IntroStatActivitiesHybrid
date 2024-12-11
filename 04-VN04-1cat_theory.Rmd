@@ -1,6 +1,6 @@
 ## Video Notes: Inference for One Categorical Variable using Theory-based Methods
 
-Read Chapters 11 and 13 and Sections 14.3 and 14.4 in the course textbook.  Use the following videos to complete the video notes for Module 4.
+Read Chapter 11 and Sections 14.3 and 14.4 in the course textbook.  Use the following videos to complete the video notes for Module 4.
 
 ### Course Videos
 

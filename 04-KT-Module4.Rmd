@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 3 introduces theory-based inference methods (hypothesis testing and confidence intervals) for a single categorical variable. We also explore what "confidence level" means and which parts of a study impact the width of a confidence interval and the p-value.
+Module 4 introduces theory-based inference methods (hypothesis testing and confidence intervals) for a single categorical variable. We also explore what "confidence level" means and which parts of a study impact the width of a confidence interval and the p-value.
 
 * Theory-based methods should give the same results as simulation-based methods if the sample size is large enough. For a single categorical variable, the sample size is large enough if the success-failure condition is met.
 
