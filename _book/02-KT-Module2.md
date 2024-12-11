@@ -2,29 +2,35 @@
 
 ## Vocabulary Review and Key Topics
 
-* **Probability** (of an event): the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions)
+### Key topics
 
-* **Conditional probability** (of an event _given_ another event): probability of an event calculated dependent on another event having occurred
+Module 2 introduces the concept of probability as a long-run relative frequency and demonstrates how to use hypothetical two-way tables to set up a probability problem and solve for unconditional and conditional probabilities.
+
+### Vocabulary
+
+* **Probability** (of an event): the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions).
+
+* **Conditional probability** (of an event _given_ another event): probability of an event calculated dependent on another event having occurred.
 
 * **Probability notation**:
 
-    * $P(A)$: the probability of event A
+    * $P(A)$: the probability of event $A$.
     
-        - This is the probability of a single event, _unconditional_ probability calculated out of the overall population
+        - This is the probability of a single event, _unconditional_ probability calculated out of the overall population.
         
-    * $P(A^C)$: the probability of the **complement** of event A, or "A complement"
+    * $P(A^C)$: the probability of the **complement** of event $A$, or "$A$ complement".
     
-        - This is the probability of the opposite of event A, or "not A"
+        - This is the probability of the opposite of event $A$, or "not $A$".
         
         - $P(A^C) = 1 - P(A)$
         
-    * $P(A\text{ and }B)$: the probability of event A and B
+    * $P(A\text{ and }B)$: the probability of event $A$ and $B$.
     
-        - The is the probability of an "and" event, _unconditional_ probability calculated out of the overall population
+        - The is the probability of an "and" event, _unconditional_ probability calculated out of the overall population.
         
-    * $P(A|B)$: the probability of event A given (conditional on) event B
+    * $P(A|B)$: the probability of event $A$ given (conditional on) event $B$.
     
-        - This is a _conditional_ probability calculated out of the total population for which event B occurred
+        - This is a _conditional_ probability calculated out of the total population for which event $B$ occurred.
         
 
         

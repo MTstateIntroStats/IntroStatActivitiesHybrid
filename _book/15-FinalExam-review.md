@@ -4,7 +4,7 @@
 
 \setstretch{1}
 
-Use the provided data set from the Islands [@islands] (FinalExamReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
+Use the provided data set from the Islands [@islands] (FinalExamReviewData.csv) and the appropriate Exam Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
 
 | **Variable** 	| **Description** |
 |----	|-------------	|
@@ -29,8 +29,6 @@ Use the provided data set from the Islands [@islands] (FinalExamReviewData.csv) 
 | `Heart_Rate_before` | Heart rate (bpm) before consuming assigned drink |
 | `Blood_Glucose_after` | Level of blood glucose (mg/dL) after consuming assigned drink |
 | `Heart_Rate_after` | Heart rate (bpm) after consuming assigned drink |
-| `Diff_Heart_Rate` | Difference in heart rate (bpm) for Before - After consuming assigned drink |
-| `Diff_Blood_Glucose` | Difference in blood glucose (mg/dL) for Before - After consuming assigned drink |
 
 \newpage
 
@@ -131,7 +129,7 @@ s. What is the scope of inference for this study?
 
 \newpage
 
-2. Use the appropriate Final Exam Review R script file to analyze the following research question, "Is there evidence that adult Islanders that drink a caffeinated drink have an increase in blood glucose level, on average?" Use before $-$ after as the order of subtraction.
+2. Use the appropriate Final Exam Review R script file to analyze the following research question, "Is there evidence that adult Islander's heart rates increase after drinking a caffeinated beverage compared to before drinking a caffeinated beverage, on average?" Use before $-$ after as the order of subtraction.
 
 a. Parameter of Interest:
 \vspace{0.3in}
@@ -222,7 +220,7 @@ s. What is the scope of inference for this study?
 
 \newpage
 
-3. Use the appropriate Final Exam Review R script file to analyze the following research question: "Is there evidence that adult Islanders who listen to classical music take less time to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use - classical - heavy metal as the order of subtraction.
+3. Use the appropriate Final Exam Review R script file to analyze the following research question: "Is there evidence that adult Islanders who listen to classical music take less time, on average, to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use - classical - heavy metal as the order of subtraction.
 
 a. Parameter of Interest:
 \vspace{0.3in}
@@ -316,7 +314,7 @@ s. What is the scope of inference for this study?
 
 \newpage
 
-4. Use the appropriate Final Exam Review R script file to analyze the following research question: "Is there evidence that the height of adult Islanders is associated with the their balance time?"
+4. Use the appropriate Final Exam Review R script file to analyze the following research question: "Is there evidence that height of adult Islanders can be used to predict their balance time?"
 
 a. Parameter of Interest:
 \vspace{0.3in}

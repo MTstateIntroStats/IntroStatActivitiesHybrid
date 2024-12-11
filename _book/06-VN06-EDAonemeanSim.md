@@ -189,7 +189,7 @@ Interpret the value of s for the age of buyers.
 * Shape: overall pattern of the data
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{images/shape} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{images/shape2} \end{center}
 
 \rgi \rgi - What is the shape of the distribution of age of buyers for Gallatin County home sales?
 
@@ -466,11 +466,11 @@ Conditions for inference using theory-based methods:
 
 \vspace{0.2in}
 
-### T - distribution {-}
+### $t$-distribution {-}
 
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
+In the theoretical approach, we use the Central Limit Theorem (CLT) to tell us that---under certain conditions---the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$, and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
 
-$$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$
+$$\bar{x} \sim N\left(\mu_0, \frac{\sigma}{\sqrt{n}}\right)$$
 \setstretch{1.5}
 
 * Estimate the population standard deviation, $\sigma$, with the
@@ -482,14 +482,14 @@ degrees of freedom to approximate the sampling distribution.
 
 \setstretch{1}
 
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+The $t^*$ multiplier is the value at the given percentile of the $t$-distribution with $n - 1$ degrees of freedom.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/tstarpb-1} \end{center}
 
 * Calculate the standardized statistic
 
-* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
+* Find the area under the $t$-distribution with $n - 1$ df at least as extreme as the standardized statistic
 
 Equation for the standard error of the sample mean:
 

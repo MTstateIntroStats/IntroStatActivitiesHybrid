@@ -6,15 +6,9 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 6 will introduce hypothesis testing using both simulation-based and theory-based methods for a single quantitative variable.
-
-* The **summary measure** for one quantitative variable is the **mean**.
-
-* Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation.
-
-#### Exploratory data analysis {-}
-
-At the end of this module, you should understand how to calculate a summary statistic and plot a single quantitative variable.  
+Module 6 will introduce exploratory data analysis and hypothesis testing using both simulation-based and theory-based methods for a single quantitative variable.
+The **summary measure** for one quantitative variable is the **mean**.
+Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation.
 
 * Notation for a sample mean: $\bar{x}$
 
@@ -30,6 +24,33 @@ At the end of this module, you should understand how to calculate a summary stat
     
     - Dotplot
 
+
+
+### Vocabulary
+
+#### Sample statistics for a single quantitative variable {-}
+
+* **Mean**, $\bar{x}$: the average
+$$ 
+\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n},
+$$
+where $x_1, x_2, \ldots, x_n$ are the data values and $n$ is the sample size.
+
+
+* **Median**: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
+
+* **Quartile 1** (lower quartile), $Q_1$: value at the 25th percentile; approximately 25\% of data values are at or below the value of $Q_1$.
+
+* **Quartile 3** (upper quartile), $Q_3$: value at the 75th percentile; approximately 75\% of data values are at or below the value of $Q_3$.
+
+* **Sample standard deviation**, $s$: on average, each value in the data set is $s$ units from the mean of the data set ($\bar{x}$). We will always calculate $s$ using R, but it is calculated using the following formula:
+$$
+\bar{x} = \frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}{n},
+$$
+where $x_1, x_2, \ldots, x_n$ are the data values, $\bar{x}$ is the sample mean, and $n$ is the sample size.
+
+* **Interquartile range**: the range of the data between the two quartiles: $IQR = Q_3-Q_1$.
+
 * R code to find the summary statistics for a quantitative variable:
 
     
@@ -38,9 +59,58 @@ At the end of this module, you should understand how to calculate a summary stat
         summarise(favstats(variable))
     ```
 
-#### Simulation-based Hypothesis Testing {-}
+#### Plotting one quantitative variable {-}
 
-* **Hypotheses in notation for a single mean**: In the hypotheses below, $\mu_0$ is the **null value**.
+* **Histogram**: sorts a quantitative variable into bins of a certain width. R code to create a histogram:
+
+    
+    ``` r
+    object %>% # Data set piped into...
+        ggplot(aes(x = variable)) +   # Name variable to plot
+        geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
+        labs(title = "Don't forget to title the plot!", # Title for plot
+            x = "x-axis label", # Label for x axis
+            y = "y-axis label") # Label for y axis
+    ```
+
+
+* **Boxplot**: plots the values of the five-number summary and shows any outliers in the data set. R code to create a boxplot:
+
+    
+    ``` r
+    object %>% # Data set piped into...
+        ggplot(aes(x = variable)) + # Name variable to plot
+        geom_boxplot() + # Create boxplot 
+        labs(title = "Don't forget to title the plot!", # Title for plot
+            x = "x-axis label", # Label for x axis
+            y = "y-axis label") # Label for y axis
+    ```
+
+* **Dotplot**: plots each value as a dot along the $x$-axis. R code to create a dotplot:
+
+    
+    ``` r
+    object %>% # Data set piped into...
+        ggplot(aes(x = variable)) + # Name variable to plot
+        geom_dotplot() + # Create dotplot 
+        labs(title = "Don't forget to title the plot!", # Title for plot
+            x = "x-axis label", # Label for x axis
+            y = "y-axis label") # Label for y axis
+    ```
+    
+* Four characteristics of a distribution of a single quantitative variable:
+
+    - Shape  (symmetric, skewed left, or skewed right)
+    
+    - Center 
+    
+    - Spread
+    
+    - Outliers?
+    
+#### Hypothesis testing {-}
+
+**Hypotheses in notation for a single mean**: In the hypotheses below, $\mu_0$ is the **null value**.
 
 $$H_0: \mu = \mu_0$$
 $$H_A: \mu\left\{
@@ -51,6 +121,10 @@ $$H_A: \mu\left\{
 \end{array}
 \right\}
 \mu_0 $$
+
+
+#### Simulation-based Hypothesis Testing {-}
+
 
 * R code to use for **simulation-based methods** for one quantitative variable to find the p-value, `one_mean_test`, is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
 
@@ -84,12 +158,10 @@ $$H_A: \mu\left\{
 * **t-distribution**: a theoretical distribution that is bell-shaped with mean zero. Its degrees of freedom determine the variability of the distribution. For very large degrees of freedom, the $t$-distribution is close to a standard normal distribution. For a single quantitative variable, the degrees of freedom are calculated by subtracting one from the sample size: $n-1$. A $t$-distribution with $n-1$ degrees of freedom is denoted by: $t_{n-1}$.
 
 * **Standard error of the sample mean**: measures the how far each possible sample mean is from the true mean, on average, and is calculated using the formula below:
-
 $$SE(\bar{x})=\frac{s}{\sqrt{n}}$$
-where $s$ is the sample standard deviation.
+    where $s$ is the sample standard deviation.
 
 * **Standardized sample mean**: standardized statistic for a single quantitative variable calculated using:
-
 $$
 T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 $$
@@ -110,85 +182,8 @@ $$
     pt(xx, df = yy, lower.tail=TRUE)
     ```
 
-### Vocabulary
-
-#### Sample statistics for a single quantitative variable {-}
-
-* **Mean**, $\bar{x}$: the average
-$$ 
-\bar{x} = \frac{\sum_{x_1 + x_2 + \cdots + x_n}}{n},
-$$
-where $x_1, x_2, \ldots, x_n$ are the data values and $n$ is the sample size.
 
 
-* **Median**: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
 
-* **Quartile 1** (lower quartile), $Q_1$: value at the 25th percentile; approximately 25\% of data values are at or below the value of $Q_1$.
-
-* **Quartile 3** (upper quartile), $Q_3$: value at the 75th percentile; approximately 75\% of data values are at or below the value of $Q_3$.
-
-* **Sample standard deviation**, $s$: on average, each value in the data set is $s$ units from the mean of the data set ($\bar{x}$). We will always calculate $s$ using R, but it is calculated using the following formula:
-$$
-\bar{x} = \frac{\sum_{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}}{n},
-$$
-where $x_1, x_2, \ldots, x_n$ are the data values, $\bar{x}$ is the sample mean, and $n$ is the sample size.
-
-* **Interquartile range**: the range of the data between the two quartiles: $IQR = Q_3-Q_1$.
-
-#### Plotting one quantitative variables {-}
-
-* **Histogram**: sorts a quantitative variable into bins of a certain width. 
-
-* R code to create a histogram:
-
-    
-    ``` r
-    object %>% # Data set piped into...
-        ggplot(aes(x = variable)) +   # Name variable to plot
-        geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
-        labs(title = "Don't forget to title the plot!", # Title for plot
-            x = "x-axis label", # Label for x axis
-            y = "y-axis label") # Label for y axis
-    ```
-
-
-* **Boxplot**: plots the values of the five-number summary and shows any outliers in the data set.
-
-* R code to create a boxplot:
-
-    
-    ``` r
-    object %>% # Data set piped into...
-        ggplot(aes(x = variable)) + # Name variable to plot
-        geom_boxplot() + # Create boxplot 
-        labs(title = "Don't forget to title the plot!", # Title for plot
-            x = "x-axis label", # Label for x axis
-            y = "y-axis label") # Label for y axis
-    ```
-
-* **Dotplot**: plots each value as a dot along the $x$-axis.
-
-* R code to create a dotplot:
-
-    
-    ``` r
-    object %>% # Data set piped into...
-        ggplot(aes(x = variable)) + # Name variable to plot
-        geom_dotplot() + # Create dotplot 
-        labs(title = "Don't forget to title the plot!", # Title for plot
-            x = "x-axis label", # Label for x axis
-            y = "y-axis label") # Label for y axis
-    ```
-    
-* Four characteristics of a distribution of a single quantitative variable:
-
-    - Shape  (symmetric, skewed left, or skewed right)
-    
-    - Center 
-    
-    - Spread
-    
-    - Outliers?
-    
 
 \newpage

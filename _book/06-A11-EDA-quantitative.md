@@ -163,7 +163,7 @@ $$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR$$
 $$\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.8in}
 
-When describing plots of quantitative variables we discuss the shape (symmetric or skewed), the center (mean or median), spread (standard deviation or IQR), and if there are outliers present.
+When describing distributions of quantitative variables we discuss the **shape** (symmetric or skewed), the **center** (mean or median), **spread** (standard deviation or IQR), and if there are **outliers** present.
 
 8.  What is the shape of the distribution of graduation rates?
 
@@ -179,7 +179,7 @@ When describing plots of quantitative variables we discuss the shape (symmetric 
 
 #### Robust statistics {-}
 
-Let’s examine how the presence of outliers affect the values of center and spread. For this part of the activity we will look at the variable retention rate in the IPEDS data set.  
+Let’s examine how the presence of outliers affects the different summary measures for center and spread. For this part of the activity, we will look at the retention rate variable (`Retention`) in the IPEDS data set.  
 
 
 ``` r
@@ -191,22 +191,22 @@ IPEDS %>% # Data set piped into...
 IPEDS %>% # Data set piped into...
     ggplot(aes(x = Retention)) + # Name variable to plot
     geom_boxplot() + # Create boxplot 
-    labs(title = "Boxplot of Retention Rates for 4-year Higher Education Institutions", # Title for plot
+    labs(title = "Boxplot of Retention Rates for \n 4-year Higher Education Institutions",
+           # Title for plot
          x = "Retention Rates (%)", # Label for x axis
          y = "Frequency") # Label for y axis
-#> Warning: Removed 150 rows containing non-finite outside the scale range
-#> (`stat_boxplot()`).
+
 ```
 
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A11-EDA-quantitative_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-11. Report the two measures of center for these data.
+11. Report the values for the two measures of center for these data.
 
 \vspace{0.5in}
 
-12. Report the two measures of spread for these data.
+12. Report the values for the two measures of spread for these data.
 
 \vspace{0.5in}
 
@@ -223,21 +223,20 @@ IPEDS %>% # Data set piped into...
 IPEDS %>% # Data set piped into...
     ggplot(aes(x = Retention_Inc)) + # Name variable to plot
     geom_boxplot() + # Create histogram 
-labs(title = "Boxplot of Increased Retention Rates for 4-year Higher Education Institutions", # Title for plot
-x = "Retention Rates (%)", # Label for x axis
-y = "Frequency") # Label for y axis
-#> Warning: Removed 150 rows containing non-finite outside the scale range
-#> (`stat_boxplot()`).
+    labs(title = "Boxplot of Increased Retention Rates for \n 4-year Higher Education Institutions", 
+        # Title for plot
+        x = "Retention Rates (%)", # Label for x axis
+        y = "Frequency") # Label for y axis
 ```
 
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A11-EDA-quantitative_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-13. Report the two measures of center for this new data set.
+13. Report the values for the two measures of center for this new data set.
 \vspace{0.5in}
 
-14. Report the two measures of spread for this new data set.
+14. Report the values for the two measures of spread for this new data set.
 \vspace{0.5in}
 
 15. Which measure of center is robust to outliers? Explain your answer.
@@ -250,11 +249,11 @@ y = "Frequency") # Label for y axis
 
 1.	Histograms, box plots, and dot plots can all be used to graphically display a single quantitative variable.  
 
-2.  The box plot is created using the five number summary: minimum value, quartile 1, median, quartile 3, and maximum value.  Values in the data set that are less than $\text{Q}_1 - 1.5\times \text{IQR}$ and greater than $\text{Q}_3 + 1.5\times \text{IQR}$ are considered outliers and are graphically represented by a dot outside of the whiskers on the box plot.
+2.  The box plot is created using the five number summary: minimum value, quartile 1, median, quartile 3, and maximum value.  Whiskers extend to the lowest value and highest value that are _not_ considered outliers. Values in the data set that are less than $Q_1 - 1.5\times IQR$ or greater than $Q_3 + 1.5\times IQR$ are considered outliers and are graphically represented by a dot outside of the whiskers on the box plot.
 
 3.  Data should be summarized numerically and displayed graphically to give us information about the study.
 
-4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  There are two measures of center: mean and the median and two measures of spread: standard deviation and the interquartile range, $IQR = Q_3 - Q_1$. 
+4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  In this course, we only consider two measures of center (mean and the median), and two measures of spread (standard deviation and the interquartile range, $IQR = Q_3 - Q_1$). 
 
 
 ### Additional notes
