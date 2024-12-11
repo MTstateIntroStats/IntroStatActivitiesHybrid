@@ -271,20 +271,51 @@ STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine
 
 \nocite{*}
 
-\chapter{Inference for a Quantitative Response with Independent Samples}\label{inference-for-a-quantitative-response-with-independent-samples}
+\chapter{Exploratory Data Analysis and Inference for a Quantitative Response with Independent Samples}\label{exploratory-data-analysis-and-inference-for-a-quantitative-response-with-independent-samples}
 
 \section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics}
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a categorical explanatory variable and a quantitative response variable for independent samples. Module 12 will cover both simulation and theory-based methods of inference.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a categorical explanatory variable and a quantitative response variable for independent samples.
 
-Types of plot for independent variables
+\subsection{Key topics}\label{key-topics}
+
+Module 12 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with independent samples. The \textbf{summary measure} for a quantitative response with independent samples is a \textbf{difference in means}.
 
 \begin{itemize}
 \item
-  \textbf{Side-by-side boxplots}: plots a boxplot of the five number summary for each categorical level
+  Notation for a difference in sample means: \(\bar{x}_1 - \bar{x}_2\), where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
 \item
-  R code to create side-by-side boxplots:
+  Notation for a difference in population means: \(\mu_1 - \mu_2\)
 \end{itemize}
+
+Types of plots for a quantitative response variable with independent samples:
+
+\begin{itemize}
+\item
+  Side-by-side boxplots
+\item
+  Stacked histograms
+\item
+  Stacked dotplots
+\end{itemize}
+
+R code to find the summary statistics for a quantitative response variable with independent samples:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ explanatory))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Vocabulary}\label{vocabulary}
+
+\subsubsection*{Plotting two categorical variables}\label{plotting-two-categorical-variables}
+\addcontentsline{toc}{subsubsection}{Plotting two categorical variables}
+
+\begin{itemize}
+\item
+  \textbf{Side-by-side boxplots}: plots a boxplot of the five number summary for each categorical level. R code to create side-by-side boxplots:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -292,69 +323,25 @@ Types of plot for independent variables
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ response, }\AttributeTok{x =}\NormalTok{ explanatory))}\SpecialCharTok{+}  \CommentTok{\# Identify variables}
   \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}  \CommentTok{\# Tell it to make a box plot}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to include a title"}\NormalTok{,  }\CommentTok{\# Title: should include the type of plot,}
-       \CommentTok{\# observational units, variables}
-       \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
-       \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
+   \CommentTok{\# observational units, variables}
+   \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
+   \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{itemize}
-\item
-  \textbf{Stacked histogram}: plots one histogram for each level of the categorical variable
-\item
-  \textbf{Stacked dotplots}: plots one dotplot for each level of the categorical variable
-\item
-  Four characteristics to compare boxplots
-
-  \begin{itemize}
-  \item
-    Shape (symmetric or skewed)
-  \item
-    Center
-  \item
-    Spread
-  \item
-    Outliers?
-  \end{itemize}
-\end{itemize}
-
-Summary measure
-
-\begin{itemize}
-\item
-  \textbf{Difference in mean}: measures the difference in mean values between the two categorical groups
-\item
-  Parameter notation for difference in means: \(\mu_1 - \mu_2\), where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
-\item
-  Sample notation for difference in means: \(\bar{x}_1 - \bar{x}_2\)
 \end{itemize}
 
 \vspace{1mm}
 
-\begin{itemize}
-\item
-  R code to find the summary statistics
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Note: review the interpretations of the other summary measures from Module 6
-  \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explantory))}
-\end{Highlighting}
-\end{Shaded}
-
 \subsection*{Hypothesis Testing}\label{hypothesis-testing}
 \addcontentsline{toc}{subsection}{Hypothesis Testing}
 
-Hypotheses:
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hypotheses in notation for a paired mean difference}: In the hypotheses below, the \textbf{null value} is equal to zero.
+\end{itemize}
 
-\[H_0: \mu_1 - \mu_2 = 0 ~ \text{or}~ H_0: \mu_1 = \mu_2 \]
+\[H_0: \mu_1 - \mu_2 = 0 ~~~ \text{or}~~~ H_0: \mu_1 = \mu_2 \]
 \[H_A: \mu_1 - \mu_2 \left\{
 \begin{array}{ll}
 < \\
@@ -363,7 +350,7 @@ Hypotheses:
 \end{array}
 \right\}
 0 
-~ \text{or} ~ H_A:
+~~~ \text{or} ~~~ H_A:
 \mu_1 \left\{
 \begin{array}{ll}
 < \\
@@ -1069,7 +1056,7 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
 \item
   Download the R script file from D2L and upload to the RStudio server
 \item
-  Highlight and run lines 1--7
+  Highlight and run lines 1--7 to load the data
 \end{itemize}
 
 \begin{Shaded}
@@ -1080,6 +1067,8 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
 \end{Shaded}
 
 \newpage
+
+To create a plot of the data and a table of summary statistics.
 
 \begin{itemize}
 \tightlist
@@ -1267,7 +1256,7 @@ We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstat
   Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
 \end{enumerate}
 
-\vspace{0.8in}
+\vspace{0.7in}
 
 \paragraph*{Confidence interval}\label{confidence-interval-1}
 \addcontentsline{toc}{paragraph}{Confidence interval}
@@ -1426,35 +1415,30 @@ In a study comparing immersive virtual reality (VR) to traditional hands-on meth
 \item
   Open the RScript file
 \item
-  Enter the name of the dataset for datasetname in line
+  Enter the name of the data set for datasetname in line 8
+\item
+  Highlight and run lines 1--8
 \end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moon }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
   Write out the parameter of interest in words in context of the study.
+\end{enumerate}
 
-  \begin{itemize}
-  \item
-    To write in context:
+\vspace{1in}
 
-    \begin{itemize}
-    \item
-      Population word (true, long-run, population)
-    \item
-      Summary measure (depends on the type of data)
-    \item
-      Context
-
-      \begin{itemize}
-      \item
-        Observational units
-      \item
-        Variable(s)
-        \vspace{1in}
-      \end{itemize}
-    \end{itemize}
-  \end{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
 \item
   Write out the null hypothesis in notation for this study. Be sure to clearly identify the subscripts.
 \end{enumerate}
@@ -1502,12 +1486,10 @@ To create the plots of the data:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{moon }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/Moon\_VR.csv"}\NormalTok{)}
 \NormalTok{moon }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set piped into...}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ TestScore, }\AttributeTok{x =}\NormalTok{ Method))}\SpecialCharTok{+}  \CommentTok{\# Identify variables}
   \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}  \CommentTok{\# Tell it to make a box plot}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplots of Test Scores for Undergraduate Students Comparing VR }
-\StringTok{       Teaching Methods and Traditional Teaching Methods"}\NormalTok{,  }\CommentTok{\# Title}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title your plot!"}\NormalTok{,  }\CommentTok{\# Title}
        \AttributeTok{x =} \StringTok{"Methods"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
        \AttributeTok{y =} \StringTok{"Test Score (points)"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
 \end{Highlighting}
@@ -1590,7 +1572,7 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 \item
   Enter the df for yy
 \item
-  Highlight and run line 28
+  Highlight and run line 27
 \end{itemize}
 
 \begin{Shaded}
@@ -1606,14 +1588,14 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 \setcounter{enumi}{7}
 \tightlist
 \item
-  What is the p-value for the study?
+  Report the p-value for the study. Why did we multiply by two to find the p-value?
 \end{enumerate}
 
-\vspace{0.2in}
+\vspace{0.5in}
 
 To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
 
-\[(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))\]
+\[\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)\]
 
 We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 
@@ -1623,7 +1605,7 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 \item
   Enter the degrees of freedom for yy
 \item
-  Highlight and run line 34
+  Highlight and run line 32
 \end{itemize}
 
 \begin{Shaded}
@@ -1985,6 +1967,3061 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. Fo
 \newpage
 
 Paragraph continued:
+
+\newpage
+
+\chapter{Exploratory Data Analysis and Inference for Two Quantitative Variables}\label{exploratory-data-analysis-and-inference-for-two-quantitative-variables}
+
+\section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics-1}
+
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of two quantitative variables.
+
+\subsection{Key topics}\label{key-topics-1}
+
+Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables.
+
+Types of plot for two quantitative variables
+
+\begin{itemize}
+\item
+  \textbf{Scatterplot}: plots (x,y) pairs of observations
+\item
+  Four characteristics of scatterplots
+
+  \begin{itemize}
+  \item
+    Form (linear or non-linear)
+  \item
+    Direction (positive or negative)
+  \item
+    Strength (weak, moderate, or strong)
+  \item
+    Outliers?
+  \end{itemize}
+\end{itemize}
+
+R code to create a scatterplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"y{-}axis lable"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to add a title!"}\NormalTok{) }\SpecialCharTok{+} 
+               \CommentTok{\# Be sure to tile your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+Summary measures:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Slope of the regression line}: measures the magnitude and direction of the linear relationship between two quantitative variables
+\end{itemize}
+
+\[\widehat{response} = b_0 + b_1 \times explanatory\]
+\vspace{1mm}
+
+\begin{itemize}
+\item
+  Parameter notation for slope: \(\beta_1\)
+\item
+  Sample notation for slope: \(b_1\)
+\item
+  R code to create the linear model
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{linearmodel }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\AttributeTok{data=}\NormalTok{object)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(linearmodel)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  \textbf{Correlation}: measures the strength and direction of the linear relationship between two quantitative variables
+
+  \begin{itemize}
+  \item
+    Parameter notation: \(\rho\)
+  \item
+    Sample notation: \(r\)
+  \end{itemize}
+\item
+  \textbf{Coefficient of determination}: measures the percent of total variability in the response variable that is explained by the relationship with the explanatory variable
+\end{itemize}
+
+\[r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}\]
+
+\subsection*{Simulation Hypothesis Testing}\label{simulation-hypothesis-testing-1}
+\addcontentsline{toc}{subsection}{Simulation Hypothesis Testing}
+
+\begin{itemize}
+\tightlist
+\item
+  Can test either slope or correlation - both test for a linear relationship between two quantitative variables
+\end{itemize}
+
+Hypotheses for slope:
+
+\[H_0: \beta_1 = 0\]
+
+\[H_A: \beta_1 \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+0\]
+
+Hypotheses for correlation:
+
+\[H_0: \rho = 0\]
+\[H_A: \rho \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+0\]
+
+\begin{itemize}
+\tightlist
+\item
+  R code for simulation methods to find the p-value using the \texttt{regression\_test} function in the \texttt{catstats} package.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
+               \AttributeTok{data =}\NormalTok{ object, }\CommentTok{\# Name of data set}
+               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+               \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+               \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed slope or correlation}
+               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection*{Conditions necessary to use theory-based methods}\label{conditions-necessary-to-use-theory-based-methods}
+\addcontentsline{toc}{subsection}{Conditions necessary to use theory-based methods}
+
+When performing inference on a least squares line, the follow conditions are generally required:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Independent observations} (for both simulation-based and theory-based methods): individual data points must be independent.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
+  \end{itemize}
+\item
+  \emph{Linearity} (for both simulation-based and theory-based methods): the data should follow a linear trend.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The pattern in the residual plot should display a horizontal line.
+  \end{itemize}
+\item
+  \emph{Constant variability} (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
+  \end{itemize}
+\item
+  \emph{Nearly normal residuals} (for theory-based methods only: residuals must be nearly normal.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Theory-based Methods to find the p-value}\label{theory-based-methods-to-find-the-p-value}
+\addcontentsline{toc}{subsection}{Theory-based Methods to find the p-value}
+
+\begin{itemize}
+\tightlist
+\item
+  To find the value of the standardized statistic to test the slope we will use,
+\end{itemize}
+
+\[
+T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
+\]
+* Use the standard error estimate of the slope from the linear model output
+
+\begin{itemize}
+\item
+  The p-value can be found from the linear model output or by using the pt function.
+
+  \begin{itemize}
+  \item
+    Enter the value of the standardized statistic for xx
+  \item
+    Enter the df \((n-2)\) for yy
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection*{Simulation methods to find the confidence interval}\label{simulation-methods-to-find-the-confidence-interval}
+\addcontentsline{toc}{subsection}{Simulation methods to find the confidence interval}
+
+\begin{itemize}
+\tightlist
+\item
+  R code to find the simulation confidence interval using the \texttt{regression\_bootstrap\_CI} function from the \texttt{catstats} package.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_bootstrap\_CI}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
+   \AttributeTok{data =}\NormalTok{ object, }\CommentTok{\# Name of data set}
+   \AttributeTok{confidence\_level =}\NormalTok{ xx, }\CommentTok{\# Confidence level as decimal}
+   \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Slope or correlation}
+   \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection*{Theory-based methods to find the confidence interval}\label{theory-based-methods-to-find-the-confidence-interval-1}
+\addcontentsline{toc}{subsection}{Theory-based methods to find the confidence interval}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculation of the confidence interval for slope
+\end{itemize}
+
+\[b_1\pm t^*\times SE(b_1)\]
+
+\begin{itemize}
+\item
+  R code to find the multiplier for the confidence interval using theory-based methods.
+
+  \begin{itemize}
+  \item
+    qt will give you the multiplier using the t-distribution with n-2 df (enter for yy)
+  \item
+    Enter the percentile for the given confidence level
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage
+
+\section{Video Notes: Regression and Correlation}\label{video-notes-regression-and-correlation}
+
+Read Chapters 6, 7, and 8 in the course textbook. Use the following videos to complete the video notes for Module 13.
+
+\subsection{Course Videos}\label{course-videos-1}
+
+\begin{itemize}
+\item
+  6.1
+\item
+  6.2
+\item
+  6.3
+\item
+  Ch 7
+\end{itemize}
+
+\setstretch{1}
+
+\subsection*{Summary measures and plots for two quantitative variables - Videos 6.1 - 6.3}\label{summary-measures-and-plots-for-two-quantitative-variables---videos-6.1---6.3}
+\addcontentsline{toc}{subsection}{Summary measures and plots for two quantitative variables - Videos 6.1 - 6.3}
+
+Example: Data were collected from 1236 births between 1960 and 1967 in the San Francisco East Bay area to better understand what variables contributed to child birthweight, as children with low birthweight often suffer from an array of complications later in life ({``Child Health and Development Studies,''} n.d.). There were some missing values in the study and with those observations removed we have a total of 1223 births.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{babies}\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/babies.csv"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{drop\_na}\NormalTok{(bwt) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{drop\_na}\NormalTok{(gestation)}
+\FunctionTok{glimpse}\NormalTok{(babies)}
+\CommentTok{\#\textgreater{} Rows: 1,223}
+\CommentTok{\#\textgreater{} Columns: 8}
+\CommentTok{\#\textgreater{} $ case      \textless{}int\textgreater{} 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ bwt       \textless{}int\textgreater{} 120, 113, 128, 108, 136, 138, 132, 120, 143, 140, 144, 141, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ gestation \textless{}int\textgreater{} 284, 282, 279, 282, 286, 244, 245, 289, 299, 351, 282, 279, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ parity    \textless{}int\textgreater{} 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ age       \textless{}int\textgreater{} 27, 33, 28, 23, 25, 33, 23, 25, 30, 27, 32, 23, 36, 30, 38, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ height    \textless{}int\textgreater{} 62, 64, 64, 67, 62, 62, 65, 62, 66, 68, 64, 63, 61, 63, 63, \textasciitilde{}}
+\CommentTok{\#\textgreater{} $ weight    \textless{}int\textgreater{} 100, 135, 115, 125, 93, 178, 140, 125, 136, 120, 124, 128, 9\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ smoke     \textless{}int\textgreater{} 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, \textasciitilde{}}
+\end{Highlighting}
+\end{Shaded}
+
+Here you see a glimpse of the data. The 1223 rows correspond to the sample size. The case variable is labeling each pregnancy 1 through 1223. Then 7 variables are recorded. birthweight (bwt), length of gestation in days, parity is called an indicator variable telling us if the pregnancy was a first pregnancy (labeled as 0) or not (labeled as 1) were recorded about the child and pregnancy. The age, height, and weight were recorded for the mother giving birth, as was smoke, another indicator variable where 0 means the mother did not smoke during pregnancy, and 1 indicates that she did smoke while pregnant.
+
+\setstretch{1.5}
+
+\subsubsection*{Type of plot}\label{type-of-plot}
+\addcontentsline{toc}{subsubsection}{Type of plot}
+
+A \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ is used to display the relationship
+between two \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ variables.
+
+\setstretch{1}
+\newpage
+
+Four characteristics of the scatterplot:
+
+\begin{itemize}
+\tightlist
+\item
+  Form:
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction:
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Strength:
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Outliers:
+\end{itemize}
+
+\vspace{0.2in}
+
+\rgi \rgi - Influential points: outliers that change the regression line; far from the line of regression
+
+\rgi \rgi - High leverage points: outliers that are extreme in the x- axis; far from the mean of the x-axis
+
+The following shows a scatterplot of length of gestation as a predictor of birthweight.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{babies }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gestation, }\AttributeTok{y =}\NormalTok{ bwt))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"number of days of gestation"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"birthweight (oz)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Gestation vs. Birthweight for Births}
+\StringTok{       between 1960 and 1967 in San Francisco"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\# Be sure to title your plots with the type of plot, observational units, variable(s)}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Add regression line}
+    \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+Describe the scatterplot using the four characteristics of a scatterplot.
+
+\vspace{1in}
+
+\setstretch{1.5}
+
+The summary measures for two quantitative variables are:
+
+\begin{itemize}
+\item
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\item
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\item
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\end{itemize}
+
+\setstretch{1}
+
+Notation:
+
+\begin{itemize}
+\item
+  Population slope:
+\item
+  Population correlation:
+\item
+  Sample slope:
+\item
+  Sample correlation:
+\end{itemize}
+
+\subsubsection*{Correlation}\label{correlation}
+\addcontentsline{toc}{subsubsection}{Correlation}
+
+Correlation is always between the values of \_\_\_\_\_\_\_ and \_\_\_\_\_\_\_\_.
+
+\begin{itemize}
+\item
+  Measures the \_\_\_\_\_\_\_\_\_\_\_\_\_ and \_\_\_\_\_\_\_\_\_\_\_\_\_\_ of the linear relationship between two quantitative variables.
+\item
+  The stronger the relationship between the variables the closer the value of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ is to \_\_\_\_\_\_\_\_ or \_\_\_\_\_\_\_\_.
+\item
+  The sign gives the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+\end{itemize}
+
+The following code creates a correlation matrix between different quantitative variables in the data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{babies }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"gestation"}\NormalTok{, }\StringTok{"age"}\NormalTok{, }\StringTok{"height"}\NormalTok{, }\StringTok{"weight"}\NormalTok{, }\StringTok{"bwt"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>           gestation    age height weight   bwt
+#> gestation     1.000 -0.056  0.064  0.022 0.408
+#> age          -0.056  1.000 -0.005  0.147 0.029
+#> height        0.064 -0.005  1.000  0.436 0.201
+#> weight        0.022  0.147  0.436  1.000 0.154
+#> bwt           0.408  0.029  0.201  0.154 1.000
+\end{verbatim}
+
+\setstretch{1.5}
+
+The value of correlation between gestation and birthweight is \_\_\_\_\_\_\_\_\_\_\_\_\_\_. This shows a \_\_\_\_\_\_\_\_\_\_\_, \_\_\_\_\_\_\_\_\_\_\_\_\_ relationship between gestation and birthweight.
+
+\setstretch{1}
+
+\subsubsection*{Slope}\label{slope}
+\addcontentsline{toc}{subsubsection}{Slope}
+
+\begin{itemize}
+\item
+  Least-squares regression line: \(\hat{y}=b_0+b_1\times x\) (put y and x in the context of the problem) or \(\widehat{response}=b_0+b_1 \times \text{explanatory}\)
+\item
+  \(\hat{y}\) or \(\widehat{\text{response}}\) is
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{itemize}
+\tightlist
+\item
+  \(b_0\) is
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{itemize}
+\tightlist
+\item
+  \(b_1\) is
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{itemize}
+\tightlist
+\item
+  \(x\) or explanatory is
+\end{itemize}
+
+\vspace{0.1in}
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  The estimates for the linear model output will give the value of the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ and the \_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+\item
+  Interpretation of slope: an increase in the \_\_\_\_\_\_\_\_\_\_\_\_\_ variable of 1 unit is associated with an increase/decrease in the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ variable by the value of slope, on average.
+\item
+  Interpretation of the y-intercept: for a value of 0 for the \_\_\_\_\_\_\_\_\_\_\_\_\_ variable, the predicted value for the \_\_\_\_\_\_\_\_\_\_ variable would be the value of y-intercept.
+\item
+  We can predict values of the \_\_\_\_\_\_\_\_\_\_\_ variable by plugging in a given \_\_\_\_\_\_\_\_\_\_ variable value using the least squares equation line.
+\item
+  A prediction of a response variable value for an explanatory value outside the range of x values is called \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+\item
+  To find how far the predicted value deviates from the actual value we find the \_\_\_\_\_\_\_\_\_\_\_\_.
+\end{itemize}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\item
+  To find the least squares regression line the line with the \_\_\_\_\_\_\_\_\_\_ SSE is found.
+
+  SSE = sum of squared errors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    To find SSE, the residual for each data point is found, squared and all the squared residuals are summed together
+  \end{itemize}
+\end{itemize}
+
+The linear model output for this study is given below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear model: y \textasciitilde{} x}
+\NormalTok{babiesLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(bwt }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gestation, }\AttributeTok{data=}\NormalTok{babies)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(babiesLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  -10.064      8.322  -1.209    0.227
+#> gestation      0.464      0.030  15.609    0.000
+\end{verbatim}
+
+Write the least squares equation of the line.
+
+\vspace{0.6in}
+
+Interpret the slope in context of the problem.
+
+\vspace{0.6in}
+
+Interpret the y-intercept in context of the problem.
+
+\vspace{0.6in}
+
+Predict the birthweight for a birth with a baby born at 310 days gestation.
+
+\vspace{0.5in}
+
+Calculate the residual for a birth of a baby with a birthweight of 151 ounces and born at 310 days gestation.
+
+\vspace{0.5in}
+
+Is this value (310, 151) above or below the line of regression? Did the line of regression overestimate or underestimate the birthweight?
+
+\vspace{0.2in}
+
+\subsubsection*{Coefficient of Determination}\label{coefficient-of-determination}
+\addcontentsline{toc}{subsubsection}{Coefficient of Determination}
+
+The coefficient of determination can be found by squaring the value of correlation, using the variances for each variable or using the SSE (sum of squares error) and SST (sum of squares total)
+
+\begin{itemize}
+\item
+  \(r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}\)
+\item
+  The coefficient of determination measures the \_\_\_\_\_\_\_\_\_\_\_\_ of total variation in the \_\_\_\_\_\_\_\_\_\_\_ variable that is explained by the changes in the \_\_\_\_\_\_\_\_\_\_\_\_\_ variable.
+\end{itemize}
+
+\setstretch{1}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+The value for SST was calculated as 406753.48. The value for SSE was calculated as 339092.13.
+
+Calculate the coefficient of determination between gestation and birthweight.
+
+\vspace{0.3in}
+
+Interpret the coefficient of determination between gestation and birthweight.
+
+\vspace{0.5in}
+
+\newpage
+
+\subsubsection*{Multivariable plots - Video Chapter7}\label{multivariable-plots---video-chapter7}
+\addcontentsline{toc}{subsubsection}{Multivariable plots - Video Chapter7}
+
+Aesthetics: visual property of the objects in your plot
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  Position on the axes: groups for \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ variables, or a number line if the variable is \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\item
+  Color or shape - to represent \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ variables
+\item
+  Size - to represent \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ variables
+\end{itemize}
+
+\setstretch{1}
+
+Adding the quantitative variable maternal age to the scatterplot between gestation and birthweight.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{babies }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gestation, }\AttributeTok{y =}\NormalTok{ bwt))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{, }\AttributeTok{shape=}\DecValTok{1}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{size=}\NormalTok{age)) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"number of days of gestation"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"birthweight (oz)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Gestation vs. Birthweight by Age }
+\StringTok{       for Births between 1960 and 1967 in San Francisco"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\# Be sure to title your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+\newpage
+
+Let's add the categorical variable, whether a mother smoked, to the scatterplot between gestation and birthweight.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{babies }\OtherTok{\textless{}{-}}\NormalTok{ babies }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{smoke =} \FunctionTok{factor}\NormalTok{(smoke)) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{na.omit}\NormalTok{()}
+           
+\NormalTok{babies }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ gestation, }\AttributeTok{y =}\NormalTok{ bwt, }\AttributeTok{color =}\NormalTok{ smoke))}\SpecialCharTok{+}  \CommentTok{\#Specify variables}
+    \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{shape =}\NormalTok{ smoke), }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\#Add scatterplot of points}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"number of days of gestation"}\NormalTok{,  }\CommentTok{\#Label x{-}axis}
+         \AttributeTok{y =} \StringTok{"birthweight (oz)"}\NormalTok{,  }\CommentTok{\#Label y{-}axis}
+         \AttributeTok{title =} \StringTok{"Scatterplot of Gestation vs. Birthweight by }
+\StringTok{         Smoking Status for Births between 1960 and 1967 }
+\StringTok{         in San Francisco"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\#Be sure to title your plots}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\#Add regression line}
+    \FunctionTok{scale\_color\_grey}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+Does the relationship between length of gestation and birthweight appear to depend upon maternal smoking status?
+
+\vspace{1in}
+
+Is the variable smoking status a potential confounding variable?
+
+\vspace{1in}
+
+Adding a categorical predictor:
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  Look at the regression line for each level of the \_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\item
+  If the slopes are \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, the two predictor variables do not \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ to help explain the response
+\item
+  If the slopes \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, there is an interaction between the categorical predictor and the relationship between the two quantitative variables.
+\end{itemize}
+
+\setstretch{1}
+
+\subsection{Concept Check}\label{concept-check-1}
+
+Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What are the three summary measures for two quantitative variables?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What are the four characteristics used to describe a scatterplot?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  When we add a categorical predictor variable to a scatterplot of two quantitative variables, what summary measure will we compare across the categories to assess the change in the relationship between the two quantitative variables.
+\end{enumerate}
+
+\vspace{0.2in}
+\newpage
+
+\subsection{Video Notes: Inference for Two Quantitative Variables}\label{video-notes-inference-for-two-quantitative-variables}
+
+Read Chapters 21 and 22 in the course textbook. Use the following videos to complete the video notes for Module 11.
+
+\subsection{Course Videos}\label{course-videos-2}
+
+\begin{itemize}
+\item
+  21.1
+\item
+  21.3
+\item
+  21.4TheoryTests
+\item
+  21.4TheoryIntervals
+\end{itemize}
+
+\setstretch{1}
+
+\subsection*{Summary measures and plots for two quantitative variables.}\label{summary-measures-and-plots-for-two-quantitative-variables.}
+\addcontentsline{toc}{subsection}{Summary measures and plots for two quantitative variables.}
+
+Scatterplot:
+
+\begin{itemize}
+\item
+  Form: linear or non-linear?
+\item
+  Direction: positive or negative?
+\item
+  Strength: how clear is the pattern between the two variables?
+\item
+  Outliers: points that are far from the pattern or bulk of the data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Influential points: outliers that are extreme in the x-~variable.
+  \end{itemize}
+\end{itemize}
+
+\setstretch{1.5}
+
+The summary measures for two quantitative variables are:
+
+\begin{itemize}
+\tightlist
+\item
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, interpreted as the on average change in the response variable for a one unit increase in the explanatory variable.
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
+\item
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, which measures the strength and direction of the linear relationship between two quantitative variables.
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
+\item
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, interpreted as the percent of variability in the response variable that is explained by the relationship with the explanatory variable.
+\end{itemize}
+
+\vspace{1mm}
+
+\setstretch{1}
+
+\begin{itemize}
+\tightlist
+\item
+  Least-squares regression line: \(\hat{y}=b_0+b_1\times x\) (put y and x in the context of the problem)
+\end{itemize}
+
+\setstretch{1.5}
+
+Notation:
+
+\begin{itemize}
+\item
+  Population slope:
+\item
+  Population correlation:
+\item
+  Sample slope:
+\item
+  Sample correlation:
+\end{itemize}
+
+\setstretch{1}
+
+Example: Oceanic temperature is important for sea life. The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. ({``Ocean Temperature and Salinity Study,''} n.d.) For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
+
+\subsection*{Hypothesis Testing}\label{hypothesis-testing-2}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+Null hypothesis assumes ``no effect'', ``no difference'', ``nothing interesting happening'', etc.
+
+\rgi Always of form: ``parameter'' = null value
+
+\(H_0:\)
+
+\vspace{0.5in}
+
+\(H_A:\)
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Research question determines the alternative hypothesis.
+\end{itemize}
+
+Write the null and alternative for the ocean study:
+
+In notation:
+
+\(H_0:\)
+
+\vspace{0.2in}
+
+\(H_A:\)
+
+\vspace{0.2in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{water }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Salnty, }\AttributeTok{y =}\NormalTok{ T\_degC))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"salinity (PSUs)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"temperature (C)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Pacific Ocean Salinity vs Temperature"}\NormalTok{) }\SpecialCharTok{+}
+               \CommentTok{\# Be sure to title your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+Describe the four characteristics of the scatterplot:
+
+\vspace{1in}
+
+Linear model output:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.water }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\AttributeTok{data=}\NormalTok{water) }\CommentTok{\# lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.water)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+\end{verbatim}
+
+Correlation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\AttributeTok{data=}\NormalTok{water)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#> [1] -0.6588365
+\end{verbatim}
+
+Write the least squares equation of the line in context of the problem:
+
+\vspace{0.5in}
+
+Interpret the value of slope in the context of the problem:
+
+\vspace{0.5in}
+
+Report and describe the correlation value:
+
+\vspace{0.5in}
+
+Calculate and interpret the coefficient of determination:
+
+\vspace{0.8in}
+
+\subsubsection*{Simulation-based method}\label{simulation-based-method-1}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+Conditions:
+
+\begin{itemize}
+\item
+  Independence: the response for one observational unit will not influence another observational unit
+\item
+  Linear relationship:
+\end{itemize}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\item
+  Simulate many samples assuming \(H_0: \beta_1 = 0\) or \(H_0: \rho =0\)
+
+  \begin{itemize}
+  \item
+    Write the response variable values on cards
+  \item
+    Hold the explanatory variable values constant
+  \item
+    Shuffle a new response variable to an explanatory variable
+  \item
+    Plot the shuffled data points to find the least squares line of regression
+  \item
+    Calculate and plot the simulated slope or correlation from each simulation
+  \item
+    Repeat 1000 times (simulations) to create the null distribution
+  \item
+    Find the proportion of simulations at least as extreme as \(b_1\) or \(r\)
+  \end{itemize}
+\end{itemize}
+
+To test slope:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{regression\_test}\NormalTok{(T\_degC }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Salnty, }\CommentTok{\# response \textasciitilde{} explanatory}
+               \AttributeTok{data =}\NormalTok{ water, }\CommentTok{\# Name of data set}
+               \AttributeTok{direction =} \StringTok{"less"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+               \AttributeTok{summary\_measure =} \StringTok{"slope"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+               \AttributeTok{as\_extreme\_as =} \SpecialCharTok{{-}}\FloatTok{5.514}\NormalTok{, }\CommentTok{\# Observed slope or correlation}
+               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+\newpage
+
+To test correlation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{regression\_test}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\CommentTok{\# response \textasciitilde{} explanatory}
+               \AttributeTok{data =}\NormalTok{ water, }\CommentTok{\# Name of data set}
+               \AttributeTok{direction =} \StringTok{"less"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+               \AttributeTok{summary\_measure =} \StringTok{"correlation"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+               \AttributeTok{as\_extreme\_as =} \SpecialCharTok{{-}}\FloatTok{0.659}\NormalTok{, }\CommentTok{\# Observed slope or correlation}
+               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+Explain why the null distribution is centered at the value of zero:
+
+\vspace{0.5in}
+
+Interpretation of the p-value:
+
+\begin{itemize}
+\item
+  Statement about probability or proportion of samples
+\item
+  Statistic (summary measure and value)
+\item
+  Direction of the alternative
+\item
+  Null hypothesis (in context)
+\end{itemize}
+
+\vspace{0.8in}
+
+Conclusion:
+
+\begin{itemize}
+\item
+  Amount of evidence
+\item
+  Parameter of interest
+\item
+  Direction of the alternative hypothesis
+\end{itemize}
+
+\vspace{0.6in}
+
+\subsection*{Confidence interval - Video 21.3}\label{confidence-interval---video-21.3}
+\addcontentsline{toc}{subsection}{Confidence interval - Video 21.3}
+
+To estimate the true slope (or true correlation) we will create a confidence interval.
+
+\subsubsection*{Simulation-based method}\label{simulation-based-method-2}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\begin{itemize}
+\item
+  Write the explanatory and response value pairs on cards
+\item
+  Sample pairs with replacement \(n\) times
+\item
+  Plot the resampled data points to find the least squares line of regression
+\item
+  Calculate and plot the simulated slope (or correlation) from each simulation
+\item
+  Repeat 1000 times (simulations) to create the bootstrap distribution
+\item
+  Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
+\end{itemize}
+
+Returning to the ocean example, we will estimate the true slope between salinity and temperature of the Pacific Ocean.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{regression\_bootstrap\_CI}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\CommentTok{\# response \textasciitilde{} explanatory}
+   \AttributeTok{data =}\NormalTok{ water, }\CommentTok{\# Name of data set}
+   \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{, }\CommentTok{\# Confidence level as decimal}
+   \AttributeTok{summary\_measure =} \StringTok{"slope"}\NormalTok{, }\CommentTok{\# Slope or correlation}
+   \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+Confidence interval interpretation:
+
+\begin{itemize}
+\item
+  How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+\item
+  Parameter of interest
+\item
+  Calculated interval
+\item
+  Order of subtraction when comparing two groups
+\end{itemize}
+
+\vspace{0.8in}
+
+Now we will estimate the true correlation between salinity and temperature of the Pacific Ocean.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{regression\_bootstrap\_CI}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\CommentTok{\# response \textasciitilde{} explanatory}
+   \AttributeTok{data =}\NormalTok{ water, }\CommentTok{\# Name of data set}
+   \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{, }\CommentTok{\# Confidence level as decimal}
+   \AttributeTok{summary\_measure =} \StringTok{"correlation"}\NormalTok{, }\CommentTok{\# Slope or correlation}
+   \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-16-1} \end{center}
+
+Confidence interval interpretation:
+
+\begin{itemize}
+\item
+  How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+\item
+  Parameter of interest
+\item
+  Calculated interval
+\item
+  Order of subtraction when comparing two groups
+\end{itemize}
+
+\vspace{0.8in}
+
+\subsubsection*{Theory-based method - Video 21.4to21.5TheoryTests}\label{theory-based-method---video-21.4to21.5theorytests}
+\addcontentsline{toc}{subsubsection}{Theory-based method - Video 21.4to21.5TheoryTests}
+
+Conditions:
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ of the two variables, and \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. The pattern in the residual plot should display a horizontal line.
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+\item
+  Independence (for both simulation-based and theory-based methods)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    One\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_for an observational unit has no impact on \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+  \end{itemize}
+\item
+  Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. The variability in the residuals around zero should be approximately the same for all fitted values.
+  \end{itemize}
+\item
+  Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, which should appear approximately normal
+  \end{itemize}
+\end{itemize}
+
+\setstretch{1}
+
+Example:
+
+It is a generally accepted fact that the more carats a diamond has, the more expensive that diamond will be. The question is, how much more expensive? Data on thousands of diamonds were collected for this data set. We will only look at one type of cut (``Ideal'') and diamonds less than 1 carat. Does the association between carat size and price have a linear relationship for these types of diamonds? What can we state about the association between carat size and price?
+
+Scatterplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Diamonds }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ carat, }\AttributeTok{y =}\NormalTok{ price))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"carat"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"price ($)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Diamonds Carats vs Price"}\NormalTok{) }\SpecialCharTok{+}
+               \CommentTok{\# Be sure to title your plots}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-18-1} \end{center}
+
+\newpage
+
+Diagnostic plots:
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-19-1} \end{center}
+
+Check the conditions for the ocean data:
+
+Scatterplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{water }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Salnty, }\AttributeTok{y =}\NormalTok{ T\_degC))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"salinity (PSUs)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"temperature (C)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Pacific Ocean Salinity vs Temperature"}\NormalTok{) }\SpecialCharTok{+} 
+               \CommentTok{\# Be sure to title your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-20-1} \end{center}
+
+\newpage
+
+Diagnostic plots:
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-21-1} \end{center}
+
+Like with paired data the \(t\)-distribution can be used to model slope and correlation.
+
+\setstretch{1.5}
+
+\begin{itemize}
+\tightlist
+\item
+  For two quantitative variables we use the \_\_\_\_\_\_-distribution
+  with \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ degrees of freedom to approximate the sampling distribution.
+\end{itemize}
+
+\setstretch{1}
+
+Theory-based test:
+
+\begin{itemize}
+\item
+  Calculate the standardized statistic
+\item
+  Find the area under the \(t\)-distribution with \(n - 2\) df at least as extreme as the standardized statistic
+\end{itemize}
+
+Equation for the standardized slope:
+
+\vspace{0.8in}
+
+Calculate the standardized slope for the ocean data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.water }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\AttributeTok{data=}\NormalTok{water) }\CommentTok{\# lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.water)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+\end{verbatim}
+
+\vspace{1in}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/pvalueoce-1} \end{center}
+
+Interpret the standardized statistic:
+
+\vspace{0.8in}
+
+To find the theory-based p-value:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.water }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\AttributeTok{data=}\NormalTok{water) }\CommentTok{\# lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.water)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+\end{verbatim}
+
+or
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pt}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{8.670}\NormalTok{, }\AttributeTok{df =} \DecValTok{98}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 4.623445e{-}14}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage
+
+\subsubsection*{Theory-based method}\label{theory-based-method}
+\addcontentsline{toc}{subsubsection}{Theory-based method}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the interval centered at the sample statistic
+\end{itemize}
+
+\rgi \(\text{statistic} \pm \text{margin of error}\)
+
+\vspace{0.6in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.water }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(T\_degC}\SpecialCharTok{\textasciitilde{}}\NormalTok{Salnty, }\AttributeTok{data=}\NormalTok{water) }\CommentTok{\# lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.water)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+\end{verbatim}
+
+Using the ocean data, calculate a 95\% confidence interval for the true slope.
+
+\begin{itemize}
+\tightlist
+\item
+  Need the \(t^*\) multiplier for a 95\% confidence interval from a t-distribution with \_\_\_\_\_\_\_\_\_ df.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df=}\DecValTok{98}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#> [1] 1.984467
+\end{verbatim}
+
+\vspace{1in}
+
+\subsection{Concept Check}\label{concept-check-2}
+
+Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Explain why theory-based methods should not be used to analyze the salinity study?
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What is the proper notation for the population slope? Population correlation?
+\end{enumerate}
+
+\vspace{0.4in}
+
+\newpage
+
+\section{Activity 26: Moneyball --- Linear Regression}\label{activity-26-moneyball-linear-regression}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-3}
+
+\begin{itemize}
+\item
+  Identify and create appropriate summary statistics and plots
+  given a data set with two quantitative variables.
+\item
+  Use scatterplots to assess the relationship between two quantitative variables.
+\item
+  Find the estimated line of regression using summary statistics and \texttt{R} linear model (\texttt{lm()}) output.
+\item
+  Interpret the slope coefficient in context of the problem.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-2}
+
+In today's activity, we will review summary measures and plots for two quantitative variables. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Scatterplot
+\item
+  Least-squares line of regression
+\item
+  Slope and \(y\)-intercept
+\item
+  Residuals
+\end{itemize}
+
+To review these concepts, see Chapter 6 \& 7 in the textbook.
+
+\subsection{Moneyball}\label{moneyball}
+
+The goal of a Major League baseball team is to make the playoffs. In 2002, the manager of the Oakland A's, Billy Bean, with the help of Paul DePodesta began to use statistics to determine which players to choose for their season. Based on past data, DePodesta determined that to make it to the playoffs, the A's would need to win at least 95 games in the regular season. In order to win more games, they would need to score more runs than they allowed. The Oakland A's won 20 consecutive games and a total of 103 games for the season. The success of this use of sports analytics was portrayed by the 2011 movie, Moneyball. In this study, we will see if there is evidence of a positive linear relationship between the difference in the number of runs scored minus the number of runs allowed (\texttt{RD}) and the number of wins for Major League baseball teams in the years before 2002. Some of the variables collected in the data set baseball consist of the following:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\textbf{Variable} & \textbf{Description} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{RA} & Runs allowed \\
+\texttt{RS} & Runs scored \\
+\texttt{OBP} & On-base percentage \\
+\texttt{SLG} & Slugging percentage \\
+\texttt{BA} & Batting average \\
+\texttt{OOBP} & Opponent's on-base percentage \\
+\texttt{OSLG} & Opponent's slugging percentage \\
+\texttt{W} & Number of wins in the season \\
+\texttt{RD} & Difference of runs scored minus runs allowed \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moneyball }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/baseball.csv"}\NormalTok{) }\CommentTok{\# Reads in data set }
+\NormalTok{moneyball}\SpecialCharTok{$}\NormalTok{RD }\OtherTok{\textless{}{-}}\NormalTok{ moneyball}\SpecialCharTok{$}\NormalTok{RS }\SpecialCharTok{{-}}\NormalTok{ moneyball}\SpecialCharTok{$}\NormalTok{RA}
+\NormalTok{moneyball }\OtherTok{\textless{}{-}} 
+\NormalTok{    moneyball }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into}
+    \FunctionTok{subset}\NormalTok{(Year }\SpecialCharTok{\textless{}} \DecValTok{2002}\NormalTok{) }\CommentTok{\# Select only years before 2002}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Vocabulary review}\label{vocabulary-review}
+\addcontentsline{toc}{subsubsection}{Vocabulary review}
+
+\begin{itemize}
+\item
+  Use the provided R script file to create a scatterplot to examine the relationship between the difference in number of runs scored minus number of runs allowed and the number of wins by filling in the variable names (RD and W) for explanatory and response in line 14. Note, we are using the difference in runs scores minus runs allowed to predict the number of season wins.
+\item
+  Highlight and run lines 1--20.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moneyball }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+} \CommentTok{\# Specify variables}
+    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Add scatterplot of points}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Difference in number of runs"}\NormalTok{, }\CommentTok{\# Label x{-}axis}
+         \AttributeTok{y =} \StringTok{"Number of Season wins"}\NormalTok{, }\CommentTok{\# Label y{-}axis}
+         \AttributeTok{title =} \StringTok{"Scatterplot of Run Difference vs. Number of Season Wins for MLB Teams"}\NormalTok{) }\SpecialCharTok{+}
+\CommentTok{\# Be sure to tile your plots}
+\FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Assess the four features of the scatterplot that describe this relationship.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Form (linear, non-linear)
+\end{itemize}
+
+\vspace{.075in}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction (positive, negative)
+\end{itemize}
+
+\vspace{.075in}
+
+\begin{itemize}
+\tightlist
+\item
+  Strength
+\end{itemize}
+
+\vspace{.075in}
+
+\begin{itemize}
+\tightlist
+\item
+  Unusual observations or outliers
+\end{itemize}
+
+\vspace{.075in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Based on the plot, does there appear to be an association between run difference and number of season wins? Explain your answer.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsubsection*{Slope}\label{slope-1}
+\addcontentsline{toc}{subsubsection}{Slope}
+
+The linear model function in R (\texttt{lm()}) gives us the summary for the least squares regression line. The estimate for \texttt{(Intercept)} is the \(y\)-intercept for the line of least squares, and the estimate for \texttt{budget\_mil} (the \(x\)-variable name) is the value of \(b_1\), the slope.
+
+\begin{itemize}
+\tightlist
+\item
+  Run lines 24--25 in the R script file to reproduce the linear model output found in the coursepack.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear model: y \textasciitilde{} x}
+\NormalTok{moneyballLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(W}\SpecialCharTok{\textasciitilde{}}\NormalTok{RD, }\AttributeTok{data=}\NormalTok{moneyball)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(moneyballLM)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)   80.881      0.131 616.675        0
+#> RD             0.106      0.001  81.554        0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Write out the least squares regression line using the summary statistics provided above in context of the problem.
+  \vspace{0.8in}
+\item
+  Interpret the value of slope in context of the problem.
+\end{enumerate}
+
+\vspace{.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Using the least squares line from question 3, predict the number of season wins for a MLB team that has a run difference of -66 runs.
+\end{enumerate}
+
+\vspace{.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Predict the number of season wins for a MLB team that has a run difference of 400 runs.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  The prediction in question 6 is an example of what?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\subsubsection*{Residuals}\label{residuals}
+\addcontentsline{toc}{subsubsection}{Residuals}
+
+The model we are using assumes the relationship between the two variables follows a straight line. The residuals are the errors, or the variability in the response that hasn't been modeled by the regression line.
+
+\begin{center}
+
+$\implies$ Residual = actual y value $-$ predicted y value
+
+$e=y-\hat{y}$
+\end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  The MLB team \emph{Florida Marlins} had a run difference of -66 runs and 79 wins for the season. Find the residual for this MLB team.
+\end{enumerate}
+
+\vspace{.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Did the line of regression overestimate or underestimate the number of wins for the season for this team?
+\end{enumerate}
+
+\vspace{.2in}
+
+\newpage
+
+\subsubsection*{Correlation}\label{correlation-1}
+\addcontentsline{toc}{subsubsection}{Correlation}
+
+The following output shows a correlation matrix between several pairs of quantitative variables.
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 29--33 to produce the same table as below.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moneyball }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set pipes into}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"RD"}\NormalTok{, }\StringTok{"BA"}\NormalTok{, }
+           \StringTok{"SLG"}\NormalTok{, }\StringTok{"W"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>        RD    BA   SLG     W
+#> RD  1.000 0.442 0.428 0.939
+#> BA  0.442 1.000 0.814 0.416
+#> SLG 0.428 0.814 1.000 0.406
+#> W   0.939 0.416 0.406 1.000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Report the value of correlation between the run difference and the number of season wins.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Calculate the coefficient of determination between the run difference and the number of season wins.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Interpret the value of coefficient of determination in context of the study.
+\end{enumerate}
+
+\vspace{0.7in}
+
+\subsection{Take-home messages}\label{take-home-messages-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Two quantitative variables are graphically displayed in a scatterplot. The explanatory variable is on the \(x\)-axis and the response variable is on the \(y\)-axis. When describing the relationship between two quantitative variables we look at the form (linear or non-linear), direction (positive or negative), strength, and for the presence of outliers.
+\item
+  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation (\(r\)), slope of the regression line (\(b_1\)), and the coefficient of determination (\(r^2\)).
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-2}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Activity 27: IPEDS (continued)}\label{activity-27-ipeds-continued}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-4}
+
+\begin{itemize}
+\item
+  Identify and create appropriate summary statistics and plots
+  given a data set with two quantitative variables.
+\item
+  Find the estimated line of regression using summary statistics and \texttt{R} linear model (\texttt{lm()}) output.
+\item
+  Interpret the slope coefficient in context of the problem.
+\item
+  Calculate and interpret \(r^2\), the coefficient of determination, in context of the problem.
+\item
+  Find the correlation coefficient from \texttt{R} output or from \(r^2\) and the sign of the slope.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-3}
+
+In today's activity, we will review summary measures and plots for two quantitative variables. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Least-squares line of regression
+\item
+  Slope and \(y\)-intercept
+\item
+  Residuals
+\item
+  Correlation (\(r\))
+\item
+  Coefficient of determination (\(r\)-squared)
+\end{itemize}
+
+To review these concepts, see Chapter 6 in the textbook.
+
+\subsection{The Integrated Postsecondary Education Data System (IPEDS)}\label{the-integrated-postsecondary-education-data-system-ipeds}
+
+We will continue to assess the IPEDS data set collected on a subset of institutions that met the following selection criteria (Education Statistics 2018):
+
+\begin{itemize}
+\item
+  Degree granting
+\item
+  United States only
+\item
+  Title IV participating
+\item
+  Not for profit
+\item
+  2-year or 4-year or above
+\item
+  Has full-time first-time undergraduates
+\end{itemize}
+
+Some of the variables collected and their descriptions are below. Note that several variables have missing values for some institutions (denoted by ``NA'').
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7647}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Variable}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Description}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{UnitID} & Unique institution identifier \\
+\texttt{Name} & Institution name \\
+\texttt{State} & State abbreviation \\
+\texttt{Sector} & whether public or private \\
+\texttt{LandGrant} & Is this a land-grant institution (Yes/No) \\
+\texttt{Size} & Institution size category based on total student enrolled for credit, Fall 2018: Under 1,000, 1,000 - 4,999, 5,000 - 9,999, 10,000 - 19,999, 20,000 and above \\
+\texttt{Cost\_OutofState} & Cost of attendance for full-time out-of-state undergraduate students \\
+\texttt{Cost\_InState} & Cost of attendance for full-time in-state undergraduate students \\
+\texttt{Retention} & Retention rate is the percent of the undergraduate students that re-enroll in the next year \\
+\texttt{Graduation\_Rate} & 6-year graduation rate for undergraduate students \\
+\texttt{SATMath\_75} & 75th percentile Math SAT score \\
+\texttt{ACT\_75} & 75th percentile ACT score \\
+\end{longtable}
+
+The code below reads in the needed data set, IPEDS\_2018.csv, and filters out the 2-year institutions.
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 1 -- 11 to load the data set and filter out the 2-year institutions.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.math.montana.edu/courses/s216/data/IPEDS\_2018.csv"}\NormalTok{) }
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}}\NormalTok{ IPEDS }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Sector }\SpecialCharTok{!=} \StringTok{"Public 2{-}year"}\NormalTok{) }\CommentTok{\#Filters the data set to remove Public 2{-}year}
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}}\NormalTok{ IPEDS }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Sector }\SpecialCharTok{!=} \StringTok{"Private 2{-}year"}\NormalTok{) }\CommentTok{\#Filters the data set to remove Private 2{-}year}
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(IPEDS)}
+\end{Highlighting}
+\end{Shaded}
+
+To create a scatterplot of the 75th percentile Math SAT score by retention rate for 4-year US Higher Education Institutions\ldots{}
+
+\begin{itemize}
+\item
+  Enter the variable \texttt{SATMath\_75} for explanatory and \texttt{Retention} for response in line 16.
+\item
+  Highlight and run lines 15--21.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data sest pipes into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SATMath\_75, }\AttributeTok{y =}\NormalTok{ Retention))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"75th Percentile SAT Math Score"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"Retention Rate (\%)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of SAT Math Score vs. Retention Rate for }
+\StringTok{       4{-}year US Higher Education Institutions"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\# Be sure to title your plots with the type of plot, observational units, variable(s)}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Add regression line}
+    \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A27-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Describe the relationship between 75th percentile SAT Math score and retention rate.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsubsection*{Slope of the Least Squares Linear Regression Line}\label{slope-of-the-least-squares-linear-regression-line}
+\addcontentsline{toc}{subsubsection}{Slope of the Least Squares Linear Regression Line}
+
+There are three summary measures calculated from two quantitative variables: slope, correlation, and the coefficient of determination. We will first assess the slope of the least squares regression line between 75th percentile SAT Math score and retention rate.
+
+\begin{itemize}
+\item
+  Enter \texttt{Retention} for response and \texttt{SATMath\_75} for explanatory in line 25
+\item
+  Highlight and run lines 25 -- 26 to fit the linear model.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear model: y \textasciitilde{} x}
+\NormalTok{IPEDSLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Retention}\SpecialCharTok{\textasciitilde{}}\NormalTok{SATMath\_75, }\AttributeTok{data=}\NormalTok{IPEDS)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(IPEDSLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)    0.059      1.898   0.031    0.975
+#> SATMath_75     0.125      0.003  40.485    0.000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write out the least squares regression line using the summary statistics from the R output in context of the problem.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\textbf{Slope Interpretation}: An increase of one point in SAT Math 75th percentile score is associated with an increase in retention rate, on average, of 0.125 percentage points for 4-year higher education institutions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Predict the retention rate for a 4-year US higher education institution with a 75th percentile SAT Math score of 440.
+\end{enumerate}
+
+\vspace{0.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Calculate the residual for a 4-year US higher education institution with a 75th percentile SAT Math score of 440 and a retention rate of 24\%.
+\end{enumerate}
+
+\vspace{0.4in}
+
+\subsubsection*{Correlation}\label{correlation-2}
+\addcontentsline{toc}{subsubsection}{Correlation}
+
+Correlation measures the strength and the direction of the linear relationship between two quantitative variables. The closer the value of correlation to \(+1\) or \(-1\), the stronger the linear relationship. Values close to zero indicate a very weak linear relationship between the two variables.
+
+The following output creates a correlation matrix between several pairs of quantitative variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set pipes into}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"Retention"}\NormalTok{, }\StringTok{"Cost\_InState"}\NormalTok{, }
+           \StringTok{"Graduation\_Rate"}\NormalTok{, }\StringTok{"Salary"}\NormalTok{, }
+           \StringTok{"SATMath\_75"}\NormalTok{, }\StringTok{"ACT\_75"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>                 Retention Cost_InState Graduation_Rate Salary SATMath_75 ACT_75
+#> Retention           1.000        0.388           0.832  0.698      0.767  0.768
+#> Cost_InState        0.388        1.000           0.563  0.365      0.502  0.514
+#> Graduation_Rate     0.832        0.563           1.000  0.683      0.817  0.833
+#> Salary              0.698        0.365           0.683  1.000      0.747  0.706
+#> SATMath_75          0.767        0.502           0.817  0.747      1.000  0.920
+#> ACT_75              0.768        0.514           0.833  0.706      0.920  1.000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  What is the value of correlation between SATMath\_75 and Retention?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}
+\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
+
+Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination (\(r^2\)). The coefficient of determination, \(r^2\), can also be used to describe the strength of the linear relationship between two quantitative variables. The value of \(r^2\) (a value between 0 and 1) represents the \textbf{proportion of variation in the response that is explained by the least squares line with the explanatory variable}. There are two ways to calculate the coefficient of determination:
+
+~~~Square the correlation coefficient: \(r^2 = (r)^2\)
+
+~~~Use the variances of the response and the residuals: \(r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Use the correlation, \(r\), found in question 5, to calculate the coefficient of determination between SATMath\_75 and Retention, \(r^2\).
+\end{enumerate}
+
+\vspace{.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  The variance of the response variable, Retention in \$MM, is \(s_{Retention}^2 = 138.386\) \(\%^2\) and the variability in the residuals is \(s_{RES}^2 = 56.934\) \%\(^2\). Use these values to calculate the coefficient of determination.
+\end{enumerate}
+
+\vspace{1in}
+
+In the next part of the activity we will explore what the coefficient of determination measures.
+
+In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between SATMath\_75 and Retention. The value of the y-intercept, 76.387, is the mean of the response variable when there is no relationship between the two variables. To find the sum of squares total (SST) we find the residual (\(residual = y - \hat{y}\)) for each response value from the horizontal line (from the value of 76.387). Each residual is squared and the sum of the squared values is calculated. The SST gives the \textbf{total variability in the response variable, Retention}.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A27-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+The calculated value for the SST is 158451.8.
+
+This next scatterplot, shows the plotted data with the best fit regression line. This is the line of best fit between budget and revenue and has the smallest sum of squares error (SSE). The SSE is calculated by finding the residual from each response value to the regression line. Each residual is squared and the sum of the squared values is calculated.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A27-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+The calculated value for the SSE is 65133.022.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Calculate the value for \(r^2\) using the values for SST and SSE provided below each of the previous graphs.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Write a sentence interpreting the coefficient of determination in context of the problem.
+\end{enumerate}
+
+\newpage
+
+\subsubsection*{Multivariable plots}\label{multivariable-plots}
+\addcontentsline{toc}{subsubsection}{Multivariable plots}
+
+When adding another categorical predictor, we can add that variable as shape or color to the plot. In the following code we have added the variable \texttt{Sector}, whether the 4-year institution is public or private.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data sest pipes into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SATMath\_75, }\AttributeTok{y =}\NormalTok{ Retention, }\AttributeTok{shape =}\NormalTok{ Sector, }\AttributeTok{color=}\NormalTok{Sector))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"75th Percentile SAT Math Score"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"Retention Rate (\%)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of SAT Math Score vs. Retention Rate for }
+\StringTok{       4{-}year US Higher Education Institutions"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\# Be sure to title your plots with the type of plot, observational units, variable(s)}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Add regression line}
+    \FunctionTok{scale\_color\_grey}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A27-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of sector?
+\end{enumerate}
+
+\vspace{0.8in}
+
+\newpage
+
+\subsection{Take-home messages}\label{take-home-messages-3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The sign of correlation and the sign of the slope will always be the same. The closer the value of correlation is to \(-1\) or \(+1\), the stronger the linear relationship between the explanatory and the response variable.
+\item
+  The coefficient of determination multiplied by 100 (\(r^2 \times 100\)) measures the percent of variation in the response variable that is explained by the relationship with the explanatory variable. The closer the value of the coefficient of determination is to 100\%, the stronger the relationship.
+\item
+  We can use the line of regression to predict values of the response variable for values of the explanatory variable. Do not use values of the explanatory variable that are outside of the range of values in the data set to predict values of the response variable (reflect on why this is true.). This is called \textbf{extrapolation}.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-3}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Activity 28: Prediction of Crocodilian Body Size}\label{activity-28-prediction-of-crocodilian-body-size}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-5}
+
+\begin{itemize}
+\item
+  Given a research question involving two quantitative variables, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Describe and perform a simulation-based hypothesis test for slope or correlation.
+\item
+  Interpret and evaluate a p-value for a simulation-based hypothesis test for a slope or correlation.
+\item
+  Use bootstrapping to find a confidence interval for the slope or correlation.
+\item
+  Interpret a confidence interval for a slope or correlation.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-4}
+
+In today's activity, we will use simulation-based methods for hypothesis tests and confidence intervals for a linear regression slope or correlation. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Correlation
+\item
+  Slope
+\item
+  Regression line
+\end{itemize}
+
+To review these concepts, see Chapter 21 in the textbook.
+
+\subsection{Crocodilian Body Size}\label{crocodilian-body-size}
+
+Much research surrounds using measurements of animals to estimate body-size of extinct animals. Many challenges exist in making accurate estimates for extinct crocodilians. The term crocodilians refers to all members of the family Crocodylidae (``true'' crocodiles), family Alligatoridae (alligators and caimans) and family Gavialidae (gharial, Tomistoma). The researchers in this study (O'Brien 2019) state, ``Among extinct crocodilians and their precursors (e.g., suchians), several methods have been developed to predict body size from suites of hard-tissue proxies. Nevertheless, many have limited applications due to the disparity of some major suchian groups and biases in the fossil record. Here, we test the utility of head width (HW) as a broadly applicable body-size estimator in living and fossil suchians.'' Data were collected on 76 male and female individuals of different species. Is there evidence that head width (measured in cm) is a good predictor of total body length (measured in cm) for crocodilians?
+
+\begin{itemize}
+\item
+  Download the R script file from D2L and upload to the RStudio server
+\item
+  Open the file and run lines 1 - 8 to load the dataset
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Read in data set}
+\NormalTok{croc }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/Crocodylian\_headwidth.csv"}\NormalTok{)}
+\NormalTok{croc }\OtherTok{\textless{}{-}}\NormalTok{ croc }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{na.omit}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+To create a scatterplot to examine the relationship between head width and total body length we will use \texttt{HW\_cm} as the explanatory variable and \texttt{TL\_cm} as the response variable.
+
+\begin{itemize}
+\item
+  Enter the name of the explanatory and response variable in line 14
+\item
+  Highlight and run lines 13 - 20
+\end{itemize}
+
+\newpage
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{croc }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"head width (cm)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"total length (cm)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Crocodilian Head Width vs. Total Length"}\NormalTok{) }\SpecialCharTok{+} 
+    \CommentTok{\# Be sure to title your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Describe the features of the plot, addressing all four characteristics of a scatterplot.
+\end{enumerate}
+
+\vspace{1in}
+
+~~~~~~~If you indicated there are potential outliers, which points are they?
+
+\vspace{0.5in}
+
+\subsubsection*{Hypotheses}\label{hypotheses}
+\addcontentsline{toc}{subsubsection}{Hypotheses}
+
+When analyzing two quantitative variables we can either test regression slope or correlation. In both cases, we are testing that there is a linear relationship between variables.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write the null hypothesis in words.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Write the null hypothesis to test slope in notation.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Write the null hypothesis to test correlation in notation.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Write the alternative hypothesis in words.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\newpage
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+To create the linear model output and find the value of correlation for the linear relationship\ldots{}
+
+\begin{itemize}
+\item
+  Enter the the name of the explanatory and response in line 25
+\item
+  Highlight and run lines 25 - 27
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Linear model}
+\NormalTok{lm.croc }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\AttributeTok{data=}\NormalTok{croc) }\CommentTok{\#lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.croc)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{5}\NormalTok{)}
+\CommentTok{\#Correlation}
+\FunctionTok{cor}\NormalTok{(croc}\SpecialCharTok{$}\NormalTok{HW\_cm, croc}\SpecialCharTok{$}\NormalTok{TL\_cm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Using the output from the evaluated R code, write the equation of the regression line in the context of the problem using appropriate statistical notation.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Interpret the estimated slope in context of the problem.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-3}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+In this activity, we will focus on using simulation-based methods for inference in regression.
+
+\subsubsection*{Simulation-based hypothesis test}\label{simulation-based-hypothesis-test}
+\addcontentsline{toc}{subsubsection}{Simulation-based hypothesis test}
+
+Let's start by thinking about how one simulation would be created on the null distribution using cards. First, we would write the values for the response variable, total length, on each card. Next, we would shuffle these \(y\) values while keeping the \(x\) values (explanatory variable) in the same order. Then, find the line of regression for the shuffled \((x, y)\) pairs and calculate either the slope or correlation of the shuffled sample.
+
+We will use the \texttt{regression\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of shuffled slopes (or shuffled correlations) and compute a p-value. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{croc}), the summary measure for the test (either slope or correlation), number of repetitions, the sample statistic (value of slope or correlation), and the direction of the alternative hypothesis.
+
+The response variable name is \texttt{TL\_cm} and the explanatory variable name is \texttt{HW\_cm} for these data.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  What inputs should be entered for each of the following to create the simulation to test regression slope?
+\end{enumerate}
+
+\vspace{.5 mm}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction (\texttt{"greater"}, \texttt{"less"}, or \texttt{"two-sided"}):
+\end{itemize}
+
+\vspace{.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Summary measure (choose \texttt{"slope"} or \texttt{"correlation"}):
+\end{itemize}
+
+\vspace{.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  As extreme as (enter the value for the sample slope):
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Number of repetitions:
+\end{itemize}
+
+\vspace{.2in}
+
+Using the R script file for this activity\ldots{}
+
+\begin{itemize}
+\item
+  Enter your answers for question 8 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations.
+\item
+  Highlight and run lines 32--37.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_test}\NormalTok{(TL\_cm}\SpecialCharTok{\textasciitilde{}}\NormalTok{HW\_cm, }\CommentTok{\# response \textasciitilde{} explanatory}
+               \AttributeTok{data =}\NormalTok{ croc, }\CommentTok{\# Name of data set}
+               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+               \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+               \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed slope or correlation}
+               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  Report the p-value from the R output.
+  \vspace{0.5in}
+\item
+  Suppose we wanted to complete the simulation test using correlation as the summary measure, instead of slope. Which two inputs in \#8 would need to be changed to test for correlation? What inputs should you use instead?
+  \vspace{0.75in}
+\item
+  Change the inputs in lines 32--37 to test for correlation instead of slope. Highlight and run those lines, then report the new p-value of the test.
+  \vspace{0.5in}
+\item
+  The p-values from the test of slope (\#9) and the test of correlation (\#11) should be similar. Explain why the two p-values should match. \emph{Hint: think about the relationship between slope and correlation!}
+  \vspace{1in}
+\end{enumerate}
+
+\subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval}
+\addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
+
+We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \texttt{catstats} package) to simulate the bootstrap distribution of sample slopes (or sample correlations) and calculate a confidence interval.
+
+\begin{itemize}
+\item
+  Fill in the missing values in the provided R script file to find a 95\% confidence interval for slope.
+\item
+  Highlight and run lines 42--46.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_bootstrap\_CI}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
+   \AttributeTok{data =}\NormalTok{ croc, }\CommentTok{\# Name of data set}
+   \AttributeTok{confidence\_level =}\NormalTok{ xx, }\CommentTok{\# Confidence level as decimal}
+   \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Slope or correlation}
+   \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\item
+  Report the bootstrap 95\% confidence interval in interval notation.\\
+  \vspace{0.5in}
+\item
+  Interpret the interval in question 14 in context of the problem. \emph{Hint: use the interpretation of slope in your confidence interval interpretation.}
+\end{enumerate}
+
+\vspace{0.8in}
+
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Based on the p-value and confidence interval, write a conclusion in context of the problem.
+\end{enumerate}
+
+\vspace{.8in}
+
+\subsection{Take-home messages}\label{take-home-messages-4}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The p-value for a test for correlation should be approximately the same as the p-value for the test of slope. In the simulation test, we just change the statistic type from slope to correlation and use the appropriate sample statistic value.
+\item
+  To interpret a confidence interval for the slope, think about how to interpret the sample slope and use that information in the confidence interval interpretation for slope.
+\item
+  To create one simulated sample on the null distribution when testing for a relationship between two quantitative variables, hold the \(x\) values constant and shuffle the \(y\) values to new \(x\) values. Find the regression line for the shuffled data and plot the slope or the correlation for the shuffled data.
+\item
+  To create one simulated sample on the bootstrap distribution when assessing two quantitative variables, label \(n\) cards with the original (response, explanatory) values. Randomly draw with replacement \(n\) times. Find the regression line for the resampled data and plot the resampled slope or correlation.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-4}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Activity 29: Golf Driving Distance}\label{activity-29-golf-driving-distance}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-6}
+
+\begin{itemize}
+\item
+  Given a research question involving two quantitative variables, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Assess the conditions to use the normal distribution model for a slope.
+\item
+  Find the T test statistic (T-score) for a slope based off of \texttt{lm()} output in R.
+\item
+  Find, interpret, and evaluate the p-value for a theory-based hypothesis test for a slope.
+\item
+  Create and interpret a theory-based confidence interval for a slope.
+\item
+  Use a confidence interval to determine the conclusion of a hypothesis test.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-5}
+
+In this week's in-class activity, we will use theory-based methods for hypothesis tests and confidence intervals for a linear regression slope. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Slope
+\item
+  Regression line
+\end{itemize}
+
+To review these concepts, see Chapter 21 in the textbook.
+
+\subsection{Golf driving distance}\label{golf-driving-distance}
+
+In golf the goal is to complete a hole with as few strokes as possible. A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway. Data were collected on 354 PGA and LPGA players in 2008 ({``Average Driving Distance and Fairway Accuracy''} 2008). For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured. Use these data to assess, ``Does a professional golfer give up accuracy when they hit the ball farther?''
+
+\begin{itemize}
+\tightlist
+\item
+  Download the R script file from D2L and open in the RStudio server
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Read in data set}
+\NormalTok{golf }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/golf.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Plot review.}\label{plot-review.}
+\addcontentsline{toc}{subsubsection}{Plot review.}
+
+To create a scatterplot showing the relationship between the driving distance and percent accuracy for professional golfers:
+
+\begin{itemize}
+\item
+  Enter the name of the explanatory and response in line 10
+\item
+  Highlight and run lines 1 - 16
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{golf }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Driving Distance (yards)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"Percent Accuracy"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Driving Distance by Percent Accuracy}
+\StringTok{       for Professional Golfers"}\NormalTok{) }\SpecialCharTok{+} 
+               \CommentTok{\# Be sure to tile your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line}
+\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
+
+When performing inference on a least squares line, the follow conditions are generally required:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Independent observations} (for both simulation-based and theory-based methods): individual data points must be independent.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
+  \end{itemize}
+\item
+  \emph{Linearity} (for both simulation-based and theory-based methods): the data should follow a linear trend.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The pattern in the residual plot should display a horizontal line.
+  \end{itemize}
+\item
+  \emph{Constant variability} (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
+  \end{itemize}
+\item
+  \emph{Nearly normal residuals} (for theory-based methods only: residuals must be nearly normal.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
+  \end{itemize}
+\end{itemize}
+
+The scatterplot generated earlier and the residual plots shown below will be used to assess these conditions for approximating the data with the \(t\)-distribution.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Are the conditions met to use the \(t\)-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.
+\end{enumerate}
+
+\vspace{3in}
+
+\subsubsection*{Ask a research question}\label{ask-a-research-question-1}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write out the null hypothesis in words to test the slope.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Using the research question, write the alternative hypothesis in notation to test the slope.
+\end{enumerate}
+
+\vspace{0.4in}
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-1}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+The linear model output for this study is shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.golf }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Percent\_Accuracy}\SpecialCharTok{\textasciitilde{}}\NormalTok{Driving\_Distance, }\AttributeTok{data=}\NormalTok{golf) }\CommentTok{\# lm(response\textasciitilde{}explanatory)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(lm.golf)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>                  Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)       103.586      3.329  31.119        0
+#> Driving_Distance   -0.142      0.012 -11.553        0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Report the summary statistic (sample slope) for the linear relationship between driving distance and percent accuracy of golfers. Use proper notation.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-4}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\paragraph*{Hypothesis test}\label{hypothesis-test-1}
+\addcontentsline{toc}{paragraph}{Hypothesis test}
+
+To find the value of the standardized statistic to test the slope we will use,
+
+\[
+T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
+\]
+
+We will use the linear model R output above to get the estimate for slope and the standard error of the slope.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Calculate the standardized statistic for slope. Identify where this calculated value is in the linear model R output.
+\end{enumerate}
+
+\vspace{0.7in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  The p-value in the linear model R output is the two-sided p-value for the test of significance for slope. Report the p-value to answer the research question.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Based on the p-value, how much evidence is there against the null hypothesis?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\paragraph*{Confidence interval}\label{confidence-interval-2}
+\addcontentsline{toc}{paragraph}{Confidence interval}
+
+Recall that a confidence interval is calculated by adding and subtracting the margin of error to the point estimate.\\
+\[\mbox{point estimate}\pm t^*\times SE(\mbox{estimate}).\]
+When the point estimate is a regression slope, this formula becomes
+\[b_1 \pm t^* \times SE(b_1).\]
+
+The \(t^*\) multiplier comes from a \(t\)-distribution with \(n-2\) degrees of freedom. The sample size for this study is 354 so we will use the degrees of freedom 352 (\(n-2\)).
+
+\begin{itemize}
+\item
+  Enter the percentile needed to find the multiplier for a 95\% confidence interval for xx
+\item
+  Enter the degrees of freedom for yy
+\item
+  Highlight and run line 33
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(xx, yy, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{) }\CommentTok{\# 95\% t* multiplier }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  Calculate the 95\% confidence interval for the true slope.
+  \vspace{0.8in}
+\item
+  Interpret the 95\% confidence interval in context of the problem.
+\end{enumerate}
+
+\vspace{.8in}
+
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-1}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Write a conclusion to answer the research question in context of the problem.
+\end{enumerate}
+
+\vspace{.8in}
+
+\subsection*{Multivariable plots}\label{multivariable-plots-1}
+\addcontentsline{toc}{subsection}{Multivariable plots}
+
+Another variable that may affect the percent accuracy is the which league the golfer is part of. We will look at how this variable may change the relationship between driving distance and percent accuracy.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{golf }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Driving\_Distance, }\AttributeTok{y =}\NormalTok{ Percent\_Accuracy, }\AttributeTok{color=}\NormalTok{League))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{shape =}\NormalTok{ League), }\AttributeTok{size =} \DecValTok{2}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Driving Distance (yards)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"Percent Accuracy"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{color =} \StringTok{"League"}\NormalTok{, }\AttributeTok{shape =} \StringTok{"League"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Golf Driving Distance and Percent }
+\StringTok{       Accuracy by League for Professional Golfers"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Be sure to title your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Add regression line}
+    \FunctionTok{scale\_color\_grey}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\item
+  Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of? Explain your answer.\\
+  \vspace{1in}
+\item
+  Explain the association between league and each of the other two variables. Use the following plots in addition to the scatterplot from Q9 to explain your answer.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+\vspace{0.8in}
+
+\subsection{Take-home messages}\label{take-home-messages-5}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  To check the validity conditions for using theory-based methods we must use the residual diagnostic plots to check for normality of residuals and constant variability, and the scatterplot to check for linearity.
+\item
+  To interpret a confidence interval for the slope, think about how to interpret the sample slope and use that information in the confidence interval interpretation for slope.
+\item
+  Use the explanatory variable row in the linear model R output to obtain the slope estimate (\texttt{estimate} column) and standard error of the slope (\texttt{Std.\ Error} column) to calculate the standardized slope, or T-score. The calculated T-score should match the \texttt{t\ value} column in the explanatory variable row. The standardized slope tells the number of standard errors the observed slope is above or below 0.
+\item
+  The explanatory variable row in the linear model R output provides a \textbf{two-sided} p-value under the \texttt{Pr(\textgreater{}\textbar{}t\textbar{})} column.
+\item
+  The standardized slope is compared to a \(t\)-distribution with \(n-2\) degrees of freedom in order to obtain a p-value. The \(t\)-distribution with \(n-2\) degrees of freedom is also used to find the appropriate multiplier for a given confidence level.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-5}
+
+Use this space to summarize your thoughts and take additional notes on this week's activity and material covered.
+
+\newpage
+
+\section{Module 13 Lab: Big Mac Index}\label{module-13-lab-big-mac-index}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-7}
+
+\begin{itemize}
+\item
+  Given a research question involving two quantitative variables, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Assess the conditions to determine in theory or simulation-based methods should be used.
+\item
+  Find, interpret, and evaluate the p-value for a hypothesis test for a slope or correlation.
+\item
+  Create and interpret a confidence interval for a slope or correlation.
+\end{itemize}
+
+\subsection{Big Mac Index}\label{big-mac-index}
+
+Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country? The log GDP per person and the adjusted dollar equivalent to purchase a Big Mac was found on a random sample of 55 countries in January of 2022. The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates. Is there evidence of a positive relationship between Big Mac cost (\texttt{dollar\_price}) and the log GDP per person (\texttt{log\_GDP})?
+
+\begin{itemize}
+\item
+  Upload and open the R script file for Week 13 lab.
+\item
+  Upload the csv file, \texttt{big\_mac\_adjusted\_index\_S22.csv}.
+\item
+  Enter the name of the data set for datasetname in the R script file in line 9.
+\item
+  Highlight and run lines 1--9 to load the data.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Read in data set }
+\NormalTok{mac }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-2}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+\begin{itemize}
+\tightlist
+\item
+  To find the correlation between the variables, \texttt{log\_GDP} and \texttt{dollar\_price} highlight and run lines 13--16 in the R script file.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"log\_GDP"}\NormalTok{, }\StringTok{"dollar\_price"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Report the value of correlation between the variables.
+  \vspace{0.2in}
+\item
+  \textbf{Calculate the value of the coefficient of determination between \texttt{log\_GDP} and \texttt{dollar\_price}.}
+  \vspace{0.4in}
+\item
+  Interpret the value of the coefficient of determination in context of the problem.
+  \vspace{0.6in}
+\end{enumerate}
+
+In the next part of the activity we will assess the linear model between Big Mac cost and log GDP.
+
+\begin{itemize}
+\item
+  Enter the variable \texttt{log\_GDP} for \texttt{response} and the variable \texttt{dollar\_price} for \texttt{explanatory} in line 22.
+\item
+  Highlight and run lines 22--23 to get the linear model output.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Fit linear model: y \textasciitilde{} x}
+\NormalTok{bigmacLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\AttributeTok{data=}\NormalTok{mac)}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(bigmacLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Give the value of the slope of the regression line. Interpret this value in context of the problem.
+  \vspace{0.6in}
+\end{enumerate}
+
+\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line-1}
+\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Is there independence between the responses for the observational units? Justify your answer.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 28--33 to create the scatterplot to check for linearity.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Scatterplot}
+\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dollar\_price, }\AttributeTok{y =}\NormalTok{ log\_GDP))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Big Mac Cost"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"log GDP"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Big Mac Cost vs. log GDP per person}
+\StringTok{       for Countries in 2022"}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Be sure to tile your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Is the linearity condition met to use regression methods to analyze the data? Justify your answer.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 38--42 to produce the diagnostic plots needed to assess conditions to use theory-based methods.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Diagnostic plots}
+\NormalTok{bigmacLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\AttributeTok{data =}\NormalTok{ mac) }\CommentTok{\# Fit linear regression model}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\CommentTok{\# Set graphics parameters to plot 2 plots in 1 row}
+\FunctionTok{plot}\NormalTok{(bigmacLM, }\AttributeTok{which=}\DecValTok{1}\NormalTok{) }\CommentTok{\# Residual vs fitted values}
+\FunctionTok{hist}\NormalTok{(bigmacLM}\SpecialCharTok{$}\NormalTok{resid, }\AttributeTok{xlab=}\StringTok{"Residuals"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Histogram of Residuals"}\NormalTok{) }\CommentTok{\# Histogram of residuals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \textbf{Are the conditions met to use the \(t\)-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.}
+\end{enumerate}
+
+\vspace{1.5in}
+
+\newpage
+
+\subsubsection*{Ask a research question}\label{ask-a-research-question-2}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Write out the null and alternative hypotheses in notation to test \emph{correlation} between Big Mac cost and country GDP.
+\end{enumerate}
+
+\vspace{.2in}
+
+~~~\(H_0:\)
+
+\vspace{.2in}
+
+~~~\(H_A:\)
+
+\vspace{.2in}
+
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-5}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+\subsubsection*{Hypothesis test}\label{hypothesis-test-2}
+\addcontentsline{toc}{subsubsection}{Hypothesis test}
+
+Use the \texttt{regression\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample \textbf{correlations} and compute a p-value. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{mac}), the summary measure used for the test, number of repetitions, the sample statistic (value of correlation), and the direction of the alternative hypothesis.
+
+The response variable name is \texttt{log\_GDP} and the explanatory variable name is \texttt{dollar\_price}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  What inputs should be entered for each of the following to create the simulation to test correlation?
+\end{enumerate}
+
+\vspace{.5 mm}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction (\texttt{"greater"}, \texttt{"less"}, or \texttt{"two-sided"}):
+\end{itemize}
+
+\vspace{.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Summary measure (choose \texttt{"slope"} or \texttt{"correlation"}):
+\end{itemize}
+
+\vspace{.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  As extreme as (enter the value for the sample correlation):
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Number of repetitions:
+\end{itemize}
+
+\vspace{.2in}
+
+Using the R script file for this activity, enter your answers for question 9 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations.
+
+\begin{itemize}
+\item
+  Highlight and run lines 47--53.
+\item
+  \textbf{Upload a copy of your plot showing the p-value to Gradescope for your group.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_test}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\CommentTok{\# response \textasciitilde{} explanatory}
+               \AttributeTok{data =}\NormalTok{ mac, }\CommentTok{\# Name of data set}
+               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+               \AttributeTok{summary\_measure  =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+               \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed slope or correlation}
+               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Report the p-value from the R output.
+  \vspace{0.3in}
+\end{enumerate}
+
+\newpage
+
+\subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval-1}
+\addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
+
+We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \texttt{catstats} package) to simulate the bootstrap distribution of sample \textbf{correlations} and calculate a confidence interval.
+
+\begin{itemize}
+\item
+  Fill in the \texttt{xx}'s in the the provided R script file to find a 90\% confidence interval.
+\item
+  Highlight and run lines 58--62.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{regression\_bootstrap\_CI}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\CommentTok{\# response \textasciitilde{} explanatory}
+   \AttributeTok{data =}\NormalTok{ mac, }\CommentTok{\# Name of data set}
+   \AttributeTok{confidence\_level =}\NormalTok{ xx, }\CommentTok{\# Confidence level as decimal}
+   \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Slope or correlation}
+   \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Report the bootstrap 90\% confidence interval in interval notation.\\
+  \vspace{0.5in}
+\end{enumerate}
+
+\subsubsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question-2}
+\addcontentsline{toc}{subsubsection}{Communicate the results and answer the research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\item
+  Using a significance level of 0.1, what decision would you make?
+  \vspace{0.2in}
+\item
+  What type of error is possible?
+  \vspace{0.3in}
+\item
+  Interpret this error in context of the problem.
+  \vspace{0.8in}
+\item
+  Write a paragraph summarizing the results of the study as if you are reporting these results in your local newspaper. \textbf{Upload a copy of your paragraph to Gradescope for your group.} Be sure to describe:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Summary statistic and interpretation
+
+  \begin{itemize}
+  \item
+    Summary measure (in context)
+  \item
+    Value of the statistic
+  \item
+    Order of subtraction when comparing two groups
+  \end{itemize}
+\item
+  P-value and interpretation
+
+  \begin{itemize}
+  \item
+    Statement about probability or proportion of samples
+  \item
+    Statistic (summary measure and value)
+  \item
+    Direction of the alternative
+  \item
+    Null hypothesis (in context)
+  \end{itemize}
+\item
+  Confidence interval and interpretation
+
+  \begin{itemize}
+  \item
+    How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
+  \item
+    Parameter of interest
+  \item
+    Calculated interval
+  \item
+    Order of subtraction when comparing two groups
+  \end{itemize}
+\item
+  Conclusion (written to answer the research question)
+
+  \begin{itemize}
+  \item
+    Amount of evidence
+  \item
+    Parameter of interest
+  \item
+    Direction of the alternative hypothesis
+  \end{itemize}
+\item
+  Scope of inference
+
+  \begin{itemize}
+  \item
+    To what group of observational units do the results apply (target population or observational units similar to the sample)?
+  \item
+    What type of inference is appropriate (causal or non-causal)?
+  \end{itemize}
+\end{itemize}
 
 \newpage
 

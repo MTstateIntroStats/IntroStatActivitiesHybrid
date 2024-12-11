@@ -144,11 +144,13 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 
 \vspace{0.5in}
 
-To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
+To calculate a theory-based 95\% confidence interval for a difference in means, in the questions on the next page, we will use the formula:
 
 $$\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)$$
 
-We will need to find the $t^*$ multiplier using the function `qt()`.  
+First, we will need to find the $t^*$ multiplier using the function `qt()`.  
+
+To find the $t^*$ multiplier
 
 * Enter the percentile to find the multiplier for a 95\% confidence level
 

@@ -1,8 +1,12 @@
-# Inference for Two Quantitative Variables
+# Exploratory Data Analysis and Inference for Two Quantitative Variables
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two quantitative variables.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of two quantitative variables.
+
+### Key topics
+
+Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables.
 
 Types of plot for two quantitative variables
 

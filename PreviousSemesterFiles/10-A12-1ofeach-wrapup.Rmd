@@ -5,8 +5,6 @@
 
 ### Learning outcomes
 
-* Identify whether a study is a paired design or independent groups
-
 * Given a research question involving one categorical explanatory variable and one quantitative response variable, construct the null and alternative hypotheses
   in words and using appropriate statistical symbols.
 
