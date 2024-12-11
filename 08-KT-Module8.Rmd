@@ -64,8 +64,8 @@ $$(RR-1) \times 100\%$$
              x = "x-axis label")  #x-axis label
     ```
 
-   
-#### Simulation-based hypothesis testing for a difference in proportions {-}
+
+#### Hypotheses {-}
 
 * **Hypotheses in notation for a difference in proportions**: In the hypotheses below, the **null value** is equal to zero.
 
@@ -87,6 +87,13 @@ H_A: \pi_1 \left\{
 \end{array}
 \right\}
 \pi_2 $$
+
+#### Simulation-based hypothesis testing for a difference in proportions {-}
+
+* **Conditions necessary to use simulation-based methods for inference  for a two categorical variables**:
+
+    * **Independence**: Observational units must be independent of one another both within and between groups.
+    
 
 * **Simulation-based methods to create the null distribution**: R code to use simulation-based methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
 
