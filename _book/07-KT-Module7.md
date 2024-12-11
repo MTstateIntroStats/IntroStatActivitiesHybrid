@@ -40,7 +40,7 @@ $$\bar{x}\pm t^*\times SE(\bar{x})$$
 
 * R code to find the multiplier for the confidence interval using theory-based methods.
 
-   - `qt` will give you the multiplier using the t-distribution with $n-1$ df (enter for yy)
+   - `qt` will give you the multiplier using the t-distribution with $n-1$ df (enter for `yy`)
     
    - Enter the percentile for the given confidence level
 
@@ -57,14 +57,18 @@ $$\bar{x}\pm t^*\times SE(\bar{x})$$
 
 * **Decisions**: 
 
-    * If the p-value is less than the significance level, we make the decision to reject the null hypothesis
+    * If the p-value is less than the significance level, we make the decision to _reject the null hypothesis_.
     
-    * If the p-value is greater than the significance level, we make the decision to fail to reject the null hypothesis
+    * If the p-value is greater than the significance level, we make the decision to _fail to reject the null hypothesis_.
 
 * **Type I Error**: concluding there is evidence to reject the null hypothesis, when the null is actually true.
 
+    * The probability of making a Type I error when the null is actually true is equal to the significance level, $\alpha$.
+
 * **Type II Error**: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
 
-* **Power**: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false
+* **Power**: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false.
+
+    * When the null is actually false, the event "reject the null hypothesis" is the _complement_ of the event "fail to reject the null hypothesis." Thus, power is equal to 1 minus the probability of a Type II error.
 
 \newpage

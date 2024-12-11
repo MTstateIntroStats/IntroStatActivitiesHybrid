@@ -141,7 +141,7 @@ Conditions for inference using theory-based methods:
 
 \vspace{0.2in}
 
-### T - distribution {-}
+### $t$-distribution {-}
 
 In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
 
