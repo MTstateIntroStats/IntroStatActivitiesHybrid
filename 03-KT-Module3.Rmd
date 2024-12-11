@@ -96,8 +96,6 @@ object %>% # Data set piped into...
        y = "Relative Frequency")  # Label the y axis
     ```
 
-\newpage
-
 #### Inference {-}
 
 * **Sampling distribution** (of a statistic): the distribution of possible values of a statistic across repeated samples of the same size and under the same conditions.

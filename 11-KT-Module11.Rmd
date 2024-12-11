@@ -25,8 +25,6 @@ Module 11 will cover exploratory data analysis and both simulation-based and the
 
 ### Vocabulary
 
-#### Simulation-based hypothesis testing for a paired mean difference {-}
-
 * **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
 
 $$H_0: \mu_d = 0$$
@@ -39,7 +37,15 @@ $$H_A: \mu_d\left\{
 \right\}
 0 $$
 
-* R code to use for **simulation methods** for one paired data to find the p-value, `paired_test`, is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
+
+#### Simulation-based inference for a paired mean difference {-}
+
+* Conditions necessary to use simulation-based methods for inference for paired data with a quantitative response:
+
+    * There must be independence of observational units within groups and between groups
+
+
+* R code to use for **simulation-based methods** for paired data with a quantitative response to find the p-value, `paired_test` (from the `catstats` package), is shown below.
 
     ```{r, eval=FALSE, echo=TRUE}
 paired_test(data = object$differences,   # Vector of differences 
@@ -50,8 +56,7 @@ paired_test(data = object$differences,   # Vector of differences
        number_repetitions = 10000,  # Number of simulated samples for null distribution
        which_first = 1)  # Not needed when using calculated differences
     ```
-
-#### Simulation confidence interval for a paired mean difference {-}
+    
 
 * R code to find the simulation confidence interval using the `paired_bootstrap_CI` function from the `catstats` package.
 

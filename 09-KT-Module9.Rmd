@@ -1,4 +1,4 @@
-# Inference for Two Categorical Variables: Theory-based Hypothesis Testing and Simulation-based and Theory-based Confidence Intervals
+# Theory-based Hypothesis Testing and Simulation-based and Theory-based Confidence Intervals for Two Categorical Variables: 
 
 ## Vocabulary Review and Key Topics
 
