@@ -4,7 +4,7 @@
 
 ### Learning outcomes
 
-* Use simulation methods to find a confidence interval for a single mean
+* Use simulation-based methods to find a confidence interval for a single mean.
 
 * Use theory-based methods to find a confidence interval for a single mean.
 
@@ -14,7 +14,7 @@
 
 ### Terminology review
 
-In today's activity, we will estimate the parameter of interest using simulation and theory-based methods. Some terms covered in this activity are:
+In today's activity, we will estimate the parameter of interest using simulation-based and theory-based methods. Some terms covered in this activity are:
 
 * Bootstrap distribution
 
@@ -22,17 +22,17 @@ In today's activity, we will estimate the parameter of interest using simulation
 
 * Degrees of freedom
 
-* T-score
+* $T$-score
 
-To review these concepts, see Chapter 15 in the textbook.
+To review these concepts, see Chapter 17 in the textbook.
 
 ### Danceability
 
-Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  One of the variables measured on these songs is Danceability.  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Estimate the average danceability of top songs from Spotify.
+Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  One of the variables measured on these songs is "danceability."  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Estimate the average danceability of top songs from Spotify.
 
-* Download the R script file for this activity from D2L and upload to the RStudio server
+* Download the R script file for this activity from D2L and upload to the RStudio server.
 
-* Open the R script file, highlight and run
+* Open the R script file, highlight and run the lines to load libraries and the code below.
 
 ```{r}
 songs <- read.csv("https://math.montana.edu/courses/s216/data/top10s.csv")
@@ -50,9 +50,10 @@ songs %>% # Data set piped into...
     theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
+
 #### Summarizing quantitative variables {-}
 
-1. Describe the boxplot of danceability of top songs over the past 10 years on Spotify.
+1. Describe the distribution of danceability of top songs over the past 10 years on Spotify.
 
 \vspace{1in}
 
