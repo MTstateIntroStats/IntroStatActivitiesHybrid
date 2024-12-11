@@ -19,7 +19,9 @@ In today's activity, we will simulation-based and theory-based methods to analyz
 
 * Alternative hypothesis
 
-To review these concepts, see Chapter 17 in the textbook.
+* Null distribution
+
+To review these concepts, see Chapters 9 and 17 in the textbook.
 
 ### College student sleep habits
 
