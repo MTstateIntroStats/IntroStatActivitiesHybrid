@@ -8,7 +8,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 Module 7 will cover creating confidence intervals using both simulation-based and theory-based methods. Additionally, we learn about types of errors and power in hypothesis testing.
 
-#### Simulation-based Confidence Interval {-}
+#### Simulation-based confidence interval {-}
 
 * R code to find the simulation-based confidence interval using the `onemean_CI` function from the `catstats` package.
 
@@ -31,23 +31,27 @@ one_mean_CI(object$variable, #Enter the name of the variable
     
         - Calculated interval
         
-#### Theory-based Confidence Interval {-}
+#### Theory-based confidence interval {-}
 
-* Calculation of the confidence interval for a sample mean:
+* **Margin of error**: half the width of the confidence interval. For a single mean, the margin of error is:
+$$ME = t^* \times SE(\bar{x})$$
+where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $n-1$ degrees of freedom and $$SE(\bar{x}) = \frac{s}{\sqrt{n}}.$$ 
 
-$$\bar{x}\pm t^*\times SE(\bar{x})$$
-
-* R code to find the multiplier for the confidence interval using theory-based methods.
-
-   - `qt` will give you the multiplier using the t-distribution with $n-1$ df (enter for `yy`)
-    
-   - Enter the percentile for the given confidence level
-
-    ```{r, eval=FALSE, echo=TRUE}
-qt(percentile, df=yy, lower.tail=FALSE)
-    ```
+* To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population mean is:
+$$\bar{x} \pm ME$$
 
 \newpage
+
+* R code to find the **multiplier** for a confidence interval using theory-based methods involving means.
+
+    * `qt` will give you the multiplier using a $t$-distribution with a given degrees of freedom (enter for `yy`). For a single mean, `df` = $n - 1$.
+    
+    * Enter the percentile for the given level of confidence (e.g., 0.975 for a 95\% confidence level). 
+
+    ```{r, eval=FALSE, echo=TRUE}
+    qt(percentile, df = yy, lower.tail=FALSE)
+    ```
+
 
 ### Vocabulary {-}
 

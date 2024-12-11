@@ -45,9 +45,13 @@ Z = \frac{\hat{p} - \pi_0}{SE_0(\hat{p})},
 $$
     If the conditions for the sampling distribution of $\hat{p}$ to follow an approximate normal distribution are met, and if the true value of $\pi$ is equal to the null value of $\pi_0$, the standardized sample proportion, $Z$, will have an approximate _standard_ normal distribution.
     
-* The theory-based **p-value** for hypothesis testing involving proportions can be found by using the `pnorm` function to find the probability of the observed standardized statistic or one more extreme (in the direction of $H_A$). This probability is the area under a standard normal distribution at or more extreme than the observed standardized statistic.
+* The theory-based **p-value** for hypothesis testing involving proportions can be found in R by using the `pnorm` function to find the probability of the observed standardized statistic or one more extreme (in the direction of $H_A$). This probability is the area under a _standard normal distribution_ at or more extreme than the observed standardized statistic.
 
-    * Enter the value of the standardized statistic for `xx`
+    * Enter the value of the standardized statistic for `xx`.
+    
+    * If a "greater than" alternative, change `lower.tail = TRUE` to `FALSE`.
+    
+    * If a two-sided test, multiply by 2.
     
     ```{r, eval=FALSE, echo=TRUE}
     pnorm(xx, lower.tail=TRUE)
@@ -65,7 +69,7 @@ $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
 
 $$\hat{p} \pm ME$$
 
-* R code to find the multiplier for the confidence interval using theory-based methods.
+* R code to find the **multiplier** for the confidence interval using theory-based methods involving proportions.
 
     * `qnorm` will give you the multiplier using the standard normal distribution.
     
