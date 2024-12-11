@@ -1,4 +1,4 @@
-## Module 8 Lab:  Poisonous Mushrooms 
+## Module 9 Lab:  Poisonous Mushrooms 
 
 \setstretch{1}
 
@@ -17,15 +17,15 @@
 
 Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild mushrooms carries the risk of accidental poisoning. Even a single bite of the wrong mushroom can be enough to cause fatal poisoning. An amateur mushroom hunter is interested in finding an easy rule to differentiate poisonous and edible mushrooms. They think that the mushroom’s gills (the part which holds and releases spores) might be related to a mushroom’s edibility. They used a data set of 8124 mushrooms and their descriptions. For each mushroom, the data set includes whether it is edible (e) or poisonous (p) and the size of the gills (broad (b) or narrow (n)).  Is there evidence gill size is associated with whether a mushroom is poisonous?  PLEASE NOTE: According to The Audubon Society Field Guide to North American Mushrooms, there is no simple rule for determining the edibility of a mushroom; no rule like "leaflets three, let it be'' for Poisonous Oak and Ivy. 
 
-* Upload and open the R script file for Week 8 lab. Upload and import the csv file, `mushrooms_edibility`. 
+* Upload and open the R script file for the Module 9 lab. Upload and import the csv file, `mushrooms_edibility`. 
 
-* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. 
+* Enter the name of the data set (see the environment tab) for datasetname.csv in the R script file in line 8. 
 
 * Highlight and run lines 1--9 to get the counts for each combination of categories.
 
 
 ``` r
-mushrooms <- datasetname # Read data set in
+mushrooms <- read.csv("datasetname.csv") # Read data set in
 mushrooms %>% group_by(gill_size) %>% count(edibility) #finds the counts in each group
 ```
 

@@ -151,23 +151,6 @@ myopia %>% # Data set piped into...
        x = "Level of Light",   # Label the x axis
        y = "") +  # Remove y axis label
   scale_fill_grey(guide = guide_legend(reverse = TRUE))  # Make figure color
-#> Warning: The `scale_name` argument of `continuous_scale()` is deprecated as of ggplot2
-#> 3.5.0.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
-#> Warning: The `trans` argument of `continuous_scale()` is deprecated as of ggplot2 3.5.0.
-#> i Please use the `transform` argument instead.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
-#> Warning: `unite_()` was deprecated in tidyr 1.2.0.
-#> i Please use `unite()` instead.
-#> i The deprecated feature was likely used in the ggmosaic package.
-#>   Please report the issue at <https://github.com/haleyjeppson/ggmosaic>.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
 ```
 
 

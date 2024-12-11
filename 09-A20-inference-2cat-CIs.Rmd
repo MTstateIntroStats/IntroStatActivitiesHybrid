@@ -80,9 +80,11 @@ We will use the `two_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 * Fill in the missing values/names in the R script file in the two_proportion_bootstrap_CI function to create a simulation 90\% confidence interval.  
 
+* Highlight and run lines 12--17
+
 ```{r, echo=TRUE, eval=FALSE}
 two_proportion_bootstrap_CI(formula = response~explanatory, 
-         data=mushrooms, # Name of data set
+         data=glycemic, # Name of data set
          first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
          response_value_numerator = "xx", # Define which outcome is a success 
          number_repetitions = 1000, # Always use a minimum of 1000 repetitions
@@ -91,19 +93,21 @@ two_proportion_bootstrap_CI(formula = response~explanatory,
 
 8.  Report the 90\% confidence interval.
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 9.  Interpret the confidence interval in context of the problem.
 
 \vspace{1in}
 
+\newpage
+
 ### Theory-based Methods {-}
 
-Next we will use theory-based methds to find the 90\% confidence interval.
+Next we will use theory-based methods to find the 90\% confidence interval.  Review the conditions for using theory-based methods from Activity 19.
 
 10.  Is the sample size large enough to use theory-based methods to find the confidence interval?  Explain in context of the study,
 
-\vspace{1.2in}
+\vspace{1.0in}
 
 
 To find a confidence interval for the difference in proportions we will add and subtract the margin of error from the point estimate to find the two endpoints.
@@ -115,7 +119,7 @@ In this formula, we use the sample proportions for each group to calculate the s
 
 11. Calculate the standard error of the sample proportion not assuming the null hypothesis is true.
 
-\vspace{1in}
+\vspace{0.5in}
 
 Recall that the $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 90\%, we find the Z values that encompass the middle 90\% of the standard normal distribution. If 90\% of the standard normal distribution should be in the middle, that leaves 10\% in the tails, or 5\% in each tail.  The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 90\% + 5\% = 95\% percentile). 
 
@@ -125,11 +129,13 @@ qnorm(0.95, lower.tail = TRUE) # Multiplier for 90% confidence interval
 
 12. Mark the value of the $z^*$ multiplier and the percentages used to find this multiplier on the standard normal distribution shown below.  
 
-```{r standNormc, warning=FALSE, out.width="50%"}
+```{r standNormc, warning=FALSE, out.width="45%"}
 openintro::normTail(m = 0, s = 1)
 ```
 
 \vspace{1mm}
+
+\newpage
 
 Remember that the margin of error is the value added and subtracted to the sample difference in proportions to find the endpoints for the confidence interval.
 
@@ -142,5 +148,17 @@ $$ME = z^*\times SE(\hat{p}_1 - \hat{p}_2)$$
 14. Calculate the 90\% confidence interval for the parameter of interest. 
 
 \vspace{1in}
+
+### Take-home messages
+
+1. When calculating the standard error for the difference in sample proportions when doing a hypothesis test, we use the pooled proportion of successes, the best estimate for calculating the variability *under the assumption the null hypothesis is true*.  For a confidence interval, we are not assuming a null hypothesis, so we use the values of the two conditional proportions to calculate the standard error.  Make note of the difference in these two formulas. 
+
+2.  Increasing sample size will result in less sample-to-sample variability in statistics, which will result in a smaller standard error, and a larger standardized statistic.  
+
+3.  Since we add and subtract the margin of error to the point estimate, the margin of error is half the width of the confidence interval.  
+
+### Additional notes
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage
