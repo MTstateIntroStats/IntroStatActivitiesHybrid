@@ -220,7 +220,7 @@ pnorm(xx, # Enter value of standardized statistic
 
 <!-- \vspace{0.4in} -->
 
-#### How would an increase in sample size impact the p-value of the test? {-}
+### How would an increase in sample size impact the p-value of the test? {-}
 
 |                | Helmet Use | No Helmet Use | Total |
 |:--------------:|:----------:|:-------------:|:-----:|
@@ -276,8 +276,6 @@ pnorm(-3.308, # Enter value of standardized statistic
 
 <!-- 13.  Is the confidence interval calculated in question 12 with the larger sample size wider or narrower than the confidence interval in question 6? Why? -->
 \vspace{.8in}
-
-\newpage
 
 ### Take-home messages
 
