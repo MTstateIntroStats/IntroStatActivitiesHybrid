@@ -59,14 +59,14 @@ qt(percentile, df=yy, lower.tail=FALSE)
     
     * If the p-value is greater than the significance level, we make the decision to _fail to reject the null hypothesis_.
 
-* **Type I Error**: concluding there is evidence to reject the null hypothesis, when the null is actually true.
+* **Type 1 Error**: concluding there is evidence to reject the null hypothesis, when the null is actually true.
 
-    * The probability of making a Type I error when the null is actually true is equal to the significance level, $\alpha$.
+    * The probability of making a Type 1 error when the null is actually true is equal to the significance level, $\alpha$.
 
-* **Type II Error**: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
+* **Type 2 Error**: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
 
 * **Power**: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false.
 
-    * When the null is actually false, the event "reject the null hypothesis" is the _complement_ of the event "fail to reject the null hypothesis." Thus, power is equal to 1 minus the probability of a Type II error.
+    * When the null is actually false, the event "reject the null hypothesis" is the _complement_ of the event "fail to reject the null hypothesis." Thus, power is equal to 1 minus the probability of a Type 2 error.
 
 \newpage
