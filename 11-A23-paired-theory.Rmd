@@ -68,7 +68,7 @@ The article reports on the results of a study in which seventy college undergrad
 
 \vspace{0.5in}
 
-In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
+In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.  Note, that since we are treating paired data as a single mean, the conditions are the same as for a single mean.
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
 
@@ -78,40 +78,10 @@ Conditions for the sampling distribution of $\bar{x}$ to follow an approximate N
 
     - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
-    - $30 \leq n < 100$: If the sample size $n$ is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
     - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
  
-```{r tdist, echo = F, fig.cap = "Comparison of the standard Normal vs t-distribution with various degrees of freedom"}
-# Display the Student's t distributions with various
-# degrees of freedom and compare to the normal distribution
-
-x <- seq(-4, 4, length=100)
-hx <- dnorm(x)
-
-degf <- c(1, 3, 8)
-colors <- c("red", "blue", "chartreuse4", "black")
-type <- c(3, 4, 2, 1)
-labels <- c("df=1", "df=3", "df=8", "normal")
-
-plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
-  ylab="Density", main="Comparison of t Distributions")
-
-for (i in 1:4){
-  lines(x, dt(x,degf[i]), lwd=3, col=colors[i], lty = type[i])
-}
-
-legend("topright", inset=.05, title="Distributions",
-  labels, lwd=2, lty=type, col=colors)
-```
-    
- 
-Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the Normal distribution. Enter the **$t$-distribution**!
-
-
-As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
-
-
 #### Summarize and visualize the data {-}
 
 Since the original data from the study are not available, we simulated data to match the means and standard deviations reported in the article. We will use these simulated data in the analysis below.

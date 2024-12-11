@@ -111,7 +111,7 @@ First, let's create a histogram of the variable `Graduation_Rate`.
 
 * Replace the word title for the plot in line 21 between the quotations with a descriptive title.  **A title should include: type of plot, variable or variables plotted, and observational units.**  
 
-* Highlight and run the following lines to create the histogram. 
+* Highlight and run lines 18--23 to create the histogram. 
 
 ```{r, out.width="60%", echo=TRUE, eval=FALSE, warning=FALSE}
 IPEDS %>% # Data set piped into...
@@ -127,13 +127,13 @@ Notice that the **bin width** for the histogram is 10.  For example the first bi
 
 6. Which range of Graduation Rates have the highest frequency?
 
-\vspace{0.2in}
+\vspace{0.3in}
 
 Next we will create a boxplot of the variable `Graduation_Rate`.  
 
-* Enter the name of the variable in line 19 for `variable` in the R script file.  
+* Enter the name of the variable in line 28 for `variable` in the R script file.  
 
-* Highlight and run the following lines to create the boxplot.
+* Highlight and run lines 28--36 to create the boxplot.
 
 ```{r, echo=TRUE, eval=FALSE, warning=FALSE}
 IPEDS %>% # Data set piped into...
@@ -150,9 +150,7 @@ ggplot(aes(x = variable)) +   # Name variable to plot
 
 7. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, $Q_1$, median, $Q_3$, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
 
-$$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR$$
-
-$$\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
+$$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.8in}
 
 When describing distributions of quantitative variables we discuss the **shape** (symmetric or skewed), the **center** (mean or median), **spread** (standard deviation or IQR), and if there are **outliers** present.

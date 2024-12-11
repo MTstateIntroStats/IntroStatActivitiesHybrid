@@ -39,13 +39,19 @@ where $x_1, x_2, \ldots, x_n$ are the data values and $n$ is the sample size.
 
 * **Median**: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
 
+\vspace{1mm}
+
 * **Quartile 1** (lower quartile), $Q_1$: value at the 25th percentile; approximately 25\% of data values are at or below the value of $Q_1$.
+
+\vspace{1mm}
 
 * **Quartile 3** (upper quartile), $Q_3$: value at the 75th percentile; approximately 75\% of data values are at or below the value of $Q_3$.
 
+\newpage
+
 * **Sample standard deviation**, $s$: on average, each value in the data set is $s$ units from the mean of the data set ($\bar{x}$). We will always calculate $s$ using R, but it is calculated using the following formula:
 $$
-\bar{x} = \frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}{n},
+s = \sqrt{\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}{n}},
 $$
 where $x_1, x_2, \ldots, x_n$ are the data values, $\bar{x}$ is the sample mean, and $n$ is the sample size.
 
@@ -147,7 +153,7 @@ $$H_A: \mu\left\{
 
     * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Normality Condition**: Either the sample observations come from a normally distributed population or we have a large enough sample size.  To check this condition, use the the following rules of thumb:
+     * **Normality Condition**: Either the sample observations come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
      
          - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
@@ -166,8 +172,10 @@ $$
 T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 $$
     If the conditions for the sampling distribution of $\bar{x}$ to follow an approximate normal distribution are met, and if the true value of $\mu$ is equal to the null value of $\mu_0$, the standardized sample mean, $T$, will have an approximate $t$-distribution with $n-1$ degrees of freedom.
+    
+\newpage
 
-* The following R code is used to find the p-value using theory based methods for a single quantitative variables.
+* The following R code is used to find the p-value using theory based methods for a single quantitative variable.
 
     * `pt` will give you a p-value using the $t$-distribution with $n-1$ df (enter for `yy`)
     

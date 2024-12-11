@@ -1,4 +1,4 @@
-## Module 2 Review
+## Module 2 Review - Probability
 
 1.  Spelling errors in a text can either be non-word errors (teh instead of the) or word errors (lose instead of loose). It was found that non-word errors make up about 25% of all errors. A human proofreader will catch 92% of non-word errors and 75% of word errors.
 

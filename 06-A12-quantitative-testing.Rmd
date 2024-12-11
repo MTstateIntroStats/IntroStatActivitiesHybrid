@@ -13,7 +13,7 @@ in words and using appropriate statistical symbols.
 
 ### Terminology review
 
-In today's activity, we will simulation-based and theory-based methods to analyze a single quantitative variable.  Some terms covered in this activity are:
+In today's activity, we will use simulation-based and theory-based methods to analyze a single quantitative variable.  Some terms covered in this activity are:
 
 * Null hypothesis
 
@@ -21,11 +21,15 @@ In today's activity, we will simulation-based and theory-based methods to analyz
 
 * Null distribution
 
+* $t$-distribution
+
+* p-value
+
 To review these concepts, see Chapters 9 and 17 in the textbook.
 
 ### College student sleep habits
 
-According to an article in *Sleep* [@watson2015], experts recommend adults (>18 years old) get at least 7 hours of sleep per night. A survey was sent to students in four sections of Stat 216 asking about their sleep habits.  Is there evidence that college students get less than the recommended 7 hours of sleep per night, on average?
+According to an article in *Sleep* [@watson2015], experts recommend adults (>18 years old) get at least 7 hours of sleep per night. A professor at MSU is interested in the sleep habits of MSU students.  The professor obtained a representative sample of MSU students and asked each student to report the amount of sleep they get on a typically night.  Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
 
 #### Summarizing quantitative variables {-}
 
@@ -100,13 +104,13 @@ To simulate the null distribution of sample means we will use a bootstrapping me
 
 6. Calculate the difference $\mu_0 - \bar{x}$.  Based on the sign of this difference, will we need to shift the data up or down?
 
-\vspace{0.3in}
+\newpage
 
-* Open the data set (sleep_college) in Excel. 
+* Open the data set (`sleep_college`) in Excel. 
 
 * Create a new column labeled Shift.
 
-* In the column, Shift, add the shifted value to each value in the SleepHours column.
+* In the column, Shift, add the shifted value (answer to Q6) to each value in the `SleepHours` column.
 
 * Save the file and upload again to the RStudio server.
 
@@ -123,7 +127,7 @@ sleep %>%
 
 \vspace{0.9in}
 
-8. Report the standard deviation of the `Shift` variable. How does this compare to the standard deviation for the variable `SleepHours`?  Explain why these values are the same?
+8. Report the standard deviation of the `Shift` variable. How does this compare to the standard deviation for the variable `SleepHours`?  Explain why these values are the same.
 
 \vspace{0.9in}
 
@@ -151,11 +155,13 @@ sleep %>%
 
 \vspace{.15in}
 
-Using the R script file for this activity...
+\newpage
+
+The `one_mean_test` will be used to find the p-value for the simulation test.  Following the instructions below to complete the code.
 
 * Enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations.
 
-* Highlight and run lines 361--42.
+* Highlight and run lines 36--42.
 
 ```{r, echo=TRUE, eval=FALSE}
 one_mean_test(sleep$SleepHours,#Enter the object name and variable

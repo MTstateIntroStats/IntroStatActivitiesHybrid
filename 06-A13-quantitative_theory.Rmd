@@ -27,7 +27,7 @@ To review these concepts, see Chapters 11 and 17 in the textbook.
 
 ### Body Temperature
 
-It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion.  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that body temperatures of adults differ from the known temperature of $98.6^{\circ}$F?
+It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that body temperatures of adults differ from the known temperature of $98.6^{\circ}$F?
 
 #### Ask a research question {-}
 
@@ -35,7 +35,7 @@ It has long been reported that the mean body temperature of adults is $98.6^{\ci
 
 \vspace{0.8in}
 
-2. Write out the null hypothesis in words for this study.
+2. Write out the alternative hypothesis in words for this study.
 
 \vspace{0.5in}
 
@@ -187,7 +187,7 @@ pt(xx, df=yy, lower.tail=FALSE)
 
 \vspace{0.6in}
 
-14. Can we generalize the results of the study be generalized to all adults? Explain your answer.
+14. Can we generalize the results of the study to all adults? Explain your answer.
 
 \vspace{0.5in}
 

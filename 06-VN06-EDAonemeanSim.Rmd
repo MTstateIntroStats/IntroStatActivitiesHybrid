@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Video Notes: Exploratory Data Analysis of Quantitative Variables
+## Video Notes: Exploratory Data Analysis and Hypothesis Testing of Quantitative Variables
 
 Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the video notes for Module 6.
 
@@ -508,5 +508,8 @@ Be prepared for group discussion in the next class. One member from the table sh
 2. Which measure of center is robust to outliers?
 
 \vspace{0.2in}
+
+3. How do we determine the direction of the alternative hypothesis?
+
 
 \newpage
