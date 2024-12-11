@@ -40,9 +40,9 @@ $$H_A: \mu_d\left\{
 
 #### Simulation-based inference for a paired mean difference {-}
 
-* Conditions necessary to use simulation-based methods for inference for paired data with a quantitative response:
+* **Conditions necessary to use simulation-based methods for inference for paired data with a quantitative response**:
 
-    * There must be independence of the sample differences; the pairs must be independent of each other. (Note that since this is paired data, measurements within a single pair will be dependent.)
+    * **Independence**: There must be independence of the sample differences; the pairs must be independent of each other. (Note that since this is paired data, measurements within a single pair will be dependent.)
 
 
 * **Simulation-based methods to create the null distribution**: R code to use simulation-based methods for paired data with a quantitative response to find the p-value, `paired_test` (from the `catstats` package), is shown below.

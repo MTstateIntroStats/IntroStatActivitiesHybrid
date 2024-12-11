@@ -70,9 +70,9 @@ $$H_A: \mu_1 - \mu_2 \left\{
 
 #### Simulation-based inference for a difference in means {-}
 
-* Conditions necessary to use simulation-based methods for inference for a quantitative response with independent groups:
+* **Conditions necessary to use simulation-based methods for inference for a quantitative response with independent groups**:
 
-    * There must be independence of observational units within groups and between groups.
+    * **Independence**: There must be independence of observational units within groups and between groups.
 
 * **Simulation-based methods to create the null distribution**: R code for simulation-based methods to find the p-value using the `two_mean_test` function in the `catstats` package.
 
