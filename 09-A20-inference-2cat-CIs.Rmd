@@ -135,6 +135,8 @@ openintro::normTail(m = 0, s = 1)
 
 \vspace{1mm}
 
+\newpage
+
 Remember that the margin of error is the value added and subtracted to the sample difference in proportions to find the endpoints for the confidence interval.
 
 $$ME = z^*\times SE(\hat{p}_1 - \hat{p}_2)$$

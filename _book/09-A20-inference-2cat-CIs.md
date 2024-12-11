@@ -141,6 +141,8 @@ qnorm(0.95, lower.tail = TRUE) # Multiplier for 90% confidence interval
 
 \vspace{1mm}
 
+\newpage
+
 Remember that the margin of error is the value added and subtracted to the sample difference in proportions to find the endpoints for the confidence interval.
 
 $$ME = z^*\times SE(\hat{p}_1 - \hat{p}_2)$$

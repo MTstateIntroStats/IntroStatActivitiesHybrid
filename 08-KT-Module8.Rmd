@@ -44,18 +44,27 @@ $$(RR-1) \times 100\%$$
 
 * **Segmented bar plot**: plots the conditional proportion of the response outcomes in each explanatory variable group. R code to create a segmented bar plot:
     ```{r, echo=TRUE, eval=FALSE}
-    # Melinda add code
+    object %>%
+        ggplot(aes(x = explanatory, fill = response))+ #Enter the variables to plot
+        geom_bar(stat = "count", position = "fill") + #Creates a segmented bar plot
+        labs(title = "Don't forget to title a plot!", #Make sure to title your plot
+             y = "y-axis label", #y-axis label
+             x = "x-axis label")  #x-axis label
     ```
 
     * The plot shows no association between the variables if the height of each segment is approximately the same in each group.
     
 * **Mosaic plot**: similar to the segmented bar plot but the sample size is reflected by the width of the bars. R code to create a mosaic plot:
     ```{r, echo=TRUE, eval=FALSE}
-    # Melinda add code
+    object %>% # Data set piped into...
+        ggplot() +   # This specifies the variables
+        geom_mosaic(aes(x=product(explanatory), fill = response)) +  #Creates a mosaic plot
+        labs(title = "Don't forget to title a plot!",  # Make sure to title your plot
+             y = "y-axis label", #y-axis label
+             x = "x-axis label")  #x-axis label
     ```
 
-    
-
+   
 #### Simulation-based hypothesis testing for a difference in proportions {-}
 
 * **Hypotheses in notation for a difference in proportions**: In the hypotheses below, the **null value** is equal to zero.
@@ -73,7 +82,13 @@ $$H_A: \pi_1-\pi_2 \left\{
 * **Simulation methods to create the null distribution**: R code to use simulation methods for two categorical variables to find the p-value, `two_proportion_test`, is shown below.  
 
     ```{r, eval=FALSE, echo=TRUE}
-    # Melinda add code
+    two_proportion_test(formula = response~explanatory, # response ~ explanatory
+                        data = object, # Name of data set
+                        first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
+                        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
+                        response_value_numerator = "xx", # Define which outcome is a success
+                        as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
+                        direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")
     ```
 
 * Conditions necessary to use simulation-based methods for inference for two categorical variables:

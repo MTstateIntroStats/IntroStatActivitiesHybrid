@@ -149,15 +149,17 @@ $$\hat{p}_{pool} = \frac{\text{number of "successes"}}{\text{number of cases}} $
 
 5.  Calculate the pooled proportion of head injuries.
 
-\vspace{0.8in}
+\vspace{1in}
 
 6. Use the value for the pooled proportion of successes to calculate the $SE_0(\hat{p}_1 - \hat{p}_2)$ assuming the null hypothesis is true.
 
-\vspace{0.8in}
+\vspace{1in}
 
 7. Use the value of the null standard error to calculate the standardized statistic (standardized difference in proportion).
 
-\vspace{0.8in}
+\vspace{1in}
+
+\newpage
 
 8. Mark the value of the standardized difference in proportion on the standard normal distribution shown below.  Interpret the standardized statistic in context of the problem.
 

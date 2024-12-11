@@ -94,6 +94,7 @@ Conditions for inference using theory-based methods for two categorical variable
 Are the conditions met to analyze the university data using theory-based methods?
 
 \vspace{0.8in}
+\newpage
 
 Steps to use theory-based methods:
 
