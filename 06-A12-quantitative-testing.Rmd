@@ -170,7 +170,7 @@ one_mean_test(sleep$SleepHours,#Enter the object name and variable
 
 \vspace{1in}
 
-11. Write a conclusion to the test in context of the problem.
+11. Write a conclusion to the test in context of the problem. Include the appropriate population to which the study design allows us to generalize.
 
 \vspace{1in}
 
