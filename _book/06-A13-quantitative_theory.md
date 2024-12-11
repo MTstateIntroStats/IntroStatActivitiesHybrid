@@ -21,13 +21,13 @@ In today's activity, we will analyze quantitative data using theory-based method
 
 * Degrees of freedom
 
-* T-score
+* $T$-score
 
-To review these concepts, see Chapter 5and? in the textbook.
+To review these concepts, see Chapters 11 and 17 in the textbook.
 
 ### Body Temperature
 
-It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion.  In 2018, a sample of 52 Stat 216 undergraduates, were asked to report their body temperature.  Is there evidence that body temperatures of adults differ from the known temperature of $98.6^{\circ}$F?
+It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion.  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that body temperatures of adults differ from the known temperature of $98.6^{\circ}$F?
 
 #### Ask a research question {-}
 
@@ -43,16 +43,22 @@ In general, the sampling distribution for a sample mean, $\bar{x}$, based on a s
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
 
-* **Independence**: The sample’s observations are independent.  For paired data, that means each pairwise difference should be independent.
+* **Independence**: The sample’s observations are independent.
 
 * **Normality**: The data should be approximately normal or the sample size should be large.
 
     - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
-    - $30 \leq n < 100$: If the sample size $n$ is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
     - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
  
+
+Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the standard Normal distribution. Enter the **$t$-distribution**!
+
+
+As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
+
 \begin{figure}
 
 {\centering \includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/tdist-1} 
@@ -63,10 +69,6 @@ Conditions for the sampling distribution of $\bar{x}$ to follow an approximate N
 \end{figure}
     
  
-Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the Normal distribution. Enter the **$t$-distribution**!
-
-
-As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
 
 
 #### Summarize and visualize the data {-}
@@ -75,7 +77,7 @@ The following code is used to create a boxplot of the data.
 
 * Download the R script file upload to the R studio server.
 
-* Open the R script file and highlight and run lines 1--14
+* Open the R script file and highlight and run lines 1--14.
 
 
 ``` r
@@ -93,7 +95,7 @@ bodytemp %>%
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-* Highlight and run lines 17 - 18 to get the summary statistics for the variable Temp.
+* Highlight and run lines 17 - 18 to get the summary statistics for the variable `Temp`.
 
 
 ``` r
@@ -129,7 +131,7 @@ bodytemp %>%
 To find the standardized statistic for the mean we will use the following formula:
 
 $$T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},$$
-where the standard error of the sample mean difference is:
+where the standard error of the sample mean is:
 
 $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 
@@ -145,23 +147,23 @@ $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 
 \vspace{1in}
 
-10. We model a single mean with a t-distribution with $n-1$ degrees of freedom.  Calculate the degrees of freedom for this study.
+10. We model a single mean with a $t$-distribution with $n-1$ degrees of freedom.  Calculate the degrees of freedom for this study and use it to fill in the blank in the title of the $t$-distribution displayed below.
 
 \vspace{0.2in}
 
-11. Mark the value of the standardized statistic on the t-distribution and illustrate how the p-value is found.
+11. Mark the value of the standardized statistic on the $t$-distribution and illustrate how the p-value is found.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A13-quantitative_theory_files/figure-latex/tdistmean-1} \end{center}
 \newpage
 
-To find the p-value for the theory-based test: 
+To find the p-value for the theory-based test in R: 
 
-* Enter the value for the standardized statistic for xx in the pt function.  
+* Enter the value for the standardized statistic for `xx` in the `pt` function.  
 
-* Enter the df for yy in the pt function.
+* Enter the degrees of freedom for `yy` in the `pt` function.
 
-* Highlight and run line 24
+* Highlight and run line 24.
 
 
 ``` r
@@ -181,9 +183,9 @@ pt(xx, df=yy, lower.tail=FALSE)
 
 ### Take-home messages
 
-1.  In order to use theory-based methods for dependent groups (paired data), the independent observational units and normality conditions must be met.  
+1.  In order to use theory-based methods for a quantitative variable, the independent observational units and normality conditions must be met.  
 
-2.  A T-score is compared to a $t$-distribution with $n - 1$ df in order to calculate a one-sided p-value. To find a two-sided p-value using theory-based methods we need to multiply the one-sided p-value by 2.  
+2.  In order to find a theory-based p-value, we use R to calculate the area under a $t$-distribution with $n - 1$ degrees of freedom (df) that is at or more extreme than the observed $T$-score. To find a two-sided p-value using theory-based methods we need to multiply the one-sided p-value by 2.  
 
 3.  A $t^*$ multiplier is found by obtaining the bounds of the middle X% (X being the desired confidence level) of a $t$-distribution with $n - 1$ df.
 
