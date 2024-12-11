@@ -26,7 +26,7 @@ As we move through the semester we will work through the six steps of the statis
 
 #### Exploratory data analysis {-}
 
-At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
+At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable. For a single categorical variable, the category that we are counting the proportion of is generically called a "**success**", with categories not a success labeled "**failure**". Thus, a sample proportion is the "proportion of successes" in the sample: the total number of successes divided by the sample size ($n$).
 
 * Notation for a sample proportion: $\hat{p}$
 
@@ -40,9 +40,7 @@ At the end of this module, you should understand how to calculate a summary stat
 
 #### Inference {-}
 
-We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
-
-These are steps 4 and 5 from the steps of the statistical investigation process.
+We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
 
 ### Vocabulary
 
