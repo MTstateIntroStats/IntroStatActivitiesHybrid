@@ -134,7 +134,7 @@ $$H_A: \pi \left\{
 
 * **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
 
-    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test`, is shown below.  
+    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test` (from the `catstats` package), is shown below.  
 
     ```{r, eval=FALSE, echo=TRUE}
 one_proportion_test(probability_success = xx, # Null hypothesis value
@@ -190,7 +190,7 @@ include_graphics("images/soe_gradient_gray.png")
 
 * **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
-    R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI`, is shown below. 
+    R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI` (from the `catstats` package), is shown below. 
 
     ```{r, echo=TRUE, eval=FALSE}
 one_proportion_bootstrap_CI(sample_size = xx, # Sample size
