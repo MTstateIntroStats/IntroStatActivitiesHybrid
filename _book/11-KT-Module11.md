@@ -60,13 +60,13 @@ paired_bootstrap_CI(data = object$differences, # Enter vector of differences
 
     * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Large enough sample size: Normality Condition**: The sample observations come from a normally distributed population.  To check use the the following rules of thumb:
+     * **Normality Condition**: Either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
      
-         - $n < 30$: The distribution of the sample must be approximately normal with no outliers
+         - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
-         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
+         - $30 \le n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
          
-         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribuion of individual observationals is not
+         - $n \ge 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 * **t-distribution**: a theoretical distribution that is symmetric with a given degrees of freedom ($n-1$)
 

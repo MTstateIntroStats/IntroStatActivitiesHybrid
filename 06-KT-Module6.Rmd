@@ -164,32 +164,29 @@ $$H_A: \mu\left\{
 
 * **Standard error of the sample mean**: measures the how far each possible sample mean is from the true mean, on average, and is calculated using the formula below:
 $$SE(\bar{x})=\frac{s}{\sqrt{n}}$$
-    where $s$ is the sample standard deviation.
-
-\newpage
+    where $s$ is the sample standard deviation. 
+    
+    * For inference involving means, the formula for the standard error will be the same for both hypothesis tests and confidence intervals (unlike inference involving proportions, where the standard error for a hypothesis test used the null value in the calculation).
 
 * **Standardized sample mean**: standardized statistic for a single quantitative variable calculated using:
 $$
 T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
 $$
     If the conditions for the sampling distribution of $\bar{x}$ to follow an approximate normal distribution are met, and if the true value of $\mu$ is equal to the null value of $\mu_0$, the standardized sample mean, $T$, will have an approximate $t$-distribution with $n-1$ degrees of freedom.
-    
-\newpage
 
-* The following R code is used to find the p-value using theory based methods for a single quantitative variable.
+* The theory-based **p-value** for hypothesis testing involving means can be found in R by using the `pt` function to find the probability of the observed standardized statistic or one more extreme (in the direction of $H_A$). This probability is the area under a _$t$-distribution with the appropriate degrees of freedom_ at or more extreme than the observed standardized statistic.
 
-    * `pt` will give you a p-value using the $t$-distribution with $n-1$ df (enter for `yy`)
+    * `pt` will give you a p-value using the $t$-distribution with a given degrees of freedom (enter for `yy`). For a single mean, `df` = $n - 1$.
     
     * Enter the value of the standardized statistic for `xx`
 
-    * If a greater than alternative, change `lower.tail = TRUE` to FALSE.
+    * If a "greater than" alternative, change `lower.tail = TRUE` to `FALSE`.
     
     * If a two-sided test, multiply by 2.
     
     ```{r, eval = FALSE, echo=TRUE}
     pt(xx, df = yy, lower.tail=TRUE)
     ```
-
 
 
 
