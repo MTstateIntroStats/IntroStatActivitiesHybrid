@@ -98,7 +98,7 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
 
     * Review how to interpret a confidence interval for two groups from Module 8.
 
-### Theory-based methods {-}
+#### Theory-based inference for a difference in means {-}
 
 * **Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
 

@@ -70,7 +70,7 @@ paired_bootstrap_CI(data = object$differences, # Enter vector of differences
     * The interpretation of the confidence interval is very similar for that of a single mean. Just make sure to include the order of subtraction for the differences.
 
 
-#### Theory-based inference methods for a paired mean difference {-}
+#### Theory-based inference for a paired mean difference {-}
 
 * **Conditions for the sampling distribution of $\bar{x}_d$ to follow an approximate normal distribution**:
 
