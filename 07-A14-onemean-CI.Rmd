@@ -4,7 +4,7 @@
 
 ### Learning outcomes
 
-* Use simulation methods to find a confidence interval for a single mean
+* Use simulation-based methods to find a confidence interval for a single mean.
 
 * Use theory-based methods to find a confidence interval for a single mean.
 
@@ -14,7 +14,7 @@
 
 ### Terminology review
 
-In today's activity, we will estimate the parameter of interest using simulation and theory-based methods. Some terms covered in this activity are:
+In today's activity, we will estimate the parameter of interest using simulation-based and theory-based methods. Some terms covered in this activity are:
 
 * Bootstrap distribution
 
@@ -22,17 +22,17 @@ In today's activity, we will estimate the parameter of interest using simulation
 
 * Degrees of freedom
 
-* T-score
+* $T$-score
 
-To review these concepts, see Chapter 15 in the textbook.
+To review these concepts, see Chapter 17 in the textbook.
 
 ### Danceability
 
-Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  One of the variables measured on these songs is Danceability.  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Estimate the average danceability of top songs from Spotify.
+Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  One of the variables measured on these songs is "danceability."  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Estimate the average danceability of top songs from Spotify.
 
-* Download the R script file for this activity from D2L and upload to the RStudio server
+* Download the R script file for this activity from D2L and upload to the RStudio server.
 
-* Open the R script file, highlight and run
+* Open the R script file, highlight and run the lines to load libraries and the code below.
 
 ```{r}
 songs <- read.csv("https://math.montana.edu/courses/s216/data/top10s.csv")
@@ -50,9 +50,10 @@ songs %>% # Data set piped into...
     theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
+
 #### Summarizing quantitative variables {-}
 
-1. Describe the boxplot of danceability of top songs over the past 10 years on Spotify.
+1. Describe the distribution of danceability of top songs over the past 10 years on Spotify.
 
 \vspace{1in}
 
@@ -62,21 +63,21 @@ songs %>% # Data set piped into...
 
 ### Simulation methods to create a confidence interval {-}
 
-Unlike creation of the null, the bootstrap distribution is found by sampling with replacement from the original sample.
+Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample.
 
-* Write the original values for the variable on the cards
+* Write the original values for the variable on $n$ cards; one card for each observational unit.
 
-* Sample with replacement $n$ times
+* Sample with replacement from the cards $n$ times.
 
-* Plot the mean from each resampled sample on the distribution
+* Plot the mean from each resampled sample on the bootstrap distribution.
 
-Use the provided R script file to find a 95\% confidence interval
+Use the provided R script file to find a 95\% confidence interval.
 
-* Enter the name of the variable for variable
+* Enter the name of the variable for `variable`.
 
-* Enter the appropriate confidence interval
+* Enter the appropriate confidence level for `xx`.
 
-* Highlight and run lines 22--25
+* Highlight and run lines 22--25.
 
 ```{r, eval=FALSE, echo=TRUE}
 one_mean_CI(songs$variable, #Enter the name of the variable
@@ -95,13 +96,13 @@ one_mean_CI(songs$variable, #Enter the name of the variable
 
     * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Large enough sample size: Normality Condition**: The sample observations come from a normally distributed population.  To check use the the following rules of thumb:
+     * **Normality Condition**: Either the sample observations come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
      
-         - $n < 30$: The distribution of the sample must be approximately normal with no outliers
+         - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
-         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness
+         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
          
-         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observational is not
+         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 
 Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the a single mean, use the following formula:
@@ -114,16 +115,16 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the appropriate percentile in the R code to find the multiplier for a 95\% confidence interval.
 
-* Enter the df for yy. *The degrees of freedom for a single mean is $n-1$*
+* Enter the degrees of freedom for `yy`. *The degrees of freedom for a single mean is $n-1$*.
 
-* Highlight and run line 31
+* Highlight and run line 31.
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 qt(percentile, df = yy, lower.tail=TRUE)
 ```
 
 
-4. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
+4. Mark on the $t$-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
 ```{r tstar, echo = F, fig.cap = "t-distribution with 602 degrees of freedom"}
@@ -137,7 +138,7 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
 
 ```
 
-5.  Calculate the margin of error for the true mean using theory-based methods.
+5.  Calculate the margin of error using theory-based methods.
 
 \vspace{0.6in}
 
@@ -150,7 +151,7 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
 
 \vspace{1in}
 
-8. Explain why the CI with theory-based methods is similar to the simulation CI.
+8. Explain why the confidence interval with theory-based methods is similar to the confidence interval found using the bootstrap distribution.
 
 \vspace{1in}
 
@@ -159,7 +160,7 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
 
 1.  In order to use theory-based methods for a single mean, the independent observational units and normality conditions must be met.  
 
-2.  The simulation based confidence interval and theory-based confidence interval should be similar if the normality condtion is met.  
+2.  The simulation-based confidence interval and theory-based confidence interval should be similar if the normality condition is met.  
 
 3.  A $t^*$ multiplier is found by obtaining the bounds of the middle X% (X being the desired confidence level) of a $t$-distribution with $n - 1$ df.
 

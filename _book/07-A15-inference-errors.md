@@ -4,15 +4,15 @@
 
 ### Learning outcomes
 
-* Explain Type I and Type 2 Errors in the context of a study.
+* Explain Type I and Type 2 errors in the context of a study.
 
 * Explain the power of a test in the context of a study.
 
 * Understand how changes in sample size, significance level, and the difference between the null value and the parameter value impact the power of a test.
 
-* Understand how significance level impacts the probability of a Type 1 Error.
+* Understand how significance level impacts the probability of a Type 1 error.
 
-* Understand the relationship between the probability of a Type 2 Error and power.
+* Understand the relationship between the probability of a Type 2 error and power.
 
 * Be able to distinguish between practical importance and statistical significance.
 
@@ -22,22 +22,22 @@ In this activity, we will examine the possible errors that can be made based on 
 
 * Significance level
 
-* Type 1 Error
+* Type 1 error
 
-* Type 2 Error
+* Type 2 error
 
 * Power
 
 To review these concepts, see Chapter 12 in the textbook.  
 
-### College Textbook Cost
+### College textbook cost
 
-A college student spends on average \$280 on textbooks per year.  Many universities have starting using opensource resources to help defray the cost of textbooks. One such university is hoping to show they have successfully reduced costs by \$100, on average. 
+A college student spends, on average, \$280 on textbooks per year.  Many universities have started using open-source resources to help defray the cost of textbooks. One such university is hoping to show they have successfully reduced costs by \$100 per year, on average. 
 
 1. Write the parameter of interest ($\mu$) in words, in the context of this problem.
 \vspace{0.5in}
 
-2. Use proper notation to write the null and alternative hypothesis the university would need to test in order to check their claim.
+2. Use proper notation to write the null and alternative hypotheses the university would need to test in order to check their claim.
 \vspace{0.5in}
 
 After determining hypotheses and prior to collecting data, researchers should set a **significance level** for a hypothesis test.  The significance level, represented by $\alpha$ and most commonly 0.01, 0.05, or 0.10, is a cut-off for determining whether a p-value is small or not.  The *smaller* the p-value, the *stronger* the evidence against the null hypothesis, so a p-value that is smaller than or equal to the significance level is strong enough evidence to *reject the null hypothesis*.  Similarly, the *larger* the p-value, the *weaker* the evidence against the null hypothesis, so a p-value that is larger than the significance level does not provide enough evidence against the null hypothesis and the researcher would *fail to reject the null hypothesis*.  Rejecting the null hypothesis or failing to reject the null hypothesis are the two **decisions** that can be made based on the data collected.
@@ -154,11 +154,19 @@ Now let's investigate how changes in different factors influence the power of a 
 
 ### Take-home messages
 
-1. There is a possibility of Type I Error when we make the decision to reject the null hypothesis.  Type I Error - reject the null hypothesis when the null hypothesis is true.
+1. There is a possibility of Type 1 error when we make the decision to reject the null hypothesis.  Type 1 error: reject the null hypothesis when the null hypothesis is true. The probability of a Type 1 error when the null hypothesis is true is equal to the significance level, $\alpha$.
 
-2. There is a possibility of Type II Error when we make the decision to fail to reject the null hypothesis.  Type II Error - fail to reject the null hypothesis when the null hypothesis is false.
+2. There is a possibility of Type 2 error when we make the decision to fail to reject the null hypothesis.  Type 2 error: fail to reject the null hypothesis when the null hypothesis is false.
 
-3. Increasing the sample size will increase the power of the test. 
+3. Power of a test is the probability we reject the null when the null hypothesis is false. Power is equal to 1 minus the probability of a Type 2 error.
+
+4. Changing the following will _increase_ the power of the test:
+
+    * _Increase_ the sample size
+    
+    * _Increase_ the significance level
+    
+    * _Increase_ the distance between the null value and the parameter value (note that we don't have control over this!)
 
 ### Additional notes
 Use this space to summarize your thoughts and take additional notes on today’s activity and material covered.

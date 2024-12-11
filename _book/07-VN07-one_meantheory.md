@@ -141,11 +141,11 @@ Conditions for inference using theory-based methods:
 
 \vspace{0.2in}
 
-### T - distribution {-}
+### $t$-distribution {-}
 
 In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
 
-$$\bar{x} \sim N(\mu_0, \frac{\sigma}{\sqrt{n}})$$
+$$\bar{x} \sim N\left(\mu_0, \frac{\sigma}{\sqrt{n}}\right)$$
 \setstretch{1.5}
 
 * Estimate the population standard deviation, $\sigma$, with the
