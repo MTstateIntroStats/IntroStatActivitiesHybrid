@@ -8,11 +8,11 @@
 * Given a research question involving one quantitative variable, construct the null and alternative hypotheses
 in words and using appropriate statistical symbols.
 
-* Investigate the process of creating a null distribution for one quantitative variable
+* Investigate the process of creating a null distribution for one quantitative variable.
 
-* Find, evaluate, and interpret a p-value from the null distribution
+* Find, evaluate, and interpret a p-value from the null distribution.
 
-* Use simulation methods to find a confidence interval for a single mean
+* Use simulation-based methods to find a confidence interval for a single mean.
 
 * Interpret a confidence interval for a single mean.
 
@@ -20,7 +20,7 @@ in words and using appropriate statistical symbols.
 
 ### Arsenic
 
-Scientists have devised a new way to measure a person’s level of arsenic poisoning by examining toenail clippings.  Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire (data in the table below).  An arsenic level greater than 0.150 ppm is considered hazardous.   Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)?  How high is the arsenic concentration for New Hampshire residents with a private well?
+Scientists have devised a new way to measure a person’s level of arsenic poisoning by examining toenail clippings.  Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire.  An arsenic level greater than 0.150 ppm is considered hazardous.   Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)?  How high is the arsenic concentration for New Hampshire residents with a private well?
 
 1. What does $\mu$ represent in the context of this study?
 
@@ -42,17 +42,21 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 * Upload and import the csv file, `arsenic`. 
 
-* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. 
+* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 11. 
 
-* Highlight and run lines 1--9 to load the data and create a plot of the data. 
+* Enter the name of the variable in lines 15
 
-* **Upload a screenshot of your plot to Gradescope**
+* Write a title for the plot between the quotations and an x-axis label
+
+* Highlight and run lines 1--21 to load the data and create a plot of the data. 
+
+* **Upload a screenshot of your plot to Gradescope**.
 
 
 ``` r
 water <- read.csv("data/arsenic.csv")
 water %>%
-    summarise(favstats(level_arsenic))
+    summarise(favstats(variable))
 water %>% # Data set piped into...
     ggplot(aes(x = variable)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
@@ -63,7 +67,7 @@ water %>% # Data set piped into...
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
-5. Based on the plot, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
+5. Based on the plot, does there appear to be some support in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
 6. Interpret the value of $Q_3$ in context of the study.
@@ -80,7 +84,7 @@ water %>% # Data set piped into...
 ### Use statistical inferential methods to draw inferences from the data {-}
 
 
-9.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
+9.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation-based methods could be used to analyze the data.  Explain your reasoning.
 
 \vspace{1in}
 
@@ -88,7 +92,7 @@ water %>% # Data set piped into...
 
 Remember that the null distribution is created based on the assumption the null hypothesis is true.  In this study, the null hypothesis states that the average arsenic levels are not hazardous.
 
-We will use the `one_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of sample mean differences and compute a p-value. 
+We will use the `one_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of sample means and compute a p-value. 
 
 \newpage
 
@@ -120,9 +124,9 @@ one_mean_test(water$level_arsenic,   #Enter the name of the variable
 
 ### Confidence interval {-}
 
-We will use the `one_mean_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
+We will use the `one_mean_CI()` function in R (in the `catstats` package) to simulate a bootstrap distribution of sample means and calculate a confidence interval. 
 
-13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 98\% confidence interval.  Highlight and run lines 37--40. 
+13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 98\% confidence interval.   
 
 
 ``` r
@@ -145,8 +149,6 @@ Report the 98\% confidence interval in interval notation.
     
     * Value of the statistic 
     
-    * Order of subtraction when comparing two groups
-
 * P-value and interpretation
 
     * Statement about probability or proportion of samples
@@ -157,7 +159,6 @@ Report the 98\% confidence interval in interval notation.
     
     * Null hypothesis (in context) 
 
-
 * Confidence interval and interpretation
 
     * How confident you are (e.g., 90%, 95%, 98%, 99%)
@@ -165,9 +166,6 @@ Report the 98\% confidence interval in interval notation.
     * Parameter of interest
     
     * Calculated interval
-    
-    * Order of subtraction when comparing two groups
-
 
 * Conclusion (written to answer the research question)
 
@@ -181,8 +179,6 @@ Report the 98\% confidence interval in interval notation.
 
     * To what group of observational units do the results apply (target population or observational units similar to the sample)?
 	
-    * What type of inference is appropriate (causal or non-causal)?
-
 \newpage
 
 Paragraph (continued):

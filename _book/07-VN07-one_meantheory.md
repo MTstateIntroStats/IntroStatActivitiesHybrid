@@ -174,4 +174,17 @@ Calculation of the confidence interval for the true mean weight of polar bears f
 
 \vspace{0.8in}
 
+### Concept Check
+
+Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
+
+1. Are the conditions met to analyze the polar bear data using theory-based methods?
+
+\vspace{0.7in}
+
+2. Interpret the confidence interval found with simulation methods.
+
+\vspace{0.2in}
+
+
 \newpage

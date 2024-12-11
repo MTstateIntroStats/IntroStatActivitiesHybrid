@@ -40,7 +40,7 @@ songs %>%
     summarise(favstats(Danceability))
 ```
 
-```{r, echo=TRUE, eval=FALSE, warning=FALSE}
+```{r, echo=TRUE, eval=TRUE, warning=FALSE}
 songs %>% # Data set piped into...
     ggplot(aes(x = Danceability)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
@@ -55,15 +55,15 @@ songs %>% # Data set piped into...
 
 1. Describe the distribution of danceability of top songs over the past 10 years on Spotify.
 
-\vspace{1in}
+\vspace{0.8in}
 
 2. Write the parameter of interest in context of the study.
 
-\vspace{1in}
+\vspace{0.8in}
 
 ### Simulation methods to create a confidence interval {-}
 
-Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample.
+Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample.  To create one dot on the bootstrap distribution:
 
 * Write the original values for the variable on $n$ cards; one card for each observational unit.
 
@@ -109,7 +109,6 @@ Next we will calculate a theory-based confidence interval.  To calculate a theor
 
 $$\bar{x}\pm t^* \times SE(\bar{x}).$$
 
-\newpage
 
 We will need to find the $t^*$ multiplier using the function `qt()`. 
 
@@ -127,16 +126,19 @@ qt(percentile, df = yy, lower.tail=TRUE)
 4. Mark on the $t$-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
-```{r tstar, echo = F, fig.cap = "t-distribution with 602 degrees of freedom"}
+```{r tst, echo = F, fig.cap = "",out.width="75%"}
 
 x <- seq(-4, 4, length=100)
 hx<-dt(x, 602)
 degf <- 602
 
 plot(x, hx, type="l", lty=1, lwd=3, xlab="x value",
-  ylab="Density", main="t Distribution with 69 df")
+  ylab="Density", main="t Distribution with 602 df")
 
 ```
+
+
+\newpage
 
 5.  Calculate the margin of error using theory-based methods.
 

@@ -42,16 +42,20 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 * Upload and import the csv file, `arsenic`. 
 
-* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 8. 
+* Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 11. 
 
-* Highlight and run lines 1--9 to load the data and create a plot of the data. 
+* Enter the name of the variable in lines 15
+
+* Write a title for the plot between the quotations and an x-axis label
+
+* Highlight and run lines 1--21 to load the data and create a plot of the data. 
 
 * **Upload a screenshot of your plot to Gradescope**.
 
 ```{r, echo=TRUE, eval=FALSE}
 water <- read.csv("data/arsenic.csv")
 water %>%
-    summarise(favstats(level_arsenic))
+    summarise(favstats(variable))
 water %>% # Data set piped into...
     ggplot(aes(x = variable)) +   # Name variable to plot
     geom_boxplot() +  # Create boxplot with specified binwidth
@@ -62,7 +66,7 @@ water %>% # Data set piped into...
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
-5. Based on the plot, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
+5. Based on the plot, does there appear to be some support in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
 6. Interpret the value of $Q_3$ in context of the study.
@@ -120,7 +124,7 @@ one_mean_test(water$level_arsenic,   #Enter the name of the variable
 
 We will use the `one_mean_CI()` function in R (in the `catstats` package) to simulate a bootstrap distribution of sample means and calculate a confidence interval. 
 
-13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 98\% confidence interval.  Highlight and run lines 37--40. 
+13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 98\% confidence interval.   
 
 ```{r, echo = TRUE, eval = FALSE}
 one_mean_CI(data = water$level_variable, # Enter vector of differences

@@ -52,19 +52,23 @@ songs %>% # Data set piped into...
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{07-A14-onemean-CI_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
 #### Summarizing quantitative variables {-}
 
 1. Describe the distribution of danceability of top songs over the past 10 years on Spotify.
 
-\vspace{1in}
+\vspace{0.8in}
 
 2. Write the parameter of interest in context of the study.
 
-\vspace{1in}
+\vspace{0.8in}
 
 ### Simulation methods to create a confidence interval {-}
 
-Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample.
+Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample.  To create one dot on the bootstrap distribution:
 
 * Write the original values for the variable on $n$ cards; one card for each observational unit.
 
@@ -111,7 +115,6 @@ Next we will calculate a theory-based confidence interval.  To calculate a theor
 
 $$\bar{x}\pm t^* \times SE(\bar{x}).$$
 
-\newpage
 
 We will need to find the $t^*$ multiplier using the function `qt()`. 
 
@@ -132,12 +135,14 @@ qt(percentile, df = yy, lower.tail=TRUE)
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth]{07-A14-onemean-CI_files/figure-latex/tstar-1} 
+{\centering \includegraphics[width=0.75\linewidth]{07-A14-onemean-CI_files/figure-latex/tst-1} 
 
 }
 
-\caption{t-distribution with 602 degrees of freedom}(\#fig:tstar)
 \end{figure}
+
+
+\newpage
 
 5.  Calculate the margin of error using theory-based methods.
 

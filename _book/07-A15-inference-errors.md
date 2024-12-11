@@ -58,7 +58,7 @@ The remainder of this activity will be spent investigating how different factors
 
 * Set the "True value of $\mu$" to 2.8 as well.
 
-* Do not change the scales for "Sample size n" or "Type I Error $\alpha$".
+* Do not change the scales for "Sample size n" or "Type I Error $\alpha$" or "Population Std. Dev. $\sigma$".
 
 The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was $n = 30$ and the significance level was $\alpha = 0.05$.  This means the red distribution is showing the distribution of possible sample mean amounts spent on textbooks per year (in hundreds of dollars) for a sample of 30 college students ($\bar{x}$) if we assume the null hypothesis is true.
 
@@ -76,6 +76,8 @@ Check the "Type I Error" box under **Display**.  This should verify (or correct)
 6.  Based on the current applet settings, what percent of the null distribution is shaded red (i.e., what is the probability of making a Type 1 error)?
 \vspace{0.25in}
 
+\newpage
+
 Let's say this university believes their program can reduce the cost of textbooks for college students by \$100 per year. In the applet, set the scale under "True value of $\mu$" to 1.8.
 
 7.  Where is the blue distribution centered?
@@ -83,17 +85,17 @@ Let's say this university believes their program can reduce the cost of textbook
 
 The blue distribution that appears represents what the university believes, that \$180 (not \$280) is the true mean textbook cost for college students at this university.  This blue distribution represents the idea that the **null hypothesis is false**.
 
-8.  Consider the definition of power provided earlier in this lab.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a Type 2 error?
+8.  Consider the definition of power provided earlier in this activity.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a Type 2 error?
 \vspace{1in}
 
 Check the "Type II Error" and "Power" boxes under **Display**.  This should verify (or correct) your answers to question 8!  The area shaded in blue represents the probability of making a **Type 2 Error** in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false).  The area shaded in green represents the power of the test.  Notice that the Type 1 and Type 2 error rates and the power of the test are provided above the distribution.
 
-9.  Complete the following equation: Power + Type 2 Error Rate = ___.  Explain why that equation makes sense. *Hint: Consider what power and Type 2 Error are conditional on.*
+9.  Complete the following equation: Power + Type 2 Error Rate = ___.  Explain why that equation makes sense. *Hint: Consider on what power and Type 2 error are conditional.*
 \vspace{0.6in}
 
 Now let's investigate how changes in different factors influence the power of a test.
 
-10. Using the same sample size and significance level, change the “True value of $\mu$” to see the effect on Power.
+10. Using the same sample size and significance level, change the "True value of $\mu$" to see the effect on power.
 \setlength\tabcolsep{0.5cm}
 \begin{longtable}{|l|c|c|c|c|}
 \hline
@@ -101,14 +103,16 @@ Now let's investigate how changes in different factors influence the power of a 
 \textbf{Power} & & & &  \\ \hline
 \end{longtable}
 
-11. What is changing about the simulated distributions pictured as you change the “True value of $\mu$”?
-\vspace{0.5in}
+11. What is changing about the simulated distributions pictured as you change the "True value of $\mu$"?
+\vspace{0.6in}
 
 
 12. How does increasing the distance between the null and believed true mean affect the power of the test?
-\vspace{0.5in}
+\vspace{0.6in}
 
-13. Using the same significance level, set the “True value of $mu$” to 1.8 and change the sample size to see the effect on Power.
+\newpage
+
+13. Using the same significance level, set the "True value of $\mu$" back to 1.8 and change the sample size to see its effect on power.
 
 \setlength\tabcolsep{0.6cm}
 \begin{longtable}{|l|c|c|c|c|c|}
@@ -118,13 +122,13 @@ Now let's investigate how changes in different factors influence the power of a 
 \end{longtable}
 
 14. What is changing about the simulated distributions pictured as you change the sample size?
-\vspace{0.5in}
+\vspace{0.6in}
 
 
 15. How does increasing the sample size affect the power of the test?
-\vspace{0.5in}
+\vspace{0.6in}
 
-16. Using the same “True value of $\mu$”, set the sample size to 30 and change the "Type I Error $\alpha$" to see the effect on Power.
+16. Using the same "True value of $\mu$", set the sample size to 30 and change the "Type I Error $\alpha$" to see the effect on power.
 
 \setlength\tabcolsep{0.5cm}
 \begin{longtable}{|l|c|c|c|c|c|}
@@ -134,17 +138,17 @@ Now let's investigate how changes in different factors influence the power of a 
 \end{longtable}
 
 17. What is changing about the simulated distributions pictured as you change the significance level?
-\vspace{0.5in}
+\vspace{0.6in}
 
 
 18. How does increasing the significance level affect the power of the test?
-\vspace{0.5in}
+\vspace{0.6in}
 
 
-19.  Complete the power analysis for this university.  The university believes they can reduce the cost of textbooks for their students by \$100.  They want to limit the probability of a type 1 error to 10% and the probability of a type 2 error to 15%.  What is the minimum number of students the university will need to collect data from in order to meet these goals?  Use the applet to answer this question, then download your image created and upload the file to Gradescope.
+19.  Complete the power analysis for this university:  The university believes they can reduce the cost of textbooks for their students by \$100.  They want to limit the probability of a type 1 error to 10% and the probability of a type 2 error to 15%.  What is the minimum number of students the university will need to collect data on in order to meet these goals?  Use the applet to answer this question.
 \vspace{0.4in}
 
-20.  Based on the goals outlined in question 19, which mistake below is the university more concerned about?  In other words, which error were the researchers trying to minimize.  Explain your answer.
+20.  Based on the goals outlined in question 19, which mistake below is the university more concerned about?  In other words, which of the following two errors were the researchers trying to minimize.  Explain your answer.
 
 * Not being able to show their textbook cost is lower, on average, when their textbook cost really is lower.
 
