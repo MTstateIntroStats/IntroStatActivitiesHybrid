@@ -69,7 +69,7 @@ $$(RR-1) \times 100\%$$
 
 * **Hypotheses in notation for a difference in proportions**: In the hypotheses below, the **null value** is equal to zero.
 
-$$H_0: \pi_1-\pi_2 = 0$$
+$$H_0: \pi_1-\pi_2 = 0 ~~~ \text{or}~~~ H_0: \pi_1 = \pi_2$$
 $$H_A: \pi_1-\pi_2 \left\{
 \begin{array}{ll}
 < \\
@@ -77,7 +77,16 @@ $$H_A: \pi_1-\pi_2 \left\{
 < \\
 \end{array}
 \right\}
-0 $$
+0 
+~~~ \text{or}~~~
+H_A: \pi_1 \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\pi_2 $$
 
 * **Simulation methods to create the null distribution**: R code to use simulation methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
 

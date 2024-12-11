@@ -48,9 +48,9 @@ object %>%  # Data set piped into...
 
 ### Hypothesis Testing {-}
 
-Hypotheses:
+* **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
 
-$$H_0: \mu_1 - \mu_2 = 0 ~ \text{or}~ H_0: \mu_1 = \mu_2 $$
+$$H_0: \mu_1 - \mu_2 = 0 ~~~ \text{or}~~~ H_0: \mu_1 = \mu_2 $$
 $$H_A: \mu_1 - \mu_2 \left\{
 \begin{array}{ll}
 < \\
@@ -59,7 +59,7 @@ $$H_A: \mu_1 - \mu_2 \left\{
 \end{array}
 \right\}
 0 
-~ \text{or} ~ H_A:
+~~~ \text{or} ~~~ H_A:
 \mu_1 \left\{
 \begin{array}{ll}
 < \\

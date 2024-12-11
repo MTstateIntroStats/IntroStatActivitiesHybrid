@@ -18,14 +18,16 @@ Module 11 will cover exploratory data analysis and both simulation-based and the
     ```
 
 * R code to find the summary statistics for a paired differences:
-    ```{r, eval=FALSE}
+    ```{r, echo=TRUE, eval=FALSE}
     object %>% # Data set piped into...
         summarise(favstats(differences))
     ```
 
-### Simulation Hypothesis Testing {-}
+### Vocabulary
 
-Hypotheses:
+#### Simulation-based hypothesis testing for a paired mean difference {-}
+
+* **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
 
 $$H_0: \mu_d = 0$$
 $$H_A: \mu_d\left\{
@@ -39,17 +41,17 @@ $$H_A: \mu_d\left\{
 
 * R code to use for **simulation methods** for one paired data to find the p-value, `paired_test`, is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
 
-```{r, eval=FALSE, echo=TRUE}
+    ```{r, eval=FALSE, echo=TRUE}
 paired_test(data = object$differences,   # Vector of differences 
                                          # or data set with column for each group
-            shift = xx,   # Shift needed for bootstrap hypothesis test
-            as_extreme_as = xx,  # Observed statistic
-            direction = "xx",  # Direction of alternative
-            number_repetitions = 10000,  # Number of simulated samples for null distribution
-            which_first = 1)  # Not needed when using calculated differences
-```
+       shift = xx,   # Shift needed for bootstrap hypothesis test
+       as_extreme_as = xx,  # Observed statistic
+       direction = "xx",  # Direction of alternative
+       number_repetitions = 10000,  # Number of simulated samples for null distribution
+       which_first = 1)  # Not needed when using calculated differences
+    ```
 
-### Simulation Confidence Interval {-}
+#### Simulation confidence interval for a paired mean difference {-}
 
 * R code to find the simulation confidence interval using the `paired_bootstrap_CI` function from the `catstats` package.
 
@@ -60,10 +62,10 @@ paired_bootstrap_CI(data = object$differences, # Enter vector of differences
                     which_first = 1)  # Not needed when entering vector of differences
 ```
 
-* The interpretation of the confidence interval is very similar for that of a single mean. Just make sure to add the order of subtraction for the differences.
+* The interpretation of the confidence interval is very similar for that of a single mean. Just make sure to include the order of subtraction for the differences.
 
 
-### Theory-based Methods {-}
+#### Theory-based inference methods for a paired mean difference {-}
 
 * **Conditions for the sampling distribution of $\bar{x}_d$ to follow an approximate normal distribution**:
 
