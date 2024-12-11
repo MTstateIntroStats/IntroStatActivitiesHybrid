@@ -271,140 +271,319 @@ STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine
 
 \nocite{*}
 
-\chapter{Confidence Intervals for a Single Quantitative Variable}\label{confidence-intervals-for-a-single-quantitative-variable}
+\chapter{Exploratory Data Analysis and Simulation-based Inference for Two Categorical Variables}\label{exploratory-data-analysis-and-simulation-based-inference-for-two-categorical-variables}
 
 \section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics}
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single quantitative variable.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two categorical variables.
 
 \subsection{Key topics}\label{key-topics}
 
-Module 7 will cover creating confidence intervals using both simulation-based and theory-based methods. Additionally, we learn about types of errors and power in hypothesis testing.
+Module 8 will introduce exploratory data analysis and simulation-based inference for two categorical variables. We also explore study design and confounding variables.
 
-\subsubsection*{Simulation-based Confidence Interval}\label{simulation-based-confidence-interval}
-\addcontentsline{toc}{subsubsection}{Simulation-based Confidence Interval}
-
-\begin{itemize}
-\item
-  R code to find the simulation-based confidence interval using the \texttt{onemean\_CI} function from the \texttt{catstats} package.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{one\_mean\_CI}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
-        \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
-        \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-        \AttributeTok{confidence\_level =}\NormalTok{ xx)}
-\end{Highlighting}
-\end{Shaded}
-\item
-  Interpretation of the confidence interval is very similar as for a single proportion only the context and summary measure has changed.
-
-  \begin{itemize}
-  \item
-    To write in context include:
-
-    \begin{itemize}
-    \item
-      How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-    \item
-      Parameter of interest
-    \item
-      Calculated interval
-    \end{itemize}
-  \end{itemize}
-\end{itemize}
-
-\subsubsection*{Theory-based Confidence Interval}\label{theory-based-confidence-interval}
-\addcontentsline{toc}{subsubsection}{Theory-based Confidence Interval}
-
-\begin{itemize}
-\tightlist
-\item
-  Calculation of the confidence interval for a sample mean:
-\end{itemize}
-
-\[\bar{x}\pm t^*\times SE(\bar{x})\]
+Types of plots for two categorical variables
 
 \begin{itemize}
 \item
-  R code to find the multiplier for the confidence interval using theory-based methods.
-
-  \begin{itemize}
-  \item
-    \texttt{qt} will give you the multiplier using the t-distribution with \(n-1\) df (enter for \texttt{yy})
-  \item
-    Enter the percentile for the given confidence level
-  \end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-\end{itemize}
-
-\newpage
-
-\subsection*{Vocabulary}\label{vocabulary}
-\addcontentsline{toc}{subsection}{Vocabulary}
-
-\begin{itemize}
-\item
-  \textbf{Significance level (\(\alpha\))}: a given cut-off value that we compare the p-value to determine a decision of a test.
-\item
-  \textbf{Decisions}:
-
-  \begin{itemize}
-  \item
-    If the p-value is less than the significance level, we make the decision to \emph{reject the null hypothesis}.
-  \item
-    If the p-value is greater than the significance level, we make the decision to \emph{fail to reject the null hypothesis}.
-  \end{itemize}
-\item
-  \textbf{Type 1 Error}: concluding there is evidence to reject the null hypothesis, when the null is actually true.
+  \textbf{Segmented bar plot}: plots the conditional proportion of the response outcomes in each explanatory variable group
 
   \begin{itemize}
   \tightlist
   \item
-    The probability of making a Type 1 error when the null is actually true is equal to the significance level, \(\alpha\).
+    The plot shows no association between the variables, if the height of each segment is approximately the same in each group
   \end{itemize}
 \item
-  \textbf{Type 2 Error}: concluding there is no evidence to reject the null hypothesis, when the null is actually false.
+  \textbf{Mosaic plot}: similar to the segmented bar plot but the sample size is reflected by the width of the bars
+\end{itemize}
+
+Summary measures
+
+\begin{itemize}
 \item
-  \textbf{Power}: probability of concluding there is evidence to reject the null hypothesis, when the null is actually false.
+  \textbf{Difference in proportion}: calculation of the difference in two conditional proportions
+
+  \begin{itemize}
+  \item
+    Parameter notation: \(\pi_1 - \pi_2\)
+  \item
+    Sample notation: \(\hat{p}_1 - \hat{p}_2\)
+  \end{itemize}
+\item
+  \textbf{Relative risk}: the ratio of the conditional proportions
 
   \begin{itemize}
   \tightlist
   \item
-    When the null is actually false, the event ``reject the null hypothesis'' is the \emph{complement} of the event ``fail to reject the null hypothesis.'' Thus, power is equal to 1 minus the probability of a Type 2 error.
+    \(\text{Relative Risk} = \frac{\hat{p}_1}{\hat{p}_2}\)
+  \end{itemize}
+\end{itemize}
+
+Interpretation of relative risk:
+
+\begin{itemize}
+\item
+  The risk of success in group 1 is relative risk times the risk of success in group 2
+\item
+  Can also interpret as a percent increase or percent decrease in risk
+
+  \begin{itemize}
+  \item
+    \[(RR-1) \times 100\%\]
+  \item
+    The risk of success in group 1 is xx\% higher or lower that the risk of success in group 2
+  \end{itemize}
+\item
+  Explanatory variable: the variable researchers think \emph{may be} affecting the other variable.
+\item
+  Response variable: the variable researchers think \emph{may be} influenced by the other variable.
+\item
+  Confounding variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    associated with both the explanatory and the response variable
+  \item
+    explains the association shown by the data
+  \end{itemize}
+\end{itemize}
+
+Study Design
+
+\begin{itemize}
+\item
+  Observational study:
+\item
+  Randomized experiment:
+\end{itemize}
+
+Scope of Inference Table:
+
+\begin{center}\includegraphics[width=0.65\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
+
+\begin{itemize}
+\item
+  Conditions necessary to use simulation methods for inference for two categorical variables
+
+  \begin{itemize}
+  \tightlist
+  \item
+    There must be independence of observational units within groups and between groups
   \end{itemize}
 \end{itemize}
 
 \newpage
 
-\section{Video Notes: Theory-based Inference for a single quantitative variable}\label{video-notes-theory-based-inference-for-a-single-quantitative-variable}
+\section{Video Notes: Inference for Two Categorical Variables using Simulation-based Methods}\label{video-notes-inference-for-two-categorical-variables-using-simulation-based-methods}
 
-Read Chapters 5 and 17 in the course textbook. Use the following videos to complete the video notes for Module 7.
+Read Sections 2.2 - 2.4, 15.1, 15.2 and Chapter 16 in the course textbook. Use the following videos to complete the video notes for Module 8.
 
 \subsection{Course Videos}\label{course-videos}
 
 \begin{itemize}
 \item
-  17.1
+  2.2to2.4
 \item
-  17.3TheoryIntervals
+  15.1
+\item
+  15.2
+\item
+  RelativeRisk
+\end{itemize}
+
+\subsection*{Observational studies, experiments, and scope of inference: Video 2.2to2.4}\label{observational-studies-experiments-and-scope-of-inference-video-2.2to2.4}
+\addcontentsline{toc}{subsection}{Observational studies, experiments, and scope of inference: Video 2.2to2.4}
+
+\begin{itemize}
+\item
+  Review
+
+  \begin{itemize}
+  \item
+    Explanatory variable: the variable researchers think \emph{may be} affecting the other variable.
+  \item
+    Response variable: the variable researchers think \emph{may be} influenced by the other variable.
+  \end{itemize}
+\item
+  Confounding variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    associated with both the explanatory and the response variable
+  \item
+    explains the association shown by the data
+  \end{itemize}
+\end{itemize}
+
+Example:
+
+\vspace{0.8in}
+
+\subsubsection*{Study design}\label{study-design}
+\addcontentsline{toc}{subsubsection}{Study design}
+
+\begin{itemize}
+\tightlist
+\item
+  Observational study:
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Experiment:
+\end{itemize}
+
+\vspace{0.5in}
+
+Principles of experimental design
+
+\begin{itemize}
+\item
+  Control: hold other differences constant across groups
+  \vspace{0.1in}
+\item
+  Randomization: randomized experiment
+  \vspace{0.1in}
+\item
+  Replication: large sample size or repeat of study
+  \vspace{0.1in}
+\item
+  Blocking: group based on certain characteristics
+\end{itemize}
+
+\vspace{0.1in}
+
+\newpage
+
+Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology (Levin 2000): Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the study design?
+\end{itemize}
+
+\vspace{0.5in}
+
+Example: In the Physician's Health Study ({``Physician's Health Study,''} n.d.), male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the study design?
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Assuming these data provide evidence that the low-dose aspirin group had a lower rate of heart attacks than the placebo group, is it valid for the researchers to conclude the lower rate of heart attacks was caused by the daily low-dose aspirin regimen?
+\end{itemize}
+
+\vspace{0.5in}
+
+\subsubsection*{Scope of Inference}\label{scope-of-inference}
+\addcontentsline{toc}{subsubsection}{Scope of Inference}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How was the sample selected?
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Random sample with no sampling bias:
+\end{itemize}
+
+\vspace{0.35in}
+
+\begin{itemize}
+\tightlist
+\item
+  Non-random sample with sampling bias:
+\end{itemize}
+
+\vspace{0.35in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What is the study design?
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Randomized experiment:
+\end{itemize}
+
+\vspace{0.35in}
+
+\begin{itemize}
+\tightlist
+\item
+  Observational study:
+\end{itemize}
+
+\vspace{0.35in}
+
+\newpage
+
+Scope of Inference Table:
+
+\begin{center}\includegraphics[width=0.65\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
+
+Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology (Levin 2000): Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the scope of inference for this study?
+\end{itemize}
+
+\vspace{0.5in}
+
+\setstretch{1}
+
+\newpage
+
+\subsection*{Two categorical variables - Video 15.1}\label{two-categorical-variables---video-15.1}
+\addcontentsline{toc}{subsection}{Two categorical variables - Video 15.1}
+
+\setstretch{1.5}
+
+\begin{itemize}
+\item
+  In this module, we will study inference for a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ explanatory variable and a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ response.
+\item
+  The summary measure for two categorical variables is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ in \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 \end{itemize}
 
 \setstretch{1}
 
-\subsection{Single quantitative variable}\label{single-quantitative-variable}
+Example: In a double-blind experiment (Weiss 1988) on 48 cocaine addicts hoping to overcome their addiction, half were randomly assigned to a drug called desipramine and the other half a placebo. The addicts were followed for 6 weeks to see whether they were still clean. Is desipramine more effective at helping cocaine addicts overcome their addiction than the placebo?
 
-\begin{itemize}
-\item
-  Reminder: review summary measures and plots discussed in the Module 6 material and Chapter 5 of the textbook.
-\item
-  The summary measure for a single quantitative variable is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_.
-\end{itemize}
+Observational units:
+
+\vspace{0.15in}
+
+Explanatory variable:
+
+\vspace{0.15in}
+
+Response variable:
+
+\vspace{0.15in}
 
 \setstretch{1.5}
 
@@ -412,105 +591,227 @@ Notation:
 
 \begin{itemize}
 \item
-  Population mean:
+  Population proportion for group 1:
 \item
-  Population standard deviation:
+  Population proportion for group 2:
 \item
-  Sample mean:
+  Sample proportion for group 1:
 \item
-  Sample standard deviation:
+  Sample proportion for group 2:
 \item
-  Sample size:
+  Sample difference in proportions:
+\item
+  Sample size for group 1:
+\item
+  Sample size for group 2:
 \end{itemize}
 
 \setstretch{1}
 
-Example: What is the average weight of adult male polar bears? The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+\newpage
+
+\subsection*{Hypothesis Testing}\label{hypothesis-testing}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+Conditions:
+
+\begin{itemize}
+\tightlist
+\item
+  Independence: the response for one observational unit will not influence another observational unit
+\end{itemize}
+
+Null hypothesis assumes ``no effect'', ``no difference'', ``nothing interesting happening'', etc.
+
+\rgi Always of form: ``parameter'' = null value
+
+\(H_0:\)
+
+\vspace{0.2in}
+
+\(H_A:\)
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Research question determines the direction of the alternative hypothesis.
+\end{itemize}
+
+Write the null and alternative hypotheses for the cocaine study:
+
+In notation:
+
+\(H_0:\)
+
+\vspace{0.2in}
+
+\(H_A:\)
+
+\vspace{0.2in}
+
+\subsubsection*{Summary statistics and plot}\label{summary-statistics-and-plot}
+\addcontentsline{toc}{subsubsection}{Summary statistics and plot}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pb }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/polarbear.csv"}\NormalTok{)}
+\NormalTok{cocaine }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(drug) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(outcome)}
 \end{Highlighting}
 \end{Shaded}
 
-Plots of the data:
+\begin{verbatim}
+#> # A tibble: 4 x 3
+#> # Groups:   drug [2]
+#>   drug        outcome      n
+#>   <chr>       <chr>    <int>
+#> 1 desipramine clean       14
+#> 2 desipramine relapsed    10
+#> 3 placebo     clean        4
+#> 4 placebo     relapsed    20
+\end{verbatim}
+
+Summary statistic:
+
+\vspace{0.3in}
+
+Interpretation:
+
+\vspace{0.4in}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Weight)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
-    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histogram of Male Polar Bear Weight"}\NormalTok{, }\CommentTok{\# Title for plot}
-       \AttributeTok{x =} \StringTok{"Weight (kg)"}\NormalTok{, }\CommentTok{\# Label for x axis}
-       \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
-
-\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Weight)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
-  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Male Polar Bear Weight"}\NormalTok{, }\CommentTok{\# Title for plot}
-       \AttributeTok{x =} \StringTok{"Weight (kg)"}\NormalTok{, }\CommentTok{\# Label for x axis}
-       \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\NormalTok{cocaine}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ drug, }\AttributeTok{fill =}\NormalTok{ outcome))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"count"}\NormalTok{, }\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bar plot of Type of Drug, Segmented by }
+\StringTok{       Outcome for Cocaine Addicts"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Relative Frequency"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Drug or Placebo"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{scale\_fill\_grey}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-2} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-Summary Statistics:
+Is the independence condition met for simulation inference?
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pb }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Weight)) }\CommentTok{\#Gives the summary statistics}
-\CommentTok{\#\textgreater{}     min    Q1 median     Q3   max     mean       sd  n missing}
-\CommentTok{\#\textgreater{} 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Confidence interval}\label{confidence-interval}
-\addcontentsline{toc}{subsection}{Confidence interval}
+\vspace{0.4in}
 
 \subsubsection*{Simulation-based method}\label{simulation-based-method}
 \addcontentsline{toc}{subsubsection}{Simulation-based method}
 
 \begin{itemize}
 \item
-  Label cards with the values from the data set
-\item
-  Sample with replacement (bootstrap) from the original sample \(n\) times
-\item
-  Plot the simulated sample mean on the bootstrap distribution
-\item
-  Repeat at least 1000 times (simulations)
-\item
-  Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
-\item
-  ie. 95\% CI = (2.5th percentile, 97.5th percentile)
+  Simulate many samples assuming \(H_0: \pi_1 = \pi_2\)
+
+  \begin{itemize}
+  \item
+    Write the response variable values on cards
+  \item
+    Mix the explanatory variable groups together
+  \item
+    Shuffle cards into two explanatory variable groups to represent the sample size in each group (\(n_1\) and \(n_2\))
+  \item
+    Calculate and plot the simulated difference in sample proportions from each simulation
+  \item
+    Repeat 1000 times (simulations) to create the null distribution
+  \item
+    Find the proportion of simulations at least as extreme as \(\hat{p}_1 - \hat{p}_2\)
+  \end{itemize}
 \end{itemize}
-
-Conditions for inference for a single mean:
-
-\begin{itemize}
-\tightlist
-\item
-  Independence:
-\end{itemize}
-
-\vspace{0.5in}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{one\_mean\_CI}\NormalTok{(pb}\SpecialCharTok{$}\NormalTok{Weight,}
-  \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{,}
-  \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,}
-  \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{)}
+\FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{drug, }\CommentTok{\# response \textasciitilde{} explanatory}
+    \AttributeTok{data =}\NormalTok{ cocaine, }\CommentTok{\# Name of data set}
+    \AttributeTok{first\_in\_subtraction =} \StringTok{"desipramine"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
+    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{response\_value\_numerator =} \StringTok{"clean"}\NormalTok{, }\CommentTok{\# Define which outcome is a success}
+    \AttributeTok{as\_extreme\_as =} \FloatTok{0.417}\NormalTok{, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
+    \AttributeTok{direction=}\StringTok{"greater"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-The confidence interval estimates the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+Explain why the null distribution is centered at the value of zero:
+
+\vspace{1in}
+
+Interpretation of the p-value:
+
+\begin{itemize}
+\item
+  Statement about probability or proportion of samples
+\item
+  Statistic (summary measure and value)
+\item
+  Direction of the alternative
+\item
+  Null hypothesis (in context)
+\end{itemize}
+
+\vspace{0.8in}
+
+Conclusion with scope of inference:
+
+\begin{itemize}
+\item
+  Amount of evidence
+\item
+  Parameter of interest
+\item
+  Direction of the alternative hypothesis
+\item
+  Generalization
+\item
+  Causation
+\end{itemize}
+
+\vspace{0.8in}
+
+\newpage
+
+\subsection*{Confidence interval - Video 15.2}\label{confidence-interval---video-15.2}
+\addcontentsline{toc}{subsection}{Confidence interval - Video 15.2}
+
+To estimate the difference in true proportion we will create a confidence interval.
+
+\subsubsection*{Simulation-based method}\label{simulation-based-method-1}
+\addcontentsline{toc}{subsubsection}{Simulation-based method}
+
+\begin{itemize}
+\item
+  Write the response variable values on cards
+\item
+  Keep explanatory variable groups separate
+\item
+  Sample with replacement \(n_1\) times in explanatory variable group 1 and \(n_2\) times in explanatory variable group 2
+\item
+  Calculate and plot the simulated difference in sample proportions from each simulation
+\item
+  Repeat 1000 times (simulations) to create the bootstrap distribution
+\item
+  Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
+\end{itemize}
+
+Returning to the cocaine example, we will estimate the difference in true proportion of cocaine addicts that stay clean for those on the desipramine and those on the placebo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
+\FunctionTok{two\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ outcome }\SpecialCharTok{\textasciitilde{}}\NormalTok{ drug, }
+        \AttributeTok{data=}\NormalTok{cocaine, }\CommentTok{\# Name of data set}
+        \AttributeTok{first\_in\_subtraction =} \StringTok{"desipramine"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
+        \AttributeTok{response\_value\_numerator =} \StringTok{"clean"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
+        \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+        \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{) }\CommentTok{\# Enter the level of confidence as a decimal}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -527,77 +828,152 @@ Confidence interval interpretation:
 
 \vspace{0.8in}
 
-\newpage
-
-\subsubsection*{Theory-based method}\label{theory-based-method}
-\addcontentsline{toc}{subsubsection}{Theory-based method}
+\subsection*{Relative Risk - Video RelativeRisk}\label{relative-risk---video-relativerisk}
+\addcontentsline{toc}{subsection}{Relative Risk - Video RelativeRisk}
 
 \begin{itemize}
 \tightlist
 \item
-  Calculate the interval centered at the sample statistic
+  Relative risk is the ratio of the risks in two different categories of an explanatory variable.
 \end{itemize}
 
-\rgi \(\text{statistic} \pm \text{margin of error}\)
+Relative Risk:
 
-\vspace{0.5in}
+\vspace{0.3in}
 
-Conditions for inference using theory-based methods:
+Example: In a study reported in the New England Journal of Medicine (Du Toit 2015), one-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71\% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2\% of those in the placebo group.
 
 \begin{itemize}
 \tightlist
 \item
-  Independence:
+  Calculate the relative risk of desensitization comparing the peanut flour group to the placebo group.
 \end{itemize}
 
-\vspace{0.2in}
+\vspace{0.8in}
 
-\begin{itemize}
-\tightlist
-\item
-  Large enough sample size:
-\end{itemize}
-
-\vspace{0.2in}
-
-\subsection*{\texorpdfstring{\(t\)-distribution}{t-distribution}}\label{t-distribution}
-\addcontentsline{toc}{subsection}{\(t\)-distribution}
-
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under \(H_0\) and with standard deviation \(\frac{\sigma}{\sqrt{n}}\).
-
-\[\bar{x} \sim N\left(\mu_0, \frac{\sigma}{\sqrt{n}}\right)\]
 \setstretch{1.5}
 
 \begin{itemize}
 \item
-  Estimate the population standard deviation, \(\sigma\), with the
-  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ standard deviation, \_\_\_\_\_\_\_\_.
+  Interpretation:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The proportion of successes in group 1 is the \(RR\) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ the proportion of successes in group 2.
+  \end{itemize}
+\end{itemize}
+
+Increase in risk:
+
+\vspace{0.3in}
+
+\begin{itemize}
 \item
-  For a single quantitative variable we use the \_\_\_\_ - distribution
-  with \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-  degrees of freedom to approximate the sampling distribution.
+  Interpretation:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The proportion of successes in group 1 is the \((RR-1)\) \_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    higher/lower than the proportion of successes in group 2.
+  \end{itemize}
+\end{itemize}
+
+Percent increase in risk:
+
+\vspace{0.3in}
+
+\begin{itemize}
+\item
+  Interpretation:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The proportion of successes in group 1 is the \((RR-1)\times 100\) \_\_\_\_\_\_\_\_\_\_ higher/lower than the proportion of successes in group 2.
+  \end{itemize}
 \end{itemize}
 
 \setstretch{1}
 
-The \(t^*\) multiplier is the value at the given percentile of the t-distribution with \(n - 1\) degrees of freedom.
+\begin{itemize}
+\tightlist
+\item
+  Interpret the value of relative risk from the peanut study in context of the problem.
+\end{itemize}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/tstarpb-1} \end{center}
+\vspace{0.6in}
 
-\newpage
+\begin{itemize}
+\tightlist
+\item
+  Find the increase (or decrease) in risk of desensitization and interpret this value in context of the problem.
+\end{itemize}
 
-To find the \(t^*\) multiplier for a 95\% confidence interval:
+\vspace{1in}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{82}\NormalTok{)}
-\CommentTok{\#\textgreater{} [1] 1.989319}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  Find the percent increase (or decrease) in risk of desensitization and interpret this value in context of the problem.
+\end{itemize}
 
-Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
+\vspace{1in}
+
+Within the peanut flour group, the percent desensitized within each age group (at start of study) is as follows:
+
+1-year-olds: 71\%; 2-year-olds: 35\%; 3-year-olds: 19\%
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the relative risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group.
+\end{itemize}
 
 \vspace{0.8in}
+
+\begin{itemize}
+\tightlist
+\item
+  Interpret the percent increase (or decrease) in risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group.
+\end{itemize}
+
+\vspace{0.8in}
+
+\subsubsection*{Relative risk in the news}\label{relative-risk-in-the-news}
+\addcontentsline{toc}{subsubsection}{Relative risk in the news}
+
+People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases (Bhavsar 2022).
+
+\begin{itemize}
+\tightlist
+\item
+  What was the calculated relative risk of developing shingles when comparing those who has mild COVID-19 to those who had not had COVID-19, among the 50 and older population?
+\end{itemize}
+
+\vspace{0.8in}
+
+\subsubsection*{Testing Relative Risk}\label{testing-relative-risk}
+\addcontentsline{toc}{subsubsection}{Testing Relative Risk}
+
+In Unit 2, we tested for a difference in proportion. We could also test for relative risk.
+
+\setstretch{1.5}
+
+Null Hypothesis:
+
+\(H_0:\)
+
+\vspace{0.2in}
+
+Alternative Hypothesis:
+
+\(H_A:\)
+
+\vspace{0.2in}
+
+\setstretch{1}
 
 \subsection{Concept Check}\label{concept-check}
 
@@ -607,24 +983,23 @@ Be prepared for group discussion in the next class. One member from the table sh
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Are the conditions met to analyze the polar bear data using theory-based methods?
+  Explain why the null distribution is centered at the value of zero.
 \end{enumerate}
 
-\vspace{0.7in}
+\vspace{0.5in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Interpret the confidence interval found with simulation methods.
+  Does the confidence interval agree with the p-value?
 \end{enumerate}
 
-\vspace{0.2in}
-
+\vspace{0.5in}
 \newpage
 
-\section{Activity 14: Danceability of Songs}\label{activity-14-danceability-of-songs}
+\section{Activity 16: Study Design}\label{activity-16-study-design}
 
 \setstretch{1}
 
@@ -632,252 +1007,232 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \begin{itemize}
 \item
-  Use simulation-based methods to find a confidence interval for a single mean.
+  Explain the purpose of random assignment and its effect on scope of inference.
 \item
-  Use theory-based methods to find a confidence interval for a single mean.
+  Identify whether a study design is observational or an experiment.
 \item
-  Interpret a confidence interval for a single mean.
-\item
-  Use a confidence interval to determine the conclusion of a hypothesis test.
+  Identify confounding variables in observational studies and explain why they are confounding.
 \end{itemize}
 
 \subsection{Terminology review}\label{terminology-review}
 
-In today's activity, we will estimate the parameter of interest using simulation-based and theory-based methods. Some terms covered in this activity are:
+In this activity, we will examine different study designs, confounding variables, and how to determine the scope of inference for a study. Some terms covered in this activity are:
 
 \begin{itemize}
 \item
-  Bootstrap distribution
+  Scope of inference
 \item
-  \(t\)-distribution
+  Explanatory variable
 \item
-  Degrees of freedom
+  Response variable
 \item
-  \(T\)-score
+  Confounding variable
+\item
+  Experiment
+\item
+  Observational study
 \end{itemize}
 
-To review these concepts, see Chapter 17 in the textbook.
+To review these concepts, see Sections 2.2 through 2.5 in the textbook.
 
-\subsection{Danceability}\label{danceability}
+\subsection{Atrial fibrillation}\label{atrial-fibrillation}
 
-Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs. One of the variables measured on these songs is ``danceability.'' Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song. Estimate the average danceability of top songs from Spotify.
-
-\begin{itemize}
-\item
-  Download the R script file for this activity from D2L and upload to the RStudio server.
-\item
-  Open the R script file, highlight and run the lines to load libraries and the code below.
-\end{itemize}
-
-\begin{verbatim}
-#>   min Q1 median Q3 max     mean       sd   n missing
-#> 1   0 57     66 73  97 64.37977 13.37872 603       0
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{songs }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Danceability)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
-    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Danceability Score for Top Spotify Songs"}\NormalTok{, }\CommentTok{\# Title for plot}
-         \AttributeTok{x =} \StringTok{"danceability score (points)"}\NormalTok{, }\CommentTok{\# Label for x axis}
-         \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
-    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
-          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{07-A14-onemean-CI_files/figure-latex/unnamed-chunk-2-1} \end{center}
-
-\subsubsection*{Summarizing quantitative variables}\label{summarizing-quantitative-variables}
-\addcontentsline{toc}{subsubsection}{Summarizing quantitative variables}
+Atrial fibrillation is an irregular and often elevated heart rate. In some people, atrial fibrillation will come and go on its own, but others will experience this condition on a permanent basis. When atrial fibrillation is constant, medications are required to stabilize the patient's heart rate and to help prevent blood clots from forming. Pharmaceutical scientists at a large pharmaceutical company believe they have developed a new medication that effectively stabilizes heart rates in people with permanent atrial fibrillation. They set out to conduct a trial study to investigate the new drug. The scientists will need to compare the proportion of patients whose heart rate is stabilized between two groups of subjects, one of whom is given a placebo and the other given the new medication.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Describe the distribution of danceability of top songs over the past 10 years on Spotify.
+  Identify the explanatory and response variable in this trial study.
+
+  Explanatory variable:
+  \vspace{0.5in}
+
+  Response variable:
+  \vspace{0.5in}
 \end{enumerate}
 
-\vspace{0.8in}
+\newpage
+
+Suppose 24 subjects with permanent atrial fibrillation have volunteered to participate in this study. There are 16 subjects that self-identified as male and 8 subjects that self-identified as female.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
-\tightlist
 \item
-  Write the parameter of interest in context of the study.
+  One way to separate into two groups would be to give all the males the placebo and all the females the new drug. Explain why this is not a reasonable strategy.
+  \vspace{1in}
+\item
+  Could the scientists fix the problem with the strategy presented in question 2 by creating equal sized groups by putting 4 males and 8 females into the drug group and the remaining 12 males in the placebo group? Explain your answer.
+  \vspace{0.5in}
+\item
+  A third strategy would be to \textbf{block} on sex. In this type of study, the scientists would assign 4 females and 8 males to each group. Using this strategy, out of the 12 individuals in each group what \textbf{proportion} are males?
+  \vspace{0.3in}
+\item
+  Assume the scientists used the strategy in question 4, but they put the four tallest females and eight tallest males into the drug group and the remaining subjects into the placebo group. They found that the proportion of patients whose heart rate stabilized is higher in the drug group than the placebo group.\\
+  \vspace{0.1in}
+
+  Could that difference be due to the sex of the subjects? Explain your answer.
+  \vspace{0.5in}
+
+  Could it be due to other variables? Explain your answer.
+  \vspace{0.5in}
 \end{enumerate}
 
-\vspace{0.8in}
-
-\subsection*{Simulation methods to create a confidence interval}\label{simulation-methods-to-create-a-confidence-interval}
-\addcontentsline{toc}{subsection}{Simulation methods to create a confidence interval}
-
-Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample. To create one dot on the bootstrap distribution:
-
-\begin{itemize}
-\item
-  Write the original values for the variable on \(n\) cards; one card for each observational unit.
-\item
-  Sample with replacement from the cards \(n\) times.
-\item
-  Plot the mean from each resampled sample on the bootstrap distribution.
-\end{itemize}
-
-Use the provided R script file to find a 95\% confidence interval.
-
-\begin{itemize}
-\item
-  Enter the name of the variable for \texttt{variable}.
-\item
-  Enter the appropriate confidence level for \texttt{xx}.
-\item
-  Highlight and run lines 22--25.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{one\_mean\_CI}\NormalTok{(songs}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
-            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
-            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-            \AttributeTok{confidence\_level =}\NormalTok{ xx)}
-\end{Highlighting}
-\end{Shaded}
+While the strategy presented in question 5 controlled for the sex of the subject, there are more potential \textbf{confounding variables} in the study. A confounding variable is a variable that is \emph{both}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
 \tightlist
 \item
-  Report the 95\% confidence interval for the parameter of interest.
+  associated with the explanatory variable, \emph{and}
+\item
+  associated with the response variable.
 \end{enumerate}
 
-\vspace{0.2in}
+When both these conditions are met, if we observe an association between the explanatory variable and the response variable in the data, we cannot be sure if this association is due to the explanatory variable or the confounding variable---the explanatory and confounding variables are ``confounded.''
 
-\subsection*{Theory-based methods to create a confidence interval}\label{theory-based-methods-to-create-a-confidence-interval}
-\addcontentsline{toc}{subsection}{Theory-based methods to create a confidence interval}
-
-\begin{itemize}
-\item
-  \textbf{Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution}:
-
-  \begin{itemize}
-  \item
-    \textbf{Independence}: The sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
-  \item
-    \textbf{Normality Condition}: Either the sample observations come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
-
-    \begin{itemize}
-    \item
-      \(n < 30\): The distribution of the sample must be approximately normal with no outliers.
-    \item
-      \(30 \ge n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
-    \item
-      \(n > 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-    \end{itemize}
-  \end{itemize}
-\end{itemize}
-
-Next we will calculate a theory-based confidence interval. To calculate a theory-based confidence interval for the a single mean, use the following formula:
-
-\[\bar{x}\pm t^* \times SE(\bar{x}).\]
-
-We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
-
-\begin{itemize}
-\item
-  Enter the appropriate percentile in the R code to find the multiplier for a 95\% confidence interval.
-\item
-  Enter the degrees of freedom for \texttt{yy}. \emph{The degrees of freedom for a single mean is \(n-1\)}.
-\item
-  Highlight and run line 31.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  Mark on the \(t\)-distribution found below the values of \(\pm t^*\). Draw a line at each multiplier and write the percentiles used to find each.
-  \vspace{1mm}
-\end{enumerate}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{07-A14-onemean-CI_files/figure-latex/tst-1} 
-
-}
-
-\end{figure}
+\textbf{Random assignment} means that subjects in a study have an equally likely chance of receiving any of the available treatments.
 
 \newpage
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Calculate the margin of error using theory-based methods.
-\end{enumerate}
-
-\vspace{0.6in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{5}
 \tightlist
 \item
-  Calculate the confidence interval for the true mean using theory-based methods.
+  You will now investigate how randomly assigning subjects impacts a study's scope of inference.
 \end{enumerate}
 
-\vspace{0.6in}
+\begin{itemize}
+\item
+  Navigate to the ``Randomizing Subjects'' applet under the ``Other Applets'' heading at: \url{http://www.rossmanchance.com/ISIapplets.html}. This applet lists the sex and height of each of the 24 subjects. Click ``Show Graphs'' to see a bar chart showing the sex of each subject. Currently, the applet is showing the strategy outlined in question 3.
+\item
+  Click ``Randomize''.
+\end{itemize}
+
+~~~In this random assignment, what proportion of males are in group 1 (the placebo group)?
+
+\vspace{0.1in}
+
+~~~What proportion of males are in group 2 (the drug group)?
+
+\vspace{0.1in}
+
+~~~What is the difference in proportion of males between the two groups (placebo - drug)?
+
+\vspace{0.1in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{6}
-\tightlist
 \item
-  Interpret the confidence interval in context of the study.
+  Notice the difference in the two proportions is shown as a dot in the plot at the bottom of the web page. Un-check the box for Animate above ``Randomize'' and click ``Randomize'' again. Did you get the same difference in proportion of males between the placebo and drug groups?
+  \vspace{0.25in}
+\item
+  Change ``Replications'' to 998 (for 1000 total). Click ``Randomize'' again. Sketch the plot of the distribution of difference in proportions from each of the 1000 random assignments here. Be sure to include a descriptive \(x\)-axis label.
+  \vspace{1.25in}
+\item
+  Does random assignment \emph{always} balance the placebo and drug groups based on the sex of the participants? Does random assignment \emph{tend} to make the placebo and drug groups \emph{roughly} the same with respect to the distribution of sex? Use your plot from question 8 to justify your answers.
+  \vspace{0.5in}
+\item
+  Change the drop-down menu below Group 2 from ``sex'' to ``height''. The applet now calculates the average height in the placebo and drug groups for each of the 1000 random assignments. The dot plot displays the distribution of the difference in mean heights (placebo - drug) for each random assignment. Based on this dot plot, is height distributed equally, on average, between the two groups? Explain how you know.
+  \vspace{0.5in}
 \end{enumerate}
 
-\vspace{1in}
+\newpage
+
+The diagram below summarizes these ideas about confounding variables and random assignment. When a confounding variable is present (such as sex or height), and an association is found in a study, it is impossible to discern what caused the change in the response variable. Is the change the result of the explanatory variable or the confounding variable? However, if all confounding variables are \emph{balanced} across the treatment groups, then only the explanatory variable differs between the groups and thus \emph{must have caused} the change seen in the response variable.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.4\linewidth]{images/confounding} 
+
+}
+
+\end{figure}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
+\setcounter{enumi}{10}
 \item
-  Explain why the confidence interval with theory-based methods is similar to the confidence interval found using the bootstrap distribution.
+  What is the purpose of random assignment of the subjects in a study to the explanatory variable groups? Cross out the arrow in the figure above that is eliminated by random assignment.
+  \vspace{0.8in}
+\item
+  Suppose in this study on atrial fibrillation, the scientists did randomly assign groups and found that the drug group has a higher proportion of subjects whose heart rates stabilized than the placebo group. Can the scientists conclude the new drug \emph{caused} the increased chance of stabilization? Explain your answer.
+  \vspace{0.8in}
+\item
+  Is the sample of subjects a simple random sample or a convenience sample?
 \end{enumerate}
 
-\vspace{1in}
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Both the sampling method and the study design will help to determine the \emph{scope of inference} for a study: To \emph{whom} can we generalize, and can we conclude \emph{causation or only association}? Use your answers to question 12 and 13 and the table on the next page to determine the scope of inference of this trial study described in question 12.
+  \vspace{0.3in}
+\end{enumerate}
+
+\begin{center}\includegraphics[width=0.75\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
+
+\subsection{Scope of Inference}\label{scope-of-inference-1}
+
+The two main study designs we will cover are \textbf{observational studies} and \textbf{experiments}. In observational studies, researchers have no influence over which subjects are in each group being compared (though they can control other variables in the study). An experiment is defined by assignment of the treatment groups of the \emph{explanatory variable}, typically via random assignment.
+
+For the next exercises identify the study design (observational study or experiment), the sampling method, and the scope of inference.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\item
+  The pharmaceutical company Moderna Therapeutics, working in conjunction with the National Institutes of Health, conducted Phase 3 clinical trials of a vaccine for COVID-19 in the Fall of 2021. US clinical research sites enrolled 30,000 volunteers without COVID-19 to participate. Participants were randomly assigned to receive either the candidate vaccine or a saline placebo. They were then followed to assess whether or not they developed COVID-19. The trial was double-blind, so neither the investigators nor the participants knew who was assigned to which group.
+  \vspace{0.1in}
+
+  Study design:
+  \vspace{0.3in}
+
+  Sampling method:
+  \vspace{0.3in}
+
+  Scope of inference:
+  \newpage
+\item
+  In another study, a local health department randomly selected 1000 US adults without COVID-19 to participate in a health survey. Each participant was assessed at the beginning of the study and then followed for one year. They were interested to see which participants elected to receive a vaccination for COVID-19 and whether any participants developed COVID-19.
+  \vspace{0.1in}
+
+  Study design:
+  \vspace{0.3in}
+
+  Sampling method:
+  \vspace{0.3in}
+
+  Scope of inference:
+  \vspace{0.3in}
+\end{enumerate}
 
 \subsection{Take-home messages}\label{take-home-messages}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  In order to use theory-based methods for a single mean, the independent observational units and normality conditions must be met.
+  The study design (observational study vs, experiment) determines if we can draw causal inferences or not. If an association is detected, a randomized experiment allows us to conclude that there is a causal (cause-and-effect) relationship between the explanatory and response variable. Observational studies have potential confounding variables within the study that prevent us from inferring a causal relationship between the variables studied.
 \item
-  The simulation-based confidence interval and theory-based confidence interval should be similar if the normality condition is met.
+  Confounding variables are variables not included in the study that are related to both the explanatory and the response variables. When there are potential confounding variables in the study we cannot draw causal inferences.
 \item
-  A \(t^*\) multiplier is found by obtaining the bounds of the middle X\% (X being the desired confidence level) of a \(t\)-distribution with \(n - 1\) df.
+  Random assignment balances confounding variables across treatment groups. This eliminates any possible confounding variables by breaking the connections between the explanatory variable and the potential confounding variables.
+\item
+  Observational studies will always carry the possibility of confounding variables. Randomized experiments, which use random assignment, will have no confounding variables.
 \end{enumerate}
 
 \subsection{Additional notes}\label{additional-notes}
 
-Use this space to summarize your thoughts and take additional notes on today's activity and material covered
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage
 
-\section{Activity 15: Errors and Power}\label{activity-15-errors-and-power}
+\section{Activity 17: Summarizing Two Categorical Variables}\label{activity-17-summarizing-two-categorical-variables}
 
 \setstretch{1}
 
@@ -885,240 +1240,307 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \begin{itemize}
 \item
-  Explain Type I and Type 2 errors in the context of a study.
+  Identify and create appropriate summary statistics and plots given a data set or research question involving categorical variables.
 \item
-  Explain the power of a test in the context of a study.
+  Plots for association between two categorical variables:
+  segmented bar plot, mosaic plot.
 \item
-  Understand how changes in sample size, significance level, and the difference between the null value and the parameter value impact the power of a test.
-\item
-  Understand how significance level impacts the probability of a Type 1 error.
-\item
-  Understand the relationship between the probability of a Type 2 error and power.
-\item
-  Be able to distinguish between practical importance and statistical significance.
+  Calculate and interpret relative risk
 \end{itemize}
 
 \subsection{Terminology review}\label{terminology-review-1}
 
-In this activity, we will examine the possible errors that can be made based on the decision in a hypothesis test as well as factors influencing the power of the test. Some terms covered in this activity are:
+In today's activity, we will review summary measures and plots for categorical variables. Some terms covered in this activity are:
 
 \begin{itemize}
 \item
-  Significance level
+  Conditional proportions
 \item
-  Type 1 error
+  Segmented bar plots
 \item
-  Type 2 error
+  Mosaic plots
 \item
-  Power
+  Relative risk
 \end{itemize}
 
-To review these concepts, see Chapter 12 in the textbook.
+To review these concepts, see Chapter 4 in the textbook.
 
-\subsection{College textbook cost}\label{college-textbook-cost}
+\subsection{Graphing categorical variables}\label{graphing-categorical-variables}
 
-A college student spends, on average, \$280 on textbooks per year. Many universities have started using open-source resources to help defray the cost of textbooks. One such university is hoping to show they have successfully reduced costs by \$100 per year, on average.
+Follow these steps to upload the necessary R script file for today's activity:
+
+\begin{itemize}
+\item
+  Download the RScript file for this Activity from D2L
+\item
+  Upload and open the file on the server
+\end{itemize}
+
+the R script file from D2L
+
+\begin{itemize}
+\tightlist
+\item
+  Enter the name of the dataset (``myopia.csv'') in line 6
+\end{itemize}
+
+Highlight and run lines 1--3 to load the packages needed for today's activity. Notice the use of the \# symbol in the R script file. The \# sign is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
+
+R will ignore everything after a \# sign when executing the code. Refer to the instructions following the \# sign to understand what you need to enter in the code.
+
+\subsection*{Nightlight use and myopia}\label{nightlight-use-and-myopia}
+\addcontentsline{toc}{subsection}{Nightlight use and myopia}
+
+In a study reported in Nature (Quinn et al. 1999), a survey of 479 children found that those who had slept with a nightlight or in a fully lit room before the age of two had a higher incidence of nearsightedness (myopia) later in childhood.
+
+In this study, there are two variables studied: \texttt{Light}: level of light in room at night (no light, nightlight, full light) and \texttt{Sight}: level of myopia developed later in childhood (high myopia, myopia, no myopia).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  Write the parameter of interest (\(\mu\)) in words, in the context of this problem.
-  \vspace{0.5in}
-\item
-  Use proper notation to write the null and alternative hypotheses the university would need to test in order to check their claim.
-  \vspace{0.5in}
+  Which variable is the explanatory variable? Which is the response variable?
 \end{enumerate}
 
-After determining hypotheses and prior to collecting data, researchers should set a \textbf{significance level} for a hypothesis test. The significance level, represented by \(\alpha\) and most commonly 0.01, 0.05, or 0.10, is a cut-off for determining whether a p-value is small or not. The \emph{smaller} the p-value, the \emph{stronger} the evidence against the null hypothesis, so a p-value that is smaller than or equal to the significance level is strong enough evidence to \emph{reject the null hypothesis}. Similarly, the \emph{larger} the p-value, the \emph{weaker} the evidence against the null hypothesis, so a p-value that is larger than the significance level does not provide enough evidence against the null hypothesis and the researcher would \emph{fail to reject the null hypothesis}. Rejecting the null hypothesis or failing to reject the null hypothesis are the two \textbf{decisions} that can be made based on the data collected.
+\vspace{0.8in}
 
-As you have already learned in this course, sample size of a study is extremely important. Often times, researchers will conduct what is called a power analysis to determine the appropriate sample size based on the goals of their research, including a desired \textbf{power} of their test. Power is the probability of correctly rejecting the null hypothesis, or the probability of the data providing strong evidence against the null hypothesis \emph{when the null hypothesis is false}.
+An important part of understanding data is to create visual pictures of what the data represent. In this activity, we will create graphical representations of categorical data.
 
-The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this university.
+\subsubsection*{R code}\label{r-code}
+\addcontentsline{toc}{subsubsection}{R code}
 
-\begin{itemize}
-\item
-  Navigate to \url{https://istats.shinyapps.io/power/}.
-\item
-  Choose the tab ``Population Mean''.
-\item
-  Use the scale under ``Null Hypothesis value \(\mu_0\)'' to change the value to your null value from question 2. *Note we will convert this to a scale in hundreds of dollars (e.g., 1 = \$100). In other words, use the null value of 2.8.
-\item
-  Change the ``Alternative Hypothesis'' to the direction you wrote in question 2.
-\item
-  Leave all boxes un-checked.
-\item
-  Set the ``True value of \(\mu\)'' to 2.8 as well.
-\item
-  Do not change the scales for ``Sample size n'' or ``Type I Error \(\alpha\)'' or ``Population Std. Dev. \(\sigma\)''.
-\end{itemize}
+The line of code shown below (line 6 in the R script file) reads in the data set and names the data set \texttt{myopia}. Highlight and run line 6 in the R script file to load the data from the Stat 216 webpage.
 
-The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was \(n = 30\) and the significance level was \(\alpha = 0.05\). This means the red distribution is showing the distribution of possible sample mean amounts spent on textbooks per year (in hundreds of dollars) for a sample of 30 college students (\(\bar{x}\)) if we assume the null hypothesis is true.
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This will read in the data set}
+\NormalTok{myopia }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/ChildrenLightSight.csv"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Click on the data set name (\texttt{myopia}) in the Environment tab (upper right window). This will open the data set in a 2nd tab in the Editor window (upper left window). R is case sensitive, which means that you must always type the name of a variable EXACTLY as it is written in the data set including upper and lower case letters and without misspellings! Write down the name of each variable (column names) as it is written in the data set.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\subsubsection*{Summarizing two categorical variables}\label{summarizing-two-categorical-variables}
+\addcontentsline{toc}{subsubsection}{Summarizing two categorical variables}
+
+Is there an association between the level of light in a room and the development of myopia? Fill in the name of the explanatory variable, \texttt{Light} for explanatory and name of the response variable, \texttt{Sight} in line 29 in the R script file, highlight and run line 29 to get the counts for each combination of levels of variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myopia }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(explanatory) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(response)}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
+\tightlist
 \item
-  Based off this distribution and your alternative hypothesis, give one possible sample mean which you think would lead to rejecting the null hypothesis. Explain how you decided on your value.
-  \vspace{0.25in}
-\item
-  Check the box for ``Show Critical Value(s) and Rejection Region(s)''. You will now see a vertical line on the plot indicating the \emph{maximum} sample mean which would lead to reject the null hypothesis. That is, any sample means below this value would lead us to reject the null hypothesis; any sample means below this value would lead us to fail to reject the null hypothesis. What is this value?\\
-  \vspace{0.25in}
-\item
-  Notice that there are some sample means under the red line (when the null hypothesis is true) which would lead us to reject the null hypothesis. Give the range of sample means which would lead to rejecting the null hypothesis when the null hypothesis is true? What is the statistical name for this mistake?
-  \vspace{0.4in}
+  Fill in the following table with the values from the R output.
 \end{enumerate}
 
-Check the ``Type I Error'' box under \textbf{Display}. This should verify (or correct) your answer to question 5! The area shaded in red represents the probability of making a \textbf{Type 1 Error} in our hypothesis test. Recall that a Type 1 error is when we reject the null hypothesis even though the null hypothesis is true. To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level. Therefore the significance level is the probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a Type 1 error in a hypothesis test!
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{14pt} % Default value: 6pt
+\renewcommand{\arraystretch}{2} % Default value: 1
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & \multicolumn{3}{|c|}{\textbf{Light Level}} & \\ \hline
+\textbf{Myopia Level} & Full Light & Nightlight & No Light & Total \\ \hline
+ High Myopia & & & & \\ \hline
+ Myopia & & & & \\ \hline
+ No Myopia & & & & \\ \hline
+ Total & & & & \\ \hline  
+\end{tabular}
+\endgroup
+\end{center}
+
+In the following questions, use the table to calculate the described proportions. Notation is important for each calculation. Since this is sample data, it is appropriate to use statistic notation for the proportion, \(\hat{p}\). When calculating a proportion dependent on a single level of a variable, subscripts are needed when reporting the notation.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
+\setcounter{enumi}{3}
 \item
-  Based on the current applet settings, what percent of the null distribution is shaded red (i.e., what is the probability of making a Type 1 error)?
-  \vspace{0.25in}
+  Calculate the proportion of children with no myopia. Use appropriate notation.
+  \vspace{0.3in}
+\item
+  Calculate the proportion of children with no myopia among those that slept with full light. Use appropriate notation.
+  \vspace{0.3in}
+\item
+  Calculate the proportion of children with no myopia among those that slept with no light. Use appropriate notation.
+  \vspace{0.3in}
+\item
+  Calculate the difference in proportion of children with no myopia for those that slept with full light minus those who slept with no light. Give the appropriate notation. Use full light minus no light as the order of subtraction.
+  \vspace{0.8in}
+\item
+  Interpret the calculated difference in proportion in context of the study.
 \end{enumerate}
 
-\newpage
+\vspace{1in}
 
-Let's say this university believes their program can reduce the cost of textbooks for college students by \$100 per year. In the applet, set the scale under ``True value of \(\mu\)'' to 1.8.
+\subsubsection*{Displaying two categorical variables}\label{displaying-two-categorical-variables}
+\addcontentsline{toc}{subsubsection}{Displaying two categorical variables}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Where is the blue distribution centered?
-  \vspace{0.25in}
-\end{enumerate}
+Two types of plots can be created to display two categorical variables. To examine the differences in level of myopia for the level of light, we will first create a segmented bar plot of \texttt{Light} segmented by \texttt{Sight}. To create the segmented bar plot enter the variable name, \texttt{Light} for \texttt{explanatory} and the variable name, \texttt{Sight} for \texttt{response} in the R script file in line 35. Highlight and run lines 34--40.
 
-The blue distribution that appears represents what the university believes, that \$180 (not \$280) is the true mean textbook cost for college students at this university. This blue distribution represents the idea that the \textbf{null hypothesis is false}.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  Consider the definition of power provided earlier in this activity. Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know? What about the probability of making a Type 2 error?
-  \vspace{1in}
-\end{enumerate}
-
-Check the ``Type II Error'' and ``Power'' boxes under \textbf{Display}. This should verify (or correct) your answers to question 8! The area shaded in blue represents the probability of making a \textbf{Type 2 Error} in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false). The area shaded in green represents the power of the test. Notice that the Type 1 and Type 2 error rates and the power of the test are provided above the distribution.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myopia }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{fill =}\NormalTok{ response)) }\SpecialCharTok{+}   \CommentTok{\# This specifies the variables}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"count"}\NormalTok{, }\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Tell it to make a stacked bar plot}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Segmented Bar Plot of Night Light Use by Level of Myopia"}\NormalTok{,  }
+       \CommentTok{\# Make sure to title your plot }
+       \AttributeTok{x =} \StringTok{"Level of Light"}\NormalTok{,   }\CommentTok{\# Label the x axis}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{)  }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
+  \FunctionTok{scale\_fill\_viridis\_d}\NormalTok{()  }\CommentTok{\# Make figure color}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{8}
 \tightlist
 \item
-  Complete the following equation: Power + Type 2 Error Rate = \_\_\_. Explain why that equation makes sense. \emph{Hint: Consider on what power and Type 2 error are conditional.}
-  \vspace{0.6in}
+  Sketch the segmented bar plot created here. Be sure to label the axes.
 \end{enumerate}
 
-Now let's investigate how changes in different factors influence the power of a test.
+\vspace{2in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{9}
+\tightlist
 \item
-  Using the same sample size and significance level, change the ``True value of \(\mu\)'' to see the effect on power.
-  \setlength\tabcolsep{0.5cm}
-
-  \begin{longtable}{|l|c|c|c|c|}
-  \hline
-  \textbf{True value of $p$}& 2.0 & 1.5 & 1.0 & 0.05\\ \hline
-  \textbf{Power} & & & &  \\ \hline
-  \end{longtable}
-\item
-  What is changing about the simulated distributions pictured as you change the ``True value of \(\mu\)''?
-  \vspace{0.6in}
-\item
-  How does increasing the distance between the null and believed true mean affect the power of the test?
-  \vspace{0.6in}
+  From the segmented bar plot, which level of light has the highest proportion of \texttt{No\ Myopia}?
 \end{enumerate}
 
-\newpage
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Based on the plot, is there an association between level of light and level of myopia?
+\end{enumerate}
+
+\vspace{1in}
+
+We could also plot the data using a mosaic plot which is shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{myopia}\SpecialCharTok{$}\NormalTok{Sight }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(myopia}\SpecialCharTok{$}\NormalTok{Sight, }\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"No Myopia"}\NormalTok{, }\StringTok{"Myopia"}\NormalTok{, }\StringTok{"High Myopia"}\NormalTok{))}
+\NormalTok{myopia }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}   \CommentTok{\# This specifies the variables}
+  \FunctionTok{geom\_mosaic}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{product}\NormalTok{(Light), }\AttributeTok{fill =}\NormalTok{ Sight)) }\SpecialCharTok{+}  \CommentTok{\# Tell it to make a mosaic plot}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mosaic Plot of Night Light Use by Level of Myopia"}\NormalTok{,  }\CommentTok{\# Make sure to title your plot }
+       \AttributeTok{x =} \StringTok{"Level of Light"}\NormalTok{,   }\CommentTok{\# Label the x axis}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Remove y axis label}
+  \FunctionTok{scale\_fill\_grey}\NormalTok{(}\AttributeTok{guide =} \FunctionTok{guide\_legend}\NormalTok{(}\AttributeTok{reverse =} \ConstantTok{TRUE}\NormalTok{))  }\CommentTok{\# Make figure color}
+\CommentTok{\#\textgreater{} Warning: The \textasciigrave{}scale\_name\textasciigrave{} argument of \textasciigrave{}continuous\_scale()\textasciigrave{} is deprecated as of ggplot2}
+\CommentTok{\#\textgreater{} 3.5.0.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was}
+\CommentTok{\#\textgreater{} generated.}
+\CommentTok{\#\textgreater{} Warning: The \textasciigrave{}trans\textasciigrave{} argument of \textasciigrave{}continuous\_scale()\textasciigrave{} is deprecated as of ggplot2 3.5.0.}
+\CommentTok{\#\textgreater{} i Please use the \textasciigrave{}transform\textasciigrave{} argument instead.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was}
+\CommentTok{\#\textgreater{} generated.}
+\CommentTok{\#\textgreater{} Warning: \textasciigrave{}unite\_()\textasciigrave{} was deprecated in tidyr 1.2.0.}
+\CommentTok{\#\textgreater{} i Please use \textasciigrave{}unite()\textasciigrave{} instead.}
+\CommentTok{\#\textgreater{} i The deprecated feature was likely used in the ggmosaic package.}
+\CommentTok{\#\textgreater{}   Please report the issue at \textless{}https://github.com/haleyjeppson/ggmosaic\textgreater{}.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was}
+\CommentTok{\#\textgreater{} generated.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{08-A17-EDA-categorical_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  What is similar and what is different between the segmented bar chart and the mosaic bar chart?
+\end{enumerate}
+
+\vspace{1in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{12}
 \tightlist
 \item
-  Using the same significance level, set the ``True value of \(\mu\)'' back to 1.8 and change the sample size to see its effect on power.
+  Explain why the bar for \texttt{Nightlight} is the widest in the mosaic plot.
 \end{enumerate}
 
-\setlength\tabcolsep{0.6cm}
-\begin{longtable}{|l|c|c|c|c|c|}
-\hline
-\textbf{Sample Size}& 20 & 40 & 50 & 60 & 80 \\ \hline
-\textbf{Power} & & & & &  \\ \hline
-\end{longtable}
+\vspace{0.8in}
+
+\subsubsection*{Relative Risk}\label{relative-risk}
+\addcontentsline{toc}{subsubsection}{Relative Risk}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{13}
+\tightlist
 \item
-  What is changing about the simulated distributions pictured as you change the sample size?
-  \vspace{0.6in}
-\item
-  How does increasing the sample size affect the power of the test?
-  \vspace{0.6in}
-\item
-  Using the same ``True value of \(\mu\)'', set the sample size to 30 and change the ``Type I Error \(\alpha\)'' to see the effect on power.
+  Calculate the relative risk of myopia for children that slept with full light compared to those that slept with no light.
 \end{enumerate}
 
-\setlength\tabcolsep{0.5cm}
-\begin{longtable}{|l|c|c|c|c|c|}
-\hline
-\textbf{Type I Error $\alpha$}& 0.01 & 0.03 & 0.05 & 0.10 & 0.15 \\ \hline
-\textbf{Power} & & & & &  \\ \hline
-\end{longtable}
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Interpret the value of relative risk in context of the problem.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  Calculate the percent increase/decrease in risk of myopia for children that slept with full light compared to those that slept with no light.
+\end{enumerate}
+
+\vspace{0.8in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{16}
+\tightlist
 \item
-  What is changing about the simulated distributions pictured as you change the significance level?
-  \vspace{0.6in}
-\item
-  How does increasing the significance level affect the power of the test?
-  \vspace{0.6in}
-\item
-  Complete the power analysis for this university: The university believes they can reduce the cost of textbooks for their students by \$100. They want to limit the probability of a type 1 error to 10\% and the probability of a type 2 error to 15\%. What is the minimum number of students the university will need to collect data on in order to meet these goals? Use the applet to answer this question.
-  \vspace{0.4in}
-\item
-  Based on the goals outlined in question 19, which mistake below is the university more concerned about? In other words, which of the following two errors were the researchers trying to minimize. Explain your answer.
+  Interpret as a percent increase/decrease in risk in context of the problem.
 \end{enumerate}
 
-\begin{itemize}
-\item
-  Not being able to show their textbook cost is lower, on average, when their textbook cost really is lower.
-\item
-  Advertising their textbook cost is lower, on average, even though it is not.
-\end{itemize}
-
-\vspace{0.8in}
+\vspace{1in}
 
 \subsection{Take-home messages}\label{take-home-messages-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  There is a possibility of Type 1 error when we make the decision to reject the null hypothesis. Type 1 error: reject the null hypothesis when the null hypothesis is true. The probability of a Type 1 error when the null hypothesis is true is equal to the significance level, \(\alpha\).
+  Bar charts can be used to graphically display a single categorical variable either as counts or proportions. Segmented bar charts and mosaic plots are used to display two categorical variables.
 \item
-  There is a possibility of Type 2 error when we make the decision to fail to reject the null hypothesis. Type 2 error: fail to reject the null hypothesis when the null hypothesis is false.
+  Segmented bar charts always have a scale from 0 - 100\%. The bars represent the outcomes of the explanatory variable. Each bar is segmented by the response variable. If the heights of each segment are the same for each bar there is no association between variables.
 \item
-  Power of a test is the probability we reject the null when the null hypothesis is false. Power is equal to 1 minus the probability of a Type 2 error.
-\item
-  Changing the following will \emph{increase} the power of the test:
-
-  \begin{itemize}
-  \item
-    \emph{Increase} the sample size
-  \item
-    \emph{Increase} the significance level
-  \item
-    \emph{Increase} the distance between the null value and the parameter value (note that we don't have control over this!)
-  \end{itemize}
+  Mosaic plots are similar to segmented bar charts but the widths of the bars also show the number of observations within each outcome.
 \end{enumerate}
 
 \subsection{Additional notes}\label{additional-notes-1}
@@ -1127,7 +1549,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \newpage
 
-\section{Module 6 and 7 Lab: Arsenic}\label{module-6-and-7-lab-arsenic}
+\section{Activity 18: The Good Samaritan}\label{activity-18-the-good-samaritan}
 
 \setstretch{1}
 
@@ -1135,49 +1557,142 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \begin{itemize}
 \item
-  Given a research question involving one quantitative variable, construct the null and alternative hypotheses
+  Given a research question involving two categorical variables, construct the null and alternative hypotheses
   in words and using appropriate statistical symbols.
 \item
-  Investigate the process of creating a null distribution for one quantitative variable.
+  Investigate the process of creating a null distribution for two categorical variables
 \item
-  Find, evaluate, and interpret a p-value from the null distribution.
-\item
-  Use simulation-based methods to find a confidence interval for a single mean.
-\item
-  Interpret a confidence interval for a single mean.
-\item
-  Use a confidence interval to determine the conclusion of a hypothesis test.
+  Find and evaluate a p-value from the null distribution
 \end{itemize}
 
-\subsection{Arsenic}\label{arsenic}
+\subsection{Terminology review}\label{terminology-review-2}
 
-Scientists have devised a new way to measure a person's level of arsenic poisoning by examining toenail clippings. Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire. An arsenic level greater than 0.150 ppm is considered hazardous. Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)? How high is the arsenic concentration for New Hampshire residents with a private well?
+In today's activity, we will use simulation-based methods to analyze two categorical variables. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Conditional proportion
+\item
+  Null hypothesis
+\item
+  Alternative hypothesis
+\end{itemize}
+
+To review these concepts, see Chapter 15 in your textbook.
+
+\subsection{The Good Samaritan}\label{the-good-samaritan}
+
+Researchers at the Princeton University wanted to investigate influences on behavior (Darley and Batson 1973). The researchers randomly selected 67 students from the Princeton Theological Seminary to participate in a study. Only 47 students chose to participate in the study, and the data below includes 40 of those students (7 students were removed from the study for various reasons). As all participants were theology majors planning a career as a preacher, the expectation was that all would have a similar disposition when it comes to helping behavior. Each student was then shown a 5-minute presentation on the Good Samaritan, a parable in the Bible which emphasizes the importance of helping others. After the presentation, the students were told they needed to give a talk on the Good Samaritan parable at a building across campus. Half the students were told they were late for the presentation; the other half told they could take their time getting across campus (the condition was randomly assigned). On the way between buildings, an actor pretending to be a homeless person in distress asked the student for help. The researchers recorded whether the student helped the actor or not. The results of the study are shown in the table below. Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation? Use the order of subtraction hurry -- no hurry.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline
+& Hurry Condition & No Hurry Condition & Total \\ \hline
+Helped Actor & 2 & 11 & 13 \\ \hline
+Did Not Help Actor & 18 & 9 & 27 \\ \hline
+Total & 20 & 20 & 40 \\ \hline
+\end{tabular}
+\end{center}
+
+These counts can be found in R by using the \texttt{count()} function:
+
+\begin{itemize}
+\item
+  Download the R script file from D2L and upload to the RStudio server
+\item
+  Highlight and run lines\ldots..to get the counts for each group
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Read data set in}
+\NormalTok{good }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/goodsam.csv"}\NormalTok{) }
+\NormalTok{good }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Condition) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(Behavior)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#> # A tibble: 4 x 3
+#> # Groups:   Condition [2]
+#>   Condition Behavior     n
+#>   <chr>     <chr>    <int>
+#> 1 Hurry     Help         2
+#> 2 Hurry     No help     18
+#> 3 No hurry  Help        11
+#> 4 No hurry  No help      9
+\end{verbatim}
+
+\subsubsection*{Ask a research question}\label{ask-a-research-question}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+The research question as stated above is: Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation? In order to set up our hypotheses, we need to express this research question in terms of parameters.
+
+Remember, we define the parameter for a single categorical variable as the true proportion of observational units that are labeled as a ``success'' in the response variable.
+
+For this study we are identifying two parameters and looking at the difference between these two parameters.
+
+\begin{itemize}
+\item
+  \(\pi_\text{hurry}\) = long-run proportion of Princeton Theological Seminary students assigned to hurry that helped the actor
+\item
+  \(\pi_\text{no hurry}\) = long-run proportion of Princeton Theological Seminary students assigned not to hurry that helped the actor
+\item
+  \(\pi_\text{hurry} - \pi_\text{no hurry}\) = the difference in long-run proporiton of Princeton Theological Seminary Students that helped the actor between those who were assigned to hurry and those who were not assigned to hurry
+\end{itemize}
+
+When comparing two groups, we assume the two parameters are equal in the null hypothesis---there is no association between the variables.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  What does \(\mu\) represent in the context of this study?
+  Write the null hypothesis out in words.
 \end{enumerate}
 
-\vspace{0.8in}
+\vspace{0.4in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Notice that there are two research questions for this study. Identify which research question is best answered by finding a confidence interval and which is best answered by completing a hypothesis test?
+  Based on the research question, fill in the appropriate sign for the alternative hypothesis (\(<\), \(>\), or \(\neq\)):
+  \vspace{2mm}
 \end{enumerate}
 
-\vspace{0.5in}
+~~~~~~~~~~\(H_A: \pi_{\text{hurry}} -\pi_{\text{no hurry}}\) \_\_\_\_\_\_\_\_\_\_ 0
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+To create the segmented bar plot:
+
+\begin{itemize}
+\item
+  Enter the name of the explanatory variable for explanatory
+\item
+  Enter the name of the response variable for reponse
+\item
+  Highlight and run lines\ldots..
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{good }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{fill =}\NormalTok{ response))}\SpecialCharTok{+} \CommentTok{\#Enter the variables to plot}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"count"}\NormalTok{, }\AttributeTok{position =} \StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Segmented bar plot of Condition of Seminary }\SpecialCharTok{\textbackslash{}n}\StringTok{ Students by Behavior"}\NormalTok{, }\CommentTok{\#Title your plot}
+       \AttributeTok{y =} \StringTok{"Relative Frequency"}\NormalTok{, }\CommentTok{\#y{-}axis label}
+       \AttributeTok{x =} \StringTok{"Condition"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\#x{-}axis label}
+  \FunctionTok{scale\_fill\_grey}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Write out the null hypothesis in proper notation for this study.
+  Based on the segmented bar plot, is there an association between whether a Seminary student helps the actor and condition assigned?
 \end{enumerate}
 
 \vspace{0.4in}
@@ -1187,231 +1702,188 @@ Scientists have devised a new way to measure a person's level of arsenic poisoni
 \setcounter{enumi}{3}
 \tightlist
 \item
-  What sign (\(<\), \(>\), or \(\neq\)) would you use in the alternative hypothesis for this study? Explain your choice.
+  Using the two-way table given in the introduction, calculate the conditional proportion of students in the hurry condition who helped the actor. Use appropriate notation.
 \end{enumerate}
 
-\vspace{0.5in}
-
-\begin{itemize}
-\item
-  Upload and open the R script file for Week 12 lab.
-\item
-  Upload and import the csv file, \texttt{arsenic}.
-\item
-  Enter the name of the data set (see the environment tab) for \texttt{datasetname} in the R script file in line 11.
-\item
-  Enter the name of the variable in lines 15
-\item
-  Write a title for the plot between the quotations and an x-axis label
-\item
-  Highlight and run lines 1--21 to load the data and create a plot of the data.
-\item
-  \textbf{Upload a screenshot of your plot to Gradescope}.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{water }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/arsenic.csv"}\NormalTok{)}
-\NormalTok{water }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(variable))}
-\NormalTok{water }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
-    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
-         \AttributeTok{x =} \StringTok{"Enter an x{-}axis label! Don\textquotesingle{}t forget the units!"}\NormalTok{, }\CommentTok{\# Label for x axis}
-         \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
-    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
-          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
-\end{Highlighting}
-\end{Shaded}
+\vspace{.3in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
+\tightlist
 \item
-  Based on the plot, does there appear to be some support in favor of the alternative hypothesis? How do you know?
-  \vspace{0.4in}
-\item
-  Interpret the value of \(Q_3\) in context of the study.
+  Using the two-way table given in the introduction, calculate the conditional proportion of students in the no hurry condition who helped the actor. Use appropriate notation.
 \end{enumerate}
 
-\vspace{0.8in}
+\vspace{.3in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
+\setcounter{enumi}{5}
+\tightlist
 \item
-  What is the value of \(\bar{x}\)? What is the sample size?
-  \vspace{0.25in}
-\item
-  \textbf{How far, on average, is each arsenic level from the mean arsenic level? What is the appropriate notation for this value?}
+  Calculate the summary statistic (difference in sample proportion) for this study. Use Hurry - No hurry as the order of subtraction. Use appropriate notation.
 \end{enumerate}
 
-\vspace{0.4in}
+\vspace{0.5in}
 
-\subsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}
-\addcontentsline{toc}{subsection}{Use statistical inferential methods to draw inferences from the data}
+\textbf{Interpretation of the summary statistic:}
+
+The proportion of Princeton Theological Seminary students that helped the actor is 0.45 less for those assigned to hurry compared to those assigned not to hurry.
+
+\subsubsection*{Hypothesis Test}\label{hypothesis-test}
+\addcontentsline{toc}{subsubsection}{Hypothesis Test}
+
+We will now simulate a \textbf{null distribution} of sample differences in proportions. The null distribution is created under the assumption the null hypothesis is true.
+
+Using the cards provided by your instructor, simulate one sample under the assumption the null hypothesis is true.
+
+\begin{itemize}
+\item
+  Start with 40 cards (13 labeled helped, 27 labeled did not help)
+\item
+  Mix the cards together
+\item
+  Shuffle the cards into two piles (20 in hurry, 20 in no hurry)
+\item
+  Calculate the proportion of simulated students that helped in each group.
+\item
+  Report the difference in proportion of simulated students that helped (hurry - no hurry)
+\end{itemize}
+
+The segmented bar plot below shows the relationship between the variables for \textbf{one simulation assuming the null hypothesis is true}.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{08-A18-inference-2cat-simulationtest_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\newpage
+
+To create the null distribution of differences in sample proportions, we will use the \texttt{two\_proportion\_test()} function in R (in the \texttt{catstats} package). We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{good}), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (what the numerator counts when calculating a sample proportion), and the direction of the alternative hypothesis.
+
+The response variable name is \texttt{Behavior} and the explanatory variable name is \texttt{Condition}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  What inputs should be entered for each of the following to create the simulation?
+  \vspace{1mm}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  First in subtraction (What is the outcome for the explanatory variable that is used as first in the order of subtraction? \texttt{"Hurry"} or \texttt{"No\ hurry"}):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Number of repetitions:
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Response value numerator (What is the outcome for the response variable that is considered a success? \texttt{"Help"} or \texttt{"No\ help"}):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  As extreme as (enter the value for the sample difference in proportions):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction (\texttt{"greater"}, \texttt{"less"}, or \texttt{"two-sided"}):
+\end{itemize}
+
+\vspace{.15in}
+
+Using the R script file for this activity, enter your answers for question 16 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations; highlight and run lines 1--16.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Behavior}\SpecialCharTok{\textasciitilde{}}\NormalTok{Condition, }\CommentTok{\# response \textasciitilde{} explanatory}
+    \AttributeTok{data =}\NormalTok{ good, }\CommentTok{\# Name of data set}
+    \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
+    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success}
+    \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
+    \AttributeTok{direction=}\StringTok{"xx"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{8}
 \tightlist
 \item
-  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation-based methods could be used to analyze the data. Explain your reasoning.
+  Sketch the null distribution created here.
 \end{enumerate}
 
-\vspace{1in}
-
-\subsection*{Hypothesis test}\label{hypothesis-test}
-\addcontentsline{toc}{subsection}{Hypothesis test}
-
-Remember that the null distribution is created based on the assumption the null hypothesis is true. In this study, the null hypothesis states that the average arsenic levels are not hazardous.
-
-We will use the \texttt{one\_mean\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample means and compute a p-value.
-
-\newpage
+\vspace{1.5in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{9}
 \tightlist
 \item
-  Simulate a null distribution and compute the p-value, using the R script file for this lab.
+  Explain why the null distribution is centered around the value of zero?
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{one\_mean\_test}\NormalTok{(water}\SpecialCharTok{$}\NormalTok{level\_arsenic,   }\CommentTok{\#Enter the name of the variable}
-              \AttributeTok{null\_value =} \FloatTok{0.150}\NormalTok{, }\CommentTok{\#Enter the name of the null value}
-              \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#Choose mean or median to test}
-              \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{0.122}\NormalTok{,  }\CommentTok{\# Shift needed for bootstrap hypothesis test}
-              \AttributeTok{as\_extreme\_as =} \FloatTok{0.272}\NormalTok{,  }\CommentTok{\# Observed statistic}
-              \AttributeTok{direction =} \StringTok{"greater"}\NormalTok{,  }\CommentTok{\# Direction of alternative}
-              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)  }\CommentTok{\# Number of simulated samples for null distribution}
-\end{Highlighting}
-\end{Shaded}
-
-~~~~~~~Sketch the null distribution created using the \texttt{one\_mean\_test} code.
-
-\vspace{1.5in}
-
-\subsection*{Communicate the results and answer the research question}\label{communicate-the-results-and-answer-the-research-question}
-\addcontentsline{toc}{subsection}{Communicate the results and answer the research question}
+\vspace{.8in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{10}
 \tightlist
 \item
-  \textbf{Report the p-value. Based off of this p-value and a 1\% significance level, what decision would you make about the null hypothesis? What potential error might you be making based on that decision?}
+  Interpret the p-value in context of the study.
 \end{enumerate}
 
-\vspace{0.5in}
+\vspace{1in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{11}
 \tightlist
 \item
-  Do you expect the 98\% confidence interval to contain the null value of zero? Explain.
+  Write a conclusion in context of the study.
 \end{enumerate}
 
-\vspace{0.8in}
+\vspace{1in}
 
-\subsection*{Confidence interval}\label{confidence-interval-1}
-\addcontentsline{toc}{subsection}{Confidence interval}
-
-We will use the \texttt{one\_mean\_CI()} function in R (in the \texttt{catstats} package) to simulate a bootstrap distribution of sample means and calculate a confidence interval.
+\subsection{Take-home messages}\label{take-home-messages-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
 \tightlist
 \item
-  Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the \texttt{one\_mean\_CI()} function to create the 98\% confidence interval.
+  When comparing two groups, we are looking at the difference between two parameters. In the null hypothesis, we assume the two parameters are equal, or that there is no difference between the two proportions.
 \end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{one\_mean\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ water}\SpecialCharTok{$}\NormalTok{level\_variable, }\CommentTok{\# Enter vector of differences}
-            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{,  }\CommentTok{\# Not needed when entering vector of differences}
-            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples for CI}
-            \AttributeTok{confidence\_level =}\NormalTok{ xx)  }\CommentTok{\# Confidence level in decimal form}
-\end{Highlighting}
-\end{Shaded}
-
-Report the 98\% confidence interval in interval notation.
-
-\vspace{0.3in}
-
-\newpage
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{13}
+\setcounter{enumi}{1}
 \tightlist
 \item
-  Write a paragraph summarizing the results of the study. \textbf{Upload a copy of your group's paragraph to Gradescope.} Be sure to describe:
+  To create one simulated sample on the null distribution for a difference in sample proportions, label \(n_1 + n_2\) cards with the response variable outcomes from the original data. Mix cards together and shuffle into two new groups of sizes \(n_1\) and \(n_2\), representing the explanatory variable groups. Calculate and plot the difference in proportion of successes.
 \end{enumerate}
 
-\begin{itemize}
-\item
-  Summary statistic and interpretation
+\subsection{Additional notes}\label{additional-notes-2}
 
-  \begin{itemize}
-  \item
-    Summary measure (in context)
-  \item
-    Value of the statistic
-  \end{itemize}
-\item
-  P-value and interpretation
-
-  \begin{itemize}
-  \item
-    Statement about probability or proportion of samples
-  \item
-    Statistic (summary measure and value)
-  \item
-    Direction of the alternative
-  \item
-    Null hypothesis (in context)
-  \end{itemize}
-\item
-  Confidence interval and interpretation
-
-  \begin{itemize}
-  \item
-    How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-  \item
-    Parameter of interest
-  \item
-    Calculated interval
-  \end{itemize}
-\item
-  Conclusion (written to answer the research question)
-
-  \begin{itemize}
-  \item
-    Amount of evidence
-  \item
-    Parameter of interest
-  \item
-    Direction of the alternative hypothesis
-  \end{itemize}
-\item
-  Scope of inference
-
-  \begin{itemize}
-  \tightlist
-  \item
-    To what group of observational units do the results apply (target population or observational units similar to the sample)?
-  \end{itemize}
-\end{itemize}
-
-\newpage
-
-Paragraph (continued):
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage
 

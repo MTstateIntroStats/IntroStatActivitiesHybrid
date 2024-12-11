@@ -53,7 +53,7 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 * **Upload a screenshot of your plot to Gradescope**.
 
 ```{r, echo=TRUE, eval=FALSE}
-water <- read.csv("data/arsenic.csv")
+water <- read.csv("datasetname.csv")
 water %>%
     summarise(favstats(variable))
 water %>% # Data set piped into...
