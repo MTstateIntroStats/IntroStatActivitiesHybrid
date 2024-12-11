@@ -100,6 +100,10 @@ object %>% # Data set piped into...
 
 #### Inference {-}
 
+* **Sampling distribution** (of a statistic): the distribution of possible values of a statistic across repeated samples of the same size and under the same conditions.
+
+    * We can create a _simulated_ sampling distribution using simulation-based methods to simulate many samples, or we can mathematically model the sampling distribution (theory-based methods).
+
 * **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis.
 
     * When we observe an effect in a sample, we would like to determine if this observed effect represents an actual effect in the population, or whether it was simply due to random chance.
@@ -126,7 +130,7 @@ $$H_A: \pi \left\{
 \right\}
 \pi_0 $$
 
-* **Null distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
+* **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 
 * **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
 

@@ -62,7 +62,7 @@ $$
 $$ME = z^* \times SE(\hat{p})$$
 where $z^*$ is the **multiplier**, corresponding to the desired confidence level found from the standard normal distribution. For example, for a 95\% confidence level, the middle 95\% of the standard normal distribution falls between $-z^*=-1.96$ and $z^*=1.96$.
     
-* **Standard error of the sample proportion for a confidence interval**:
+* **Standard error of the sample proportion for a confidence interval**  (not assuming the null is true):
 $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
 
 * To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population proportion is:
