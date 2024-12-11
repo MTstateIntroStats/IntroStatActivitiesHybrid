@@ -19,9 +19,11 @@ In today's activity, we will review summary measures and plots for paired data. 
 
 * Mean difference
 
+* Standard deviation
+
+* Quartiles
+
 * 
-
-
 
 To review these concepts, see Chapter 5 and 18 in the textbook.
 
@@ -38,223 +40,104 @@ For each of the following scenarios, determine whether the samples are paired or
 3.  An industry leader is investigating a possible wage gap between male and non-male employees.  Twenty companies within the industry are randomly selected and the average salary for all males and non-males in mid-management positions is recorded for each company.
 \vspace{0.3in}
 
+4. Researchers conducted a study to evaluate the effectiveness of a brief yoga intervention on working memory improvement. A sample of 43 undergraduate students at Texas State University was recruited for the study. Participants completed six yoga sessions. Working memory was assessed before and after the intervention using the Digit Span Forward task, which involves recalling a sequence of numbers in the same order they were presented. The maximum number of digits correctly recalled in the proper order served as the measure of working memory. Is there evidence that working memory is higher, on average, after completing six yoga sessions than before six yoga sessions?  
+\vspace{0.3in}
 
-<!-- ### Movies released in 2016 -->
 
-<!-- A data set was collected on movies released in 2016 [@imdb].  Here is a list of some of the variables collected on the observational units, movies released in 2016.   -->
+### Tattoo Effect on Sweat Rate 
 
-<!-- | **Variable** 	| **Description** | -->
-<!-- |----	|-------------	| -->
-<!-- | `budget_mil` | Amount of money (in US $ millions) budgeted for the production of the movie | -->
-<!-- | `revenue_mil` | Amount of money (in US $ millions) the movie made after release| -->
-<!-- | `duration` | Length of the movie (in minutes)| -->
-<!-- | `content_rating` | Rating of the movie (`G`, `PG`, `PG-13`, `R`, `Not Rated`)| -->
-<!-- | `imdb_score` | IMDb user rating score from 1 to 10 | -->
-<!-- | `genres` | Categories the movie falls into (e.g., Action, Drama, etc.) | -->
-<!-- | `facebook_likes` | Number of likes a movie receives on Facebook | -->
+The popularity of tattoos has increased tremendously in the last 10 years particularly among athletes and military personnel. A study reported in *Medicine & Science in Sports & Exercise* [@] looked at whether skin tattoos altered a person's sweat rate.  The study participants were 10 healthy men with a tattoo.  According to the article, sweat was stimulated by iontophoresis using agar gel disks impregnated with 0.5% pilocarpine nitrate.  The sweat rate was determined by weighing the disk before and after sweat collection. Sweat rate was measured on both the tattooed skin and untattooed skin from the same participant.  We will use these data to assess the difference in sweat rate between the tattooed and untattooed skin (tat - notat).
 
-<!-- \newpage -->
 
-<!-- #### Summarizing a single quantitative variable {-} -->
+### Exploring Paired Data
 
-<!-- The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `imdb_score`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for IMDb score.  -->
+5. Explain why this is a paired study design and not independent groups.
 
-<!-- * Highlight and run lines 1 -- 9 in the provided `R` script file to load the data set.  Check that the summary statistics match the output given in the coursepack. -->
+\vspace{1in}
 
-<!-- ```{r, echo=TRUE, collapse = FALSE} -->
-<!-- # Read in data set -->
-<!-- movies <- read.csv("https://math.montana.edu/courses/s216/data/Movies2016_F24.csv")  -->
-<!-- movies %>% # Data set piped into... -->
-<!--   summarise(favstats(imdb_score)) # Apply favstats function to imdb_score -->
-<!-- ``` -->
+* Download the R script file and the data file for this activity from D2L
 
-<!-- 1. Report the values for the two measures of center (mean and median). -->
+* Upload the R script file and data set to the RStudio server
 
-<!-- \vspace{0.5in} -->
+* Open the R script file and enter the name of the dataset for datasetname.csv
 
-<!-- 2. Calculate the interquartile range (IQR = Q3 $-$ Q1) of IMDb scores. -->
+* Run lines 1--9 to create the paired plot
 
-<!-- \vspace{0.5in} -->
+```{r}
+tats <- read.csv("data/tattoos.csv")
+paired_observed_plot(tats) 
+```
 
-<!-- 3. Report the value of the standard deviation and interpret this value in context of the problem. -->
-<!-- \vspace{0.8in} -->
+6. What is the value of the mean difference?  Give the appropriate notation.
 
-<!-- #### Displaying a single quantitative variable {-} -->
+\vspace{0.2in}
 
-<!-- There are three type of plots used to plot a single quantitative variable: a dotplot, a histogram or a boxplot.  A dotplot of IMDb scores would plot a dot for the IMDb score for each movie released in 2016. -->
+7. What is the value of the standard deviation of the differences.  Give the appropriate notation.
 
-<!-- We will create both a histogram and a boxplot of the variable `IMDb`.   -->
+\vspace{0.2in}
 
-<!-- * Enter the name of the variable in both line 16 and line 23 for `variable` in the R script file.   -->
+8.  You may notice that the difference in the means (lllll ) is equal to the mean difference you reported in Q6.  That is not true for the standard deviations.  Explain why?
 
-<!-- * Replace the word title for each plot (lines 18 and 25) between the quotations with a descriptive title.  **A title should include: type of plot, variable or variables plotted, and observational units.**   -->
+\vspace{0.8in}
 
-<!-- * Highlight and run lines 15 -- 27 to create a histogram and boxplot.  -->
+9. Interpret the value of the standard deviation of the differences
 
-<!-- Notice that the **bin width** for the histogram is 0.5.  For example the first bin consists of the number of movies in the data set with an IMDb score of 3.25 to 3.75.  It is important to note that a movie with a IMDb score on the boundary of a bin will fall into the bin above it; for example, 4.75 would be counted in the bin 4.75--5.25.   -->
+\vspace{0.6in}
 
-<!-- ```{r, out.width="60%", echo=TRUE, eval=FALSE} -->
-<!-- movies %>% # Data set piped into... -->
-<!-- ggplot(aes(x = variable)) +   # Name variable to plot -->
-<!--   geom_histogram(binwidth = 0.5) +  # Create histogram with specified binwidth -->
-<!--   labs(title = "Title", # Title for plot -->
-<!--        x = "IMDb Score", # Label for x axis -->
-<!--        y = "Frequency") # Label for y axis -->
+10.  What is the shape of the distribution of the differences?
 
-<!-- movies %>% # Data set piped into... -->
-<!-- ggplot(aes(x = variable)) +   # Name variable to plot -->
-<!--   geom_boxplot() +  # Create histogram with specified binwidth -->
-<!--   labs(title = "Title", # Title for plot -->
-<!--        x = "IMDb Score", # Label for x axis -->
-<!--        y = "") # Remove y axis label -->
+\vspace{0.3in}
 
-<!-- ``` -->
+To find the differences to continue to assess this data and create a boxplot of the differences...
 
-<!-- 4. Click the left arrow button on the Plots tab in the lower right-hand corner of the RStudio screen to toggle back to the histogram.  What is the shape of the distribution of IMDb scores? -->
+* Enter Tattoo for measurement_1 and No_Tattoo for measurement_2 in line 15
 
-<!-- \vspace{0.2in} -->
+* Highlight and run lines 13 - 23
 
+```{r}
+par(mfrow=c(1,1))
+tat_diff <- tats %>% 
+    mutate(differences = Tattoo - No_Tattoo) 
+tat_diff %>% 
+    summarise(favstats(differences))
+tat_diff %>% 
+    ggplot(aes(x = differences)) +
+    geom_boxplot()+
+    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2) per min for Adult Men \n with Tattoos comparing Tattooed and Untattooed Skin (tat-notat)") 
 
-<!-- 5. Which range of IMDb scores have the highest frequency? -->
+```
+11. What four characteristics do we use to describe the plot of a quantitative variable?
 
-<!-- \vspace{0.2in} -->
+\vspace{0.6in}
 
-<!-- 6. Click on the right arrow bottom on the Plots tab in the lower right-hand corner of the RStudio screen to toggle back to the boxplot.  Sketch the boxplot created and identify the values of the 5-number summary (minimum value, Q1, median, Q3, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were found. -->
 
-<!-- $$\text{Lower Fence: values} \le \text{Q}1 - 1.5\times\text{IQR}$$ -->
+12. Identify the value of $Q_3$.  Interpret this value in context of the study.
 
-<!-- $$\text{Upper Fence: values} \ge \text{Q}3 + 1.5\times\text{IQR}$$ -->
-<!-- \vspace{1.8in} -->
+\vspace{0.8in}
 
-<!-- #### Robust Statistics {-} -->
+13. Interpret the mean from the five number summary in context of the study. Identify where this value is found in the paired plot.
 
-<!-- Let’s examine how the presence of outliers affect the values of center and spread. For this part of the activity we will look at the variable revenue in the movies data set. -->
+\vspace{0.6in}
 
-<!-- ```{r, echo=TRUE, eval=TRUE} -->
-<!-- movies %>% # Data set piped into... -->
-<!--     summarise(favstats(revenue_mil)) -->
+14. What other measure of center could we use to describe the distribution of differences in sweat rates between tattooed and untattooed skin?  
 
-<!-- movies %>% # Data set piped into... -->
-<!--     ggplot(aes(x = revenue_mil)) + # Name variable to plot -->
-<!--     geom_boxplot() + # Create histogram with specified binwidth -->
-<!--     labs(title = "Histogram of Revenue of Movies in 2016", # Title for plot -->
-<!--          x = "Revenue (in Millions)", # Label for x axis -->
-<!--          y = "Frequency") # Label for y axis -->
-<!-- ``` -->
+\vspace{0.2in}
 
-<!-- 7. Report the two measures of center for these data. -->
+15. Based on the plots, which measure of center would be more appropriate to describe the distribution of the differences in sweat rates between tattooed and untattooed skin?  Explain why.
 
-<!-- \vspace{0.5in} -->
+\vspace{0.5in}
 
-<!-- 8. Report the two measures of spread for these data. -->
+16. If we wanted to test that there is evidence that the sweat rate is lower for the tattooed skin than for the untattooed skin, on average, what null value would be used for this study?  What direction of the alternative would be used?
 
-<!-- \vspace{0.5in} -->
+\vspace{0.4in}
 
-<!-- To show the effect of outliers on the measures of center and spread, the largest values in the data set were reduced by 100 $MM. This variable is called `revenue_reduced` -->
+17. Using the Golden Ticket, write the null hypothesis for this study in notation.
 
-<!-- ```{r, echo=TRUE, eval=TRUE} -->
-<!-- movies %>% # Data set piped into... -->
-<!--     summarise(favstats(revenue_reduced)) -->
+\vspace{0.3in}
 
-<!-- movies %>% # Data set piped into... -->
-<!-- ggplot(aes(x = revenue_reduced)) + # Name variable to plot -->
-<!-- geom_boxplot() + # Create histogram with specified binwidth -->
-<!-- labs(title = "Histogram of Decreased Revenue of Movies in 2016", # Title for plot -->
-<!-- x = "Revenue (in Millions)", # Label for x axis -->
-<!-- y = "Frequency") # Label for y axis -->
-<!-- ``` -->
+18. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg*cm^2}{min}$.  Does this interval provided evidence in support of the alternative hypothesis? Explain why.
 
-<!-- 9. Report the two measures of center for this new data set. -->
-<!-- \vspace{0.5in} -->
-
-<!-- 10. Report the two measures of spread for this new data set. -->
-<!-- \vspace{0.5in} -->
-
-<!-- 11. Which measure of center is robust to outliers? Explain your answer. -->
-<!-- \vspace{0.8in} -->
-
-<!-- 12. Which measure of spread is robust to outliers? Explain your answer. -->
-<!-- \vspace{0.8in} -->
-
-<!-- #### Summary statistics for a single categorical and single quantitative Variable{-} -->
-
-<!-- Is there an association between content rating and budget for movies released in 2016?  To use the `favstats()` function in the mosaic package with two variables, we will enter the variables as a formula, response~explanatory.  This function will give the summary statistics for budget for each content rating. -->
-
-<!-- * Highlight and run lines 31--33 in the provided `R` script file and check that the summary statistics match those provided in the coursepack. -->
-
-<!-- ```{r, echo=TRUE, collapse=FALSE} -->
-<!-- movies %>% # Data set piped into... -->
-<!--   filter(content_rating != "Not Rated") %>% # Remove Not Rated movies -->
-<!--   reframe(favstats(budget_mil~content_rating)) # Find the summary measures for each content rating -->
-<!-- ``` -->
-
-<!-- 13.  Which content rating has the largest IQR? -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- 14.  Report the mean budget amount for the PG rating.  Use appropriate notation. -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- 15.  Report the mean budget amount for the R rating.  Use appropriate notation. -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- 16. Calculate the difference in mean budget amount for movies released in 2016 with a PG rating minus those with a R rating.  Use appropriate notation with informative subscripts. -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- 17. Interpret the difference in means calculated in question 10 in context of the problem. -->
-
-<!-- \vspace{0.5in} -->
-
-
-<!-- #### Displaying a single categorical and single quantitative variable {-} -->
-
-<!-- The boxplot of movie budgets (in millions) by content rating is plotted using the code below.   -->
-
-<!-- * Enter the variable `budget_mil` for `response` and the variable `content_rating` for explanatory at line 40. -->
-
-<!-- * Highlight and run code lines 38--44. This plot compares the budget for different levels of content rating. -->
-
-<!-- ```{r, out.width="60%", echo=TRUE, eval=FALSE} -->
-<!-- movies %>%  # Data set piped into... -->
-<!--   filter(content_rating != "Not Rated") %>% # Remove Not Rated movies -->
-<!--   ggplot(aes(y = response, x = explanatory))+  # Identify variables -->
-<!--   geom_boxplot()+  # Tell it to make a box plot -->
-<!--   labs(title = "Side-by-side Box Plot of Budget by Content Rating for Movies Released in 2016",   -->
-<!--        # Title -->
-<!--        x = "Content Rating",    # x-axis label -->
-<!--        y = "Budget (in Millions)")  # y-axis label -->
-<!-- ``` -->
-
-<!-- 18. Answer the following questions about the box plots created. -->
-
-<!--    a. Which content rating has the highest center? -->
-<!-- \vspace{0.2in} -->
-
-<!--    b. Which content rating has the largest spread? -->
-<!-- \vspace{0.2in} -->
-
-<!--    c. Which content rating has the most skewed distribution? -->
-<!-- \vspace{0.2in} -->
-
-<!--    d. Fifty percent of movies released in 2016 with a PG-13 content rating fall below what value?  What is the name of this value? -->
-<!-- \vspace{0.4in} -->
-
-<!--    e.  What is the value for the first quartile (Q1) for the PG-13 rating?  Interpret this value in context. -->
-<!-- \vspace{.8in} -->
-
-### Take-home messages
-
-1.	Histograms, box plots, and dot plots can all be used to graphically display a single quantitative variable.  
-
-2.  The box plot is created using the five number summary: minimum value, quartile 1, median, quartile 3, and maximum value.  Values in the data set that are less than $\text{Q}_1 - 1.5\times \text{IQR}$ and greater than $\text{Q}_3 + 1.5\times \text{IQR}$ are considered outliers and are graphically represented by a dot outside of the whiskers on the box plot.
-
-3.  Data should be summarized numerically and displayed graphically to give us information about the study.
-
-4.  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers.  There are two measures of center: mean and the median and two measures of spread: standard deviation and the interquartile range, IQR = Q3 $-$ Q1. 
-
+\vspace{0.8in}
 
 ### Additional notes
 
