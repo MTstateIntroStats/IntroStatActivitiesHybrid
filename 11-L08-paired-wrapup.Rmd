@@ -38,28 +38,28 @@ Profanity (language considered obscene or taboo) and society's attitude about it
 
 \vspace{0.5in}
 
-* Upload and open the R script file for Week 12 lab. 
+* Upload and open the R script file for Module 11 lab. 
 
 * Upload and import the csv file, `pain_tolerance`. 
 
-* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8. 
+* Enter the name of the data set for datasetname.csv in the R script file in line 8. 
 
 * Highlight and run lines 1--9 to load the data and create a paired plot of the data. 
 ```{r, echo=TRUE, eval=FALSE}
-swearing <- datasetname
+swearing <- read.csv("datasetname.csv")
 paired_observed_plot(swearing)
 ```
 
 5. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
-* Enter the outcome for group 1 (`Swear`) for `group_1` and the outcome for group 2 (`Neutral`) for `group_2` in line 16.  
+* Enter the outcome for group 1 (`Swear`) for `measurement_1` and the outcome for group 2 (`Neutral`) for `measurement_2` in line 16.  
 
 * Highlight and run lines 14--25 to get the summary statistics and boxplot of the differences.
 
 ```{r, echo=TRUE, eval=FALSE}
 swearing_diff <- swearing %>% 
-  mutate(differences = group_1 - group_2)
+  mutate(differences = measurement_1 - measurement_2)
 swearing_diff %>% 
     summarise(favstats(differences))
 
@@ -92,7 +92,7 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 
 \newpage
 
-9.  When using the `paired_test()` function, we need to enter the name of the data set, either the order of subtraction (if the data set has both measurements) or the name of the differences (if the data set contains them).  We will also need to provide R with the observed mean difference, the direction of the alternative hypothesis, and the shift required in order to force the null hypothesis to be true.  The name of the data set as shown above is `swearing_diff` and the column of differences is called `differences`.  What values should be entered for each of the following to create 1000 simulated samples?
+9.  When using the `paired_test()` function, we need to enter the name of the data set, either the order of subtraction (if the data set has both measurements) or the name of the differences (if the data set contains them).  We will also need to provide R with the observed mean difference, the direction of the alternative hypothesis, and the shift required in order to force the null hypothesis to be true.  The name of the data set as shown above is `swearing_diff` and the column of differences is called `differences`.  What values should be entered for each of the following to create 10000 simulated samples?
 
 \vspace{1mm}
 * shift:
@@ -108,7 +108,7 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
     
 \vspace{.1in}
 
-10.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 1000 simulations.  Highlight and run lines 23--29.  
+10.  Simulate a null distribution and compute the p-value. Using the R script file for this lab, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations.  Highlight and run lines 30--36.  
 
 ```{r, echo = TRUE, eval = FALSE}
 paired_test(data = swearing$differences,   # Vector of differences 
@@ -137,10 +137,10 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
 
-13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 34--37. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
+13. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 41--44. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
 ```{r, echo = TRUE, eval = FALSE}
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
-                    number_repetitions = 1000, # Number of bootstrap samples for CI
+                    number_repetitions = 10000, # Number of bootstrap samples for CI
                     confidence_level = xx,  # Confidence level in decimal form
                     which_first = 1)  # Not needed when entering vector of differences
 ```

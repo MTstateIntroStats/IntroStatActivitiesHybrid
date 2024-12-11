@@ -63,7 +63,7 @@ The popularity of tattoos has increased tremendously in the last 10 years partic
 
 * Run lines 1--9 to create the paired plot
 
-```{r}
+```{r, echo=TRUE, eval=FALSE}
 tats <- read.csv("data/tattoos.csv")
 paired_observed_plot(tats) 
 ```
@@ -76,7 +76,7 @@ paired_observed_plot(tats)
 
 \vspace{0.2in}
 
-8.  You may notice that the difference in the means (lllll ) is equal to the mean difference you reported in Q6.  That is not true for the standard deviations.  Explain why?
+8.  You may notice that the difference in the means ($0.178 - 0.345 = -0.167$) is equal to the mean difference you reported in Q6.  That is not true for the standard deviations.  Explain why?
 
 \vspace{0.8in}
 
@@ -92,10 +92,9 @@ To find the differences to continue to assess this data and create a boxplot of 
 
 * Enter Tattoo for measurement_1 and No_Tattoo for measurement_2 in line 15
 
-* Highlight and run lines 13 - 23
+* Highlight and run lines 13 - 21
 
-```{r}
-par(mfrow=c(1,1))
+```{r, echo=TRUE, eval=FALSE}
 tat_diff <- tats %>% 
     mutate(differences = Tattoo - No_Tattoo) 
 tat_diff %>% 
@@ -103,7 +102,8 @@ tat_diff %>%
 tat_diff %>% 
     ggplot(aes(x = differences)) +
     geom_boxplot()+
-    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2) per min for Adult Men \n with Tattoos comparing Tattooed and Untattooed Skin (tat-notat)") 
+    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2) per min for Adult Men 
+         with Tattoos comparing Tattooed and Untattooed Skin (tat-notat)") 
 
 ```
 11. What four characteristics do we use to describe the plot of a quantitative variable?

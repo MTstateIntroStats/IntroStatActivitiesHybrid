@@ -15,7 +15,8 @@ The following code created the boxplot of waiting time.
 geyser %>% # Pipe data set into...
   ggplot(aes(y = waiting)) + #Variables to be used
     geom_boxplot() + #make a boxplot
-    labs(title = "Boxplot of Tourist Reported Wait Time for Old Faithrul to Erupt",  #Title plot
+    labs(title = "Boxplot of Tourist Reported Wait Time for Old 
+         Faithrul to Erupt",  #Title plot
          y = "wait time (minutes)") +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   coord_flip()
@@ -66,6 +67,8 @@ one_mean_test(data = geyser$waiting,   #Object and variable
 
 \vspace{1in}
 
+\newpage
+
 Now let's focus on theory-based methods.
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
@@ -102,6 +105,8 @@ $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 12. Calculate the standardized mean for the study.
 
 \vspace{1in}
+
+\newpage
 
 13. Mark on the t-distribution shown below on how to find the p-value of the test.
 

@@ -1,33 +1,42 @@
 \thispagestyle {empty}
 \contentsline {chapter}{Preface}{1}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Inference for Two Categorical Variables: Theory-based Hypothesis Testing and Simulation-based and Theory-based Confidence Intervals}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Inference for a Quantitative Response with Independent Samples}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Vocabulary Review and Key Topics}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Key topics}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Vocabulary}{2}{subsection.1.1.2}%
-\contentsline {subsubsection}{Theory-based inference}{2}{subsection.1.1.2}%
-\contentsline {subsubsection}{Simulation-based confidence interval}{3}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Video Notes: Theoretical Inference for Two Categorical Variables}{4}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Course Videos}{4}{subsection.1.2.1}%
-\contentsline {subsection}{Hypothesis testing using theory-based methods - Video 15.4TheoryTests}{4}{subsection.1.2.1}%
-\contentsline {subsection}{Confidence interval - Video 15.3TheoryIntervals}{7}{subsection.1.2.1}%
-\contentsline {subsubsection}{Theory-based method for a two categorical variables}{7}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Concept Check}{8}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Activity 19: Winter Sports Helmet Use and Head Injuries --- Theory-based Methods}{9}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Terminology review}{9}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Winter sports helmet use and head injury}{9}{subsection.1.3.3}%
-\contentsline {subsubsection}{Hypothesis test}{10}{Item.5}%
-\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{11}{Item.6}%
-\contentsline {subsection}{How would an increase in sample size impact the p-value of the test?}{12}{Item.11}%
-\contentsline {subsection}{\numberline {1.3.4}Take-home messages}{13}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Additional notes}{13}{subsection.1.3.5}%
-\contentsline {section}{\numberline {1.4}Activity 20: Diabetes}{14}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{14}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Glycemic control in diabetic adolescents}{14}{subsection.1.4.2}%
-\contentsline {subsection}{Simulation methods}{15}{Item.21}%
-\contentsline {subsection}{Theory-based Methods}{16}{Item.24}%
-\contentsline {subsection}{\numberline {1.4.3}Take-home messages}{17}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Additional notes}{17}{subsection.1.4.4}%
-\contentsline {section}{\numberline {1.5}Module 9 Lab: Poisonous Mushrooms}{18}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{18}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Poisonous Mushrooms}{18}{subsection.1.5.2}%
+\contentsline {subsection}{Hypothesis Testing}{3}{section.1.1}%
+\contentsline {subsection}{Simulation Hypothesis Testing}{3}{section.1.1}%
+\contentsline {subsection}{Simulation Confidence Interval}{3}{section.1.1}%
+\contentsline {subsection}{Theory-based methods}{3}{section.1.1}%
+\contentsline {subsection}{Theory-based methods to find the confidence interval}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Video Notes: Inference for Independent Samples}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Course Videos}{5}{subsection.1.2.1}%
+\contentsline {subsection}{Single categorical, single quantitative variable with independent samples}{5}{subsection.1.2.1}%
+\contentsline {subsection}{Hypothesis Testing}{6}{subsection.1.2.1}%
+\contentsline {subsubsection}{Simulation-based method}{7}{subsection.1.2.1}%
+\contentsline {subsection}{Confidence interval}{9}{subsection.1.2.1}%
+\contentsline {subsubsection}{Simulation-based method - Video 19.2}{9}{subsection.1.2.1}%
+\contentsline {subsubsection}{Theory-based method - Video 19.3TheoryTests}{10}{subsection.1.2.1}%
+\contentsline {subsubsection}{Confidence Interval - Video 19.3TheoryIntervals}{12}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Concept Check}{13}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Activity 24: Does behavior impact performance?}{14}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{14}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Terminology review}{14}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Behavior and Performance}{14}{subsection.1.3.3}%
+\contentsline {subsubsection}{Quantitative variables review}{15}{subsection.1.3.3}%
+\contentsline {subsubsection}{Ask a research question}{16}{Item.5}%
+\contentsline {subsubsection}{Numerically Summarize the data}{16}{Item.7}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{17}{Item.9}%
+\contentsline {paragraph}{Hypothesis test}{17}{Item.9}%
+\contentsline {paragraph}{Confidence interval}{17}{Item.10}%
+\contentsline {subsection}{\numberline {1.3.4}Take-home messages}{18}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Additional notes}{18}{subsection.1.3.5}%
+\contentsline {section}{\numberline {1.4}Activity 25: Moon Phases and Virtual Reality}{19}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{19}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Terminology review}{19}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Moon Phases and Virtual Reality}{19}{subsection.1.4.3}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{21}{Item.23}%
+\contentsline {subsection}{\numberline {1.4.4}Take-home messages}{22}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Additional notes}{22}{subsection.1.4.5}%
+\contentsline {section}{\numberline {1.5}Module 12 Lab: Trustworthiness}{23}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{23}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Trustworthiness}{23}{subsection.1.5.2}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{25}{Item.38}%

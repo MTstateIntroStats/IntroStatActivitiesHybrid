@@ -68,7 +68,7 @@ The article reports on the results of a study in which seventy college undergrad
 
 \vspace{0.5in}
 
-In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
+In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.  Note, that since we are treating paired data as a single mean, the conditions are the same as for a single mean.
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
 
@@ -78,26 +78,10 @@ Conditions for the sampling distribution of $\bar{x}$ to follow an approximate N
 
     - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
-    - $30 \leq n < 100$: If the sample size $n$ is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
     - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
  
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{11-A23-paired-theory_files/figure-latex/tdist-1} 
-
-}
-
-\caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}(\#fig:tdist)
-\end{figure}
-    
- 
-Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the Normal distribution. Enter the **$t$-distribution**!
-
-
-As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
-
-
 #### Summarize and visualize the data {-}
 
 Since the original data from the study are not available, we simulated data to match the means and standard deviations reported in the article. We will use these simulated data in the analysis below.
@@ -109,7 +93,7 @@ The following code plots each subject's time to read the colored words (above) a
 
 * Download the R script file for this activity and upload to the R studio server.
 
-* Follow the instructions given in the R file.
+* Follow the instructions given in the R file to create the paired plot and boxplot of the differences.
 
 
 ``` r
@@ -132,15 +116,14 @@ color_diff %>%
 
 The following code gives the summary statistics for the pairwise differences.
 
+* Enter the variable `differences` for variable 
+
+* Highlight and run lines 22 - 23
+
 
 ``` r
 color_diff %>% 
   summarise(favstats(differences))
-```
-
-```
-#>      min     Q1 median     Q3   max mean       sd  n missing
-#> 1 -16.42 -2.925   2.15 7.0325 17.27  2.3 7.810196 70       0
 ```
 
 #### Check theoretical conditions {-}
@@ -177,7 +160,7 @@ To find the p-value
 
 * Enter the df for yy in the pt function.
 
-* Highlight and run line 27
+* Highlight and run line 28
 
 
 ``` r
@@ -196,23 +179,25 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the df for yy. 
 
+* Highlight and run line 34
+
 
 ``` r
 qt(percentile, df = yy, lower.tail=TRUE)
 ```
 
-\newpage
+\vspace{1mm}
 
 11. Mark on the t-distribution found below the values of $\pm t^*$.  Draw a line at each multiplier and write the percentiles used to find each.
 \vspace{1mm}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth]{11-A23-paired-theory_files/figure-latex/tstar-1} 
+{\centering \includegraphics[width=0.7\linewidth]{11-A23-paired-theory_files/figure-latex/tstar3-1} 
 
 }
 
-\caption{t-distribution with 69 degrees of freedom}(\#fig:tstar)
+\caption{t-distribution with 69 degrees of freedom}(\#fig:tstar3)
 \end{figure}
 
 12.  Calculate the margin of error for the true paired mean difference using theory-based methods.

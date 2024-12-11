@@ -64,6 +64,8 @@ one_mean_test(data = geyser$waiting,   #Object and variable
 
 \vspace{1in}
 
+\newpage
+
 Now let's focus on theory-based methods.
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
