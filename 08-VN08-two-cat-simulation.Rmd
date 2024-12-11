@@ -47,20 +47,17 @@ Example:
 Principles of experimental design
 
 * Control: hold other differences constant across groups
-\vspace{0.1in}
+\vspace{1mm}
 
 * Randomization: randomized experiment
-\vspace{0.1in}
+\vspace{1mm}
 
 * Replication: large sample size or repeat of study
-\vspace{0.1in}
+\vspace{1mm}
 
 * Blocking: group based on certain characteristics
-
-\vspace{0.1in}
+\vspace{1mm}
     
-\newpage
-
 Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
 
 * What is the study design?
@@ -380,8 +377,6 @@ Notation:
 
 \setstretch{1}
 
-\newpage
-
 ### Hypothesis Testing {-}
 
 Conditions:
@@ -401,6 +396,8 @@ $H_A:$
 \vspace{0.2in}
 
 * Research question determines the direction of the alternative hypothesis.
+
+\newpage
 
 Write the null and alternative hypotheses for the cocaine study:
 
@@ -478,6 +475,8 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
 Explain why the null distribution is centered at the value of zero:
 
 \vspace{1in}
+
+\newpage
 
 Interpretation of the p-value:
 
@@ -652,4 +651,10 @@ Be prepared for group discussion in the next class. One member from the table sh
 2. Does the confidence interval agree with the p-value?
 
 \vspace{0.5in}
+
+3. What is the difference between a mosaic plot and a segmented bar plot?
+
+\vspace{0.5in}
+
+4. What does relative risk measure?
 \newpage

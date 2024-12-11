@@ -2,7 +2,7 @@
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two categorical variables.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary two categorical variables.
 
 ### Key topics
 
@@ -34,7 +34,7 @@ Interpretation of relative risk:
 
 * Can also interpret as a percent increase or percent decrease in risk
 
-    * $$(RR-1) \times 100\%$$
+$$(RR-1) \times 100\%$$
     
     * The risk of success in group 1 is xx\% higher or lower that the risk of success in group 2
     

@@ -1,10 +1,16 @@
 ## Video Notes: Inference for Two Categorical Variables using Simulation-based Methods
 
-Read Sections 2.2 - 2.4, 15.1, 15.2 and Chapter 16 in the course textbook.  Use the following videos to complete the video notes for Module 8.
+Read Sections 2.2 - 2.4, 15.1, 15.2, Chapter 4 and Chapter 16 in the course textbook.  Use the following videos to complete the video notes for Module 8.
 
 ### Course Videos
 
 * 2.2to2.4
+
+* 4.1_TwoProp
+
+* 4.2_TwoProp
+
+* 4.4
 
 * 15.1
 
@@ -41,20 +47,17 @@ Example:
 Principles of experimental design
 
 * Control: hold other differences constant across groups
-\vspace{0.1in}
+\vspace{1mm}
 
 * Randomization: randomized experiment
-\vspace{0.1in}
+\vspace{1mm}
 
 * Replication: large sample size or repeat of study
-\vspace{0.1in}
+\vspace{1mm}
 
 * Blocking: group based on certain characteristics
-
-\vspace{0.1in}
+\vspace{1mm}
     
-\newpage
-
 Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
 
 * What is the study design?
@@ -111,13 +114,265 @@ Example: It is well known that humans have more difficulty differentiating betwe
 
 \newpage
 
+### Summarizing two categorical variables - Video 4.1_TwoProp {-}
+
+* The summary measure for two categorical variables is the ______________________ in _____________________________.
+
+Notation used for the population difference in proportion:
+    
+* Two categorical variables:
+    
+\vspace{0.2in}
+
+\rgi \rgi - Subscripts represent the __________________ variable groups
+    
+Notation used for the sample difference in proportion:
+    
+* Two categorical variables
+    
+\vspace{0.2in}
+
+When we have two categorical variables we report the data in a  _______________ or two-way table with the _______________ variable on the columns and the ____________ variable on the rows.
+
+\setstretch{1}
+
+\vspace{2mm}
+
+For today's videos we will again use the `moving_to_mt` data set.
+
+Example from the Video:  Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
+
+The following code reads in the data set, `moving_to_mt` and names the object moving.
+
+
+``` r
+moving <- read.csv("data/moving_to_mt.csv")
+```
+
+
+To look at the relationship between the variable, `Age_Group` and the variable, `From` create the following two-way table using the `R` output below.  Note, we are using `From` as the explanatory variable to predict whether a home sale has a buyer that is over or under the age of 30.
+
+
+``` r
+moving %>%
+    group_by(Age_Group) %>% count(From) %>% print(n=8)
+```
+
+```
+#> # A tibble: 8 x 3
+#> # Groups:   Age_Group [2]
+#>   Age_Group From      n
+#>   <chr>     <chr> <int>
+#> 1 Over30    CA        6
+#> 2 Over30    CO        2
+#> 3 Over30    MT       47
+#> 4 Over30    WA       10
+#> 5 Under30   CA        6
+#> 6 Under30   CO        6
+#> 7 Under30   MT       14
+#> 8 Under30   WA        9
+```
+
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{14pt} % Default value: 6pt
+\renewcommand{\arraystretch}{2} % Default value: 1
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{4}{|c|}{\textbf{State}} & \\ \hline
+\textbf{Age Group} & CA & CO & MT & WA & Total \\ \hline
+ Over30 & 6 & 2 & 47 & 10 & 65 \\ \hline
+ Under30 & 6 & 6 & 14 & 9 & 35 \\ \hline
+ Total & 12 & 8 & 61 & 19 & 100\\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+
+* Using the table above, how many of the sampled home sales have buyers who were under 30 years old and from Montana?
+
+\vspace{0.2in}
+
+\setstretch{1.5}
+
+If we want to know what proportion of each age group is from each state, we would calculate the proportion of home sales with buyers from each state within each age group. In other words, divide the number of home sales from each state with buyers that are over 30 by the total for row 1, the total number of home sales with buyers over 30.
+
+\setstretch{1}
+
+* What proportion of sampled home sales with buyers under 30-years-old were from California?
+
+\vspace{0.3in}
+
+* What notation should be used for this value?
+
+\vspace{0.2in}
+
+\setstretch{1.5}
+
+Additionally, we could find the proportion of home sales with buyers in each state for each age group.  Here we would calculate the proportion of home sales with buyers in each age group within each state.  Divide the number of home sales with buyers in each age group from CA by the total for column 1, the total number of home sales with buyers from CA.
+
+\setstretch{1}
+
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{14pt} % Default value: 6pt
+\renewcommand{\arraystretch}{2} % Default value: 1
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{4}{|c|}{\textbf{State}} & \\ \hline
+\textbf{Age Group} & CA & CO & MT & WA & Total \\ \hline
+ Over30 & 6 & 2 & 47 & 10 & 65 \\ \hline
+ Under30 & 6 & 6 & 14 & 9 & 35 \\ \hline
+ Total & 12 & 8 & 61 & 19 & 100\\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+
+* Using the table, calculate the proportion of home sales in Gallatin County with in-state buyers who are over 30 years old?  Use appropriate notation with informative subscripts.
+
+\vspace{0.4in}
+
+* Using the table, calculate the proportion of home sales in Gallatin County with California buyers who are over 30 years old?  Use appropriate notation with informative subscripts.
+
+\vspace{0.4in}
+
+* Calculate the difference in proportion of home sales in Gallatin County over 30 years old from other parts of Montana and from California. Use MT - CA as the order of subtraction.  Give appropriate notation.
+
+\vspace{0.4in}
+
+* Interpret the difference in proportion in context of the study.
+
+\vspace{0.5in}
+
+### Plots for two categorical variables - Video 4.2_TwoProp {-}
+
+In a segmented bar plot, the bar for each category will sum to 1.  In this first plot, we are plotting the row proportions calculated conditional on the age group.
+
+
+``` r
+moving %>%
+  ggplot(aes(x = Age_Group, fill = From))+ #Enter the variables to plot
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented bar plot of Age Group of Buyers by State of
+       Origin for Gallatin County Home Sales",
+       #Title your plot
+       y = "Relative Frequency", #y-axis label
+       x = "Age Group") + #x-axis label
+  scale_fill_grey()
+```
+
+
+
+\begin{center}\includegraphics[width=0.55\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+In this second plot, we are plotting the column proportions calculated conditional on the state of origin for the buyer.
+
+
+``` r
+moving %>%
+  ggplot(aes(x = From , fill = Age_Group))+ #Enter variables to plot
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented bar plot of State of Origin of Buyers by Age
+       Group for Gallatin County Home Sales",
+       #Title your plot
+       y = "Relative Frequency", #y-axis label
+       x = "State of Origin") + #x-axis label
+  scale_fill_grey()
+```
+
+
+
+\begin{center}\includegraphics[width=0.55\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+Mosaic plot:
+
+``` r
+moving$Age_Group <- factor(moving$Age_Group, levels = c("Under30", "Over30"))
+moving %>% # Data set piped into...
+  ggplot() +   # This specifies the variables
+  geom_mosaic(aes(x=product(From), fill = Age_Group)) +
+    # Tell it to make a mosaic plot
+  labs(title = "Mosaic plot of State of Origin Segmented by
+  Age Group for Gallatin County Home Sales",
+       # Title your plot
+       x = "State of Origin",   # Label the x axis
+       y = "") +  # Remove y axis label
+    scale_fill_grey(guide = guide_legend(reverse = TRUE)) # Make figure color
+```
+
+
+
+\begin{center}\includegraphics[width=0.75\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+* Why is the bar for MT the widest on the mosaic plot?
+
+\vspace{0.2in}
+
+\newpage
+
+#### Simpson's paradox - Video 4.4 {-}
+
+\setstretch{1.5}
+
+* When an apparent _____________ between explanatory and response variables reverses when accounting for ______________ variable.
+
+\setstretch{1}
+
+Example: The "Berkeley Dataset" contains all 12,763 applicants to UC-Berkeley's graduate programs in Fall 1973. This dataset was published by UC Berkeley researchers in an analysis to understand the possible gender bias in admissions and has now become a classic example of Simpson's Paradox.
+
+
+``` r
+discrim <- read.csv ("data/berkeley.csv")
+
+discrim %>%
+  ggplot(aes(x =Gender, fill = Admission))+
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented bar plot of Sex of Berkley Applicants by
+       Admission Status",
+       y = "Relative Frequency",
+       x = "Sex") +
+  scale_fill_grey()
+```
+
+
+
+\begin{center}\includegraphics[width=0.85\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+The data showed that 44\% of male applicants were accepted and 35\% of female applicants were accepted.  Does it appear that the female students are discriminated against?
+
+\vspace{0.1in}
+
+We can break down the data by major.  A major code (either A, B, C, D, E, F, or Other) was used.
+
+\newpage
+
+Here we look at the relationship between admission status and sex for Program A and for Program B.
+
+
+\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_AB} \end{center}
+
+Showing Program C and Program D.
+
+
+\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_cD} \end{center}
+
+And finally, Program E and F.
+
+
+\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_EF} \end{center}
+
+We can see in several programs the acceptance rate is higher for females than for males.
+
+\vspace{1in}
+
+\newpage
+
+
 ### Two categorical variables - Video 15.1 {-}
 
 \setstretch{1.5}
 
 * In this module, we will study inference for a ______________________ explanatory variable and a _________________________ response.
 
-* The summary measure for two categorical variables is the ______________________ in _____________________________.
 
 \setstretch{1}
 
@@ -155,8 +410,6 @@ Notation:
 
 \setstretch{1}
 
-\newpage
-
 ### Hypothesis Testing {-}
 
 Conditions:
@@ -176,6 +429,8 @@ $H_A:$
 \vspace{0.2in}
 
 * Research question determines the direction of the alternative hypothesis.
+
+\newpage
 
 Write the null and alternative hypotheses for the cocaine study:
 
@@ -230,7 +485,7 @@ cocaine%>%
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 Is the independence condition met for simulation inference?
 
@@ -258,7 +513,7 @@ set.seed(216)
 two_proportion_test(formula = outcome~drug, # response ~ explanatory
     data = cocaine, # Name of data set
     first_in_subtraction = "desipramine", # Order of subtraction: enter the name of Group 1
-    number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+    number_repetitions = 10000, # Always use a minimum of 1000 repetitions
     response_value_numerator = "clean", # Define which outcome is a success
     as_extreme_as = 0.417, # Calculated observed statistic (difference in sample proportions)
     direction="greater") # Alternative hypothesis direction ("greater","less","two-sided")
@@ -266,11 +521,13 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
 Explain why the null distribution is centered at the value of zero:
 
 \vspace{1in}
+
+\newpage
 
 Interpretation of the p-value:
 
@@ -327,13 +584,13 @@ two_proportion_bootstrap_CI(formula = outcome ~ drug,
         data=cocaine, # Name of data set
         first_in_subtraction = "desipramine", # Order of subtraction: enter the name of Group 1
         response_value_numerator = "clean", # Define which outcome is a success 
-        number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
         confidence_level = 0.99) # Enter the level of confidence as a decimal
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -450,4 +707,10 @@ Be prepared for group discussion in the next class. One member from the table sh
 2. Does the confidence interval agree with the p-value?
 
 \vspace{0.5in}
+
+3. What is the difference between a mosaic plot and a segmented bar plot?
+
+\vspace{0.5in}
+
+4. What does relative risk measure?
 \newpage
