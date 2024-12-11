@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 3 introduces the steps of the statistical investigation process. We explore exploratory data analysis (summary statistics and plots) and simulation-based inference (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+Module 3 introduces the steps of the statistical investigation process. We explore **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
 
 * Notation for a sample proportion: $\hat{p}$
 
