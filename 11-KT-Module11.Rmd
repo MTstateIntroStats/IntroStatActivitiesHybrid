@@ -1,19 +1,27 @@
-# Inference for Inference for a Paired Mean Difference 
+# Exploratory Data Analysis and Inference for a Quantitative Response with Paired Samples
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of paired data.  Module 11 will cover inference using both simulation and theory-based methods.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of paired data with a quantitative response.
 
-* The **summary measure** for paired data is the **mean difference**
+### Key topics
 
-* Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used.
+Module 11 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with paired samples. The **summary measure** for paired data is a **mean difference**. 
 
-* R code to find the summary statistics for a paired differences
+* Notation for a sample mean difference: $\bar{x}_d$
 
-```{r, eval=FALSE}
-object %>% # Data set piped into...
-    summarise(favstats(differences))
-```
+* Notation for a population mean difference: $\mu_d$
+
+* Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used. Additionally, we can create a plot of paired data in R using the `paired_observed_plot` function in the `catstats` function:
+    ```{r, eval=FALSE}
+    # Melinda add code
+    ```
+
+* R code to find the summary statistics for a paired differences:
+    ```{r, eval=FALSE}
+    object %>% # Data set piped into...
+        summarise(favstats(differences))
+    ```
 
 ### Simulation Hypothesis Testing {-}
 
