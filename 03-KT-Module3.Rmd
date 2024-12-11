@@ -8,6 +8,18 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 Module 3 introduces the steps of the statistical investigation process. We explore exploratory data analysis (summary statistics and plots) and simulation-based inference (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
 
+* Notation for a sample proportion: $\hat{p}$
+
+* Notation for a population proportion: $\pi$
+
+* Types of plots for a single categorical variable:
+
+    * Frequency bar plot
+    
+    * Relative frequency bar plot
+
+We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
+
 #### Steps of the statistical investigation process {-}
 
 As we move through the semester we will work through the six steps of the statistical investigation process.  
@@ -24,31 +36,14 @@ As we move through the semester we will work through the six steps of the statis
 
 6. Revisit and look forward.
 
-#### Exploratory data analysis {-}
-
-At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable. For a single categorical variable, the category that we are counting the proportion of is generically called a "**success**", with categories not a success labeled "**failure**". Thus, a sample proportion is the "proportion of successes" in the sample: the total number of successes divided by the sample size ($n$).
-
-* Notation for a sample proportion: $\hat{p}$
-
-* Notation for a population proportion: $\pi$
-
-* Types of plots for a single categorical variable:
-
-    * Frequency bar plot
-    
-    * Relative frequency bar plot
-
-#### Inference {-}
-
-We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
 
 ### Vocabulary
 
-* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data.
-
-    * Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line.
+* **Summary measure**: a numerical quantity that summarizes data. Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line.
 
     * For a single categorical variable, a proportion is calculated.
+
+* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data.
 
     * To interpret in context include:
 
@@ -71,6 +66,9 @@ We will use simulation-based methods **to find evidence of an effect by finding 
             - Observational units
 
             - Variable(s)
+
+* For a single categorical variable, the category that we are counting the proportion of is generically called a "**success**", with categories not a success labeled "**failure**". Thus, a sample proportion is the "proportion of successes" in the sample: the total number of successes divided by the sample size ($n$).
+
 
 #### Plotting one categorical variable {-}
 
