@@ -100,6 +100,7 @@ object %>% # Data set piped into...
        y = "Relative Frequency")  # Label the y axis
     ```
 
+\newpage
 
 #### Inference {-}
 
@@ -154,8 +155,8 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
     
         - Direction of the alternative 
     
-        - Null hypothesis (in context) 
-
+        - Null hypothesis (in context)
+        
 * **Strength of evidence**: the p-value indicates the amount of evidence there is against the null hypothesis.  The smaller the p-value the more evidence there is against the null hypothesis.
 
 

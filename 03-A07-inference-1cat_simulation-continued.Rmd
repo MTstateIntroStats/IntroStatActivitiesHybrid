@@ -26,6 +26,8 @@ In today's activity we will continue with steps 4 and 5 in the statistical inves
 
 ### Helper-Hinderer
 
+In class today, we will revisit the study on infants as described below.
+
 A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to choose the helper toy over the hinderer toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 
@@ -37,7 +39,7 @@ A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intend
 
 \vspace{0.8in}
 
-Today, we will use the computer to simulate a null distribution of 1000 different samples of 16 infants, plotting the proportion who chose the helper in each sample, based on the assumption that the true proportion of infants who choose the helper is 0.5 (or that the null hypothesis is true).  
+Today, we will use the computer to simulate a null distribution of 10000 different samples of 16 infants, plotting the proportion who chose the helper in each sample, based on the assumption that the true proportion of infants who choose the helper is 0.5 (or that the null hypothesis is true).  
 
 \newpage
 
@@ -67,7 +69,7 @@ To use the computer simulation, we will need to enter the
 \vspace{.2in}
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 1--16.
+We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
 
 ```{r, echo=TRUE, eval = FALSE}
 one_proportion_test(probability_success = xx, # Null hypothesis value
@@ -169,6 +171,8 @@ When we write a conclusion we answer the research question by stating how much e
 1. The null distribution is created based on the assumption the null hypothesis is true. We compare the sample statistic to the distribution to find the likelihood of observing this statistic.
 
 2. The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) is the null hypothesis is true.
+
+3. The smaller the p-value of the test, the more evidence there is **against** the null hypothesis.
 
 ### Additional notes
 

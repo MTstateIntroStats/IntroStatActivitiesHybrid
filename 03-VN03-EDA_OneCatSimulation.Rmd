@@ -849,7 +849,7 @@ Is the independence condition met to analyze these data using a simulation-based
 set.seed(216)
 one_proportion_test(probability_success = 0.333, # Null hypothesis value
           sample_size = 114, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
+          number_repetitions = 10000, # Enter number of simulations
           as_extreme_as = 0.447, # Observed statistic
           direction = "greater", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
@@ -955,7 +955,7 @@ Bootstrap distribution:
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 114, # Sample size
                     number_successes = 51, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.90) # Confidence level as a decimal
 ```
 
@@ -983,7 +983,7 @@ How does changing the confidence level impact the width of the confidence interv
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 114, # Sample size
                     number_successes = 51, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
 ```
 
@@ -993,7 +993,7 @@ one_proportion_bootstrap_CI(sample_size = 114, # Sample size
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 114, # Sample size
                     number_successes = 51, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.99) # Confidence level as a decimal
 ```
 

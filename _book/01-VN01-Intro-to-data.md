@@ -243,6 +243,8 @@ ______________ _______________ on the variable(s) of interest
 
 \vspace{0.5in}
 
+\newpage
+
 ### Types of Sampling Bias {-}
 
 * Selection bias: 

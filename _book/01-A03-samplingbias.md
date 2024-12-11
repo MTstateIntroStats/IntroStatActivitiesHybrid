@@ -211,7 +211,7 @@ Observation & Number & Length  \\ \hline
 13.  Where does the value 3.95, the true mean word length, fall in the distribution given? Near the center of the distribution?  In the tails of the distribution?  Circle this value on the provided distribution.
 \vspace{0.3in}
 
-14. How does the plot from Q10 compare to the plot generated in Q1? 
+14. How does the plot from Q12 compare to the plot generated in Q1? 
 
 \rgi Is the shape similar?  
 \vspace{0.2in}
@@ -259,7 +259,7 @@ The following plot illustrates a sampling distribution of 1000 samples of size 1
 16. Explain why the sampling method of using a random number generator to generate a sample is a "better" method than choosing 10 words “by eye”.
 \vspace{0.8in}
 
-17.  Is random selection an unbiased method of selection?  Explain your answer. Be sure to reference your plot from before Q15.
+17.  Is random selection an unbiased method of selection?  Explain your answer. Be sure to reference the plot from before Q15.
 \vspace{0.5in}
 
 

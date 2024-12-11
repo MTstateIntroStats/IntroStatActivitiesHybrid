@@ -49,6 +49,8 @@ Module 1 introduces the foundations of data: observational units, types of varia
     * **Non-response bias**: part of a pre-selected sample does not respond or cannot be reached.
 
     * **Response bias**: responses are not truthful (poor/leading question phrasing, social desirability).
+    
+\newpage
 
 * **Generalization**: to what group of observational units can the results be applied to?  
 

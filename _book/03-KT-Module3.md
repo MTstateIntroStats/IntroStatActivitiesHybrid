@@ -102,6 +102,7 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
        y = "Relative Frequency")  # Label the y axis
     ```
 
+\newpage
 
 #### Inference {-}
 
@@ -157,8 +158,8 @@ $$H_A: \pi \left\{
     
         - Direction of the alternative 
     
-        - Null hypothesis (in context) 
-
+        - Null hypothesis (in context)
+        
 * **Strength of evidence**: the p-value indicates the amount of evidence there is against the null hypothesis.  The smaller the p-value the more evidence there is against the null hypothesis.
 
 

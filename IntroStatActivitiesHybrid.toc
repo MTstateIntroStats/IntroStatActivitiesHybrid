@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {1.3.2}Concept Check}{9}{subsection.1.3.2}%
 \contentsline {subsection}{Sampling Methods: Video 2.1}{9}{Item.11}%
 \contentsline {subsubsection}{Good vs.~bad sampling}{9}{Item.11}%
-\contentsline {subsection}{Types of Sampling Bias}{9}{Item.11}%
+\contentsline {subsection}{Types of Sampling Bias}{10}{Item.11}%
 \contentsline {subsubsection}{Video Example}{11}{Item.11}%
 \contentsline {subsection}{\numberline {1.3.3}Concept Check}{11}{subsection.1.3.3}%
 \contentsline {section}{\numberline {1.4}Activity 2: Intro to Data Analysis and Sampling Bias}{12}{section.1.4}%
@@ -76,7 +76,7 @@
 \contentsline {subsubsection}{Inference}{37}{Item.93}%
 \contentsline {subsection}{\numberline {3.1.2}Vocabulary}{38}{subsection.3.1.2}%
 \contentsline {subsubsection}{Plotting one categorical variable}{38}{subsection.3.1.2}%
-\contentsline {subsubsection}{Inference}{38}{subsection.3.1.2}%
+\contentsline {subsubsection}{Inference}{39}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Video Notes: Exploratory Data Analysis of Categorical Variables}{41}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Course Videos}{41}{subsection.3.2.1}%
 \contentsline {subsection}{Summarizing categorical data - Video 4.1}{41}{subsection.3.2.1}%

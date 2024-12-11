@@ -93,7 +93,7 @@ Total & & & 100,000 \\
 \end{center}
 \vspace{.1in}
 
-   c. Find $P(A \mbox{ and } B)$. What does this probability represent in the context of the problem?
+   c. Find $P(B)$. What does this probability represent in the context of the problem?
 \vspace{.8in}
 
    d. Find the probability that a child with a positive RADT actually has strep throat. What is the notation used for this probability?
