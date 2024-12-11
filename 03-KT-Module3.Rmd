@@ -128,21 +128,6 @@ $$H_A: \pi \left\{
 \right\}
 \pi_0 $$
 
-* **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
-
-* **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
-
-    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test` (from the `catstats` package), is shown below.  
-
-    ```{r, eval=FALSE, echo=TRUE}
-one_proportion_test(probability_success = xx, # Null hypothesis value
-          sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
-          as_extreme_as = xx, # Observed statistic
-          direction = "xx", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-    ```
-
 * **P-value**: the probability of the value of the observed sample statistic or a value more extreme, if the null hypothesis were true.
 
     * To write in context include:
@@ -184,9 +169,32 @@ include_graphics("images/soe_gradient_gray.png")
     
         - Calculated interval
 
+
+#### Simulation-based inference for a single proportion
+
+* **Conditions necessary to use simulation-based methods for inference  for a single categorical variable**:
+
+    * **Independence**: observational units must be independent of one another; the outcome of one observational unit should have no influence on the outcome of another.
+
+* **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
+
+* **Simulation-based methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
+
+    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test` (from the `catstats` package), is shown below.  
+
+    ```{r, eval=FALSE, echo=TRUE}
+one_proportion_test(probability_success = xx, # Null hypothesis value
+          sample_size = xx, # Enter sample size
+          number_repetitions = 1000, # Enter number of simulations
+          as_extreme_as = xx, # Observed statistic
+          direction = "xx", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+    ```
+
+
 * **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample.
 
-* **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
+* **Simulation-based methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
     R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI` (from the `catstats` package), is shown below. 
 
