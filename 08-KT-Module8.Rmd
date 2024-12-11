@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 8 will introduce exploratory data analysis and simulation-based hypothesis testing for two categorical variables. The **summary measure** for two categorical variables is a **difference in proportions*. We can also calculate a **relative risk** (ratio of proportions).
+Module 8 will introduce exploratory data analysis and simulation-based hypothesis testing for two categorical variables. The **summary measure** for two categorical variables is a **difference in proportions**. We can also calculate a **relative risk** (ratio of proportions).
 
 * Notation for a difference in sample proportions: $\hat{p}_1 - \hat{p}_2$
 
@@ -42,16 +42,21 @@ $$(RR-1) \times 100\%$$
 
 #### Plotting two categorical variables {-}
 
-* **Segmented bar plot**: plots the conditional proportion of the response outcomes in each explanatory variable group
+* **Segmented bar plot**: plots the conditional proportion of the response outcomes in each explanatory variable group. R code to create a segmented bar plot:
+    ```{r, echo=TRUE, eval=FALSE}
+    # Melinda add code
+    ```
 
     * The plot shows no association between the variables if the height of each segment is approximately the same in each group.
     
-* **Mosaic plot**: similar to the segmented bar plot but the sample size is reflected by the width of the bars
-
+* **Mosaic plot**: similar to the segmented bar plot but the sample size is reflected by the width of the bars. R code to create a mosaic plot:
+    ```{r, echo=TRUE, eval=FALSE}
+    # Melinda add code
+    ```
 
     
 
-#### Simulation-based inference {-}
+#### Simulation-based hypothesis testing for a difference in proportions {-}
 
 * **Hypotheses in notation for a difference in proportions**: In the hypotheses below, the **null value** is equal to zero.
 
@@ -65,15 +70,10 @@ $$H_A: \pi_1-\pi_2 \left\{
 \right\}
 0 $$
 
-* **Simulation methods to create the null distribution**: R code to use simulation methods for one categorical variable to find the p-value, `two_proportion_test`, is shown below.  
+* **Simulation methods to create the null distribution**: R code to use simulation methods for two categorical variables to find the p-value, `two_proportion_test`, is shown below.  
 
     ```{r, eval=FALSE, echo=TRUE}
-two_proportion_test(probability_success = xx, # Null hypothesis value
-          sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
-          as_extreme_as = xx, # Observed statistic
-          direction = "xx", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
+    # Melinda add code
     ```
 
 * Conditions necessary to use simulation-based methods for inference for two categorical variables:
@@ -83,19 +83,24 @@ two_proportion_test(probability_success = xx, # Null hypothesis value
 
 #### Study design {-}
 
-* Explanatory variable: the variable researchers think *may be* affecting the other variable.
+* **Explanatory variable**: the variable researchers think *may be* affecting the other variable. (Some other textbooks call this the "independent" variable.)
     
-* Response variable: the variable researchers think *may be* influenced by the other variable.
+* **Response variable**: the variable researchers think *may be* influenced by the other variable. (Some other textbooks call this the "dependent" variable.)
 
-* Confounding variable: 
-    - associated with both the explanatory and the response variable
-    - explains the association shown by the data 
+* **Observational study**: a study design in which observational units are merely "observed"; no manipulation is done. Examples include surveys and opinion polls.
 
-* Observational study: 
+* **Randomized experiment**: a study design where researchers **randomly assign** observational units to treatment groups (the explanatory variable). Examples include clinical trials where subjects are randomly assigned to either a placebo or a drug.
 
-* Randomized experiment:
+* **Confounding variable**: a third variable that is both (1) associated with the explanatory variable, and (2) associated with the response variable.
+
 
 #### Scope of inference
+
+* The **scope of inference** for a study answers two questions:
+
+    1. To what population can my results be _generalized_?
+    
+    2. Does the study design allow us to assess whether changes in the explanatory variable _cause_ changes in the response variable?
 
 ```{r, fig.align = "center", out.width="65%"}
 include_graphics("images/ScopeOfInferenceGreyscale.png")
