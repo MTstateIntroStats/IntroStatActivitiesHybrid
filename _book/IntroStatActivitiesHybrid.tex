@@ -271,48 +271,80 @@ STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine
 
 \nocite{*}
 
-\chapter{Inference for a Two Categorical Variable: Theory-based Methods}\label{inference-for-a-two-categorical-variable-theory-based-methods}
+\chapter{Inference for Two Categorical Variables: Theory-based Hypothesis Testing and Simulation-based and Theory-based Confidence Intervals}\label{inference-for-two-categorical-variables-theory-based-hypothesis-testing-and-simulation-based-and-theory-based-confidence-intervals}
 
 \section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics}
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a two categorical variables.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of two categorical variables.
 
 \subsection{Key topics}\label{key-topics}
 
 Module 9 introduces theory-based hypothesis testing methods and both simulation-based and theory-based confidence intervals for two categorical variables.
 
-Conditions for the sampling distribution of \(\hat{p}_1-\hat{p}_2\) to follow an approximate normal distribution:
+\subsection{Vocabulary}\label{vocabulary}
+
+\subsubsection*{Theory-based inference}\label{theory-based-inference}
+\addcontentsline{toc}{subsubsection}{Theory-based inference}
 
 \begin{itemize}
 \item
-  \textbf{Independence}: The data are independent within and between the two groups. (\emph{Remember}: This also must be true to use simulation methods!)
+  \textbf{Conditions for the sampling distribution of \(\hat{p}_1-\hat{p}_2\) to follow an approximate normal distribution}: The following conditions must be met in order to use theory-based methods for two categorical variables.
+
+  \begin{itemize}
+  \item
+    \textbf{Independence}: The sample's observations are independent both within and between the two groups. (\emph{Remember}: This also must be true to use simulation-based methods!)
+  \item
+    \textbf{Success-failure condition}: We \emph{expect} to see at least 10 successes and 10 failures in the \emph{each} sample. We consider this condition to be met if we observe at least 10 successes and 10 failures in our data set in both groups: \(n_1\hat{p}_1\geq10\), \(n_1(1-\hat{p}_1)\geq10\), \(n_2\hat{p}_2\geq10\), and \(n_2(1-\hat{p}_2)\geq10\). Equivalently, we check that all four cells in the table have at least 10 observations.
+  \end{itemize}
 \item
-  \textbf{Success-failure condition}: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
+  \textbf{Standard error of a difference in sample proportions assuming the null is true}:
+  \[SE_0(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}_{pooled} \times (1-\hat{p}_{pooled}) \times \left(\frac{1}{n_1}+\frac{1}{n_2}\right)}\]
+  where \(\hat{p}_{pooled}\) is the \textbf{pooled sample proportion}: the total number of successes divided by the total sample size (\(n_1+n_2\)).
 \item
-  Calculation of standard error assuming the null is true:
+  \textbf{Standardized difference in sample proportion}:
+  \[Z = \frac{\hat{p}_1-\hat{p}_2-0}{SE_0(\hat{p}_1 - \hat{p}_2)}\]
+
+  \begin{itemize}
+  \item
+    Measures the number of standard errors the sample difference in proportions is above or below the null value of zero
+  \item
+    If the conditions for the sampling distribution of \(\hat{p}_1 - \hat{p}_2\) to follow an approximate normal distribution are met, and if the true difference in proportions is equal to zero, the standardized difference in sample proportions, \(Z\), will have an approximate \emph{standard} normal distribution.
+  \item
+    Use the \texttt{pnorm} function in R to find a theory-based p-value for a hypothesis test involving a difference in proportions.
+  \end{itemize}
+\item
+  \textbf{Standard error of a difference in sample proportions for a confidence interval} (not assuming the null is true):
+  \[SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}\]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Calculation of the confidence interval for a difference in sample proportions:
+    \[\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2)\]
+  \item
+    Use the \texttt{qnorm} function in R to find the \(z^*\) multiplier.
+  \end{itemize}
 \end{itemize}
 
-\[SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}_{pooled} \times (1-\hat{p}_{pooled}) \times (\frac{1}{n_1}+\frac{1}{n_2})}\]
+\subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval}
+\addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
 
 \begin{itemize}
-\tightlist
 \item
-  Calculation of the standardized difference in sample proportion:
+  R code to find the simulation-based confidence interval using the \texttt{two\_proportion\_bootstrap\_CI} function from the \texttt{catstats} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{two\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }
+                            \AttributeTok{data=}\NormalTok{object, }\CommentTok{\# Name of data set}
+                            \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
+                            \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
+                            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+                            \AttributeTok{confidence\_level =}\NormalTok{ xx) }\CommentTok{\# Enter the level of confidence as a decimal}
+\end{Highlighting}
+\end{Shaded}
 \end{itemize}
 
-\[t = \frac{\hat{p}_1-\hat{p}_2-0}{SE(\hat{p}_1 - \hat{p}_2)}\]
-
-\begin{itemize}
-\item
-  Measures the number of standard errors the sample difference in proportions is above or below the null value of zero
-\item
-  Calculation of the difference in sample proportion not assuming the null is true
-\end{itemize}
-
-\[SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}\]
-* Calculation of the confidence interval for a difference in sample proportions
-
-\[\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2)\]
 \newpage
 
 \section{Video Notes: Theoretical Inference for Two Categorical Variables}\label{video-notes-theoretical-inference-for-two-categorical-variables}
@@ -1085,7 +1117,7 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in R (in the 
          \AttributeTok{data=}\NormalTok{glycemic, }\CommentTok{\# Name of data set}
          \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
          \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-         \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+         \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
          \AttributeTok{confidence\_level =}\NormalTok{ xx) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}

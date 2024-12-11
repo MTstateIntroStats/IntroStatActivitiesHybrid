@@ -89,7 +89,7 @@ two_proportion_bootstrap_CI(formula = response~explanatory,
          data=glycemic, # Name of data set
          first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
          response_value_numerator = "xx", # Define which outcome is a success 
-         number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+         number_repetitions = 10000, # Always use a minimum of 1000 repetitions
          confidence_level = xx) # Enter the level of confidence as a decimal
 ```
 
