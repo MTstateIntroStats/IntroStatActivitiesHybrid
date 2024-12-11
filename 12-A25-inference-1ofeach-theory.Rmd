@@ -38,21 +38,17 @@ In a study comparing immersive virtual reality (VR) to traditional hands-on meth
 
 * Open the RScript file
 
-* Enter the name of the dataset for datasetname in line 
+* Enter the name of the data set for datasetname in line 8
+
+* Highlight and run lines 1--8
+
+```{r, eval=FALSE, echo=TRUE}
+moon <- read.csv("datasetname.csv")
+```
+
 
 1. Write out the parameter of interest in words in context of the study.
 
-    * To write in context:
-
-        - Population word (true, long-run, population)
-
-        - Summary measure (depends on the type of data)
-
-        - Context
-
-            - Observational units
-
-            - Variable(s)
 \vspace{1in}
 
 2.  Write out the null hypothesis in notation for this study.  Be sure to clearly identify the subscripts.
@@ -84,12 +80,10 @@ To create the plots of the data:
 * Highlight and run lines 12 - 17
 
 ```{r, echo=TRUE, eval=FALSE}
-moon <- read.csv("data/Moon_VR.csv")
 moon %>%  # Data set piped into...
   ggplot(aes(y = TestScore, x = Method))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Boxplots of Test Scores for Undergraduate Students Comparing VR 
-       Teaching Methods and Traditional Teaching Methods",  # Title
+  labs(title = "Don't forget to title your plot!",  # Title
        x = "Methods",    # x-axis label
        y = "Test Score (points)")  # y-axis label
 ```
@@ -139,20 +133,20 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 
 * Enter the df for yy
 
-* Highlight and run line 28
+* Highlight and run line 27
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 2*pt(xx, df=yy, lower.tail=FALSE)
 ```
 \vspace{0.3in}
 
-8.  What is the p-value for the study?
+8. Report the p-value for the study.  Why did we multiply by two to find the p-value?
 
-\vspace{0.2in}
+\vspace{0.5in}
 
 To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
 
-$$(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))$$
+$$\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)$$
 
 We will need to find the $t^*$ multiplier using the function `qt()`.  
 
@@ -160,7 +154,7 @@ We will need to find the $t^*$ multiplier using the function `qt()`.
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 34
+* Highlight and run line 32
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 qt(percentile, df = yy, lower.tail=TRUE)

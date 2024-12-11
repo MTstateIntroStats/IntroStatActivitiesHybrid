@@ -35,7 +35,7 @@ A study in the Academy of Management Journal [@porath2017] investigated how rude
 
 * Download the R script file from D2L and upload to the RStudio server
 
-* Highlight and run lines 1--7
+* Highlight and run lines 1--7 to load the data
 
 ```{r, echo=TRUE, collapse=FALSE}
 # Read in data set
@@ -43,6 +43,8 @@ rude <- read.csv("https://math.montana.edu/courses/s216/data/rude.csv")
 ```
 
 \newpage
+
+To create a plot of the data and a table of summary statistics.
 
 * Highlight and run lines 11--19
 
@@ -156,7 +158,7 @@ two_mean_test(response~explanatory, #Enter the names of the variables
 
 8.  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
 
-\vspace{0.8in}
+\vspace{0.7in}
 
 ##### Confidence interval {-}
 
