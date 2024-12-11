@@ -88,7 +88,7 @@ H_A: \pi_1 \left\{
 \right\}
 \pi_2 $$
 
-* **Simulation methods to create the null distribution**: R code to use simulation methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
+* **Simulation-based methods to create the null distribution**: R code to use simulation-based methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
 
     ```{r, eval=FALSE, echo=TRUE}
     two_proportion_test(formula = response~explanatory, # response ~ explanatory

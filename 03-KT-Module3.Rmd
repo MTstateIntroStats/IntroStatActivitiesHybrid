@@ -130,7 +130,7 @@ $$H_A: \pi \left\{
 
 * **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 
-* **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
+* **Simulation-based methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
 
     R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test` (from the `catstats` package), is shown below.  
 
@@ -186,7 +186,7 @@ include_graphics("images/soe_gradient_gray.png")
 
 * **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample.
 
-* **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
+* **Simulation-based methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
     R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI` (from the `catstats` package), is shown below. 
 

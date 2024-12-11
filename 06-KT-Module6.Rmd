@@ -132,7 +132,7 @@ $$H_A: \mu\left\{
 #### Simulation-based hypothesis testing {-}
 
 
-* R code to use for **simulation-based methods** for one quantitative variable to find the p-value, `one_mean_test` (from the `catstats` package), is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
+* **Simulation-based methods to create the null distribution**: R code to use for simulation-based methods for one quantitative variable to find the p-value, `one_mean_test` (from the `catstats` package), is shown below. Review the comments (instructions after the #) to see what each should be entered for each line of code.
 
     ```{r, eval=FALSE, echo=TRUE}
     one_mean_test(object$variable,#Enter the object name and variable

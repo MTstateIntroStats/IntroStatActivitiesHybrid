@@ -28,7 +28,7 @@ $$Z = \frac{\hat{p}_1-\hat{p}_2-0}{SE_0(\hat{p}_1 - \hat{p}_2)}$$
     
     * If the conditions for the sampling distribution of $\hat{p}_1 - \hat{p}_2$ to follow an approximate normal distribution are met, and if the true difference in proportions is equal to zero, the standardized difference in sample proportions, $Z$, will have an approximate _standard_ normal distribution.
     
-    * Use the `pnorm` function in R to find a theory-based p-value for a hypothesis test involving a difference in proportions.
+    * Use the `pnorm` function in R to find a theory-based p-value for a hypothesis test involving a difference in proportions by finding the area under a standard normal distribution where $Z$ is as or more extreme as the value observed (in the direction of $H_A$).
     
 
 * **Standard error of a difference in sample proportions for a confidence interval** (not assuming the null is true):
