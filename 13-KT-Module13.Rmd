@@ -81,7 +81,11 @@ ggplot(aes(x = explanatory, y = response))+  # Specify variables
     
     * R code to find the **correlation** matrix between variables:
     ```{r, eval=FALSE, echo=TRUE}
-    # Melinda add code
+    object %>%  # Data set pipes into
+        select(c("variable1", "variable2", "variable3")) %>% 
+        #Selects the variables you want to compare
+        cor(use="pairwise.complete.obs") %>%  #Calculates the correlation between each pair
+        round(3) #Rounds to 3 decimal places
     ``` 
 
 * **Coefficient of determination**: measures the proportion of total variability in the response variable that is explained by the linear relationship with the explanatory variable. The coefficient of determination can be calculated in three ways:
