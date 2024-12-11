@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 3 introduces the steps of the statistical investigation process. We explore **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+Module 3 introduces the steps of the statistical investigation process. We conduct **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
 
 * Notation for a sample proportion: $\hat{p}$
 
@@ -18,7 +18,7 @@ Module 3 introduces the steps of the statistical investigation process. We explo
     
     * Relative frequency bar plot
 
-We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
+Exploratory data analysis is step 3 of the statistical investigation process. We will then use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
 
 #### Steps of the statistical investigation process {-}
 
