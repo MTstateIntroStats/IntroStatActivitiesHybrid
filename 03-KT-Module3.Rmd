@@ -174,7 +174,7 @@ include_graphics("images/soe_gradient_gray.png")
 
 * **Conditions necessary to use simulation-based methods for inference  for a single categorical variable**:
 
-    * **Independence**: Observational units must be independent of one another; the outcome of one observational unit should have no influence on the outcome of another.
+    * **Independence**: observational units must be independent of one another; the outcome of one observational unit should have no influence on the outcome of another.
 
 * **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
 

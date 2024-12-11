@@ -14,9 +14,9 @@ Module 9 introduces theory-based hypothesis testing methods and both simulation-
 
 * **Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution**: The following conditions must be met in order to use theory-based methods for two categorical variables.
 
-    * **Independence**: The sample's observations are independent both within and between the two groups. (*Remember*: This also must be true to use simulation-based methods!)
+    * **Independence**: the sample's observations are independent both within and between the two groups. (*Remember*: This also must be true to use simulation-based methods!)
 
-    * **Success-failure condition**: We *expect* to see at least 10 successes and 10 failures in the _each_ sample. We consider this condition to be met if we observe at least 10 successes and 10 failures in our data set in both groups: $n_1\hat{p}_1\geq10$, $n_1(1-\hat{p}_1)\geq10$, $n_2\hat{p}_2\geq10$, and $n_2(1-\hat{p}_2)\geq10$. Equivalently, we check that all four cells in the table have at least 10 observations.
+    * **Success-failure condition**: we *expect* to see at least 10 successes and 10 failures in the _each_ sample. We consider this condition to be met if we observe at least 10 successes and 10 failures in our data set in both groups: $n_1\hat{p}_1\geq10$, $n_1(1-\hat{p}_1)\geq10$, $n_2\hat{p}_2\geq10$, and $n_2(1-\hat{p}_2)\geq10$. Equivalently, we check that all four cells in the table have at least 10 observations.
 
 * **Standard error of a difference in sample proportions assuming the null is true**:
 $$SE_0(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}_{pooled} \times (1-\hat{p}_{pooled}) \times \left(\frac{1}{n_1}+\frac{1}{n_2}\right)}$$
@@ -39,6 +39,9 @@ $$\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2)$$
     * Use the `qnorm` function in R to find the $z^*$ multiplier.
     
 #### Simulation-based confidence interval {-}
+
+* Review the conditions necessary for simulation-based inference in Module 8.
+
 
 * R code to find the simulation-based confidence interval using the `two_proportion_bootstrap_CI` function from the `catstats` package.
 

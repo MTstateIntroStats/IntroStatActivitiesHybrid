@@ -72,7 +72,7 @@ $$H_A: \mu_1 - \mu_2 \left\{
 
 * **Conditions necessary to use simulation-based methods for inference for a quantitative response with independent groups**:
 
-    * **Independence**: There must be independence of observational units within groups and between groups.
+    * **Independence**: there must be independence of observational units within groups and between groups.
 
 * **Simulation-based methods to create the null distribution**: R code for simulation-based methods to find the p-value using the `two_mean_test` function in the `catstats` package.
 
@@ -102,9 +102,9 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
 
 * **Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
 
-    * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
+    * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Normality Condition**: Either the sample observations come from a normally distributed population or we have a large enough sample size.  _When we have two samples, we need to check this condition for each group!_ To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
+     * **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  _When we have two samples, we need to check this condition for each group!_ To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
      
          - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          

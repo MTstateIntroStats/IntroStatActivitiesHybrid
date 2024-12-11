@@ -92,7 +92,7 @@ H_A: \pi_1 \left\{
 
 * **Conditions necessary to use simulation-based methods for inference  for a two categorical variables**:
 
-    * **Independence**: Observational units must be independent of one another both within and between groups.
+    * **Independence**: observational units must be independent of one another both within and between groups.
     
 
 * **Simulation-based methods to create the null distribution**: R code to use simulation-based methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
