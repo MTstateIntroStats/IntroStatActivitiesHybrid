@@ -149,7 +149,7 @@ The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 33
+* Highlight and run line 35
 
 
 ``` r
@@ -196,14 +196,10 @@ golf %>%
 
 
 
-12.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q9 to explain your answer.
+12.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q11 to explain your answer.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-2} \end{center}
 
 \vspace{0.8in}
 

@@ -109,7 +109,7 @@ hist(bigmacLM$resid, xlab="Residuals", ylab="Frequency",
  
 #### Ask a research question {-}
 
-8. Write out the null and alternative hypotheses in notation to test *correlation* between Big Mac cost and country GDP.
+8. Write out the null and alternative hypotheses in notation to test *correlation* between Big Mac cost and log GDP.
 
 \vspace{.2in}
 

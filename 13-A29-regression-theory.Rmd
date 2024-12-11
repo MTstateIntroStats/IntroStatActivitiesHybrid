@@ -145,7 +145,7 @@ The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 33
+* Highlight and run line 35
 
 ```{r, echo=TRUE, collapse=FALSE, eval=FALSE}
 qt(xx, yy, lower.tail = TRUE) # 95% t* multiplier 
@@ -186,9 +186,10 @@ golf %>%
 
 
 
-12.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q9 to explain your answer.
+12.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q11 to explain your answer.
 
 ```{r}
+par(mfrow=c(2,1))
 golf %>% # Data set piped into...
   ggplot(aes(y = Percent_Accuracy, x = League))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
@@ -196,10 +197,6 @@ golf %>% # Data set piped into...
        # Title
        x = "League", # x-axis label
        y = "Percent Accuracy (%)") # y-axis label
-```
-
-
-```{r}
 golf %>% # Data set piped into...
   ggplot(aes(y = Driving_Distance, x = League))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot

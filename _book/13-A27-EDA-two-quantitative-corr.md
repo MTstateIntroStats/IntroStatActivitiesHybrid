@@ -112,7 +112,7 @@ There are three summary measures calculated from two quantitative variables: slo
 
 * Enter `Retention` for response and `SATMath_75` for explanatory in line 25
 
-* Highlight and run lines 25 -- 26 to fit the linear model.
+* Highlight and run lines 25--26 to fit the linear model.
 
 
 ``` r

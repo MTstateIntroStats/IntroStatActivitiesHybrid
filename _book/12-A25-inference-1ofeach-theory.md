@@ -38,21 +38,18 @@ In a study comparing immersive virtual reality (VR) to traditional hands-on meth
 
 * Open the RScript file
 
-* Enter the name of the dataset for datasetname in line 
+* Enter the name of the data set for datasetname in line 8
+
+* Highlight and run lines 1--8
+
+
+``` r
+moon <- read.csv("datasetname.csv")
+```
+
 
 1. Write out the parameter of interest in words in context of the study.
 
-    * To write in context:
-
-        - Population word (true, long-run, population)
-
-        - Summary measure (depends on the type of data)
-
-        - Context
-
-            - Observational units
-
-            - Variable(s)
 \vspace{1in}
 
 2.  Write out the null hypothesis in notation for this study.  Be sure to clearly identify the subscripts.
@@ -85,12 +82,10 @@ To create the plots of the data:
 
 
 ``` r
-moon <- read.csv("data/Moon_VR.csv")
 moon %>%  # Data set piped into...
   ggplot(aes(y = TestScore, x = Method))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Boxplots of Test Scores for Undergraduate Students Comparing VR 
-       Teaching Methods and Traditional Teaching Methods",  # Title
+  labs(title = "Don't forget to title your plot!",  # Title
        x = "Methods",    # x-axis label
        y = "Test Score (points)")  # y-axis label
 ```
@@ -141,7 +136,7 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 
 * Enter the df for yy
 
-* Highlight and run line 28
+* Highlight and run line 27
 
 
 ``` r
@@ -149,21 +144,23 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 ```
 \vspace{0.3in}
 
-8.  What is the p-value for the study?
+8. Report the p-value for the study.  Why did we multiply by two to find the p-value?
 
-\vspace{0.2in}
+\vspace{0.5in}
 
-To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
+To calculate a theory-based 95\% confidence interval for a difference in means, in the questions on the next page, we will use the formula:
 
-$$(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))$$
+$$\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)$$
 
-We will need to find the $t^*$ multiplier using the function `qt()`.  
+First, we will need to find the $t^*$ multiplier using the function `qt()`.  
+
+To find the $t^*$ multiplier
 
 * Enter the percentile to find the multiplier for a 95\% confidence level
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 34
+* Highlight and run line 32
 
 
 ``` r

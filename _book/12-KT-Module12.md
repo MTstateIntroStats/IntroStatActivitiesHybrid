@@ -1,65 +1,58 @@
-# Inference for a Quantitative Response with Independent Samples
+# Exploratory Data Analysis and Inference for a Quantitative Response with Independent Samples
 
 ## Vocabulary Review and Key Topics
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a categorical explanatory variable and a quantitative response variable for independent samples.  Module 12 will cover both simulation and theory-based methods of inference.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a categorical explanatory variable and a quantitative response variable for independent samples.  
 
-Types of plot for independent variables
+### Key topics
 
-* **Side-by-side boxplots**: plots a boxplot of the five number summary for each categorical level
+Module 12 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with independent samples. The **summary measure** for a quantitative response with independent samples is a **difference in means**. 
 
-* R code to create side-by-side boxplots:
+* Notation for a difference in sample means: $\bar{x}_1 - \bar{x}_2$, where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
 
+* Notation for a difference in population means: $\mu_1 - \mu_2$
 
-``` r
-object %>%  # Data set piped into...
-  ggplot(aes(y = response, x = explanatory))+  # Identify variables
-  geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Don't forget to include a title",  # Title: should include the type of plot,
-       # observational units, variables
-       x = "x-axis label",    # x-axis label
-       y = "y-axis label")  # y-axis label
-```
+Types of plots for a quantitative response variable with independent samples:
 
-* **Stacked histogram**: plots one histogram for each level of the categorical variable
+* Side-by-side boxplots
 
-* **Stacked dotplots**: plots one dotplot for each level of the categorical variable
+* Stacked histograms
 
-* Four characteristics to compare boxplots
+* Stacked dotplots
 
-    - Shape  (symmetric or skewed)
-    
-    - Center 
-    
-    - Spread
-    
-    - Outliers?
-
-Summary measure
-
-* **Difference in mean**: measures the difference in mean values between the two categorical groups
-
-- Parameter notation for difference in means: $\mu_1 - \mu_2$, where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
-    
-- Sample notation for difference in means: $\bar{x}_1 - \bar{x}_2$
-
-\vspace{1mm}
-
-* R code to find the summary statistics 
-
-    * Note: review the interpretations of the other summary measures from Module 6
-
+R code to find the summary statistics for a quantitative response variable with independent samples:
 
 ``` r
 object %>%
-  reframe(favstats(response~explantory))
+  reframe(favstats(response ~ explanatory))
 ```
+
+
+### Vocabulary
+
+#### Plotting two categorical variables {-}
+
+* **Side-by-side boxplots**: plots a boxplot of the five number summary for each categorical level. R code to create side-by-side boxplots:
+    
+    ``` r
+    object %>%  # Data set piped into...
+      ggplot(aes(y = response, x = explanatory))+  # Identify variables
+      geom_boxplot()+  # Tell it to make a box plot
+      labs(title = "Don't forget to include a title",  # Title: should include the type of plot,
+       # observational units, variables
+       x = "x-axis label",    # x-axis label
+       y = "y-axis label")  # y-axis label
+    ```
+
+
+\vspace{1mm}
+
 
 ### Hypothesis Testing {-}
 
-Hypotheses:
+* **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
 
-$$H_0: \mu_1 - \mu_2 = 0 ~ \text{or}~ H_0: \mu_1 = \mu_2 $$
+$$H_0: \mu_1 - \mu_2 = 0 ~~~ \text{or}~~~ H_0: \mu_1 = \mu_2 $$
 $$H_A: \mu_1 - \mu_2 \left\{
 \begin{array}{ll}
 < \\
@@ -68,7 +61,7 @@ $$H_A: \mu_1 - \mu_2 \left\{
 \end{array}
 \right\}
 0 
-~ \text{or} ~ H_A:
+~~~ \text{or} ~~~ H_A:
 \mu_1 \left\{
 \begin{array}{ll}
 < \\
