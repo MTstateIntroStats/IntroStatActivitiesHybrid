@@ -23,12 +23,12 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \vspace{1in}
 
+
 5.  Calculate the summary statistic.  Use proper notation.
 
 \vspace{0.3in}
-\newpage
 
-6. What values should be entered for each of the following into the one proportion test to create 1000 simulations?
+6. What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 
 * Probability of success:
 
@@ -50,7 +50,7 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \vspace{0.2in}
 
-```{r}
+```{r, echo=TRUE}
 one_proportion_test(probability_success = 0.2, #Null hypothesis value
                     sample_size = 1753, #Enter sample size
                     number_repetitions = 10000, #Enter number of simulations
@@ -99,7 +99,6 @@ include_graphics("images/soe_gradient_gray.png")
     
 \vspace{.1in}
 
-\newpage
 ```{r, echo=TRUE, eval=TRUE}
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 1753, # Sample size

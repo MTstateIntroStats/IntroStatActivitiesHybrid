@@ -57,24 +57,33 @@ dogs %>% # Data set piped into...
 
 \vspace{0.3in}
 
-5. **Will theory-based methods give the sample results as simulation based methods?  Explain your answer.**
+5. **Will theory-based methods give the same results as simulation based methods?  Explain your answer.**
 
-\vspace{0.6in}
+\vspace{1in}
 
 To use the computer simulation, we will need to enter the 
+
 * assumed "probability of success" ($\pi_0$), 
+
 * "sample size" (the number of observational units or cases in the sample),
+
 * "number of repetitions" (the number of samples to be generated), 
+
 * "as extreme as" (the observed statistic), and 
+
 * the "direction" (matches the direction of the alternative hypothesis).
 
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion test to create a null distribution with 1000 simulations. Then highlight and run lines 21--26.
+We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. 
+
+* Using the provided `R` script file, fill in the values/words for each `xx` in the one proportion test to create a null distribution with 10000 simulations. 
+
+* Then highlight and run lines 21--26.
 
 
 ``` r
 one_proportion_test(probability_success = xx, # Null hypothesis value
           sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
+          number_repetitions = 10000, # Enter number of simulations
           as_extreme_as = xx, # Observed statistic
           direction = "xx", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
@@ -85,22 +94,24 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
 
 The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. 
 
-* Enter the value of the appropriate percentile for xx in the provided R script file to find the multiplier for a 90\% confidence interval. 
+* Enter the value of the appropriate percentile in the provided R script file to find the multiplier for a 90\% confidence interval. 
 
-* Highlight and run line 17
+* Highlight and run line 31
 
 
 ``` r
-qnorm(xx. lower.tail = TRUE) # Multiplier for 90% confidence interval
+qnorm(percentile, lower.tail = TRUE) # Multiplier for 90% confidence interval
 ```
 
 7.  **Calculate the margin of error for a 90\% confidence interval.**
 
-\vspace{0.5in}
+\vspace{0.6in}
 
 8. Calculate a 90\% confidence interval.
 
 \vspace{0.6in}
+
+\newpage
 
 #### Summarize the results of the study {-}
 

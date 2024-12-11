@@ -22,7 +22,7 @@ In this activity, we will explore what being 95\% confidence means. Some terms c
 
 ### Handedness of male boxers continued
 
-We will use the male boxer study to look at what confidence means.
+In today's activity, we will use the male boxer study to look at what confidence means.
 
 Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. The fighting claim states that left-handed men have an advantage in competition.  In this random sample of 500 male professional boxers, we want to see if there is an over-prevalence of left-handed fighters.  In the sample of 500 male boxers, 81 were left-handed.
 

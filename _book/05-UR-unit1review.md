@@ -10,6 +10,6 @@ The following worksheets review each of the modules.  These worksheets will be c
 
 ## Key Topics
 
-Review the key topics for Unit 1 prior to the first exams.  All of these topics will be covered in Modules 1$-$4.
+Review the key topics for Unit 1 prior to the first exams.  All of these topics will be covered in Modules 1--4.
 
 \newpage

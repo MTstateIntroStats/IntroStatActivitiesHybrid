@@ -40,6 +40,8 @@ e. Find the value of $P(N|C)$. What does this probability mean?
 
 \vspace{1in}
 
+\newpage
+
 2.	A private college report contains these statistics:
 
 * 70\% of incoming freshmen attended public schools
@@ -51,16 +53,15 @@ e. Find the value of $P(N|C)$. What does this probability mean?
 Let A represent the event that a freshman attended public school and B the event that a freshman eventually graduates.
 
 a. Identify the following values with appropriate probability notation.
-
 \vspace{2mm}
 
-     = 0.70
+    $0.70$
 \vspace{2mm}     
     
-    = 0.75
+    $0.75$
 \vspace{2mm}
 
-    = 0.90
+    $0.90$
 \vspace{2mm}
 
 b. Fill in the table below to represent the situation:
@@ -89,7 +90,7 @@ e. Of the population of freshman that attended public school, what is the probab
 \vspace{1in}
 
 
-f. Find the value of $P(A \text{and} B^C)$.  Write this probability in context of the problem.
+f. Find the value of $P(A~\text{and}~B^C)$.  Write this probability in context of the problem.
 
 
 \newpage

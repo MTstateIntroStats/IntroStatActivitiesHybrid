@@ -68,17 +68,19 @@ boxers %>% # Data set piped into...
 
 2.  Write out the parameter of interest in words, in context of the study.  
 
-\vspace{0.8in}
+\vspace{1in}
 
 3.  Write out the null hypothesis in words.
-\vspace{0.8in}
+\vspace{1in}
 
 4. Write out the alternative hypothesis in notation.
-\vspace{0.3in}
+\vspace{0.4in}
 
 5. Give the value of the summary statistic (sample proportion) for this study.  Use proper notation.
 
 \vspace{0.3in}
+
+\newpage
 
 ### Theory-based methods {-}
 
@@ -140,7 +142,7 @@ The standardized statistic measures the *number of standard errors the sample st
 
 \vspace{.8in}
 
-We will use the `pnorm()` function in `R` to find the p-value. The value for Z was entered into the code below to get the p-value.  Check that this answer matches what you calculated in question 7. Notice that we used `lower.tail = FALSE` to find the p-value.  `R` will calculate the p-value *greater* than the value of the standardized statistic.  
+We will use the `pnorm()` function in `R` to find the p-value. In the code below, notice that we used `lower.tail = FALSE` to find the p-value.  `R` will calculate the p-value *greater* than the value of the standardized statistic.  
 
 Notes:
 
@@ -150,7 +152,7 @@ Notes:
 
 * Enter the value of the standardized statistic for xx
 
-* Highlight and run lines 21--23
+* Highlight and run lines 20--22
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
 pnorm(xx, # Enter value of standardized statistic
@@ -172,9 +174,9 @@ Suppose that we want to show that the true proportion of male boxers **differs**
 
 13.  Write out the alternative hypothesis in notation for this new research question.
 
-\vspace{0.5in}
+\vspace{0.3in}
 
-14.  How would this impact the p-value?
+14.  How would this impact the p-value?  Would the p-value be larger or smaller?
 
 \vspace{0.2in}
 

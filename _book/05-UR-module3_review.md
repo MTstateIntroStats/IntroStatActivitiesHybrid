@@ -24,12 +24,12 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \vspace{1in}
 
+
 5.  Calculate the summary statistic.  Use proper notation.
 
 \vspace{0.3in}
-\newpage
 
-6. What values should be entered for each of the following into the one proportion test to create 1000 simulations?
+6. What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 
 * Probability of success:
 
@@ -50,6 +50,18 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 * Direction ("greater", "less", or "two-sided"):
 
 \vspace{0.2in}
+
+
+``` r
+one_proportion_test(probability_success = 0.2, #Null hypothesis value
+                    sample_size = 1753, #Enter sample size
+                    number_repetitions = 10000, #Enter number of simulations
+                    as_extreme_as = 0.187, #observed statistic
+                    direction = "two-sided", #specify direction of alternative hypothesis
+                    summary_measure = "proportion") #Reporting proportion or number of successes?
+
+```
+
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
@@ -92,7 +104,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
     
 \vspace{.1in}
 
-\newpage
 
 ``` r
 set.seed(216)

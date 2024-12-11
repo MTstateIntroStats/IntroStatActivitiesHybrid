@@ -21,7 +21,7 @@ Statistician Jessica Utts has conducted an extensive analysis of Ganzfeld studie
 
 A single proportion can be mathematically modeled using the normal distribution if certain conditions are met.
 
-Conditions for the sample distribution of $\hat{p}$.
+Conditions for the sampling distribution of $\hat{p}$ to follow an approximate normal distribution.
 
 * Independence: The sample’s observations are independent, e.g., are from a simple random sample
 
@@ -85,7 +85,7 @@ pnorm(9.333, # Enter value of standardized statistic
 \vspace{0.1in}
 
 Simulation Method:
-```{r, out.width="85%"}
+```{r, out.width="80%", echo=TRUE}
 set.seed(216)
 one_proportion_test(probability_success = 0.25, #Null hypothesis value
                     sample_size = 2124, #Enter sample size
@@ -133,10 +133,8 @@ qnorm(0.975) # Multiplier for 95% confidence interval
 
 \vspace{1in}
 
-\newpage
-
 Simulation Methods:
-```{r, out.width="85%"}
+```{r, out.width="80%", echo=TRUE}
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 2124, # Sample size
                     number_successes = 709, # Observed number of successes

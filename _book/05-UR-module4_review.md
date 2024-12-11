@@ -21,7 +21,7 @@ Statistician Jessica Utts has conducted an extensive analysis of Ganzfeld studie
 
 A single proportion can be mathematically modeled using the normal distribution if certain conditions are met.
 
-Conditions for the sample distribution of $\hat{p}$.
+Conditions for the sampling distribution of $\hat{p}$ to follow an approximate normal distribution.
 
 * Independence: The sample’s observations are independent, e.g., are from a simple random sample
 
@@ -92,7 +92,20 @@ pnorm(9.333, # Enter value of standardized statistic
 
 Simulation Method:
 
-\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+``` r
+set.seed(216)
+one_proportion_test(probability_success = 0.25, #Null hypothesis value
+                    sample_size = 2124, #Enter sample size
+                    number_repetitions = 1000, #Enter number of simulations
+                    as_extreme_as = 0.334, #observed statistic
+                    direction = "greater", #specify direction of alternative hypothesis
+                    summary_measure = "proportion") #Reporting proportion or number of successes?
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 10.  Interpret the p-value in context of the study.
 
@@ -145,7 +158,17 @@ qnorm(0.975) # Multiplier for 95% confidence interval
 
 Simulation Methods:
 
-\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+``` r
+set.seed(216)
+one_proportion_bootstrap_CI(sample_size = 2124, # Sample size
+                    number_successes = 709, # Observed number of successes
+                    number_repetitions = 10000, # Number of bootstrap samples to use
+                    confidence_level = 0.95) # Confidence level as a decimal
+```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 14.  Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.6in}
