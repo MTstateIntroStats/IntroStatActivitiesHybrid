@@ -314,11 +314,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \vspace{0.8in}
 
-2. How is the value of relative risk calculated?
-
-\vspace{0.2in}
-
-3. Explain why a theory-based confidence interval for the Good Samaritan study from last module would NOT be similar to the bootstrap interval created.
+2. Explain why a theory-based confidence interval for the Good Samaritan study from last module would NOT be similar to the bootstrap interval created.
 
 \vspace{1in}
 

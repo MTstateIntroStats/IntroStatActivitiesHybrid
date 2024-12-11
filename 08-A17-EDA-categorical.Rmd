@@ -138,7 +138,7 @@ ggplot(aes(x = explanatory, fill = response)) +   # This specifies the variables
 
 We could also plot the data using a mosaic plot which is shown below.  
 
-```{r, out.width="60%", echo=TRUE, eval=TRUE}
+```{r, out.width="60%", echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 myopia$Sight <- factor(myopia$Sight, levels = c("No Myopia", "Myopia", "High Myopia"))
 myopia %>% # Data set piped into...
   ggplot() +   # This specifies the variables

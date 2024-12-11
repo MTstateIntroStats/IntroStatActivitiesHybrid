@@ -41,9 +41,7 @@ A study was reported in "Helmet Use and Risk of Head Injuries in Alpine Skiers a
 
 * Download the R script file from D2L and upload to the RStudio server
 
-* Enter the name of the dataset 
-
-* Highlight and run...to import the data set and create the segmented bar plot
+* Highlight and run 1--13 to import the data set and create the segmented bar plot
 
 
 ``` r
@@ -55,8 +53,12 @@ skiers %>% # Data set piped into...
        Involved in Injuries between Helmet Use",  # Make sure to title your plot
        x = "Helmet Use",   # Label the x axis
        y = "") +  # Remove y axis label
-  scale_fill_grey()  # Make figure color
+  scale_fill_grey()  # Make figure black and white
 ```
+
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{09-A19-inference-2cat-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 1. Verify the independence condition is met.
 
@@ -132,7 +134,7 @@ skiers %>% # Data set piped into...
 
 #### Use statistical analysis methods to draw inferences from the data {-}
 
-To test the null hypothesis, we could use simulation-based methods as we did in the activities in Module 7. In this activity, we will focus on theory-based methods.  Like with a single proportion, the sampling distribution of a difference in sample proportions can be mathematically modeled using the normal distribution if certain conditions are met.
+To test the null hypothesis, we could use simulation-based methods as we did in the activities in Module 8. In this activity, we will focus on theory-based methods.  Like with a single proportion, the sampling distribution of a difference in sample proportions can be mathematically modeled using the normal distribution if certain conditions are met.
 
 To calculate the standardized statistic we use: 
 
@@ -148,19 +150,21 @@ $$
 For this study we would first calculate the pooled proportion of successes.
 
 $$\hat{p}_{pool} = \frac{\text{number of "successes"}}{\text{number of cases}} $$
+\vspace{1mm}
+
 5.  Calculate the pooled proportion of head injuries.
 
 \vspace{0.8in}
 
 6. Use the value for the pooled proportion of successes to calculate the $SE_0(\hat{p}_1 - \hat{p}_2)$ assuming the null hypothesis is true.
 
-\vspace{1in}
+\vspace{0.8in}
 
 7. Use the value of the null standard error to calculate the standardized statistic (standardized difference in proportion).
 
 \vspace{0.8in}
 
-8. Mark the value of the standardized difference in proportion on the standard normal distribution shown below.  Interpret this value in context of the problem.
+8. Mark the value of the standardized difference in proportion on the standard normal distribution shown below.  Interpret the standardized statistic in context of the problem.
 
 \vspace{1mm}
 
@@ -171,9 +175,9 @@ $$\hat{p}_{pool} = \frac{\text{number of "successes"}}{\text{number of cases}} $
 
 We will use the `pnorm()` function in R to find the p-value. 
 
-* Enter the value of z for xx
+* Enter the value of z from question 7 for xx
 
-* Highlight and run lines...
+* Highlight and run lines 18--20
 
 
 ``` r
@@ -214,7 +218,7 @@ pnorm(xx, # Enter value of standardized statistic
 
 <!-- \vspace{0.4in} -->
 
-##### How would an increase in sample size impact the p-value of the test? {-}
+#### How would an increase in sample size impact the p-value of the test? {-}
 
 |                | Helmet Use | No Helmet Use | Total |
 |:--------------:|:----------:|:-------------:|:-----:|
@@ -277,7 +281,7 @@ pnorm(-3.308, # Enter value of standardized statistic
 
 1. Simulation-based methods and theory-based methods should give similar results for a study *if the validity conditions are met*.  For both methods, observational units need to be independent. To use theory-based methods, additionally, the success-failure condition must be met. Check the validity conditions for each type of test to determine if theory-based methods can be used.
 
-2. When calculating the standard error for the difference in sample proportions when doing a hypothesis test, we use the pooled proportion of successes, the best estimate for calculating the variability *under the assumption the null hypothesis is true*.  For a confidence interval, we are not assuming a null hypothesis, so we use the values of the two conditional proportions to calculate the standard error.  Make note of the difference in these two formulas. 
+2. When calculating the standard error for the difference in sample proportions when doing a hypothesis test, we use the pooled proportion of successes, the best estimate for calculating the variability *under the assumption the null hypothesis is true*.   
 
 3.  Increasing sample size will result in less sample-to-sample variability in statistics, which will result in a smaller standard error, and a larger standardized statistic.  
 
