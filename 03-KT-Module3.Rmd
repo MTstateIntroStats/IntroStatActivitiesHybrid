@@ -174,7 +174,7 @@ include_graphics("images/soe_gradient_gray.png")
     
         - Direction of the alternative hypothesis
     
-* **Confidence interval**: an interval estimate for the parameter of interest.
+* **Confidence interval**: an interval estimate for the parameter of interest; an interval of _plausible values_ for the parameter.
 
     * A confidence interval helps us answer the following question about the population: How _large_ is the effect?
 
