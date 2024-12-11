@@ -8,7 +8,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 Module 8 will introduce exploratory data analysis and simulation-based hypothesis testing for two categorical variables. The **summary measure** for two categorical variables is a **difference in proportions**. We can also calculate a **relative risk** (ratio of proportions).
 
-* Notation for a difference in sample proportions: $\hat{p}_1 - \hat{p}_2$
+* Notation for a difference in sample proportions: $\hat{p}_1 - \hat{p}_2$, where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
 
 * Notation for a sample relative risk: $\dfrac{\hat{p}_1}{\hat{p}_2}$
 
@@ -69,7 +69,7 @@ $$(RR-1) \times 100\%$$
 
 * **Hypotheses in notation for a difference in proportions**: In the hypotheses below, the **null value** is equal to zero.
 
-$$H_0: \pi_1-\pi_2 = 0$$
+$$H_0: \pi_1-\pi_2 = 0 ~~~ \text{or}~~~ H_0: \pi_1 = \pi_2$$
 $$H_A: \pi_1-\pi_2 \left\{
 \begin{array}{ll}
 < \\
@@ -77,18 +77,27 @@ $$H_A: \pi_1-\pi_2 \left\{
 < \\
 \end{array}
 \right\}
-0 $$
+0 
+~~~ \text{or}~~~
+H_A: \pi_1 \left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\pi_2 $$
 
 * **Simulation methods to create the null distribution**: R code to use simulation methods for two categorical variables to find the p-value, `two_proportion_test` (from the `catstats` package), is shown below.  
 
     ```{r, eval=FALSE, echo=TRUE}
     two_proportion_test(formula = response~explanatory, # response ~ explanatory
-                        data = object, # Name of data set
-                        first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
-                        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
-                        response_value_numerator = "xx", # Define which outcome is a success
-                        as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
-                        direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")
+        data = object, # Name of data set
+        first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
+        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
+        response_value_numerator = "xx", # Define which outcome is a success
+        as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
+        direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")
     ```
 
 * Conditions necessary to use simulation-based methods for inference for two categorical variables:
