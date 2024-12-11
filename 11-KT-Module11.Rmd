@@ -14,7 +14,8 @@ Module 11 will cover exploratory data analysis and both simulation-based and the
 
 * Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used. Additionally, we can create a plot of paired data in R using the `paired_observed_plot` function in the `catstats` function:
     ```{r, echo=TRUE, eval=FALSE}
-    # Melinda add code
+    paired_observed_plot(object) 
+    #Note you can use this plot if you ONLY have two columns of paired data in the data set
     ```
 
 * R code to find the summary statistics for a paired differences:

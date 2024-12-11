@@ -271,1724 +271,64 @@ STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine
 
 \nocite{*}
 
-\chapter{Exploratory Data Analysis and Inference for a Quantitative Response with Independent Samples}\label{exploratory-data-analysis-and-inference-for-a-quantitative-response-with-independent-samples}
+\chapter{Exploratory Data Analysis and Inference for Two Quantitative Variables}\label{exploratory-data-analysis-and-inference-for-two-quantitative-variables}
 
 \section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics}
 
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a categorical explanatory variable and a quantitative response variable for independent samples.
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of two quantitative variables.
 
 \subsection{Key topics}\label{key-topics}
 
-Module 12 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with independent samples. The \textbf{summary measure} for a quantitative response with independent samples is a \textbf{difference in means}.
+Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables. The \textbf{summary measure} for two quantitative variables is either the \textbf{slope} of a regression line or the \textbf{correlation} between the two variables.
 
 \begin{itemize}
 \item
-  Notation for a difference in sample means: \(\bar{x}_1 - \bar{x}_2\), where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
+  Notation for a sample regression slope: \(b_1\)
 \item
-  Notation for a difference in population means: \(\mu_1 - \mu_2\)
+  Notation for a population regression slope: \(\beta_1\)
+\item
+  Notation for a sample correlation: \(r\)
+\item
+  Notation for a population correlation: \(\rho\)
 \end{itemize}
 
-Types of plots for a quantitative response variable with independent samples:
+Types of plots for two quantitative variables:
 
 \begin{itemize}
+\tightlist
 \item
-  Side-by-side boxplots
-\item
-  Stacked histograms
-\item
-  Stacked dotplots
+  Scatterplot
 \end{itemize}
-
-R code to find the summary statistics for a quantitative response variable with independent samples:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ explanatory))}
-\end{Highlighting}
-\end{Shaded}
 
 \subsection{Vocabulary}\label{vocabulary}
 
-\subsubsection*{Plotting two categorical variables}\label{plotting-two-categorical-variables}
-\addcontentsline{toc}{subsubsection}{Plotting two categorical variables}
+\subsubsection*{Plotting two quantitative variables}\label{plotting-two-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Plotting two quantitative variables}
 
 \begin{itemize}
 \item
-  \textbf{Side-by-side boxplots}: plots a boxplot of the five number summary for each categorical level. R code to create side-by-side boxplots:
+  \textbf{Scatterplot}: plots \((x,y)\) pairs of observations with the explanatory variable on the \(x\)-axis and the response variable on the \(y\)-axis. R code to create a scatterplot:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set piped into...}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ response, }\AttributeTok{x =}\NormalTok{ explanatory))}\SpecialCharTok{+}  \CommentTok{\# Identify variables}
-  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}  \CommentTok{\# Tell it to make a box plot}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to include a title"}\NormalTok{,  }\CommentTok{\# Title: should include the type of plot,}
-   \CommentTok{\# observational units, variables}
-   \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
-   \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+   \AttributeTok{y =} \StringTok{"y{-}axis lable"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+   \AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to add a title!"}\NormalTok{) }\SpecialCharTok{+} 
+           \CommentTok{\# Be sure to tile your plots}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
 \end{Highlighting}
 \end{Shaded}
-\end{itemize}
-
-\vspace{1mm}
-
-\subsection*{Hypothesis Testing}\label{hypothesis-testing}
-\addcontentsline{toc}{subsection}{Hypothesis Testing}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Hypotheses in notation for a paired mean difference}: In the hypotheses below, the \textbf{null value} is equal to zero.
-\end{itemize}
-
-\[H_0: \mu_1 - \mu_2 = 0 ~~~ \text{or}~~~ H_0: \mu_1 = \mu_2 \]
-\[H_A: \mu_1 - \mu_2 \left\{
-\begin{array}{ll}
-< \\
-\ne \\
-< \\
-\end{array}
-\right\}
-0 
-~~~ \text{or} ~~~ H_A:
-\mu_1 \left\{
-\begin{array}{ll}
-< \\
-\ne \\
-< \\
-\end{array}
-\right\}
-\mu_2 \]
-
-\subsection*{Simulation Hypothesis Testing}\label{simulation-hypothesis-testing}
-\addcontentsline{toc}{subsection}{Simulation Hypothesis Testing}
-
-\begin{itemize}
-\tightlist
-\item
-  R code for simulation methods to find the p-value using the \texttt{two\_mean\_test} function in the \texttt{catstats} package.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{two\_mean\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\#Enter the names of the variables }
-               \AttributeTok{data =}\NormalTok{ object,  }\CommentTok{\# Enter the name of the dataset}
-              \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction }
-               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations }
-               \AttributeTok{as\_extreme\_as =} \SpecialCharTok{{-}}\NormalTok{xx,  }\CommentTok{\# Observed statistic }
-               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Simulation Confidence Interval}\label{simulation-confidence-interval}
-\addcontentsline{toc}{subsection}{Simulation Confidence Interval}
-
-\begin{itemize}
-\tightlist
-\item
-  R code to find the simulation confidence interval using the \texttt{twomean\_bootstrap\_CI} function from the \texttt{catstats} package.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ explanatory, }\CommentTok{\#Enter the name of the variables}
-                      \AttributeTok{data =}\NormalTok{ object,  }\CommentTok{\# Enter the name of the data set}
-                      \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First value in order of subtraction}
-                      \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-                      \AttributeTok{confidence\_level =}\NormalTok{ xx)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\tightlist
-\item
-  Review how to interpret the confidence interval for two groups from Module 8
-\end{itemize}
-
-\subsection*{Theory-based methods}\label{theory-based-methods}
-\addcontentsline{toc}{subsection}{Theory-based methods}
-
-\begin{itemize}
-\item
-  \textbf{Conditions for the sampling distribution of \(\bar{x}_1 - \bar{x}_2\) to follow an approximate normal distribution}:
 
   \begin{itemize}
+  \tightlist
   \item
-    \textbf{Independence}: The sample's observations are independent, e.g., are from a simple random sample and there is independence between groups. (\emph{Remember}: This also must be true to use simulation methods!)
-  \item
-    \textbf{Normality Condition}: Either the sample observations come from a normally distributed population or we have a large enough sample size. When we have two samples, we need to check this condition for each group! To check this condition, use the following rules of thumb (for both \(n_1\) and \(n_2\)):
-
-    \begin{itemize}
-    \item
-      \(n < 30\): The distribution of the sample must be approximately normal with no outliers.
-    \item
-      \(30 \le n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
-    \item
-      \(n \ge 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-    \end{itemize}
+    If there is a third categorical variable, you can use color or shape to include the third variable on the scatterplot.
   \end{itemize}
 \item
-  \textbf{t-distribution}: a theoretical distribution that is symmetric with a given degrees of freedom smallest sample size minus 1 (\(n-1\))
-\end{itemize}
-
-\[t_{n-1}\]
-
-\begin{itemize}
-\tightlist
-\item
-  Calculation of standard error:
-\end{itemize}
-
-\[SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}\]
-
-\begin{itemize}
-\tightlist
-\item
-  Calculation of the standardized difference in sample mean:
-\end{itemize}
-
-\[t = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}\]
-
-\begin{itemize}
-\item
-  The p-value can be found by using the pt function.
-
-  \begin{itemize}
-  \item
-    Enter the value of the standardized statistic for xx
-  \item
-    Enter the df smallest \((n-1)\) for yy
-  \item
-    If a greater than alternative, change lower.tail = TRUE to FALSE.
-  \item
-    If a two-sided test, multiply by 2.
-  \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Theory-based methods to find the confidence interval}\label{theory-based-methods-to-find-the-confidence-interval}
-\addcontentsline{toc}{subsection}{Theory-based methods to find the confidence interval}
-
-\begin{itemize}
-\tightlist
-\item
-  Calculation of the confidence interval for a difference in sample means
-\end{itemize}
-
-\[\bar{x}_1-\bar{x}_2\pm t^*\times SE(\bar{x}_1-\bar{x}_2)\]
-
-\begin{itemize}
-\item
-  R code to find the multiplier for the confidence interval using theory-based methods.
-
-  \begin{itemize}
-  \item
-    qt will give you the multiplier using the t-distribution with smallest \(n-1\) df (enter for yy)
-  \item
-    Enter the percentile for the given confidence level
-  \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\newpage
-
-\section{Video Notes: Inference for Independent Samples}\label{video-notes-inference-for-independent-samples}
-
-Read Chapters 19 and 20 in the course textbook. Use the following videos to complete the video notes for Module 10.
-
-\subsection{Course Videos}\label{course-videos}
-
-\begin{itemize}
-\item
-  19.1
-\item
-  19.2
-\item
-  19.3TheoryTests
-\item
-  19.4TheoryInterval
-\end{itemize}
-
-\setstretch{1}
-
-\subsection*{Single categorical, single quantitative variable with independent samples}\label{single-categorical-single-quantitative-variable-with-independent-samples}
-\addcontentsline{toc}{subsection}{Single categorical, single quantitative variable with independent samples}
-
-\setstretch{1.5}
-
-\begin{itemize}
-\item
-  In this module, we will study inference for a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ explanatory variable and a \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ response variable where the two groups are \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
-\item
-  Independent groups: When the measurements in one sample are not
-  related to the measurements in the other sample.
-\end{itemize}
-
-\setstretch{1}
-
-\begin{itemize}
-\item
-  Two random samples taken separately from two populations and the same response variable is recorded. Compare the average number of sick days off from work for people who had a flu shot and people who didn't.
-\item
-  Participants are randomly assigned to one of two treatment conditions, and the same response variable is recorded.
-\end{itemize}
-
-Rather than analyzing the differences as a single mean we will calculate summary statistics on each sample.
-
-Example: Fifty-one (51) college students volunteered to look at impacts on memorization, specifically if putting letters into recognizable patterns (like FBI, CIA, EDA, CDC, etc.) would increase the number letters memorized. (Miller 1956) The college students were randomly assigned to either a recognizable or non-recognizable letter group. After a period of study time, the number of letters memorized was collected on each study. Is there evidence that putting letters into recognizable letter groups improve memory?
-
-\setstretch{1.5}
-
-\begin{itemize}
-\tightlist
-\item
-  The summary measure for two independent groups is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ in \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
-\end{itemize}
-
-\setstretch{1}
-
-\setstretch{1.5}
-
-Notation for Independent Groups
-
-\begin{itemize}
-\item
-  Population mean for group 1:
-\item
-  Population mean for group 2:
-\item
-  Sample mean for group 1:
-\item
-  Sample mean for group 2:
-\item
-  Sample difference in means:
-\item
-  Population standard deviation for group 1:
-\item
-  Population standard deviation for group 2:
-\item
-  Sample standard deviation for group 1:
-\item
-  Sample standard deviation for group 2:
-\item
-  Sample size for group 1:
-\item
-  Sample size for group 2:
-\end{itemize}
-
-\setstretch{1}
-
-Why should we treat this as two independent groups rather than paired data?
-
-\vspace{0.6in}
-
-\subsection*{Hypothesis Testing}\label{hypothesis-testing-1}
-\addcontentsline{toc}{subsection}{Hypothesis Testing}
-
-Conditions:
-
-\begin{itemize}
-\tightlist
-\item
-  Independence: the response for one observational unit will not influence the outcome for another observational unit
-\end{itemize}
-
-Null hypothesis assumes ``no effect'', ``no difference'', ``nothing interesting happening'', etc.
-
-\rgi Always of form: ``parameter'' = null value
-
-\(H_0:\)
-
-\vspace{0.5in}
-
-\(H_A:\)
-
-\vspace{0.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  Research question determines the alternative hypothesis.
-\end{itemize}
-
-Write the null and alternative hypotheses for the letters study:
-
-In notation:
-
-\(H_0:\)
-
-\vspace{0.2in}
-
-\(H_A:\)
-
-\vspace{0.2in}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{letters}\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/letters.csv"}\NormalTok{)}
-\NormalTok{letters }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Memorized}\SpecialCharTok{\textasciitilde{}}\NormalTok{Grouped))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#>           Grouped min Q1 median    Q3 max     mean       sd  n missing
-#> 1 NotRecognizable   1  6     12 14.75  24 11.15385 6.576883 26       0
-#> 2    Recognizable   1  6     15 21.00  30 14.32000 8.518216 25       0
-\end{verbatim}
-
-Summary statistic:
-
-\vspace{0.4in}
-
-Interpret the summary statistic in context of the problem:
-
-\vspace{0.4in}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{letters}\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Memorized, }\AttributeTok{x =}\NormalTok{ Grouped))  }\SpecialCharTok{+} \CommentTok{\#Enter the name of the explanatory and response variable}
-  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Number of Letters memorized by Type }
-\StringTok{       of Grouping for College Students"}\NormalTok{, }\CommentTok{\#Title your plot}
-       \AttributeTok{y =} \StringTok{"Number of letters memorized"}\NormalTok{, }\CommentTok{\#y{-}axis label}
-       \AttributeTok{x =} \StringTok{"Letter Grouping"}\NormalTok{) }\CommentTok{\#x{-}axis label}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.6\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-2-1} \end{center}
-
-\subsubsection*{Simulation-based method}\label{simulation-based-method}
-\addcontentsline{toc}{subsubsection}{Simulation-based method}
-
-\begin{itemize}
-\item
-  Simulate many samples assuming \(H_0: \mu_1 = \mu_2\)
-
-  \begin{itemize}
-  \item
-    Write the response variable values on cards
-  \item
-    Mix the explanatory variable groups together
-  \item
-    Shuffle cards into two explanatory variable groups to represent the sample size in each group (\(n_1\) and \(n_2\))
-  \item
-    Calculate and plot the simulated difference in sample means from each simulation
-  \item
-    Repeat 1000 times (simulations) to create the null distribution
-  \item
-    Find the proportion of simulations at least as extreme as \(\bar{x}_1 - \bar{x}_2\)
-  \end{itemize}
-\end{itemize}
-
-\vspace{1mm}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{two\_mean\_test}\NormalTok{(Memorized}\SpecialCharTok{\textasciitilde{}}\NormalTok{Grouped, }\CommentTok{\#Enter the names of the variables}
-              \AttributeTok{data =}\NormalTok{ letters,  }\CommentTok{\# Enter the name of the dataset}
-              \AttributeTok{first\_in\_subtraction =} \StringTok{"Recognizable"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction}
-              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-              \AttributeTok{as\_extreme\_as =} \FloatTok{3.166}\NormalTok{,  }\CommentTok{\# Observed statistic}
-              \AttributeTok{direction =} \StringTok{"greater"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-3-1} \end{center}
-
-Explain why the null distribution is centered at the value of zero:
-
-\vspace{0.8in}
-
-Interpretation of the p-value:
-
-\begin{itemize}
-\item
-  Statement about probability or proportion of samples
-\item
-  Statistic (summary measure and value)
-\item
-  Direction of the alternative
-\item
-  Null hypothesis (in context)
-\end{itemize}
-
-\vspace{0.8in}
-
-Conclusion:
-
-\begin{itemize}
-\item
-  Amount of evidence
-\item
-  Parameter of interest
-\item
-  Direction of the alternative hypothesis
-\end{itemize}
-
-\vspace{0.6in}
-
-\newpage
-
-\subsection*{Confidence interval}\label{confidence-interval}
-\addcontentsline{toc}{subsection}{Confidence interval}
-
-To estimate the difference in true mean we will create a confidence interval.
-
-\subsubsection*{Simulation-based method - Video 19.2}\label{simulation-based-method---video-19.2}
-\addcontentsline{toc}{subsubsection}{Simulation-based method - Video 19.2}
-
-\begin{itemize}
-\item
-  Write the response variable values on cards
-\item
-  Keep explanatory variable groups separate
-\item
-  Sample with replacement \(n_1\) times in explanatory variable group 1 and \(n_2\) times in explanatory variable group 2
-\item
-  Calculate and plot the simulated difference in sample means from each simulation
-\item
-  Repeat 1000 times (simulations) to create the bootstrap distribution
-\item
-  Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
-\end{itemize}
-
-For the letters example, we will estimate the difference in true mean number of letters recognized for students given recognizable letter groupings and students given non-recognizable letter groupings.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(Memorized }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Grouped, }\CommentTok{\#Enter the name of the variables}
-                      \AttributeTok{data =}\NormalTok{ letters,  }\CommentTok{\# Enter the name of the data set}
-                      \AttributeTok{first\_in\_subtraction =} \StringTok{"Recognizable"}\NormalTok{, }\CommentTok{\# First value in order of subtraction}
-                      \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-                      \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-4-1} \end{center}
-
-Confidence interval interpretation:
-
-\begin{itemize}
-\item
-  How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-\item
-  Parameter of interest
-\item
-  Calculated interval
-\item
-  Order of subtraction when comparing two groups
-\end{itemize}
-
-\vspace{0.8in}
-
-\subsubsection*{Theory-based method - Video 19.3TheoryTests}\label{theory-based-method---video-19.3theorytests}
-\addcontentsline{toc}{subsubsection}{Theory-based method - Video 19.3TheoryTests}
-
-Example: Every year, orange and black monarch butterflies migrate from their summer breeding grounds in the US and Canada to mountain forests in central Mexico, where they hibernate for the winter. Due to abnormal weather patterns and drought affecting monarch habitats and feeding grounds, the population of monarch butterflies is estimated to have decreased by 53\% from the 2018-2019 wintering season to the 2019-2020 wintering season (WWF, 2020). While conservationists often resort to captive-rearing with the goal of raising biologically indistinct individuals for release into the wild, tagging studies have shown that captive-reared monarchs have lower migratory success compared to wild monarchs. For this study, the researchers raised 67 monarchs (descended from wild monarchs) from eggs to maturity and then compared them to a group of 40 wild-caught monarchs. The researchers want to explore whether the maximum grip strength (how many Newtons a butterfly exerts at the moment of release when gently tugged from a mesh-covered perch) differs between captive-reared and wild-caught monarchs. Use Captive -- Wild for order of subtraction.
-
-Write the null and alternative hypotheses in notation.
-
-\(H_0:\)
-
-\vspace{0.2in}
-
-\(H_A:\)
-
-\vspace{0.2in}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{butterfly }\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/butterfly1.csv"}\NormalTok{)}
-
-\NormalTok{butterflies }\OtherTok{\textless{}{-}}\NormalTok{ butterfly }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{na.omit}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{rename}\NormalTok{(}\AttributeTok{Monarch\_Group =} \StringTok{"Monarch.Group"}\NormalTok{,}
-           \AttributeTok{MaxGrip =} \StringTok{"Max.Grip.Strength..N."}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Monarch\_Group =} \FunctionTok{factor}\NormalTok{(Monarch\_Group),}
-           \AttributeTok{Sex =} \FunctionTok{factor}\NormalTok{(Sex)) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Monarch\_Group =} \FunctionTok{fct\_collapse}\NormalTok{(Monarch\_Group,}\StringTok{"Captive"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Incubator {-} Fall conditions"}\NormalTok{, }\StringTok{"Rearing room {-} summer conditions"}\NormalTok{), }\StringTok{"Wild"} \OtherTok{=} \StringTok{"Wild migrants"}\NormalTok{))}
-
-\NormalTok{butterflies }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(MaxGrip}\SpecialCharTok{\textasciitilde{}}\NormalTok{Monarch\_Group))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
-#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
-#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
-\end{verbatim}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-Conditions:
-
-\begin{itemize}
-\item
-  Independence: the response for one observational unit will not influence the outcome for another observational unit
-\item
-  Large enough sample size
-\end{itemize}
-
-\vspace{1in}
-
-Like with paired data the t-distribution can be used to model the difference in means.
-
-\setstretch{1.5}
-
-\begin{itemize}
-\tightlist
-\item
-  For independent samples we use the \_\_\_\_\_\_- distribution
-  with \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ degrees of freedom to approximate the sampling distribution.
-\end{itemize}
-
-\setstretch{1}
-
-Theory-based test:
-
-\begin{itemize}
-\item
-  Calculate the standardized statistic
-\item
-  Find the area under the t-distribution with the smallest \(n - 1\) df {[}min(\(n_1-1, n_2-1\)){]} at least as extreme as the standardized statistic
-\end{itemize}
-
-Equation for the standard error of the difference in sample mean:
-
-\vspace{0.5in}
-
-Equation for the standardized difference in sample mean:
-
-\vspace{0.5in}
-
-Are the conditions met to analyze the butterfly data using theory based-methods?
-
-\vspace{0.8in}
-
-Calculate the standardized difference in mean max grip strength.
-
-\begin{itemize}
-\tightlist
-\item
-  First calculate the \(SE(\bar{x}_1 - \bar{x}_2)\)
-\end{itemize}
-
-\vspace{0.6in}
-
-\begin{itemize}
-\tightlist
-\item
-  Then calculate the T-score
-\end{itemize}
-
-\vspace{1in}
-
-What theoretical distribution should we use to find the p-value?
-
-\vspace{0.3in}
-
-To find the theory-based p-value:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pt}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, }\AttributeTok{df=}\DecValTok{39}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}\SpecialCharTok{*}\DecValTok{2}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#> [1] 1.999987
-\end{verbatim}
-
-Conclusion:
-
-\begin{itemize}
-\item
-  Amount of evidence
-\item
-  Parameter of interest
-\item
-  Direction of the alternative hypothesis
-\end{itemize}
-
-\vspace{0.6in}
-
-\subsubsection*{Confidence Interval - Video 19.3TheoryIntervals}\label{confidence-interval---video-19.3theoryintervals}
-\addcontentsline{toc}{subsubsection}{Confidence Interval - Video 19.3TheoryIntervals}
-
-\begin{itemize}
-\tightlist
-\item
-  Calculate the interval centered at the sample statistic
-\end{itemize}
-
-\rgi \(\text{statistic} \pm \text{margin of error}\)
-
-\vspace{0.8in}
-
-Using the butterfly data, calculate the 99\% confidence interval.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{butterflies }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(MaxGrip}\SpecialCharTok{\textasciitilde{}}\NormalTok{Monarch\_Group))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
-#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
-#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Need the \(t^*\) multiplier for a 99\% confidence interval from a t-distribution with \_\_\_\_\_\_\_\_\_ df.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(}\FloatTok{0.995}\NormalTok{, }\AttributeTok{df=}\DecValTok{39}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-#> [1] 2.707913
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  We will use the same value for the \(SE(\bar{x}_1-\bar{x}_2)\) as calculated for the standardized statistic.
-\end{itemize}
-
-\vspace{1in}
-
-Calculate the margin of error for a 99\% confidence interval for the parameter of interest.
-
-\vspace{0.5in}
-
-Calculate a 99\% confidence interval for the parameter of interest.
-
-\vspace{0.6in}
-
-\subsection{Concept Check}\label{concept-check}
-
-Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Why is the recognizable letter study analyzed as two independent groups rather than paired data?
-\end{enumerate}
-
-\vspace{0.6in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Write out the equation for the standard error for a difference in sample means.
-\end{enumerate}
-
-\vspace{1in}
-
-\newpage
-
-\section{Activity 24: Does behavior impact performance?}\label{activity-24-does-behavior-impact-performance}
-
-\setstretch{1}
-
-\subsection{Learning outcomes}\label{learning-outcomes}
-
-\begin{itemize}
-\item
-  Create a side-by-side boxplot of one categorical explanatory variable and one quantitative response variable
-\item
-  Given a research question involving one categorical explanatory variable and one quantitative response variable, construct the null and alternative hypotheses
-  in words and using appropriate statistical symbols.
-\item
-  Describe and perform a simulation-based hypothesis test for a difference in means.
-\item
-  Interpret and evaluate a p-value for a simulation-based hypothesis test for a difference in means.
-\item
-  Use bootstrapping to find a confidence interval for a difference in means.
-\item
-  Interpret a confidence interval for a difference in means.
-\item
-  Use a confidence interval to determine the conclusion of a hypothesis test.
-\end{itemize}
-
-\subsection{Terminology review}\label{terminology-review}
-
-In today's activity, we will use simulation-based methods to analyze the association between one categorical explanatory variable and one quantitative response variable, where the groups formed by the categorical variable are independent. Some terms covered in this activity are:
-
-\begin{itemize}
-\item
-  Independent groups
-\item
-  Difference in means
-\end{itemize}
-
-To review these concepts, see Chapter 19 in the textbook.
-
-\subsection{Behavior and Performance}\label{behavior-and-performance}
-
-A study in the Academy of Management Journal (Porath 2017) investigated how rude behaviors influence a victim's task performance. Randomly selected college students enrolled in a management course were randomly assigned to one of two experimental conditions: rudeness condition (45 students) and control group (53 students). Each student was asked to write down as many uses for a brick as possible in five minutes; this value (total number of uses) was used as a performance measure for each student, where higher values indicate better performance. During this time another individual showed up late for class. For those students in the rudeness condition, the facilitator displayed rudeness by berating the students in general for being irresponsible and unprofessional (due to the late-arriving person). No comments were made about the late-arriving person for students in the control group. Is there evidence that the average performance score for students in the rudeness condition is lower than for students in the control group? Use the order of subtraction of rudeness -- control.
-
-\begin{itemize}
-\item
-  Download the R script file from D2L and upload to the RStudio server
-\item
-  Highlight and run lines 1--7 to load the data
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Read in data set}
-\NormalTok{rude }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/rude.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\newpage
-
-To create a plot of the data and a table of summary statistics:
-
-\begin{itemize}
-\tightlist
-\item
-  Highlight and run lines 11--19
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Side{-}by{-}side box plots}
-\NormalTok{rude }\SpecialCharTok{\%\textgreater{}\%}
-\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ condition, }\AttributeTok{y =}\NormalTok{ number\_of\_uses)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Number of Uses for a Brick based on Behavior Condition}
-\StringTok{         for College Students in a Management Course"}\NormalTok{,}
-         \AttributeTok{x =} \StringTok{"Behavior"}\NormalTok{) }
-\CommentTok{\# Summary statistics}
-\NormalTok{rude }\SpecialCharTok{\%\textgreater{}\%} 
-     \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(number\_of\_uses }\SpecialCharTok{\textasciitilde{}}\NormalTok{ condition))}
-\CommentTok{\#\textgreater{}   condition min Q1 median Q3 max      mean       sd  n missing}
-\CommentTok{\#\textgreater{} 1   control   0  6     12 17  30 11.811321 7.382559 53       0}
-\CommentTok{\#\textgreater{} 2  rudeness   0  6      9 11  18  8.511111 3.992164 45       0}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.6\linewidth]{12-A24-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
-
-\subsubsection*{Quantitative variables review}\label{quantitative-variables-review}
-\addcontentsline{toc}{subsubsection}{Quantitative variables review}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Compare the distributions of the number of bricks between the two treatment conditions.
-
-  \begin{itemize}
-  \item
-    What is the shape of each group?
-    \vspace{0.3in}
-  \item
-    Which group has the higher center?
-    \vspace{0.3in}
-  \item
-    What group has the larger spread?
-    \vspace{0.3in}
-  \item
-    Does either distribution have outliers?
-    \vspace{.3in}
-  \end{itemize}
-\item
-  Is this an experiment or an observational study? Justify your answer.
-\end{enumerate}
-
-\vspace{1in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Explain why this is two independent samples and not paired data.
-  \vspace{1in}
-\end{enumerate}
-
-\subsubsection*{Ask a research question}\label{ask-a-research-question}
-\addcontentsline{toc}{subsubsection}{Ask a research question}
-
-In this study we are assessing the difference in true mean number of uses for a brick given by college students enrolled in a management course assigned to a rudeness condition and for those assigned to a control group.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  What assumption are we making about the difference in true mean?
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Write the alternative hypothesis in notation.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\subsubsection*{Numerically Summarize the data}\label{numerically-summarize-the-data}
-\addcontentsline{toc}{subsubsection}{Numerically Summarize the data}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  Calculate the summary statistic of interest (difference in means). What is the appropriate notation for this statistic?
-\end{enumerate}
-
-\vspace{0.5in}
-
-Interpret this calculated value.
-
-\vspace{0.6in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\item
-  Write out the parameter of interest for this study in context of the study.
-
-  \begin{itemize}
-  \item
-    To write in context:
-
-    \begin{itemize}
-    \item
-      Population word (true, long-run, population)
-    \item
-      Summary measure (depends on the type of data)
-    \item
-      Context
-
-      \begin{itemize}
-      \item
-        Observational units
-      \item
-        Variable(s)
-        \vspace{1in}
-      \end{itemize}
-    \end{itemize}
-  \end{itemize}
-\end{enumerate}
-
-In this study we are assessing the difference in true mean number of uses for a brick given by college students enrolled in a management course assigned to a rudeness condition and for those assigned to a control group.
-
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}
-\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
-
-\paragraph*{Hypothesis test}\label{hypothesis-test}
-\addcontentsline{toc}{paragraph}{Hypothesis test}
-
-Remember that the null distribution is created based on the assumption the null hypothesis is true. In this study, the null hypothesis states that there is no association between the two variables. This means that the values observed in the data set would have been the same regardless of the behavior condition.
-
-To demonstrate this simulation, we could create cards to simulate a sample.
-
-\begin{itemize}
-\item
-  Write the number of uses for a brick given by each student on one card.
-\item
-  Mix together and shuffle into two piles, one with 45 cards to represent the rudeness condition and one with 53 cards to represent the control group.
-\item
-  Calculate the difference in mean number of uses for a brick (rudeness - control)
-\end{itemize}
-
-We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of differences in sample means and compute a p-value.
-
-\begin{itemize}
-\item
-  Fill in the response and explanatory variable names
-\item
-  Fill in the missing values/names for the xx's in the R script file
-\item
-  Highlight and run lines 25--30
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{two\_mean\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\#Enter the names of the variables}
-              \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the dataset}
-              \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction}
-              \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-              \AttributeTok{as\_extreme\_as =}\NormalTok{ xx,  }\CommentTok{\# Observed statistic}
-              \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
-\end{enumerate}
-
-\vspace{0.9in}
-
-\paragraph*{Confidence interval}\label{confidence-interval-1}
-\addcontentsline{toc}{paragraph}{Confidence interval}
-
-We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in R (in the \texttt{catstats} package) to simulate the bootstrap distribution of differences in sample proportions and calculate a confidence interval. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{rude}), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (the count for the numerator when calculating a sample proportion), and the confidence level as a decimal.
-
-The response variable name is \texttt{number\_of\_uses} and the explanatory variable name is \texttt{condition}.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
-\tightlist
-\item
-  What values should be entered for each of the following into the simulation to create a 99\% confidence interval?
-  \vspace{.5mm}
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  First in subtraction (What is the outcome for the explanatory variable that is used as first in the order of subtraction? \texttt{"rudeness"} or \texttt{"control"}):
-\end{itemize}
-
-\vspace{.15in}
-
-\begin{itemize}
-\tightlist
-\item
-  Number of repetitions:
-\end{itemize}
-
-\vspace{.15in}
-
-\begin{itemize}
-\tightlist
-\item
-  Confidence level (entered as a decimal):
-\end{itemize}
-
-\vspace{.15in}
-
-Using the R script file for this activity, enter your answers for question 9 in place of the \texttt{xx}'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 35--39.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ explanatory, }\CommentTok{\#Enter the name of the variables}
-                      \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the data set}
-                      \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First value in order of subtraction}
-                      \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{,  }\CommentTok{\# Number of simulations}
-                      \AttributeTok{confidence\_level =}\NormalTok{ xx)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
-\tightlist
-\item
-  Where is the bootstrap distribution centered? Explain why.
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{10}
-\tightlist
-\item
-  Report the bootstrap 99\% confidence interval.
-\end{enumerate}
-
-\vspace{0.4in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{11}
-\tightlist
-\item
-  What percentile of the bootstrap distribution does the upper value of the confidence interval represent?
-\end{enumerate}
-
-\vspace{0.3in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
-\tightlist
-\item
-  Interpret the 99\% confidence interval.
-\end{enumerate}
-
-\vspace{1in}
-
-\subsection{Take-home messages}\label{take-home-messages}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  This activity differs from the activities in Module 11 because the responses are independent, not paired. These data are analyzed as a difference in means, not a mean difference.
-\item
-  To create one simulated sample on the null distribution for a difference in sample means, label cards with the response variable values from the original data. Mix cards together and shuffle into two new groups of sizes \(n_1\) and \(n_2\). Calculate and plot the difference in means.
-\item
-  To create one simulated sample on the bootstrap distribution for a difference in sample means, label \(n_1 + n_2\) cards with the original response values. Keep groups separate and randomly draw with replacement \(n_1\) times from group 1 and \(n_2\) times from group 2. Calculate and plot the resampled difference in means.
-\end{enumerate}
-
-\subsection{Additional notes}\label{additional-notes}
-
-Use this space to summarize your thoughts and take additional notes on today's activity and material covered
-
-\newpage
-
-\section{Activity 25: Moon Phases and Virtual Reality}\label{activity-25-moon-phases-and-virtual-reality}
-
-\setstretch{1}
-
-\subsection{Learning outcomes}\label{learning-outcomes-1}
-
-\begin{itemize}
-\item
-  Given a research question involving one categorical explanatory variable and one quantitative response variable, construct the null and alternative hypotheses
-  in words and using appropriate statistical symbols.
-\item
-  Describe and perform a theory-based hypothesis test for a difference in means.
-\item
-  Interpret and evaluate a p-value for a theory-based hypothesis test for a difference in means.
-\item
-  Use theory-based methods to find a confidence interval for a difference in means.
-\item
-  Interpret a confidence interval for a difference in means.
-\item
-  Use a confidence interval to determine the conclusion of a hypothesis test.
-\end{itemize}
-
-\subsection{Terminology review}\label{terminology-review-1}
-
-In today's activity, we will use theory-based methods to analyze the association between one categorical explanatory variable and one quantitative response variable, where the groups formed by the categorical variable are independent. Some terms covered in this activity are:
-
-\begin{itemize}
-\item
-  Difference in means
-\item
-  Independence within and between groups
-\item
-  Normality
-\end{itemize}
-
-To review these concepts, see Chapter 19 in the textbook.
-
-\subsection{Moon Phases and Virtual Reality}\label{moon-phases-and-virtual-reality}
-
-In a study comparing immersive virtual reality (VR) to traditional hands-on methods, researchers recruited 115 undergraduate students to assess the effectiveness of these approaches in teaching complex scientific concepts like Moon phases (Madden 2020). Participants were randomly assigned to experience either a VR simulation replicating the Sun-Earth-Moon system or a hands-on activity where they physically manipulated models to observe Moon phases. The students were given a 14 multiple choice question quiz about Moon phases and the Moon's motion relative to the Earth to evaluate their understanding of Moon phases and the Moon's motion. Each question had only one correct answer, and the participant's score was the sum of the number of correct answers, with all questions weighted equally (with a maximum score of 14). Is there evidence of a difference, on average, in student learning comparing those using VR methods to those using the traditional method? Use order of subtraction VR -- Hands-on.
-
-\begin{itemize}
-\item
-  Download the RScript file and dataset from D2L and upload to the RStudio server
-\item
-  Open the RScript file
-\item
-  Enter the name of the data set for datasetname in line 8
-\item
-  Highlight and run lines 1--8
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{moon }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Write out the parameter of interest in words in context of the study.
-\end{enumerate}
-
-\vspace{1in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Write out the null hypothesis in notation for this study. Be sure to clearly identify the subscripts.
-\end{enumerate}
-
-\vspace{0.4in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Write out the alternative hypothesis in words for this study.
-\end{enumerate}
-
-\vspace{0.8in}
-
-The sampling distribution for \(\bar{x}_1-\bar{x}_2\) can be modeled using a normal distribution when certain conditions are met.
-
-Conditions for the sampling distribution of \(\bar{x}_1-\bar{x}_2\) to follow an approximate normal distribution:
-
-\begin{itemize}
-\item
-  \textbf{Independence}: The sample's observations are independent
-\item
-  \textbf{Normality}: Each sample should be approximately normal or have a large sample size. For \emph{each} sample:
-
-  \begin{itemize}
-  \item
-    \(n < 30\): If the sample size \(n\) is less than 30 and there are no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
-  \item
-    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-  \item
-    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-  \end{itemize}
-\end{itemize}
-
-To create the plots of the data:
-
-\begin{itemize}
-\item
-  Enter a title in line 15 for the plot between the quotations
-\item
-  Highlight and run lines 12 - 17
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{moon }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set piped into...}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ TestScore, }\AttributeTok{x =}\NormalTok{ Method))}\SpecialCharTok{+}  \CommentTok{\# Identify variables}
-  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}  \CommentTok{\# Tell it to make a box plot}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title your plot!"}\NormalTok{,  }\CommentTok{\# Title}
-       \AttributeTok{x =} \StringTok{"Methods"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
-       \AttributeTok{y =} \StringTok{"Test Score (points)"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
-\end{Highlighting}
-\end{Shaded}
-
-To find the summary statistic:
-
-\begin{itemize}
-\item
-  Enter the response and explanatory variable names in line 22
-\item
-  Highlight and run lines 21--22
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{moon }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  Can theory-based methods be used to analyze these data?
-\end{enumerate}
-
-\vspace{1.2in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Calculate the summary statistic (difference in means) for this study. Use appropriate notation with clearly defined subscripts.
-\end{enumerate}
-
-\vspace{1in}
-
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-1}
-\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
-
-To find the standardized statistic for the difference in means we will calculate:
-
-\[T = \frac{\bar{x}_1-\bar{x}_2 -0}{SE(\bar{x}_1-\bar{x}_2)},\]
-
-where the standard error of the difference in means is calculated using:
-
-\[SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.\]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  Calculate the standard error for the difference in sample means.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Calculate the standardized statistic for the difference in sample means.
-\end{enumerate}
-
-\vspace{0.5in}
-
-To find the degrees of freedom to use for the t-distribution, we need to use the group with the smallest sample size and subtract 1. (\texttt{df} = minimum of \(n_1 - 1\) or \(n_2 - 1\)).
-
-\vspace{0.2in}
-
-\begin{itemize}
-\item
-  Enter the value of the standardized statistic for xx
-\item
-  Enter the df for yy
-\item
-  Highlight and run line 27
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\vspace{0.3in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  Report the p-value for the study. Why did we multiply by two to find the p-value?
-\end{enumerate}
-
-\vspace{0.5in}
-
-To calculate a theory-based 95\% confidence interval for a difference in means, in the questions on the next page, we will use the formula:
-
-\[\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)\]
-
-First, we will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
-
-To find the \(t^*\) multiplier
-
-\begin{itemize}
-\item
-  Enter the percentile to find the multiplier for a 95\% confidence level
-\item
-  Enter the degrees of freedom for yy
-\item
-  Highlight and run line 32
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
-\tightlist
-\item
-  Calculate the margin of error for a 95\% confidence interval.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
-\tightlist
-\item
-  Calculate the 95\% confidence interval.
-\end{enumerate}
-
-\vspace{0.6in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{10}
-\tightlist
-\item
-  Write a conclusion to the test.
-  \vspace{0.7in}
-\end{enumerate}
-
-\subsection{Take-home messages}\label{take-home-messages-1}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  In order to use theory-based methods for independent groups, the normality condition must be met for each sample.
-\item
-  A T-score is compared to a \(t\)-distribution with the minimum \(n - 1\) df in order to calculate a one-sided p-value. To find a two-sided p-value using theory-based methods we need to multiply the one-sided p-value by 2.
-\item
-  A \(t^*\) multiplier is found by obtaining the bounds of the middle X\% (X being the desired confidence level) of a \(t\)-distribution with the minimum \(n - 1\) df.
-\end{enumerate}
-
-\subsection{Additional notes}\label{additional-notes-1}
-
-Use this space to summarize your thoughts and take additional notes on today's activity and material covered
-
-\vspace{3in}
-\newpage
-
-\section{Module 12 Lab: Trustworthiness}\label{module-12-lab-trustworthiness}
-
-\setstretch{1}
-
-\subsection{Learning outcomes}\label{learning-outcomes-2}
-
-\begin{itemize}
-\item
-  Given a research question involving one categorical explanatory variable and one quantitative response variable, construct the null and alternative hypotheses
-  in words and using appropriate statistical symbols.
-\item
-  Describe and perform a theory-based hypothesis test for a difference in means.
-\item
-  Interpret and evaluate a p-value for a theory-based hypothesis test for a difference in means.
-\item
-  Use theory-based methods to find a confidence interval for a difference in means.
-\item
-  Interpret a confidence interval for a difference in means.
-\item
-  Use a confidence interval to determine the conclusion of a hypothesis test.
-\end{itemize}
-
-\subsection{Trustworthiness}\label{trustworthiness}
-
-Researchers in India wanted to find out how trustworthy famous YouTubers are (Kalra 2022). They went through a process in which they collected data on many videos from famous YouTubers to determine a trustworthiness score. Scientists randomly selected videos from famous YouTubers (\textgreater1000 subscribers) to include in the study. There were many different factors that went into calculating the trustworthiness score. Researchers also recorded if YouTubers were a subject matter expert (SME) or not a subject matter expert (non-SME). An example of an SME would be if one of your statistics professors made a YouTube video of how to do hypothesis testing. An example of someone who isn't an SME would be if one of your friends who has never taken a civil engineering class in their life decided to make a YouTube video about how to build a bridge. There were 621 Youtubers who are SMEs in the sample and 1026 who aren't SMEs. Is there evidence of a difference in mean trustworthiness score between subject matter experts (SME) YouTubers and non-SME YouTubers? Use SME -- Non -SME as the order of subtraction
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Write out the parameter of interest in words in context of the study.}
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Write out the null hypothesis in notation for this study. Be sure to clearly identify the subscripts.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Write out the alternative hypothesis in words for this study.
-\end{enumerate}
-
-\vspace{0.8in}
-
-The sampling distribution for \(\bar{x}_1-\bar{x}_2\) can be modeled using a normal distribution when certain conditions are met.
-
-Conditions for the sampling distribution of \(\bar{x}_1-\bar{x}_2\) to follow an approximate normal distribution:
-
-\begin{itemize}
-\item
-  \textbf{Independence}: The sample's observations are independent
-\item
-  \textbf{Normality}: Each sample should be approximately normal or have a large sample size. For \emph{each} sample:
-
-  \begin{itemize}
-  \item
-    \(n < 30\): If the sample size \(n\) is less than 30 and there are no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
-  \item
-    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-  \item
-    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
-  \end{itemize}
-\item
-  Upload and open the R script file for Module 10 lab. Upload the csv file, \texttt{Trustworthiness.csv}.
-\item
-  Enter the name of the data set for datasetname in the R script file in line 10.
-\item
-  Write a title for the boxplots in line 14.
-\item
-  Highlight and run lines 1--16 to load the data and create plots of the data.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{trust }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname"}\NormalTok{)}
-\NormalTok{trust }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set piped into...}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Trustworthiness\_Video, }\AttributeTok{x =}\NormalTok{ Creator\_SME))}\SpecialCharTok{+}  \CommentTok{\# Identify variables}
-  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}  \CommentTok{\# Tell it to make a box plot}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to include a title"}\NormalTok{,  }\CommentTok{\# Title: should include the type of plot,}
-       \CommentTok{\# observational units, variables}
-       \AttributeTok{x =} \StringTok{"Whether the Creator is SME"}\NormalTok{,    }\CommentTok{\# x{-}axis label}
-       \AttributeTok{y =} \StringTok{"Trustworthiness Score"}\NormalTok{)  }\CommentTok{\# y{-}axis label}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\item
-  Is the independence condition met? Explain your answer.
-  \vspace{0.8in}
-\item
-  Check that the normality condition is met to use theory-based methods to analyze these data.
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{itemize}
-\item
-  Enter the name of the explanatory variable for \texttt{explanatory} and the name of the response variable for \texttt{response} in line 22.
-\item
-  Highlight and run lines 21--22 to get the summary statistics for the data.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{trust }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{reframe}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explantory))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  \textbf{Calculate the summary measure (difference in means) for this study. Use appropriate notation with clearly defined subscripts.}
-\end{enumerate}
-
-\vspace{1in}
-
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-2}
-\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
-
-To find the standardized statistic for the difference in means we will calculate:
-
-\[T = \frac{\bar{x}_1-\bar{x}_2 -0}{SE(\bar{x}_1-\bar{x}_2)},\]
-
-where the standard error of the difference in means is calculated using:
-
-\[SE(\bar{x}_1 -\bar{x}_2)=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.\]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Calculate the standard error for the difference in sample means.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  \textbf{Calculate the standardized statistic for the difference in sample means.}
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
-\tightlist
-\item
-  When we are comparing two quantitative variables to find the degrees of freedom to use for the t-distribution, we need to use the group with the smallest sample size and subtract 1. (\texttt{df} = minimum of \(n_1 - 1\) or \(n_2 - 1\)). Calculate the \texttt{df} for this study.
-\end{enumerate}
-
-\vspace{0.2in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
-\tightlist
-\item
-  Using the provided R script file, enter the T-score (for \texttt{xx}) and the \texttt{df} calculated in question 9 for \texttt{yy} into the \texttt{pt()} function to find the p-value. Highlight and run line 27. Report the p-value calculated.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\vspace{0.2in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{10}
-\item
-  \textbf{Explain why we multiplied by 2 in the code above.}
-  \vspace{0.3in}
-\item
-  Do you expect the 95\% confidence interval to contain the null value of zero? Explain your answer.
-  \vspace{0.8in}
-\end{enumerate}
-
-To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
-
-\[(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))\]
-
-We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. For a 95\% confidence level, we are finding the \(t^*\) value at the 97.5th percentile with (\texttt{df} = minimum of \(n_1 - 1\) or \(n_2 - 1\)).
-
-\begin{itemize}
-\tightlist
-\item
-  Enter the appropriate percentile value (as a decimal) for \texttt{xx} and degrees of freedom for \texttt{yy} into the \texttt{qt()} function at line 32 to find the appropriate \(t^*\) multiplier
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(xx, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
-\tightlist
-\item
-  Report the \(t^*\) multiplier for the 95\% confidence interval.
-\end{enumerate}
-
-\vspace{0.3in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{13}
-\tightlist
-\item
-  Calculate the 95\% confidence interval using theory-based methods.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{14}
-\tightlist
-\item
-  Do the results of the CI agree with the p-value? Explain your answer.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{15}
-\item
-  What type of error may be possible?
-  \vspace{0.2in}
-\item
-  Write a paragraph summarizing the results of the study as if you are reporting the results to your supervisor. \textbf{Upload a copy of your paragraph to Gradescope for your group.} Be sure to describe:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  Summary statistic and interpretation
-\item
-  P-value and interpretation
-
-  \begin{itemize}
-  \item
-    Statement about probability or proportion of samples
-  \item
-    Statistic (summary measure and value)
-  \item
-    Direction of the alternative
-  \item
-    Null hypothesis (in context)
-  \end{itemize}
-\item
-  Confidence interval and interpretation
-
-  \begin{itemize}
-  \item
-    How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-  \item
-    Parameter of interest
-  \item
-    Calculated interval
-  \item
-    Order of subtraction when comparing two groups
-  \end{itemize}
-\item
-  Conclusion (written to answer the research question)
-
-  \begin{itemize}
-  \item
-    Amount of evidence
-  \item
-    Parameter of interest
-  \item
-    Direction of the alternative hypothesis
-  \end{itemize}
-\item
-  Scope of inference
-\end{itemize}
-
-\newpage
-
-Paragraph continued:
-
-\newpage
-
-\chapter{Exploratory Data Analysis and Inference for Two Quantitative Variables}\label{exploratory-data-analysis-and-inference-for-two-quantitative-variables}
-
-\section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics-1}
-
-Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of two quantitative variables.
-
-\subsection{Key topics}\label{key-topics-1}
-
-Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables.
-
-Types of plot for two quantitative variables
-
-\begin{itemize}
-\item
-  \textbf{Scatterplot}: plots (x,y) pairs of observations
-\item
-  Four characteristics of scatterplots
+  Four characteristics of scatterplots:
 
   \begin{itemize}
   \item
@@ -2002,74 +342,71 @@ Types of plot for two quantitative variables
   \end{itemize}
 \end{itemize}
 
-R code to create a scatterplot:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
-\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
-       \AttributeTok{y =} \StringTok{"y{-}axis lable"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
-       \AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to add a title!"}\NormalTok{) }\SpecialCharTok{+} 
-               \CommentTok{\# Be sure to tile your plots}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
-\end{Highlighting}
-\end{Shaded}
-
-Summary measures:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Slope of the regression line}: measures the magnitude and direction of the linear relationship between two quantitative variables
-\end{itemize}
-
-\[\widehat{response} = b_0 + b_1 \times explanatory\]
-\vspace{1mm}
+\subsubsection*{Sample statistics for two quantitative variables}\label{sample-statistics-for-two-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Sample statistics for two quantitative variables}
 
 \begin{itemize}
 \item
-  Parameter notation for slope: \(\beta_1\)
-\item
-  Sample notation for slope: \(b_1\)
-\item
-  R code to create the linear model
-\end{itemize}
+  \textbf{Least-squares regression line}: a line fit to the data which minimizes the squared vertical distances from the observed \(y\)-value to the line
+
+  \begin{itemize}
+  \item
+    \textbf{Notation for the fitted least-squares regression line}:
+    \[\hat{y} = b_0 + b_1 \times x\]
+    or
+    \[\widehat{response} = b_0 + b_1 \times explanatory\]
+    To write the equation of the regression line in context of the problem, include descriptive names of the response and explanatory variables for ``\(y\)/response'' and ``\(x\)/explanatory'' above.
+  \item
+    \(b_0\) is the \textbf{\(y\)-intercept} of the regression line: the \emph{predicted} value of the response variable when the explanatory variable is equal to zero.
+  \item
+    \(b_1\) is the \textbf{slope} of the regression line: the \emph{predicted} increase/decrease in the response variable associated with a one-unit increase in the explanatory variable.
+  \item
+    The distance from an observation's \(y\)-value (observed response) to its fitted value, \(\hat{y}\) (the value on the line) is called a \textbf{residual}:
+    \[ \text{residual} = \text{observed} - \text{fitted} = y - \hat{y}\]
+  \item
+    A least-squares regression line is a special case of a \textbf{linear model}.
+  \item
+    R code to find the least-squares regression line (fit the linear model):
+  \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{linearmodel }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\AttributeTok{data=}\NormalTok{object)}
-\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(linearmodel)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(linearmodel)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficients}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{itemize}
 \item
-  \textbf{Correlation}: measures the strength and direction of the linear relationship between two quantitative variables
+  \textbf{Correlation}: measures the magnitude and direction of the linear relationship between two quantitative variables.
 
   \begin{itemize}
   \item
     Parameter notation: \(\rho\)
   \item
     Sample notation: \(r\)
+  \item
+    R code to find the \textbf{correlation} matrix between variables:
   \end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Melinda add code}
+\end{Highlighting}
+\end{Shaded}
 \item
-  \textbf{Coefficient of determination}: measures the percent of total variability in the response variable that is explained by the relationship with the explanatory variable
+  \textbf{Coefficient of determination}: measures the proportion of total variability in the response variable that is explained by the linear relationship with the explanatory variable. The coefficient of determination can be calculated in three ways:
+  \[r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}\]
 \end{itemize}
 
-\[r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}\]
+\subsubsection*{Hypotheses}\label{hypotheses}
+\addcontentsline{toc}{subsubsection}{Hypotheses}
 
-\subsection*{Simulation Hypothesis Testing}\label{simulation-hypothesis-testing-1}
-\addcontentsline{toc}{subsection}{Simulation Hypothesis Testing}
+Hypotheses involving two quantitative variables can be expressed either in terms of the slope or the correlation. When either the slope or correlation is equal to zero, there is no linear relationship between the two quantitative variables (the null hypothesis).
 
 \begin{itemize}
 \tightlist
 \item
-  Can test either slope or correlation - both test for a linear relationship between two quantitative variables
+  \textbf{Hypotheses in notation for slope}:
 \end{itemize}
-
-Hypotheses for slope:
 
 \[H_0: \beta_1 = 0\]
 
@@ -2082,7 +419,11 @@ Hypotheses for slope:
 \right\}
 0\]
 
-Hypotheses for correlation:
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hypotheses in notation for correlation}:
+\end{itemize}
 
 \[H_0: \rho = 0\]
 \[H_A: \rho \left\{
@@ -2094,104 +435,34 @@ Hypotheses for correlation:
 \right\}
 0\]
 
+\subsubsection*{Simulation-based inference for two quantitative variables}\label{simulation-based-inference-for-two-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Simulation-based inference for two quantitative variables}
+
 \begin{itemize}
-\tightlist
 \item
-  R code for simulation methods to find the p-value using the \texttt{regression\_test} function in the \texttt{catstats} package.
-\end{itemize}
+  \textbf{Conditions necessary to use simulation-based methods for inference for two quantitative variables}:
+
+  \begin{itemize}
+  \item
+    \textbf{Independence}: observational units (the \((x, y)\) pairs) must be independent of one another.
+  \item
+    \textbf{Linearity}: the form of the relationship (if any) between the two variables must be linear.
+  \end{itemize}
+\item
+  \textbf{Simulation-based methods to create the null distribution}: R code for simulation methods to find the p-value using the \texttt{regression\_test} function in the \texttt{catstats} package.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{regression\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
-               \AttributeTok{data =}\NormalTok{ object, }\CommentTok{\# Name of data set}
-               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
-               \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
-               \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed slope or correlation}
-               \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
+           \AttributeTok{data =}\NormalTok{ object, }\CommentTok{\# Name of data set}
+           \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
+           \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# "slope" or "correlation"}
+           \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed slope or correlation}
+           \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for null distribution}
 \end{Highlighting}
 \end{Shaded}
-
-\subsection*{Conditions necessary to use theory-based methods}\label{conditions-necessary-to-use-theory-based-methods}
-\addcontentsline{toc}{subsection}{Conditions necessary to use theory-based methods}
-
-When performing inference on a least squares line, the follow conditions are generally required:
-
-\begin{itemize}
-\tightlist
 \item
-  \emph{Independent observations} (for both simulation-based and theory-based methods): individual data points must be independent.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
-  \end{itemize}
-\item
-  \emph{Linearity} (for both simulation-based and theory-based methods): the data should follow a linear trend.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The pattern in the residual plot should display a horizontal line.
-  \end{itemize}
-\item
-  \emph{Constant variability} (for theory-based methods only): the variability of points around the least squares line remains roughly constant
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Check this assumption by examining a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
-  \end{itemize}
-\item
-  \emph{Nearly normal residuals} (for theory-based methods only: residuals must be nearly normal.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
-  \end{itemize}
-\end{itemize}
-
-\subsection*{Theory-based Methods to find the p-value}\label{theory-based-methods-to-find-the-p-value}
-\addcontentsline{toc}{subsection}{Theory-based Methods to find the p-value}
-
-\begin{itemize}
-\tightlist
-\item
-  To find the value of the standardized statistic to test the slope we will use,
-\end{itemize}
-
-\[
-T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
-\]
-* Use the standard error estimate of the slope from the linear model output
-
-\begin{itemize}
-\item
-  The p-value can be found from the linear model output or by using the pt function.
-
-  \begin{itemize}
-  \item
-    Enter the value of the standardized statistic for xx
-  \item
-    Enter the df \((n-2)\) for yy
-  \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Simulation methods to find the confidence interval}\label{simulation-methods-to-find-the-confidence-interval}
-\addcontentsline{toc}{subsection}{Simulation methods to find the confidence interval}
-
-\begin{itemize}
-\tightlist
-\item
-  R code to find the simulation confidence interval using the \texttt{regression\_bootstrap\_CI} function from the \texttt{catstats} package.
-\end{itemize}
+  \textbf{Simulation-based methods to create the bootstrap distribution}: R code to find the simulation-based confidence interval using the \texttt{regression\_bootstrap\_CI} function from the \texttt{catstats} package.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2202,43 +473,62 @@ T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{) }\CommentTok{\# Number of simulated samples for bootstrap distribution}
 \end{Highlighting}
 \end{Shaded}
-
-\subsection*{Theory-based methods to find the confidence interval}\label{theory-based-methods-to-find-the-confidence-interval-1}
-\addcontentsline{toc}{subsection}{Theory-based methods to find the confidence interval}
-
-\begin{itemize}
-\tightlist
-\item
-  Calculation of the confidence interval for slope
 \end{itemize}
 
-\[b_1\pm t^*\times SE(b_1)\]
+\subsubsection{Theory-based methods for two quantitative variables}\label{theory-based-methods-for-two-quantitative-variables}
 
 \begin{itemize}
 \item
-  R code to find the multiplier for the confidence interval using theory-based methods.
+  \textbf{Conditions necessary to use theory-based methods for inference for two quantitative variables}:
 
   \begin{itemize}
   \item
-    qt will give you the multiplier using the t-distribution with n-2 df (enter for yy)
+    \textbf{Independence} (for both simulation-based and theory-based methods): observational units (the \((x, y)\) pairs) must be independent of one another.
+    \textbar{} - Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
   \item
-    Enter the percentile for the given confidence level
+    \textbf{Linearity} (for both simulation-based and theory-based methods): the form of the relationship (if any) between the two variables must be linear.
+    \textbar{} - Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The pattern in the residuals vs.~fitted plot should display a horizontal line.
+  \item
+    \textbf{Constant variability} (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+    \textbar{} - Check this assumption by examining a scatterplot of the residuals (on the \(y\)-axis) versus the fitted values (on the \(x\)-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
+  \item
+    \textbf{Nearly normal residuals} (for theory-based methods only): residuals must be nearly normal.
+    \textbar{} - Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
+  \end{itemize}
+\item
+  \textbf{Standard error of the slope of the least-squares regression line} (\(SE(b_1)\)): obtain the value of the standard error of the slope from the linear model (\texttt{lm}) R output.
+\item
+  \textbf{Standardized slope}:
+  \[
+  T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
+  \]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The p-value can be found from the linear model (\texttt{lm}) R output or by using the \texttt{pt} function in R to find the area under a \(t\)-distribution with \(n-2\) degrees of freedom where \(T\) is as or more extreme as the value observed (in the direction of \(H_A\)).
+  \end{itemize}
+\item
+  \textbf{Margin of error}: half the width of the confidence interval. For a regression slope, the margin of error is:
+  \[ME = t^* \times SE(b_1)\]
+  where \(t^*\) is the \textbf{multiplier}, corresponding to the desired confidence level found from a \(t\)-distribution with \(n-2\) degrees of freedom.
+
+  \begin{itemize}
+  \item
+    Use the \texttt{qt} function in R to find the \(t^*\) multiplier with \(n-2\) degrees of freedom.
+  \item
+    To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population slope is:
+    \[b_1 \pm ME\]
   \end{itemize}
 \end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
 \newpage
 
 \section{Video Notes: Regression and Correlation}\label{video-notes-regression-and-correlation}
 
-Read Chapters 6, 7, and 8 in the course textbook. Use the following videos to complete the video notes for Module 13.
+Read Chapters 6, 7, 8, 21, and 22 in the course textbook. Use the following videos to complete the video notes for Module 13.
 
-\subsection{Course Videos}\label{course-videos-1}
+\subsection{Course Videos}\label{course-videos}
 
 \begin{itemize}
 \item
@@ -2249,6 +539,14 @@ Read Chapters 6, 7, and 8 in the course textbook. Use the following videos to co
   6.3
 \item
   Ch 7
+\item
+  21.1
+\item
+  21.3
+\item
+  21.4TheoryTests
+\item
+  21.4TheoryIntervals
 \end{itemize}
 
 \setstretch{1}
@@ -2640,7 +938,7 @@ Adding a categorical predictor:
 
 \setstretch{1}
 
-\subsection{Concept Check}\label{concept-check-1}
+\subsection{Concept Check}\label{concept-check}
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
@@ -2676,102 +974,12 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \subsection{Video Notes: Inference for Two Quantitative Variables}\label{video-notes-inference-for-two-quantitative-variables}
 
-Read Chapters 21 and 22 in the course textbook. Use the following videos to complete the video notes for Module 11.
-
-\subsection{Course Videos}\label{course-videos-2}
-
-\begin{itemize}
-\item
-  21.1
-\item
-  21.3
-\item
-  21.4TheoryTests
-\item
-  21.4TheoryIntervals
-\end{itemize}
-
-\setstretch{1}
-
-\subsection*{Summary measures and plots for two quantitative variables.}\label{summary-measures-and-plots-for-two-quantitative-variables.}
-\addcontentsline{toc}{subsection}{Summary measures and plots for two quantitative variables.}
-
-Scatterplot:
-
-\begin{itemize}
-\item
-  Form: linear or non-linear?
-\item
-  Direction: positive or negative?
-\item
-  Strength: how clear is the pattern between the two variables?
-\item
-  Outliers: points that are far from the pattern or bulk of the data
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Influential points: outliers that are extreme in the x-~variable.
-  \end{itemize}
-\end{itemize}
-
-\setstretch{1.5}
-
-The summary measures for two quantitative variables are:
-
-\begin{itemize}
-\tightlist
-\item
-  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, interpreted as the on average change in the response variable for a one unit increase in the explanatory variable.
-\end{itemize}
-
-\vspace{1mm}
-
-\begin{itemize}
-\tightlist
-\item
-  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, which measures the strength and direction of the linear relationship between two quantitative variables.
-\end{itemize}
-
-\vspace{1mm}
-
-\begin{itemize}
-\tightlist
-\item
-  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, interpreted as the percent of variability in the response variable that is explained by the relationship with the explanatory variable.
-\end{itemize}
-
-\vspace{1mm}
-
-\setstretch{1}
-
-\begin{itemize}
-\tightlist
-\item
-  Least-squares regression line: \(\hat{y}=b_0+b_1\times x\) (put y and x in the context of the problem)
-\end{itemize}
-
-\setstretch{1.5}
-
-Notation:
-
-\begin{itemize}
-\item
-  Population slope:
-\item
-  Population correlation:
-\item
-  Sample slope:
-\item
-  Sample correlation:
-\end{itemize}
-
 \setstretch{1}
 
 Example: Oceanic temperature is important for sea life. The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. ({``Ocean Temperature and Salinity Study,''} n.d.) For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
 
-\subsection*{Hypothesis Testing}\label{hypothesis-testing-2}
-\addcontentsline{toc}{subsection}{Hypothesis Testing}
+\subsection*{Hypothesis Testing - Video 21.1}\label{hypothesis-testing---video-21.1}
+\addcontentsline{toc}{subsection}{Hypothesis Testing - Video 21.1}
 
 Null hypothesis assumes ``no effect'', ``no difference'', ``nothing interesting happening'', etc.
 
@@ -2865,7 +1073,7 @@ Calculate and interpret the coefficient of determination:
 
 \vspace{0.8in}
 
-\subsubsection*{Simulation-based method}\label{simulation-based-method-1}
+\subsubsection*{Simulation-based method}\label{simulation-based-method}
 \addcontentsline{toc}{subsubsection}{Simulation-based method}
 
 Conditions:
@@ -2972,7 +1180,7 @@ Conclusion:
 
 To estimate the true slope (or true correlation) we will create a confidence interval.
 
-\subsubsection*{Simulation-based method}\label{simulation-based-method-2}
+\subsubsection*{Simulation-based method}\label{simulation-based-method-1}
 \addcontentsline{toc}{subsubsection}{Simulation-based method}
 
 \begin{itemize}
@@ -3272,7 +1480,7 @@ Using the ocean data, calculate a 95\% confidence interval for the true slope.
 
 \vspace{1in}
 
-\subsection{Concept Check}\label{concept-check-2}
+\subsection{Concept Check}\label{concept-check-1}
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
@@ -3301,7 +1509,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \setstretch{1}
 
-\subsection{Learning outcomes}\label{learning-outcomes-3}
+\subsection{Learning outcomes}\label{learning-outcomes}
 
 \begin{itemize}
 \item
@@ -3315,7 +1523,7 @@ Be prepared for group discussion in the next class. One member from the table sh
   Interpret the slope coefficient in context of the problem.
 \end{itemize}
 
-\subsection{Terminology review}\label{terminology-review-2}
+\subsection{Terminology review}\label{terminology-review}
 
 In today's activity, we will review summary measures and plots for two quantitative variables. Some terms covered in this activity are:
 
@@ -3596,7 +1804,7 @@ The following output shows a correlation matrix between several pairs of quantit
 
 \vspace{0.7in}
 
-\subsection{Take-home messages}\label{take-home-messages-2}
+\subsection{Take-home messages}\label{take-home-messages}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3606,7 +1814,7 @@ The following output shows a correlation matrix between several pairs of quantit
   There are three summary statistics used to summarize the relationship between two quantitative variables: correlation (\(r\)), slope of the regression line (\(b_1\)), and the coefficient of determination (\(r^2\)).
 \end{enumerate}
 
-\subsection{Additional notes}\label{additional-notes-2}
+\subsection{Additional notes}\label{additional-notes}
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
@@ -3616,7 +1824,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \setstretch{1}
 
-\subsection{Learning outcomes}\label{learning-outcomes-4}
+\subsection{Learning outcomes}\label{learning-outcomes-1}
 
 \begin{itemize}
 \item
@@ -3632,7 +1840,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
   Find the correlation coefficient from \texttt{R} output or from \(r^2\) and the sign of the slope.
 \end{itemize}
 
-\subsection{Terminology review}\label{terminology-review-3}
+\subsection{Terminology review}\label{terminology-review-1}
 
 In today's activity, we will review summary measures and plots for two quantitative variables. Some terms covered in this activity are:
 
@@ -3946,7 +2154,7 @@ When adding another categorical predictor, we can add that variable as shape or 
 
 \newpage
 
-\subsection{Take-home messages}\label{take-home-messages-3}
+\subsection{Take-home messages}\label{take-home-messages-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3958,7 +2166,7 @@ When adding another categorical predictor, we can add that variable as shape or 
   We can use the line of regression to predict values of the response variable for values of the explanatory variable. Do not use values of the explanatory variable that are outside of the range of values in the data set to predict values of the response variable (reflect on why this is true.). This is called \textbf{extrapolation}.
 \end{enumerate}
 
-\subsection{Additional notes}\label{additional-notes-3}
+\subsection{Additional notes}\label{additional-notes-1}
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
@@ -3968,7 +2176,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \setstretch{1}
 
-\subsection{Learning outcomes}\label{learning-outcomes-5}
+\subsection{Learning outcomes}\label{learning-outcomes-2}
 
 \begin{itemize}
 \item
@@ -3984,7 +2192,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
   Interpret a confidence interval for a slope or correlation.
 \end{itemize}
 
-\subsection{Terminology review}\label{terminology-review-4}
+\subsection{Terminology review}\label{terminology-review-2}
 
 In today's activity, we will use simulation-based methods for hypothesis tests and confidence intervals for a linear regression slope or correlation. Some terms covered in this activity are:
 
@@ -4056,7 +2264,7 @@ To create a scatterplot to examine the relationship between head width and total
 
 \vspace{0.5in}
 
-\subsubsection*{Hypotheses}\label{hypotheses}
+\subsubsection*{Hypotheses}\label{hypotheses-1}
 \addcontentsline{toc}{subsubsection}{Hypotheses}
 
 When analyzing two quantitative variables we can either test regression slope or correlation. In both cases, we are testing that there is a linear relationship between variables.
@@ -4145,7 +2353,7 @@ To create the linear model output and find the value of correlation for the line
 
 \vspace{1in}
 
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-3}
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
 
 In this activity, we will focus on using simulation-based methods for inference in regression.
@@ -4285,7 +2493,7 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
 
 \vspace{.8in}
 
-\subsection{Take-home messages}\label{take-home-messages-4}
+\subsection{Take-home messages}\label{take-home-messages-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4299,7 +2507,7 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
   To create one simulated sample on the bootstrap distribution when assessing two quantitative variables, label \(n\) cards with the original (response, explanatory) values. Randomly draw with replacement \(n\) times. Find the regression line for the resampled data and plot the resampled slope or correlation.
 \end{enumerate}
 
-\subsection{Additional notes}\label{additional-notes-4}
+\subsection{Additional notes}\label{additional-notes-2}
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
@@ -4309,7 +2517,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 \setstretch{1}
 
-\subsection{Learning outcomes}\label{learning-outcomes-6}
+\subsection{Learning outcomes}\label{learning-outcomes-3}
 
 \begin{itemize}
 \item
@@ -4327,7 +2535,7 @@ Use this space to summarize your thoughts and take additional notes on today's a
   Use a confidence interval to determine the conclusion of a hypothesis test.
 \end{itemize}
 
-\subsection{Terminology review}\label{terminology-review-5}
+\subsection{Terminology review}\label{terminology-review-3}
 
 In this week's in-class activity, we will use theory-based methods for hypothesis tests and confidence intervals for a linear regression slope. Some terms covered in this activity are:
 
@@ -4437,7 +2645,7 @@ The scatterplot generated earlier and the residual plots shown below will be use
 
 \vspace{3in}
 
-\subsubsection*{Ask a research question}\label{ask-a-research-question-1}
+\subsubsection*{Ask a research question}\label{ask-a-research-question}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
 
 \begin{enumerate}
@@ -4488,10 +2696,10 @@ The linear model output for this study is shown below.
 
 \vspace{0.3in}
 
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-4}
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-1}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
 
-\paragraph*{Hypothesis test}\label{hypothesis-test-1}
+\paragraph*{Hypothesis test}\label{hypothesis-test}
 \addcontentsline{toc}{paragraph}{Hypothesis test}
 
 To find the value of the standardized statistic to test the slope we will use,
@@ -4532,7 +2740,7 @@ We will use the linear model R output above to get the estimate for slope and th
 
 \vspace{0.5in}
 
-\paragraph*{Confidence interval}\label{confidence-interval-2}
+\paragraph*{Confidence interval}\label{confidence-interval}
 \addcontentsline{toc}{paragraph}{Confidence interval}
 
 Recall that a confidence interval is calculated by adding and subtracting the margin of error to the point estimate.\\
@@ -4618,7 +2826,7 @@ Another variable that may affect the percent accuracy is the which league the go
 
 \vspace{0.8in}
 
-\subsection{Take-home messages}\label{take-home-messages-5}
+\subsection{Take-home messages}\label{take-home-messages-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4634,7 +2842,7 @@ Another variable that may affect the percent accuracy is the which league the go
   The standardized slope is compared to a \(t\)-distribution with \(n-2\) degrees of freedom in order to obtain a p-value. The \(t\)-distribution with \(n-2\) degrees of freedom is also used to find the appropriate multiplier for a given confidence level.
 \end{enumerate}
 
-\subsection{Additional notes}\label{additional-notes-5}
+\subsection{Additional notes}\label{additional-notes-3}
 
 Use this space to summarize your thoughts and take additional notes on this week's activity and material covered.
 
@@ -4644,7 +2852,7 @@ Use this space to summarize your thoughts and take additional notes on this week
 
 \setstretch{1}
 
-\subsection{Learning outcomes}\label{learning-outcomes-7}
+\subsection{Learning outcomes}\label{learning-outcomes-4}
 
 \begin{itemize}
 \item
@@ -4809,7 +3017,7 @@ In the next part of the activity we will assess the linear model between Big Mac
 
 \newpage
 
-\subsubsection*{Ask a research question}\label{ask-a-research-question-2}
+\subsubsection*{Ask a research question}\label{ask-a-research-question-1}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
 
 \begin{enumerate}
@@ -4830,10 +3038,10 @@ In the next part of the activity we will assess the linear model between Big Mac
 
 \vspace{.2in}
 
-\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-5}
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-2}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
 
-\subsubsection*{Hypothesis test}\label{hypothesis-test-2}
+\subsubsection*{Hypothesis test}\label{hypothesis-test-1}
 \addcontentsline{toc}{subsubsection}{Hypothesis test}
 
 Use the \texttt{regression\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample \textbf{correlations} and compute a p-value. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as \texttt{mac}), the summary measure used for the test, number of repetitions, the sample statistic (value of correlation), and the direction of the alternative hypothesis.

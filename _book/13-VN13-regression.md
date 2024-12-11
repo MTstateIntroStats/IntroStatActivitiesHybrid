@@ -1,6 +1,6 @@
 ## Video Notes: Regression and Correlation
 
-Read Chapters 6, 7, and 8 in the course textbook.  Use the following videos to complete the video notes for Module 13.
+Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 13.
 
 ### Course Videos
 
@@ -11,6 +11,14 @@ Read Chapters 6, 7, and 8 in the course textbook.  Use the following videos to c
 * 6.3
 
 * Ch 7
+
+* 21.1
+
+* 21.3
+
+* 21.4TheoryTests
+
+* 21.4TheoryIntervals
 
 
 \setstretch{1}
@@ -359,71 +367,12 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 ### Video Notes: Inference for Two Quantitative Variables
 
-Read Chapters 21 and 22 in the course textbook.  Use the following videos to complete the video notes for Module 11.
-
-### Course Videos
-
-* 21.1
-
-* 21.3
-
-* 21.4TheoryTests
-
-* 21.4TheoryIntervals
-
-\setstretch{1}
-
-### Summary measures and plots for two quantitative variables. {-}
-
-Scatterplot:
-	
-* Form: linear or non-linear?
-
-* Direction: positive or negative?
-
-* Strength: how clear is the pattern between the two variables?
-
-* Outliers: points that are far from the pattern or bulk of the data
-
-    * Influential points: outliers that are extreme in the x-\ variable.
-
-\setstretch{1.5}
-
-The summary measures for two quantitative variables are:
-
-* ____________________________, interpreted as the on average change in the response variable for a one unit increase in the explanatory variable.
-
-\vspace{1mm}
-
-* ____________________________, which measures the strength and direction of the linear relationship between two quantitative variables.
-
-\vspace{1mm}
-
-* ____________________________, interpreted as the percent of variability in the response variable that is explained by the relationship with the explanatory variable.
-
-\vspace{1mm}
-
-\setstretch{1}
-
-* Least-squares regression line: $\hat{y}=b_0+b_1\times x$ (put y and x in the context of the problem)
-
-\setstretch{1.5}
-
-Notation:
-
-* Population slope: 
-
-* Population correlation:
-
-* Sample slope:
-
-* Sample correlation:
-
 \setstretch{1}
 
 Example:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. [@ocean]  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
 
-### Hypothesis Testing {-}
+
+### Hypothesis Testing - Video 21.1 {-}
 
 Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
 

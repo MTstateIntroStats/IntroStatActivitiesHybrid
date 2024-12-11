@@ -129,7 +129,7 @@ $$(\bar{x}_1- \bar{x}_2)\pm (t^* \times SE(\bar{x}_1- \bar{x}_2))$$
 
 We will need to find the $t^*$ multiplier using the function `qt()`.  For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with (`df` = minimum of $n_1 - 1$ or  $n_2 - 1$).
 
-* Enter the appropriate percentile value (as a decimal) for `xx` and degrees of freedom for `yy` into the `qt()` function at line 32 to find the appropriate $t^*$ multiplier
+* Enter the appropriate percentile value degrees of freedom into the `qt()` function at line 32 to find the appropriate $t^*$ multiplier
 
 ```{r, echo=TRUE, eval=FALSE}
 qt(xx, df = yy, lower.tail=FALSE)
