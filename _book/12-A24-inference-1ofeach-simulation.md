@@ -45,7 +45,7 @@ rude <- read.csv("https://math.montana.edu/courses/s216/data/rude.csv")
 
 \newpage
 
-To create a plot of the data and a table of summary statistics.
+To create a plot of the data and a table of summary statistics:
 
 * Highlight and run lines 11--19
 
@@ -168,7 +168,7 @@ two_mean_test(response~explanatory, #Enter the names of the variables
 
 8.  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
 
-\vspace{0.7in}
+\vspace{0.9in}
 
 ##### Confidence interval {-}
 

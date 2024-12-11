@@ -1068,7 +1068,7 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
 
 \newpage
 
-To create a plot of the data and a table of summary statistics.
+To create a plot of the data and a table of summary statistics:
 
 \begin{itemize}
 \tightlist
@@ -1256,7 +1256,7 @@ We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstat
   Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
 \end{enumerate}
 
-\vspace{0.7in}
+\vspace{0.9in}
 
 \paragraph*{Confidence interval}\label{confidence-interval-1}
 \addcontentsline{toc}{paragraph}{Confidence interval}
@@ -1593,11 +1593,13 @@ To find the degrees of freedom to use for the t-distribution, we need to use the
 
 \vspace{0.5in}
 
-To calculate a theory-based 95\% confidence interval for a difference in means, use the formula:
+To calculate a theory-based 95\% confidence interval for a difference in means, in the questions on the next page, we will use the formula:
 
 \[\bar{x}_1- \bar{x}_2\pm t^* \times SE(\bar{x}_1- \bar{x}_2)\]
 
-We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+First, we will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+
+To find the \(t^*\) multiplier
 
 \begin{itemize}
 \item
@@ -3760,7 +3762,7 @@ There are three summary measures calculated from two quantitative variables: slo
 \item
   Enter \texttt{Retention} for response and \texttt{SATMath\_75} for explanatory in line 25
 \item
-  Highlight and run lines 25 -- 26 to fit the linear model.
+  Highlight and run lines 25--26 to fit the linear model.
 \end{itemize}
 
 \begin{Shaded}
@@ -4048,7 +4050,7 @@ To create a scatterplot to examine the relationship between head width and total
   Describe the features of the plot, addressing all four characteristics of a scatterplot.
 \end{enumerate}
 
-\vspace{1in}
+\vspace{1.2in}
 
 ~~~~~~~If you indicated there are potential outliers, which points are they?
 
@@ -4077,7 +4079,7 @@ When analyzing two quantitative variables we can either test regression slope or
   Write the null hypothesis to test slope in notation.
 \end{enumerate}
 
-\vspace{0.3in}
+\vspace{0.4in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4087,7 +4089,7 @@ When analyzing two quantitative variables we can either test regression slope or
   Write the null hypothesis to test correlation in notation.
 \end{enumerate}
 
-\vspace{0.3in}
+\vspace{0.4in}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4265,7 +4267,7 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
   Report the bootstrap 95\% confidence interval in interval notation.\\
   \vspace{0.5in}
 \item
-  Interpret the interval in question 14 in context of the problem. \emph{Hint: use the interpretation of slope in your confidence interval interpretation.}
+  Interpret the interval in question 13 in context of the problem. \emph{Hint: use the interpretation of slope in your confidence interval interpretation.}
 \end{enumerate}
 
 \vspace{0.8in}
@@ -4546,7 +4548,7 @@ The \(t^*\) multiplier comes from a \(t\)-distribution with \(n-2\) degrees of f
 \item
   Enter the degrees of freedom for yy
 \item
-  Highlight and run line 33
+  Highlight and run line 35
 \end{itemize}
 
 \begin{Shaded}
@@ -4609,12 +4611,10 @@ Another variable that may affect the percent accuracy is the which league the go
   Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of? Explain your answer.\\
   \vspace{1in}
 \item
-  Explain the association between league and each of the other two variables. Use the following plots in addition to the scatterplot from Q9 to explain your answer.
+  Explain the association between league and each of the other two variables. Use the following plots in addition to the scatterplot from Q11 to explain your answer.
 \end{enumerate}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-1} \includegraphics[width=0.7\linewidth]{13-A29-regression-theory_files/figure-latex/unnamed-chunk-7-2} \end{center}
 
 \vspace{0.8in}
 
@@ -4817,7 +4817,7 @@ In the next part of the activity we will assess the linear model between Big Mac
 \setcounter{enumi}{7}
 \tightlist
 \item
-  Write out the null and alternative hypotheses in notation to test \emph{correlation} between Big Mac cost and country GDP.
+  Write out the null and alternative hypotheses in notation to test \emph{correlation} between Big Mac cost and log GDP.
 \end{enumerate}
 
 \vspace{.2in}
