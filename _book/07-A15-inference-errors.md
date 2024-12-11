@@ -44,36 +44,36 @@ After determining hypotheses and prior to collecting data, researchers should se
 
 As you have already learned in this course, sample size of a study is extremely important.  Often times, researchers will conduct what is called a power analysis to determine the appropriate sample size based on the goals of their research, including a desired **power** of their test.  Power is the probability of correctly rejecting the null hypothesis, or the probability of the data providing strong evidence against the null hypothesis *when the null hypothesis is false*.
 
-The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this physical therapy company.
+The remainder of this activity will be spent investigating how different factors influence the power of a test, after which you will complete a power analysis for this university.
 
 * Navigate to https://istats.shinyapps.io/power/.  
 
-* Choose the tab `Population Mean`
+* Choose the tab "Population Mean".
 
-* Use the scale under "Null Hypothesis value $\mu_0$" to change the value to your null value from question 2. *Note we will convert this to a scale \$100 dollars. In other words, use the null value of 2.8.
+* Use the scale under "Null Hypothesis value $\mu_0$" to change the value to your null value from question 2. *Note we will convert this to a scale in hundreds of dollars (e.g., 1 = \$100). In other words, use the null value of 2.8.
 
 * Change the "Alternative Hypothesis" to the direction you wrote in question 2.
 
 * Leave all boxes un-checked.  
 
-* Set the "True value of $\mu$" to 2.8 as well
+* Set the "True value of $\mu$" to 2.8 as well.
 
-* Do not change the scales for "Sample size n" or "Type I Error $\alpha$"
+* Do not change the scales for "Sample size n" or "Type I Error $\alpha$".
 
-The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was 30 and the significance level was 0.05.  This means the red distribution is showing the probability of each possible sample mean of college students who spent \$280 on textbooks per year ($\bar{x}$) if we assume the null hypothesis is true.
+The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was $n = 30$ and the significance level was $\alpha = 0.05$.  This means the red distribution is showing the distribution of possible sample mean amounts spent on textbooks per year (in hundreds of dollars) for a sample of 30 college students ($\bar{x}$) if we assume the null hypothesis is true.
 
 3.  Based off this distribution and your alternative hypothesis, give one possible sample mean which you think would lead to rejecting the null hypothesis.  Explain how you decided on your value.
 \vspace{0.25in}
 
-4. Check the box for "Show Critical Value(s) and Rejection Region(s)".  You will now see a vertical line on the plot indicating the *minimum* sample mean which would lead to reject the null hypothesis.  What is this value?  
+4. Check the box for "Show Critical Value(s) and Rejection Region(s)".  You will now see a vertical line on the plot indicating the *maximum* sample mean which would lead to reject the null hypothesis. That is, any sample means below this value would lead us to reject the null hypothesis; any sample means below this value would lead us to fail to reject the null hypothesis.  What is this value?  
 \vspace{0.25in}
 
 5. Notice that there are some sample means under the red line (when the null hypothesis is true) which would lead us to reject the null hypothesis.  Give the range of sample means which would lead to rejecting the null hypothesis when the null hypothesis is true?  What is the statistical name for this mistake?
 \vspace{0.4in}
 
-Check the "Type I Error" box under **Display**.  This should verify (or correct) your answer to question 5!  The area shaded in red represents the probability of making a **Type 1 Error** in our hypothesis test.  Recall that a Type 1 Error is when we reject the null hypothesis even though the null hypothesis is true.  To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level.  Therefore the significance level is the maximum probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a Type 1 Error in a hypothesis test!
+Check the "Type I Error" box under **Display**.  This should verify (or correct) your answer to question 5!  The area shaded in red represents the probability of making a **Type 1 Error** in our hypothesis test.  Recall that a Type 1 error is when we reject the null hypothesis even though the null hypothesis is true.  To reject the null hypothesis, the p-value, which was found assuming the null hypothesis is true, must be less than or equal to the significance level.  Therefore the significance level is the probability of rejecting the null hypothesis when the null hypothesis is true, so the significance level IS the probability of making a Type 1 error in a hypothesis test!
 
-6.  Based on the current applet settings, What percent of the null distribution is shaded red (what is the probability of making a Type 1 Error)?
+6.  Based on the current applet settings, what percent of the null distribution is shaded red (i.e., what is the probability of making a Type 1 error)?
 \vspace{0.25in}
 
 Let's say this university believes their program can reduce the cost of textbooks for college students by \$100 per year. In the applet, set the scale under "True value of $\mu$" to 1.8.
@@ -83,12 +83,12 @@ Let's say this university believes their program can reduce the cost of textbook
 
 The blue distribution that appears represents what the university believes, that \$180 (not \$280) is the true mean textbook cost for college students at this university.  This blue distribution represents the idea that the **null hypothesis is false**.
 
-8.  Consider the definition of power provided earlier in this lab.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a Type 2 Error?
+8.  Consider the definition of power provided earlier in this lab.  Do you believe the power of the test will be an area within the blue distribution or red distribution? How do you know?  What about the probability of making a Type 2 error?
 \vspace{1in}
 
-* Check the "Type II Error" and "Power" boxes under **Display**.  This should verify (or correct) your answers to question 8!  The area shaded in blue represents the probability of making a **Type 2 Error** in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false).  The area shaded in green represents the power of the test.  Notice that the Type 1 and Type 2 Error rates and the power of the test are provided above the distribution.
+Check the "Type II Error" and "Power" boxes under **Display**.  This should verify (or correct) your answers to question 8!  The area shaded in blue represents the probability of making a **Type 2 Error** in our hypothesis test (failing to reject the null hypothesis even though the null hypothesis is false).  The area shaded in green represents the power of the test.  Notice that the Type 1 and Type 2 error rates and the power of the test are provided above the distribution.
 
-9.  Complete the following equation: Power + Type 2 Error Rate =  .  Explain why that equation makes sense. *Hint: Consider what power and Type 2 Error are conditional on.*
+9.  Complete the following equation: Power + Type 2 Error Rate = ___.  Explain why that equation makes sense. *Hint: Consider what power and Type 2 Error are conditional on.*
 \vspace{0.6in}
 
 Now let's investigate how changes in different factors influence the power of a test.
