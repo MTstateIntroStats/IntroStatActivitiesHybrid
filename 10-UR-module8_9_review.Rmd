@@ -1,4 +1,4 @@
-## Module 8 - 9  Review
+## Module 8 - 9  Review - Inference for Two Categorical Variables 
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, collapse=FALSE}
 allergy <- read.csv("https://math.montana.edu/courses/s216/data/PeanutAllergy.csv") 

@@ -31,7 +31,7 @@ Types of plots for two quantitative variables:
     ggplot(aes(x = explanatory, y = response))+  # Specify variables
       geom_point(alpha=0.5) +  # Add scatterplot of points
       labs(x = "x-axis label",  # Label x-axis
-       y = "y-axis lable",  # Label y-axis
+       y = "y-axis label",  # Label y-axis
        title = "Don't forget to add a title!") + 
                # Be sure to tile your plots
       geom_smooth(method = "lm", se = FALSE)  # Add regression line
@@ -84,7 +84,11 @@ Types of plots for two quantitative variables:
     * R code to find the **correlation** matrix between variables:
     
     ``` r
-    # Melinda add code
+    object %>%  # Data set pipes into
+        select(c("variable1", "variable2", "variable3")) %>% 
+        #Selects the variables you want to compare
+        cor(use="pairwise.complete.obs") %>%  #Calculates the correlation between each pair
+        round(3) #Rounds to 3 decimal places
     ```
 
 * **Coefficient of determination**: measures the proportion of total variability in the response variable that is explained by the linear relationship with the explanatory variable. The coefficient of determination can be calculated in three ways:
@@ -152,21 +156,25 @@ $$H_A: \rho \left\{
        number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
     ```
 
-#### Theory-based methods for two quantitative variables
+#### Theory-based methods for two quantitative variables {-}
 
 * **Conditions necessary to use theory-based methods for inference for two quantitative variables**:
 
     * **Independence** (for both simulation-based and theory-based methods): observational units (the $(x, y)$ pairs) must be independent of one another.
-    |    - Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
+
+        * Check this assumption by investigating the sampling method and determining if the observational units are related in any way.
     
     * **Linearity** (for both simulation-based and theory-based methods): the form of the relationship (if any) between the two variables must be linear.
-    |    - Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The pattern in the residuals vs. fitted plot should display a horizontal line.
+
+        * Check this assumption by examining the scatterplot of the two variables, and a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The pattern in the residuals vs. fitted plot should display a horizontal line.
 
     * **Constant variability** (for theory-based methods only): the variability of points around the least squares line remains roughly constant
-    |    - Check this assumption by examining a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
+
+        * Check this assumption by examining a scatterplot of the residuals (on the $y$-axis) versus the fitted values (on the $x$-axis). The variability in the residuals around zero should be approximately the same for all fitted values.
 
     * **Nearly normal residuals** (for theory-based methods only): residuals must be nearly normal.
-    |   - Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
+
+        * Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
 
 
 * **Standard error of the slope of the least-squares regression line** ($SE(b_1)$): obtain the value of the standard error of the slope from the linear model (`lm`) R output.

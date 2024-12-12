@@ -10,6 +10,8 @@ Module 7 will cover creating confidence intervals using both simulation-based an
 
 #### Simulation-based confidence interval {-}
 
+* Review the conditions necessary for simulation-based inference in Module 6.
+
 * R code to find the simulation-based confidence interval using the `onemean_CI` function from the `catstats` package.
 
 
@@ -33,6 +35,9 @@ Module 7 will cover creating confidence intervals using both simulation-based an
         - Calculated interval
         
 #### Theory-based confidence interval {-}
+
+* Review the conditions necessary for theory-based inference in Module 6.
+
 
 * **Margin of error**: half the width of the confidence interval. For a single mean, the margin of error is:
 $$ME = t^* \times SE(\bar{x})$$

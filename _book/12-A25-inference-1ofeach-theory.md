@@ -62,11 +62,11 @@ moon <- read.csv("datasetname.csv")
 
 The sampling distribution for $\bar{x}_1-\bar{x}_2$ can be modeled using a normal distribution when certain conditions are met.
 
-Conditions for the sampling distribution of $\bar{x}_1-\bar{x}_2$ to follow an approximate normal distribution:
+**Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
 
-* **Independence**: The sample’s observations are independent
+* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
 
-* **Normality**: Each sample should be approximately normal or have a large sample size. For *each* sample:
+* **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  _When we have two samples, we need to check this condition for each group!_ To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
 
     - $n < 30$: If the sample size $n$ is less than 30 and there are no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 

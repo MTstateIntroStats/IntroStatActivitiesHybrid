@@ -296,13 +296,9 @@ degrees of freedom to approximate the sampling distribution.
 
 \setstretch{1}
 
-Conditions for inference using theory-based methods for paired data (categorical explanatory and quantitative response):
+* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-- Independence: (same as for simulation); the difference in outcome for one observational unit will not influence another observation.
-
-- Large enough sample size:
-
-    - Normality: The data should be approximately normal or the sample size should be large.
+* **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
 
 \rgi \rgi $n < 30$: 
     

@@ -1,85 +1,550 @@
 \thispagestyle {empty}
 \contentsline {chapter}{Preface}{1}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Exploratory Data Analysis and Inference for Two Quantitative Variables}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Basics of Data and Sampling Methods}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Vocabulary Review and Key Topics}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Key topics}{2}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Vocabulary}{2}{subsection.1.1.2}%
-\contentsline {subsubsection}{Plotting two quantitative variables}{2}{subsection.1.1.2}%
-\contentsline {subsubsection}{Sample statistics for two quantitative variables}{3}{subsection.1.1.2}%
-\contentsline {subsubsection}{Hypotheses}{3}{subsection.1.1.2}%
-\contentsline {subsubsection}{Simulation-based inference for two quantitative variables}{4}{subsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.2.1}Theory-based methods for two quantitative variables}{4}{subsubsection.1.1.2.1}%
-\contentsline {section}{\numberline {1.2}Video Notes: Regression and Correlation}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Course Videos}{6}{subsection.1.2.1}%
-\contentsline {subsection}{Summary measures and plots for two quantitative variables - Videos 6.1 - 6.3}{6}{subsection.1.2.1}%
-\contentsline {subsubsection}{Type of plot}{6}{subsection.1.2.1}%
-\contentsline {subsubsection}{Correlation}{8}{subsection.1.2.1}%
-\contentsline {subsubsection}{Slope}{8}{subsection.1.2.1}%
-\contentsline {subsubsection}{Coefficient of Determination}{10}{subsection.1.2.1}%
-\contentsline {subsubsection}{Multivariable plots - Video Chapter7}{11}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Concept Check}{13}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Video Notes: Inference for Two Quantitative Variables}{14}{subsection.1.2.3}%
-\contentsline {subsection}{Hypothesis Testing - Video 21.1}{14}{subsection.1.2.3}%
-\contentsline {subsubsection}{Simulation-based method}{16}{subsection.1.2.3}%
-\contentsline {subsection}{Confidence interval - Video 21.3}{18}{subsection.1.2.3}%
-\contentsline {subsubsection}{Simulation-based method}{18}{subsection.1.2.3}%
-\contentsline {subsubsection}{Theory-based method - Video 21.4to21.5TheoryTests}{19}{subsection.1.2.3}%
-\contentsline {subsubsection}{Theory-based method}{24}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Concept Check}{24}{subsection.1.2.4}%
-\contentsline {section}{\numberline {1.3}Activity 26: Moneyball --- Linear Regression}{25}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{25}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Terminology review}{25}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Moneyball}{25}{subsection.1.3.3}%
-\contentsline {subsubsection}{Vocabulary review}{26}{table.1.1}%
-\contentsline {subsubsection}{Slope}{26}{Item.7}%
-\contentsline {subsubsection}{Residuals}{27}{Item.12}%
-\contentsline {subsubsection}{Correlation}{28}{Item.14}%
-\contentsline {subsection}{\numberline {1.3.4}Take-home messages}{28}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Additional notes}{28}{subsection.1.3.5}%
-\contentsline {section}{\numberline {1.4}Activity 27: IPEDS (continued)}{29}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{29}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Terminology review}{29}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}The Integrated Postsecondary Education Data System (IPEDS)}{29}{subsection.1.4.3}%
-\contentsline {subsubsection}{Slope of the Least Squares Linear Regression Line}{31}{Item.20}%
-\contentsline {subsubsection}{Correlation}{31}{Item.23}%
-\contentsline {subsubsection}{Coefficient of determination (squared correlation)}{32}{Item.24}%
-\contentsline {subsubsection}{Multivariable plots}{34}{Item.28}%
-\contentsline {subsection}{\numberline {1.4.4}Take-home messages}{35}{subsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.4.5}Additional notes}{35}{subsection.1.4.5}%
-\contentsline {section}{\numberline {1.5}Activity 28: Prediction of Crocodilian Body Size}{36}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{36}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Terminology review}{36}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Crocodilian Body Size}{36}{subsection.1.5.3}%
-\contentsline {subsubsection}{Hypotheses}{37}{Item.33}%
-\contentsline {subsubsection}{Summarize and visualize the data}{38}{Item.37}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{38}{Item.39}%
-\contentsline {subsubsection}{Simulation-based hypothesis test}{38}{Item.39}%
-\contentsline {subsubsection}{Simulation-based confidence interval}{39}{Item.44}%
-\contentsline {subsubsection}{Communicate the results and answer the research question}{40}{Item.46}%
-\contentsline {subsection}{\numberline {1.5.4}Take-home messages}{40}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Additional notes}{40}{subsection.1.5.5}%
-\contentsline {section}{\numberline {1.6}Activity 29: Golf Driving Distance}{41}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Learning outcomes}{41}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Terminology review}{41}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Golf driving distance}{41}{subsection.1.6.3}%
-\contentsline {subsubsection}{Plot review.}{41}{subsection.1.6.3}%
-\contentsline {subsubsection}{Conditions for the least squares line}{42}{subsection.1.6.3}%
-\contentsline {subsubsection}{Ask a research question}{43}{Item.52}%
-\contentsline {subsubsection}{Summarize and visualize the data}{43}{Item.54}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{43}{Item.55}%
-\contentsline {paragraph}{Hypothesis test}{43}{Item.55}%
-\contentsline {paragraph}{Confidence interval}{44}{Item.58}%
-\contentsline {subsubsection}{Communicate the results and answer the research question}{44}{Item.60}%
-\contentsline {subsection}{Multivariable plots}{44}{Item.61}%
-\contentsline {subsection}{\numberline {1.6.4}Take-home messages}{46}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}Additional notes}{46}{subsection.1.6.5}%
-\contentsline {section}{\numberline {1.7}Module 13 Lab: Big Mac Index}{47}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Learning outcomes}{47}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Big Mac Index}{47}{subsection.1.7.2}%
-\contentsline {subsubsection}{Summarize and visualize the data}{47}{subsection.1.7.2}%
-\contentsline {subsubsection}{Conditions for the least squares line}{48}{Item.72}%
-\contentsline {subsubsection}{Ask a research question}{49}{Item.75}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{49}{Item.76}%
-\contentsline {subsubsection}{Hypothesis test}{49}{Item.76}%
-\contentsline {subsubsection}{Simulation-based confidence interval}{50}{Item.78}%
-\contentsline {subsubsection}{Communicate the results and answer the research question}{50}{Item.79}%
+\contentsline {section}{\numberline {1.2}Activity 1: Intro to Data}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Learning outcomes}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Terminology review}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}General information on the Coursepack}{4}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Steps of the statistical investigation process}{4}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Take-home messages}{5}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Additional notes}{5}{subsection.1.2.6}%
+\contentsline {section}{\numberline {1.3}Video Notes: Intro to data and Sampling Methods}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Course Videos}{6}{subsection.1.3.1}%
+\contentsline {subsection}{Data basics: Video 1.2.1and1.2.2}{6}{subsection.1.3.1}%
+\contentsline {subsubsection}{Types of variables}{6}{subsection.1.3.1}%
+\contentsline {subsubsection}{Exploratory data analysis (EDA)}{7}{subsection.1.3.1}%
+\contentsline {subsection}{Roles of variables: 1.2.3to1.2.4}{8}{subsection.1.3.1}%
+\contentsline {subsubsection}{Relationships between variables}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Concept Check}{9}{subsection.1.3.2}%
+\contentsline {subsection}{Sampling Methods: Video 2.1}{9}{Item.11}%
+\contentsline {subsubsection}{Good vs.~bad sampling}{9}{Item.11}%
+\contentsline {subsection}{Types of Sampling Bias}{10}{Item.11}%
+\contentsline {subsubsection}{Video Example}{11}{Item.11}%
+\contentsline {subsection}{\numberline {1.3.3}Concept Check}{11}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Activity 2: Intro to Data Analysis and Sampling Bias}{12}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Learning outcomes}{12}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Terminology review}{12}{subsection.1.4.2}%
+\contentsline {subsubsection}{Further analysis of class data set}{12}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Sampling Methods}{13}{subsection.1.4.3}%
+\contentsline {subsubsection}{Types of bias}{14}{Item.21}%
+\contentsline {subsection}{\numberline {1.4.4}Take-home messages}{15}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Additional notes}{15}{subsection.1.4.5}%
+\contentsline {section}{\numberline {1.5}Activity 3: American Indian Address}{16}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Learning outcomes}{16}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Terminology review}{16}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Class Preparation}{16}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}American Indian Address}{16}{subsection.1.5.4}%
+\contentsline {subsubsection}{By eye selection}{17}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Class Activity}{17}{subsection.1.5.5}%
+\contentsline {subsubsection}{Random selection}{19}{Item.39}%
+\contentsline {subsection}{Effect of sample size}{21}{Item.47}%
+\contentsline {subsection}{\numberline {1.5.6}Take-home messages}{23}{subsection.1.5.6}%
+\contentsline {subsection}{\numberline {1.5.7}Additional notes}{23}{subsection.1.5.7}%
+\contentsline {chapter}{\numberline {2}Probability}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Vocabulary Review and Key Topics}{24}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Key topics}{24}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Vocabulary}{24}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Video Notes: Probability}{25}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Course Videos}{25}{subsection.2.2.1}%
+\contentsline {subsection}{Probability}{25}{subsection.2.2.1}%
+\contentsline {subsubsection}{Creating a hypothetical two-way table}{27}{subsection.2.2.1}%
+\contentsline {subsubsection}{Diagnostic tests}{28}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Concept Check}{28}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Activity 4: Probability Studies}{29}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Learning outcomes}{29}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Terminology review}{29}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Overview of probabiliy}{29}{subsection.2.3.3}%
+\contentsline {subsubsection}{Probability notation}{30}{subsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3.1}Probability questions}{30}{subsubsection.2.3.3.1}%
+\contentsline {subsection}{\numberline {2.3.4}Calculating probabilities from a two-way table}{31}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Take home messages}{33}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Additional notes}{33}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.4}Activity 5: What's the probability?}{34}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Learning outcomes}{34}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Terminology review}{34}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Probability}{34}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Take home messages}{36}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Additional notes}{36}{subsection.2.4.5}%
+\contentsline {chapter}{\numberline {3}Exploring Categorical Data: Exploratory Data Analysis and Inference using Simulation-based Methods}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Vocabulary Review and Key Topics}{37}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Key topics}{37}{subsection.3.1.1}%
+\contentsline {subsubsection}{Steps of the statistical investigation process}{37}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Vocabulary}{37}{subsection.3.1.2}%
+\contentsline {subsubsection}{Plotting one categorical variable}{38}{subsection.3.1.2}%
+\contentsline {subsubsection}{Inference}{38}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Simulation-based inference for a single proportion}{40}{subsubsection.3.1.2.1}%
+\contentsline {section}{\numberline {3.2}Video Notes: Exploratory Data Analysis of Categorical Variables}{42}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Course Videos}{42}{subsection.3.2.1}%
+\contentsline {subsection}{Summarizing categorical data - Video 4.1\_OneProp}{42}{subsection.3.2.1}%
+\contentsline {subsubsection}{Displaying categorical variables - Video 4.2\_OneProp}{43}{subsection.3.2.1}%
+\contentsline {subsection}{Hypothesis Testing - Video Chapter9}{45}{subsection.3.2.1}%
+\contentsline {subsection}{Hypothesis Testing/Justice System}{45}{Item.98}%
+\contentsline {subsubsection}{Null hypothesis}{45}{Item.98}%
+\contentsline {subsubsection}{Alternative hypothesis}{45}{Item.98}%
+\contentsline {subsection}{Simulation vs.~Theory-based Methods}{45}{Item.98}%
+\contentsline {subsubsection}{Simulation-based method}{45}{Item.98}%
+\contentsline {subsubsection}{Theory-based method}{46}{Item.98}%
+\contentsline {subsubsection}{P-value}{46}{Item.98}%
+\contentsline {subsection}{One proportion test}{47}{Item.98}%
+\contentsline {subsubsection}{Hypothesis testing}{47}{Item.98}%
+\contentsline {subsubsection}{Simulation-based method}{49}{Item.98}%
+\contentsline {subsection}{Confidence interval - Video Chapter10}{50}{Item.98}%
+\contentsline {subsubsection}{Sampling distribution}{50}{Item.98}%
+\contentsline {subsubsection}{Simulation-based methods}{50}{Item.98}%
+\contentsline {subsubsection}{Video 14.2}{51}{Item.98}%
+\contentsline {subsection}{\numberline {3.2.2}Concept Check}{53}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Activity 6: Helper-Hinderer Part 1 --- Simulation-based Hypothesis Test}{54}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Learning outcomes}{54}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Terminology review}{54}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Steps of the statistical investigation process}{54}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Helper-Hinderer}{55}{subsection.3.3.4}%
+\contentsline {subsubsection}{Ask a research question}{55}{subsection.3.3.4}%
+\contentsline {subsubsection}{Design a study and collect data}{55}{Item.102}%
+\contentsline {subsubsection}{R code}{55}{Item.103}%
+\contentsline {subsubsection}{Summarize and visualize the data}{56}{Item.103}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{57}{Item.106}%
+\contentsline {subsection}{\numberline {3.3.5}Take-home messages}{60}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Additional notes}{60}{subsection.3.3.6}%
+\contentsline {section}{\numberline {3.4}Activity 7: Helper-Hinderer (continued)}{61}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Learning outcomes}{61}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Steps of the statistical investigation process}{61}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Helper-Hinderer}{61}{subsection.3.4.3}%
+\contentsline {subsubsection}{Interpret the p-value}{63}{Item.129}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{64}{Item.133}%
+\contentsline {subsection}{\numberline {3.4.4}Take-home messages}{64}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Additional notes}{64}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Activity 8: Helper-Hinderer --- Simulation-based Confidence Interval}{65}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Learning outcomes}{65}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Terminology review}{65}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Helper-Hinderer}{65}{subsection.3.5.3}%
+\contentsline {subsubsection}{Activity intro}{65}{subsection.3.5.3}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{66}{Item.140}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{67}{Item.149}%
+\contentsline {subsubsection}{Effect of confidence level}{67}{Item.150}%
+\contentsline {subsection}{\numberline {3.5.4}Take-home messages}{69}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Additional notes}{69}{subsection.3.5.5}%
+\contentsline {chapter}{\numberline {4}Inference for a Single Categorical Variable: Theory-based Methods}{70}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Vocabulary Review and Key Topics}{70}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Key topics}{70}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Vocabulary}{70}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Video Notes: Inference for One Categorical Variable using Theory-based Methods}{72}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Course Videos}{72}{subsection.4.2.1}%
+\contentsline {subsection}{Theory-based methods}{72}{subsection.4.2.1}%
+\contentsline {subsubsection}{Central limit theorem - Video Chapter11}{72}{subsection.4.2.1}%
+\contentsline {subsection}{68-95-99.7 Rule}{74}{subsection.4.2.1}%
+\contentsline {subsubsection}{Example in Video 14.3TheoryTests}{75}{Item.165}%
+\contentsline {subsection}{Confidence interval - 14.3TheoryIntervals}{77}{Item.165}%
+\contentsline {subsubsection}{Theory-based method for a single categorical variable}{77}{Item.165}%
+\contentsline {subsubsection}{Interpreting confidence level}{78}{Item.165}%
+\contentsline {subsection}{\numberline {4.2.2}Concept Check}{79}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Activity 9: Handedness of Male Boxers}{80}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Learning outcomes}{80}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Terminology review}{80}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Handedness of male boxers}{80}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Summary statistics review}{80}{subsection.4.3.4}%
+\contentsline {subsection}{Hypotheses and summary statistics}{81}{Item.168}%
+\contentsline {subsection}{Theory-based methods}{82}{Item.172}%
+\contentsline {subsection}{Impacts on the P-value}{84}{Item.179}%
+\contentsline {subsection}{\numberline {4.3.5}Take-home messages}{86}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Additional notes}{86}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Activity 10: Confidence interval and what confidence means}{87}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{87}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Terminology review}{87}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Handedness of male boxers continued}{87}{subsection.4.4.3}%
+\contentsline {subsection}{What does \emph {confidence} mean?}{87}{subsection.4.4.3}%
+\contentsline {subsubsection}{Theory-based confidence interval}{88}{Item.201}%
+\contentsline {subsection}{\numberline {4.4.4}Take-home messages}{90}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Additional notes}{90}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{91}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Learning outcomes}{91}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Mixed Breed Dogs in the U.S.}{91}{subsection.4.5.2}%
+\contentsline {subsubsection}{Activity intro}{91}{subsection.4.5.2}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{91}{Item.211}%
+\contentsline {subsubsection}{Summarize the results of the study}{93}{Item.217}%
+\contentsline {chapter}{\numberline {5}Unit 1 Review}{95}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Key Topics}{95}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Module Review}{95}{subsection.5.0.2}%
+\contentsline {section}{\numberline {5.1}Key Topics Exam 1}{96}{section.5.1}%
+\contentsline {subsection}{Descriptive statistics and study design}{96}{section.5.1}%
+\contentsline {subsection}{Hypothesis testing}{96}{Item.229}%
+\contentsline {subsection}{\numberline {5.1.1}Confidence intervals}{97}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Module 1 Review - Sampling Methods}{98}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Module 2 Review - Probability}{100}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Module 3 Review - Simulation Methods for a Single Proportion}{102}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Module 4 Review - Theory-based Methods for a Single Proportion}{105}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Exploring Quantitative Data: Exploratory Data Analysis and Hypothesis Testing for a Single Quantitative Variable}{110}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Vocabulary Review and Key Topics}{110}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Key topics}{110}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Vocabulary}{110}{subsection.6.1.2}%
+\contentsline {subsubsection}{Sample statistics for a single quantitative variable}{110}{subsection.6.1.2}%
+\contentsline {subsubsection}{Plotting one quantitative variable}{111}{subsection.6.1.2}%
+\contentsline {subsubsection}{Hypothesis testing for a single mean}{112}{subsection.6.1.2}%
+\contentsline {subsubsection}{Simulation-based hypothesis testing}{112}{subsection.6.1.2}%
+\contentsline {subsubsection}{Theory-based hypothesis testing}{112}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Video Notes: Exploratory Data Analysis and Hypothesis Testing of Quantitative Variables}{114}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Course Videos}{114}{subsection.6.2.1}%
+\contentsline {subsection}{Summarizing quantitative data - Videos 5.2to5.4 and 5.5to5.6}{114}{subsection.6.2.1}%
+\contentsline {subsubsection}{Types of plots}{114}{subsection.6.2.1}%
+\contentsline {subsubsection}{Four characteristics of plots for quantitative variables}{118}{subsection.6.2.1}%
+\contentsline {subsubsection}{Robust statistics - Video 5.7}{120}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Video notes single quantitative variable inference}{121}{subsection.6.2.2}%
+\contentsline {subsection}{Hypothesis testing}{122}{subsection.6.2.2}%
+\contentsline {subsubsection}{Simulation-based method}{122}{subsection.6.2.2}%
+\contentsline {subsubsection}{Theory-based method}{124}{subsection.6.2.2}%
+\contentsline {subsection}{\(t\)-distribution}{124}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Concept Check}{126}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Activity 11: Summarizing Quantitative Variables}{127}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Learning outcomes}{127}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Terminology review}{127}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}The Integrated Postsecondary Education Data System (IPEDS)}{127}{subsection.6.3.3}%
+\contentsline {subsubsection}{Identifying variables in a data set}{128}{table.6.1}%
+\contentsline {subsubsection}{Summarizing quantitative variables}{128}{Item.322}%
+\contentsline {subsubsection}{Displaying a single quantitative variable}{129}{Item.326}%
+\contentsline {subsubsection}{Robust statistics}{130}{Item.331}%
+\contentsline {subsection}{\numberline {6.3.4}Take-home messages}{132}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Additional notes}{132}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Activity 12: Hypothesis Testing of a Single Quantitative Variable}{133}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Learning outcomes}{133}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Terminology review}{133}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}College student sleep habits}{133}{subsection.6.4.3}%
+\contentsline {subsubsection}{Summarizing quantitative variables}{133}{subsection.6.4.3}%
+\contentsline {subsubsection}{Ask a research question}{133}{subsection.6.4.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{134}{Item.344}%
+\contentsline {subsection}{Simulation methods}{134}{Item.346}%
+\contentsline {subsection}{\numberline {6.4.4}Take-home messages}{136}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Additional notes}{136}{subsection.6.4.5}%
+\contentsline {section}{\numberline {6.5}Activity 13: Body Temperature}{137}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Learning outcomes}{137}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Terminology review}{137}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Body Temperature}{137}{subsection.6.5.3}%
+\contentsline {subsubsection}{Ask a research question}{137}{subsection.6.5.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{138}{figure.6.1}%
+\contentsline {subsubsection}{Check theoretical conditions}{139}{figure.6.1}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{140}{Item.361}%
+\contentsline {subsection}{\numberline {6.5.4}Take-home messages}{141}{subsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.5.5}Additional notes}{141}{subsection.6.5.5}%
+\contentsline {chapter}{\numberline {7}Confidence Intervals for a Single Quantitative Variable}{142}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Vocabulary Review and Key Topics}{142}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Key topics}{142}{subsection.7.1.1}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{142}{subsection.7.1.1}%
+\contentsline {subsubsection}{Theory-based confidence interval}{142}{subsection.7.1.1}%
+\contentsline {subsection}{Vocabulary}{143}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}Video Notes: Theory-based Inference for a single quantitative variable}{144}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Course Videos}{144}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Single quantitative variable}{144}{subsection.7.2.2}%
+\contentsline {subsection}{Confidence interval}{145}{subsection.7.2.2}%
+\contentsline {subsubsection}{Simulation-based method}{145}{subsection.7.2.2}%
+\contentsline {subsubsection}{Theory-based method}{147}{subsection.7.2.2}%
+\contentsline {subsection}{\(t\)-distribution}{147}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Concept Check}{148}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Activity 14: Danceability of Songs}{149}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Learning outcomes}{149}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Terminology review}{149}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Danceability}{149}{subsection.7.3.3}%
+\contentsline {subsubsection}{Summarizing quantitative variables}{150}{subsection.7.3.3}%
+\contentsline {subsection}{Simulation methods to create a confidence interval}{150}{Item.376}%
+\contentsline {subsection}{Theory-based methods to create a confidence interval}{151}{Item.377}%
+\contentsline {subsection}{\numberline {7.3.4}Take-home messages}{152}{subsection.7.3.4}%
+\contentsline {subsection}{\numberline {7.3.5}Additional notes}{152}{subsection.7.3.5}%
+\contentsline {section}{\numberline {7.4}Activity 15: Errors and Power}{153}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Learning outcomes}{153}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Terminology review}{153}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}College textbook cost}{153}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}Take-home messages}{157}{subsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.4.5}Additional notes}{157}{subsection.7.4.5}%
+\contentsline {section}{\numberline {7.5}Module 6 and 7 Lab: Arsenic}{158}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Learning outcomes}{158}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Arsenic}{158}{subsection.7.5.2}%
+\contentsline {subsection}{Use statistical inferential methods to draw inferences from the data}{159}{Item.417}%
+\contentsline {subsection}{Hypothesis test}{159}{Item.418}%
+\contentsline {subsection}{Communicate the results and answer the research question}{160}{Item.419}%
+\contentsline {subsection}{Confidence interval}{160}{Item.421}%
+\contentsline {chapter}{\numberline {8}Exploratory Data Analysis and Simulation-based Hypothesis Testing for Two Categorical Variables}{163}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Vocabulary Review and Key Topics}{163}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Key topics}{163}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Vocabulary}{163}{subsection.8.1.2}%
+\contentsline {subsubsection}{Sample statistics for two categorical variables}{163}{subsection.8.1.2}%
+\contentsline {subsubsection}{Plotting two categorical variables}{164}{subsection.8.1.2}%
+\contentsline {subsubsection}{Hypotheses}{164}{subsection.8.1.2}%
+\contentsline {subsubsection}{Simulation-based hypothesis testing for a difference in proportions}{164}{subsection.8.1.2}%
+\contentsline {subsubsection}{Study design}{165}{subsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.1}Scope of inference}{165}{subsubsection.8.1.2.1}%
+\contentsline {section}{\numberline {8.2}Video Notes: Inference for Two Categorical Variables using Simulation-based Methods}{166}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Course Videos}{166}{subsection.8.2.1}%
+\contentsline {subsection}{Observational studies, experiments, and scope of inference: Video 2.2to2.4}{166}{subsection.8.2.1}%
+\contentsline {subsubsection}{Study design}{166}{subsection.8.2.1}%
+\contentsline {subsubsection}{Scope of Inference}{167}{subsection.8.2.1}%
+\contentsline {subsection}{Summarizing two categorical variables - Video 4.1\_TwoProp}{169}{Item.427}%
+\contentsline {subsection}{Plots for two categorical variables - Video 4.2\_TwoProp}{171}{Item.427}%
+\contentsline {subsubsection}{Simpson's paradox - Video 4.4}{173}{Item.427}%
+\contentsline {subsection}{Two categorical variables - Video 15.1}{175}{Item.427}%
+\contentsline {subsection}{Hypothesis Testing}{175}{Item.427}%
+\contentsline {subsubsection}{Summary statistics and plot}{176}{Item.427}%
+\contentsline {subsubsection}{Simulation-based method}{177}{Item.427}%
+\contentsline {subsection}{Confidence interval - Video 15.2}{179}{Item.427}%
+\contentsline {subsubsection}{Simulation-based method}{179}{Item.427}%
+\contentsline {subsection}{Relative Risk - Video RelativeRisk}{180}{Item.427}%
+\contentsline {subsubsection}{Relative risk in the news}{181}{Item.427}%
+\contentsline {subsubsection}{Testing Relative Risk}{181}{Item.427}%
+\contentsline {subsection}{\numberline {8.2.2}Concept Check}{182}{subsection.8.2.2}%
+\contentsline {section}{\numberline {8.3}Activity 16: Study Design}{183}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Learning outcomes}{183}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Terminology review}{183}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Atrial fibrillation}{183}{subsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.3.4}Scope of Inference}{187}{subsection.8.3.4}%
+\contentsline {subsection}{\numberline {8.3.5}Take-home messages}{188}{subsection.8.3.5}%
+\contentsline {subsection}{\numberline {8.3.6}Additional notes}{188}{subsection.8.3.6}%
+\contentsline {section}{\numberline {8.4}Activity 17: Summarizing Two Categorical Variables}{189}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Learning outcomes}{189}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Terminology review}{189}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Graphing categorical variables}{189}{subsection.8.4.3}%
+\contentsline {subsection}{Nightlight use and myopia}{189}{subsection.8.4.3}%
+\contentsline {subsubsection}{R code}{190}{Item.454}%
+\contentsline {subsubsection}{Summarizing two categorical variables}{190}{Item.455}%
+\contentsline {subsubsection}{Displaying two categorical variables}{191}{Item.461}%
+\contentsline {subsubsection}{Relative Risk}{192}{Item.466}%
+\contentsline {subsection}{\numberline {8.4.4}Take-home messages}{193}{subsection.8.4.4}%
+\contentsline {subsection}{\numberline {8.4.5}Additional notes}{193}{subsection.8.4.5}%
+\contentsline {section}{\numberline {8.5}Activity 18: The Good Samaritan}{194}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Learning outcomes}{194}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Terminology review}{194}{subsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.5.3}The Good Samaritan}{194}{subsection.8.5.3}%
+\contentsline {subsubsection}{Ask a research question}{195}{subsection.8.5.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{195}{Item.475}%
+\contentsline {subsubsection}{Hypothesis Test}{196}{Item.479}%
+\contentsline {subsection}{\numberline {8.5.4}Take-home messages}{198}{subsection.8.5.4}%
+\contentsline {subsection}{\numberline {8.5.5}Additional notes}{198}{subsection.8.5.5}%
+\contentsline {chapter}{\numberline {9}Theory-based Hypothesis Testing and Simulation-based and Theory-based Confidence Intervals for Two Categorical Variables:}{199}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Vocabulary Review and Key Topics}{199}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Key topics}{199}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Vocabulary}{199}{subsection.9.1.2}%
+\contentsline {subsubsection}{Theory-based inference}{199}{subsection.9.1.2}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{200}{subsection.9.1.2}%
+\contentsline {section}{\numberline {9.2}Video Notes: Theoretical Inference for Two Categorical Variables}{201}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Course Videos}{201}{subsection.9.2.1}%
+\contentsline {subsection}{Hypothesis testing using theory-based methods - Video 15.4TheoryTests}{201}{subsection.9.2.1}%
+\contentsline {subsection}{Confidence interval - Video 15.3TheoryIntervals}{204}{subsection.9.2.1}%
+\contentsline {subsubsection}{Theory-based method for a two categorical variables}{204}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Concept Check}{205}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}Activity 19: Winter Sports Helmet Use and Head Injuries --- Theory-based Methods}{206}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Learning outcomes}{206}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Terminology review}{206}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Winter sports helmet use and head injury}{206}{subsection.9.3.3}%
+\contentsline {subsubsection}{Hypothesis test}{207}{Item.492}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{208}{Item.493}%
+\contentsline {subsection}{How would an increase in sample size impact the p-value of the test?}{209}{Item.498}%
+\contentsline {subsection}{\numberline {9.3.4}Take-home messages}{210}{subsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.5}Additional notes}{210}{subsection.9.3.5}%
+\contentsline {section}{\numberline {9.4}Activity 20: Diabetes}{211}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Learning outcomes}{211}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Glycemic control in diabetic adolescents}{211}{subsection.9.4.2}%
+\contentsline {subsection}{Simulation methods}{212}{Item.508}%
+\contentsline {subsection}{Theory-based Methods}{213}{Item.511}%
+\contentsline {subsection}{\numberline {9.4.3}Take-home messages}{214}{subsection.9.4.3}%
+\contentsline {subsection}{\numberline {9.4.4}Additional notes}{214}{subsection.9.4.4}%
+\contentsline {section}{\numberline {9.5}Module 8 and 9 Lab: Poisonous Mushrooms}{215}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Learning outcomes}{215}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}Poisonous Mushrooms}{215}{subsection.9.5.2}%
+\contentsline {chapter}{\numberline {10}Unit 2 Review}{219}{chapter.10}%
+\contentsline {subsection}{\numberline {10.0.1}Key Topics}{219}{subsection.10.0.1}%
+\contentsline {subsection}{\numberline {10.0.2}Module Review}{219}{subsection.10.0.2}%
+\contentsline {section}{\numberline {10.1}Key Topics Exam 2}{220}{section.10.1}%
+\contentsline {subsection}{Descriptive statistics and study design}{220}{section.10.1}%
+\contentsline {subsection}{Hypothesis testing}{220}{Item.537}%
+\contentsline {subsection}{Confidence interval}{221}{Item.560}%
+\contentsline {section}{\numberline {10.2}Module 6 Review - One Mean Testing}{222}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Module 7 Review - One Mean Confidence Interval}{226}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Module 8 - 9 Review - Inference for Two Categorical Variables}{230}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Exploratory Data Analysis and Inference for a Quantitative Response with Paired Samples}{236}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Vocabulary Review and Key Topics}{236}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Key topics}{236}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Vocabulary}{236}{subsection.11.1.2}%
+\contentsline {subsubsection}{Simulation-based inference for a paired mean difference}{236}{subsection.11.1.2}%
+\contentsline {subsubsection}{Theory-based inference for a paired mean difference}{237}{subsection.11.1.2}%
+\contentsline {section}{\numberline {11.2}Video Notes: Inference for Paired Data}{239}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Course Videos}{239}{subsection.11.2.1}%
+\contentsline {subsection}{Single categorical, single quantitative variables Video Paired\_Data}{239}{subsection.11.2.1}%
+\contentsline {subsection}{Paired vs.~Independent Samples}{239}{subsection.11.2.1}%
+\contentsline {subsection}{Hypothesis testing}{241}{figure.11.1}%
+\contentsline {subsubsection}{Simulation-based method}{241}{figure.11.1}%
+\contentsline {subsection}{Confidence interval}{243}{figure.11.1}%
+\contentsline {subsubsection}{Simulation-based method}{243}{figure.11.1}%
+\contentsline {subsubsection}{Theory-based method - Video 18.3}{244}{figure.11.1}%
+\contentsline {subsubsection}{t-distribution}{244}{figure.11.1}%
+\contentsline {subsection}{\numberline {11.2.2}Concept Check}{246}{subsection.11.2.2}%
+\contentsline {section}{\numberline {11.3}Activity 21: Paired vs.~Independent Samples}{247}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Learning outcomes}{247}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Terminology review}{247}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Paired vs.~Independent Samples}{247}{subsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.3.4}Tattoo Effect on Sweat Rate}{248}{subsection.11.3.4}%
+\contentsline {subsection}{\numberline {11.3.5}Exploring Paired Data}{248}{subsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.3.6}Additional notes}{250}{subsection.11.3.6}%
+\contentsline {section}{\numberline {11.4}Activity 22: Snakes}{251}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Learning outcomes}{251}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Terminology review}{251}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Snake mazes}{251}{subsection.11.4.3}%
+\contentsline {subsubsection}{Ask a research question}{252}{Item.639}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{252}{Item.641}%
+\contentsline {paragraph}{Hypothesis test}{252}{Item.642}%
+\contentsline {paragraph}{Confidence interval}{253}{Item.644}%
+\contentsline {subsection}{\numberline {11.4.4}Take-home messages}{254}{subsection.11.4.4}%
+\contentsline {subsection}{\numberline {11.4.5}Additional notes}{254}{subsection.11.4.5}%
+\contentsline {section}{\numberline {11.5}Activity 23: Color Interference}{255}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Learning outcomes}{255}{subsection.11.5.1}%
+\contentsline {subsection}{\numberline {11.5.2}Terminology review}{255}{subsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.5.3}Color Interference}{255}{subsection.11.5.3}%
+\contentsline {subsubsection}{Identify the scenario}{256}{subsection.11.5.3}%
+\contentsline {subsubsection}{Ask a research question}{256}{Item.655}%
+\contentsline {subsubsection}{Summarize and visualize the data}{256}{Item.657}%
+\contentsline {subsubsection}{Check theoretical conditions}{258}{Item.657}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{258}{Item.659}%
+\contentsline {subsection}{\numberline {11.5.4}Take-home messages}{260}{subsection.11.5.4}%
+\contentsline {subsection}{\numberline {11.5.5}Additional notes}{260}{subsection.11.5.5}%
+\contentsline {section}{\numberline {11.6}Module 11 Lab: Swearing}{261}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Learning outcomes}{261}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Swearing}{261}{subsection.11.6.2}%
+\contentsline {subsection}{Use statistical inferential methods to draw inferences from the data}{262}{Item.678}%
+\contentsline {subsection}{Hypothesis test}{262}{Item.679}%
+\contentsline {subsection}{Communicate the results and answer the research question}{263}{Item.681}%
+\contentsline {subsection}{Confidence interval}{264}{Item.683}%
+\contentsline {chapter}{\numberline {12}Exploratory Data Analysis and Inference for a Quantitative Response with Independent Samples}{266}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Vocabulary Review and Key Topics}{266}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Key topics}{266}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}Vocabulary}{266}{subsection.12.1.2}%
+\contentsline {subsubsection}{Plotting two categorical variables}{266}{subsection.12.1.2}%
+\contentsline {subsubsection}{Hypotheses}{266}{subsection.12.1.2}%
+\contentsline {subsubsection}{Simulation-based inference for a difference in means}{267}{subsection.12.1.2}%
+\contentsline {subsubsection}{Theory-based inference for a difference in means}{267}{subsection.12.1.2}%
+\contentsline {section}{\numberline {12.2}Video Notes: Inference for Independent Samples}{269}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Course Videos}{269}{subsection.12.2.1}%
+\contentsline {subsection}{Single categorical, single quantitative variable with independent samples}{269}{subsection.12.2.1}%
+\contentsline {subsection}{Hypothesis Testing}{270}{subsection.12.2.1}%
+\contentsline {subsubsection}{Simulation-based method}{271}{subsection.12.2.1}%
+\contentsline {subsection}{Confidence interval}{273}{subsection.12.2.1}%
+\contentsline {subsubsection}{Simulation-based method - Video 19.2}{273}{subsection.12.2.1}%
+\contentsline {subsubsection}{Theory-based method - Video 19.3TheoryTests}{274}{subsection.12.2.1}%
+\contentsline {subsubsection}{Confidence Interval - Video 19.3TheoryIntervals}{276}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Concept Check}{277}{subsection.12.2.2}%
+\contentsline {section}{\numberline {12.3}Activity 24: Does behavior impact performance?}{278}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Learning outcomes}{278}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Terminology review}{278}{subsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.3.3}Behavior and Performance}{278}{subsection.12.3.3}%
+\contentsline {subsubsection}{Quantitative variables review}{279}{subsection.12.3.3}%
+\contentsline {subsubsection}{Ask a research question}{280}{Item.691}%
+\contentsline {subsubsection}{Numerically Summarize the data}{280}{Item.693}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{281}{Item.695}%
+\contentsline {paragraph}{Hypothesis test}{281}{Item.695}%
+\contentsline {paragraph}{Confidence interval}{281}{Item.696}%
+\contentsline {subsection}{\numberline {12.3.4}Take-home messages}{282}{subsection.12.3.4}%
+\contentsline {subsection}{\numberline {12.3.5}Additional notes}{282}{subsection.12.3.5}%
+\contentsline {section}{\numberline {12.4}Activity 25: Moon Phases and Virtual Reality}{283}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}Learning outcomes}{283}{subsection.12.4.1}%
+\contentsline {subsection}{\numberline {12.4.2}Terminology review}{283}{subsection.12.4.2}%
+\contentsline {subsection}{\numberline {12.4.3}Moon Phases and Virtual Reality}{283}{subsection.12.4.3}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{285}{Item.709}%
+\contentsline {subsection}{\numberline {12.4.4}Take-home messages}{286}{subsection.12.4.4}%
+\contentsline {subsection}{\numberline {12.4.5}Additional notes}{286}{subsection.12.4.5}%
+\contentsline {section}{\numberline {12.5}Module 12 Lab: Trustworthiness}{287}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}Learning outcomes}{287}{subsection.12.5.1}%
+\contentsline {subsection}{\numberline {12.5.2}Trustworthiness}{287}{subsection.12.5.2}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{289}{Item.724}%
+\contentsline {chapter}{\numberline {13}Exploratory Data Analysis and Inference for Two Quantitative Variables}{292}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Vocabulary Review and Key Topics}{292}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Key topics}{292}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}Vocabulary}{292}{subsection.13.1.2}%
+\contentsline {subsubsection}{Plotting two quantitative variables}{292}{subsection.13.1.2}%
+\contentsline {subsubsection}{Sample statistics for two quantitative variables}{293}{subsection.13.1.2}%
+\contentsline {subsubsection}{Hypotheses}{293}{subsection.13.1.2}%
+\contentsline {subsubsection}{Simulation-based inference for two quantitative variables}{294}{subsection.13.1.2}%
+\contentsline {subsubsection}{Theory-based methods for two quantitative variables}{294}{subsection.13.1.2}%
+\contentsline {section}{\numberline {13.2}Video Notes: Regression and Correlation}{296}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Course Videos}{296}{subsection.13.2.1}%
+\contentsline {subsection}{Summary measures and plots for two quantitative variables - Videos 6.1 - 6.3}{296}{subsection.13.2.1}%
+\contentsline {subsubsection}{Type of plot}{296}{subsection.13.2.1}%
+\contentsline {subsubsection}{Correlation}{298}{subsection.13.2.1}%
+\contentsline {subsubsection}{Slope}{298}{subsection.13.2.1}%
+\contentsline {subsubsection}{Coefficient of Determination}{300}{subsection.13.2.1}%
+\contentsline {subsubsection}{Multivariable plots - Video Chapter7}{301}{subsection.13.2.1}%
+\contentsline {subsection}{\numberline {13.2.2}Concept Check}{303}{subsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.2.3}Video Notes: Inference for Two Quantitative Variables}{304}{subsection.13.2.3}%
+\contentsline {subsection}{Hypothesis Testing - Video 21.1}{304}{subsection.13.2.3}%
+\contentsline {subsubsection}{Simulation-based method}{306}{subsection.13.2.3}%
+\contentsline {subsection}{Confidence interval - Video 21.3}{308}{subsection.13.2.3}%
+\contentsline {subsubsection}{Simulation-based method}{308}{subsection.13.2.3}%
+\contentsline {subsubsection}{Theory-based method - Video 21.4to21.5TheoryTests}{309}{subsection.13.2.3}%
+\contentsline {subsubsection}{Theory-based method}{314}{subsection.13.2.3}%
+\contentsline {subsection}{\numberline {13.2.4}Concept Check}{314}{subsection.13.2.4}%
+\contentsline {section}{\numberline {13.3}Activity 26: Moneyball --- Linear Regression}{315}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}Learning outcomes}{315}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}Terminology review}{315}{subsection.13.3.2}%
+\contentsline {subsection}{\numberline {13.3.3}Moneyball}{315}{subsection.13.3.3}%
+\contentsline {subsubsection}{Vocabulary review}{316}{table.13.1}%
+\contentsline {subsubsection}{Slope}{316}{Item.742}%
+\contentsline {subsubsection}{Residuals}{317}{Item.747}%
+\contentsline {subsubsection}{Correlation}{318}{Item.749}%
+\contentsline {subsection}{\numberline {13.3.4}Take-home messages}{318}{subsection.13.3.4}%
+\contentsline {subsection}{\numberline {13.3.5}Additional notes}{318}{subsection.13.3.5}%
+\contentsline {section}{\numberline {13.4}Activity 27: IPEDS (continued)}{319}{section.13.4}%
+\contentsline {subsection}{\numberline {13.4.1}Learning outcomes}{319}{subsection.13.4.1}%
+\contentsline {subsection}{\numberline {13.4.2}Terminology review}{319}{subsection.13.4.2}%
+\contentsline {subsection}{\numberline {13.4.3}The Integrated Postsecondary Education Data System (IPEDS)}{319}{subsection.13.4.3}%
+\contentsline {subsubsection}{Slope of the Least Squares Linear Regression Line}{321}{Item.755}%
+\contentsline {subsubsection}{Correlation}{321}{Item.758}%
+\contentsline {subsubsection}{Coefficient of determination (squared correlation)}{322}{Item.759}%
+\contentsline {subsubsection}{Multivariable plots}{324}{Item.763}%
+\contentsline {subsection}{\numberline {13.4.4}Take-home messages}{325}{subsection.13.4.4}%
+\contentsline {subsection}{\numberline {13.4.5}Additional notes}{325}{subsection.13.4.5}%
+\contentsline {section}{\numberline {13.5}Activity 28: Prediction of Crocodilian Body Size}{326}{section.13.5}%
+\contentsline {subsection}{\numberline {13.5.1}Learning outcomes}{326}{subsection.13.5.1}%
+\contentsline {subsection}{\numberline {13.5.2}Terminology review}{326}{subsection.13.5.2}%
+\contentsline {subsection}{\numberline {13.5.3}Crocodilian Body Size}{326}{subsection.13.5.3}%
+\contentsline {subsubsection}{Hypotheses}{327}{Item.768}%
+\contentsline {subsubsection}{Summarize and visualize the data}{328}{Item.772}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{328}{Item.774}%
+\contentsline {subsubsection}{Simulation-based hypothesis test}{328}{Item.774}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{329}{Item.779}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{330}{Item.781}%
+\contentsline {subsection}{\numberline {13.5.4}Take-home messages}{330}{subsection.13.5.4}%
+\contentsline {subsection}{\numberline {13.5.5}Additional notes}{330}{subsection.13.5.5}%
+\contentsline {section}{\numberline {13.6}Activity 29: Golf Driving Distance}{331}{section.13.6}%
+\contentsline {subsection}{\numberline {13.6.1}Learning outcomes}{331}{subsection.13.6.1}%
+\contentsline {subsection}{\numberline {13.6.2}Terminology review}{331}{subsection.13.6.2}%
+\contentsline {subsection}{\numberline {13.6.3}Golf driving distance}{331}{subsection.13.6.3}%
+\contentsline {subsubsection}{Plot review.}{331}{subsection.13.6.3}%
+\contentsline {subsubsection}{Conditions for the least squares line}{332}{subsection.13.6.3}%
+\contentsline {subsubsection}{Ask a research question}{333}{Item.787}%
+\contentsline {subsubsection}{Summarize and visualize the data}{333}{Item.789}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{333}{Item.790}%
+\contentsline {paragraph}{Hypothesis test}{333}{Item.790}%
+\contentsline {paragraph}{Confidence interval}{334}{Item.793}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{334}{Item.795}%
+\contentsline {subsection}{Multivariable plots}{334}{Item.796}%
+\contentsline {subsection}{\numberline {13.6.4}Take-home messages}{336}{subsection.13.6.4}%
+\contentsline {subsection}{\numberline {13.6.5}Additional notes}{336}{subsection.13.6.5}%
+\contentsline {section}{\numberline {13.7}Module 13 Lab: Big Mac Index}{337}{section.13.7}%
+\contentsline {subsection}{\numberline {13.7.1}Learning outcomes}{337}{subsection.13.7.1}%
+\contentsline {subsection}{\numberline {13.7.2}Big Mac Index}{337}{subsection.13.7.2}%
+\contentsline {subsubsection}{Summarize and visualize the data}{337}{subsection.13.7.2}%
+\contentsline {subsubsection}{Conditions for the least squares line}{338}{Item.807}%
+\contentsline {subsubsection}{Ask a research question}{339}{Item.810}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{339}{Item.811}%
+\contentsline {subsubsection}{Hypothesis test}{339}{Item.811}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{340}{Item.813}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{340}{Item.814}%
+\contentsline {chapter}{\numberline {14}Unit 3 Review}{342}{chapter.14}%
+\contentsline {subsection}{\numberline {14.0.1}Key Topics}{342}{subsection.14.0.1}%
+\contentsline {subsection}{\numberline {14.0.2}Module Review}{342}{subsection.14.0.2}%
+\contentsline {section}{\numberline {14.1}Key Topics Exam 3}{343}{section.14.1}%
+\contentsline {subsection}{Descriptive statistics and study design}{343}{section.14.1}%
+\contentsline {subsection}{Hypothesis testing}{343}{Item.830}%
+\contentsline {subsection}{Confidence interval}{344}{Item.847}%
+\contentsline {section}{\numberline {14.2}Module 11 Review - Paired Data}{345}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Module 12 Review - Independent Samples}{351}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Module 13 Review - Regression}{355}{section.14.4}%
+\contentsline {chapter}{\numberline {15}Semester Review}{362}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Group Final Exam Review}{362}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Golden Ticket to Descriptive and Inferential Statistical Methods}{375}{section.15.2}%
+\contentsline {chapter}{References}{377}{chapter*.3}%

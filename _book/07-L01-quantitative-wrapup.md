@@ -54,7 +54,7 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 
 ``` r
-water <- read.csv("data/arsenic.csv")
+water <- read.csv("datasetname.csv")
 water %>%
     summarise(favstats(variable))
 water %>% # Data set piped into...

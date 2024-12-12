@@ -6,7 +6,19 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 3 introduces the steps of the statistical investigation process. We explore exploratory data analysis (summary statistics and plots) and simulation-based inference (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+Module 3 introduces the steps of the statistical investigation process. We conduct **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+
+* Notation for a sample proportion: $\hat{p}$
+
+* Notation for a population proportion: $\pi$
+
+* Types of plots for a single categorical variable:
+
+    * Frequency bar plot
+    
+    * Relative frequency bar plot
+
+Exploratory data analysis is step 3 of the statistical investigation process. We will then use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario. These are steps 4 and 5 from the steps of the statistical investigation process.
 
 #### Steps of the statistical investigation process {-}
 
@@ -24,33 +36,14 @@ As we move through the semester we will work through the six steps of the statis
 
 6. Revisit and look forward.
 
-#### Exploratory data analysis {-}
-
-At the end of this module, you should understand how to calculate a summary statistic and plot a single categorical variable.  
-
-* Notation for a sample proportion: $\hat{p}$
-
-* Notation for a population proportion: $\pi$
-
-* Types of plots for a single categorical variable:
-
-    * Frequency bar plot
-    
-    * Relative frequency bar plot
-
-#### Inference {-}
-
-We will use simulation-based methods **to find evidence of an effect by finding a p-value** and **estimating how large the effect is by creating a confidence interval** in the one proportion (one categorical variable) scenario.
-
-These are steps 4 and 5 from the steps of the statistical investigation process.
 
 ### Vocabulary
 
-* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data.
-
-    * Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line.
+* **Summary measure**: a numerical quantity that summarizes data. Summary measures covered in STAT 216 include: single proportion, difference in proportions, single mean, paired mean difference, difference in means, correlation, and slope of a regression line.
 
     * For a single categorical variable, a proportion is calculated.
+
+* **Summary statistic (point estimate)**: the value of a numerical summary measure computed from _sample_ data.
 
     * To interpret in context include:
 
@@ -73,6 +66,9 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
             - Observational units
 
             - Variable(s)
+
+* For a single categorical variable, the category that we are counting the proportion of is generically called a "**success**", with categories not a success labeled "**failure**". Thus, a sample proportion is the "proportion of successes" in the sample: the total number of successes divided by the sample size ($n$).
+
 
 #### Plotting one categorical variable {-}
 
@@ -102,9 +98,11 @@ These are steps 4 and 5 from the steps of the statistical investigation process.
        y = "Relative Frequency")  # Label the y axis
     ```
 
-\newpage
-
 #### Inference {-}
+
+* **Sampling distribution** (of a statistic): the distribution of possible values of a statistic across repeated samples of the same size and under the same conditions.
+
+    * We can create a _simulated_ sampling distribution using simulation-based methods to simulate many samples, or we can mathematically model the sampling distribution (theory-based methods).
 
 * **Hypothesis testing**:  a formal statistical technique for evaluating two competing possibilities about a population: the null hypothesis and alternative hypothesis.
 
@@ -132,22 +130,6 @@ $$H_A: \pi \left\{
 \right\}
 \pi_0 $$
 
-* **Null distribution**: a distribution of simulated sample statistics created under the assumption that the null hypothesis is true
-
-* **Simulation methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
-
-    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test`, is shown below.  
-
-    
-    ``` r
-    one_proportion_test(probability_success = xx, # Null hypothesis value
-          sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
-          as_extreme_as = xx, # Observed statistic
-          direction = "xx", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-    ```
-
 * **P-value**: the probability of the value of the observed sample statistic or a value more extreme, if the null hypothesis were true.
 
     * To write in context include:
@@ -165,7 +147,9 @@ $$H_A: \pi \left\{
 
 
 \begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
-    
+
+\newpage
+
 * **Conclusion** (to a hypothesis test): answers the research question.  How much evidence is there in support of the alternative hypothesis?
 
     * To write in context include:
@@ -176,7 +160,7 @@ $$H_A: \pi \left\{
     
         - Direction of the alternative hypothesis
     
-* **Confidence interval**: an interval estimate for the parameter of interest.
+* **Confidence interval**: an interval estimate for the parameter of interest; an interval of _plausible values_ for the parameter.
 
     * A confidence interval helps us answer the following question about the population: How _large_ is the effect?
 
@@ -188,11 +172,35 @@ $$H_A: \pi \left\{
     
         - Calculated interval
 
+
+#### Simulation-based inference for a single proportion
+
+* **Conditions necessary to use simulation-based methods for inference  for a single categorical variable**:
+
+    * **Independence**: observational units must be independent of one another; the outcome of one observational unit should have no influence on the outcome of another.
+
+* **Null distribution**: a sampling distribution of simulated sample statistics created under the assumption that the null hypothesis is true
+
+* **Simulation-based methods to create the null distribution**: a process of using a computer program (e.g., R) to simulate many samples that we would expect based on the null hypothesis.
+
+    R code to use simulation methods for one categorical variable to find the p-value, `one_proportion_test` (from the `catstats` package), is shown below.  
+
+    
+    ``` r
+    one_proportion_test(probability_success = xx, # Null hypothesis value
+          sample_size = xx, # Enter sample size
+          number_repetitions = 1000, # Enter number of simulations
+          as_extreme_as = xx, # Observed statistic
+          direction = "xx", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+    ```
+
+
 * **Bootstrapping**: creating a simulated sample of the same size as the original sample by sampling with replacement from the original sample.
 
-* **Simulation methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
+* **Simulation-based methods to create the bootstrap distribution**: a process of using a computer program to simulate many bootstrapped samples.
 
-    R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI`, is shown below. 
+    R code to use simulation methods for one categorical variable to find a confidence interval, `one_proportion_bootstrap_CI` (from the `catstats` package), is shown below. 
 
     
     ``` r

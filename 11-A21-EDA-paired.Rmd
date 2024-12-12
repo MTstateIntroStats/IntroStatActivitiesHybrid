@@ -139,6 +139,10 @@ tat_diff %>%
 
 \vspace{0.8in}
 
+1.	The differences in a paired data set are treated like a single quantitative variable when performing a statistical analysis.  Paired data (or paired samples) occur when pairs of measurements are collected. We are only interested in the population (and sample) of differences, and not in the original data. 
+
+2.  Plots and interpretations of summary statistics are very similar to that for a single mean. 
+
 ### Additional notes
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.

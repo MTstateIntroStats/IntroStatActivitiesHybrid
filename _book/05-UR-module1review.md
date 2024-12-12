@@ -47,11 +47,11 @@ b. Identify the sample.
 
 c. Which of the three types of sampling bias (selection, non-response, response) may be present?  Explain your choice(s).
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 d. Identify the type and roles of each variable in the study.
 
-\vspace{1in}
+\vspace{0.6in}
 
 4. Researchers decided to investigate whether a cat’s coat color is associated with aggressive cat behavior by creating a 20-minute survey. The survey was distributed by posting it to social media and through cat-related listservs (e.g., For the Love of Cats), inviting individuals to take the survey. A total of 1,365 surveys were completed by participants. The frequency of each of the following aggressive behavior categories was assessed: hiss, stalk/chase, bite, slap/scratch. Frequency of behaviors toward people were recorded on a 6-point scale: 0 = never, 1 = less than once every 6 months, 2 = once every 6 months, 3 = once per month, 4 = once per week, 5 = one or more times per day. Because there were four aggressive behavior categories, each with a frequency of 0 to 5 possible, each cat could score between 0 to 20 for human aggression. Is there an association between coat color and aggressive behavior among cats?
 
@@ -65,11 +65,11 @@ b. Identify the sample.
 
 c. Which of the three types of sampling bias (selection, non-response, response) may be present?  Explain your choice(s).
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 d. Identify the type and roles of each variable in the study.
 
-\vspace{1in}
+\vspace{0.6in}
 
 
 \newpage

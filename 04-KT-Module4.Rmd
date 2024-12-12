@@ -76,7 +76,7 @@ $$\hat{p} \pm ME$$
     * Enter the percentile for the given level of confidence (e.g., 0.975 for a 95\% confidence level). 
 
     ```{r, eval=FALSE, echo=TRUE}
-    qnorm(percentile, lower.tail=FALSE)
+    qnorm(percentile, lower.tail=TRUE)
     ```
 
     

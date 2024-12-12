@@ -146,7 +146,9 @@ $$H_A: \pi \left\{
 ```{r, out.width="90%", echo=FALSE}
 include_graphics("images/soe_gradient_gray.png")
 ```
-    
+
+\newpage
+
 * **Conclusion** (to a hypothesis test): answers the research question.  How much evidence is there in support of the alternative hypothesis?
 
     * To write in context include:

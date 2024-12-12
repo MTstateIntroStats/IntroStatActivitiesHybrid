@@ -23,11 +23,9 @@ The following code created the boxplot of differences.
 
 \vspace{0.2in}
 
-3.  Circle one answer for each bracket to complete the description of each variable listed: 
+3.  What are  the roles and types of each variable? 
 
-* Type of exercise (jumping jacks or bicycle kicks) is the (*explanatory/response*)  variable and it is (*categorical/quantitative*).
-
-* Heart rate is the (*explanatory/response*)  variable and it is (*categorical/quantitative*).
+\vspace{0.3in}
 
 	
 4. What is the scope of inference for this study?
@@ -117,10 +115,9 @@ The sampling distribution for $\bar{x}$ based on a sample of size $n$ from a pop
 
 Conditions for the sampling distribution of $\bar{x}$ to follow an approximate normal distribution:
 
-* **Independence**: The sample’s observations are independent
+* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-* **Normality**: The data should be approximately normal or the sample size should be large.
-
+* **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
     - $n < 30$: If the sample size $n$ is less than 30 and there are no clear outliers in the distribution of differences, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
     - $30 \le n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the differences of differences, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal to satisfy the condition
@@ -140,36 +137,34 @@ where the standard error of the sample mean difference is:
 $$SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.$$
 13. Calculate the standard error of the mean difference.
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 
 14. Calculate the standardized mean difference.
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 
 15. Interpret the standardized statistic in context of the problem.
 
-\vspace{0.8in}
+\begin{figure}
 
+{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/pvalue-1} 
+
+}
+
+\end{figure}
+
+
+\newpage
+
+P-value for the test:
 
 
 ``` r
 2*pt(2.957, df=41, lower.tail=FALSE)
 #> [1] 0.005134632
 ```
-
-\newpage
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/pvalue-1} 
-
-}
-
-\caption{t-distribution with 41 degrees of freedom}(\#fig:pvalue)
-\end{figure}
-
 
 
 To calculate the 95\% theory-based confidence interval for the paired mean difference, use the following formula:
@@ -179,22 +174,18 @@ $$\bar{x}_d\pm t^* SE(\bar{x}_d).$$
 We will need to find the $t^*$ multiplier using the function `qt()`. For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with `df` = $n_d - 1 = 42 - 1 = 41$.
 
 
-\newpage
-
-
 
 ``` r
-qt(0.975, df = 41, lower.tail=TRUE)
-#> [1] 2.019541
+qt(0.975, df = 42, lower.tail=TRUE)
+#> [1] 2.018082
 ```
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/tstar-1} 
+{\centering \includegraphics[width=0.7\linewidth,height=0.5\textheight]{14-UR-module11_review_files/figure-latex/tstar4-1} 
 
 }
 
-\caption{t-distribution with 41 degrees of freedom}(\#fig:tstar)
 \end{figure}
 
 16.  Calculate the 95\% confidence interval.
@@ -203,4 +194,4 @@ qt(0.975, df = 41, lower.tail=TRUE)
 
 17. Write a conclusion to the research question.
 
-
+\newpage

@@ -1,4 +1,4 @@
-## Module 8 - 9  Review
+## Module 8 - 9  Review - Inference for Two Categorical Variables 
 
 
 ``` r

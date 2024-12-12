@@ -89,7 +89,7 @@ To use the computer simulation to create a bootstrap distribution, we will need 
     
 \vspace{.1in}
 
-We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 1000 simulations. Then highlight and run lines 1--9.
+We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` with your answers from question 5 in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 10000 simulations. Then highlight and run lines 1--9.
 
 
 ``` r
@@ -151,7 +151,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 \begin{center}\includegraphics[width=0.7\linewidth]{03-A08-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 
-16.  Report both the 95\% confidence interval (question 9) and the 90\% confidence interval (question 13).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
+16.  Report both the 95\% confidence interval (question 8) and the 90\% confidence interval (question 15).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
 
 \vspace{0.5in}
 

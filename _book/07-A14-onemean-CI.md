@@ -106,9 +106,9 @@ one_mean_CI(songs$variable, #Enter the name of the variable
      
          - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
-         - $30 \ge n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
+         - $30 \le n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
          
-         - $n > 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+         - $n \ge 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 
 Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the a single mean, use the following formula:

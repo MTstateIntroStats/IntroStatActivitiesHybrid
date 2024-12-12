@@ -30,7 +30,7 @@ object %>% # Pipe data set into...
 ggplot(aes(x = explanatory, y = response))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "x-axis label",  # Label x-axis
-       y = "y-axis lable",  # Label y-axis
+       y = "y-axis label",  # Label y-axis
        title = "Don't forget to add a title!") + 
                # Be sure to tile your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line

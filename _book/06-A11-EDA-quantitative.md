@@ -158,7 +158,7 @@ ggplot(aes(x = variable)) +   # Name variable to plot
 
 7. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, $Q_1$, median, $Q_3$, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
 
-$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR$ $\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$
+$$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.8in}
 
 When describing distributions of quantitative variables we discuss the **shape** (symmetric or skewed), the **center** (mean or median), **spread** (standard deviation or IQR), and if there are **outliers** present.

@@ -204,7 +204,7 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{300}} = 0.017$$.
 
 The standardized statistic for this new sample is calculated below:
 
-$$t = \frac{0.162-0.1}{0.017} = 3.64$$
+$$Z = \frac{0.162-0.1}{0.017} = 3.64$$
 
 16.  Mark the value of the original standardized statistic from question 9 and the value of the standardized statistic from the smaller sample size on the standard normal distribution below. 
 
@@ -230,8 +230,8 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
 
 The standardized statistic for this new sample is calculated below:
 
-$$t = \frac{0.136-0.1}{0.013} = 2.769$$
-19.  Mark the t-value of the original standardized statistic from question 9 and the value of the standardized statistic calculated with $\hat{p}=0.136$ on the standard normal distribution below. 
+$$Z = \frac{0.136-0.1}{0.013} = 2.769$$
+19.  Mark the Z-value of the original standardized statistic from question 9 and the value of the standardized statistic calculated with $\hat{p}=0.136$ on the standard normal distribution below. 
 
 \begin{figure}
 

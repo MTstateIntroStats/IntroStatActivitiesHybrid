@@ -154,7 +154,7 @@ c. What is the probability that a selected Bob Ross painting does not contain a 
 2. A recent study of population decline of white-tailed deer in Wyoming due to chronic wasting disease [@edmunds2016] (CWD) reported the prevalence of CWD to be 35.4\%.  The survival rate of CWD positive deer was 39.6\% and the survival rate of CWD negative deer was 80.1\%.  
 \vspace{1mm}
 
-    Let $A$ = the event a deer has CWD, and $B$ = the event the deer survived.
+    Let $A$ = the event a deer has CWD, and $B$ = the event the deer survives.
 \vspace{0.1in}
 
     a. Identify what each numerical value given in the problem represents in probability notation.

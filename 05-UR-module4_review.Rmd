@@ -1,4 +1,4 @@
-## Module 4 Review - Theory-based Methods for a Single Mean
+## Module 4 Review - Theory-based Methods for a Single Proportion
 
 Statistician Jessica Utts has conducted an extensive analysis of Ganzfeld studies that have investigated psychic functioning. Ganzfeld studies involve a "sender" and a "receiver." Two people are placed in separate rooms.  The sender looks at a "target" image on a television screen and attempts to transmit information about the target to the receiver.  The receiver is then shown four possible choices or targets, one of which is the correct target and the other three are "decoys."  The receiver must choose the one he or she thinks best matches the description transmitted by the sender.  If the correct target is chosen by the receiver, the session is a "hit."  Otherwise, it is a miss.  Utts reported that her analysis considered a total of 2,124 sessions and found a total of 709 "hits" (Utts, 2010).  Is there evidence of psychic ability?
 

@@ -21,6 +21,11 @@ ggplot(aes(x = Valance, y = Danceability))+  #Specify variables
 
 1.  Identify the explanatory variable and the response variable.
 
+\vspace{0.3in}
+
+2. Describe the scatterplot using the four charactistics of scatterplots.
+
+
 \newpage
 The linear model output is given below with the correlation coefficient.
 
@@ -44,20 +49,20 @@ cor(songs$Danceability, songs$Valance)
 #> [1] 0.5016962
 ```
 
-2.  Write the least squares equation of the regression line in context of the problem. 
+3.  Write the least squares equation of the regression line in context of the problem. 
 
 \vspace{0.5in}
 
 
-3. Interpret the slope in context of the problem.
+4. Interpret the slope in context of the problem.
 
-\vspace{0.5in}
+\vspace{0.7in}
 
-4. Write the null hypothesis, in words, in context of the problem.
+5. Write the null hypothesis, in words, in context of the problem.
 
 \vspace{1in}
 
-5. Write the alternative hypothesis, in notation, to test slope, in context of the problem.
+6. Write the alternative hypothesis, in notation, to test slope, in context of the problem.
 
 \vspace{0.5in}
 
@@ -65,38 +70,84 @@ cor(songs$Danceability, songs$Valance)
 
 The following code creates the null distribution for this study.
 
+``` r
+# Simulation-based test for slope
+regression_test(Danceability~Valance, # response ~ explanatory
+               data = songs, # name of data set
+               direction = "greater", # sign in alternative ("greater", "less", "two-sided")
+               summary_measure = "slope", 
+               as_extreme_as = 0.298, #observed slope
+               number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
+
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-6. Report the value of the p-value.  Interpret this value in context of the problem.
+7. Report the value of the p-value.  Interpret this value in context of the problem.
 
 \vspace{1in}
 
-7.  Based on the p-value, write a conclusion in context of the problem.
+8.  Based on the p-value, write a conclusion in context of the problem.
 
 \vspace{1in}
 
 Now let's estimate the true regression slope for the relationship between valance and danceability of songs.
 
 
+``` r
+# Bootstrap CI for slope
+regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
+                        data = songs, # name of data set
+                        confidence_level = 0.99, # confidence level as decimal
+                        summary_measure =  "slope", # slope or correlation
+                        number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
+
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-8.  Interpret the 99% confidence interval in context of the problem.
+9.  Interpret the 99% confidence interval in context of the problem.
 
 \vspace{1in}
 
 Now let's test correlation.
 
-9.  How will the null and alternative hypotheses change?
+10.  How will the null and alternative hypotheses change?
 
 \vspace{0.5in}
+
+``` r
+# Simulation-based test for correlation
+regression_test(Danceability~Valance, # response ~ explanatory
+                data = songs, # name of data set
+                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
+                summary_measure =  "correlation", 
+                as_extreme_as = 0.502, # observed correlation
+                number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
 
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
        
 
 
+``` r
+# Bootstrap CI for correlation
+regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
+                        data = songs, # name of data set
+                        confidence_level = 0.99, # confidence level as decimal
+                        summary_measure =  "correlation", 
+                        number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
+
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
-10.  Interpret the 99% confidence interval for the true correlation between valance and danceability.
+11.  Interpret the 99% confidence interval for the true correlation between valance and danceability.
 
 \newpage
 
@@ -116,7 +167,7 @@ When performing inference on a least squares line, the follow conditions are gen
 The scatterplot and the residual plots will be used to assess the conditions for approximating the data with the $t$-distribution.     
 
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
-11. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
+12. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
 
 \newpage
 
@@ -128,14 +179,14 @@ $$
  
 We will use the linear model output above to get the estimate for slope and standard error.
 
-12.  Calculate the standardized slope.
+13.  Calculate the standardized slope.
 
 \vspace{1in}
 
-13.  Using the linear model output, report the p-value for the test of significance.
+14.  Using the linear model output, report the p-value for the test of significance.
 
 \vspace{0.5in}
-14. Based on the p-value, how much evidence is there against the null hypothesis?
+15. Based on the p-value, how much evidence is there against the null hypothesis?
 
 \vspace{0.5in}
 
@@ -154,5 +205,7 @@ qt(0.995, 601) #95% t* multiplier
 #> [1] 2.584034
 ```
 
-15. Calculate the 99% confidence interval for the true slope.
+16. Calculate the 99% confidence interval for the true slope.
 \vspace{1in}
+
+\newpage

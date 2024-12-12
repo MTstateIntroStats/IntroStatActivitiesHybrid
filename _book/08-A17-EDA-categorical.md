@@ -150,7 +150,7 @@ myopia %>% # Data set piped into...
   labs(title = "Mosaic Plot of Night Light Use by Level of Myopia",  # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis
        y = "") +  # Remove y axis label
-  scale_fill_grey(guide = guide_legend(reverse = TRUE))  # Make figure color
+  scale_fill_grey(guide = guide_legend(reverse = TRUE))  # Make figure black and white
 ```
 
 

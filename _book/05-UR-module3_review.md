@@ -1,4 +1,4 @@
-## Module 3 Review - Simulation Methods
+## Module 3 Review - Simulation Methods for a Single Proportion
 
 
 ``` r

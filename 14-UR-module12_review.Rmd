@@ -71,7 +71,6 @@ D.	We could conclude that the brain volume for species of woodpeckers that live 
 
 \vspace{0.5in}
 
-\newpage
 **Bootstrap Confidence Interval**
 To find the 99% confidence interval for the true difference in mean brain volume for species of woodpeckers that live in groups and species of woodpeckers that live solo use the two_mean_bootstrap_CI.  The inputs are similar as to what we used in the two_mean_test.
 
@@ -139,4 +138,4 @@ qt(0.995, df = 19, lower.tail=TRUE)
 \vspace{0.5in}
 
 
-
+\newpage

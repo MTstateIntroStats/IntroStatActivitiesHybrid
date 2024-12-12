@@ -1,4 +1,4 @@
-## Module 9 Lab:  Poisonous Mushrooms 
+## Module 8 and 9 Lab:  Poisonous Mushrooms 
 
 \setstretch{1}
 

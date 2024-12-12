@@ -193,14 +193,16 @@ par(mfrow=c(2,1))
 golf %>% # Data set piped into...
   ggplot(aes(y = Percent_Accuracy, x = League))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Side-by-side Box Plot of Percent Accuracy by League for Professional Golfers",  
+  labs(title = "Side-by-side Box Plot of Percent Accuracy by League
+       for Professional Golfers",  
        # Title
        x = "League", # x-axis label
        y = "Percent Accuracy (%)") # y-axis label
 golf %>% # Data set piped into...
   ggplot(aes(y = Driving_Distance, x = League))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Side-by-side Box Plot of Driving Distance by League for Professional Golfers",  
+  labs(title = "Side-by-side Box Plot of Driving Distance by League
+       for Professional Golfers",  
        # Title
        x = "League", # x-axis label
        y = "Driving Distance (yds)") # y-axis label

@@ -119,7 +119,7 @@ $$\hat{p} = \frac{\mbox{number of successes}}{\mbox{total number of observationa
 
 To visually display this data we can use either a frequency bar plot or a relative frequency bar plot. 
 
-* Enter the name of the variable name `choice` for `variable` in the R code to create the frequency bar plot.
+* Enter the variable name `choice` for `variable` in the R code to create the frequency bar plot.
 
 * Note the name of the title is given in line 16 and includes the type of plot, observational units, and variable name
 
@@ -140,7 +140,7 @@ infants %>% # Data set piped into...
 
 \vspace{1.8in}
 
-We could also choose to display the data as a proportion in a **relative frequency** bar plot. To find the relative frequency, the count in each level of `choice` is divided by the sample size.  This calculation is the sample proportion for each level of choice. Notice that in the following code we told R to create a bar plot with proportions.  
+We could also choose to display the data as a proportion in a **relative frequency** bar plot. To find the relative frequency, the count in each level of `choice` is divided by the sample size.  This calculation is the sample proportion for each level of `choice`. Notice that in the following code we told R to create a bar plot with proportions.  
 
 * In the R script file, highlight and run lines 23--29 to create the relative frequency bar plot.
 
@@ -190,7 +190,7 @@ If the children are just randomly choosing the toy, we would expect half (0.5) o
 
 The notation used for a population proportion (or probability, or true proportion) is $\pi$.  Since this summarizes a population, it is a parameter. When writing the **null hypothesis** in notation, we set the parameter equal to the null value, $H_0: \pi = \pi_0$.
 
-7. Write the null hypothesis in notation using the null value of 0.5 in place of $\pi_0$ in the equation given on the previous page.
+7. Write the null hypothesis in notation using the null value of 0.5 in place of $\pi_0$ in the equation given above.
 
 \vspace{0.5in}
 
@@ -214,7 +214,7 @@ Remember that when utilizing a hypothesis test, we are evaluating two competing 
   
 Notice that these two competing possibilities represent the null and alternative hypotheses.
 
-We will now simulate one sample of a **null distribution** of sample proportions. The null distribution is created under the assumption the null hypothesis is true.  In this case, we assume the true proportion of infants who choose the helper is 0.5, so we will create 1000 (or more) different simulations of 16 infants under this assumption.
+We will now simulate one sample of a **null distribution** of sample proportions. The null distribution is created under the assumption the null hypothesis is true.  In this case, we assume the true proportion of infants who choose the helper is 0.5, so we will create 10000 (or more) different simulations of 16 infants under this assumption.
 
 Let's think about how to use a coin to create one simulation of 16 infants under the assumption the null hypothesis is true.  Let heads equal infant chose the helper toy and tails equal infant chose the hinderer toy.
 
@@ -226,7 +226,7 @@ Let's think about how to use a coin to create one simulation of 16 infants under
 
 \vspace{0.2in}
 
-12. Is the value from question 9 closer to 0.5, the null value, or closer to the sample proportion, 0.875? 
+12. Is the value from question 11 closer to 0.5, the null value, or closer to the sample proportion, 0.875? 
 
 \vspace{0.2in}
 
@@ -246,7 +246,7 @@ Let's think about how to use a coin to create one simulation of 16 infants under
 
 <!-- \vspace{0.8in} -->
 
-Report the number of coin flips you got in the Google sheet on D2L.  
+Report the number of coin flips you got as indicated by your instructor.  
 
 <!-- The distribution of the proportion of 16 coin flips from a Spring 2023 class is provided below.  -->
 
@@ -268,6 +268,7 @@ Report the number of coin flips you got in the Google sheet on D2L.
 
 In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 1000 samples when we assume the null hypothesis is true.
 
+\newpage
 
 ### Take-home messages
 

@@ -47,10 +47,9 @@ object %>%
 
 \vspace{1mm}
 
+#### Hypotheses {-}
 
-### Hypothesis Testing {-}
-
-* **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
+* **Hypotheses in notation for a difference in means**: In the hypotheses below, the **null value** is equal to zero.
 
 $$H_0: \mu_1 - \mu_2 = 0 ~~~ \text{or}~~~ H_0: \mu_1 = \mu_2 $$
 $$H_A: \mu_1 - \mu_2 \left\{
@@ -71,43 +70,45 @@ $$H_A: \mu_1 - \mu_2 \left\{
 \right\}
 \mu_2 $$
 
-### Simulation Hypothesis Testing {-}
+#### Simulation-based inference for a difference in means {-}
 
-* R code for simulation methods to find the p-value using the `two_mean_test` function in the `catstats` package.
+* **Conditions necessary to use simulation-based methods for inference for a quantitative response with independent groups**:
 
+    * **Independence**: there must be independence of observational units within groups and between groups.
 
-``` r
-two_mean_test(response~explanatory, #Enter the names of the variables 
+* **Simulation-based methods to create the null distribution**: R code for simulation-based methods to find the p-value using the `two_mean_test` function in the `catstats` package.
+
+    
+    ``` r
+    two_mean_test(response~explanatory, #Enter the names of the variables 
                data = object,  # Enter the name of the dataset
               first_in_subtraction = "xx", # First outcome in order of subtraction 
                number_repetitions = 10000,  # Number of simulations 
                as_extreme_as = -xx,  # Observed statistic 
                direction = "xx")  # Direction of alternative: "greater", "less", or "two-sided"
-```
+    ```
 
 
-### Simulation Confidence Interval {-}
+* **Simulation-based methods to create the bootstrap distribution**: R code to find the simulation-based confidence interval using the `two_mean_bootstrap_CI` function from the `catstats` package.
 
-* R code to find the simulation confidence interval using the `twomean_bootstrap_CI` function from the `catstats` package.
-
-
-``` r
-two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
+    
+    ``` r
+    two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
                       data = object,  # Enter the name of the data set
                       first_in_subtraction = "xx", # First value in order of subtraction
                       number_repetitions = 10000,  # Number of simulations
                       confidence_level = xx)
-```
+    ```
 
-* Review how to interpret the confidence interval for two groups from Module 8
+    * Review how to interpret a confidence interval for two groups from Module 8.
 
-### Theory-based methods {-}
+#### Theory-based inference for a difference in means {-}
 
 * **Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
 
-    * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
+    * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
 
-     * **Normality Condition**: Either the sample observations come from a normally distributed population or we have a large enough sample size.  When we have two samples, we need to check this condition for each group! To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
+     * **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  _When we have two samples, we need to check this condition for each group!_ To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
      
          - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
@@ -115,49 +116,22 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
          
          - $n \ge 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
-* **t-distribution**: a theoretical distribution that is symmetric with a given degrees of freedom smallest sample size minus 1 ($n-1$)
-
-$$t_{n-1}$$
-
-* Calculation of standard error:
-
+* **Standard error of the sample difference in means**:
 $$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
 
-* Calculation of the standardized difference in sample mean:
+* **Standardized sample difference in means**:
+$$T = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+    * Use the `pt` function in R to find a theory-based p-value for a hypothesis test involving a difference in means by finding the area under a $t$-distribution with $\min(n_1-1, n_2-1)$ (the minimum sample size minus 1) degrees of freedom where $T$ is as or more extreme as the value observed (in the direction of $H_A$).
 
-$$t = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+* **Margin of error**: half the width of the confidence interval. For a difference in means, the margin of error is:
+$$ME = t^* \times SE(\bar{x}_1 - \bar{x}_2)$$
+where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $\min(n_1-1, n_2-1)$ degrees of freedom. 
 
-* The p-value can be found by using the pt function.
+    * Use the `qt` function in R to find the $t^*$ multiplier with $\min(n_1-1, n_2-1)$ degrees of freedom.
 
-    * Enter the value of the standardized statistic for xx
-    
-    * Enter the df smallest $(n-1)$ for yy
-    
-    * If a greater than alternative, change lower.tail = TRUE to FALSE.
-    
-    * If a two-sided test, multiply by 2.
+    * To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population difference in means is:
+    $$\bar{x}_1 - \bar{x}_2 \pm ME$$
 
-
-``` r
-pt(xx, df = yy, lower.tail=TRUE)
-```
-
-### Theory-based methods to find the confidence interval {-}
-
-* Calculation of the confidence interval for a difference in sample means
-
-$$\bar{x}_1-\bar{x}_2\pm t^*\times SE(\bar{x}_1-\bar{x}_2)$$
-
-* R code to find the multiplier for the confidence interval using theory-based methods.
-
-    * qt will give you the multiplier using the t-distribution with smallest $n-1$ df (enter for yy)
-    
-    * Enter the percentile for the given confidence level
-
-
-``` r
-qt(percentile, df=yy, lower.tail=FALSE)
-```
 
 
 \newpage
