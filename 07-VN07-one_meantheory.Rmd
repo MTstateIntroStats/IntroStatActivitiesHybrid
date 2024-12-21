@@ -73,7 +73,7 @@ pb %>%
 
 * Plot the simulated sample mean on the bootstrap distribution
 
-* Repeat at least 1000 times (simulations)
+* Repeat at least 10000 times (simulations)
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 

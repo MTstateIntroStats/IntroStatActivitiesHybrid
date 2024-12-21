@@ -72,7 +72,7 @@ paired_test(data = heartrate$Diff,   #Vector of differences or data set with col
 
 \vspace{0.5in}
 
-*  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 1000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
+*  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
 
 \vspace{0.5in}
 *  The 95% confidence interval would be entirely positive.
@@ -182,7 +182,7 @@ qt(0.975, df = 42, lower.tail=TRUE)
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth,height=0.5\textheight]{14-UR-module11_review_files/figure-latex/tstar4-1} 
+{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/tstar4-1} 
 
 }
 

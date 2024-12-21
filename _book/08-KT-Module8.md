@@ -104,7 +104,7 @@ H_A: \pi_1 \left\{
     two_proportion_test(formula = response~explanatory, # response ~ explanatory
         data = object, # Name of data set
         first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
-        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
+        number_repetitions = 10000, # Always use a minimum of 10000 repetitions
         response_value_numerator = "xx", # Define which outcome is a success
         as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
         direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")

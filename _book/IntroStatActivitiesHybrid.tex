@@ -2094,7 +2094,7 @@ For the beginning of this activity we will start with discussing the probabiliti
 \item
   Four suits: spades, hearts, diamonds, and clubs
 \item
-  Each suit has 13 cards: cards 2\$-\$10, ace, jack, queen, and king
+  Each suit has 13 cards: cards 2--10, ace, jack, queen, and king
 \item
   Let A represent the event that a card is an ace
 \item
@@ -2685,7 +2685,7 @@ As we move through the semester we will work through the six steps of the statis
 \begin{Highlighting}[]
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =}\NormalTok{ xx, }\CommentTok{\# Null hypothesis value}
       \AttributeTok{sample\_size =}\NormalTok{ xx, }\CommentTok{\# Enter sample size}
-      \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
+      \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
       \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Observed statistic}
       \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Specify direction of alternative hypothesis}
       \AttributeTok{summary\_measure =} \StringTok{"proportion"}\NormalTok{) }\CommentTok{\# Reporting proportion or number of successes?}
@@ -2702,7 +2702,7 @@ As we move through the semester we will work through the six steps of the statis
 \begin{Highlighting}[]
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =}\NormalTok{ xx, }\CommentTok{\# Sample size}
                 \AttributeTok{number\_successes =}\NormalTok{ xx, }\CommentTok{\# Observed number of successes}
-                \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
+                \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
                 \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{) }\CommentTok{\# Confidence level as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -3263,7 +3263,7 @@ Is the independence condition met to analyze these data using a simulation-based
   \item
     Calculate and plot the simulated sample proportion from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(\hat{p}\)
   \end{itemize}
@@ -3392,7 +3392,7 @@ Bootstrap distribution:
 \item
   Calculate and plot the simulated difference in sample means from each simulation
 \item
-  Repeat 1000 times (simulations) to create the bootstrap distribution
+  Repeat 10000 times (simulations) to create the bootstrap distribution
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 \end{itemize}
@@ -3881,7 +3881,7 @@ Report the number of coin flips you got as indicated by your instructor.
 
 \vspace{0.8in}
 
-In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 1000 samples when we assume the null hypothesis is true.
+In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 10000 samples when we assume the null hypothesis is true.
 
 \newpage
 
@@ -3987,7 +3987,7 @@ To use the computer simulation, we will need to enter the
 \setcounter{enumi}{2}
 \tightlist
 \item
-  What values should be entered for each of the following into the one proportion test to create 1000 simulations?
+  What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 \end{enumerate}
 
 \vspace{1mm}
@@ -4461,14 +4461,14 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
 \setcounter{enumi}{14}
 \tightlist
 \item
-  The following R code produced the bootstrap distribution with 1000 simulations that follows. Circle the value that changed in the code.
+  The following R code produced the bootstrap distribution with 10000 simulations that follows. Circle the value that changed in the code.
 \end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{16}\NormalTok{, }\CommentTok{\# Sample size}
                     \AttributeTok{number\_successes =} \DecValTok{14}\NormalTok{, }\CommentTok{\# Observed number of successes}
-                    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
+                    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
                     \AttributeTok{confidence\_level =} \FloatTok{0.90}\NormalTok{) }\CommentTok{\# Confidence level as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -4505,7 +4505,7 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
   Fill in the blanks below to write a paragraph summarizing the results of the study as if writing a press release.
 \end{enumerate}
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy over the hinderer toy. In a sample of (sample size) \_\_\_\_\_\_\_\_\_\_\_\_\_infants, (number of successes) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_chose the helper toy. A simulation null distribution with 1000 simulations was created in RStudio. The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater. This resulted in a p-value of (value of p-value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. We would observe a sample proportion of (value of the sample proportion) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ or (greater, less, more extreme) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ with a probability of (value of p-value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy over the hinderer toy. In a sample of (sample size) \_\_\_\_\_\_\_\_\_\_\_\_\_infants, (number of successes) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_chose the helper toy. A simulation null distribution with 10000 simulations was created in RStudio. The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater. This resulted in a p-value of (value of p-value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. We would observe a sample proportion of (value of the sample proportion) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ or (greater, less, more extreme) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ with a probability of (value of p-value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\
 IF we assume (\(H_0\) in context) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 Based on this p-value, there is (very strong/little to no) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ evidence that the (sample/true)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ proportion of infants age 6 to 10 months who will choose the helper toy is (greater than, less than, not equal to) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ 0.5. In addition, a 95\% confidence interval was found for the parameter of interest. We are 95\% confident that the (true/sample)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ proportion of infants age 6 to 10 months who will choose the helper toy is between (lower value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ and (upper value)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. The results of this study can be generalized to (all infants age 6 to 10 months/infants similar to those in this study)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ as the researchers (did/did not)\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ select a random sample.
 
@@ -6111,6 +6111,19 @@ The following worksheets review each of the modules. These worksheets will be co
   Describe which features of the study have an effect on the width of the confidence interval and how.
 \end{enumerate}
 
+\subsection{Probability}\label{probability-3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{39}
+\item
+  Calculate probabilities from a given table and give appropriate probability notation for both conditional and unconditional probabilities.
+\item
+  Create a two-way table using given probabilities.
+\item
+  Interpret a probability value in context of the problem.
+\end{enumerate}
+
 \newpage
 
 \section{Module 1 Review - Sampling Methods}\label{module-1-review---sampling-methods}
@@ -6746,7 +6759,7 @@ Statistician Jessica Utts has conducted an extensive analysis of Ganzfeld studie
 
 A single proportion can be mathematically modeled using the normal distribution if certain conditions are met.
 
-Conditions for the sampling distribution of \(\hat{p}\) to follow an approximate normal distribution.
+Conditions for the sample distribution of \(\hat{p}\).
 
 \begin{itemize}
 \item
@@ -6762,6 +6775,8 @@ Conditions for the sampling distribution of \(\hat{p}\) to follow an approximate
 \end{itemize}
 
 \[n \times \hat{p} \ge 10\] and \[n \times (1-\hat{p}) \ge 10\]
+
+\newpage
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6859,19 +6874,7 @@ Notes:
 
 Simulation Method:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.25}\NormalTok{, }\CommentTok{\#Null hypothesis value}
-                    \AttributeTok{sample\_size =} \DecValTok{2124}\NormalTok{, }\CommentTok{\#Enter sample size}
-                    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\#Enter number of simulations}
-                    \AttributeTok{as\_extreme\_as =} \FloatTok{0.334}\NormalTok{, }\CommentTok{\#observed statistic}
-                    \AttributeTok{direction =} \StringTok{"greater"}\NormalTok{, }\CommentTok{\#specify direction of alternative hypothesis}
-                    \AttributeTok{summary\_measure =} \StringTok{"proportion"}\NormalTok{) }\CommentTok{\#Reporting proportion or number of successes?}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6946,19 +6949,11 @@ The \(z^*\) multiplier is the percentile of a standard normal distribution that 
 
 \vspace{1in}
 
+\newpage
+
 Simulation Methods:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
-\FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{2124}\NormalTok{, }\CommentTok{\# Sample size}
-                    \AttributeTok{number\_successes =} \DecValTok{709}\NormalTok{, }\CommentTok{\# Observed number of successes}
-                    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
-                    \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{) }\CommentTok{\# Confidence level as a decimal}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7680,7 +7675,7 @@ Alternative Hypothesis:
   \item
     Plot the simulated shifted sample mean from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(\bar{x}\)
   \end{itemize}
@@ -9084,7 +9079,7 @@ Summary Statistics:
 \item
   Plot the simulated sample mean on the bootstrap distribution
 \item
-  Repeat at least 1000 times (simulations)
+  Repeat at least 10000 times (simulations)
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 \item
@@ -10167,7 +10162,7 @@ H_A: \pi_1 \left\{
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
     \AttributeTok{data =}\NormalTok{ object, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
-    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
     \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success}
     \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
     \AttributeTok{direction=}\StringTok{"xx"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
@@ -10859,7 +10854,7 @@ Is the independence condition met for simulation inference?
   \item
     Calculate and plot the simulated difference in sample proportions from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(\hat{p}_1 - \hat{p}_2\)
   \end{itemize}
@@ -10871,7 +10866,7 @@ Is the independence condition met for simulation inference?
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{drug, }\CommentTok{\# response \textasciitilde{} explanatory}
     \AttributeTok{data =}\NormalTok{ cocaine, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"desipramine"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
-    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
     \AttributeTok{response\_value\_numerator =} \StringTok{"clean"}\NormalTok{, }\CommentTok{\# Define which outcome is a success}
     \AttributeTok{as\_extreme\_as =} \FloatTok{0.417}\NormalTok{, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
     \AttributeTok{direction=}\StringTok{"greater"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
@@ -10938,7 +10933,7 @@ To estimate the difference in true proportion we will create a confidence interv
 \item
   Calculate and plot the simulated difference in sample proportions from each simulation
 \item
-  Repeat 1000 times (simulations) to create the bootstrap distribution
+  Repeat 10000 times (simulations) to create the bootstrap distribution
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 \end{itemize}
@@ -10952,7 +10947,7 @@ Returning to the cocaine example, we will estimate the difference in true propor
         \AttributeTok{data=}\NormalTok{cocaine, }\CommentTok{\# Name of data set}
         \AttributeTok{first\_in\_subtraction =} \StringTok{"desipramine"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
         \AttributeTok{response\_value\_numerator =} \StringTok{"clean"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-        \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+        \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
         \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -11957,14 +11952,14 @@ The response variable name is \texttt{Behavior} and the explanatory variable nam
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 8 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations; highlight and run lines 24--30.
+Using the R script file for this activity, enter your answers for question 8 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations; highlight and run lines 24--30.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Behavior}\SpecialCharTok{\textasciitilde{}}\NormalTok{Condition, }\CommentTok{\# response \textasciitilde{} explanatory}
     \AttributeTok{data =}\NormalTok{ good, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
-    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
     \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success}
     \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
     \AttributeTok{direction=}\StringTok{"xx"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
@@ -12104,7 +12099,7 @@ Module 9 introduces theory-based hypothesis testing methods and both simulation-
     \AttributeTok{data=}\NormalTok{object, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
     \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
     \AttributeTok{confidence\_level =}\NormalTok{ xx) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -12882,7 +12877,7 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in R (in the 
          \AttributeTok{data=}\NormalTok{glycemic, }\CommentTok{\# Name of data set}
          \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
          \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-         \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+         \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
          \AttributeTok{confidence\_level =}\NormalTok{ xx) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -13140,7 +13135,7 @@ Edible (e) & & & \\
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\# response \textasciitilde{} explanatory}
     \AttributeTok{data=}\NormalTok{ mushrooms, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
-    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
     \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
     \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\# Calculated observed statistic (difference in sample proportions)}
     \AttributeTok{direction=}\StringTok{"xx"}\NormalTok{) }\CommentTok{\# Alternative hypothesis direction ("greater","less","two{-}sided")}
@@ -13182,7 +13177,7 @@ Edible (e) & & & \\
          \AttributeTok{data=}\NormalTok{mushrooms, }\CommentTok{\# Name of data set}
          \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
          \AttributeTok{response\_value\_numerator =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-         \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+         \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
          \AttributeTok{confidence\_level =}\NormalTok{ xx) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -13944,7 +13939,7 @@ The variable whether or not a child developed a peanut allergy is the \_\_\_\_\_
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Allergy }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Treatment, }\CommentTok{\#response\textasciitilde{}explanatory}
                     \AttributeTok{data=}\NormalTok{allergy, }\CommentTok{\#name of dataset}
                     \AttributeTok{first\_in\_subtraction =} \StringTok{"Avoiders"}\NormalTok{, }\CommentTok{\#order of subtraction: avoiders {-} peanuts}
-                    \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\#always use a minimum of 1000 repetitions}
+                    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#always use a minimum of 10000 repetitions}
                     \AttributeTok{response\_value\_numerator =} \StringTok{"Yes"}\NormalTok{, }\CommentTok{\#define a success as having an allergy}
                     \AttributeTok{as\_extreme\_as =} \FloatTok{0.117}\NormalTok{, }\CommentTok{\#type your calculated observed statistic (difference in sample proportions)}
                     \AttributeTok{direction=}\StringTok{"greater"}\NormalTok{) }\CommentTok{\#type your selected direction to match the alternative hypothesis direction}
@@ -13983,7 +13978,7 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in \texttt{R}
         \AttributeTok{data=}\NormalTok{allergy, }\CommentTok{\# Name of data set}
         \AttributeTok{first\_in\_subtraction =} \StringTok{"Avoiders"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
         \AttributeTok{response\_value\_numerator =} \StringTok{"Yes"}\NormalTok{, }\CommentTok{\# Define which outcome is a success }
-        \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{, }\CommentTok{\# Always use a minimum of 1000 repetitions}
+        \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Always use a minimum of 10000 repetitions}
         \AttributeTok{confidence\_level =} \FloatTok{0.90}\NormalTok{) }\CommentTok{\# Enter the level of confidence as a decimal}
 \end{Highlighting}
 \end{Shaded}
@@ -14461,7 +14456,7 @@ In notation:
   \item
     Plot the simulated shifted sample mean from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(\bar{x}_d\)
   \end{itemize}
@@ -14546,7 +14541,7 @@ Conclusion:
 \item
   Plot the simulated sample mean on the bootstrap distribution
 \item
-  Repeat at least 1000 times (simulations)
+  Repeat at least 10000 times (simulations)
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
@@ -14778,10 +14773,11 @@ In today's activity, we will review summary measures and plots for paired data. 
 \item
   Mean difference
 \item
+  Median difference
+\item
   Standard deviation
 \item
   Quartiles
-\item
 \end{itemize}
 
 To review these concepts, see Chapter 5 and 18 in the textbook.
@@ -14988,7 +14984,7 @@ To find the differences to continue to assess this data and create a boxplot of 
 \setcounter{enumi}{17}
 \tightlist
 \item
-  The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 \(\frac{mg*cm^2}{min}\). Does this interval provided evidence in support of the alternative hypothesis? Explain why.
+  The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 \(\frac{mg*cm^2}{min}\). Does this interval provide evidence in support of the alternative hypothesis? Explain why.
 \end{enumerate}
 
 \vspace{0.8in}
@@ -15262,7 +15258,7 @@ We will use the \texttt{paired\_bootstrap\_CI()} function in R (in the \texttt{c
 \item
   When using bootstrapping to create a null distribution centered at the null value for both paired data and a single quantitative variable, we first need to shift the data by the difference \(\mu_0 - \bar{x}_d\), and then sample with replacement from the shifted data.
 \item
-  When analyzing paired data, the summary statistic is the `mean difference' NOT the `difference in means'\footnote{Technically, if we calculate the differences and then take the mean (mean difference), and we calculate the two means and then take the difference (difference in means), the value will be the same. However, the \emph{sampling variability} of the two statistics will differ, as we will see in Week 12.}. This terminology will be \emph{very} important in interpretations.
+  When analyzing paired data, the summary statistic is the `mean difference' NOT the `difference in means'\footnote{Technically, if we calculate the differences and then take the mean (mean difference), and we calculate the two means and then take the difference (difference in means), the value will be the same. However, the \emph{sampling variability} of the two statistics will differ, as we will see in Module 12.}. This terminology will be \emph{very} important in interpretations.
 \item
   To create one simulated sample on the null distribution for a sample mean or mean difference, shift the original data by adding \((\mu_0 - \bar{x})\) or \((0 - \bar{x}_d)\). Sample with replacement from the shifted data \(n\) times. Calculate and plot the sample mean or the sample mean difference.
 \item
@@ -16066,7 +16062,7 @@ R code to find the summary statistics for a quantitative response variable with 
            \AttributeTok{data =}\NormalTok{ object,  }\CommentTok{\# Enter the name of the dataset}
           \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction }
            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations }
-           \AttributeTok{as\_extreme\_as =} \SpecialCharTok{{-}}\NormalTok{xx,  }\CommentTok{\# Observed statistic }
+           \AttributeTok{as\_extreme\_as =}\NormalTok{ xx,  }\CommentTok{\# Observed statistic }
            \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
 \end{Highlighting}
 \end{Shaded}
@@ -16324,7 +16320,7 @@ Interpret the summary statistic in context of the problem:
   \item
     Calculate and plot the simulated difference in sample means from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(\bar{x}_1 - \bar{x}_2\)
   \end{itemize}
@@ -16398,7 +16394,7 @@ To estimate the difference in true mean we will create a confidence interval.
 \item
   Calculate and plot the simulated difference in sample means from each simulation
 \item
-  Repeat 1000 times (simulations) to create the bootstrap distribution
+  Repeat 10000 times (simulations) to create the bootstrap distribution
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 \end{itemize}
@@ -16880,7 +16876,7 @@ We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstat
 \FunctionTok{two\_mean\_test}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\CommentTok{\#Enter the names of the variables}
               \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the dataset}
               \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction}
-              \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
               \AttributeTok{as\_extreme\_as =}\NormalTok{ xx,  }\CommentTok{\# Observed statistic}
               \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{)  }\CommentTok{\# Direction of alternative: "greater", "less", or "two{-}sided"}
 \end{Highlighting}
@@ -16936,14 +16932,14 @@ The response variable name is \texttt{number\_of\_uses} and the explanatory vari
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 9 in place of the \texttt{xx}'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 35--39.
+Using the R script file for this activity, enter your answers for question 9 in place of the \texttt{xx}'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 35--39.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ explanatory, }\CommentTok{\#Enter the name of the variables}
                       \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the data set}
                       \AttributeTok{first\_in\_subtraction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\# First value in order of subtraction}
-                      \AttributeTok{number\_repetitions =} \DecValTok{1000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+                      \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
                       \AttributeTok{confidence\_level =}\NormalTok{ xx)}
 \end{Highlighting}
 \end{Shaded}
@@ -18467,7 +18463,7 @@ Conditions:
   \item
     Calculate and plot the simulated slope or correlation from each simulation
   \item
-    Repeat 1000 times (simulations) to create the null distribution
+    Repeat 10000 times (simulations) to create the null distribution
   \item
     Find the proportion of simulations at least as extreme as \(b_1\) or \(r\)
   \end{itemize}
@@ -18557,7 +18553,7 @@ To estimate the true slope (or true correlation) we will create a confidence int
 \item
   Calculate and plot the simulated slope (or correlation) from each simulation
 \item
-  Repeat 1000 times (simulations) to create the bootstrap distribution
+  Repeat 10000 times (simulations) to create the bootstrap distribution
 \item
   Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 \end{itemize}
@@ -19777,7 +19773,7 @@ Using the R script file for this activity\ldots{}
 
 \begin{itemize}
 \item
-  Enter your answers for question 8 in place of the \texttt{xx}'s to produce the null distribution with 1000 simulations.
+  Enter your answers for question 8 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations.
 \item
   Highlight and run lines 32--37.
 \end{itemize}
@@ -20850,7 +20846,7 @@ We will start with simulation methods.
 \begin{itemize}
 \tightlist
 \item
-  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 1000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
+  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
 \end{itemize}
 
 \vspace{0.5in}
@@ -21007,7 +21003,7 @@ We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. Fo
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth,height=0.5\textheight]{14-UR-module11_review_files/figure-latex/tstar4-1} 
+{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/tstar4-1} 
 
 }
 
@@ -21057,7 +21053,7 @@ The summary of the data and boxplots are given below:
 \NormalTok{woodpeckers }\SpecialCharTok{\%\textgreater{}\%}
 \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SocialCategory, }\AttributeTok{y =}\NormalTok{ Volume)) }\SpecialCharTok{+}
     \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplots of Brain Volume for Woodpeckers by Social Grouping"}\NormalTok{,}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplots of Brain Volume for Woodpeckers }\SpecialCharTok{\textbackslash{}n}\StringTok{ by Social Grouping"}\NormalTok{,}
          \AttributeTok{x =} \StringTok{"Social Grouping"}\NormalTok{, }
          \AttributeTok{y =} \StringTok{"Brain Volume (mm\^{}3"}\NormalTok{) }
   
@@ -21146,7 +21142,7 @@ In the two\_mean\_test function, enter the response\textasciitilde explanatory v
 \setcounter{enumi}{1}
 \tightlist
 \item
-  If the difference in true mean brain volume for species of woodpeckers that live solo and that live in groups is less than zero, in 58 out of 1000 samples, we would observe a sample difference in mean brain volume of -695.973 \(mm^3\) or less.
+  If the difference in true mean brain volume for species of woodpeckers that live solo and that live in groups is less than zero, in 717 out of 10000 samples, we would observe a sample difference in mean brain volume of -695.973 \(mm^3\) or less.
 \end{enumerate}
 
 \vspace{0.5in}

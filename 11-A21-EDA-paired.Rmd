@@ -19,11 +19,11 @@ In today's activity, we will review summary measures and plots for paired data. 
 
 * Mean difference
 
+* Median difference
+
 * Standard deviation
 
 * Quartiles
-
-* 
 
 To review these concepts, see Chapter 5 and 18 in the textbook.
 
@@ -135,7 +135,7 @@ tat_diff %>%
 
 \vspace{0.3in}
 
-18. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg*cm^2}{min}$.  Does this interval provided evidence in support of the alternative hypothesis? Explain why.
+18. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg*cm^2}{min}$.  Does this interval provide evidence in support of the alternative hypothesis? Explain why.
 
 \vspace{0.8in}
 

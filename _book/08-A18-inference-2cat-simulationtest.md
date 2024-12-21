@@ -178,14 +178,14 @@ The response variable name is `Behavior` and the explanatory variable name is `C
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 8 in place of the `xx`'s to produce the null distribution with 1000 simulations; highlight and run lines 24--30.
+Using the R script file for this activity, enter your answers for question 8 in place of the `xx`'s to produce the null distribution with 10000 simulations; highlight and run lines 24--30.
 
 
 ``` r
 two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
     data = good, # Name of data set
     first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
-    number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+    number_repetitions = 10000, # Always use a minimum of 10000 repetitions
     response_value_numerator = "xx", # Define which outcome is a success
     as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
     direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")

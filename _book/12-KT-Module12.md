@@ -84,7 +84,7 @@ $$H_A: \mu_1 - \mu_2 \left\{
                data = object,  # Enter the name of the dataset
               first_in_subtraction = "xx", # First outcome in order of subtraction 
                number_repetitions = 10000,  # Number of simulations 
-               as_extreme_as = -xx,  # Observed statistic 
+               as_extreme_as = xx,  # Observed statistic 
                direction = "xx")  # Direction of alternative: "greater", "less", or "two-sided"
     ```
 

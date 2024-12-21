@@ -52,7 +52,7 @@ To use the computer simulation, we will need to enter the
 * the "direction" (matches the direction of the alternative hypothesis).
 
 
-3.  What values should be entered for each of the following into the one proportion test to create 1000 simulations?
+3.  What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 
 \vspace{1mm}
 * Probability of success:

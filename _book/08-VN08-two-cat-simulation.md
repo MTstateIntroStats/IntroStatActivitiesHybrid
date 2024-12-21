@@ -503,7 +503,7 @@ Is the independence condition met for simulation inference?
 
     * Calculate and plot the simulated difference in sample proportions from each simulation
 
-    * Repeat 1000 times (simulations) to create the null distribution
+    * Repeat 10000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $\hat{p}_1 - \hat{p}_2$
     
@@ -513,7 +513,7 @@ set.seed(216)
 two_proportion_test(formula = outcome~drug, # response ~ explanatory
     data = cocaine, # Name of data set
     first_in_subtraction = "desipramine", # Order of subtraction: enter the name of Group 1
-    number_repetitions = 10000, # Always use a minimum of 1000 repetitions
+    number_repetitions = 10000, # Always use a minimum of 10000 repetitions
     response_value_numerator = "clean", # Define which outcome is a success
     as_extreme_as = 0.417, # Calculated observed statistic (difference in sample proportions)
     direction="greater") # Alternative hypothesis direction ("greater","less","two-sided")
@@ -571,7 +571,7 @@ To estimate the difference in true proportion we will create a confidence interv
 
 * Calculate and plot the simulated difference in sample proportions from each simulation
 
-* Repeat 1000 times (simulations) to create the bootstrap distribution
+* Repeat 10000 times (simulations) to create the bootstrap distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
@@ -584,7 +584,7 @@ two_proportion_bootstrap_CI(formula = outcome ~ drug,
         data=cocaine, # Name of data set
         first_in_subtraction = "desipramine", # Order of subtraction: enter the name of Group 1
         response_value_numerator = "clean", # Define which outcome is a success 
-        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
+        number_repetitions = 10000, # Always use a minimum of 10000 repetitions
         confidence_level = 0.99) # Enter the level of confidence as a decimal
 ```
 

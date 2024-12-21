@@ -136,13 +136,13 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 \vspace{0.4in}
 
-15.  The following R code produced the bootstrap distribution with 1000 simulations that follows.  Circle the value that changed in the code. 
+15.  The following R code produced the bootstrap distribution with 10000 simulations that follows.  Circle the value that changed in the code. 
 
 
 ``` r
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.90) # Confidence level as a decimal
 ```
 
@@ -163,7 +163,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 18. Fill in the blanks below to write a paragraph summarizing the results of the study as if writing a press release.  
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy over the hinderer toy.  In a sample of (sample  size) _____________infants, (number of successes) _______________chose the helper toy.  A simulation null distribution with 1000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of (value of p-value)_______________.  We would observe a sample proportion of (value of the sample proportion) ______________________ or (greater, less, more extreme) _____________________ with a probability of (value of p-value)___________________  
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy over the hinderer toy.  In a sample of (sample  size) _____________infants, (number of successes) _______________chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of (value of p-value)_______________.  We would observe a sample proportion of (value of the sample proportion) ______________________ or (greater, less, more extreme) _____________________ with a probability of (value of p-value)___________________  
 IF we assume ($H_0$ in context) ____________________________________________.
 Based on this p-value, there is (very strong/little to no) ______________________ evidence that the (sample/true)_____________________ proportion of infants age 6 to 10 months who will choose the helper toy is (greater than, less than, not equal to) _____________________ 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the (true/sample)_________________________ proportion of infants age 6 to 10 months who will choose the helper toy is between (lower value)________________ and (upper value)____________________. The results of this study can be generalized to (all infants age 6 to 10 months/infants similar to those in this study)___________________________ as the researchers (did/did not)_____________________ select a random sample.
 

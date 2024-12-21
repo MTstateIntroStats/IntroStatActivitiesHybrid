@@ -266,7 +266,7 @@ Report the number of coin flips you got as indicated by your instructor.
 
 \vspace{0.8in}
 
-In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 1000 samples when we assume the null hypothesis is true.
+In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 10000 samples when we assume the null hypothesis is true.
 
 \newpage
 

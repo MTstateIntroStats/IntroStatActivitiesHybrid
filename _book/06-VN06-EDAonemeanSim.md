@@ -370,7 +370,7 @@ ___________________.
 
     * Plot the simulated shifted sample mean from each simulation
 
-    * Repeat 1000 times (simulations) to create the null distribution
+    * Repeat 10000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $\bar{x}$
 

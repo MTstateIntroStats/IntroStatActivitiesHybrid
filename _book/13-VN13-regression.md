@@ -484,7 +484,7 @@ Conditions:
 
     * Calculate and plot the simulated slope or correlation from each simulation
 
-    * Repeat 1000 times (simulations) to create the null distribution
+    * Repeat 10000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $b_1$ or $r$
     
@@ -562,7 +562,7 @@ To estimate the true slope (or true correlation) we will create a confidence int
     
 * Calculate and plot the simulated slope (or correlation) from each simulation
 
-* Repeat 1000 times (simulations) to create the bootstrap distribution
+* Repeat 10000 times (simulations) to create the bootstrap distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 

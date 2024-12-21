@@ -152,7 +152,7 @@ The response variable name is `TL_cm` and the explanatory variable name is `HW_c
 
 Using the R script file for this activity...
 
-* Enter your answers for question 8 in place of the `xx`'s to produce the null distribution with 1000 simulations.  
+* Enter your answers for question 8 in place of the `xx`'s to produce the null distribution with 10000 simulations.  
 
 * Highlight and run lines 32--37.
 

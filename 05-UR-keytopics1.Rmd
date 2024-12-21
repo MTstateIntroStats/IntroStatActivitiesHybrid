@@ -85,5 +85,13 @@
 
 39.	Describe which features of the study have an effect on the width of the confidence interval and how.
 
+### Probability
+
+40. Calculate probabilities from a given table and give appropriate probability notation for both conditional and unconditional probabilities.
+
+41. Create a two-way table using given probabilities.
+
+42. Interpret a probability value in context of the problem.
+
 \newpage
 

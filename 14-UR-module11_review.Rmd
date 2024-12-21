@@ -74,7 +74,7 @@ paired_test(data = heartrate$Diff,   #Vector of differences or data set with col
 
 \vspace{0.5in}
 
-*  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 1000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
+*  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
 
 \vspace{0.5in}
 *  The 95% confidence interval would be entirely positive.
@@ -176,7 +176,7 @@ We will need to find the $t^*$ multiplier using the function `qt()`. For a 95\% 
 qt(0.975, df = 42, lower.tail=TRUE)
 ```
 
-```{r tstar4, echo = F, fig.cap = "", out.height="50%" }
+```{r tstar4, echo = F, fig.cap = "", out.width="50%" }
 
 x <- seq(-4, 4, length=100)
 hx<-dt(x, 42)

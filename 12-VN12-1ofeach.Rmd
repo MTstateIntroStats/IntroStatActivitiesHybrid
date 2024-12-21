@@ -140,7 +140,7 @@ letters%>%
 
     * Calculate and plot the simulated difference in sample means from each simulation
 
-    * Repeat 1000 times (simulations) to create the null distribution
+    * Repeat 10000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $\bar{x}_1 - \bar{x}_2$
 
@@ -198,7 +198,7 @@ To estimate the difference in true mean we will create a confidence interval.
 
 * Calculate and plot the simulated difference in sample means from each simulation
 
-* Repeat 1000 times (simulations) to create the bootstrap distribution
+* Repeat 10000 times (simulations) to create the bootstrap distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 

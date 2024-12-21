@@ -21,7 +21,7 @@ woodpeckers %>%
 woodpeckers %>%
 ggplot(aes(x = SocialCategory, y = Volume)) +
     geom_boxplot() + 
-    labs(title = "Boxplots of Brain Volume for Woodpeckers by Social Grouping",
+    labs(title = "Boxplots of Brain Volume for Woodpeckers \n by Social Grouping",
          x = "Social Grouping", 
          y = "Brain Volume (mm^3") 
   
@@ -73,7 +73,7 @@ A.	There is strong evidence that there is a true mean difference in brain volume
 
 \vspace{0.5in}
 
-B.	If the difference in true mean brain volume for species of woodpeckers that live solo and  that live in groups is less than zero, in 58 out of 1000 samples, we would observe a sample difference in mean brain volume of -695.973 $mm^3$ or less.
+B.	If the difference in true mean brain volume for species of woodpeckers that live solo and  that live in groups is less than zero, in 717 out of 10000 samples, we would observe a sample difference in mean brain volume of -695.973 $mm^3$ or less.
 
 \vspace{0.5in}
 

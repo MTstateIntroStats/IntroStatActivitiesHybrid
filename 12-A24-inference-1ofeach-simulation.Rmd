@@ -151,7 +151,7 @@ set.seed(216)
 two_mean_test(response~explanatory, #Enter the names of the variables
               data = rude,  # Enter the name of the dataset
               first_in_subtraction = "xx", # First outcome in order of subtraction
-              number_repetitions = 1000,  # Number of simulations
+              number_repetitions = 10000,  # Number of simulations
               as_extreme_as = xx,  # Observed statistic
               direction = "xx")  # Direction of alternative: "greater", "less", or "two-sided"
 ```
@@ -180,13 +180,13 @@ The response variable name is `number_of_uses` and the explanatory variable name
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 9 in place of the `xx`'s to produce the bootstrap distribution with 1000 simulations; highlight and run lines 35--39.
+Using the R script file for this activity, enter your answers for question 9 in place of the `xx`'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 35--39.
 
 ```{r, echo = TRUE, eval=FALSE}
 two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
                       data = rude,  # Enter the name of the data set
                       first_in_subtraction = "xx", # First value in order of subtraction
-                      number_repetitions = 1000,  # Number of simulations
+                      number_repetitions = 10000,  # Number of simulations
                       confidence_level = xx)
 ```
 

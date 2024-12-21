@@ -76,7 +76,7 @@ For the beginning of this activity we will start with discussing the probabiliti
 
 * Four suits: spades, hearts, diamonds, and clubs
 
-* Each suit has 13 cards: cards 2$-$10, ace, jack, queen, and king
+* Each suit has 13 cards: cards 2--10, ace, jack, queen, and king
 
 - Let A represent the event that a card is an ace
 

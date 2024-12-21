@@ -189,7 +189,7 @@ $$H_A: \pi \left\{
     ``` r
     one_proportion_test(probability_success = xx, # Null hypothesis value
           sample_size = xx, # Enter sample size
-          number_repetitions = 1000, # Enter number of simulations
+          number_repetitions = 10000, # Enter number of simulations
           as_extreme_as = xx, # Observed statistic
           direction = "xx", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
@@ -206,7 +206,7 @@ $$H_A: \pi \left\{
     ``` r
     one_proportion_bootstrap_CI(sample_size = xx, # Sample size
                     number_successes = xx, # Observed number of successes
-                    number_repetitions = 1000, # Number of bootstrap samples to use
+                    number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.95) # Confidence level as a decimal
     ```
 

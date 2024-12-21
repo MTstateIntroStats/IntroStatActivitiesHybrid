@@ -90,7 +90,7 @@ Edible (e) & & & \\
 two_proportion_test(formula = response~explanatory, # response ~ explanatory
     data= mushrooms, # Name of data set
     first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
-    number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+    number_repetitions = 10000, # Always use a minimum of 10000 repetitions
     response_value_numerator = "xx", # Define which outcome is a success 
     as_extreme_as = xx, # Calculated observed statistic (difference in sample proportions)
     direction="xx") # Alternative hypothesis direction ("greater","less","two-sided")
@@ -115,7 +115,7 @@ two_proportion_bootstrap_CI(formula = response~explanatory,
          data=mushrooms, # Name of data set
          first_in_subtraction = "xx", # Order of subtraction: enter the name of Group 1
          response_value_numerator = "xx", # Define which outcome is a success 
-         number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+         number_repetitions = 10000, # Always use a minimum of 10000 repetitions
          confidence_level = xx) # Enter the level of confidence as a decimal
 ```
 

@@ -169,7 +169,7 @@ $H_A:$
 
     * Plot the simulated shifted sample mean from each simulation
 
-    * Repeat 1000 times (simulations) to create the null distribution
+    * Repeat 10000 times (simulations) to create the null distribution
 
     * Find the proportion of simulations at least as extreme as $\bar{x}_d$
     
@@ -243,7 +243,7 @@ Conclusion:
 
 * Plot the simulated sample mean on the bootstrap distribution
 
-* Repeat at least 1000 times (simulations)
+* Repeat at least 10000 times (simulations)
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 

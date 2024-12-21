@@ -73,7 +73,7 @@ The variable whether or not a child developed a peanut allergy is the __________
 two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
                     data=allergy, #name of dataset
                     first_in_subtraction = "Avoiders", #order of subtraction: avoiders - peanuts
-                    number_repetitions = 1000, #always use a minimum of 1000 repetitions
+                    number_repetitions = 10000, #always use a minimum of 10000 repetitions
                     response_value_numerator = "Yes", #define a success as having an allergy
                     as_extreme_as = 0.117, #type your calculated observed statistic (difference in sample proportions)
                     direction="greater") #type your selected direction to match the alternative hypothesis direction
@@ -95,7 +95,7 @@ two_proportion_bootstrap_CI(formula = Allergy~Treatment,
         data=allergy, # Name of data set
         first_in_subtraction = "Avoiders", # Order of subtraction: enter the name of Group 1
         response_value_numerator = "Yes", # Define which outcome is a success 
-        number_repetitions = 1000, # Always use a minimum of 1000 repetitions
+        number_repetitions = 10000, # Always use a minimum of 10000 repetitions
         confidence_level = 0.90) # Enter the level of confidence as a decimal
 ```
 
