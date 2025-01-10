@@ -27,7 +27,7 @@ In today's activity, we will cover two-way tables and probability.  Some terms c
 
 To review these concepts, see Chapter 23 in the textbook.  
 
-### Overview of probabiliy
+### Overview of probability
 
 The probability of an event is the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions).
 
