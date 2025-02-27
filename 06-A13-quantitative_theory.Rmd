@@ -27,7 +27,7 @@ To review these concepts, see Chapters 11 and 17 in the textbook.
 
 ### Body Temperature
 
-It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that body temperatures of adults differ from the known temperature of $98.6^{\circ}$F?
+It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of $98.6^{\circ}$F??
 
 #### Ask a research question {-}
 
@@ -177,7 +177,7 @@ To find the p-value for the theory-based test in R:
 * Highlight and run line 24.
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
-pt(xx, df=yy, lower.tail=FALSE)
+2*pt(xx, df=yy, lower.tail=TRUE)
 ```
 
 12.  What does this p-value mean, in the context of the study?  Hint: it is the probability of what...assuming what?

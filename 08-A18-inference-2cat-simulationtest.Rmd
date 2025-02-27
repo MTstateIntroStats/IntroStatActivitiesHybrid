@@ -64,7 +64,7 @@ For this study we are identifying two parameters and looking at the difference b
 
 * $\pi_\text{no hurry}$ = long-run proportion of Princeton Theological Seminary students assigned not to hurry that helped the actor
 
-* $\pi_\text{hurry} - \pi_\text{no hurry}$ = the difference in long-run proporiton of Princeton Theological Seminary Students that helped the actor between those who were assigned to hurry and those who were not assigned to hurry
+* $\pi_\text{hurry} - \pi_\text{no hurry}$ = the difference in long-run proportion of Princeton Theological Seminary Students that helped the actor between those who were assigned to hurry and those who were not assigned to hurry
 
 When comparing two groups, we assume the two parameters are equal in the null hypothesis---there is no association between the variables.
 
@@ -198,9 +198,10 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 
 \vspace{1in}
 
-12. Write a conclusion in context of the study.
+12. Write a conclusion, including the scope of inference, in context of the study.
 
 \vspace{1in}
+
 
 <!-- #### Confidence interval {-} -->
 

@@ -116,7 +116,7 @@ The p-value measures the probability that we observe a sample proportion as extr
 
 $$P(\text{statistic or more extreme|the null hypothesis is true})$$
 
-10.  What did we assume to create the null distribution?  Write the null hypothesis is context.
+10.  What did we assume to create the null distribution?  Write the null hypothesis in context.
 
 \vspace{0.7in}
 
