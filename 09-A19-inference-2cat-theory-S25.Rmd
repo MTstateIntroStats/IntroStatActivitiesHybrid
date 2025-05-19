@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 19:  Winter Sports Helmet Use and Head Injuries --- Theory-based Methods
 
 \setstretch{1}
@@ -117,6 +122,9 @@ skiers %>% # Data set piped into...
 <!-- \vspace{1in} -->
 
 #### Hypothesis test {-}
+
+For this study, we will see if there is evidence that safety helmet use is associated with a
+reduced risk of head injury for skiers and snowboarders.
 
 4. Write the null and alternative hypotheses in notation. 
 

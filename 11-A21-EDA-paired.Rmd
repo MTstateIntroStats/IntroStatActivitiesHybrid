@@ -96,7 +96,7 @@ To find the differences to continue to assess this data and create a boxplot of 
 
 ```{r, echo=TRUE, eval=FALSE}
 tat_diff <- tats %>% 
-    mutate(differences = Tattoo - No_Tattoo) 
+    mutate(differences = measurement_1 - measurement_2) 
 tat_diff %>% 
     summarise(favstats(differences))
 tat_diff %>% 
@@ -138,6 +138,8 @@ tat_diff %>%
 18. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg*cm^2}{min}$.  Does this interval provide evidence in support of the alternative hypothesis? Explain why.
 
 \vspace{0.8in}
+
+### Take home messages
 
 1.	The differences in a paired data set are treated like a single quantitative variable when performing a statistical analysis.  Paired data (or paired samples) occur when pairs of measurements are collected. We are only interested in the population (and sample) of differences, and not in the original data. 
 
