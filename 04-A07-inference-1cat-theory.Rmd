@@ -1,4 +1,4 @@
-## Activity 9:  Handedness of Male Boxers
+## Activity 7:  Handedness of Male Boxers
 
 \setstretch{1}
 
@@ -33,7 +33,15 @@ Activities from module 3 covered simulation-based methods for hypothesis tests i
 
 ### Handedness of male boxers
 
-Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. The fighting claim states that left-handed men have an advantage in competition.  In this random sample of 500 male professional boxers, we want to see if there is an over-prevalence of left-handed fighters.  In the sample of 500 male boxers, 81 were left-handed.
+Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. Is there evidence that there is an over-prevalence of left-handed fighters?  In this random sample of 500 professional male boxers, 81 were left-handed.
+
+* Observational units:
+
+* Variable:
+
+* Type of variable:
+
+* Success:
 
 ### Summary statistics review
 
@@ -70,13 +78,13 @@ boxers %>% # Data set piped into...
 
 \vspace{1in}
 
-3.  Write out the null hypothesis in words.
+3.  Write out the null hypothesis **in words**.
 \vspace{1in}
 
-4. Write out the alternative hypothesis in notation.
+4. Write out the alternative hypothesis **in notation**.
 \vspace{0.4in}
 
-5. Give the value of the summary statistic (sample proportion) for this study.  Use proper notation.
+5. Calculate the value of the summary statistic (sample proportion) for this study.  Use proper notation.
 
 \vspace{0.3in}
 
@@ -90,13 +98,17 @@ Conditions for the sampling distribution of $\hat{p}$ to follow an approximate n
 
 * **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
-* **Success-failure condition**: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}≥10$  and $n(1-\hat{p})≥10$.
+* **Large enough sample size**: Success-failure condition: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}≥10$  and $n(1-\hat{p})≥10$.
 
-6. Verify that the independence condition is satisfied.
+### Additional notes on Theory-based methods {-}
+
+\vspace{2in}
+
+* Verify that the independence condition is satisfied.
 
 \vspace{0.5in}
 
-7. Is the success-failure condition met to model the data with the normal distribution?  Explain your answer in context of the problem.
+* Is the success-failure condition met to model the data with the normal distribution?  Explain your answer in context of the problem.
 
 \vspace{0.8in}
 
@@ -122,7 +134,7 @@ Each sample proportion of male boxers that are left-handed is 0.013 from the tru
 
 \newpage
 
-8. Label the standard normal distribution shown below with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
+Label the standard normal distribution shown below with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
 
 \vspace{2mm}
 
@@ -130,7 +142,7 @@ Each sample proportion of male boxers that are left-handed is 0.013 from the tru
 openintro::normTail()
 ``` 
 
-9.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
+6.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
 
 \vspace{0.6in}
 
@@ -138,7 +150,7 @@ The standardized statistic is used as a ruler to measure how far the sample stat
 
 The standardized statistic measures the *number of standard errors the sample statistic is from the null value*.
 
-10.  Interpret the standardized sample proportion from question 9 in context of the problem.
+** Interpretation of the standardized sample proportion:**
 
 \vspace{.8in}
 
@@ -150,37 +162,42 @@ Notes:
 * Use `lower.tail = FALSE` when doing a right-sided test.
 * To find a two-sided p-value, use a left-sided test for negative Z or a right-sided test for positive Z, then multiply the value found by 2 to get the p-value.
 
-* Enter the value of the standardized statistic for xx
-
-* Highlight and run lines 20--22
 
 ```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
-pnorm(xx, # Enter value of standardized statistic
+pnorm(4.769, # Enter value of standardized statistic
       m=0, s=1, # Using the standard normal mean = 0, sd = 1
       lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
 ```
   
   
-11.  Report the p-value obtained from the `R` output.
+7.  Report the p-value obtained from the `R` output.
 \vspace{0.3in}
 
-12.  Write a conclusion based on the value of the p-value.
+8.  Write a conclusion based on the p-value.
 
 \vspace{0.6in}
+
+9. To what group of observational units can the results be generalized to.
+
+\vspace{0.4in}
 
 ### Impacts on the P-value {-}
 
 Suppose that we want to show that the true proportion of male boxers **differs** from that in the general population.
 
-13.  Write out the alternative hypothesis in notation for this new research question.
+10.  Write out the alternative hypothesis in notation for this new research question.
 
 \vspace{0.3in}
 
-14.  How would this impact the p-value?  Would the p-value be larger or smaller?
+```{r Norm, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"}
+openintro::normTail()
+``` 
+
+11.  How would this impact the p-value?  Would the p-value be larger or smaller?
 
 \vspace{0.2in}
 
-15. Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.162$) of male boxers that are left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as below:
+Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.162$) of male boxers that are left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as below:
 
 $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{300}} = 0.017$$.
 
@@ -188,37 +205,32 @@ The standardized statistic for this new sample is calculated below:
 
 $$Z = \frac{0.162-0.1}{0.017} = 3.64$$
 
-16.  Mark the value of the original standardized statistic from question 9 and the value of the standardized statistic from the smaller sample size on the standard normal distribution below. 
-
 ```{r Norcur, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"}
 openintro::normTail()
 ``` 
 
 
-\newpage
-
-17.  How does the decrease in sample size affect the p-value?
+12.  How does the decrease in sample size affect the p-value?
 
 \vspace{0.3in}
 
-18. Suppose another sample of 500 male boxers was taken and 68 were found to be left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as before:
+Suppose another sample of 500 male boxers was taken and 68 were found to be left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as before:
 
 $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
 
 The standardized statistic for this new sample is calculated below:
 
 $$Z = \frac{0.136-0.1}{0.013} = 2.769$$
-19.  Mark the Z-value of the original standardized statistic from question 9 and the value of the standardized statistic calculated with $\hat{p}=0.136$ on the standard normal distribution below. 
 
 ```{r Norcuv, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"}
 openintro::normTail()
 ``` 
 
-20.  How does a statistic closer to the null value affect the p-value?
+13.  How does a statistic closer to the null value affect the p-value?
 
 \vspace{0.3in}
 
-21.  Summarize how each of the following affected the p-value:
+14.  Summarize how each of the following affected the p-value:
 
 a) Switching to a two-sided test.
 

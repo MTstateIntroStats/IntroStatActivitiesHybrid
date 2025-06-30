@@ -1,4 +1,4 @@
-## Activity 6:  Helper-Hinderer Part 1 --- Simulation-based Hypothesis Test
+## Activity 4:  Helper-Hinderer Part 1 --- Simulation-based Hypothesis Test
 
 \setstretch{1}
 
@@ -41,24 +41,33 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 \newpage
 
+### Notes on Hypothesis Testing {-}
+
+\vspace{4in}
+
 ### Helper-Hinderer
 
-A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to choose the helper toy over the hinderer toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to choose the helper toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
+* Observational units:
 
-In this study, the **observational units are the infants ages 6 to 10 months**.  The **variable measured on each observational unit (infant) is whether they chose the helper or the hinderer toy**.  This is a categorical variable so we will be assessing the proportion of infants ages 6 to 10 months that choose the helper toy.  Choosing the helper toy in this study will be considered a success.
+* Variable:
+
+* Type of variable:
+
+* Success:
 
 #### Ask a research question {-}
 
-1. Identify the research question for this study.  What are the researchers hoping to show?
+* Research question:
 
-\vspace{0.6in}
+\vspace{0.2in}
 
 #### Design a study and collect data {-}
 
 Before using statistical inference methods, we must check that the cases are independent.  The sample observations are independent if the outcome of one observation does not influence the outcome of another. One way this condition is met is if data come from a simple random sample of the target population.
 
-2.  Are the cases independent? Justify your answer.
+1.  Are the cases independent? Justify your answer.
 
 \vspace{0.8in}
 
@@ -104,8 +113,9 @@ infants %>% count(choice)  # Count number in each choice category
 The following formula is used to calculate the proportion of successes in the sample.
 
 $$\hat{p} = \frac{\mbox{number of successes}}{\mbox{total number of observational units}}$$
+\newpage
 
-3.  Using the R output and the formula given, calculate the summary statistic (sample proportion) to represent the research question.  Recall that `choosing the helper toy` is a considered a success.  Use appropriate notation.
+2.  Using the R output and the formula given, calculate the summary statistic (sample proportion) to represent the research question.  Recall that `choosing the helper toy` is a considered a success.  Use appropriate notation.
 
 \vspace{0.5in}
 
@@ -113,7 +123,7 @@ To visually display this data we can use either a frequency bar plot or a relati
 
 * Enter the variable name `choice` for `variable` in the R code to create the frequency bar plot.
 
-* Note the name of the title is given in line 16 and includes the type of plot, observational units, and variable name
+* Note the name of the title is given in line 16 and includes the **type of plot**, **observational units**, and **variable name**.
 
 * Highlight and run lines 13--19 to create the plot
 
@@ -127,7 +137,7 @@ infants %>% # Data set piped into...
        y = "Frequency")  # Label the y axis
 ```
 
-4. Sketch the frequency bar plot created below.
+3. Sketch the frequency bar plot created below.
 
 \vspace{1.8in}
 
@@ -145,7 +155,7 @@ infants %>% # Data set piped into...
        y = "Relative Frequency")  # Label the y axis
 ```
 
-5.  Which features in the relative frequency bar plot are the same as the frequency bar plot?  Which are different?
+4.  Which features in the relative frequency bar plot are the same as the frequency bar plot?  Which are different?
 
 \vspace{0.5in}
 
@@ -167,28 +177,33 @@ The parameter of interest is a statement about what we want to find about the po
 
     - Variable(s)
         
-For this study, the parameter of interest, $\pi$, represents the **true or population proportion of infants ages 6--10 months who will choose the helper toy**.
+**Parameter of interest:**
+
+\vspace{0.5in}
 
 If the children are just randomly choosing the toy, we would expect half (0.5) of the infants to choose the helper toy.  This is the null value for our study.
 
-6.  Using the parameter of interest given above, write out the null hypothesis in words.  That is, what do we assume to be true about the parameter of interest when we perform our simulation? 
-\vspace{0.8in}
+**Null Hypothesis (in words):**
+
+\vspace{0.5in}
 
 The notation used for a population proportion (or probability, or true proportion) is $\pi$.  Since this summarizes a population, it is a parameter. When writing the **null hypothesis** in notation, we set the parameter equal to the null value, $H_0: \pi = \pi_0$.
 
-7. Write the null hypothesis in notation using the null value of 0.5 in place of $\pi_0$ in the equation given above.
+**Null Hypothesis (in notation):**
 
 \vspace{0.5in}
 
 The **alternative hypothesis** is the claim to be tested and the direction of the claim (less than, greater than, or not equal to) is based on the research question.  
 
-8.  Based on the research question from question 1, are we testing that the parameter is greater than 0.5, less than 0.5 or different than 0.5? 
+* Based on the research question from question 1, are we testing that the parameter is greater than 0.5, less than 0.5 or different than 0.5? 
 
 \vspace{0.2in}
 
-<!-- 8. Write out the alternative hypothesis in words. -->
+**Alternative hypothesis (in words):**
 
-9.  Write out the alternative hypothesis in notation.
+\vspace{0.5in}
+
+**Alternative hypothesis (in notation):**
 
 \vspace{0.5in}
 
@@ -204,15 +219,15 @@ We will now simulate one sample of a **null distribution** of sample proportions
 
 Let's think about how to use a coin to create one simulation of 16 infants under the assumption the null hypothesis is true.  Let heads equal infant chose the helper toy and tails equal infant chose the hinderer toy.
 
-10. How many times would you flip a coin to simulate the sample of infants?
+5. How many times would you flip a coin to simulate the sample of infants?
 
 \vspace{0.2in}
 
-11. Flip a coin 16 times recording the number of times the coin lands on heads.  This represents one simulated sample of 16 infants randomly choosing the toy.  Calculate the proportion of coin flips that resulted in heads.
+6. Flip a coin 16 times recording the number of times the coin lands on heads.  This represents one simulated sample of 16 infants randomly choosing the toy.  Calculate the proportion of coin flips that resulted in heads.
 
 \vspace{0.2in}
 
-12. Is the value from question 11 closer to 0.5, the null value, or closer to the sample proportion, 0.875? 
+7. Is the value from question 6 closer to 0.5, the null value, or closer to the sample proportion, 0.875? 
 
 \vspace{0.2in}
 
@@ -240,21 +255,19 @@ Report the number of coin flips you got as indicated by your instructor.
 <!-- include_graphics("images/class_simulations_oca06.png") -->
 <!-- ``` -->
 
-13. Sketch the graph created by your instructor of the proportion of heads out of 16 coin flips.
+8. Sketch the graph created by your instructor of each student's proportion of heads out of 16 coin flips.
 
 \vspace{2in}
 
-14. Circle the observed statistic (value from question 3) on the distribution shown above.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
+9. Circle the observed statistic (value from question 2) on the distribution shown above.  Where does this statistic fall in this distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?
 
 \vspace{0.2in}
 
-15. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot. 
+10. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot. 
 
 \vspace{0.8in}
 
 In the next class, we will continue to assess the strength of evidence against the null hypothesis by using a computer to simulate 10000 samples when we assume the null hypothesis is true.
-
-\newpage
 
 ### Take-home messages
 

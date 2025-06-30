@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Activity 4:  Probability Studies
+## Activity 3:  Probability Studies
 
 \setstretch{1}
 
@@ -27,7 +27,7 @@ In today's activity, we will cover two-way tables and probability.  Some terms c
 
 To review these concepts, see Chapter 23 in the textbook.  
 
-### Overview of probability
+### Notes on probability {-}
 
 The probability of an event is the long-run proportion of times the event would occur if the random process were repeated indefinitely (under identical conditions).
 
@@ -40,9 +40,13 @@ For example, to calculate the probability of a coin flip landing on heads; there
 $$P(heads) = \frac{1}{2} = 0.5$$
 The figure below shows the long-run proportion of times a simulated coin flip lands on heads on the y-axis, and the number of tosses on the x-axis. Notice how the long-run proportion starts converging to 0.5 as the number of tosses increases.
 
-```{r confounding, fig.cap="", out.width="65%"}
-include_graphics("images/coinsim.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{images/coinsim} 
+
+}
+
+\end{figure}
 
 In today's activity we will discuss the probability of a single event, the probability of an "and" event, and the probability of a conditional event.  
 
@@ -86,15 +90,15 @@ Find the probability of selecting a card that is not an ace.  This is the comple
 
 \vspace{1in}
 
-Find the probability of selecting a red ace.  There are only two red aces and a total of 52 cards.
+Find the probability of selecting a red ace.  
 
 \vspace{1in}
 
-Find the probability of selecting an ace given that the card is red.  There are two red aces but only $\frac{52}{2} = 26$ red cards
+Find the probability of selecting an ace given that the card is red.  
 
 \vspace{1in}
 
-If a card drawn is an ace, what is the probability the card drawn is red.  There are four aces but only two that are red.
+If a card drawn is an ace, what is the probability the card drawn is red.  
 
 \vspace{1in}
 
@@ -151,7 +155,7 @@ c. What is the probability that a selected Bob Ross painting does not contain a 
 
 \newpage
 
-2. A recent study of population decline of white-tailed deer in Wyoming due to chronic wasting disease [@edmunds2016] (CWD) reported the prevalence of CWD to be 35.4\%.  The survival rate of deer with CWD was 39.6\% and the survival rate of deer without CWD was 80.1\%.  
+2. A recent study of population decline of white-tailed deer in Wyoming due to chronic wasting disease [@edmunds2016] (CWD) reported that 35.4\% of white-tailed deer have CWD.  The survival rate of deer with CWD is 39.6\% and the survival rate of deer without CWD is 80.1\%.  
 \vspace{1mm}
 
     Let $A$ = the event a deer has CWD, and $B$ = the event the deer survives.
@@ -194,6 +198,50 @@ Total & & & 100,000 \\
    e.  What is the probability that a deer does not survive given they do not have CWD?  What is the notation used for this probability?
 
 \newpage 
+
+3. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A recent study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
+\vspace{1mm}
+
+    Let $A$ = the event the child has strep throat, and $B$ = the event the child has a positive RADT.
+\vspace{0.1in}
+
+    a. Identify what each numerical value given in the problem represents in probability notation.
+\vspace{.1in}
+
+        0.86 =  
+\vspace{.1in}
+ 
+        0.92 =  
+\vspace{.1in}
+
+        0.37 =  
+\vspace{.1in}
+
+    b. Create a hypothetical two-way table to represent the situation.  
+    
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
+& & & \\ \hline
+$B$& & & \\ 
+& & & \\ \hline
+$B^C$& & & \\ 
+& & & \\ \hline
+Total & & & 100,000 \\ 
+& & & \\ \hline
+\end{tabular}
+\end{center}
+\vspace{.1in}
+
+   c. Find $P(B)$. What does this probability represent in the context of the problem?
+\vspace{.8in}
+
+   d. Find the probability that a child with a positive RADT actually has strep throat. What is the notation used for this probability?
+\vspace{.8in}
+
+   e.  What is the probability that a child does not have strep given that they have a positive RADT?  What is the notation used for this probability?
+   
+\vspace{0.8in}
 
 ### Take home messages
 

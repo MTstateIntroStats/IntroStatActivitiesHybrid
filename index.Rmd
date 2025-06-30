@@ -8,7 +8,7 @@ author: |
     | Jade Schmidt
     | Stacey Hancock
 subtitle: |
-    | Spring 2025
+    | Fall 2025
     | Montana State University
 output: 
     pdf_document:

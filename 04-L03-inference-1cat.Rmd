@@ -12,6 +12,14 @@
 
 The American Veterinary Medical Association estimated in 2010 that approximately 49% of dog owners in the U.S. own dogs that are classified as “mixed breed.” As part of a larger 2022 international study [@banton2022] about overall dog health, survey participants were asked, among other things, to report whether their dog was purebred or a mixed breed.  Seven hundred and fifty (750) dog owners from the U.S. were recruited to complete an online survey via an email indicating they had been randomly selected by Qualtrics (an “experience management” company that specializes in surveys).  Three hundred sixty-four (364) out of 675 respondents from the U.S. reported they owned a mixed breed dog.  Is there evidence that, in the last decade, the proportion of dog owners in the U.S. that own a mixed breed dog has changed from the value reported in 2010? 
 
+* Observational units:
+
+* Variable:
+
+* Type of variable:
+
+* Success:
+
 #### Activity intro {-}
 
 * Download the R script file and the data file (US_dogs.csv) from D2L
@@ -26,7 +34,7 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 \vspace{0.3in}
 
-2. Create a plot of the data using the R code. Make sure to include an appropriate title with type of plot, observational units, and variable.  **Upload the plot to Gradescope**.
+2. Create a plot of the data using the R code. Make sure to include an appropriate title with type of plot, observational units, and variable.  
 
 ```{r, out.width="50%", echo=TRUE, eval=FALSE}
 dogs %>% # Data set piped into...
@@ -40,7 +48,7 @@ dogs %>% # Data set piped into...
 
 #### Use statistical analysis methods to draw inferences from the data {-}
 
-3.  **Write out the parameter of interest in words, in context of the study.**  
+3.  Write out the parameter of interest in words, in context of the study.
 
 \vspace{0.5in}
 
@@ -56,9 +64,11 @@ dogs %>% # Data set piped into...
 
 \vspace{0.3in}
 
-5. **Will theory-based methods give the same results as simulation based methods?  Explain your answer.**
+5. Will theory-based methods give the same results as simulation based methods?  Explain your answer.
 
 \vspace{1in}
+
+#### Null Distribution {-}
 
 To use the computer simulation, we will need to enter the 
 
@@ -90,29 +100,44 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
 
 \vspace{0.2in}
 
-The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. 
+#### Bootstrap distribution {-}
 
-* Enter the value of the appropriate percentile in the provided R script file to find the multiplier for a 90\% confidence interval. 
-
-* Highlight and run line 31
+We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 10000 simulations. Then highlight and run lines ??? to create a 90\% confidence interval.
 
 ```{r, echo=TRUE, eval=FALSE}
-qnorm(percentile, lower.tail = TRUE) # Multiplier for 90% confidence interval
+one_proportion_bootstrap_CI(sample_size = xx, # Sample size
+                    number_successes = xx, # Observed number of successes
+                    number_repetitions = 10000, # Number of bootstrap samples to use
+                    confidence_level = xx) # Confidence level as a decimal
 ```
 
-7.  **Calculate the margin of error for a 90\% confidence interval.**
+7. Report the 90\% confidence interval.
 
-\vspace{0.6in}
+\vspace{0.2in}
 
-8. Calculate a 90\% confidence interval.
+<!-- The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level.  -->
 
-\vspace{0.6in}
+<!-- * Enter the value of the appropriate percentile in the provided R script file to find the multiplier for a 90\% confidence interval.  -->
 
-\newpage
+<!-- * Highlight and run line 31 -->
+
+<!-- ```{r, echo=TRUE, eval=FALSE} -->
+<!-- qnorm(percentile, lower.tail = TRUE) # Multiplier for 90% confidence interval -->
+<!-- ``` -->
+
+<!-- 7.  **Calculate the margin of error for a 90\% confidence interval.** -->
+
+<!-- \vspace{0.6in} -->
+
+<!-- 8. Calculate a 90\% confidence interval. -->
+
+<!-- \vspace{0.6in} -->
+
+<!-- \newpage -->
 
 #### Summarize the results of the study {-}
 
-9. Write a paragraph summarizing the results of the study.  Be sure to describe:
+8. Write a paragraph summarizing the results of the study.  Be sure to describe:
 
 * Summary statistic and interpretation
 

@@ -1,4 +1,4 @@
-## Activity 10:  Confidence interval and what confidence means
+## Activity 8:  Confidence interval and what confidence means
 
 \setstretch{1}
 
@@ -24,13 +24,20 @@ In this activity, we will explore what being 95\% confidence means. Some terms c
 
 In today's activity, we will use the male boxer study to look at what confidence means.
 
-Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. The fighting claim states that left-handed men have an advantage in competition.  In this random sample of 500 male professional boxers, we want to see if there is an over-prevalence of left-handed fighters.  In the sample of 500 male boxers, 81 were left-handed.
+Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. Is there evidence that there is an over-prevalence of left-handed fighters?  In this random sample of 500 professional male boxers, 81 were left-handed.
 
 
-```{r, echo=TRUE, collapse=FALSE, message=FALSE, warning=FALSE}
+
+``` r
  # Read in data set
 boxers <- read.csv("https://math.montana.edu/courses/s216/data/Male_boxers_sample.csv")
 boxers %>% count(Stance)  # Count number in each Stance category
+```
+
+```
+#>         Stance   n
+#> 1  left-handed  81
+#> 2 right-handed 419
 ```
 
 ### What does *confidence* mean? {-}
@@ -67,11 +74,11 @@ In the interpretation of a 95\% confidence interval, we say that we are 95\% con
 
 \vspace{0.4in}
 
-6.  Interpret the level of confidence.  *Hint*: What proportion of samples would we expect to give a confidence interval that contains the parameter of interest?
+**Interpretation of the level of confidence:**
 
 \vspace{0.8in}
 
-#### Theory-based confidence interval {-}
+#### Notes on theory-based confidence intervals {-}
 
 To calculate a theory-based 95\% confidence interval for $\pi$, we will first find the **standard error** of $\hat{p}$ by plugging in the value of $\hat{p}$ for $\pi$ in $SD(\hat{p})$:
 
@@ -79,48 +86,60 @@ $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
 
 Note that we do not include a "0" subscript, since we are not assuming a null hypothesis. 
 
-7.  Calculate the standard error of the sample proportion to find a 95\% confidence interval.
+**Calculate the standard error of the sample proportion to find a 95\% confidence interval.**
 
 \vspace{0.5in}
 
-We will calculate the margin of error and confidence interval in questions 10 and 11 of this activity. **The margin of error (ME)** is the value of the $z^*$ multiplier times the standard error of the statistic.
+We will calculate the margin of error and confidence interval later in this activity. **The margin of error (ME)** is the value of the $z^*$ multiplier times the standard error of the statistic.
 
 $$ME = z^* \times SE(\hat{p})$$
 The $z^*$ multiplier is the percentile of a standard normal distribution that corresponds to our confidence level. If our confidence level is 95\%, we find the Z values that encompass the middle 95\% of the standard normal distribution.  If 95\% of the standard normal distribution should be in the middle, that leaves 5\% in the tails, or 2.5\% in each tail.  
 
 The `qnorm()` function in R will tell us the $z^*$ value for the desired percentile (in this case, 95\% + 2.5\% = 97.5\% percentile). 
 
-* Enter the value of 0.975 for xx in the provided R script file. 
+\begin{figure}
 
-* Highlight and run line 12. This will give the value of the multiplier for a 95\% confidence interval.
+{\centering \includegraphics[width=0.45\linewidth]{04-A08-confidenceLevel_files/figure-latex/Normalcur-1} 
 
-```{r, echo=TRUE, eval=FALSE}
-qnorm(xx, lower.tail = TRUE) # Multiplier for 95% confidence interval
+}
+
+\caption{Standard Normal Curve}(\#fig:Normalcur)
+\end{figure}
+
+The following code will find the $z^*$ value for a 95\% confidence interval.
+
+
+``` r
+qnorm(c(0.025, 0.975), lower.tail = TRUE) # Multiplier for 95% confidence interval
 ```
 
-8. Report the value of the multiplier needed to calculate the 95\% confidence interval for the true proportion of male boxers that are left-handed.
-\vspace{0.2in}
-
-9. Fill in the normal distribution shown below to show how R found the $z^*$ multiplier.
-
-```{r Normalcur, warning=FALSE, out.width="45%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"}
-openintro::normTail()
-``` 
-
-10.  Calculate the margin of error for the 95\% confidence interval.
+**Calculate the margin of error for the 95\% confidence interval.**
 \vspace{0.6in}
 
 To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
 $$\text{point estimate}\pm\text{margin of error}$$
 $$\hat{p}\pm z^* \times SE(\hat{p})$$
 
-11.  Calculate the 95\% confidence interval for the parameter of interest.
+**Calculate the 95\% confidence interval for the parameter of interest.**
 \vspace{0.6in}
 
 
-12.  Interpret the 95\% confidence **interval** in the context of the problem.
+6.  Interpret the 95\% confidence **interval** in the context of the problem.
 \vspace{1in}
 
+#### Simulation methods {-}
+
+We could also use simulation-based methods to analyze these data.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+7. Explain why the results for simulation methods and theory-based methods are similar.
+
+\vspace{1in}
 
 
 ### Take-home messages
