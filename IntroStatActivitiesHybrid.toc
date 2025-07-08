@@ -4,26 +4,26 @@
 \contentsline {section}{\numberline {1.1}Vocabulary Review and Key Topics}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Key topics}{2}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Vocabulary}{2}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Activity 1: Intro to Data Analysis and Sampling Bias}{4}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Learning outcomes}{4}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Terminology review}{4}{subsection.1.2.2}%
-\contentsline {subsection}{Notes on Observational Units and Variables}{4}{subsection.1.2.2}%
-\contentsline {subsubsection}{Further analysis of class data set}{4}{subsection.1.2.2}%
-\contentsline {subsection}{Notes on Sampling Methods and Types of bias}{6}{Item.4}%
-\contentsline {subsubsection}{Types of bias}{7}{Item.4}%
-\contentsline {subsection}{\numberline {1.2.3}Take-home messages}{8}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Additional notes}{8}{subsection.1.2.4}%
-\contentsline {section}{\numberline {1.3}Activity 2: American Indian Address}{9}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Terminology review}{9}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Class Preparation}{9}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}American Indian Address}{9}{subsection.1.3.4}%
-\contentsline {subsubsection}{By eye selection}{10}{subsection.1.3.4}%
-\contentsline {subsection}{Notes on sampling}{11}{Item.13}%
-\contentsline {subsection}{\numberline {1.3.5}Class Activity}{11}{subsection.1.3.5}%
-\contentsline {subsubsection}{Random selection}{12}{Item.17}%
-\contentsline {subsection}{Effect of sample size}{15}{Item.24}%
-\contentsline {subsection}{\numberline {1.3.6}Take-home messages}{16}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.2}Activity 1: Intro to Data Analysis and Sampling Bias}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Learning outcomes}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Terminology review}{5}{subsection.1.2.2}%
+\contentsline {subsection}{Notes on Observational Units and Variables}{5}{subsection.1.2.2}%
+\contentsline {subsubsection}{Further analysis of class data set}{6}{subsection.1.2.2}%
+\contentsline {subsection}{Notes on Sampling Methods and Types of bias}{7}{Item.4}%
+\contentsline {subsubsection}{Types of bias}{8}{Item.4}%
+\contentsline {subsection}{\numberline {1.2.3}Take-home messages}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Additional notes}{9}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Activity 2: American Indian Address}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Learning outcomes}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Terminology review}{10}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Class Preparation}{10}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}American Indian Address}{10}{subsection.1.3.4}%
+\contentsline {subsubsection}{By eye selection}{11}{subsection.1.3.4}%
+\contentsline {subsection}{Notes on sampling}{12}{Item.13}%
+\contentsline {subsection}{\numberline {1.3.5}Class Activity}{12}{subsection.1.3.5}%
+\contentsline {subsubsection}{Random selection}{13}{Item.17}%
+\contentsline {subsection}{Effect of sample size}{16}{Item.24}%
+\contentsline {subsection}{\numberline {1.3.6}Take-home messages}{17}{subsection.1.3.6}%
 \contentsline {subsection}{\numberline {1.3.7}Additional notes}{17}{subsection.1.3.7}%
 \contentsline {chapter}{\numberline {2}Probability}{18}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Vocabulary Review and Key Topics}{18}{section.2.1}%
@@ -34,10 +34,10 @@
 \contentsline {subsection}{\numberline {2.2.2}Terminology review}{19}{subsection.2.2.2}%
 \contentsline {subsection}{Notes on probability}{19}{subsection.2.2.2}%
 \contentsline {subsubsection}{Probability notation}{20}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}Probability questions}{20}{subsubsection.2.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.3}Calculating probabilities from a two-way table}{21}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Take home messages}{24}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Additional notes}{24}{subsection.2.2.5}%
+\contentsline {subsubsection}{Probability questions}{20}{subsection.2.2.2}%
+\contentsline {subsection}{Calculating probabilities from a two-way table}{21}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Take home messages}{24}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Additional notes}{24}{subsection.2.2.4}%
 \contentsline {chapter}{\numberline {3}Exploring Categorical Data: Exploratory Data Analysis and Inference using Simulation-based Methods}{25}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Vocabulary Review and Key Topics}{25}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Key topics}{25}{subsection.3.1.1}%
@@ -45,7 +45,7 @@
 \contentsline {subsection}{\numberline {3.1.2}Vocabulary}{25}{subsection.3.1.2}%
 \contentsline {subsubsection}{Plotting one categorical variable}{26}{subsection.3.1.2}%
 \contentsline {subsubsection}{Inference}{26}{subsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Simulation-based inference for a single proportion}{28}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{Simulation-based inference for a single proportion}{28}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Activity 4: Helper-Hinderer Part 1 --- Simulation-based Hypothesis Test}{30}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Learning outcomes}{30}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Terminology review}{30}{subsection.3.2.2}%
@@ -68,7 +68,7 @@
 \contentsline {subsubsection}{Interpret the p-value}{40}{Item.81}%
 \contentsline {subsubsection}{Communicate the results and answer the research question}{40}{Item.81}%
 \contentsline {subsubsection}{Generalization}{40}{Item.81}%
-\contentsline {subsection}{\numberline {3.3.4}Take-home messages}{40}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Take-home messages}{41}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Additional notes}{41}{subsection.3.3.5}%
 \contentsline {section}{\numberline {3.4}Activity 6: Helper-Hinderer --- Simulation-based Confidence Interval}{42}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Learning outcomes}{42}{subsection.3.4.1}%
@@ -80,7 +80,7 @@
 \contentsline {subsection}{Notes on the bootstrap distribution}{44}{Item.92}%
 \contentsline {subsubsection}{Communicate the results and answer the research question}{44}{Item.92}%
 \contentsline {subsubsection}{Effect of confidence level}{45}{Item.93}%
-\contentsline {subsubsection}{Concluding paragraph}{45}{Item.96}%
+\contentsline {subsubsection}{Concluding paragraph}{46}{Item.96}%
 \contentsline {subsection}{\numberline {3.4.4}Take-home messages}{46}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}Additional notes}{46}{subsection.3.4.5}%
 \contentsline {chapter}{\numberline {4}Inference for a Single Categorical Variable: Theory-based Methods}{47}{chapter.4}%
@@ -95,23 +95,36 @@
 \contentsline {subsection}{Hypotheses and summary statistics}{50}{Item.102}%
 \contentsline {subsection}{Theory-based methods}{51}{Item.106}%
 \contentsline {subsection}{Additional notes on Theory-based methods}{51}{Item.106}%
-\contentsline {subsection}{Impacts on the P-value}{54}{Item.110}%
-\contentsline {subsection}{\numberline {4.2.5}Take-home messages}{56}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Additional notes}{56}{subsection.4.2.6}%
-\contentsline {section}{\numberline {4.3}Activity 8: Confidence interval and what confidence means}{57}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Learning outcomes}{57}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Terminology review}{57}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Handedness of male boxers continued}{57}{subsection.4.3.3}%
-\contentsline {subsection}{What does \emph {confidence} mean?}{57}{subsection.4.3.3}%
-\contentsline {subsubsection}{Notes on theory-based confidence intervals}{58}{Item.128}%
-\contentsline {subsubsection}{Simulation methods}{59}{Item.129}%
+\contentsline {subsection}{Impacts on the P-value}{53}{Item.110}%
+\contentsline {subsection}{\numberline {4.2.5}Take-home messages}{55}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Additional notes}{55}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Activity 8: Confidence interval and what confidence means}{56}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Learning outcomes}{56}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Terminology review}{56}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Handedness of male boxers continued}{56}{subsection.4.3.3}%
+\contentsline {subsection}{What does \emph {confidence} mean?}{56}{subsection.4.3.3}%
+\contentsline {subsubsection}{Notes on theory-based confidence intervals}{57}{Item.128}%
+\contentsline {subsubsection}{Simulation methods}{58}{Item.129}%
 \contentsline {subsection}{\numberline {4.3.4}Take-home messages}{60}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Additional notes}{61}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{62}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{62}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Mixed Breed Dogs in the U.S.}{62}{subsection.4.4.2}%
-\contentsline {subsubsection}{Activity intro}{62}{subsection.4.4.2}%
-\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{62}{Item.134}%
-\contentsline {subsubsection}{Null Distribution}{63}{Item.137}%
-\contentsline {subsubsection}{Bootstrap distribution}{63}{Item.138}%
-\contentsline {subsubsection}{Summarize the results of the study}{64}{Item.139}%
+\contentsline {subsection}{\numberline {4.3.5}Additional notes}{60}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{61}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{61}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Mixed Breed Dogs in the U.S.}{61}{subsection.4.4.2}%
+\contentsline {subsubsection}{Activity intro}{61}{subsection.4.4.2}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{61}{Item.134}%
+\contentsline {subsubsection}{Null Distribution}{62}{Item.137}%
+\contentsline {subsubsection}{Bootstrap distribution}{62}{Item.138}%
+\contentsline {subsubsection}{Summarize the results of the study}{63}{Item.139}%
+\contentsline {chapter}{\numberline {5}Unit 1 Review}{65}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Key Topics}{65}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Module Review}{65}{subsection.5.0.2}%
+\contentsline {section}{\numberline {5.1}Key Topics Exam 1}{66}{section.5.1}%
+\contentsline {subsection}{Descriptive statistics and study design}{66}{section.5.1}%
+\contentsline {subsection}{Hypothesis testing}{66}{Item.151}%
+\contentsline {subsection}{\numberline {5.1.1}Confidence intervals}{67}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Probability}{67}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Module 1 Review - Sampling Methods}{68}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Module 2 Review - Probability}{70}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Module 3 Review - Simulation Methods for a Single Proportion}{72}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Module 4 Review - Theory-based Methods for a Single Proportion}{75}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Group Exam 1 Review}{80}{section.5.6}%

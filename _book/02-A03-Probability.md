@@ -62,11 +62,11 @@ We will use the notation P(event) to represent the probability of an event and u
     
 * $P(A and B)$ represents the probability of events A and B
 
-* $P(A|B)$ represents the probability of event A given event B
+* $P(A|B)$ represents the probability of event A, given event B
 
-* $P(B|A)$ represents the probability of event B given event A
+* $P(B|A)$ represents the probability of event B, given event A
 
-#### Probability questions
+#### Probability questions {-}
 
 For the beginning of this activity we will start with discussing the probabilities associated with drawing a card from a standard card deck.  In a card deck there are:
 
@@ -123,7 +123,7 @@ If a card drawn is an ace, what is the probability the card drawn is red.
 <!-- \vspace{1in} -->
 
 
-### Calculating probabilities from a two-way table
+### Calculating probabilities from a two-way table {-}
 
 1. In 2014, the website FiveThirtyEight examined the works of Bob Ross to see what trends could be found. They determined that of all the paintings he created, 95% of them contained at least one “happy tree.” Of those works with a happy tree, 43% contained at least one “almighty mountain.” Of the paintings that did not have at least one happy tree, only 10% contained at least one almighty mountain.
 \vspace{1mm}

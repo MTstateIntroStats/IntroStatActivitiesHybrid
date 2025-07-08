@@ -24,7 +24,7 @@ To review these concepts, see Chapters 10 & 14 in your textbook.
 
 In the last class, we found very strong evidence that the true proportion of infants who will choose the helper character is greater than 0.5. But what *is* the true proportion of infants who will choose the helper character? We will use this same study to estimate this parameter of interest by creating a confidence interval. 
 
-As a reminder: A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. Researchers were hoping to assess: Are infants more likely to preferentially choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+As a reminder: A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 A **point estimate** (our observed statistic) provides a single plausible value for a parameter. However, a point estimate is rarely perfect; usually there is some error in the estimate. In addition to supplying a point estimate of a parameter, a next logical step would be to provide a plausible *range* of values for the parameter. This plausible range of values for the population parameter is called an **interval estimate** or **confidence interval**. 
 
@@ -143,16 +143,15 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 11.  Report both the 95\% confidence interval and the 90\% confidence interval (question 10).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
 
 \vspace{0.5in}
-
-\setstretch{1.5}
+\newpage
 
 #### Concluding paragraph {-}
 
-In many of our studies we will write a paragraph summarizing the results of the study.  
+In many of our studies we will write a paragraph summarizing the results of the study. 
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy.  In a sample of _____________infants, _______________chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of _______________.  We would observe a sample proportion of ______________________ or _____________________ with a probability of ___________________  
-IF we assume  _______________________________________________.
-Based on this p-value, there is  ______________________ evidence that the _______________ proportion of infants age 6 to 10 months who will choose the helper toy is _____________________ 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the _________________________ proportion of infants age 6 to 10 months who will choose the helper toy is between ________________ and ____________________. The results of this study can be generalized to ___________________________ as the researchers _____________________ select a random sample.
+\setstretch{1.75}
+
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy.  In a sample of 16 infants, 14 chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of 0.0024.  We would observe a sample proportion of 0.875 or greater with a probability of 0.0024 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.75 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
 
 \setstretch{1}
 

@@ -118,7 +118,7 @@ $$\hat{p}\pm z^* \times SE(\hat{p})$$
 
 We could also use simulation-based methods to analyze these data.
 
-```{r}
+```{r, echo=TRUE}
 one_proportion_test(probability_success=0.1,
                     sample_size=500,
                     number_repetitions=10000,
@@ -127,7 +127,7 @@ one_proportion_test(probability_success=0.1,
                     summary_measure="proportion")
 ```
 
-```{r}
+```{r, echo=TRUE}
 one_proportion_bootstrap_CI(sample_size = 500,
                             number_successes = 81,
                             number_repetitions = 10000,
@@ -138,6 +138,7 @@ one_proportion_bootstrap_CI(sample_size = 500,
 
 \vspace{1in}
 
+\newpage
 
 ### Take-home messages
 

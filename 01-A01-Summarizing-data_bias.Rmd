@@ -23,11 +23,11 @@ Statistics is the study of how best to collect, analyze, and draw conclusions fr
 
 * Non-response bias
 
-For more on these concepts, read Chapter 1 and 2 in the textbook.
+For more on these concepts, read Chapter 1 and 2 in the textbook and review the Module 1 Vocabulary Review and Key Topics.
 
 ### Notes on Observational Units and Variables {-}
 
-\vspace{4in}
+\newpage
 
 #### Further analysis of class data set {-}
 
@@ -41,9 +41,9 @@ For more on these concepts, read Chapter 1 and 2 in the textbook.
 
 3. The header for each column in the data set describes each variable measured on the observational unit. For each column of data, fill in the following table identifying the type of each variable.
 
-* If the variable is categorical, indicate in column 3 whether the variable is binary.
+* If the variable is categorical, indicate in the third column of the following table whether the variable is binary.
 
-* If the variable is quantitative, indicate in column 4 the units of measure used.
+* If the variable is quantitative, indicate in the forth column the units of measure used.
 
 \begin{center}
 \begin{tabular}{|l|p{1.5in}|p{0.5in}|p{0.5in}|} \hline

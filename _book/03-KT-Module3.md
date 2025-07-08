@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 3 introduces the steps of the statistical investigation process. We conduct **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
+Module 3 introduces the steps of the statistical investigation process. We will conduct **exploratory data analysis** (summary statistics and plots) and simulation-based **inference** (hypothesis testing and confidence intervals) in the single categorical variable (one proportion) scenario.
 
 * Notation for a sample proportion: $\hat{p}$
 
@@ -173,7 +173,7 @@ $$H_A: \pi \left\{
         - Calculated interval
 
 
-#### Simulation-based inference for a single proportion
+#### Simulation-based inference for a single proportion {-}
 
 * **Conditions necessary to use simulation-based methods for inference  for a single categorical variable**:
 

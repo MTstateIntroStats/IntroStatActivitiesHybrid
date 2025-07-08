@@ -45,7 +45,7 @@ Left-handedness is a trait that is found in about 10\% of the general population
 
 ### Summary statistics review
 
-* Download the R file for today's activity from D2L
+* Download the R file for today's activity from Canvas
 
 * Upload the file to the R server
 
@@ -114,15 +114,15 @@ Conditions for the sampling distribution of $\hat{p}$ to follow an approximate n
 
 ### Additional notes on Theory-based methods {-}
 
-\vspace{2in}
+\vspace{1.4in}
 
 * Verify that the independence condition is satisfied.
 
+\vspace{0.3in}
+
+* Verify that the sample size is large enough.
+
 \vspace{0.5in}
-
-* Is the success-failure condition met to model the data with the normal distribution?  Explain your answer in context of the problem.
-
-\vspace{0.8in}
 
 To calculate the standardized statistic we use the general formula 
 
@@ -167,7 +167,7 @@ The standardized statistic is used as a ruler to measure how far the sample stat
 
 The standardized statistic measures the *number of standard errors the sample statistic is from the null value*.
 
-** Interpretation of the standardized sample proportion:**
+**Interpretation of the standardized sample proportion:**
 
 \vspace{.8in}
 
@@ -195,7 +195,7 @@ pnorm(4.769, # Enter value of standardized statistic
 
 \vspace{0.6in}
 
-9. To what group of observational units can the results be generalized to.
+9. To what group of observational units can the results be generalized to?
 
 \vspace{0.4in}
 
@@ -227,6 +227,8 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{300}} = 0.017$$.
 The standardized statistic for this new sample is calculated below:
 
 $$Z = \frac{0.162-0.1}{0.017} = 3.64$$
+
+\newpage
 
 \begin{figure}
 
@@ -262,6 +264,8 @@ $$Z = \frac{0.136-0.1}{0.013} = 2.769$$
 13.  How does a statistic closer to the null value affect the p-value?
 
 \vspace{0.3in}
+
+\newpage
 
 14.  Summarize how each of the following affected the p-value:
 

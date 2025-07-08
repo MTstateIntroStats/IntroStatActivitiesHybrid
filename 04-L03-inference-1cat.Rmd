@@ -22,9 +22,9 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 #### Activity intro {-}
 
-* Download the R script file and the data file (US_dogs.csv) from D2L
+* Download the R script file and the data file (US_dogs.csv) from Canvas
 
-* Upload both files to D2L and open the R script file
+* Upload both files to Canvas and open the R script file
 
 * Enter the name of the dataset for datasetname.csv.
 
@@ -51,6 +51,8 @@ dogs %>% # Data set piped into...
 3.  Write out the parameter of interest in words, in context of the study.
 
 \vspace{0.5in}
+
+\newpage
 
 4.  Write out the null and alternative hypotheses in notation.
 
@@ -102,7 +104,7 @@ one_proportion_test(probability_success = xx, # Null hypothesis value
 
 #### Bootstrap distribution {-}
 
-We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 10000 simulations. Then highlight and run lines ??? to create a 90\% confidence interval.
+We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 10000 simulations. Then highlight and run lines 31--34 to create a 90\% confidence interval.
 
 ```{r, echo=TRUE, eval=FALSE}
 one_proportion_bootstrap_CI(sample_size = xx, # Sample size

@@ -28,7 +28,7 @@ In today's activity we will continue with steps 4 and 5 in the statistical inves
 
 In class today, we will revisit the study on infants as described below.
 
-A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 
 1.  Report the sample proportion (summary statistic) calculated in the previous activity.
@@ -61,7 +61,7 @@ To use the computer simulation, we will need to enter the
 * Sample size (n):
     
 \vspace{.2in}
-* Number of repetitions (always use 10000 simulations):
+* Number of repetitions (typically use 10000 simulations):
     
 \vspace{.2in}
 * As extreme as (value of statistic):
@@ -114,7 +114,7 @@ include_graphics("images/soe_gradient_gray.png")
 
 #### Interpret the p-value {-}
 
-The p-value measures the probability that we observe a sample proportion as extreme as what was seen in the data or more extreme (matching the direction of the Ha) IF the null hypothesis is true.  This is a conditional probability, calculated dependent on the null hypothesis being true.  Represented in probability notation:
+The p-value measures the probability that we observe a sample proportion as extreme as what was seen in the data or more extreme (matching the direction of the $H_A$) IF the null hypothesis is true.  This is a conditional probability, calculated dependent on the null hypothesis being true.  Represented in probability notation:
 
 $$P(\text{statistic or more extreme|the null hypothesis is true})$$
 
@@ -124,7 +124,7 @@ $$P(\text{statistic or more extreme|the null hypothesis is true})$$
 
 #### Communicate the results and answer the research question {-}
 
-When we write a conclusion we answer the research question by stating how much evidence there is for the alternative hypothesis.
+When we write a conclusion we answer the research question by stating how much evidence there is in support of the alternative hypothesis.
 
 **Conclusion:**
 
@@ -135,6 +135,8 @@ When we write a conclusion we answer the research question by stating how much e
 8. To what group of observational units can the results be generalized to?
 
 \vspace{0.5in}
+
+\newpage
 
 ### Take-home messages
 

@@ -1,4 +1,4 @@
-# Group Exam 1 Review
+## Group Exam 1 Review
 
 Use the provided data set from the Islands [@islands] (Exam1ReviewData.csv) and the appropriate Exam 1 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. Here is some more information about some of the variables collected.  Music type (classical or heavy metal) was randomly assigned to the Islanders. Time to complete the puzzle cube was measured after listening to music for each Islander. Heart rate and blood glucose levels were both measured before and then after drinking a caffeinated beverage.
 
@@ -31,7 +31,7 @@ Use the provided data set from the Islands [@islands] (Exam1ReviewData.csv) and 
 
 1. What are the observational units?
 
-\vspace{0.1in}
+\vspace{0.2in}
 
 2. In the table above, indicate which variables are categorical (C) and which variables are quantitative (Q).
 
@@ -39,230 +39,253 @@ Use the provided data set from the Islands [@islands] (Exam1ReviewData.csv) and 
 
 3. What type of bias may be present in this study? Explain.
 
-\vspace{0.5in}
+\vspace{0.6in}
 
 \newpage
 
-**Complete questions 4a, 4b, 5a, 5b, 6a, and 6b.  Then choose the  scenario for each research question and use the appropriate Exam 1 Review R script file to find the summary statistic(s) and graphical display of the research question.**
+4.  Use the appropriate Exam 1 Review R script file to find the summary statistic and graphical display of the data to assess the following research question, "Is there evidence that the proportion of adult Islanders that smoke differs from the reported value of 11%?" 
 
-4.  Use the appropriate Exam 1 Review R script file to find the summary statistic and graphical display of the data to assess the following research question, "Is there a difference in proportion of Islanders who have children for those who completed high school and those that completed university?" Use high school $-$ university as the order of subtraction.
-
-a. What is the name of the explanatory variable to be assessed in this research question?
-\vspace{0.3in}
+a. What is the name of the variable to be assessed in this research question?
+\vspace{0.5in}
 
     What type of variable (categorical or quantitative) is the variable you identified?
 \vspace{0.3in}
 
-b. What is the name of the response variable to be assessed in this research question?
-\vspace{0.3in}
-
-    What type of variable (categorical or quantitative) is the variable you identified?
-\vspace{0.3in}
-
-c. Use the R script file to get the counts for each level and combination of variables. Fill in the following table with the variable names, levels of each variable, and counts using the values from the R output.
+b. Use the R script file to get the counts for each level of the variable. Fill in the following table with the variable name, levels of the variable, and counts using the values from the R output.
 
 \begingroup
 \setlength{\tabcolsep}{14pt}
 \renewcommand{\arraystretch}{2}
 \begin{center}
-\begin{tabular}{|c|p{1in}|p{1in}|p{1in}|}
+\begin{tabular}{|c|p{1in}|}
 \hline
- & \multicolumn{2}{|c|}{\textbf{Explanatory Variable}} & \\ 
- & \multicolumn{2}{|c|}{ } & \\ \hline
-\textbf{Response variable} & Group 1 & Group 2 & Total \\
- & & & \\ \hline
- Success & & & \\
- & & & \\ \hline
- Failure & & & \\
- & & & \\ \hline
- Total & & & \\
- & & & \\ \hline
+ &  \\
+ & Count \\ \hline
+ Success & \\
+ & \\ \hline
+ Failure & \\
+ & \\ \hline
+ Total & \\
+ & \\ \hline
 \end{tabular}
 \end{center}
 \endgroup
 
-d. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
 
-\newpage
+c. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
 
-e. Interpret the value of the summary statistic in context of the problem:
 \vspace{0.5in}
 
+d. What type of graph(s) would be appropriate for this research question?
 
-f. What type of graph(s) would be appropriate for this research question?
+\vspace{0.3in}
 
-\vspace{0.2in}
-
-g. Using the provided R file create a graph of the data. Sketch the graph below:
+e. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-h. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
-
-\vspace{0.8in}
-
-i. Is this an observational study or a randomized experiment? Explain your answer.
-
-\vspace{0.5in}
-
-j. What is the scope of inference for this study?
-
 \newpage
 
+f. Assess if the following conditions are met:
 
-5. Use the appropriate Exam 1 Review R script file to find the appropriate summary statistic and graphical display of the data to assess the following research question: "Do Islanders who listen to classical music take less time to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use classical $-$ heavy metal as the order of subtraction.
+    Independence (needed for both simulation and theory-based methods):
+\vspace{0.5in}
 
-a. What is the name of the explanatory variable to be assessed in this research question?
+    Success-Failure (must be met to use theory-based methods):
+\vspace{0.6in}
+    
+g. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+\vspace{0.2in}
+       
+h.  Interpret the p-value in the context of the problem.
+\vspace{0.8in}
+        
+i.  Write a conclusion to the research question based on the p-value.
+\vspace{0.8in}
+        
+j. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
-
-    What type of variable (categorical or quantitative) is the variable you identified?
-\vspace{0.3in}
-
-b. What is the name of the response variable to be assessed in this research question?
-\vspace{0.3in}
-
-    What type of variable (categorical or quantitative) is the variable you identified?
-\vspace{0.3in}
-
-c. Use the R script file to get the summary statistics for each level of the explanatory variable. Fill in the following table with the variable name, levels of the variable, and the summary statistics from the R output.
-
-\begingroup
-\setlength{\tabcolsep}{14pt}
-\renewcommand{\arraystretch}{2}
-\begin{center}
-\begin{tabular}{|c|p{1in}|p{1in}|}
-\hline
- & \multicolumn{2}{|c|}{\textbf{Explanatory Variable}} \\
- & \multicolumn{2}{|c|}{ } \\ \hline
-\textbf{Summary value} & Group 1 & Group 2 \\
- & & \\ \hline
- Mean & & \\ \hline
- Standard deviation & & \\ \hline
- Sample size & & \\ \hline
-\end{tabular}
-\end{center}
-\endgroup
-
-
-d. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
-
+    
+k. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.4in}
-
-e. Interpret the value of the summary statistic in context of the problem:
-
-\vspace{0.4in}
-
-f. What type of graph(s) would be appropriate for this research question?
-
-\vspace{0.2in}
-
-\newpage
-
-g. Using the provided R file create a graph of the data. Sketch the graph below:
-
-\vspace{2in}
-
-h. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
-
+        
+l. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.8in}
 
-i. Compare the two plots using the four characteristics to describe plots of quantitative variables.
-\vspace{0.1in}
+m. Regardless to your answer in part f, calculate the standardized statistic.
+\vspace{0.8in}
 
-    Shape:
-\vspace{0.2in}
+n. Interpret the value of the standardized statistic in context of the problem.
+\vspace{0.8in}
 
-    Center:
-\vspace{0.2in}
+o. Use the provided R script file to find the theory-based p-value. 
+\vspace{0.3in}
 
-    Spread:
-\vspace{0.2in}
+p. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
+\vspace{0.8in}
 
-    Outliers:
-\vspace{0.2in}
+q. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+\vspace{0.8in}
 
-j. Is this an observational study or a randomized experiment?  Explain your answer.
-
-\vspace{0.5in}
-
-k. What is the scope of inference for this study?
+r. To what group of observational units do the results apply?
+\vspace{0.8in}
 
 \newpage
 
 
-6. Use the appropriate Exam 1 Review R script file to find the appropriate summary statistic and graphical display of the data to assess the following research question: "Do Islanders who are heavier tend to take more breaths per minute?"
+<!-- 5. Use the appropriate Exam 1 Review R script file to find the appropriate summary statistic and graphical display of the data to assess the following research question: "Do Islanders who listen to classical music take less time to complete the puzzle cube after listening to the music than for Islanders that listen to heavy metal music?" Use classical $-$ heavy metal as the order of subtraction. -->
 
-a. What is the name of the explanatory variable to be assessed in this research question?
-\vspace{0.3in}
+<!-- a. What is the name of the explanatory variable to be assessed in this research question? -->
+<!-- \vspace{0.3in} -->
 
-    What type of variable (categorical or quantitative) is the variable you identified?
-\vspace{0.3in}
+<!--     What type of variable (categorical or quantitative) is the variable you identified? -->
+<!-- \vspace{0.3in} -->
 
-b. What is the name of the response variable to be assessed in this research question?
-\vspace{0.3in}
+<!-- b. What is the name of the response variable to be assessed in this research question? -->
+<!-- \vspace{0.3in} -->
 
-    What type of variable (categorical or quantitative) is the variable you identified?
-\vspace{0.3in}
+<!--     What type of variable (categorical or quantitative) is the variable you identified? -->
+<!-- \vspace{0.3in} -->
 
-c. Use the R script file to get the summary statistics for this data. Fill in the following table using the values from the R output:
+<!-- c. Use the R script file to get the summary statistics for each level of the explanatory variable. Fill in the following table with the variable name, levels of the variable, and the summary statistics from the R output. -->
 
-\begingroup
-\setlength{\tabcolsep}{14pt}
-\renewcommand{\arraystretch}{2}
-\begin{center}
-\begin{tabular}{|c|p{1in}|p{1in}|p{1in}|}
-\hline
- & y-intercept & slope & correlation \\ \hline
- \textbf{Summary value} & & & \\ \hline
-\end{tabular}
-\end{center}
-\endgroup
+<!-- \begingroup -->
+<!-- \setlength{\tabcolsep}{14pt} -->
+<!-- \renewcommand{\arraystretch}{2} -->
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|c|p{1in}|p{1in}|} -->
+<!-- \hline -->
+<!--  & \multicolumn{2}{|c|}{\textbf{Explanatory Variable}} \\ -->
+<!--  & \multicolumn{2}{|c|}{ } \\ \hline -->
+<!-- \textbf{Summary value} & Group 1 & Group 2 \\ -->
+<!--  & & \\ \hline -->
+<!--  Mean & & \\ \hline -->
+<!--  Standard deviation & & \\ \hline -->
+<!--  Sample size & & \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+<!-- \endgroup -->
 
 
-d. Interpret the value of slope in context of the problem.
+<!-- d. Calculate the value of the summary statistic to answer the research question. Give appropriate notation. -->
 
-\vspace{0.8in}
+<!-- \vspace{0.4in} -->
 
-e. Calculate the value of the coefficient of determination.
+<!-- e. Interpret the value of the summary statistic in context of the problem: -->
 
-\vspace{0.3in}
+<!-- \vspace{0.4in} -->
 
-f. Interpret the coefficient of determination in context of the problem.
+<!-- f. What type of graph(s) would be appropriate for this research question? -->
 
-\vspace{0.8in}
+<!-- \vspace{0.2in} -->
 
-g. What type of graph(s) would be appropriate for this research question?
+<!-- \newpage -->
 
-\newpage
+<!-- g. Using the provided R file create a graph of the data. Sketch the graph below: -->
 
-h. Using the provided R file create a graph of the data. Sketch the graph below:
+<!-- \vspace{2in} -->
 
-\vspace{2in}
+<!-- h. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic. -->
 
-i. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic.
+<!-- \vspace{0.8in} -->
 
-\vspace{0.8in}
+<!-- i. Compare the two plots using the four characteristics to describe plots of quantitative variables. -->
+<!-- \vspace{0.1in} -->
 
-j. Describe the plot using the four characteristics to describe scatterplots.
-\vspace{0.1in}
+<!--     Shape: -->
+<!-- \vspace{0.2in} -->
 
-    Form:
-\vspace{0.2in}
+<!--     Center: -->
+<!-- \vspace{0.2in} -->
 
-    Direction:
-\vspace{0.2in}
+<!--     Spread: -->
+<!-- \vspace{0.2in} -->
 
-    Strength:
-\vspace{0.2in}
+<!--     Outliers: -->
+<!-- \vspace{0.2in} -->
 
-    Outliers:
-\vspace{0.2in}
+<!-- j. Is this an observational study or a randomized experiment?  Explain your answer. -->
 
-k. Is this an observational study or a randomized experiment? Explain your answer.
+<!-- \vspace{0.5in} -->
 
-\vspace{0.5in}
+<!-- k. What is the scope of inference for this study? -->
 
-l. What is the scope of inference for this study?
+<!-- \newpage -->
+
+
+<!-- 6. Use the appropriate Exam 1 Review R script file to find the appropriate summary statistic and graphical display of the data to assess the following research question: "Do Islanders who are heavier tend to take more breaths per minute?" -->
+
+<!-- a. What is the name of the explanatory variable to be assessed in this research question? -->
+<!-- \vspace{0.3in} -->
+
+<!--     What type of variable (categorical or quantitative) is the variable you identified? -->
+<!-- \vspace{0.3in} -->
+
+<!-- b. What is the name of the response variable to be assessed in this research question? -->
+<!-- \vspace{0.3in} -->
+
+<!--     What type of variable (categorical or quantitative) is the variable you identified? -->
+<!-- \vspace{0.3in} -->
+
+<!-- c. Use the R script file to get the summary statistics for this data. Fill in the following table using the values from the R output: -->
+
+<!-- \begingroup -->
+<!-- \setlength{\tabcolsep}{14pt} -->
+<!-- \renewcommand{\arraystretch}{2} -->
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|c|p{1in}|p{1in}|p{1in}|} -->
+<!-- \hline -->
+<!--  & y-intercept & slope & correlation \\ \hline -->
+<!--  \textbf{Summary value} & & & \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+<!-- \endgroup -->
+
+
+<!-- d. Interpret the value of slope in context of the problem. -->
+
+<!-- \vspace{0.8in} -->
+
+<!-- e. Calculate the value of the coefficient of determination. -->
+
+<!-- \vspace{0.3in} -->
+
+<!-- f. Interpret the coefficient of determination in context of the problem. -->
+
+<!-- \vspace{0.8in} -->
+
+<!-- g. What type of graph(s) would be appropriate for this research question? -->
+
+<!-- \newpage -->
+
+<!-- h. Using the provided R file create a graph of the data. Sketch the graph below: -->
+
+<!-- \vspace{2in} -->
+
+<!-- i. Does there appear to be an association between the two variables? Clearly explain your answer using the graph and calculated summary statistic. -->
+
+<!-- \vspace{0.8in} -->
+
+<!-- j. Describe the plot using the four characteristics to describe scatterplots. -->
+<!-- \vspace{0.1in} -->
+
+<!--     Form: -->
+<!-- \vspace{0.2in} -->
+
+<!--     Direction: -->
+<!-- \vspace{0.2in} -->
+
+<!--     Strength: -->
+<!-- \vspace{0.2in} -->
+
+<!--     Outliers: -->
+<!-- \vspace{0.2in} -->
+
+<!-- k. Is this an observational study or a randomized experiment? Explain your answer. -->
+
+<!-- \vspace{0.5in} -->
+
+<!-- l. What is the scope of inference for this study? -->
 
 \newpage
 

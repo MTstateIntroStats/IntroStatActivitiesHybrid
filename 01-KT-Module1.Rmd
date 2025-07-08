@@ -36,6 +36,10 @@ Module 1 introduces the foundations of data: observational units, types of varia
 
 * **Sample**: subset of the population.
 
+* **Statistic**: numerical value calculated on a sample; for categorical data, a proportion is calculated, for quantitative data, the mean is calculated.
+
+* **Parameter**: numerical value of the entire population we are interested in; this is generally an unknown value.
+
 * **Sampling methods**:
 
     * **Unbiased sampling method (e.g., a random sample)**: on average, the sample will be representative of the target population; all observational units in the target population have the same chance of being selected.

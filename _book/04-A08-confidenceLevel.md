@@ -132,7 +132,27 @@ $$\hat{p}\pm z^* \times SE(\hat{p})$$
 We could also use simulation-based methods to analyze these data.
 
 
+``` r
+one_proportion_test(probability_success=0.1,
+                    sample_size=500,
+                    number_repetitions=10000,
+                    as_extreme_as=0.162,
+                    direction="greater",
+                    summary_measure="proportion")
+```
+
+
+
 \begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+
+``` r
+one_proportion_bootstrap_CI(sample_size = 500,
+                            number_successes = 81,
+                            number_repetitions = 10000,
+                            confidence_level = 0.95)
+```
+
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
@@ -141,6 +161,7 @@ We could also use simulation-based methods to analyze these data.
 
 \vspace{1in}
 
+\newpage
 
 ### Take-home messages
 

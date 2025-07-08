@@ -47,7 +47,7 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 ### Helper-Hinderer
 
-A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are infants more likely to choose the helper toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
+A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 * Observational units:
 
@@ -74,17 +74,17 @@ Before using statistical inference methods, we must check that the cases are ind
 
 #### R code {-}
 
-For almost all activities and labs it will be necessary to upload the provided R script file from D2L for that day.  Your instructor will highlight a few steps in uploading files to and using RStudio.  
+For almost all activities and labs it will be necessary to upload the provided R script file from Canvas for that day.  Your instructor will highlight a few steps in uploading files to and using RStudio.  
 
 The following are the steps to upload the necessary R script file for this activity: 
 
-* Download the Activity R script file from D2L.
+* Download the Activity R script file from Canvas.
 
 * Click "Upload" in the "Files" tab in the bottom right window of RStudio. In the pop-up window, click "Choose File", and navigate to the folder where the Activity R script file is saved (most likely in your downloads folder). Click "Open"; then click "Ok". 
 
 * You should see the uploaded file appear in the list of files in the bottom right window. Click on the file name to open the file in the Editor window (upper left window).
 
-Notice that the first threelines of code contain a prompt called `library`.  Packages needed to run functions in R are stored in directories called libraries.  When using the MSU RStudio server, all the packages needed for the class are already installed.  We simply must tell R which packages we need for each R script file.  We use the prompt `library` to load each **package** (or library) needed for each activity. Note, these `library` lines MUST be run each time you open a R script file in order for the functions in R to work. 
+Notice that the first three lines of code contain a prompt called `library`.  Packages needed to run functions in R are stored in directories called libraries.  When using the MSU RStudio server, all the packages needed for the class are already installed.  We simply must tell R which packages we need for each R script file.  We use the prompt `library` to load each **package** (or library) needed for each activity. Note, these `library` lines MUST be run each time you open a R script file in order for the functions in R to work. 
 
 * Highlight and run lines 1--3 to load the packages needed for this activity. Notice the use of the \# symbol in the R script file.  This symbol is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
 
@@ -149,7 +149,7 @@ We could also choose to display the data as a proportion in a **relative frequen
 infants %>% # Data set piped into...
     ggplot(aes(x = choice)) +   # This specifies the variable
     geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
-    labs(title = "Relative Frequency Bar Plot of Toy Choice for Pre-verbal Infants",  
+    labs(title = "Relative Frequency Bar Plot of Toy \n Choice for Pre-verbal Infants",  
        # Give your plot a title
        x = "Toy Choice",   # Label the x axis
        y = "Relative Frequency")  # Label the y axis

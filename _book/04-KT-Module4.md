@@ -20,7 +20,7 @@ Module 4 introduces theory-based inference methods (hypothesis testing and confi
 
     * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation-based methods!)
 
-     * **Success-failure condition**: we *expect* to see at least 10 successes and 10 failures in the sample, $n\pi\geq10$  and $n(1-\pi)\geq10$. Since $\pi$ is typically unknown, we consider this condition to be met if we observe at least 10 successes and 10 failures in our data set: $n\hat{p}\geq10$  and $n(1-\hat{p})\geq10$.
+     * **Large enough sample size**: Success-failure condition: we *expect* to see at least 10 successes and 10 failures in the sample, $n\pi\geq10$  and $n(1-\pi)\geq10$. Since $\pi$ is typically unknown, we consider this condition to be met if we observe at least 10 successes and 10 failures in our data set: $n\hat{p}\geq10$  and $n(1-\hat{p})\geq10$.
 
 * **Standard normal distribution**: a theoretical distribution that is bell-shaped, centered on the mean of zero, and has a standard deviation of one, denoted in notation by $N(0,1)$.
 
