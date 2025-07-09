@@ -1,4 +1,4 @@
-## Activity 11: Summarizing Quantitative Variables
+## Activity 9: Summarizing Quantitative Variables
 
 \setstretch{1}
 
@@ -69,6 +69,10 @@ Look through the provided table of variable descriptions.  The `UnitID` and `Nam
 
 #### Summarizing quantitative variables {-}
 
+#### Notes on Summarizing Quantitative Variables:{-}
+
+\vspace{3in}
+
 The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate. 
 
 * Highlight and run lines 1--12 in the provided `R` script file to load the data set.  Check that the summary statistics match the output given in the coursepack.
@@ -85,19 +89,26 @@ IPEDS %>%
     summarize(favstats(Graduation_Rate))
 ```
 
-2. Report the values for the two measures of center (mean and median).
+Two measures of center:
 
-\vspace{0.5in}
+* Mean:
 
+* Median:
 
-3. Calculate the interquartile range ($IQR = Q_3 - Q_1$) of graduation rates.
+Two measures of spread:
 
-\vspace{0.5in}
+* Standard deviation:
 
-4. Report the value of the standard deviation and interpret this value in context of the problem.
+* Interpretation of the standard deviation:
+
 \vspace{0.8in}
 
-5. Interpret the value of $Q_3$ in context of the study.
+
+* Interquartile range: $IQR = Q_3 - Q_1$:
+
+\vspace{0.5in}
+
+* Interpretation of $Q_3$:
 
 \vspace{0.8in}
 
@@ -107,15 +118,15 @@ There are three type of plots used to plot a single quantitative variable: a dot
 
 First, let's create a histogram of the variable `Graduation_Rate`.
 
-* Enter the name of the variable in line 19 for `variable` in the R script file.  
+* Enter the name of the variable, `Graduation_Rate` in line 19 for `variable` in the R script file.  
 
 * Replace the word title for the plot in line 21 between the quotations with a descriptive title.  **A title should include: type of plot, variable or variables plotted, and observational units.**  
 
 * Highlight and run lines 18--23 to create the histogram. 
 
-```{r, out.width="60%", echo=TRUE, eval=FALSE, warning=FALSE}
+```{r, out.width="60%", echo=TRUE, eval=TRUE, warning=FALSE}
 IPEDS %>% # Data set piped into...
-ggplot(aes(x = xx)) +   # Name variable to plot
+ggplot(aes(x = Graduation_Rate)) +   # Name variable to plot
   geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
   labs(title = "Don't forget to title the plot!", # Title for plot
        x = "Graduation Rate", # Label for x axis
@@ -125,7 +136,7 @@ ggplot(aes(x = xx)) +   # Name variable to plot
 
 Notice that the **bin width** for the histogram is 10.  For example the first bin consists of the number of institutions in the data set with a graduation rate of 0 to 10\%.  It is important to note that a graduation rate on the boundary of a bin will fall into the bin above it; for example, 20 would be counted in the bin 20--30. 
 
-6. Which range of Graduation Rates have the highest frequency?
+**Which range of Graduation Rates have the highest frequency?**
 
 \vspace{0.3in}
 
@@ -135,9 +146,9 @@ Next we will create a boxplot of the variable `Graduation_Rate`.
 
 * Highlight and run lines 28--36 to create the boxplot.
 
-```{r, echo=TRUE, eval=FALSE, warning=FALSE}
+```{r, echo=TRUE, eval=TRUE, warning=FALSE}
 IPEDS %>% # Data set piped into...
-ggplot(aes(x = variable)) +   # Name variable to plot
+ggplot(aes(x = Graduation_Rate)) +   # Name variable to plot
   geom_boxplot() +  # Create boxplot with specified binwidth
   labs(title = "Boxplot of Graduation Rates for \n 4-year Higher Education Institutions", 
            # Title for plot
@@ -148,22 +159,22 @@ ggplot(aes(x = variable)) +   # Name variable to plot
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
-7. Sketch the boxplot created and identify the values of the 5-number summary (minimum value, $Q_1$, median, $Q_3$, maximum value) on the plot.  Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
+Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
 
 $$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
-\vspace{1.8in}
+\vspace{0.1in}
 
 When describing distributions of quantitative variables we discuss the **shape** (symmetric or skewed), the **center** (mean or median), **spread** (standard deviation or IQR), and if there are **outliers** present.
 
-8.  What is the shape of the distribution of graduation rates?
+2.  What is the shape of the distribution of graduation rates?
 
 \vspace{0.4in}
 
-9.  From which plot (histogram or boxplot) is it easier to determine the shape of the distribution?
+3.  From which plot (histogram or boxplot) is it easier to determine the shape of the distribution?
 
 \vspace{0.3in}
 
-10. From which plot is it easier to determine if there are outliers?
+4. From which plot is it easier to determine if there are outliers?
 
 \vspace{0.3in}
 
@@ -185,11 +196,11 @@ IPEDS %>% # Data set piped into...
 
 ```
 
-11. Report the values for the two measures of center for these data.
+5. Report the values for the two measures of center for these data.
 
 \vspace{0.5in}
 
-12. Report the values for the two measures of spread for these data.
+6. Report the values for the two measures of spread for these data.
 
 \vspace{0.5in}
 
@@ -209,16 +220,16 @@ IPEDS %>% # Data set piped into...
         y = "Frequency") # Label for y axis
 ```
 
-13. Report the values for the two measures of center for this new data set.
+7. Report the values for the two measures of center for this new data set.
 \vspace{0.5in}
 
-14. Report the values for the two measures of spread for this new data set.
+8. Report the values for the two measures of spread for this new data set.
 \vspace{0.5in}
 
-15. Which measure of center is robust to outliers? Explain your answer.
+9. Which measure of center is robust to outliers? Explain your answer.
 \vspace{0.8in}
 
-16. Which measure of spread is robust to outliers? Explain your answer.
+10. Which measure of spread is robust to outliers? Explain your answer.
 \vspace{0.8in}
 
 ### Take-home messages

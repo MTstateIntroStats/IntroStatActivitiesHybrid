@@ -140,6 +140,66 @@ one_proportion_bootstrap_CI(sample_size = 500,
 
 \newpage
 
+
+### Effect of sample size on the width of the confidence interval {-}
+
+How would an decrease in sample size impact the width of the confidence interval?  Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.162$) of male boxers that are left-handed.  
+
+The standard error of the sample proportion for this study with the smaller sample size is:
+
+ $$SE(\hat{p}) = \sqrt{\frac{0.162\times (1-0.162)}{300}} = 0.0213$$
+ 
+8.  Is the standard error of the sample proportion for this study smaller or larger than the value calculated earlier?
+
+\vspace{0.3in}
+ 
+Recall that the $z^*$ multiplier is 1.96 for a 95\% confidence interval.
+
+9. Calculate the 95\% confidence interval for this study with the smaller sample size.
+
+\vspace{1in}
+
+The width of the confidence interval is found by calculating the difference between the upper value and the lower value.  
+
+$$\text{width of CI = upper CI value - lower CI value}$$
+
+10. Compare the interval found in question 9 to the interval calculated prior to question 6.  
+
+
+* Did the center of the interval change?  
+    
+\vspace{0.2in}
+    
+* Calculate the width of the interval with the smaller sample size.
+    
+\vspace{0.5in}
+    
+    
+* Calculate the width of the interval from prior to question 6.
+    
+\vspace{0.5in}
+    
+    
+* Which interval is wider?
+    
+\vspace{0.4in}
+  
+The margin of error represents half the width of the confidence interval since we add and subtract the margin of error to the value of the sample statistic.
+
+
+
+$$\text{width of CI} = 2 \times \text{ME}$$
+
+
+    
+11.  Using the width of the interval with the smaller sample size calculated in question 10, calculate the margin of error.
+
+\vspace{0.4in}
+
+12.  What impact does decreasing the sample size have on the width of the confidence interval?
+
+\vspace{0.2in}
+
 ### Take-home messages
 
 1.  If repeat samples of the same size are selected from the population, approximately 95\% of samples will create a 95\% confidence interval that contains the parameter of interest.

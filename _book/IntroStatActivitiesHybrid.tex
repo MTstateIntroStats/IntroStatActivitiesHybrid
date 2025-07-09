@@ -3207,6 +3207,105 @@ We could also use simulation-based methods to analyze these data.
 
 \newpage
 
+\subsection*{Effect of sample size on the width of the confidence interval}\label{effect-of-sample-size-on-the-width-of-the-confidence-interval}
+\addcontentsline{toc}{subsection}{Effect of sample size on the width of the confidence interval}
+
+How would an decrease in sample size impact the width of the confidence interval? Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion (\(\hat{p}=0.162\)) of male boxers that are left-handed.
+
+The standard error of the sample proportion for this study with the smaller sample size is:
+
+\[SE(\hat{p}) = \sqrt{\frac{0.162\times (1-0.162)}{300}} = 0.0213\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Is the standard error of the sample proportion for this study smaller or larger than the value calculated earlier?
+\end{enumerate}
+
+\vspace{0.3in}
+
+Recall that the \(z^*\) multiplier is 1.96 for a 95\% confidence interval.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Calculate the 95\% confidence interval for this study with the smaller sample size.
+\end{enumerate}
+
+\vspace{1in}
+
+The width of the confidence interval is found by calculating the difference between the upper value and the lower value.
+
+\[\text{width of CI = upper CI value - lower CI value}\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Compare the interval found in question 9 to the interval calculated prior to question 6.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Did the center of the interval change?
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the width of the interval with the smaller sample size.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the width of the interval from prior to question 6.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Which interval is wider?
+\end{itemize}
+
+\vspace{0.4in}
+
+The margin of error represents half the width of the confidence interval since we add and subtract the margin of error to the value of the sample statistic.
+
+\[\text{width of CI} = 2 \times \text{ME}\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Using the width of the interval with the smaller sample size calculated in question 10, calculate the margin of error.
+\end{enumerate}
+
+\vspace{0.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  What impact does decreasing the sample size have on the width of the confidence interval?
+\end{enumerate}
+
+\vspace{0.2in}
+
 \subsection{Take-home messages}\label{take-home-messages-7}
 
 \begin{enumerate}
@@ -4657,6 +4756,1323 @@ Use the provided data set from the Islands (Bulmer, n.d.) (Exam1ReviewData.csv) 
 \end{enumerate}
 
 \newpage
+
+\newpage
+
+\chapter{Exploring Quantitative Data: Exploratory Data Analysis and Hypothesis Testing for a Single Quantitative Variable}\label{exploring-quantitative-data-exploratory-data-analysis-and-hypothesis-testing-for-a-single-quantitative-variable}
+
+\section{Vocabulary Review and Key Topics}\label{vocabulary-review-and-key-topics-4}
+
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of a single quantitative variable.
+
+\subsection{Key topics}\label{key-topics-5}
+
+Module 6 will introduce exploratory data analysis and hypothesis testing using both simulation-based and theory-based methods for a single quantitative variable.
+The \textbf{summary measure} for one quantitative variable is the \textbf{mean}.
+Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation.
+
+\begin{itemize}
+\item
+  Notation for a sample mean: \(\bar{x}\)
+\item
+  Notation for a sample standard deviation: \(s\)
+\item
+  Notation for a population mean: \(\mu\)
+\item
+  Notation for a population standard deviation: \(\sigma\)
+\item
+  Types of plots for a single categorical variable:
+
+  \begin{itemize}
+  \item
+    Histogram
+  \item
+    Boxplot
+  \item
+    Dotplot
+  \end{itemize}
+\end{itemize}
+
+\subsection{Vocabulary}\label{vocabulary-4}
+
+\subsubsection*{Sample statistics for a single quantitative variable}\label{sample-statistics-for-a-single-quantitative-variable}
+\addcontentsline{toc}{subsubsection}{Sample statistics for a single quantitative variable}
+
+\begin{itemize}
+\item
+  \textbf{Mean}, \(\bar{x}\): the average
+  \[ 
+  \bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n},
+  \]
+  where \(x_1, x_2, \ldots, x_n\) are the data values and \(n\) is the sample size.
+\item
+  \textbf{Median}: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Quartile 1} (lower quartile), \(Q_1\): value at the 25th percentile; approximately 25\% of data values are at or below the value of \(Q_1\).
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Quartile 3} (upper quartile), \(Q_3\): value at the 75th percentile; approximately 75\% of data values are at or below the value of \(Q_3\).
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+\item
+  \textbf{Sample standard deviation}, \(s\): on average, each value in the data set is \(s\) units from the mean of the data set (\(\bar{x}\)). We will always calculate \(s\) using R, but it is calculated using the following formula:
+  \[
+  s = \sqrt{\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}{n-1}},
+  \]
+  where \(x_1, x_2, \ldots, x_n\) are the data values, \(\bar{x}\) is the sample mean, and \(n\) is the sample size.
+\item
+  \textbf{Interquartile range}: the range of the data between the two quartiles: \(IQR = Q_3-Q_1\).
+\item
+  R code to find the summary statistics for a quantitative variable:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(variable))}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\subsubsection*{Plotting one quantitative variable}\label{plotting-one-quantitative-variable}
+\addcontentsline{toc}{subsubsection}{Plotting one quantitative variable}
+
+\begin{itemize}
+\item
+  \textbf{Histogram}: sorts a quantitative variable into bins of a certain width. R code to create a histogram:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Boxplot}: plots the values of the five-number summary and shows any outliers in the data set. R code to create a boxplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create boxplot }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Dotplot}: plots each value as a dot along the \(x\)-axis. R code to create a dotplot:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{object }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_dotplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create dotplot }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"x{-}axis label"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"y{-}axis label"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Four characteristics of a distribution of a single quantitative variable:
+
+  \begin{itemize}
+  \item
+    Shape (symmetric, skewed left, or skewed right)
+  \item
+    Center
+  \item
+    Spread
+  \item
+    Outliers?
+  \end{itemize}
+\end{itemize}
+
+\newpage
+
+\subsubsection*{Hypothesis testing for a single mean}\label{hypothesis-testing-for-a-single-mean}
+\addcontentsline{toc}{subsubsection}{Hypothesis testing for a single mean}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hypotheses in notation for a single mean}: In the hypotheses below, \(\mu_0\) is the \textbf{null value}.
+\end{itemize}
+
+\[H_0: \mu = \mu_0\]
+\[H_A: \mu\left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+\mu_0 \]
+
+\subsubsection*{Simulation-based hypothesis testing}\label{simulation-based-hypothesis-testing}
+\addcontentsline{toc}{subsubsection}{Simulation-based hypothesis testing}
+
+\begin{itemize}
+\item
+  \textbf{Conditions necessary to use simulation-based methods for inference for a single quantitative variable}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Independence}: observational units must be independent of one another.
+  \end{itemize}
+\item
+  \textbf{Simulation-based methods to create the null distribution}: R code to use for simulation-based methods for one quantitative variable to find the p-value, \texttt{one\_mean\_test} (from the \texttt{catstats} package), is shown below. Review the comments (instructions after the \#) to see what each should be entered for each line of code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_test}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{variable,}\CommentTok{\#Enter the object name and variable}
+          \AttributeTok{null\_value =}\NormalTok{ xx, }\CommentTok{\#Enter the null value for the study}
+          \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{,  }\CommentTok{\#Can choose between mean or median}
+          \AttributeTok{shift =}\NormalTok{ xx, }\CommentTok{\#Difference between the null value and the sample mean}
+          \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\#Value of the summary statistic}
+          \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\#Specify direction of alternative hypothesis}
+          \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\subsubsection*{Theory-based hypothesis testing}\label{theory-based-hypothesis-testing}
+\addcontentsline{toc}{subsubsection}{Theory-based hypothesis testing}
+
+\begin{itemize}
+\item
+  Theory-based methods should give the same results as simulation-based methods if conditions are met. For a single quantitative variable, conditions are met if either the data themselves follow a normal distribution or if the sample size is large enough. We call this the ``normality condition.''
+\item
+  \textbf{Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution}:
+
+  \begin{itemize}
+  \item
+    \textbf{Independence}: the sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
+  \item
+    \textbf{Normality Condition}: either the sample observations come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
+
+    \begin{itemize}
+    \item
+      \(n < 30\): The distribution of the sample must be approximately normal with no outliers.
+    \item
+      \(30 \le n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
+    \item
+      \(n \ge 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{t-distribution}: a theoretical distribution that is bell-shaped with mean zero. Its degrees of freedom determine the variability of the distribution. For very large degrees of freedom, the \(t\)-distribution is close to a standard normal distribution. For a single quantitative variable, the degrees of freedom are calculated by subtracting one from the sample size: \(n-1\). A \(t\)-distribution with \(n-1\) degrees of freedom is denoted by: \(t_{n-1}\).
+\item
+  \textbf{Standard error of the sample mean}: measures the how far each possible sample mean is from the true mean, on average, and is calculated using the formula below:
+  \[SE(\bar{x})=\frac{s}{\sqrt{n}}\]
+  where \(s\) is the sample standard deviation.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    For inference involving means, the formula for the standard error will be the same for both hypothesis tests and confidence intervals (unlike inference involving proportions, where the standard error for a hypothesis test used the null value in the calculation).
+  \end{itemize}
+\item
+  \textbf{Standardized sample mean}: standardized statistic for a single quantitative variable calculated using:
+  \[
+  T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},
+  \]
+  If the conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution are met, and if the true value of \(\mu\) is equal to the null value of \(\mu_0\), the standardized sample mean, \(T\), will have an approximate \(t\)-distribution with \(n-1\) degrees of freedom.
+\item
+  The theory-based \textbf{p-value} for hypothesis testing involving means can be found in R by using the \texttt{pt} function to find the probability of the observed standardized statistic or one more extreme (in the direction of \(H_A\)). This probability is the area under a \emph{\(t\)-distribution with the appropriate degrees of freedom} at or more extreme than the observed standardized statistic.
+
+  \begin{itemize}
+  \item
+    \texttt{pt} will give you a p-value using the \(t\)-distribution with a given degrees of freedom (enter for \texttt{yy}). For a single mean, \texttt{df} = \(n - 1\).
+  \item
+    Enter the value of the standardized statistic for \texttt{xx}
+  \item
+    If a ``greater than'' alternative, change \texttt{lower.tail\ =\ TRUE} to \texttt{FALSE}.
+  \item
+    If a two-sided test, multiply by 2.
+  \end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\newpage
+
+\section{Activity 9: Summarizing Quantitative Variables}\label{activity-9-summarizing-quantitative-variables}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-9}
+
+\begin{itemize}
+\item
+  Identify and create appropriate summary statistics and plots given a data set or research question for quantitative data.
+\item
+  Interpret the following summary statistics in context:
+  median, lower quartile, upper quartile,
+  standard deviation, interquartile range.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-7}
+
+In today's activity, we will review summary measures and plots for quantitative variables. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Two measures of center: mean, median
+\item
+  Two measures of spread (variability): standard deviation, interquartile range (IQR)
+\item
+  Plots of quantitative variables: dotplots, boxplots, histograms
+\item
+  Given a plot or set of plots, describe and compare the distribution(s)
+  of quantitative variables
+  (center, variability, shape, outliers).
+\end{itemize}
+
+To review these concepts, see Chapter 5 in the textbook.
+
+\subsection{The Integrated Postsecondary Education Data System (IPEDS)}\label{the-integrated-postsecondary-education-data-system-ipeds}
+
+These data were collected on a subset of higher education institutions that met the following selection criteria (Education Statistics 2018):
+
+\begin{itemize}
+\item
+  Degree granting
+\item
+  United States only
+\item
+  Title IV participating
+\item
+  Not for profit
+\item
+  2-year or 4-year or above
+\item
+  Has full-time first-time undergraduates
+\end{itemize}
+
+Some of the variables collected and their descriptions are below. Note that several variables have missing values for some institutions (denoted by ``NA'').
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7647}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Variable}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Description}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{UnitID} & Unique institution identifier \\
+\texttt{Name} & Institution name \\
+\texttt{State} & State abbreviation \\
+\texttt{Sector} & whether public or private \\
+\texttt{LandGrant} & Is this a land-grant institution (Yes/No) \\
+\texttt{Size} & Institution size category based on total student enrolled for credit, Fall 2018: Under 1,000, 1,000\$-\(4,999, 5,000\)-\(9,999, 10,000\)-\$19,999, 20,000 and above \\
+\texttt{Cost\_OutofState} & Cost of attendance for full-time out-of-state undergraduate students \\
+\texttt{Cost\_InState} & Cost of attendance for full-time in-state undergraduate students \\
+\texttt{Retention} & Retention rate is the percent of the undergraduate students that re-enroll in the next year \\
+\texttt{Graduation\_Rate} & 6-year graduation rate for undergraduate students \\
+\texttt{SATMath\_75} & 75th percentile Math SAT score \\
+\texttt{ACT\_75} & 75th percentile ACT score \\
+\end{longtable}
+
+\subsubsection*{Identifying variables in a data set}\label{identifying-variables-in-a-data-set}
+\addcontentsline{toc}{subsubsection}{Identifying variables in a data set}
+
+Look through the provided table of variable descriptions. The \texttt{UnitID} and \texttt{Name} are identifiers for each observational unit, \emph{US degree-granting higher education institutions in 2018}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Identify in the table which variables collected on the US institutions are categorical (C) and which variables are quantitative (Q).
+\end{enumerate}
+
+\subsubsection*{Summarizing quantitative variables}\label{summarizing-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Summarizing quantitative variables}
+
+\subsubsection*{Notes on Summarizing Quantitative Variables:}\label{notes-on-summarizing-quantitative-variables}
+\addcontentsline{toc}{subsubsection}{Notes on Summarizing Quantitative Variables:}
+
+\vspace{3in}
+
+The \texttt{favstats()} function from the \texttt{mosaic} package gives the summary statistics for a quantitative variable. The \texttt{R} output below provides the summary statistics for the variable \texttt{Graduation\_Rate}. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate.
+
+\begin{itemize}
+\item
+  Highlight and run lines 1--12 in the provided \texttt{R} script file to load the data set. Check that the summary statistics match the output given in the coursepack.
+\item
+  Notice that the 2-year institutions were removed so the observational units for this study are \textbf{4-year US degree-granting higher education institutions in 2018.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://www.math.montana.edu/courses/s216/data/IPEDS\_2018.csv"}\NormalTok{) }
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}}\NormalTok{ IPEDS }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Sector }\SpecialCharTok{!=} \StringTok{"Public 2{-}year"}\NormalTok{) }\CommentTok{\# Filters the data set to remove Public 2{-}year}
+\NormalTok{IPEDS }\OtherTok{\textless{}{-}}\NormalTok{ IPEDS }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Sector }\SpecialCharTok{!=} \StringTok{"Private 2{-}year"}\NormalTok{) }\CommentTok{\# Filters the data set to remove Private 2{-}year}
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Graduation\_Rate))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>   min Q1 median Q3 max     mean       sd    n missing
+#> 1   0 38     53 67 100 52.48749 20.63192 1918      49
+\end{verbatim}
+
+Two measures of center:
+
+\begin{itemize}
+\item
+  Mean:
+\item
+  Median:
+\end{itemize}
+
+Two measures of spread:
+
+\begin{itemize}
+\item
+  Standard deviation:
+\item
+  Interpretation of the standard deviation:
+\end{itemize}
+
+\vspace{0.8in}
+
+\begin{itemize}
+\tightlist
+\item
+  Interquartile range: \(IQR = Q_3 - Q_1\):
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  Interpretation of \(Q_3\):
+\end{itemize}
+
+\vspace{0.8in}
+
+\subsubsection*{Displaying a single quantitative variable}\label{displaying-a-single-quantitative-variable}
+\addcontentsline{toc}{subsubsection}{Displaying a single quantitative variable}
+
+There are three type of plots used to plot a single quantitative variable: a dotplot, a histogram or a boxplot. A dotplot of graduation rates would plot a dot for the graduation rate for each 4-year US higher education institution.
+
+First, let's create a histogram of the variable \texttt{Graduation\_Rate}.
+
+\begin{itemize}
+\item
+  Enter the name of the variable, \texttt{Graduation\_Rate} in line 19 for \texttt{variable} in the R script file.
+\item
+  Replace the word title for the plot in line 21 between the quotations with a descriptive title. \textbf{A title should include: type of plot, variable or variables plotted, and observational units.}
+\item
+  Highlight and run lines 18--23 to create the histogram.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Graduation\_Rate)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Create histogram with specified binwidth}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title the plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+       \AttributeTok{x =} \StringTok{"Graduation Rate"}\NormalTok{, }\CommentTok{\# Label for x axis}
+       \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{06-A09-EDA-quantitative_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+Notice that the \textbf{bin width} for the histogram is 10. For example the first bin consists of the number of institutions in the data set with a graduation rate of 0 to 10\%. It is important to note that a graduation rate on the boundary of a bin will fall into the bin above it; for example, 20 would be counted in the bin 20--30.
+
+\textbf{Which range of Graduation Rates have the highest frequency?}
+
+\vspace{0.3in}
+
+Next we will create a boxplot of the variable \texttt{Graduation\_Rate}.
+
+\begin{itemize}
+\item
+  Enter the name of the variable in line 28 for \texttt{variable} in the R script file.
+\item
+  Highlight and run lines 28--36 to create the boxplot.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Graduation\_Rate)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Graduation Rates for }\SpecialCharTok{\textbackslash{}n}\StringTok{ 4{-}year Higher Education Institutions"}\NormalTok{, }
+           \CommentTok{\# Title for plot}
+           \CommentTok{\# Note the \textbackslash{}n starts a new line}
+       \AttributeTok{x =} \StringTok{"Graduation\_Rate"}\NormalTok{, }\CommentTok{\# Label for x axis}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
+          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A09-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+Use the following formulas to find the invisible fence on both ends of the distribution. Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
+
+\[\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR\]
+\vspace{0.1in}
+
+When describing distributions of quantitative variables we discuss the \textbf{shape} (symmetric or skewed), the \textbf{center} (mean or median), \textbf{spread} (standard deviation or IQR), and if there are \textbf{outliers} present.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What is the shape of the distribution of graduation rates?
+\end{enumerate}
+
+\vspace{0.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  From which plot (histogram or boxplot) is it easier to determine the shape of the distribution?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  From which plot is it easier to determine if there are outliers?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\subsubsection*{Robust statistics}\label{robust-statistics}
+\addcontentsline{toc}{subsubsection}{Robust statistics}
+
+Let's examine how the presence of outliers affects the different summary measures for center and spread. For this part of the activity, we will look at the retention rate variable (\texttt{Retention}) in the IPEDS data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Retention))}
+\CommentTok{\#\textgreater{}   min Q1 median Q3 max    mean       sd    n missing}
+\CommentTok{\#\textgreater{} 1   0 66     75 83 100 73.8525 15.14323 1817     150}
+
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Retention)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create boxplot }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Retention Rates for }\SpecialCharTok{\textbackslash{}n}\StringTok{ 4{-}year Higher Education Institutions"}\NormalTok{,}
+           \CommentTok{\# Title for plot}
+         \AttributeTok{x =} \StringTok{"Retention Rates (\%)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+         \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A09-EDA-quantitative_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Report the values for the two measures of center for these data.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Report the values for the two measures of spread for these data.
+\end{enumerate}
+
+\vspace{0.5in}
+
+To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the
+data set were increased by 30\%. This variable is called \texttt{Retention\_Inc}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Retention\_Inc))}
+\CommentTok{\#\textgreater{}   min Q1 median Q3 max     mean       sd    n missing}
+\CommentTok{\#\textgreater{} 1  30 66     75 83 100 74.49642 13.41255 1817     150}
+
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Retention\_Inc)) }\SpecialCharTok{+} \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \CommentTok{\# Create histogram }
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Increased Retention Rates for }\SpecialCharTok{\textbackslash{}n}\StringTok{ 4{-}year Higher Education Institutions"}\NormalTok{, }
+        \CommentTok{\# Title for plot}
+        \AttributeTok{x =} \StringTok{"Retention Rates (\%)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+        \AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{) }\CommentTok{\# Label for y axis}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A09-EDA-quantitative_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\item
+  Report the values for the two measures of center for this new data set.
+  \vspace{0.5in}
+\item
+  Report the values for the two measures of spread for this new data set.
+  \vspace{0.5in}
+\item
+  Which measure of center is robust to outliers? Explain your answer.
+  \vspace{0.8in}
+\item
+  Which measure of spread is robust to outliers? Explain your answer.
+  \vspace{0.8in}
+\end{enumerate}
+
+\subsection{Take-home messages}\label{take-home-messages-8}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Histograms, box plots, and dot plots can all be used to graphically display a single quantitative variable.
+\item
+  The box plot is created using the five number summary: minimum value, quartile 1, median, quartile 3, and maximum value. Whiskers extend to the lowest value and highest value that are \emph{not} considered outliers. Values in the data set that are less than \(Q_1 - 1.5\times IQR\) or greater than \(Q_3 + 1.5\times IQR\) are considered outliers and are graphically represented by a dot outside of the whiskers on the box plot.
+\item
+  Data should be summarized numerically and displayed graphically to give us information about the study.
+\item
+  When comparing distributions of quantitative variables we look at the shape, center, spread, and for outliers. In this course, we only consider two measures of center (mean and the median), and two measures of spread (standard deviation and the interquartile range, \(IQR = Q_3 - Q_1\)).
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-8}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Activity 10: Inference for a Single Quantitative Variable: Simulation Methods}\label{activity-10-inference-for-a-single-quantitative-variable-simulation-methods}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-10}
+
+\begin{itemize}
+\item
+  Given a research question involving one quantitative variable, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Investigate the process of creating a null distribution for one quantitative variable.
+\item
+  Find, evaluate, and interpret a p-value from the null distribution.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-8}
+
+In today's activity, we will use simulation-based and theory-based methods to analyze a single quantitative variable. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Null hypothesis
+\item
+  Alternative hypothesis
+\item
+  Null distribution
+\item
+  Bootstrap distribution
+\item
+  p-value
+\end{itemize}
+
+To review these concepts, see Chapters 9 and 17 in the textbook.
+
+\subsection{College student sleep habits}\label{college-student-sleep-habits}
+
+According to an article in \emph{Sleep} (Watson 2015), experts recommend adults (\textgreater18 years old) get at least 7 hours of sleep per night. A professor at MSU is interested in the sleep habits of MSU students. The professor obtained a representative sample of MSU students and asked each student to report the amount of sleep they get on a typical night. Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
+
+\begin{itemize}
+\item
+  Observational units:
+\item
+  Variable:
+\item
+  Type of variable:
+\end{itemize}
+
+\subsubsection*{Summarizing quantitative variables}\label{summarizing-quantitative-variables-1}
+\addcontentsline{toc}{subsubsection}{Summarizing quantitative variables}
+
+\begin{itemize}
+\item
+  Download the R script file and data file for this activity
+\item
+  Upload both files to the RStudio server and open the R script file
+\item
+  Enter the name of the dataset for datasetname.csv
+\item
+  Highlight and run lines 1--8 to load the data
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"datasetname.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Ask a research question}\label{ask-a-research-question-1}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\textbf{Parameter of interest in context of the study:}
+
+\vspace{1in}
+
+\textbf{Null Hypothesis (in words):}
+
+\vspace{1in}
+
+\textbf{Null Hypothesis (in notation):}
+
+\vspace{0.3in}
+
+\textbf{Alternative Hypothesis (in words):}
+
+\vspace{1in}
+
+\textbf{Alternative Hypothesis (in notation):}
+
+\vspace{0.3in}
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-1}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+The \texttt{favstats()} function from the \texttt{mosaic} package gives the summary statistics for a quantitative variable.
+
+\begin{itemize}
+\item
+  Enter the variable name, \texttt{SleepHours}, for \texttt{variable} in line 13
+\item
+  Highlight and run lines 12--13
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(variable))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  About how far is each number of hours of sleep for a Stat 216 student from the mean number of hours of sleep, on average?
+\end{enumerate}
+
+\vspace{0.3in}
+
+Create a boxplot of the variable \texttt{SleepHours}.
+
+\begin{itemize}
+\item
+  Enter the name of the variable in line 19 for \texttt{variable} in the R script file.
+\item
+  Enter a title in line 21 for the plot between the quotations.
+\item
+  Highlight and run lines 18--25.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ variable)) }\SpecialCharTok{+}   \CommentTok{\# Name variable to plot}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Create boxplot with specified binwidth}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Don\textquotesingle{}t forget to title your plot!"}\NormalTok{, }\CommentTok{\# Title for plot}
+       \AttributeTok{x =} \StringTok{"Amount of sleep (hrs)"}\NormalTok{, }\CommentTok{\# Label for x axis}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
+          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Describe the distribution of number of hours of sleep using the four characteristics of boxplots.
+\end{enumerate}
+
+\vspace{1in}
+
+\subsection*{Simulation methods}\label{simulation-methods-1}
+\addcontentsline{toc}{subsection}{Simulation methods}
+
+\subsubsection*{Notes on simulation methods for a single mean}\label{notes-on-simulation-methods-for-a-single-mean}
+\addcontentsline{toc}{subsubsection}{Notes on simulation methods for a single mean}
+
+\vspace{2in}
+
+To simulate the null distribution of sample means we will use a bootstrapping method. Recall that the null distribution must be created under the assumption that the null hypothesis is true. Therefore, before bootstrapping, we will need to \emph{shift} each data point by the difference \(\mu_0 - \bar{x}\). This will ensure that the mean of the shifted data is \(\mu_0\) (rather than the mean of the original data, \(\bar{x}\)), and that the simulated null distribution will be centered at the null value.
+
+\begin{itemize}
+\tightlist
+\item
+  Calculate the difference \(\mu_0 - \bar{x}\). Based on the sign of this difference, will we need to shift the data up or down?
+\end{itemize}
+
+\vspace{0.4in}
+
+Your instructor will demonstrate how the shift is performed in Excel.
+
+\begin{itemize}
+\item
+  Open the data set (\texttt{sleep\_college}) in Excel.
+\item
+  Create a new column labeled Shift.
+\item
+  In the column, Shift, add the shifted value to each value in the \texttt{SleepHours} column.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sleep }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sleep\_college.csv"}\NormalTok{)}
+\NormalTok{sleep }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Shift))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Report the mean of the \texttt{Shift} variable. Why does it make sense that this value is the same as the null value?
+\end{enumerate}
+
+\vspace{0.9in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Report the standard deviation of the \texttt{Shift} variable. How does this compare to the standard deviation for the variable \texttt{SleepHours}? Explain why these values are the same.
+\end{enumerate}
+
+\vspace{0.9in}
+
+\newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  What inputs should be entered for each of the following to create the simulated null distribution?
+  \vspace{1mm}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Null value (What is the null value for the study?):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Summary measure (``mean'' or ``median''):
+\end{itemize}
+
+\vspace{0.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Shift (difference between \(\mu_0 -\bar{x}\)):
+\end{itemize}
+
+\vspace{0.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  As extreme as (enter the value for the observed sample mean):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Direction (\texttt{"greater"}, \texttt{"less"}, or \texttt{"two-sided"}):
+\end{itemize}
+
+\vspace{.15in}
+
+\begin{itemize}
+\tightlist
+\item
+  Number of repetitions:
+\end{itemize}
+
+\vspace{.15in}
+
+The \texttt{one\_mean\_test} will be used to find the p-value for the simulation test. Following the instructions below to complete the code.
+
+\begin{itemize}
+\item
+  Enter your answers for question 5 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations.
+\item
+  Highlight and run lines 36--42.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_test}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{SleepHours,}\CommentTok{\#Enter the object name and variable}
+              \AttributeTok{null\_value =}\NormalTok{ xx,}
+              \AttributeTok{summary\_measure =} \StringTok{"xx"}\NormalTok{,  }\CommentTok{\#Can choose between mean or median}
+              \AttributeTok{shift =}\NormalTok{ xx, }\CommentTok{\#Difference between the null value and the sample mean}
+              \AttributeTok{as\_extreme\_as =}\NormalTok{ xx, }\CommentTok{\#Value of the summary statistic}
+              \AttributeTok{direction =} \StringTok{"xx"}\NormalTok{, }\CommentTok{\#Specify direction of alternative hypothesis}
+              \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Notes on the null distribution}\label{notes-on-the-null-distribution-1}
+\addcontentsline{toc}{subsubsection}{Notes on the null distribution}
+
+\vspace{2in}
+
+\textbf{Interpretation of the p-value in context of the problem.}
+
+\vspace{1in}
+
+\textbf{Conclusion of the test:}
+
+\vspace{1in}
+
+\subsection*{Simulation methods to create a confidence interval}\label{simulation-methods-to-create-a-confidence-interval}
+\addcontentsline{toc}{subsection}{Simulation methods to create a confidence interval}
+
+Unlike creation of the null distribution, the bootstrap distribution we use for creating a confidence interval is found by sampling with replacement from the original sample. To create one dot on the bootstrap distribution:
+
+\begin{itemize}
+\item
+  Write the original values for the variable on \(n\) cards; one card for each observational unit.
+\item
+  Sample with replacement from the cards \(n\) times.
+\item
+  Plot the mean from each resample on the bootstrap distribution.
+\end{itemize}
+
+Use the provided R script file to find a 95\% confidence interval.
+
+\begin{itemize}
+\item
+  Enter the name of the variable for \texttt{variable}.
+\item
+  Enter the appropriate confidence level for \texttt{xx}.
+\item
+  Highlight and run lines 22--25.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{one\_mean\_CI}\NormalTok{(songs}\SpecialCharTok{$}\NormalTok{variable, }\CommentTok{\#Enter the name of the variable}
+            \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
+            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
+            \AttributeTok{confidence\_level =}\NormalTok{ xx)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection*{Notes on the bootstrap distribution}\label{notes-on-the-bootstrap-distribution-1}
+\addcontentsline{toc}{subsubsection}{Notes on the bootstrap distribution}
+
+\vspace{2in}
+
+\textbf{Confidence Interval:}
+
+\vspace{1in}
+
+\textbf{Interpretation of the confidence interval:}
+
+\vspace{1in}
+
+\newpage
+
+\subsection{Take-home messages}\label{take-home-messages-9}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  We use bootstrapping---sampling with replacement---from the shifted data to generate a null distribution of simulated sample means. In order to ensure that the null distribution is centered at the null value, \(\mu_0\), we shift the data by adding \(\mu_0 - \bar{x}\) to each value in the original data set. Note that if this value of the shift is negative, we are shifting the data down; if it is positive, we shift the data up.
+\item
+  The mean of the shifted data will equal the null value, \(\mu_0\), but the standard deviation of the shifted data will be the same as the standard deviation of the original data.
+\item
+  As in the one proportion scenario, we calculate the p-value for a simulation-based hypothesis test for a single mean by finding the proportion of simulated sample means that are as or more extreme (in the direction of \(H_A\)) as the observed sample mean, \(\bar{x}\).
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-9}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+
+\newpage
+
+\section{Activity 11: Body Temperature}\label{activity-11-body-temperature}
+
+\setstretch{1}
+
+\subsection{Learning outcomes}\label{learning-outcomes-11}
+
+\begin{itemize}
+\item
+  Given a research question involving a quantitative variable, construct the null and alternative hypotheses
+  in words and using appropriate statistical symbols.
+\item
+  Describe and perform a theory-based hypothesis test for a single mean.
+\item
+  Interpret and evaluate a p-value for a theory-based hypothesis test for a single mean.
+\end{itemize}
+
+\subsection{Terminology review}\label{terminology-review-9}
+
+In today's activity, we will analyze quantitative data using theory-based methods. Some terms covered in this activity are:
+
+\begin{itemize}
+\item
+  Normality
+\item
+  \(t\)-distribution
+\item
+  Degrees of freedom
+\item
+  \(T\)-score
+\end{itemize}
+
+To review these concepts, see Chapters 11 and 17 in the textbook.
+
+\subsection{Body Temperature}\label{body-temperature}
+
+It has long been reported that the mean body temperature of adults is \(98.6^{\circ}\)F. There have been a few articles that challenge this assertion. (LUETKEMEIER 2017) In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature. Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of \(98.6^{\circ}\)F??
+
+\begin{itemize}
+\item
+  Observational units:
+\item
+  Variable:
+\item
+  Type of variable:
+\end{itemize}
+
+\subsubsection*{Ask a research question}\label{ask-a-research-question-2}
+\addcontentsline{toc}{subsubsection}{Ask a research question}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write out the null hypothesis in proper notation for this study.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write out the alternative hypothesis in words for this study.
+\end{enumerate}
+
+\vspace{0.8in}
+
+In general, the sampling distribution for a sample mean, \(\bar{x}\), based on a sample of size \(n\) from a population with a true mean \(\mu\) and true standard deviation \(\sigma\) can be modeled using a Normal distribution when certain conditions are met.
+
+\newpage
+
+Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate Normal distribution:
+
+\begin{itemize}
+\item
+  \textbf{Independence}: the sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
+\item
+  \textbf{Normality Condition}: either the sample observations come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
+
+  \begin{itemize}
+  \item
+    \(n < 30\): If the sample size \(n\) is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
+  \item
+    \(30 \leq n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \item
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+  \end{itemize}
+\end{itemize}
+
+Like we saw in Chapter \textbf{5}, we will not know the values of the parameters and must use the sample data to estimate them. Unlike with proportions, in which we only needed to estimate the population proportion, \(\pi\), quantitative sample data must be used to estimate both a population mean \(\mu\) and a population standard deviation \(\sigma\). This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the standard Normal distribution. Enter the \textbf{\(t\)-distribution}!
+
+As you can seen from Figure \ref{fig:tdist}, the \(t\)-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider. The variability of a \(t\)-distribution depends on its degrees of freedom, which is calculated from the sample size of a study. (For a single sample of \(n\) observations or paired differences, the degrees of freedom is equal to \(n-1\).) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions. We see that here as well. The larger the sample size, the larger the degrees of freedom, the narrower the \(t\)-distribution. (In fact, a \(t\)-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{06-A11-quantitative_theory_files/figure-latex/tdist-1} 
+
+}
+
+\caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}\label{fig:tdist}
+\end{figure}
+
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-2}
+\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+
+The following code is used to create a boxplot of the data.
+
+\begin{itemize}
+\item
+  Download the R script file and upload to the RStudio server.
+\item
+  Open the R script file and highlight and run lines 1--14.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bodytemp }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://math.montana.edu/courses/s216/data/normal\_temperature.csv"}\NormalTok{)}
+\NormalTok{bodytemp }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Temp))}\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=}\StringTok{"Boxplot of Body Temperatures for Stat 216 Students"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"body temperature (*F)"}\NormalTok{) }\SpecialCharTok{+}
+        \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(), }
+          \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{()) }\CommentTok{\# Removes y{-}axis ticks}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A11-quantitative_theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  Highlight and run lines 17 - 18 to get the summary statistics for the variable \texttt{Temp}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bodytemp }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{favstats}\NormalTok{(Temp))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>    min     Q1 median   Q3 max     mean        sd  n missing
+#> 1 97.2 97.675   98.2 98.7 100 98.28462 0.6823789 52       0
+\end{verbatim}
+
+\subsubsection*{Check theoretical conditions}\label{check-theoretical-conditions}
+\addcontentsline{toc}{subsubsection}{Check theoretical conditions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Report the sample size of the study. Give appropriate notation.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Report the sample mean of the study. Give appropriate notation.
+\end{enumerate}
+
+\vspace{0.3in}
+
+\textbf{Verify the independence condition is met:}
+\vspace{0.8in}
+
+\textbf{Verify the normality condition is met to use the theory-based methods:}
+\vspace{1in}
+
+\newpage
+
+\subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data}
+\addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
+
+To find the standardized statistic for the mean we will use the following formula:
+
+\[T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},\]
+where the standard error of the sample mean is:
+
+\[SE(\bar{x})=\frac{s}{\sqrt{n}}.\]
+
+\textbf{Calculate the standard error of the sample mean.}
+
+\vspace{0.5in}
+
+\textbf{Interpretation of the standard error in context of the study}
+
+\vspace{0.8in}
+
+\textbf{Calculate the standardized mean.}
+
+\vspace{0.8in}
+
+We model a single mean with a \(t\)-distribution with \(n-1\) degrees of freedom. Calculate the degrees of freedom for this study and use it to fill in the blank in the title of the \(t\)-distribution displayed below.
+
+\vspace{0.2in}
+
+Mark the value of the standardized statistic on the \(t\)-distribution and illustrate how the p-value is found.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A11-quantitative_theory_files/figure-latex/tdistmean-1} \end{center}
+\newpage
+
+To find the p-value for the theory-based test in R:
+
+\begin{itemize}
+\item
+  Enter the value for the standardized statistic for \texttt{xx} in the \texttt{pt} function.
+\item
+  Enter the degrees of freedom for \texttt{yy} in the \texttt{pt} function.
+\item
+  Highlight and run line 24.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(xx, }\AttributeTok{df=}\NormalTok{yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  What does this p-value mean, in the context of the study? Hint: it is the probability of what\ldots assuming what?
+  \vspace{0.8in}
+\item
+  Write a conclusion to the test in context of the study.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\subsection*{Theory-based methods to create a confidence interval}\label{theory-based-methods-to-create-a-confidence-interval}
+\addcontentsline{toc}{subsection}{Theory-based methods to create a confidence interval}
+
+Next we will calculate a theory-based confidence interval. To calculate a theory-based confidence interval for the a single mean, use the following formula:
+
+\[\bar{x}\pm t^* \times SE(\bar{x}).\]
+
+We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
+
+\begin{itemize}
+\item
+  Enter the appropriate percentile in the R code to find the multiplier for a 95\% confidence interval.
+\item
+  Enter the degrees of freedom for \texttt{yy}. \emph{The degrees of freedom for a single mean is \(n-1\)}.
+\item
+  Highlight and run line 31.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(percentile, }\AttributeTok{df =}\NormalTok{ yy, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Mark on the \(t\)-distribution found below the values of \(\pm t^*\). Draw a line at each multiplier and write the percentiles used to find each.
+\vspace{1mm}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{06-A11-quantitative_theory_files/figure-latex/tst-1} 
+
+}
+
+\end{figure}
+
+\newpage
+
+\textbf{Calculate the margin of error using theory-based methods}
+
+\vspace{0.6in}
+
+\textbf{Calculate the confidence interval for the true mean using theory-based methods.}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Interpret the confidence interval in context of the study.
+\end{enumerate}
+
+\vspace{1in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Can we generalize the results of the study to all adults? Explain your answer.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\subsection{Take-home messages}\label{take-home-messages-10}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In order to use theory-based methods for a quantitative variable, the independent observational units and normality conditions must be met.
+\item
+  In order to find a theory-based p-value, we use R to calculate the area under a \(t\)-distribution with \(n - 1\) degrees of freedom (df) that is at or more extreme than the observed \(T\)-score. To find a two-sided p-value using theory-based methods we need to multiply the one-sided p-value by 2.
+\item
+  A \(t^*\) multiplier is found by obtaining the bounds of the middle X\% (X being the desired confidence level) of a \(t\)-distribution with \(n - 1\) df.
+\end{enumerate}
+
+\subsection{Additional notes}\label{additional-notes-10}
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered
 
 \newpage
 

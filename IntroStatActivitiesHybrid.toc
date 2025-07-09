@@ -105,26 +105,72 @@
 \contentsline {subsection}{What does \emph {confidence} mean?}{56}{subsection.4.3.3}%
 \contentsline {subsubsection}{Notes on theory-based confidence intervals}{57}{Item.128}%
 \contentsline {subsubsection}{Simulation methods}{58}{Item.129}%
-\contentsline {subsection}{\numberline {4.3.4}Take-home messages}{60}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Additional notes}{60}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{61}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{61}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Mixed Breed Dogs in the U.S.}{61}{subsection.4.4.2}%
-\contentsline {subsubsection}{Activity intro}{61}{subsection.4.4.2}%
-\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{61}{Item.134}%
-\contentsline {subsubsection}{Null Distribution}{62}{Item.137}%
-\contentsline {subsubsection}{Bootstrap distribution}{62}{Item.138}%
-\contentsline {subsubsection}{Summarize the results of the study}{63}{Item.139}%
-\contentsline {chapter}{\numberline {5}Unit 1 Review}{65}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Key Topics}{65}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Module Review}{65}{subsection.5.0.2}%
-\contentsline {section}{\numberline {5.1}Key Topics Exam 1}{66}{section.5.1}%
-\contentsline {subsection}{Descriptive statistics and study design}{66}{section.5.1}%
-\contentsline {subsection}{Hypothesis testing}{66}{Item.151}%
-\contentsline {subsection}{\numberline {5.1.1}Confidence intervals}{67}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Probability}{67}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Module 1 Review - Sampling Methods}{68}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Module 2 Review - Probability}{70}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Module 3 Review - Simulation Methods for a Single Proportion}{72}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Module 4 Review - Theory-based Methods for a Single Proportion}{75}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Group Exam 1 Review}{80}{section.5.6}%
+\contentsline {subsection}{Effect of sample size on the width of the confidence interval}{60}{Item.130}%
+\contentsline {subsection}{\numberline {4.3.4}Take-home messages}{61}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Additional notes}{61}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{62}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{62}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Mixed Breed Dogs in the U.S.}{62}{subsection.4.4.2}%
+\contentsline {subsubsection}{Activity intro}{62}{subsection.4.4.2}%
+\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{62}{Item.139}%
+\contentsline {subsubsection}{Null Distribution}{63}{Item.142}%
+\contentsline {subsubsection}{Bootstrap distribution}{63}{Item.143}%
+\contentsline {subsubsection}{Summarize the results of the study}{64}{Item.144}%
+\contentsline {chapter}{\numberline {5}Unit 1 Review}{66}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Key Topics}{66}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Module Review}{66}{subsection.5.0.2}%
+\contentsline {section}{\numberline {5.1}Key Topics Exam 1}{67}{section.5.1}%
+\contentsline {subsection}{Descriptive statistics and study design}{67}{section.5.1}%
+\contentsline {subsection}{Hypothesis testing}{67}{Item.156}%
+\contentsline {subsection}{\numberline {5.1.1}Confidence intervals}{68}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Probability}{68}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Module 1 Review - Sampling Methods}{69}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Module 2 Review - Probability}{71}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Module 3 Review - Simulation Methods for a Single Proportion}{73}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Module 4 Review - Theory-based Methods for a Single Proportion}{76}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Group Exam 1 Review}{81}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Exploring Quantitative Data: Exploratory Data Analysis and Hypothesis Testing for a Single Quantitative Variable}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Vocabulary Review and Key Topics}{85}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Key topics}{85}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Vocabulary}{85}{subsection.6.1.2}%
+\contentsline {subsubsection}{Sample statistics for a single quantitative variable}{85}{subsection.6.1.2}%
+\contentsline {subsubsection}{Plotting one quantitative variable}{86}{subsection.6.1.2}%
+\contentsline {subsubsection}{Hypothesis testing for a single mean}{87}{subsection.6.1.2}%
+\contentsline {subsubsection}{Simulation-based hypothesis testing}{87}{subsection.6.1.2}%
+\contentsline {subsubsection}{Theory-based hypothesis testing}{87}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Activity 9: Summarizing Quantitative Variables}{89}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Learning outcomes}{89}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Terminology review}{89}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}The Integrated Postsecondary Education Data System (IPEDS)}{89}{subsection.6.2.3}%
+\contentsline {subsubsection}{Identifying variables in a data set}{90}{table.6.1}%
+\contentsline {subsubsection}{Summarizing quantitative variables}{90}{Item.271}%
+\contentsline {subsubsection}{Notes on Summarizing Quantitative Variables:}{90}{Item.271}%
+\contentsline {subsubsection}{Displaying a single quantitative variable}{91}{Item.271}%
+\contentsline {subsubsection}{Robust statistics}{93}{Item.274}%
+\contentsline {subsection}{\numberline {6.2.4}Take-home messages}{95}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Additional notes}{96}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Activity 10: Inference for a Single Quantitative Variable: Simulation Methods}{97}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Learning outcomes}{97}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Terminology review}{97}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}College student sleep habits}{97}{subsection.6.3.3}%
+\contentsline {subsubsection}{Summarizing quantitative variables}{97}{subsection.6.3.3}%
+\contentsline {subsubsection}{Ask a research question}{97}{subsection.6.3.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{98}{subsection.6.3.3}%
+\contentsline {subsection}{Simulation methods}{99}{Item.286}%
+\contentsline {subsubsection}{Notes on simulation methods for a single mean}{99}{Item.286}%
+\contentsline {subsubsection}{Notes on the null distribution}{100}{Item.289}%
+\contentsline {subsection}{Simulation methods to create a confidence interval}{101}{Item.289}%
+\contentsline {subsubsection}{Notes on the bootstrap distribution}{101}{Item.289}%
+\contentsline {subsection}{\numberline {6.3.4}Take-home messages}{102}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Additional notes}{102}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Activity 11: Body Temperature}{103}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Learning outcomes}{103}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Terminology review}{103}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Body Temperature}{103}{subsection.6.4.3}%
+\contentsline {subsubsection}{Ask a research question}{103}{subsection.6.4.3}%
+\contentsline {subsubsection}{Summarize and visualize the data}{105}{figure.6.1}%
+\contentsline {subsubsection}{Check theoretical conditions}{105}{figure.6.1}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{107}{Item.296}%
+\contentsline {subsection}{Theory-based methods to create a confidence interval}{108}{Item.298}%
+\contentsline {subsection}{\numberline {6.4.4}Take-home messages}{109}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Additional notes}{110}{subsection.6.4.5}%
