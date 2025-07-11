@@ -12,13 +12,13 @@ Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following vid
 
 * Ch 7
 
-* 21.1
-
-* 21.3
-
 * 21.4TheoryTests
 
 * 21.4TheoryIntervals
+
+* Optional: 21.1
+
+* Optional: 21.3
 
 
 \setstretch{1}
@@ -350,6 +350,183 @@ Be prepared for group discussion in the next class. One member from the table sh
 \vspace{0.2in}
 \newpage
 
+#### Theoretical Testing for Slope - Video 21.4to21.5TheoryTests {-}
+
+Conditions:
+
+\setstretch{1.5}
+
+* Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
+
+    * Check this assumption by examining the ____________________________ of the two variables, and ____________________________________________. The pattern in the residual plot should display a horizontal line.
+
+\newpage
+
+* Independence (for both simulation-based and theory-based methods)
+
+    * One______________________________for an observational unit has no impact on  ________________________________.
+
+* Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+
+    * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
+
+* Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
+
+    * Check this assumption by examining a _________________________________, which should appear approximately normal
+    
+\setstretch{1}
+    
+Example:
+
+It is a generally accepted fact that the more carats a diamond has, the more expensive that diamond will be. The question is, how much more expensive? Data on thousands of diamonds were collected for this data set. We will only look at one type of cut (“Ideal”) and diamonds less than 1 carat. Does the association between carat size and price have a linear relationship for these types of diamonds? What can we state about the association between carat size and price?
+
+```{r, echo=FALSE}
+IdealDiamonds <- read.csv("data/diamonds.csv") %>%
+  filter(cut == 'Ideal') %>% #Filters the data set to the same cut
+  filter(carat < 1)
+set.seed(216)
+Diamonds <- IdealDiamonds %>%
+  sample(1000)
+```
+
+Scatterplot:
+```{r, echo=TRUE, warning=FALSE}
+Diamonds %>% # Pipe data set into...
+    ggplot(aes(x = carat, y = price))+  # Specify variables
+    geom_point(alpha=0.5) +  # Add scatterplot of points
+    labs(x = "carat",  # Label x-axis
+       y = "price ($)",  # Label y-axis
+       title = "Scatterplot of Diamonds Carats vs Price") +
+               # Be sure to title your plots
+    geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+```
+
+\newpage
+
+Diagnostic plots:
+```{r}
+lm.diamond <- lm(price~carat, data=Diamonds) #lm(response~explanatory)
+par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
+plot(lm.diamond, which=1) # Residual vs fitted values
+hist(lm.diamond$resid, xlab="Residuals", ylab="Frequency",
+     main = "Histogram of Residuals") # Histogram of residuals
+```
+
+
+Check the conditions for the ocean data:
+
+Scatterplot:
+```{r, echo=TRUE, warning=FALSE}
+water %>% # Pipe data set into...
+ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
+  geom_point(alpha=0.5) +  # Add scatterplot of points
+  labs(x = "salinity (PSUs)",  # Label x-axis
+       y = "temperature (C)",  # Label y-axis
+       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
+               # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+```
+
+\newpage
+
+Diagnostic plots:
+```{r}
+par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
+plot(lm.water, which=1) # Residual vs fitted values
+hist(lm.water$resid, xlab="Residuals", ylab="Frequency",
+     main = "Histogram of Residuals") # Histogram of residuals
+```
+
+Like with paired data the $t$-distribution can be used to model slope and correlation. 
+
+\setstretch{1.5}
+
+* For two quantitative variables we use the ______-distribution
+with _____________________ degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+Theory-based test:
+
+* Calculate the standardized statistic
+
+* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
+
+Equation for the standardized slope:
+
+\vspace{0.8in}
+
+##### Optional Notes: Video Example (Video 21.4TheoryTests) {-}
+
+Calculate the standardized slope for the ocean data
+
+```{r, echo=TRUE, collapse=FALSE}
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients,3)
+```
+
+\vspace{1in}
+
+```{r, pvalueoce, echo = F}
+
+x <- seq(-4, 4, length=100)
+hx<-dt(x, 98)
+degf <- 98
+
+plot(x, hx, type="l", lty=1, lwd=3, xlab="",
+  ylab="Density", main="t-distribution with 98 df")
+
+```
+
+Interpret the standardized statistic:
+
+\vspace{0.8in}
+
+To find the theory-based p-value:
+
+```{r, echo=TRUE, collapse=FALSE}
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients,3)
+```
+
+or
+
+```{r, echo=TRUE}
+pt(-8.670, df = 98, lower.tail=TRUE)
+```
+
+\newpage
+
+
+
+#### Theoretical Confidence Interval for Slope - Video 21.4TheoryInterval {-}
+
+* Calculate the interval centered at the sample statistic
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.6in}
+
+##### Optional Notes: Video Example (Video 21.4TheoryInterval) {-}
+
+```{r, echo=TRUE, collapse=FALSE}
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients, 3)
+```
+
+Using the ocean data, calculate a 95\% confidence interval for the true slope.
+
+* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
+
+```{r, echo=TRUE, collapse=FALSE}
+qt(0.975, df=98, lower.tail = TRUE)
+```
+
+\vspace{1in}
+
+
 ### Video Notes: Inference for Two Quantitative Variables
 
 \setstretch{1}
@@ -404,37 +581,37 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
 
 ```
 
-Describe the four characteristics of the scatterplot:
+<!-- Describe the four characteristics of the scatterplot: -->
 
-\vspace{1in}
+<!-- \vspace{1in} -->
 
-Linear model output:
+<!-- Linear model output: -->
 
-```{r, echo=TRUE, collapse=FALSE}
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients, 3)
-```
+<!-- ```{r, echo=TRUE, collapse=FALSE} -->
+<!-- lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory) -->
+<!-- round(summary(lm.water)$coefficients, 3) -->
+<!-- ``` -->
 
-Correlation:
+<!-- Correlation: -->
 
-```{r, echo=TRUE, collapse=FALSE}
-cor(T_degC~Salnty, data=water)
-```
-Write the least squares equation of the line in context of the problem:
+<!-- ```{r, echo=TRUE, collapse=FALSE} -->
+<!-- cor(T_degC~Salnty, data=water) -->
+<!-- ``` -->
+<!-- Write the least squares equation of the line in context of the problem: -->
 
-\vspace{0.5in}
+<!-- \vspace{0.5in} -->
 
-Interpret the value of slope in the context of the problem:
+<!-- Interpret the value of slope in the context of the problem: -->
 
-\vspace{0.5in}
+<!-- \vspace{0.5in} -->
 
-Report and describe the correlation value:
+<!-- Report and describe the correlation value: -->
 
-\vspace{0.5in}
+<!-- \vspace{0.5in} -->
 
-Calculate and interpret the coefficient of determination:
+<!-- Calculate and interpret the coefficient of determination: -->
 
-\vspace{0.8in}
+<!-- \vspace{0.8in} -->
 
 #### Simulation-based method {-}
 
@@ -575,179 +752,6 @@ Confidence interval interpretation:
 * Order of subtraction when comparing two groups
 
 \vspace{0.8in}
-
-#### Theory-based method - Video 21.4to21.5TheoryTests {-}
-
-Conditions:
-
-\setstretch{1.5}
-
-* Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
-
-    * Check this assumption by examining the ____________________________ of the two variables, and ____________________________________________. The pattern in the residual plot should display a horizontal line.
-
-\newpage
-
-* Independence (for both simulation-based and theory-based methods)
-
-    * One______________________________for an observational unit has no impact on  ________________________________.
-
-* Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
-
-    * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
-
-* Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
-
-    * Check this assumption by examining a _________________________________, which should appear approximately normal
-    
-\setstretch{1}
-    
-Example:
-
-It is a generally accepted fact that the more carats a diamond has, the more expensive that diamond will be. The question is, how much more expensive? Data on thousands of diamonds were collected for this data set. We will only look at one type of cut (“Ideal”) and diamonds less than 1 carat. Does the association between carat size and price have a linear relationship for these types of diamonds? What can we state about the association between carat size and price?
-
-```{r, echo=FALSE}
-IdealDiamonds <- read.csv("data/diamonds.csv") %>%
-  filter(cut == 'Ideal') %>% #Filters the data set to the same cut
-  filter(carat < 1)
-set.seed(216)
-Diamonds <- IdealDiamonds %>%
-  sample(1000)
-```
-
-Scatterplot:
-```{r, echo=TRUE, warning=FALSE}
-Diamonds %>% # Pipe data set into...
-    ggplot(aes(x = carat, y = price))+  # Specify variables
-    geom_point(alpha=0.5) +  # Add scatterplot of points
-    labs(x = "carat",  # Label x-axis
-       y = "price ($)",  # Label y-axis
-       title = "Scatterplot of Diamonds Carats vs Price") +
-               # Be sure to title your plots
-    geom_smooth(method = "lm", se = FALSE)  # Add regression line
-
-```
-
-\newpage
-
-Diagnostic plots:
-```{r}
-lm.diamond <- lm(price~carat, data=Diamonds) #lm(response~explanatory)
-par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
-plot(lm.diamond, which=1) # Residual vs fitted values
-hist(lm.diamond$resid, xlab="Residuals", ylab="Frequency",
-     main = "Histogram of Residuals") # Histogram of residuals
-```
-
-
-Check the conditions for the ocean data:
-
-Scatterplot:
-```{r, echo=TRUE, warning=FALSE}
-water %>% # Pipe data set into...
-ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
-  geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "salinity (PSUs)",  # Label x-axis
-       y = "temperature (C)",  # Label y-axis
-       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
-               # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
-
-```
-
-\newpage
-
-Diagnostic plots:
-```{r}
-par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
-plot(lm.water, which=1) # Residual vs fitted values
-hist(lm.water$resid, xlab="Residuals", ylab="Frequency",
-     main = "Histogram of Residuals") # Histogram of residuals
-```
-
-Like with paired data the $t$-distribution can be used to model slope and correlation. 
-
-\setstretch{1.5}
-
-* For two quantitative variables we use the ______-distribution
-with _____________________ degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-Theory-based test:
-
-* Calculate the standardized statistic
-
-* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
-
-Equation for the standardized slope:
-
-\vspace{0.8in}
-
-Calculate the standardized slope for the ocean data
-
-```{r, echo=TRUE, collapse=FALSE}
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients,3)
-```
-
-\vspace{1in}
-
-```{r, pvalueoce, echo = F}
-
-x <- seq(-4, 4, length=100)
-hx<-dt(x, 98)
-degf <- 98
-
-plot(x, hx, type="l", lty=1, lwd=3, xlab="",
-  ylab="Density", main="t-distribution with 98 df")
-
-```
-
-Interpret the standardized statistic:
-
-\vspace{0.8in}
-
-To find the theory-based p-value:
-
-```{r, echo=TRUE, collapse=FALSE}
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients,3)
-```
-
-or
-
-```{r, echo=TRUE}
-pt(-8.670, df = 98, lower.tail=TRUE)
-```
-
-\newpage
-
-
-
-#### Theory-based method {-}
-
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.6in}
-
-
-```{r, echo=TRUE, collapse=FALSE}
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients, 3)
-```
-
-Using the ocean data, calculate a 95\% confidence interval for the true slope.
-
-* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
-
-```{r, echo=TRUE, collapse=FALSE}
-qt(0.975, df=98, lower.tail = TRUE)
-```
-
-\vspace{1in}
 
 ### Concept Check
 
