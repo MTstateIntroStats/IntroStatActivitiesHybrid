@@ -1,6 +1,6 @@
 ## Video Notes: Theory-based Inference for a single quantitative variable 
 
-Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the video notes for Module 7.
+Read Chapters 5, 17, and 12 in the course textbook.  Use the following videos to complete the video notes for Module 7.
 
 ### Course Videos
 
@@ -8,10 +8,12 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 * 17.3TheoryIntervals
 
+* Chapter12
+
 \setstretch{1}
 
 
-### Single quantitative variable
+#### Simuation-based Confidence Intervals for a Single Mean - Video 17.1
 
 * Reminder: review summary measures and plots discussed in the Module 6 material and Chapter 5 of the textbook.
 
@@ -109,7 +111,7 @@ Confidence interval interpretation:
 
 \newpage
 
-#### Theory-based method {-}
+#### Theory-based Confidence Interval for a Single Mean - Video 17.3TheoryIntervals {-}
 
 * Calculate the interval centered at the sample statistic
 
@@ -177,6 +179,93 @@ Be prepared for group discussion in the next class. One member from the table sh
 2. Interpret the confidence interval found with simulation methods.
 
 \vspace{0.2in}
+
+
+#### Decisions, Errors, and Power - Video Chapter12 {-}
+
+Significance level: arbitrary cut-off set by the researcher for deciding if a p-value is ___________ or _____________.
+
+* Notation:
+
+\vspace{0.2in}
+
+Decision: To either _______________ or _____________________________ the null hypothesis.
+
+* 	If p-value _____ $\alpha$, the p-value is considered “small”
+
+    * 	____________________________________ evidence against the null hypothesis.
+
+    * Decision: ______________ the null hypothesis.
+	 
+    *	We say the results _______________ statistically significant.
+    
+* If p-value _____ $\alpha$, the p-value is considered “large”
+
+    * ____________________________________ evidence against the null hypothesis.
+    
+    * Decision: ________________________________ the null hypothesis.
+    
+    * We say the results _______________ statistically significant.
+    
+Errors: 
+* Type I error: __________________________ the null hypothesis even though the null hypothesis is __________________.
+
+    *	Conclude the _________________ hypothesis is true when really the __________________ hypothesis is true.
+    
+    * Anytime we __________________________ the null hypothesis, we could be making a type I error!
+    
+* Type II error: _____________________________ the null hypothesis even though the null hypothesis is __________________.
+
+    * Conclude the _________________ hypothesis is true when really the __________________ hypothesis is true.
+
+    * Anytime we _____________________________ the null hypothesis, we could be making a type II error!
+
+* Probability of a type I error = 
+
+Confirmation bias: selecting the sign in the alternative hypothesis based off _________________________________________________________________________.
+
+*	This increases the chance of making a type _________ error.
+
+Example: Polar bears
+
+* $H_0:\mu=370; H_A:\mu <370$; where $\mu$ represents the true mean weight of adult male polar bears in the Southern Beaufort Sea region.
+
+* P-value was less than 0.0001
+
+*	Decision at a 5% significance level?  ____________________ the null hypothesis.
+
+    * Possible type ________ error
+
+    * Interpretation of that error: We conclude _______________________________________________________ when really _______________________________________________________.
+    
+    * Probability that this is a type ______ error? __________
+
+Statistical significance versus practical importance:
+
+* Statistically significant results: If p-value ___________ $\alpha$ 
+
+* Practically important results: If the difference seen is ____________________________________________________________________.
+
+*	Small sample sizes tend to have ______________ p-values, so the results may be ______________________________ but not _______________________________.
+
+* Large sample sizes tend to have ______________ p-values, so the results may be ______________________________ but not _______________________________.
+
+
+Power
+
+*	Probability of _________________ the null hypothesis IF the null hypothesis is ____________________.
+
+*	Impacts on power:
+
+    *	Larger significance level = ______________ power
+    
+    *	Larger sample size = _____________ power
+    
+    *	One-sided alternative hypothesis = ______________ power
+    
+    *	Smaller sample standard deviation = ______________ power
+    
+    * True value being farther from the null value = ______________ power
 
 
 \newpage
