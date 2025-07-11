@@ -1,14 +1,17 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Video Notes: Intro to data and Sampling Methods
 
 \setstretch{1}
 
-Read through Sections 1.1 -- 1.3 and 2.1 in the course textbook and watch the course videos prior to coming to class.  Fill in the following questions to aid in your understanding of the material.  Many of the following questions are asked on the video quiz on Gradescope.  
+Read through Sections 1.1 -- 1.3 and 2.1 in the course textbook and watch the course videos prior to coming to class.  Fill in the following questions to aid in your understanding of the material.   
 
 ### Course Videos
 
 * 1.2.1and1.2.2
-
-* 1.2.3to1.2.4
 
 * 2.1
 
@@ -27,39 +30,12 @@ Variable: characteristics measured on each _______________________________.
 \vspace{0.5in}
 
 \setstretch{1.5}
-
-\rgi - Ordinal:  levels of the variable have a natural ordering 
-    
-\rgi \rgi Examples: ‘Scale’ questions, years of schooling completed
-
-\rgi - Nominal:levels of the variable do not have a natural ordering
-
-\rgi \rgi Examples: hair color, eye color, zipcode
-
-\setstretch{1}
     
 * Quantitative variable: 
 
 \vspace{0.5in}
 
 \setstretch{1.5}
-
-\rgi - Continuous variables: value can be any value within a range.
-    
-\rgi \rgi Examples: percentage of students who are nursing majors
-
-\rgi \rgi \rgi - average hours of exercise per week
-
-\rgi \rgi \rgi - distance or time (measured with enough precision)
-
-\rgi - Discrete variables: can only be specific values, with jumps between
-    
-\rgi \rgi Examples: SAT score
-
-\rgi \rgi \rgi - number of car accidents
-
-\setstretch{1}
-\newpage
 
 Example:  The Bureau of Transportation Statistics [@bts] collects data on all forms of public transportation. The data set seen here includes several variables collect on flights departing on a random sample of 150 US airports in December of 2019.
 
@@ -101,84 +77,9 @@ Summary statistic: a single number which _______________________ an entire data 
 
 * The summary statistic and type of plot used depends on the type (categorical or quantitative) of variable(s)!  
 
-\newpage
-
-### Roles of variables: 1.2.3to1.2.4 {-}
-
-Explanatory variable: predictor variable
-
-* The variable researchers think *may be* _____________ 
-the other variable.
-    
-* In an experiment, what the researchers _____________ or ________________.
-    
-* The groups that we are comparing from the data set.
-
-Response variable: 
-
-* The variable researchers think *may be* ___________________ by the other variable.
-
-* Always simply ________________ or __________________; never controlled by researchers.
-
-Examples:
-
-Can you predict a criminal’s height based on the footprint left at the scene of a crime?
-
-* Identify the explanatory variable:
-
-\vspace{0.25in}
-
-* Identify the response variable:
-
-\vspace{0.25in}
-
-Does marking an item on sale (even without changing the price) increase the number of units sold per day, on average?
-
-* Identify the explanatory variable:
-
-\vspace{0.25in}
-
-* Identify the response variable:
-
-\vspace{0.25in}
-
-In the Physician's Health Study [@physhealth], male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack. 
-
-* Identify the explanatory variable:
-
-\vspace{0.25in}
-
-* Identify the response variable:
-
-\vspace{0.25in}
-
-#### Relationships between variables {-}
-
-\setstretch{1.5}
-
-* Association: the _____________ between variables create a pattern; knowing something about one variable tells us about the other.
-
-    * Positive association: as one variable _____________, the other tends to _______________ also.
-    
-    * Negative association: as one variable _____________, the other tends to _____________.
-
-* Independent: no clear pattern can be seen between the __________.
 
 \setstretch{1}
 
-### Concept Check
-
-Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
-
-1. What is the explanatory variable in the Male Physicians study?
-
-\vspace{0.4in}
-
-2. What is the response variable in the Male Physicians study?
-
-\vspace{0.4in}
-
-\setstretch{1}
 
 ### Sampling Methods: Video 2.1 {-}
 
@@ -272,7 +173,7 @@ has no impact on ________________ or ______________ bias.
 
 \newpage
 
-#### Video Example {-}
+#### Optional Notes: Video Example {-}
 
 A radio talk show asks people to phone in their views on whether the United States should pay off its debt to the United Nations.
 
