@@ -4,6 +4,8 @@ Read Sections 2.2 - 2.4, 15.1, 15.2, Chapter 4 and Chapter 16 in the course text
 
 ### Course Videos
 
+* 1.2.3to1.2.5
+
 * 2.2to2.4
 
 * 4.1_TwoProp
@@ -18,7 +20,69 @@ Read Sections 2.2 - 2.4, 15.1, 15.2, Chapter 4 and Chapter 16 in the course text
 
 * RelativeRisk
 
-### Observational studies, experiments, and scope of inference: Video 2.2to2.4 {-}
+#### Relationships between variables - Video 1.2.3to1.2.5 {-}
+
+Explanatory variable: predictor variable
+
+* The variable researchers think *may be* _____________ 
+the other variable.
+    
+* In an experiment, what the researchers _____________ or ________________.
+    
+* The groups that we are comparing from the data set.
+
+Response variable: 
+
+* The variable researchers think *may be* ___________________ by the other variable.
+
+* Always simply ________________ or __________________; never controlled by researchers.
+
+Examples:
+
+Can you predict a criminal’s height based on the footprint left at the scene of a crime?
+
+* Identify the explanatory variable:
+
+\vspace{0.25in}
+
+* Identify the response variable:
+
+\vspace{0.25in}
+
+Does marking an item on sale (even without changing the price) increase the number of units sold per day, on average?
+
+* Identify the explanatory variable:
+
+\vspace{0.25in}
+
+* Identify the response variable:
+
+\vspace{0.25in}
+
+In the Physician's Health Study [@physhealth], male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack. 
+
+* Identify the explanatory variable:
+
+\vspace{0.25in}
+
+* Identify the response variable:
+
+\vspace{0.25in}
+
+#### Relationships between variables {-}
+
+\setstretch{1.5}
+
+* Association: the _____________ between variables create a pattern; knowing something about one variable tells us about the other.
+
+    * Positive association: as one variable _____________, the other tends to _______________ also.
+    
+    * Negative association: as one variable _____________, the other tends to _____________.
+
+* Independent: no clear pattern can be seen between the __________.
+
+
+#### Observational studies, experiments, and scope of inference: Video 2.2to2.4 {-}
 
 * Review
 
@@ -57,6 +121,8 @@ Principles of experimental design
 
 * Blocking: group based on certain characteristics
 \vspace{1mm}
+
+##### Optional Notes: Video Examples (Video 2.2to2.4) {-}
     
 Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
 
@@ -327,14 +393,14 @@ And finally, Program E and F.
 include_graphics("images/SimPara_EF.png")
 ```
 
-We can see in several programs the acceptance rate is higher for females than for males.
+We can see in several programs the acceptance rate is actually HIGHER for females than for males.
 
 \vspace{1in}
 
 \newpage
 
 
-### Two categorical variables - Video 15.1 {-}
+### Simulation Testing for a Difference in Proportions - Video 15.1 {-}
 
 \setstretch{1.5}
 
@@ -398,6 +464,8 @@ $H_A:$
 * Research question determines the direction of the alternative hypothesis.
 
 \newpage
+
+##### Optional Notes: Video Example (Video 15.1) {-}
 
 Write the null and alternative hypotheses for the cocaine study:
 
@@ -506,7 +574,7 @@ Conclusion with scope of inference:
 
 \newpage
 
-### Confidence interval - Video 15.2 {-}
+### Confidence interval for a Difference in Proportion - Video 15.2 {-}
 
 To estimate the difference in true proportion we will create a confidence interval.
 
@@ -523,6 +591,8 @@ To estimate the difference in true proportion we will create a confidence interv
 * Repeat 10000 times (simulations) to create the bootstrap distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
+
+##### Optional Notes: Video Example (Video 15.2)
 
 Returning to the cocaine example, we will estimate the difference in true proportion of cocaine addicts that stay clean for those on the desipramine and those on the placebo.
 
@@ -598,6 +668,8 @@ Percent increase in risk:
 * Find the percent increase (or decrease) in risk of desensitization and interpret this value in context of the problem.
 
 \vspace{1in}
+
+##### Optional Notes: Video Example (Video RelativeRisk) {-}
 
 Within the peanut flour group, the percent desensitized within each age group (at start of study) is as follows:
 
