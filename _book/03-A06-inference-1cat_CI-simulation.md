@@ -95,15 +95,15 @@ We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 
 ``` r
-one_proportion_bootstrap_CI(sample_size = xx, # Sample size
-                    number_successes = xx, # Observed number of successes
+one_proportion_bootstrap_CI(sample_size = 16, # Sample size
+                    number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
-                    confidence_level = xx) # Confidence level as a decimal
+                    confidence_level = 0.95) # Confidence level as a decimal
 ```
 
-7.  Sketch the bootstrap distribution created below.
 
-\vspace{1.8in}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 ### Notes on the bootstrap distribution {-}
 
@@ -117,7 +117,7 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 #### Communicate the results and answer the research question {-}
 
-8.  Is the value 0.5 (the null value) in the 95\% confidence interval?
+7.  Is the value 0.5 (the null value) in the 95\% confidence interval?
 
 \vspace{.2in}
 
@@ -127,11 +127,11 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 #### Effect of confidence level {-}
 
-9.  Suppose instead of finding a 95\% confidence interval, we found a 90\% confidence interval.  Would you expect the 90\% confidence interval to be narrower or wider?  Explain your answer.
+8.  Suppose instead of finding a 95\% confidence interval, we found a 90\% confidence interval.  Would you expect the 90\% confidence interval to be narrower or wider?  Explain your answer.
 
 \vspace{0.4in}
 
-10.  The following R code produced the bootstrap distribution with 10000 simulations that follows.  Circle the value that changed in the code. 
+9.  The following R code produced the bootstrap distribution with 10000 simulations that follows.  Circle the value that changed in the code. 
 
 
 ``` r
@@ -146,7 +146,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 \begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 
-11.  Report both the 95\% confidence interval and the 90\% confidence interval (question 10).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
+10.  Report both the 95\% confidence interval and the 90\% confidence interval (question 10).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
 
 \vspace{0.5in}
 \newpage

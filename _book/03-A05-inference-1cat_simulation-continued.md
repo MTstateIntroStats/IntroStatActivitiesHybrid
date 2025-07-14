@@ -73,37 +73,37 @@ We will use the `one_proportion_test()` function in `R` (in the `catstats` packa
 
 
 ``` r
-one_proportion_test(probability_success = xx, # Null hypothesis value
-          sample_size = xx, # Enter sample size
+one_proportion_test(probability_success = 0.5, # Null hypothesis value
+          sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = xx, # Observed statistic
-          direction = "xx", # Specify direction of alternative hypothesis
+          as_extreme_as = 0.875, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
 ```
 
-4. Sketch the null distribution created from the `R` code here.
 
-\vspace{1.8in}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 ### Notes on the null distribution {-}
 
 \vspace{2in}
 
-5. Circle the observed statistic (value from question 1) on the distribution you drew in question 4.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
+4. Circle the observed statistic (value from question 1) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
 
 \vspace{0.3in}
 
-6. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot.
+5. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot.
 
 \vspace{0.5in}
 
-7.  Using the simulation, what is the proportion of simulated samples that generated a sample proportion at the observed statistic or greater, if the true proportion of infants who choose the helper is 0.5? *Hint*: Look under the simulation.
+6.  Using the simulation, what is the proportion of simulated samples that generated a sample proportion at the observed statistic or greater, if the true proportion of infants who choose the helper is 0.5? *Hint*: Look under the simulation.
 
 \vspace{0.3in}
 
 ### Notes on the p-value {-}
 
-The value in question 7 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
+The value in question 6 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
 
 \vspace{1.5in}
 
@@ -132,7 +132,7 @@ When we write a conclusion we answer the research question by stating how much e
 
 #### Generalization {-}
 
-8. To what group of observational units can the results be generalized to?
+7. To what group of observational units can the results be generalized to?
 
 \vspace{0.5in}
 

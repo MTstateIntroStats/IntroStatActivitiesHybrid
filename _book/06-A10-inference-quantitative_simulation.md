@@ -52,6 +52,9 @@ According to an article in *Sleep* [@watson2015], experts recommend adults (>18 
 sleep <- read.csv("datasetname.csv")
 ```
 
+
+
+
 #### Ask a research question {-}
 
 **Parameter of interest in context of the study:**
@@ -184,13 +187,17 @@ The `one_mean_test` will be used to find the p-value for the simulation test.  F
 
 ``` r
 one_mean_test(sleep$SleepHours,#Enter the object name and variable
-              null_value = xx,
-              summary_measure = "xx",  #Can choose between mean or median
-              shift = xx, #Difference between the null value and the sample mean
-              as_extreme_as = xx, #Value of the summary statistic
-              direction = "xx", #Specify direction of alternative hypothesis
+              null_value = 7,
+              summary_measure = "mean",  #Can choose between mean or median
+              shift = 0.081, #Difference between the null value and the sample mean
+              as_extreme_as = 6.919, #Value of the summary statistic
+              direction = "less", #Specify direction of alternative hypothesis
               number_repetitions = 10000)
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A10-inference-quantitative_simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 #### Notes on the null distribution {-}
 
@@ -217,19 +224,21 @@ Unlike creation of the null distribution, the bootstrap distribution we use for 
 
 Use the provided R script file to find a 95\% confidence interval.
 
-* Enter the name of the variable for `variable`.
-
 * Enter the appropriate confidence level for `xx`.
 
-* Highlight and run lines 22--25.
+* Highlight and run lines 46--49.
 
 
 ``` r
-one_mean_CI(songs$variable, #Enter the name of the variable
+one_mean_CI(sleep$SleepHours, #Enter the name of the variable
             summary_measure = "mean", #choose the mean or median
             number_repetitions = 10000,  # Number of simulations
-            confidence_level = xx)
+            confidence_level = 0.95) #Enter as a decimal
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-A10-inference-quantitative_simulation_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 
 #### Notes on the bootstrap distribution {-}

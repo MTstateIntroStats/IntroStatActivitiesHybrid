@@ -111,6 +111,7 @@ The following code will find the $z^*$ value for a 95\% confidence interval.
 
 ``` r
 qnorm(c(0.025, 0.975), lower.tail = TRUE) # Multiplier for 95% confidence interval
+#> [1] -1.959964  1.959964
 ```
 
 **Calculate the margin of error for the 95\% confidence interval.**
@@ -221,13 +222,15 @@ $$\text{width of CI} = 2 \times \text{ME}$$
 
 12.  What impact does decreasing the sample size have on the width of the confidence interval?
 
-\vspace{0.2in}
+\vspace{0.4in}
 
 ### Take-home messages
 
 1.  If repeat samples of the same size are selected from the population, approximately 95\% of samples will create a 95\% confidence interval that contains the parameter of interest.
 
 2.  The calculation of the confidence interval uses the standard error calculated using the sample proportion rather than the null value.
+
+3. Decreasing the sample size, increases the sample to sample variability, the standard error resulting in a wider confidence interval.
 
 ### Additional notes
 

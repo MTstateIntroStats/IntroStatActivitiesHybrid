@@ -71,7 +71,7 @@ boxers %>% count(Stance)  # Count number in each Stance category
 boxers %>% # Data set piped into...
     ggplot(aes(x = Stance)) +   # This specifies the variable
     geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
-    labs(title = "____________________ of Handedness of Male Professional Boxers",  
+    labs(title = "____________________ of Handedness of Male \n Professional Boxers",  
        # Give your plot a title
        x = "Handedness",   # Label the x axis
        y = "Relative Frequency")  # Label the y axis
@@ -185,6 +185,10 @@ Notes:
 pnorm(4.769, # Enter value of standardized statistic
       m=0, s=1, # Using the standard normal mean = 0, sd = 1
       lower.tail=FALSE) # Gives a p-value greater than the standardized statistic
+```
+
+```
+#> [1] 9.257133e-07
 ```
   
   

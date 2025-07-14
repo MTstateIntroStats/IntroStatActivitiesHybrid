@@ -1,0 +1,212 @@
+id,drug,score
+1,Sertraline,> 2
+2,Escitalopram,< or = 2
+3,Sertraline,< or = 2
+4,Sertraline,< or = 2
+5,Escitalopram,< or = 2
+6,Sertraline,> 2
+7,Sertraline,< or = 2
+8,Escitalopram,< or = 2
+9,Escitalopram,< or = 2
+10,Sertraline,< or = 2
+11,Escitalopram,< or = 2
+12,Sertraline,< or = 2
+13,Sertraline,< or = 2
+14,Sertraline,< or = 2
+15,Escitalopram,> 2
+16,Escitalopram,< or = 2
+17,Sertraline,> 2
+18,Sertraline,< or = 2
+19,Sertraline,< or = 2
+20,Escitalopram,< or = 2
+21,Escitalopram,> 2
+22,Sertraline,< or = 2
+23,Escitalopram,< or = 2
+24,Escitalopram,< or = 2
+25,Sertraline,< or = 2
+26,Sertraline,> 2
+27,Sertraline,> 2
+28,Escitalopram,< or = 2
+29,Escitalopram,< or = 2
+30,Sertraline,> 2
+31,Sertraline,> 2
+32,Sertraline,< or = 2
+33,Sertraline,< or = 2
+34,Sertraline,< or = 2
+35,Sertraline,< or = 2
+36,Escitalopram,< or = 2
+37,Escitalopram,< or = 2
+38,Escitalopram,< or = 2
+39,Sertraline,< or = 2
+40,Sertraline,< or = 2
+41,Escitalopram,< or = 2
+42,Escitalopram,< or = 2
+43,Sertraline,< or = 2
+44,Escitalopram,< or = 2
+45,Sertraline,> 2
+46,Sertraline,< or = 2
+47,Escitalopram,< or = 2
+48,Sertraline,< or = 2
+49,Sertraline,< or = 2
+50,Escitalopram,< or = 2
+51,Escitalopram,< or = 2
+52,Sertraline,< or = 2
+53,Escitalopram,> 2
+54,Sertraline,< or = 2
+55,Sertraline,< or = 2
+56,Sertraline,< or = 2
+57,Escitalopram,< or = 2
+58,Escitalopram,< or = 2
+59,Sertraline,< or = 2
+60,Escitalopram,> 2
+61,Sertraline,< or = 2
+62,Escitalopram,> 2
+63,Escitalopram,> 2
+64,Sertraline,< or = 2
+65,Escitalopram,> 2
+66,Sertraline,< or = 2
+67,Escitalopram,< or = 2
+68,Sertraline,> 2
+69,Sertraline,< or = 2
+70,Escitalopram,> 2
+71,Sertraline,< or = 2
+72,Sertraline,> 2
+73,Escitalopram,> 2
+74,Escitalopram,< or = 2
+75,Sertraline,> 2
+76,Sertraline,< or = 2
+77,Escitalopram,< or = 2
+78,Sertraline,< or = 2
+79,Sertraline,< or = 2
+80,Sertraline,> 2
+81,Sertraline,< or = 2
+82,Sertraline,< or = 2
+83,Escitalopram,> 2
+84,Escitalopram,< or = 2
+85,Sertraline,> 2
+86,Sertraline,< or = 2
+87,Sertraline,< or = 2
+88,Escitalopram,> 2
+89,Escitalopram,< or = 2
+90,Escitalopram,> 2
+91,Sertraline,< or = 2
+92,Escitalopram,< or = 2
+93,Sertraline,< or = 2
+94,Escitalopram,< or = 2
+95,Sertraline,< or = 2
+96,Sertraline,> 2
+97,Escitalopram,< or = 2
+98,Sertraline,> 2
+99,Escitalopram,> 2
+100,Sertraline,< or = 2
+101,Escitalopram,< or = 2
+102,Escitalopram,< or = 2
+103,Sertraline,< or = 2
+104,Sertraline,< or = 2
+105,Escitalopram,< or = 2
+106,Escitalopram,< or = 2
+107,Sertraline,< or = 2
+108,Escitalopram,< or = 2
+109,Sertraline,> 2
+110,Escitalopram,< or = 2
+111,Escitalopram,> 2
+112,Sertraline,< or = 2
+113,Sertraline,< or = 2
+114,Sertraline,< or = 2
+115,Escitalopram,< or = 2
+116,Escitalopram,< or = 2
+117,Sertraline,< or = 2
+118,Sertraline,< or = 2
+119,Sertraline,< or = 2
+120,Sertraline,< or = 2
+121,Sertraline,< or = 2
+122,Escitalopram,< or = 2
+123,Sertraline,< or = 2
+124,Escitalopram,< or = 2
+125,Sertraline,< or = 2
+126,Escitalopram,< or = 2
+127,Escitalopram,< or = 2
+128,Escitalopram,< or = 2
+129,Escitalopram,< or = 2
+130,Sertraline,< or = 2
+131,Escitalopram,< or = 2
+132,Escitalopram,< or = 2
+133,Escitalopram,< or = 2
+134,Sertraline,< or = 2
+135,Sertraline,< or = 2
+136,Escitalopram,> 2
+137,Escitalopram,< or = 2
+138,Escitalopram,< or = 2
+139,Sertraline,< or = 2
+140,Escitalopram,< or = 2
+141,Escitalopram,< or = 2
+142,Escitalopram,< or = 2
+143,Sertraline,> 2
+144,Escitalopram,< or = 2
+145,Sertraline,> 2
+146,Sertraline,< or = 2
+147,Sertraline,< or = 2
+148,Sertraline,< or = 2
+149,Escitalopram,< or = 2
+150,Escitalopram,> 2
+151,Escitalopram,< or = 2
+152,Sertraline,< or = 2
+153,Sertraline,< or = 2
+154,Escitalopram,< or = 2
+155,Escitalopram,< or = 2
+156,Escitalopram,< or = 2
+157,Escitalopram,< or = 2
+158,Sertraline,< or = 2
+159,Sertraline,< or = 2
+160,Escitalopram,< or = 2
+161,Escitalopram,< or = 2
+162,Escitalopram,< or = 2
+163,Sertraline,> 2
+164,Escitalopram,> 2
+165,Escitalopram,< or = 2
+166,Sertraline,< or = 2
+167,Sertraline,> 2
+168,Sertraline,< or = 2
+169,Sertraline,> 2
+170,Sertraline,< or = 2
+171,Escitalopram,> 2
+172,Escitalopram,> 2
+173,Sertraline,< or = 2
+174,Sertraline,< or = 2
+175,Sertraline,< or = 2
+176,Escitalopram,> 2
+177,Sertraline,< or = 2
+178,Sertraline,< or = 2
+179,Sertraline,< or = 2
+180,Escitalopram,< or = 2
+181,Escitalopram,< or = 2
+182,Escitalopram,< or = 2
+183,Escitalopram,> 2
+184,Escitalopram,> 2
+185,Escitalopram,> 2
+186,Escitalopram,< or = 2
+187,Sertraline,> 2
+188,Sertraline,< or = 2
+189,Sertraline,> 2
+190,Sertraline,< or = 2
+191,Escitalopram,< or = 2
+192,Sertraline,> 2
+193,Escitalopram,< or = 2
+194,Sertraline,< or = 2
+195,Escitalopram,> 2
+196,Escitalopram,< or = 2
+197,Escitalopram,< or = 2
+198,Escitalopram,< or = 2
+199,Sertraline,< or = 2
+200,Escitalopram,> 2
+201,Escitalopram,> 2
+202,Sertraline,< or = 2
+203,Sertraline,< or = 2
+204,Sertraline,< or = 2
+205,Escitalopram,> 2
+206,Escitalopram,< or = 2
+207,Escitalopram,< or = 2
+208,Sertraline,< or = 2
+209,Escitalopram,> 2
+210,Escitalopram,> 2
+211,Escitalopram,< or = 2

@@ -87,7 +87,7 @@ pnorm(9.333, # Enter value of standardized statistic
 \vspace{0.1in}
 
 Simulation Method:
-```{r, out.width="85%"}
+```{r, out.width="85%", echo=TRUE}
 set.seed(216)
 one_proportion_test(probability_success = 0.25, #Null hypothesis value
                     sample_size = 2124, #Enter sample size
@@ -138,7 +138,7 @@ qnorm(0.975) # Multiplier for 95% confidence interval
 \newpage
 
 Simulation Methods:
-```{r, out.width="85%"}
+```{r, out.width="85%", echo=TRUE}
 set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 2124, # Sample size
                     number_successes = 709, # Observed number of successes

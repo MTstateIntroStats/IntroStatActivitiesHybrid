@@ -1,4 +1,4 @@
-# Group Exam 2 Review
+## Group Exam 2 Review
 
 Use the provided data set from the Islands [@islands] (Exam2ReviewData.csv) and the appropriate Exam 2 Review R script file to answer the following questions. Each adult (>21) islander was selected at random from all adult islanders. Note that some islanders choose not to participate in the study.  These islanders that did not consent to be in the study are removed from the dataset before analysis.  Variables and their descriptions are listed below. 
 
@@ -28,7 +28,7 @@ Use the provided data set from the Islands [@islands] (Exam2ReviewData.csv) and 
 | `Diff_Heart_Rate` | Difference in heart rate (bpm) for Before - After consuming assigned drink |
 | `Diff_Blood_Glucose` | Difference in blood glucose (mg/dL) for Before - After consuming assigned drink |
 
-1. Use the appropriate Exam 2 Review R script file and analyze the following research question: "Is there evidence that those with a higher education level are less likely to smoke?"
+1. Use the appropriate Exam 2 Review R script file and analyze the following research question: "Is there evidence that adult islanders have an average balance time on one leg with their eyes closed that differs from 30 seconds?"
 
 a. Parameter of Interest:
 \vspace{0.3in}
@@ -49,78 +49,56 @@ c. Alternative Hypothesis:
     Words:
 \vspace{0.5in}
    
-d. Use the R script file to get the counts for each level and combination of variables. Fill in the following table with the variable names, levels of each variable, and counts using the values from the R output.
+d. Use the R script file to find the mean and standard deviation of the balance time.
 
-\begingroup
-\setlength{\tabcolsep}{14pt}
-\renewcommand{\arraystretch}{2}
-\begin{center}
-\begin{tabular}{|c|p{1in}|p{1in}|p{1in}|}
-\hline
- & \multicolumn{2}{|c|}{\textbf{Explanatory Variable}} & \\ 
- & \multicolumn{2}{|c|}{ } & \\ \hline
-\textbf{Response variable} & Group 1 & Group 2 & Total \\
- & & & \\ \hline
- Success & & & \\
- & & & \\ \hline
- Failure & & & \\
- & & & \\ \hline
- Total & & & \\
- & & & \\ \hline
-\end{tabular}
-\end{center}
-\endgroup
+\vspace{0.8in}
 
-e. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
-
-\vspace{0.4in}
-
-f. Interpret the value of the summary statistic in context of the problem:
+e. Interpret the value of the summary statistic in context of the problem:
     
 \vspace{0.3in}
     
-g. Assess if the following conditions are met:
+f. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.5in}
 
-    Success-Failure (must be met to use theory-based methods):
+    Normality (must be met to use theory-based methods):
 \vspace{0.6in}
     
-h. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+g. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.2in}
        
-i.  Interpret the p-value in the context of the problem.
+h.  Interpret the p-value in the context of the problem.
 \vspace{0.7in}
         
-j.  Write a conclusion to the research question based on the p-value.
+i.  Write a conclusion to the research question based on the p-value.
 \vspace{0.7in}
         
-k. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
+j. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-l. Use the provided R script file to find a 95\% confidence interval.
+k. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.3in}
         
-m. Interpret the 95\% confidence interval in context of the problem.
+l. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.7in}
 
-n. Regardless to your answer in part g, calculate the standardized statistic.
+m. Regardless to your answer in part f, calculate the standardized statistic.
 \vspace{0.4in}
 
-o. Interpret the value of the standardized statistic in context of the problem.
+n. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.7in}
 
-p. Use the provided R script file to find the theory-based p-value. 
+o. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-q. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
+p. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-r. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+q. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.7in}
 
-s. What is the scope of inference for this study?
+r. To what group of observational units do the results apply?
 \vspace{0.8in}
 
 <!-- 2. Use the appropriate Exam 2 Review R script file and analyze the following research question: The proportion of university graduates in the US is 42%.  "Is there evidence that the proportion of university graduates in the Islands differs from the proportion in the US?" -->

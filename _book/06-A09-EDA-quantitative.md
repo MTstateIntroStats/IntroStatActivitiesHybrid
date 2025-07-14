@@ -128,7 +128,7 @@ First, let's create a histogram of the variable `Graduation_Rate`.
 
 * Replace the word title for the plot in line 21 between the quotations with a descriptive title.  **A title should include: type of plot, variable or variables plotted, and observational units.**  
 
-* Highlight and run lines 18--23 to create the histogram. 
+* Highlight and run lines 18--24 to create the histogram. 
 
 
 ``` r
@@ -153,7 +153,7 @@ Notice that the **bin width** for the histogram is 10.  For example the first bi
 
 Next we will create a boxplot of the variable `Graduation_Rate`.  
 
-* Enter the name of the variable in line 28 for `variable` in the R script file.  
+* Enter the name of the variable in line 29 for `variable` in the R script file.  
 
 * Highlight and run lines 28--36 to create the boxplot.
 
@@ -178,7 +178,7 @@ ggplot(aes(x = Graduation_Rate)) +   # Name variable to plot
 Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
 
 $$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
-\vspace{0.1in}
+\vspace{0.5in}
 
 When describing distributions of quantitative variables we discuss the **shape** (symmetric or skewed), the **center** (mean or median), **spread** (standard deviation or IQR), and if there are **outliers** present.
 
@@ -188,11 +188,13 @@ When describing distributions of quantitative variables we discuss the **shape**
 
 3.  From which plot (histogram or boxplot) is it easier to determine the shape of the distribution?
 
-\vspace{0.3in}
+\vspace{0.5in}
 
 4. From which plot is it easier to determine if there are outliers?
 
 \vspace{0.3in}
+
+\newpage
 
 #### Robust statistics {-}
 
@@ -221,14 +223,15 @@ IPEDS %>% # Data set piped into...
 
 5. Report the values for the two measures of center for these data.
 
-\vspace{0.5in}
+\vspace{0.8in}
 
 6. Report the values for the two measures of spread for these data.
 
-\vspace{0.5in}
+\vspace{0.8in}
 
-To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the
-data set were increased by 30%. This variable is called `Retention_Inc`.
+To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the data set were increased by 30%. This variable is called `Retention_Inc`.
+
+\newpage
 
 
 ``` r

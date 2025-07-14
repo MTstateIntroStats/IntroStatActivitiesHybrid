@@ -1,4 +1,4 @@
-## Module 8 - 9  Review - Inference for Two Categorical Variables 
+## Module 8 and 9 Review 
 
 
 ``` r
@@ -86,7 +86,7 @@ The variable whether or not a child developed a peanut allergy is the __________
 two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
                     data=allergy, #name of dataset
                     first_in_subtraction = "Avoiders", #order of subtraction: avoiders - peanuts
-                    number_repetitions = 10000, #always use a minimum of 10000 repetitions
+                    number_repetitions = 10000, #always use a minimum of 1000 repetitions
                     response_value_numerator = "Yes", #define a success as having an allergy
                     as_extreme_as = 0.117, #type your calculated observed statistic (difference in sample proportions)
                     direction="greater") #type your selected direction to match the alternative hypothesis direction
@@ -113,7 +113,7 @@ two_proportion_bootstrap_CI(formula = Allergy~Treatment,
         data=allergy, # Name of data set
         first_in_subtraction = "Avoiders", # Order of subtraction: enter the name of Group 1
         response_value_numerator = "Yes", # Define which outcome is a success 
-        number_repetitions = 10000, # Always use a minimum of 10000 repetitions
+        number_repetitions = 10000, # Always use a minimum of 1000 repetitions
         confidence_level = 0.90) # Enter the level of confidence as a decimal
 ```
 
@@ -165,8 +165,8 @@ $$
 
 
 ``` r
-pnorm(4.814, lower.tail = FALSE)
-#> [1] 7.39694e-07
+pnorm(4.815, lower.tail = FALSE)
+#> [1] 7.359995e-07
 ```
 
 \newpage
@@ -179,8 +179,8 @@ $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\f
 
 
 ``` r
-qnorm(0.90, lower.tail = TRUE)
-#> [1] 1.281552
+qnorm(0.95, lower.tail = TRUE)
+#> [1] 1.644854
 ```
 
 
@@ -189,6 +189,8 @@ qnorm(0.90, lower.tail = TRUE)
 \vspace{1in}
 
 20. What is the scope of inference for this study?
+
+
 
 
 
