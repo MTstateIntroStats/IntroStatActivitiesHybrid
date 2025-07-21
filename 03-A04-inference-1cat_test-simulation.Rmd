@@ -41,9 +41,9 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 \newpage
 
-### Notes on Hypothesis Testing {-}
+### Notes on one categorical variable {-}
 
-\vspace{4in}
+\vspace{2in}
 
 ### Helper-Hinderer
 
@@ -53,9 +53,9 @@ A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intend
 
 * Variable:
 
-* Type of variable:
+    * Type of variable:
 
-* Success:
+    * Success:
 
 #### Ask a research question {-}
 
@@ -72,7 +72,7 @@ Before using statistical inference methods, we must check that the cases are ind
 \vspace{0.8in}
 
 
-#### R code {-}
+#### R Instructions {-}
 
 For almost all activities and labs it will be necessary to upload the provided R script file from Canvas for that day.  Your instructor will highlight a few steps in uploading files to and using RStudio.  
 
@@ -162,6 +162,10 @@ infants %>% # Data set piped into...
 We cannot assess whether infants are more likely to choose the helper toy based on the statistic and plot alone.  The next step is to analyze the data by using a hypothesis test to discover if there is evidence against the null hypothesis.
 
 #### Use statistical analysis methods to draw inferences from the data {-}
+
+#### Notes on hypotheses tests {-}
+
+\vspace{2in}
 
 When performing a hypothesis test, we must first identify the null hypothesis.  The null hypothesis is written about the parameter of interest, or the value that summarizes the variable in the population.  
 

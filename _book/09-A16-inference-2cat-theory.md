@@ -50,8 +50,10 @@ Is there evidence that safety helmet use is associated with a reduced risk of he
 * Response variable:
 
     * Success:
+    
+#### R Instructions {-}
 
-* Download the R script file from D2L and upload to the RStudio server
+* Download the R script file from Canvas and upload to the RStudio server
 
 * Highlight and run 1--13 to import the data set and create the segmented bar plot
 
@@ -61,8 +63,9 @@ skiers <- read.csv("https://www.math.montana.edu/courses/s216/data/HeadInjuries.
 skiers %>% # Data set piped into...
   ggplot(aes(x = Helmet, fill = Outcome)) +   # This specifies the variables
   geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
-  labs(title = "Segmented Bar Plot of Head Injuries for Skiers/Snowboarders
-       Involved in Injuries between Helmet Use",  # Make sure to title your plot
+  labs(title = "Segmented Bar Plot of Head Injuries for Skiers and 
+       Snowboarders Involved in Accidents between 
+       Helmet Use",  # Make sure to title your plot
        x = "Helmet Use",   # Label the x axis
        y = "") +  # Remove y axis label
   scale_fill_grey()  # Make figure black and white
@@ -191,7 +194,7 @@ We will use the `pnorm()` function in R to find the p-value.
 
 * Enter the value of z for xx
 
-* Highlight and run lines 18--20
+* Highlight and run lines 17--19
 
 
 ``` r
@@ -203,6 +206,10 @@ pnorm(-2.855, # Enter value of standardized statistic
 ```
 #> [1] 0.002151841
 ```
+
+**Interpretation of the p-value:**
+
+\vspace{1in}
 
 #### Confidence Interval {-}
 

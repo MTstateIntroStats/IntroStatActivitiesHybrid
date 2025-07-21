@@ -6,7 +6,7 @@ output:
 
 ## Video Notes: Exploratory Data Analysis of Categorical Variables
 
-Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use the following videos to complete the video notes for Module 4.
+Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use the following videos to complete the video notes for Module 3.
 
 ### Course Videos
 
@@ -51,28 +51,25 @@ Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use
 Categorical data can be numerically summarized by calculating a _______________ from the data set.
 
 Notation used for the population proportion:
-    
-* Single categorical variable:
        
 \vspace{0.2in}
         
 
 Notation used for the sample proportion:
-    
-* Single categorical variable:
 
 \vspace{0.2in}
 
 \setstretch{1.5}
 Categorical data can be reported in a ____________table, 
-which plots counts or a ______________ 
-frequency table, which plots the proportion.
+which plots counts or a ______________________________ table, which plots the proportion.
 
 \setstretch{1}
 
 \vspace{2mm}
 
-Example from the Video:  Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
+#### Optional Notes: Video Example {-}
+
+Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
 
 The following code reads in the data set, `moving_to_mt` and names the object moving.
 
@@ -222,13 +219,20 @@ General steps of a hypothesis test
 
 \setstretch{1.5}
 
-* Two possible outcomes if the observed statistic is unusual:
+* Two possible outcomes:
 
     - Strong evidence against __________________ -> ____________________
     
     - Not enough evidence against _____________________ -> ______________________
 
-* Always written about the __________________ (population)
+
+### Hypotheses {-}
+
+\setstretch{1.5}
+
+* Always hypothesize about the __________________, so will always be written in terms of __________________.
+
+* Both null and alternative hypotheses will compare the parameter to the same value, only the *sign* will change.
 
 \setstretch{1}
 
@@ -237,6 +241,8 @@ General steps of a hypothesis test
 * Skeptical perspective, no difference, no effect, random chance
 
 * What the researcher hopes is _______________.
+
+* Will always use the __________________ sign.
 
 Notation:
 
@@ -248,9 +254,11 @@ Notation:
 
 * What the researcher hopes is ________________.
 
-Notation:
+* The sign of the alternative hypothesis reflects the ______________________________.
 
-\vspace{0.2in}
+Notation *(write all three options)*:
+
+\vspace{0.6in}
 
 ### Simulation vs. Theory-based Methods {-}
 
@@ -294,7 +302,9 @@ assuming the ________ hypothesis is __________.
 \begin{center}\includegraphics[width=0.75\linewidth]{images/soe_gradient_gray} \end{center}
 
 \rgi \rgi - The __________________the p-value, the ___________________ the evidence against the null hypothesis.
-    
+
+\newpage
+
 * Write a conclusion based on the p-value.
 
 \rgi \rgi - Answers the ________________ question.
@@ -328,33 +338,33 @@ assuming the ________ hypothesis is __________.
 
 \setstretch{1}
     
-### One proportion test {-}
+<!-- ### One proportion test {-} -->
 
-* Reminder: review summary measures and plots discussed in the Week 3 material and Chapter 4 of the textbook.
+<!-- * Reminder: review summary measures and plots discussed in the Week 3 material and Chapter 4 of the textbook. -->
 
-* The summary measure for a single categorical variable is a ______________.
+<!-- * The summary measure for a single categorical variable is a ______________. -->
 
-Notation:
+<!-- Notation: -->
 
-- Population proportion: 
+<!-- - Population proportion:  -->
 
-- Sample proportion:
+<!-- - Sample proportion: -->
 
-Parameter of Interest:  
+<!-- Parameter of Interest:   -->
 
-* Include:
- 
-    * Reference of the population (true, long-run, population, all)
-	
-	* Summary measure
+<!-- * Include: -->
 
-	* Context
-	   
-	    * Observational units/cases
-	   
-	    * Response variable (and explanatory variable if present)
-	       
-	        * If the response variable is categorical, define a ‘success’ in context
+<!--     * Reference of the population (true, long-run, population, all) -->
+
+<!-- 	* Summary measure -->
+
+<!-- 	* Context -->
+
+<!-- 	    * Observational units/cases -->
+
+<!-- 	    * Response variable (and explanatory variable if present) -->
+
+<!-- 	        * If the response variable is categorical, define a ‘success’ in context -->
 
 #### Hypothesis testing {-}
 
@@ -364,123 +374,19 @@ Conditions:
 
 \vspace{0.3in}
 
-Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
+<!-- Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc. -->
 
-\rgi Always of form:  “parameter” = null value
-
-$H_0:$
-
-\vspace{0.5in}
-
-$H_A:$
-
-\vspace{0.5in}
-
-* Research question determines the direction of the alternative hypothesis.
-
-Video 14.1 Example: A 2007 study published in the Behavioral Ecology and Sociobiology Journal was titled “Why do blue-eyed men prefer blue-eyed women?” [@laeng2007] In this study, conducted in Norway, 114 volunteer heterosexual blue-eyed males rated the attractiveness of 120 pictures of females.  The researchers recorded which eye-color (blue, green, or brown) was rated the highest, on average.  In the sample, 51 of the volunteers rated the blue-eyed women the most attractive.  Do blue-eyed heterosexual men tend to find blue-eyed women the most attractive?
-
-Parameter of interest:
-
-\vspace{0.5in}
-
-Write the null and alternative hypotheses for the blue-eyed study:
-
-<!-- In words:  -->
+<!-- \rgi Always of form:  “parameter” = null value -->
 
 <!-- $H_0:$ -->
 
-<!-- \vspace{0.45in} -->
+<!-- \vspace{0.5in} -->
 
 <!-- $H_A:$ -->
 
-<!-- \vspace{0.45in} -->
+<!-- \vspace{0.5in} -->
 
-In notation:
-
-\vspace{1mm}
-
-$H_0:$
-
-\vspace{0.2in}
-
-$H_A:$
-
-\vspace{0.2in}
-
-Statistic: 
-
-\vspace{0.4in}
-
-Is the independence condition met to analyze these data using a simulation-based approach? 
-
-\vspace{0.2in}
-
-\newpage
-
-#### Simulation-based method {-}
-
-* Simulate many samples assuming $H_0: \pi = \pi_0$
-
-    * Create a spinner with that represents the null value
-
-    * Spin the spinner $n$ times
-
-    * Calculate and plot the simulated sample proportion from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $\hat{p}$
-
-
-``` r
-set.seed(216)
-one_proportion_test(probability_success = 0.333, # Null hypothesis value
-          sample_size = 114, # Enter sample size
-          number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = 0.447, # Observed statistic
-          direction = "greater", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{03-VN03-EDA_OneCatSimulation_files/figure-latex/unnamed-chunk-8-1} \end{center}
-
-Explain why the null distribution is centered at the value of approximately 0.333:
-
-\vspace{0.5in}
-
-Interpretation of the p-value:
-
-* Statement about probability or proportion of samples
-
-* Statistic (summary measure and value)
-    
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
-
-\vspace{0.8in}
-
-\newpage
-
-Conclusion: 
-
-* Amount of evidence
-    
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
-
-\vspace{0.6in}
-
-Generalization:
-
-* Can the results of the study be generalized to the target population?
-
-\vspace{0.4in}
-
+<!-- * Research question determines the direction of the alternative hypothesis. -->
 ### Confidence interval - Video Chapter10 {-}
 
 \rgi $\text{statistic} \pm \text{margin of error}$
@@ -535,9 +441,113 @@ What is bootstrapping?
 
 * Assume the “population” is many, many copies of the original sample.  
 
-* Randomly sample with replacement from the original sample $n$ times. 
+* Randomly sample with replacement from the original sample $n$ times.
 
-#### Video 14.2 {-}
+
+#### Optional Notes: Video Example (Video 14.1) {-}
+
+A 2007 study published in the Behavioral Ecology and Sociobiology Journal was titled “Why do blue-eyed men prefer blue-eyed women?” [@laeng2007] In this study, conducted in Norway, 114 volunteer heterosexual blue-eyed males rated the attractiveness of 120 pictures of females.  The researchers recorded which eye-color (blue, green, or brown) was rated the highest, on average.  In the sample, 51 of the volunteers rated the blue-eyed women the most attractive.  Do blue-eyed heterosexual men tend to find blue-eyed women the most attractive?
+
+Parameter of interest:
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses for the blue-eyed study:
+
+<!-- In words:  -->
+
+<!-- $H_0:$ -->
+
+<!-- \vspace{0.45in} -->
+
+<!-- $H_A:$ -->
+
+<!-- \vspace{0.45in} -->
+
+In notation:
+
+\vspace{1mm}
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+
+Statistic: 
+
+\vspace{0.4in}
+
+Is the independence condition met to analyze these data using a simulation-based approach? 
+
+\vspace{0.2in}
+
+#### Simulation-based method {-}
+
+* Simulate many samples assuming $H_0: \pi = \pi_0$
+
+    * Create a spinner with that represents the null value
+
+    * Spin the spinner $n$ times
+
+    * Calculate and plot the simulated sample proportion from each simulation
+
+    * Repeat 10000 times (simulations) to create the null distribution
+
+    * Find the proportion of simulations at least as extreme as $\hat{p}$
+
+
+``` r
+set.seed(216)
+one_proportion_test(probability_success = 0.333, # Null hypothesis value
+          sample_size = 114, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 0.447, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-VN03-EDA_OneCatSimulation_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+Explain why the null distribution is centered at the value of approximately 0.333:
+
+\vspace{0.5in}
+
+Interpretation of the p-value:
+
+* Statement about probability or proportion of samples
+
+* Statistic (summary measure and value)
+    
+* Direction of the alternative 
+    
+* Null hypothesis (in context) 
+
+\vspace{0.8in}
+
+Conclusion: 
+
+* Amount of evidence
+    
+* Parameter of interest 
+    
+* Direction of the alternative hypothesis
+
+\vspace{0.6in}
+
+Generalization:
+
+* Can the results of the study be generalized to the target population?
+
+\vspace{0.4in}
+
+ 
+
+#### Optional Notes: Video Example (Video 14.2) {-}
 
 Let's revisit the blue-eyed male study to estimate the *proportion of ALL heterosexual blue-eyed males who tend to find blue-eyed women the most attractive* by creating a 90\% confidence interval. 
 
@@ -569,7 +579,6 @@ Confidence interval interpretation:
 \vspace{0.8in}
 
 
-\newpage
 
 How does changing the confidence level impact the width of the confidence interval?
 

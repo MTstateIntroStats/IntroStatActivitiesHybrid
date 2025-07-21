@@ -29,7 +29,7 @@ To review these concepts, see Chapter 21 in the textbook.
 
 ### Golf driving distance
 
-In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
+In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and league (PGA or LPGA) was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 * Observational units:
 
@@ -58,7 +58,7 @@ golf %>% # Pipe data set into...
 ggplot(aes(x = Driving_Distance, y = Percent_Accuracy))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (yards)",  # Label x-axis
-       y = "Percent Accuracy",  # Label y-axis
+       y = "Percent Accuracy (%)",  # Label y-axis
        title = "Scatterplot of Driving Distance by Percent Accuracy
        for Professional Golfers") + 
                # Be sure to tile your plots
@@ -96,6 +96,8 @@ hist(lm.golf$resid, xlab="Residuals", ylab="Frequency",
 
 
 #### Ask a research question {-}
+
+Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 **Parameter of interest in context of the study:**
 
@@ -160,7 +162,7 @@ The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 35
+* Highlight and run line 34
 
 ```{r, echo=TRUE, collapse=FALSE, eval=FALSE}
 qt(xx, yy, lower.tail = TRUE) # 95% t* multiplier 
@@ -208,7 +210,7 @@ Using the R script file for this activity...
 
 * Enter your answers for question 3 in place of the `xx`'s to produce the null distribution with 10000 simulations.  
 
-* Highlight and run lines 32--37.
+* Highlight and run lines 38--43.
 
 ```{r, echo=TRUE, eval=TRUE}
 regression_test(Percent_Accuracy~Driving_Distance, # response ~ explanatory
@@ -227,7 +229,7 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 
 * Highlight and run lines 42--46. 
 
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 regression_bootstrap_CI(Percent_Accuracy~Driving_Distance, # response ~ explanatory
    data = golf, # Name of data set
    confidence_level = 0.95, # Confidence level as decimal
@@ -244,7 +246,7 @@ golf %>%
   ggplot(aes(x = Driving_Distance, y = Percent_Accuracy, color=League))+  # Specify variables
   geom_point(aes(shape = League), size = 2, alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (yards)",  # Label x-axis
-       y = "Percent Accuracy",  # Label y-axis
+       y = "Percent Accuracy (%)",  # Label y-axis
        color = "League", shape = "League",
        title = "Scatterplot of Golf Driving Distance and Percent 
        Accuracy by League for Professional Golfers") + # Be sure to title your plots
@@ -252,12 +254,10 @@ golf %>%
     scale_color_grey()
 ```
 
-3. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
+4. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
 \vspace{1in}
 
-
-
-4.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q11 to explain your answer.
+5.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q4 to explain your answer.
 
 ```{r}
 par(mfrow=c(2,1))
@@ -280,6 +280,8 @@ golf %>% # Data set piped into...
 ```
 
 \vspace{0.8in}
+
+\newpage
 
 ### Take-home messages
 

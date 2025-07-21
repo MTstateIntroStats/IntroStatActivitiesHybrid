@@ -1,0 +1,113 @@
+# Exploratory Data Analysis and Inference for a Quantitative Response with Paired Samples
+
+## Vocabulary Review and Key Topics
+
+Review the Golden Ticket posted in the resources at the end of the coursepack for a summary of paired data with a quantitative response.
+
+### Key topics
+
+Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with paired samples. The **summary measure** for paired data is a **mean difference**. 
+
+* Notation for a sample mean difference: $\bar{x}_d$
+
+* Notation for a population mean difference: $\mu_d$
+
+* Paired differences are treated as a single mean.  Review the summary of Module 6 for interpretations of other summary measures from quantitative data and for the type of plots used. Additionally, we can create a plot of paired data in R using the `paired_observed_plot` function in the `catstats` function:
+    
+    ``` r
+    paired_observed_plot(object) 
+    #Note you can use this plot if you ONLY have two columns of paired data in the data set
+    ```
+
+* R code to find the summary statistics for a paired differences:
+    
+    ``` r
+    object %>% # Data set piped into...
+        summarise(favstats(differences))
+    ```
+
+### Vocabulary
+
+* **Hypotheses in notation for a paired mean difference**: In the hypotheses below, the **null value** is equal to zero.
+
+$$H_0: \mu_d = 0$$
+$$H_A: \mu_d\left\{
+\begin{array}{ll}
+< \\
+\ne \\
+< \\
+\end{array}
+\right\}
+0 $$
+
+
+#### Simulation-based inference for a paired mean difference {-}
+
+* **Conditions necessary to use simulation-based methods for inference for paired data with a quantitative response**:
+
+    * **Independence**: there must be independence of the sample differences; the pairs must be independent of each other. (Note that since this is paired data, measurements within a single pair will be dependent.)
+
+
+* **Simulation-based methods to create the null distribution**: R code to use simulation-based methods for paired data with a quantitative response to find the p-value, `paired_test` (from the `catstats` package), is shown below.
+
+    
+    ``` r
+    paired_test(data = object$differences,   # Vector of differences 
+                                         # or data set with column for each group
+       shift = xx,   # Shift needed for bootstrap hypothesis test
+       as_extreme_as = xx,  # Observed statistic
+       direction = "xx",  # Direction of alternative
+       number_repetitions = 10000,  # Number of simulated samples for null distribution
+       which_first = 1)  # Not needed when using calculated differences
+    ```
+    
+
+* **Simulation-based methods to create the bootstrap distribution**: R code to find the simulation-based confidence interval using the `paired_bootstrap_CI` function from the `catstats` package is shown below.
+
+    
+    ``` r
+    paired_bootstrap_CI(data = object$differences, # Enter vector of differences
+                    number_repetitions = 10000, # Number of bootstrap samples for CI
+                    confidence_level = xx,  # Confidence level in decimal form
+                    which_first = 1)  # Not needed when entering vector of differences
+    ```
+
+    * The interpretation of the confidence interval is very similar for that of a single mean. Just make sure to include the order of subtraction for the differences.
+
+
+#### Theory-based inference for a paired mean difference {-}
+
+* **Conditions for the sampling distribution of $\bar{x}_d$ to follow an approximate normal distribution**:
+
+    * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
+
+     * **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
+     
+         - $n < 30$: The distribution of the sample differences must be approximately normal with no outliers.
+         
+         - $30 \le n < 100$: We can relax the condition a little; the distribution of the sample differences must have no extreme outliers or skewness.
+         
+         - $n \ge 100$: Can assume the sampling distribution of $\bar{x}_d$ is nearly normal, even if the underlying distribution of individual observations is not.
+         
+
+* **Standard error of the sample mean difference**:
+
+$$SE(\bar{x}_d) = \frac{s_d}{\sqrt{n}}$$
+
+* **Standardized sample mean difference**:
+$$T = \frac{\bar{x}_d-0}{SE(\bar{x}_d)}$$
+    * Use the `pt` function in R to find a theory-based p-value for a hypothesis test involving a mean difference by finding the area under a $t$-distribution with $n-1$ degrees of freedom where $T$ is as or more extreme as the value observed (in the direction of $H_A$).
+
+\newpage
+
+* **Margin of error**: half the width of the confidence interval. For a mean difference, the margin of error is:
+$$ME = t^* \times SE(\bar{x}_d)$$
+where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $n-1$ degrees of freedom. 
+
+    * Use the `qt` function in R to find the $t^*$ multiplier with $n-1$ degrees of freedom.
+
+    * To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population mean difference is:
+    $$\bar{x}_d \pm ME$$
+
+
+\newpage

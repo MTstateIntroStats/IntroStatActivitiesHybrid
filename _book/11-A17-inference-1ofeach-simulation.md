@@ -67,7 +67,8 @@ ggplot(aes(x = condition, y = number_of_uses)) +
     geom_boxplot() + 
     labs(title = "Number of Uses for a Brick based on Behavior Condition
          for College Students in a Management Course",
-         x = "Behavior") 
+         x = "Behavior",
+         y = "Number of uses") 
 # Summary statistics
 rude %>% 
      reframe(favstats(number_of_uses ~ condition))
@@ -158,7 +159,7 @@ We will use the `two_mean_test()` function in R (in the `catstats` package) to s
 
 * Fill in the missing values/names for the xx's in the R script file
 
-* Highlight and run lines 25--30
+* Highlight and run lines 24--29
 
 
 ``` r
@@ -205,7 +206,7 @@ The response variable name is `number_of_uses` and the explanatory variable name
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 5 in place of the `xx`'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 35--39.
+Using the R script file for this activity, enter your answers for question 5 in place of the `xx`'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 33--37.
 
 
 ``` r
@@ -225,6 +226,10 @@ two_mean_bootstrap_CI(number_of_uses ~ condition, #Enter the name of the variabl
 \vspace{1.5in}
 
 6. Interpret the 99\% confidence interval. 
+
+\vspace{1in}
+
+**Conclusion including the scope of inference**
 
 \vspace{1in}
 

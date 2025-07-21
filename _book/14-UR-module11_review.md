@@ -1,4 +1,4 @@
-## Module 11 Review - Paired Data
+## Module 13 Review - Paired Data
 
 
 Students in an introductory statistics class were asked to participate in an experiment to answer this question.  Each student flipped a coin to determine which exercise to complete first.  If the coin landed on heads the student would do jumping jacks for 30 seconds and then measure their heart rate in beats per minute (bpm).  After a 2 minute break the student would do bicycle kicks for 30 seconds and then record their heart rate.  If the coin landed on tails the student would complete bicycle kicks first followed by jumping jacks using the same times as above. For this study we will use the order of subtraction jumping jacks – bicycle kicks. Which exercise, jumping jacks or bicycle kicks will raise your heart rate more? 
@@ -53,8 +53,8 @@ We will start with simulation methods.
 ``` r
 set.seed(216)
 paired_test(data = heartrate$Diff,   #Vector of differences or data set with column for each group
-            shift = -6.429,   #Shift needed for bootstrap hypothesis test
-            as_extreme_as = 6.429,  #Observed statistic
+            shift = -7.605,   #Shift needed for bootstrap hypothesis test
+            as_extreme_as = 7.605,  #Observed statistic
             direction = "two-sided",  #Direction of alternative
             number_repetitions = 10000,  #Number of simulated samples for null distribution
             which_first = 1)  #Not needed when using calculated differences
@@ -68,11 +68,11 @@ paired_test(data = heartrate$Diff,   #Vector of differences or data set with col
 
 \vspace{0.3mm}
 
-*  There is very strong evidence that there is a true difference in heart rates for students who did jumping jacks and bicycle kicks (jumping jacks – bicycle kicks), on average.
+*  There is very strong evidence that there is a true difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks (jumping jacks – bicycle kicks), on average.
 
 \vspace{0.5in}
 
-*  If there is no true mean difference in heart rates for students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme.
+*  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
 
 \vspace{0.5in}
 *  The 95% confidence interval would be entirely positive.
@@ -90,6 +90,7 @@ Bootstrap CI simulation to create a 95% confidence interval
 
 
 ``` r
+set.seed(216)
 paired_bootstrap_CI(data = heartrate$Diff, #Enter vector of differences
                     number_repetitions = 10000, #Number of bootstrap samples for CI
                     confidence_level = 0.95,  #Confidence level in decimal form
@@ -135,6 +136,7 @@ $$T = \frac{\bar{x}_d - \text{null value}}{SE(\bar{x}_d)},$$
 where the standard error of the sample mean difference is:
 
 $$SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.$$
+
 13. Calculate the standard error of the mean difference.
 
 \vspace{0.6in}
@@ -162,8 +164,8 @@ P-value for the test:
 
 
 ``` r
-2*pt(2.957, df=41, lower.tail=FALSE)
-#> [1] 0.005134632
+2*pt(3.133, df=41, lower.tail=FALSE)
+#> [1] 0.003190457
 ```
 
 

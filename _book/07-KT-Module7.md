@@ -74,6 +74,7 @@ $$\bar{x} \pm ME$$
     qt(percentile, df = yy, lower.tail=FALSE)
     ```
 
+\newpage
 
 ### Vocabulary {-}
 

@@ -67,11 +67,11 @@ Look through the provided table of variable descriptions.  The `UnitID` and `Nam
 1. Identify in the table which variables collected on the US institutions are categorical (C) and which variables are quantitative (Q).
 
 
-#### Summarizing quantitative variables {-}
-
 #### Notes on Summarizing Quantitative Variables:{-}
 
-\vspace{3in}
+\vspace{2.8in}
+
+#### R Instructions {-}
 
 The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate. 
 
@@ -94,6 +94,8 @@ IPEDS %>%
 #>   min Q1 median Q3 max     mean       sd    n missing
 #> 1   0 38     53 67 100 52.48749 20.63192 1918      49
 ```
+
+\newpage
 
 Two measures of center:
 
@@ -165,7 +167,7 @@ ggplot(aes(x = Graduation_Rate)) +   # Name variable to plot
   labs(title = "Boxplot of Graduation Rates for \n 4-year Higher Education Institutions", 
            # Title for plot
            # Note the \n starts a new line
-       x = "Graduation_Rate", # Label for x axis
+       x = "Graduation Rate", # Label for x axis
        y = "") + # Remove y axis label
     theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
@@ -212,8 +214,10 @@ IPEDS %>% # Data set piped into...
     geom_boxplot() + # Create boxplot 
     labs(title = "Boxplot of Retention Rates for \n 4-year Higher Education Institutions",
            # Title for plot
-         x = "Retention Rates (%)", # Label for x axis
-         y = "Frequency") # Label for y axis
+         x = "Retention Rate (%)", # Label for x axis
+         y = "") + # Remove y axis label
+        theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
 
 ```
 
@@ -229,9 +233,11 @@ IPEDS %>% # Data set piped into...
 
 \vspace{0.8in}
 
+\newpage
+
 To show the effect of outliers on the measures of center and spread, the smallest values of retention rate in the data set were increased by 30%. This variable is called `Retention_Inc`.
 
-\newpage
+
 
 
 ``` r
@@ -245,8 +251,10 @@ IPEDS %>% # Data set piped into...
     geom_boxplot() + # Create histogram 
     labs(title = "Boxplot of Increased Retention Rates for \n 4-year Higher Education Institutions", 
         # Title for plot
-        x = "Retention Rates (%)", # Label for x axis
-        y = "Frequency") # Label for y axis
+        x = "Retention Rate (%)", # Label for x axis
+        y = "") + # Remove y axis label
+        theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
 

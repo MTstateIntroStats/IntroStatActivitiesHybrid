@@ -1,19 +1,20 @@
 ## Video Notes: Inference for Paired Data 
 
-Read Chapters 17 and 18 in the course textbook.  Use the following videos to complete the video notes for Module 9.
+Read Chapters 17 and 18 in the course textbook.  Use the following videos to complete the video notes for Module 13.
 
 ### Course Videos
 
 * PairedData
 
-* 18.1and18.2
-
 * 18.3
+
+* Optional Video: 18.1and18.2
+
 
 \setstretch{1}
 
 
-### Single categorical, single quantitative variables Video Paired_Data {-}
+### Single categorical, single quantitative variables - Video Paired_Data {-}
 
 * In this module, we will study inference for a ______________________ explanatory variable and a _________________________ response variable where the two groups are ____________________________.
 
@@ -119,6 +120,131 @@ Notation for the Paired differences
 
 * Sample standard deviation of the differences: 
 
+### Theory-based method - Video 18.3 {-}
+
+#### t-distribution {-}
+
+In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
+
+$$\bar{x} \sim N(\mu_0, \frac{\sigma_d}{\sqrt{n}})$$
+\setstretch{1.5}
+
+* Estimate the population standard deviation, $\sigma_d$, with the
+___________________________ standard deviation, ________.
+
+* For a single quantitative variable we use the ____ - distribution
+with _______________
+degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
+
+* **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
+
+\rgi \rgi $n < 30$: 
+    
+\vspace{0.2in}
+
+\rgi \rgi $30 \leq n < 100$: 
+    
+\vspace{0.2in}
+
+\rgi \rgi $n \geq 100$: 
+    
+\vspace{0.2in}
+
+Theory-based Hypothesis Test:
+
+* Calculate the standardized statistic 
+
+* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
+
+Equation for the standard error for the sample mean difference:
+
+\vspace{0.5in}
+
+Equation for the standardized sample mean difference:
+
+\vspace{0.5in}
+
+### Optional Notes: Video Example (Video 18.3) {-}
+
+Reminder of summary statistics for height data:
+
+``` r
+hw_diff %>%
+    summarise(fav_stats(ht_diff))
+```
+
+```
+#>   min   Q1 median  Q3 max     mean       sd   n missing
+#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
+```
+
+Calculate the standardized sample mean difference in height:
+
+* 1st calculate the standard error of the sample mean difference
+
+\vspace{0.5in}
+
+* Then calculate the T score
+
+\vspace{0.5in}
+
+What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
+
+\vspace{0.3in}
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/pvalueheight-1} \end{center}
+
+To find the p-value:
+
+
+``` r
+pt(24.84, df = 198, lower.tail=FALSE)*2
+```
+
+```
+#> [1] 9.477617e-63
+```
+
+
+Theory-based Confidence Interval:
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.5in}
+
+
+The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+
+For the height data, we will use a t-distribution with _________ df.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/tstar-1} \end{center}
+
+To find the $t^*$ multiplier for a 99\% confidence interval:
+
+
+``` r
+qt(0.975, df=198, lower.tail = TRUE)
+```
+
+```
+#> [1] 1.972017
+```
+
+Calculate the margin of error:
+\vspace{0.4in}
+
+Calculate the theory-based confidence interval.
+\vspace{0.5in}
+
+
+### Optional Notes: Simulation Inference for a Mean Difference - Video 18.1and18.2 {-}
+
 Conditions for inference for paired data:
 
 - Independence:
@@ -129,7 +255,7 @@ Is the independence condition met for the height study?
 
 \vspace{0.5in}
 	
-### Hypothesis testing {-}
+#### Hypothesis testing {-}
 
 Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
 
@@ -207,7 +333,7 @@ paired_test(data = hw_diff$ht_diff,   # Vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/unnamed-chunk-8-1} \end{center}
 Interpret the p-value:
 
 * Statement about probability or proportion of samples
@@ -219,8 +345,6 @@ Interpret the p-value:
 * Null hypothesis (in context) 
 
 \vspace{0.8in}
-
-\newpage 
 
 Conclusion: 
 
@@ -247,8 +371,6 @@ Conclusion:
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 
-    * i.e., 95\% CI = (2.5th percentile, 97.5th percentile)
-
 Simulated bootstrap distribution:
 
 
@@ -262,9 +384,7 @@ paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-\newpage
+\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 Interpret the 99\% confidence interval:
 
@@ -278,125 +398,6 @@ Interpret the 99\% confidence interval:
 
 \vspace{0.8in}
 
-#### Theory-based method - Video 18.3 {-}
-
-#### t-distribution {-}
-
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
-
-$$\bar{x} \sim N(\mu_0, \frac{\sigma_d}{\sqrt{n}})$$
-\setstretch{1.5}
-
-* Estimate the population standard deviation, $\sigma_d$, with the
-___________________________ standard deviation, ________.
-
-* For a single quantitative variable we use the ____ - distribution
-with _______________
-degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
-
-* **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
-
-\rgi \rgi $n < 30$: 
-    
-\vspace{0.2in}
-
-\rgi \rgi $30 \leq n < 100$: 
-    
-\vspace{0.2in}
-
-\rgi \rgi $n \geq 100$: 
-    
-\vspace{0.2in}
-
-Theory-based Hypothesis Test:
-
-* Calculate the standardized statistic 
-
-* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
-
-Equation for the standard error for the sample mean difference:
-
-\vspace{0.5in}
-
-Equation for the standardized sample mean difference:
-
-\vspace{0.5in}
-
-Reminder of summary statistics for height data:
-
-``` r
-hw_diff %>%
-    summarise(fav_stats(ht_diff))
-```
-
-```
-#>   min   Q1 median  Q3 max     mean       sd   n missing
-#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
-```
-
-Calculate the standardized sample mean difference in height:
-
-* 1st calculate the standard error of the sample mean difference
-
-\vspace{0.5in}
-
-* Then calculate the T score
-
-\vspace{0.5in}
-
-What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
-
-\vspace{0.3in}
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/pvalueheight-1} \end{center}
-
-To find the p-value:
-
-
-``` r
-pt(24.84, df = 198, lower.tail=FALSE)*2
-```
-
-```
-#> [1] 9.477617e-63
-```
-
-
-Theory-based Confidence Interval:
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.5in}
-
-
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
-
-For the height data, we will use a t-distribution with _________ df.
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{11-VN11-paired_files/figure-latex/tstar-1} \end{center}
-
-To find the $t^*$ multiplier for a 99\% confidence interval:
-
-
-``` r
-qt(0.975, df=198, lower.tail = TRUE)
-```
-
-```
-#> [1] 1.972017
-```
-
-Calculate the margin of error:
-\vspace{0.4in}
-
-Calculate the theory-based confidence interval.
-\vspace{0.5in}
 
 
 ### Concept Check

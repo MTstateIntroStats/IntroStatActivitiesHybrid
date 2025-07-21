@@ -39,11 +39,11 @@ Left-handedness is a trait that is found in about 10\% of the general population
 
 * Variable:
 
-* Type of variable:
+    * Type of variable:
 
-* Success:
+    * Success:
 
-### Summary statistics review
+### R Instructions {-}
 
 * Download the R file for today's activity from Canvas
 
@@ -94,7 +94,7 @@ boxers %>% # Data set piped into...
 \vspace{1in}
 
 4. Write out the alternative hypothesis **in notation**.
-\vspace{0.4in}
+\vspace{0.5in}
 
 5. Calculate the value of the summary statistic (sample proportion) for this study.  Use proper notation.
 
@@ -203,7 +203,7 @@ pnorm(4.769, # Enter value of standardized statistic
 
 \vspace{0.4in}
 
-### Impacts on the P-value {-}
+### Impacts on the p-value {-}
 
 Suppose that we want to show that the true proportion of male boxers **differs** from that in the general population.
 

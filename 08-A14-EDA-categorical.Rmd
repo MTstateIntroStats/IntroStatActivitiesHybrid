@@ -30,15 +30,11 @@ To review these concepts, see Chapter 4 in the textbook.
 
 Follow these steps to upload the necessary R script file for today's activity: 
 
-* Download the RScript file for this Activity from D2L
+* Download the RScript file for this Activity from Canvas
 
 * Upload the file to the RStudio server
 
 * Open the RScript file 
-
-Highlight and run lines 1--2 to load the packages needed for today's activity and load the data set. Notice the use of the \# symbol in the R script file.  The \# sign is not part of the R code. It is used by these authors to add comments to the R code and explain what each call is telling the program to do.
-
-R will ignore everything after a \# sign when executing the code. Refer to the instructions following the \# sign to understand what you need to enter in the code.
 
 ### Nightlight use and myopia {-}
 
@@ -64,9 +60,9 @@ Is there evidence that level of light in a child's room at night is associated w
 
 An important part of understanding data is to create visual pictures of what the data represent. In this activity, we will create graphical representations of categorical data.  
 
-#### R code {-}
+#### R Instructions {-}
 
-The line of code shown below (line 5 in the R script file) reads in the data set and names the data set `myopia`.  Highlight and run line 5 in the R script file to load the data from the Stat 216 webpage.
+The line of code shown below (line 6 in the R script file) reads in the data set and names the data set `myopia`.  Highlight and run lines 1--6 in the R script file to load the data from the Stat 216 webpage.
 
 ```{r, echo=TRUE}
 # This will read in the data set
@@ -79,7 +75,7 @@ myopia <- read.csv("https://math.montana.edu/courses/s216/data/ChildrenLightSigh
 
 #### Summarizing two categorical variables {-}
 
-Is there an association between the level of light in a room and the development of myopia?  Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 9 in the R script file, highlight and run line 9 to get the counts for each combination of levels of variables. 
+Is there an association between the level of light in a room and the development of myopia?  Fill in the name of the explanatory variable, `Light` for explanatory and name of the response variable, `Sight` in line 10 in the R script file, highlight and run line 10 to get the counts for each combination of levels of variables. 
 
 ```{r, echo=TRUE, eval=FALSE}
 myopia %>% group_by(explanatory) %>% count(response)
@@ -123,13 +119,14 @@ In the following questions, use the table to calculate the described proportions
 
 #### Displaying two categorical variables {-}
 
-Two types of plots can be created to display two categorical variables.  To examine the differences in level of myopia for the level of light, we will first create a segmented bar plot of `Light` segmented by `Sight`.  To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 14. Highlight and run lines 13--20.
+Two types of plots can be created to display two categorical variables.  To examine the differences in level of myopia for the level of light, we will first create a segmented bar plot of `Light` segmented by `Sight`.  To create the segmented bar plot enter the variable name, `Light` for `explanatory` and the variable name, `Sight` for `response` in the R script file in line 15. Highlight and run lines 14--21.
 
-```{r, out.width="60%", echo=TRUE, eval=FALSE}
+```{r, out.width="75%", echo=TRUE, eval=TRUE}
 myopia %>% # Data set piped into...
 ggplot(aes(x = Light, fill = Sight)) +   # This specifies the variables
   geom_bar(stat = "count", position = "fill") +  # Tell it to make a stacked bar plot
-  labs(title = "Segmented Bar Plot of Night Light Use by Level of Myopia",  
+  labs(title = "Segmented Bar Plot of Night Light Use by Level of
+       Myopia for Children",  
        # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis
        y = "")  + # Remove y axis label
@@ -140,28 +137,29 @@ ggplot(aes(x = Light, fill = Sight)) +   # This specifies the variables
 
 \vspace{0.5in}
 
-8. Based on the plot, is there an association between level of light and level of myopia?
+**Based on the plot, is there an association between level of light and level of myopia?**
 
 \vspace{1in}
 
 We could also plot the data using a mosaic plot which is shown below.  
 
-```{r, out.width="60%", echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r, out.width="75%", echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 myopia$Sight <- factor(myopia$Sight, levels = c("No Myopia", "Myopia", "High Myopia"))
 myopia %>% # Data set piped into...
   ggplot() +   # This specifies the variables
   geom_mosaic(aes(x=product(Light), fill = Sight)) +  # Tell it to make a mosaic plot
-  labs(title = "Mosaic Plot of Night Light Use by Level of Myopia",  # Make sure to title your plot 
+  labs(title = "Mosaic Plot of Night Light Use by Level of
+       Myopia for Children",  # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis
        y = "") +  # Remove y axis label
   scale_fill_grey(guide = guide_legend(reverse = TRUE))  # Make figure black and white
 ```
 
-9.  What is similar and what is different between the segmented bar chart and the mosaic bar chart?
+8.  What is similar and what is different between the segmented bar chart and the mosaic bar chart?
 
 \vspace{1in}
 
-10.  Explain why the bar for `Nightlight` is the widest in the mosaic plot.
+**Explain why the bar for `Nightlight` is the widest in the mosaic plot.**
 
 \vspace{0.8in}
 
@@ -184,7 +182,7 @@ The following table shows counts showing the combined counts of high myopia and 
 \endgroup
 \end{center}
 
-11.  Calculate the relative risk of some level of myopia for children that slept with full light compared to those that slept with no light.
+9.  Calculate the relative risk of some level of myopia for children that slept with full light compared to those that slept with no light.
 
 \vspace{0.8in}
 
@@ -192,7 +190,7 @@ The following table shows counts showing the combined counts of high myopia and 
 
 \vspace{1in}
 
-12. Calculate the percent increase/decrease in risk of myopia for children that slept with full light compared to those that slept with no light.
+10. Calculate the percent increase/decrease in risk of myopia for children that slept with full light compared to those that slept with no light.
 
 \vspace{0.8in}
 

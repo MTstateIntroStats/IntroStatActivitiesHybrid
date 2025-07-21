@@ -1,4 +1,4 @@
-## Module 6 Review - One Mean Testing
+## Module 6 Review - Simulation Methods - One Mean
 
 There are about 4 million tourists to Yellowstone National Park per year.  One of the most visited sites within the park is the Old Faithful Geyser.  The reason this geyser is called old faithful is because of the regularity of eruptions.  Tourists report a typical wait time of 30 minutes, on average.  A sample of 299 tourists reported their wait time to see Old Faithful erupt.  Is there evidence that the average wait time differs from 30 minutes?
 
@@ -67,6 +67,8 @@ one_mean_test(data = geyser$waiting,   #Object and variable
 9. Do you expect the 99\% confidence inteval to contain the null value of 30 minutes?  Explain your answer.
 
 \vspace{1in}
+
+\newpage
 
 In the next part of the activity, we will estimate the mean wait time for Old Faithful to erupt reported by tourists by creating a 99\% confidence interval using simulation methods.
 

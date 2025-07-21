@@ -147,6 +147,10 @@ pnorm(4.815, lower.tail = FALSE)
 
 \newpage
 
+**Confidence Interval**
+
+To find the confidence interval we use the following formulas.
+
 $$\hat{p}_1-\hat{p}_2\pm z^*\times SE(\hat{p}_1-\hat{p}_2), \hspace{.2cm} \text{where}$$
 $$SE(\hat{p}_1-\hat{p}_2) = \sqrt{\frac{\hat{p}_1 \times  (1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2 \times  (1-\hat{p}_2)}{n_2}}$$
 18.  Calculate the standard error of the difference in proportions to calculate the confidence interval.

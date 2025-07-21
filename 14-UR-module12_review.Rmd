@@ -1,4 +1,4 @@
-## Module 12 Review - Independent Samples
+## Module 11 Review - Independent Samples
 
 The “social brain hypothesis,” or the “social intelligence hypothesis,” suggests that living in socially cohesive groups with differentiated relationships requires a higher cognitive load, in turn resulting in higher brain volume. There is evidence this hypothesis holds for primates and some other mammal groups, but it hasn’t been explored in birds, as most birds typically have temporary social groupings that lack clear relationships. However, woodpeckers have a wide range of clearly differing social relationships while also having the benefit of being physiologically and environmentally similar across species. Researchers want to know if the “social brain hypothesis” holds true for woodpeckers: is the average brain volume (in mm^3) smaller for woodpeckers that tend to be solitary compared to woodpeckers that tend to live in pairs or groups? For the purpose of this study, “solitary” birds are classified as those that only pair-bond to breed, and otherwise are solitary for more than half a year each year. “Group-living” birds are those that spend more than half the year in communal groups or flocks. Researchers examined 61 species of woodpeckers.  Use solitary - group living as the order of subtraction
 
@@ -16,7 +16,7 @@ woodpeckers %>%
 woodpeckers %>%
 ggplot(aes(x = SocialCategory, y = Volume)) +
     geom_boxplot() + 
-    labs(title = "Boxplots of Brain Volume for Woodpeckers \n by Social Grouping",
+    labs(title = "Boxplots of Brain Volume for Woodpecker \n Species by Social Grouping",
          x = "Social Grouping", 
          y = "Brain Volume (mm^3") 
   

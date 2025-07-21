@@ -13,7 +13,7 @@ Read Sections 15.3 and 15.4 in the course textbook.  Use the following videos to
 
 \setstretch{1}
 
-### Hypothesis testing using theory-based methods - Video 15.4TheoryTests {-}
+### Theoretical Testing for a Difference in Proportion - Video 15.4TheoryTests {-}
 
 Example: In Modules 3 and 4, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
 
@@ -122,13 +122,13 @@ Equation for the standardized difference in sample proportions:
 
 \setstretch{1}
 
+### Optional Notes: Video Example (Video 15.3TheoryTests) {-}
 
 Calculate the standardized difference in sample proportion of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
 * First calculate the standard error of the difference in proportion assuming the null hypothesis is true
 
 \vspace{0.4in}
-
 
 * Then calculate the Z score
 
@@ -180,7 +180,7 @@ Conclusion with scope of inference:
 \vspace{0.6in}
  
 
-### Confidence interval - Video 15.3TheoryIntervals {-}
+### Theoretical Confidence Interval for a Difference in Proportion - Video 15.3TheoryIntervals {-}
 
 * Estimate the _______________ in true _______________ 
 
@@ -202,7 +202,9 @@ Equation for the standard error of the difference in sample proportions *NOT* as
 
 \newpage
 
-Example:  Estimate the difference in true proportions of higher education institutions that offer tenure between land grant universities and non-land grant universities.
+### Optional Notes: Video Example (Video 15.3TheoryIntervals) {-}  
+
+Estimate the difference in true proportions of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
 Find a 90\% confidence interval:
 
@@ -219,7 +221,7 @@ qnorm(0.95, lower.tail=TRUE)
 
 * Next, calculate the standard error for the difference in proportions **NOT** assuming the null hypothesis is true
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 * Calculate the margin of error
 
@@ -227,7 +229,7 @@ qnorm(0.95, lower.tail=TRUE)
 
 * Calculate the endpoints of the 90\% confidence interval
 
-\vspace{0.6in}
+\vspace{0.5in}
 
 Confidence interval interpretation:
 
@@ -239,98 +241,7 @@ Confidence interval interpretation:
     
 * Order of subtraction when comparing two groups
 
-\vspace{0.8in}
-
-<!-- ### Relative Risk - Video RelativeRisk {-} -->
-
-<!-- * Relative risk is the ratio of the risks in two different categories of an explanatory variable. -->
-
-<!-- Relative Risk: -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- Example: In a study reported in the New England Journal of Medicine [@doit2015], one-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2% of those in the placebo group. -->
-
-<!-- * Calculate the relative risk of desensitization comparing the peanut flour group to the placebo group. -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- \setstretch{1.5} -->
-
-<!-- * Interpretation: -->
-
-<!--     * The proportion of successes in group 1 is the $RR$ ________________ the proportion of successes in group 2. -->
-
-<!-- Increase in risk: -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- * Interpretation: -->
-
-<!--     * The proportion of successes in group 1 is the $(RR-1)$ ______________ -->
-<!-- higher/lower than the proportion of successes in group 2. -->
-
-<!-- Percent increase in risk: -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- * Interpretation: -->
-
-<!--     * The proportion of successes in group 1 is the $(RR-1)\times 100$ __________ higher/lower than the proportion of successes in group 2. -->
-
-<!-- \setstretch{1} -->
-
-<!-- * Interpret the value of relative risk from the peanut study in context of the problem. -->
-
-<!-- \vspace{0.6in} -->
-
-<!-- * Find the increase (or decrease) in risk of desensitization and interpret this value in context of the problem. -->
-
-<!-- \vspace{1in} -->
-
-<!-- * Find the percent increase (or decrease) in risk of desensitization and interpret this value in context of the problem. -->
-
-<!-- \vspace{1in} -->
-
-<!-- Within the peanut flour group, the percent desensitized within each age group (at start of study) is as follows: -->
-
-<!-- 1-year-olds: 71\%; 2-year-olds: 35\%; 3-year-olds: 19\% -->
-
-<!-- * Calculate the relative risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group. -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- * Interpret the percent increase (or decrease) in risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group. -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- #### Relative risk in the news {-} -->
-
-<!-- People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@bhavsar2022]. -->
-
-<!-- * What was the calculated relative risk of developing shingles when comparing those who has mild COVID-19 to those who had not had COVID-19, among the 50 and older population? -->
-
-<!-- \vspace{0.8in} -->
-
-<!-- #### Testing Relative Risk {-} -->
-
-<!-- In Unit 2, we tested for a difference in proportion.  We could also test for relative risk. -->
-
-<!-- \setstretch{1.5} -->
-
-<!-- Null Hypothesis: -->
-
-<!-- $H_0:$ -->
-
-<!-- \vspace{0.2in} -->
-
-<!-- Alternative Hypothesis: -->
-
-<!-- $H_A:$ -->
-
-<!-- \vspace{0.2in} -->
-
-<!-- \setstretch{1} -->
+\vspace{0.7in}
 
 ### Concept Check
 
@@ -338,7 +249,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 1. What conditions must be met to use the Normal Distribution to approximate the sampling distribution for the difference in sample proportions?
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 2. Explain why a theory-based confidence interval for the Good Samaritan study from last module would NOT be similar to the bootstrap interval created.
 

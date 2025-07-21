@@ -106,14 +106,13 @@ Equation for the standardized difference in sample proportions:
 
 \setstretch{1}
 
-##### Optional Notes: Video Example (Video 15.3TheoryTests) {-}
+### Optional Notes: Video Example (Video 15.3TheoryTests) {-}
 
 Calculate the standardized difference in sample proportion of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
 * First calculate the standard error of the difference in proportion assuming the null hypothesis is true
 
 \vspace{0.4in}
-
 
 * Then calculate the Z score
 
@@ -183,7 +182,7 @@ Equation for the standard error of the difference in sample proportions *NOT* as
 
 \newpage
 
-##### Optional Notes: Video Example (Video 15.3TheoryIntervals) {-}  
+### Optional Notes: Video Example (Video 15.3TheoryIntervals) {-}  
 
 Estimate the difference in true proportions of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
@@ -197,7 +196,7 @@ qnorm(0.95, lower.tail=TRUE)
 
 * Next, calculate the standard error for the difference in proportions **NOT** assuming the null hypothesis is true
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 * Calculate the margin of error
 
@@ -205,7 +204,7 @@ qnorm(0.95, lower.tail=TRUE)
 
 * Calculate the endpoints of the 90\% confidence interval
 
-\vspace{0.6in}
+\vspace{0.5in}
 
 Confidence interval interpretation:
 
@@ -217,7 +216,7 @@ Confidence interval interpretation:
     
 * Order of subtraction when comparing two groups
 
-\vspace{0.8in}
+\vspace{0.7in}
 
 ### Concept Check
 
@@ -225,7 +224,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 1. What conditions must be met to use the Normal Distribution to approximate the sampling distribution for the difference in sample proportions?
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 2. Explain why a theory-based confidence interval for the Good Samaritan study from last module would NOT be similar to the bootstrap interval created.
 

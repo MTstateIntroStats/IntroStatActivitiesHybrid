@@ -1,6 +1,6 @@
 ## Video Notes: Inference for Paired Data 
 
-Read Chapters 17 and 18 in the course textbook.  Use the following videos to complete the video notes for Module 9.
+Read Chapters 17 and 18 in the course textbook.  Use the following videos to complete the video notes for Module 13.
 
 ### Course Videos
 
@@ -108,7 +108,7 @@ Notation for the Paired differences
 
 * Sample standard deviation of the differences: 
 
-#### Theory-based method - Video 18.3 {-}
+### Theory-based method - Video 18.3 {-}
 
 #### t-distribution {-}
 
@@ -156,7 +156,7 @@ Equation for the standardized sample mean difference:
 
 \vspace{0.5in}
 
-##### Optional Notes: Video Example (Video 18.3)
+### Optional Notes: Video Example (Video 18.3) {-}
 
 Reminder of summary statistics for height data:
 ```{r, echo=TRUE, collapse=FALSE}
@@ -231,7 +231,7 @@ Calculate the theory-based confidence interval.
 \vspace{0.5in}
 
 
-#### Optional Notes: Simulation Inference for a Mean Difference - Video 18.1and18.2
+### Optional Notes: Simulation Inference for a Mean Difference - Video 18.1and18.2 {-}
 
 Conditions for inference for paired data:
 
@@ -243,7 +243,7 @@ Is the independence condition met for the height study?
 
 \vspace{0.5in}
 	
-### Hypothesis testing {-}
+#### Hypothesis testing {-}
 
 Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
 
@@ -323,8 +323,6 @@ Interpret the p-value:
 
 \vspace{0.8in}
 
-\newpage 
-
 Conclusion: 
 
 * Amount of evidence
@@ -350,8 +348,6 @@ Conclusion:
 
 * Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
 
-    * i.e., 95\% CI = (2.5th percentile, 97.5th percentile)
-
 Simulated bootstrap distribution:
 
 ```{r, echo=TRUE, warning=FALSE}
@@ -361,8 +357,6 @@ paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
             confidence_level = 0.95,  # Confidence level in decimal form
             which_first = 1)  # Not needed when entering vector of differences
 ```
-
-\newpage
 
 Interpret the 99\% confidence interval:
 

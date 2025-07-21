@@ -18,7 +18,7 @@
 
 Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country?  The log GDP per person and the adjusted dollar equivalent to purchase a Big Mac was found on a random sample of 55 countries in January of 2022.  The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates.  Is there evidence of a positive relationship between Big Mac cost (`dollar_price`) and the log GDP per person (`log_GDP`)?
 
-* Upload and open the R script file for Week 13 lab. 
+* Upload and open the R script file for Module 12 lab. 
 
 * Upload the csv file, `big_mac_adjusted_index_S22.csv`. 
 
@@ -28,7 +28,7 @@ Can the relative cost of a Big Mac across different countries be used to predict
 
 ```{r, echo = TRUE, fig.width=7,fig.height=6, collapse=FALSE, eval=FALSE}
 # Read in data set 
-mac <- read.csv("datasetname")
+mac <- read.csv("datasetname.csv")
 ```
 
 #### Summarize and visualize the data {-} 
@@ -45,7 +45,7 @@ mac %>%
 1.  Report the value of correlation between the variables. 
 \vspace{0.2in}
 
-2. **Calculate the value of the coefficient of determination between `log_GDP` and `dollar_price`.** 
+2. Calculate the value of the coefficient of determination between `log_GDP` and `dollar_price`.
 \vspace{0.4in}
 
 3. Interpret the value of the coefficient of determination in context of the problem.
@@ -101,7 +101,7 @@ hist(bigmacLM$resid, xlab="Residuals", ylab="Frequency",
      main = "Histogram of Residuals") # Histogram of residuals
 ```
 
-7. **Are the conditions met to use the $t$-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.**
+7. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.
 
 \vspace{1.5in}
 
@@ -151,8 +151,6 @@ The response variable name is `log_GDP` and the explanatory variable name is `do
 Using the R script file for this activity, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations. 
 
 * Highlight and run lines 47--53. 
-
-* **Upload a copy of your plot showing the p-value to Gradescope for your group.**
 
 ```{r, echo=TRUE, eval=FALSE}
 regression_test(log_GDP~dollar_price, # response ~ explanatory
@@ -245,4 +243,8 @@ regression_bootstrap_CI(log_GDP~dollar_price, # response ~ explanatory
 	
     * What type of inference is appropriate (causal or non-causal)?
     
+\newpage
+
+Paragraph:
+
 \newpage

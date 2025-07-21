@@ -66,7 +66,7 @@ Some of the variables collected and their descriptions are below. Note that seve
 
 The code below reads in the needed data set, IPEDS_2018.csv, and filters out the 2-year institutions. 
 
-* Highlight and run lines 1 -- 11 to load the data set and filter out the 2-year institutions.
+* Highlight and run lines 1--11 to load the data set and filter out the 2-year institutions.
 
 
 ``` r
@@ -186,7 +186,7 @@ Another summary measure used to explain the linear relationship between two quan
 
 \vspace{.4in}
 
-**The variance of the response variable, Retention in \$MM, is $s_{Retention}^2 = 138.386$ $\%^2$  and the variability in the residuals is $s_{RES}^2 = 56.934$ \%$^2$.  Use these values to calculate the coefficient of determination.**
+The variance of the response variable, Retention (%), is $s_{Retention}^2 = 138.386$ $\%^2$  and the variability in the residuals is $s_{RES}^2 = 56.934$ \%$^2$.  Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
 
@@ -237,7 +237,7 @@ The calculated value for the SSE is 65133.022.
 
 **Calculate the value for $r^2$ using the values for SST and SSE provided below each of the previous graphs.**
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 8.  Write a sentence interpreting the coefficient of determination in context of the problem.
 
@@ -246,11 +246,12 @@ The calculated value for the SSE is 65133.022.
 
 #### Multivariable plots {-}
 
-When adding another categorical predictor, we can add that variable as shape or color to the plot.  In the following code we have added the variable `Sector`, whether the 4-year institution is public or private.  
+When adding another categorical predictor, we can add that variable as shape or color to the plot.  In the following code we have added the variable `Size`.  
 
 
 ``` r
-IPEDS$Size <- factor(IPEDS$Size, levels = c("< 1000", "1,000-4,999", "5,000-9,999", "10,000-19,999", "20,000 and above"))
+IPEDS$Size <- factor(IPEDS$Size, levels = c("< 1000", "1,000-4,999", "5,000-9,999",
+                                            "10,000-19,999", "20,000 and above"))
 IPEDS %>% # Data set pipes into...
     ggplot(aes(x = SATMath_75, y = Retention, shape = Size, color=Size))+  # Specify variables
     geom_point(alpha=0.5) +  # Add scatterplot of points
@@ -266,12 +267,17 @@ IPEDS %>% # Data set pipes into...
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1} \end{center}
-9. Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of sector?
+9. Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of size?
 
 \vspace{0.8in}
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-2} \end{center}
+10.  Is size of the higher education institution associated with retention rate?  Is size of the higher education institution associated with 75th percentile SAT Math Score?  
+
+\vspace{1in}
+
+\newpage
 
 ### Take-home messages
 

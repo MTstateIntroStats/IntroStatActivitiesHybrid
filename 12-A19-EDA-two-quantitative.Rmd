@@ -61,19 +61,20 @@ moneyball <-
 
 \vspace{2in}
 
-#### Vocabulary review {-}
+#### R Instructions {-}
 
-* Use the provided R script file to create a scatterplot to examine the relationship between the difference in number of runs scored minus number of runs allowed and the number of wins by filling in the variable names (RD and W) for explanatory and response in line 14. Note, we are using the difference in runs scores minus runs allowed to predict the number of season wins.
+* Use the provided R script file to create a scatterplot to examine the relationship between the difference in number of runs scored minus number of runs allowed and the number of wins by filling in the variable names (RD and W) for explanatory and response in line 13. Note, we are using the difference in runs scores minus runs allowed to predict the number of season wins.
 
-* Highlight and run lines 1--20.
+* Highlight and run lines 1--19.
 
-```{r echo=TRUE, fig.height=5,fig.width=12, message = FALSE, eval=FALSE}
+```{r echo=TRUE, out.width="70%", message = FALSE, eval=TRUE}
 moneyball %>% # Data set pipes into...
-    ggplot(aes(x = explanatory, y = response))+ # Specify variables
+    ggplot(aes(x = RD, y = W))+ # Specify variables
     geom_point() + # Add scatterplot of points
     labs(x = "Difference in number of runs", # Label x-axis
          y = "Number of Season wins", # Label y-axis
-         title = "Scatterplot of Run Difference vs. Number of Season Wins for MLB Teams") +
+         title = "Scatterplot of Run Difference vs. Number of Season 
+         Wins for MLB Teams") +
 # Be sure to tile your plots
 geom_smooth(method = "lm", se = FALSE) # Add regression line
 ```
@@ -101,7 +102,7 @@ Assess the four features of the scatterplot that describe this relationship.
 
 The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `budget_mil` (the $x$-variable name) is the value of $b_1$, the slope.  
 
-* Run lines 24--25 in the R script file to reproduce the linear model output found in the coursepack.
+* Run lines 22--23 in the R script file to reproduce the linear model output found in the coursepack.
 
 ```{r, echo=TRUE, collapse = FALSE}
 # Fit linear model: y ~ x
@@ -110,11 +111,11 @@ round(summary(moneyballLM)$coefficients, 3) # Display coefficient summary
 ```
 
 **Write out the least squares regression line using the summary statistics provided above in context of the problem.**
-\vspace{0.8in}
+\vspace{0.6in}
 
 **Interpret the value of slope in context of the problem.**
 
-\vspace{.8in}
+\vspace{.6in}
 
 **Using the least squares line, predict the number of season wins for a MLB team that has a run difference of -66 runs.**
 
@@ -133,19 +134,17 @@ $e=y-\hat{y}$
 
 **The MLB team *Florida Marlins* had a run difference of -66 runs and 79 wins for the season.  Find the residual for this MLB team.**
 
-\vspace{.8in}
+\vspace{.5in}
 
 **Did the line of regression overestimate or underestimate the number of wins for the season for this team?**
 
 \vspace{.2in}
 
-\newpage
-
 #### Correlation  {-}
 
 The following output shows a correlation matrix between several pairs of quantitative variables.  
 
-* Highlight and run lines 29--33 to produce the same table as below.
+* Highlight and run lines 26--30 to produce the same table as below.
 
 
 ```{r, echo=TRUE, collapse = FALSE}

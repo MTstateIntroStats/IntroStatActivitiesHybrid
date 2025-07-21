@@ -1,4 +1,4 @@
-## Activity 21:  Paired vs. Independent Samples
+## Activity 22:  Paired vs. Independent Samples
 
 \setstretch{1}
 
@@ -28,6 +28,8 @@ In today's activity, we will review summary measures and plots for paired data. 
 To review these concepts, see Chapter 5 and 18 in the textbook.
 
 ### Notes on paired data {-}
+
+\vspace{2in}
 
 ### Paired vs. Independent Samples
 
@@ -90,7 +92,7 @@ To find the differences to continue to assess this data and create a boxplot of 
 
 * Enter Tattoo for measurement_1 and No_Tattoo for measurement_2 in line 15
 
-* Highlight and run lines 13 - 21
+* Highlight and run lines 13--21
 
 ```{r, echo=TRUE, eval=TRUE}
 tat_diff <- tats %>% 
@@ -100,8 +102,12 @@ tat_diff %>%
 tat_diff %>% 
     ggplot(aes(x = differences)) +
     geom_boxplot()+
-    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2) per min for Adult Men 
-         with Tattoos comparing Tattooed and Untattooed Skin (tat-notat)") 
+    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2 per
+    min) for Adult Men with Tattoos comparing Tattooed and Untattooed 
+    Skin (tat-notat)", x="difference in sweat rate (mg·cm^2 per
+    min)", y="") +
+        theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
 
 ```
 6. What four characteristics do we use to describe the plot of a quantitative variable?

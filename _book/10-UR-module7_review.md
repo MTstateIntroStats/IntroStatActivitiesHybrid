@@ -1,8 +1,6 @@
-## Module 7 Review - One Mean Confidence Interval
+## Module 7 Review - Theory-based Methods - One mean
 
 There are about 4 million tourists to Yellowstone National Park per year.  One of the most visited sites within the park is the Old Faithful Geyser.  The reason this geyser is called old faithful is because of the regularity of eruptions.  Tourists report a typical wait time of 30 minutes, on average.  A sample of 299 tourists reported their wait time to see Old Faithful erupt.  How long, on average, do tourists wait for Old Faithful to erupt?
-
-
 
 
 ```
@@ -48,9 +46,8 @@ $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 
 4. Calculate the standardized mean for the study.
 
-\vspace{1in}
+\vspace{0.8in}
 
-\newpage
 
 5. Mark on the t-distribution shown below on how to find the p-value of the test.
 
@@ -58,7 +55,7 @@ $$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
 \begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module7_review_files/figure-latex/tdistave-1} \end{center}
 
 6. Interpret the standardized mean in context of the study.
-\vspace{1in}
+\vspace{0.8in}
 
 The following code calculates the p-value for the study.
 
@@ -67,6 +64,7 @@ The following code calculates the p-value for the study.
 #> [1] 5.045442e-153
 ```
 
+\newpage
 
 To calculate a theory-based confidence interval for the a single mean, use the following formula:
 
@@ -101,8 +99,6 @@ qt(0.995, df = 298, lower.tail=TRUE)
 \vspace{1in}
 
 Types of Errors:
-
-\vspace{3.5in}
 
 9. What type of error may have occurred for this study?
 

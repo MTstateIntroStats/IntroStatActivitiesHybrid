@@ -26,7 +26,7 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 * Variable:
 
-* Type of variable:
+    * Type of variable:
 
 1. What does $\mu$ represent in the context of this study?
 
@@ -43,6 +43,8 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 4.  What sign ($<$, $>$, or $\neq$) would you use in the alternative hypothesis for this study?  Explain your choice.
 
 \vspace{0.5in}
+
+#### R Instructions {-}
 
 * Upload and open the R script file for Module 6 and 7 lab. 
 
@@ -91,7 +93,9 @@ water %>% # Data set piped into...
 
 Remember that the null distribution is created based on the assumption the null hypothesis is true.  In this study, the null hypothesis states that the average arsenic levels are not hazardous.
 
-We will use the `one_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of sample means and compute a p-value. 
+We will use the `one_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of sample means and compute a p-value.
+
+\newpage
 
 9.  Simulate a null distribution and compute the p-value, using the R script file for this lab.  
 

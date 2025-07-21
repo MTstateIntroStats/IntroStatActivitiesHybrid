@@ -1,4 +1,4 @@
-## Activity 8:  Confidence interval and what confidence means
+## Activity 8:  Confidence intervals and what confidence means
 
 \setstretch{1}
 
@@ -25,7 +25,6 @@ In this activity, we will explore what being 95\% confidence means. Some terms c
 In today's activity, we will use the male boxer study to look at what confidence means.
 
 Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. Is there evidence that there is an over-prevalence of left-handed fighters?  In this random sample of 500 professional male boxers, 81 were left-handed.
-
 
 
 ``` r
@@ -122,15 +121,17 @@ $$\text{point estimate}\pm\text{margin of error}$$
 $$\hat{p}\pm z^* \times SE(\hat{p})$$
 
 **Calculate the 95\% confidence interval for the parameter of interest.**
-\vspace{0.6in}
+\vspace{1in}
 
 
 6.  Interpret the 95\% confidence **interval** in the context of the problem.
 \vspace{1in}
 
+\newpage
+
 #### Simulation methods {-}
 
-We could also use simulation-based methods to analyze these data.
+We could also use simulation-based methods to analyze these data.  Note the imputs into the R code to create the null and bootstrap distribution.
 
 
 ``` r

@@ -51,7 +51,8 @@ depression <- read.csv("data/depression.csv")
 depression %>%
   ggplot(aes(x = drug, fill = score)) +
   geom_bar(stat = "count", position = "fill") +
-  labs(title = "Segmented Bar Plot of Type of Drug by CGI-I Score /n for People with MDD",
+  labs(title = "Segmented Bar Plot of Type of Drug by CGI-I Score 
+       for People with MDD",
        y = "Relative Frequency",
        x = "Drug",
        fill = "Score") +

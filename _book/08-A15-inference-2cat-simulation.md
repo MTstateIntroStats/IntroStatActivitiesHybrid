@@ -52,9 +52,11 @@ Total & 20 & 20 & 40 \\ \hline
 \end{tabular}
 \end{center}
 
+#### R Instructions {-}
+
 These counts can be found in R by using the `count()` function:
 
-* Download the R script file from D2L and upload to the RStudio server.
+* Download the R script file from Canvas and upload to the RStudio server.
 
 * Highlight and run lines 1--7 to get the counts for each group.
 
@@ -123,27 +125,33 @@ To create the segmented bar plot:
 
 ``` r
 good %>%
-  ggplot(aes(x = explanatory, fill = response))+ #Enter the variables to plot
+  ggplot(aes(x = Condition, fill = Behavior))+ #Enter the variables to plot
   geom_bar(stat = "count", position = "fill") +
-  labs(title = "Segmented Bar Plot of Princeton Seminary Students that Help the actor \nbetween those that were in a Hurry and those that were Not in a Hurry",  #Title your plot
+  labs(title = "Segmented Bar Plot of Princeton Seminary Students 
+       that Help the actor between those that were in a 
+       Hurry and those that were Not in a Hurry",  #Title your plot
        y = "Relative Frequency", #y-axis label
        x = "Condition") + #x-axis label
   scale_fill_grey()
 ```
 
-1. Based on the segmented bar plot, is there an association between whether a Seminary student helps the actor and condition assigned?  
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/TRUE-1} \end{center}
+
+**Based on the segmented bar plot, is there an association between whether a Seminary student helps the actor and condition assigned?**
 
 \vspace{0.4in}
 
-2. Using the two-way table given in the introduction, calculate the conditional proportion of students in the hurry condition who helped the actor.  Use appropriate notation.
+1. Using the two-way table given in the introduction, calculate the conditional proportion of students in the hurry condition who helped the actor.  Use appropriate notation.
 
 \vspace{.3in}
 
-3. Using the two-way table given in the introduction, calculate the conditional proportion of students in the no hurry condition who helped the actor. Use appropriate notation.
+2. Using the two-way table given in the introduction, calculate the conditional proportion of students in the no hurry condition who helped the actor. Use appropriate notation.
 
 \vspace{.3in}
 
-4.  Calculate the summary statistic (difference in sample proportion) for this study.  Use Hurry - No hurry as the order of subtraction.  Use appropriate notation. 
+3.  Calculate the summary statistic (difference in sample proportion) for this study.  Use Hurry - No hurry as the order of subtraction.  Use appropriate notation. 
 
 \vspace{0.5in}
 
@@ -155,7 +163,7 @@ The proportion of Princeton Theological Seminary students that helped the actor 
 
 We will now simulate a **null distribution** of sample differences in proportions. The null distribution is created under the assumption the null hypothesis is true.
 
-5. Using the cards provided by your instructor, simulate one sample under the assumption the null hypothesis is true.
+4. Using the cards provided by your instructor, simulate one sample under the assumption the null hypothesis is true.
 
 * Start with 40 cards (13 labeled helped, 27 labeled did not help)
 
@@ -172,13 +180,15 @@ The segmented bar plot below shows the relationship between the variables for **
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\newpage
 
 To create the null distribution of differences in sample proportions, we will use the `two_proportion_test()` function in R (in the `catstats` package).  We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as `good`), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (what the numerator counts when calculating a sample proportion), and the direction of the alternative hypothesis.
 
 The response variable name is `Behavior` and the explanatory variable name is `Condition`.
 
-6.  What inputs should be entered for each of the following to create the simulation?
+5.  What inputs should be entered for each of the following to create the simulation?
 \vspace{1mm}
 
 * First in subtraction (What is the outcome for the explanatory variable that is used as first in the order of subtraction? `"Hurry"` or `"No hurry"`):
@@ -197,7 +207,7 @@ The response variable name is `Behavior` and the explanatory variable name is `C
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 6 in place of the `xx`'s to produce the null distribution with 10000 simulations; highlight and run lines 24--30.
+Using the R script file for this activity, enter your answers for question 5 in place of the `xx`'s to produce the null distribution with 10000 simulations; highlight and run lines 24--30.
 
 
 ``` r
@@ -212,17 +222,15 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 #### Notes on the null distribution {-}
 
 \vspace{1.6in}
 
-7. Interpret the p-value in context of the study.
+6. Interpret the p-value in context of the study.
 
 \vspace{1in}
-
-\newpage
 
 #### Confidence interval {-}
 
@@ -230,7 +238,7 @@ We can also estimate the parameter of interest by finding a confidence interval.
 
 We will use the `two_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of differences in sample proportions and calculate a 90\% confidence interval. We will need to enter the response variable name and the explanatory variable name for the formula, the data set name (identified above as `good`), the outcome for the explanatory variable that is first in subtraction, number of repetitions, the outcome for the response variable that is a success (what the numerator counts when calculating a sample proportion), and the confidence level as a decimal.
 
-8.  What inputs should be entered for each of the following to create the bootstrap simulation?
+7.  What inputs should be entered for each of the following to create the bootstrap simulation?
 \vspace{1mm}
 
 * First in subtraction (What is the outcome for the explanatory variable that is used as first in the order of subtraction? `"Hurry"` or `"No hurry"`):
@@ -246,9 +254,11 @@ We will use the `two_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 \vspace{.15in}
 
+#### Bootstrap distribution {-}
+
 * Fill in the missing values/names in the R script file in the two_proportion_bootstrap_CI function to create a simulation 90\% confidence interval.  
 
-* Highlight and run lines ...
+* Highlight and run lines 34--39
 
 
 ``` r
@@ -262,19 +272,17 @@ two_proportion_bootstrap_CI(formula = Behavior~Condition,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-9.  Report the 90\% confidence interval.
+#### Notes on the bootstrap distribution {-}
 
-\vspace{0.3in}
+\vspace{2in}
 
-\newpage
-
-10. Interpret the confidence interval in context of the problem.
+8. Report and interpret the confidence interval in context of the problem.
 
 \vspace{1in}
 
-11. Write a conclusion, including the scope of inference, in context of the study.
+9. Write a conclusion, including the scope of inference, in context of the study.
 
 \vspace{1in}
 

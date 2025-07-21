@@ -47,6 +47,8 @@ object %>%
 
 \vspace{1mm}
 
+\newpage
+
 #### Hypotheses {-}
 
 * **Hypotheses in notation for a difference in means**: In the hypotheses below, the **null value** is equal to zero.

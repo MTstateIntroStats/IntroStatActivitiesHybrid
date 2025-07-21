@@ -54,8 +54,6 @@ Module 1 introduces the foundations of data: observational units, types of varia
 
     * **Response bias**: responses are not truthful (poor/leading question phrasing, social desirability).
     
-\newpage
-
 * **Generalization**: to what group of observational units can the results be applied to?  
 
     * If an unbiased method of selection was used and there is no non-response or response bias, we can generalize the results to the target population.

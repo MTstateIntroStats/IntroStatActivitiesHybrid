@@ -32,7 +32,7 @@ Use the provided data set from the Islands [@islands] (FinalExamReviewData.csv) 
 
 \newpage
 
-1. Use the appropriate Exam 2 Review R script file and analyze the following research question: "Is there evidence that adult Islanders with a University degree are less likely to smoke than those with a High School degree?"
+1. Use the appropriate Final Exam Review R script file and analyze the following research question: "Is there evidence that adult Islanders with a University degree are less likely to smoke than those with a High School degree?"
 
 a. Parameter of Interest:
 \vspace{0.3in}

@@ -174,7 +174,7 @@ Calculate the standardized sample proportion of Montana residents that have dona
 
 * First calculate the standard error of the sample proportion assuming the null hypothesis is true
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 * Then calculate the Z score.
 

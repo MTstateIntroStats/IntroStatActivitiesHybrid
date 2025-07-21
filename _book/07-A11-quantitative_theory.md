@@ -33,7 +33,7 @@ It has long been reported that the mean body temperature of adults is $98.6^{\ci
 
 * Variable:
 
-* Type of variable:
+    * Type of variable:
 
 #### Ask a research question {-}
 

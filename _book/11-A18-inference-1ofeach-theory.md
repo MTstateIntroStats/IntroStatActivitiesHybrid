@@ -95,9 +95,13 @@ moon %>%  # Data set piped into...
   ggplot(aes(y = TestScore, x = Method))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
   labs(title = "Don't forget to title your plot!",  # Title
-       x = "Methods",    # x-axis label
+       x = "Teaching method",    # x-axis label
        y = "Test Score (points)")  # y-axis label
 ```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{11-A18-inference-1ofeach-theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 To find the summary statistic:
 
@@ -109,6 +113,12 @@ To find the summary statistic:
 ``` r
 moon %>%
   reframe(favstats(TestScore~Method))
+```
+
+```
+#>     Method min   Q1 median   Q3 max     mean       sd  n missing
+#> 1 Hands-on   2 6.00    8.0  9.5  12 7.694915 2.647408 59       0
+#> 2       VR   3 5.75    8.5 10.0  12 7.982143 2.370202 56       0
 ```
 
 4.  Can theory-based methods be used to analyze these data?

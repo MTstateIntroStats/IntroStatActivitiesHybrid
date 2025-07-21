@@ -66,7 +66,7 @@ Some of the variables collected and their descriptions are below. Note that seve
 
 The code below reads in the needed data set, IPEDS_2018.csv, and filters out the 2-year institutions. 
 
-* Highlight and run lines 1 -- 11 to load the data set and filter out the 2-year institutions.
+* Highlight and run lines 1--11 to load the data set and filter out the 2-year institutions.
 
 ```{r, echo=TRUE, warning=FALSE, out.width="80%"}
 IPEDS <- read.csv("https://www.math.montana.edu/courses/s216/data/IPEDS_2018.csv") 
@@ -162,7 +162,7 @@ Another summary measure used to explain the linear relationship between two quan
 
 \vspace{.4in}
 
-**The variance of the response variable, Retention in \$MM, is $s_{Retention}^2 = 138.386$ $\%^2$  and the variability in the residuals is $s_{RES}^2 = 56.934$ \%$^2$.  Use these values to calculate the coefficient of determination.**
+The variance of the response variable, Retention (%), is $s_{Retention}^2 = 138.386$ $\%^2$  and the variability in the residuals is $s_{RES}^2 = 56.934$ \%$^2$.  Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
 
@@ -177,7 +177,8 @@ ggplot(aes(x = SATMath_75, y = Retention))+  # Specify variables
   labs(x = "75th Percentile SAT Math Score",  # Label x-axis
        y = "Retention Rate (%)",  # Label y-axis
        title = "Scatterplot of SAT Math Score vs. Retention Rate for 
-       4-year US Higher Education Institutions with Horizontal Line") + 
+       4-year US Higher Education Institutions with 
+       Horizontal Line") + 
     # Be sure to title your plots with the type of plot, observational units, variable(s)
   geom_hline(yintercept = 76.38656)  # Add regression line
 ```
@@ -232,7 +233,7 @@ The calculated value for the SSE is 65133.022.
 
 **Calculate the value for $r^2$ using the values for SST and SSE provided below each of the previous graphs.**
 
-\vspace{0.8in}
+\vspace{0.6in}
 
 8.  Write a sentence interpreting the coefficient of determination in context of the problem.
 
@@ -241,10 +242,11 @@ The calculated value for the SSE is 65133.022.
 
 #### Multivariable plots {-}
 
-When adding another categorical predictor, we can add that variable as shape or color to the plot.  In the following code we have added the variable `Sector`, whether the 4-year institution is public or private.  
+When adding another categorical predictor, we can add that variable as shape or color to the plot.  In the following code we have added the variable `Size`.  
 
 ```{r echo=TRUE, message = FALSE, eval=TRUE, out.width="70%"}
-IPEDS$Size <- factor(IPEDS$Size, levels = c("< 1000", "1,000-4,999", "5,000-9,999", "10,000-19,999", "20,000 and above"))
+IPEDS$Size <- factor(IPEDS$Size, levels = c("< 1000", "1,000-4,999", "5,000-9,999",
+                                            "10,000-19,999", "20,000 and above"))
 IPEDS %>% # Data set pipes into...
     ggplot(aes(x = SATMath_75, y = Retention, shape = Size, color=Size))+  # Specify variables
     geom_point(alpha=0.5) +  # Add scatterplot of points
@@ -256,7 +258,7 @@ IPEDS %>% # Data set pipes into...
     geom_smooth(method = "lm", se = FALSE) + # Add regression line
     scale_color_grey()
 ```
-9. Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of sector?
+9. Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of size?
 
 \vspace{0.8in}
 
@@ -272,11 +274,16 @@ IPEDS %>% # Data set piped into...
 IPEDS %>% # Data set piped into...
   ggplot(aes(y = SATMath_75, x = Size))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Side-by-side Box Plot of 75th Percentile SAT Math Score for \n 4-year US Higher Education by Size",  
+  labs(title = "Side-by-side Box Plot of 75th Percentile SAT Math \n Score for 4-year US Higher Education by Size",  
        # Title
        x = "Size", # x-axis label
        y = "75th Percentile SAT Math Score") # y-axis label
 ```
+10.  Is size of the higher education institution associated with retention rate?  Is size of the higher education institution associated with 75th percentile SAT Math Score?  
+
+\vspace{1in}
+
+\newpage
 
 ### Take-home messages
 

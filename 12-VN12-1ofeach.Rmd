@@ -1,6 +1,6 @@
 ## Video Notes: Inference for Independent Samples 
 
-Read Section 5.6 and Chapters 19 and 20 in the course textbook.  Use the following videos to complete the video notes for Module 10.
+Read Section 5.6 and Chapters 19 and 20 in the course textbook.  Use the following videos to complete the video notes for Module 11.
 
 ### Course Videos
 
@@ -16,7 +16,7 @@ Read Section 5.6 and Chapters 19 and 20 in the course textbook.  Use the followi
 
 \setstretch{1}
 
-#### Theory-based method - Video 19.3TheoryTests {-}
+### Theory-based method - Video 19.3TheoryTests {-}
 
 Example: Every year, orange and black monarch butterflies migrate from their summer breeding grounds in the US and Canada to mountain forests in central Mexico, where they hibernate for the winter. Due to abnormal weather patterns and drought affecting monarch habitats and feeding grounds, the population of monarch butterflies is estimated to have decreased by 53% from the 2018-2019 wintering season to the 2019-2020 wintering season (WWF, 2020). While conservationists often resort to captive-rearing with the goal of raising biologically indistinct individuals for release into the wild, tagging studies have shown that captive-reared monarchs have lower migratory success compared to wild monarchs. For this study, the researchers raised 67 monarchs (descended from wild monarchs) from eggs to maturity and then compared them to a group of 40 wild-caught monarchs. The researchers want to explore whether the maximum grip strength (how many Newtons a butterfly exerts at the moment of release when gently tugged from a mesh-covered perch) differs between captive-reared and wild-caught monarchs. Use Captive – Wild for order of subtraction.
 
@@ -30,16 +30,21 @@ $H_A:$
 
 \vspace{0.2in}
 
+
 ```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
 butterfly <-read.csv("data/butterfly1.csv")
+```
 
+```{r, echo=FALSE}
 butterflies <- butterfly %>% na.omit() %>%
     rename(Monarch_Group = "Monarch.Group",
            MaxGrip = "Max.Grip.Strength..N.") %>%
     mutate(Monarch_Group = factor(Monarch_Group),
            Sex = factor(Sex)) %>%
     mutate(Monarch_Group = fct_collapse(Monarch_Group,"Captive" = c("Incubator - Fall conditions", "Rearing room - summer conditions"), "Wild" = "Wild migrants"))
+```
 
+```{r, echo=TRUE}
 butterflies %>%
     reframe(favstats(MaxGrip~Monarch_Group))
 ```
@@ -85,7 +90,9 @@ Equation for the standardized difference in sample mean:
 
 \vspace{0.5in}
 
-##### Optional Notes: Video Example (Video 19.3TheoryTests) {-}
+\newpage
+
+### Optional Notes: Video Example (Video 19.3TheoryTests) {-}
 
 Are the conditions met to analyze the butterfly data using theory based-methods?
 
@@ -108,7 +115,7 @@ What theoretical distribution should we use to find the p-value?
 To find the theory-based p-value:
 
 ```{r, echo=TRUE, collapse=FALSE}
-pt(-5, df=39, lower.tail=FALSE)*2
+pt(-5, df=39, lower.tail=TRUE)*2
 ```
 
 Conclusion: 
@@ -121,7 +128,7 @@ Conclusion:
 
 \vspace{0.6in}
 
-#### Confidence Interval - Video 19.3TheoryIntervals {-}
+### Confidence Interval - Video 19.3TheoryIntervals {-}
 
 * Calculate the interval centered at the sample statistic
 
@@ -129,7 +136,7 @@ Conclusion:
 
 \vspace{0.8in}
 
-##### Optional Notes: Video Example (Video 19.3TheoryIntervals) {-}
+### Optional Notes: Video Example (Video 19.3TheoryIntervals) {-}
 
 Using the butterfly data, calculate the 99\% confidence interval.
 
@@ -214,7 +221,7 @@ Why should we treat this as two independent groups rather than paired data?
 
 \vspace{0.6in}
 
-### Hypothesis Testing {-}
+#### Hypothesis Testing {-}
 
 Conditions:
 
@@ -270,6 +277,7 @@ letters%>%
        x = "Letter Grouping") #x-axis label
 ```
 
+\newpage
 
 #### Simulation-based method {-}
 
@@ -326,11 +334,11 @@ Conclusion:
 \vspace{0.6in}
 
 
-### Confidence interval {-}
+#### Confidence interval {-}
 
 To estimate the difference in true mean we will create a confidence interval.
 
-#### Optional Notes: Simulation Confidence Interval for a Difference in Means - Video 19.2 {-}
+### Optional Notes: Simulation Confidence Interval for a Difference in Means - Video 19.2 {-}
 
 * Write the response variable values on cards
 

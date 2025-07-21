@@ -117,7 +117,7 @@ General steps of a hypothesis test
 
 \newpage
 
-#### Example in Video 14.3TheoryTests {-}
+#### Theoretical Testing for a Single Proportion - Video 14.3TheoryTests {-}
 
 Example:  The American Red Cross reports that 10% of US residents eligible to donate blood actually do donate.  A poll conducted on a representative of 200 Montana residents eligible to donate blood found that 33 had donated blood sometime in their life.  Do Montana residents donate at a different rate than US population?
 
@@ -133,7 +133,7 @@ $H_A:$
 
 \vspace{0.2in}
 
-Parameter of interest:
+Parameter of interest (what does $\pi$ represent in this context?):
 
 \vspace{0.6in}
 
@@ -178,11 +178,13 @@ Equation for the standardized sample proportion:
 
 \setstretch{1}
 
+##### Optional Notes: Video Example (Video 14.3TheoryTests) {-}
+
 Calculate the standardized sample proportion of Montana residents that have donated blood sometime in their life.
 
 * First calculate the standard error of the sample proportion assuming the null hypothesis is true
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 * Then calculate the Z score.
 
@@ -237,7 +239,7 @@ Generalization:
 
 \vspace{0.4in}
 
-### Confidence interval - 14.3TheoryIntervals {-}
+#### Theoretical Confidence Intervals for a Single Proportion - Video 14.3TheoryIntervals {-}
 
 * Interval of __________ values for the parameter of interest
 
@@ -274,9 +276,9 @@ Equation for the standard error of the sample proportion *NOT* assuming the null
 
 \vspace{0.5in}
 
-\newpage
+##### Optional Notes: Video Example (Video 14.3TheoryIntervals) {-}
 
-Example:  Estimate the true proportion of Montana residents that have donated blood at least once in their life.
+  Estimate the true proportion of Montana residents that have donated blood at least once in their life.
 
 Find a 95\% confidence interval:
 
@@ -294,7 +296,7 @@ Confidence interval interpretation:
 
 \vspace{0.8in}
 
-#### Interpreting confidence level {-}
+#### Interpreting confidence level - Video 14.3TheoryIntervals {-}
 
 \setstretch{1.5}
 
@@ -311,97 +313,6 @@ What does it mean to be 95\% confident in a created confidence interval?
     * When we create one confidence interval, we are 95\% ________________ that we have a "good" sample that created a confidence interval that contains the ___________ of interest.
     
 \setstretch{1}
-
-Interpret the confidence **level** for the blood donation study.
-
-\vspace{0.5in}
-
-\newpage
-
-<!-- ### Errors, power, and practical importance - Video Chapter12 {-} -->
-
-<!-- \setstretch{1.5} -->
-
-<!-- Type 1 Error: ___________ the null hypothesis, when the null is ____________. -->
-
-<!-- * Only can have a Type 1 Error when we make the ____________ to ____________ the null hypothesis. -->
-
-<!-- * The probability of a Type 1 Error is $\alpha$, the ____________ level -->
-
-<!-- Type 2 Error: ___________ to reject the null hypothesis, when the null is __________. -->
-
-<!-- * Only can have a Type 2 Error when we make the ____________ to ____________ to reject the null hypothesis. -->
-
-<!-- Power: probability of ___________ the null hypothesis, when the null is _____________. -->
-
-<!-- Increasing power: -->
-
-<!-- * Increase _______________ _______________ -->
-
-<!-- * Increase _______________ _______________ -->
-
-<!-- * Use a __________ alternative vs. a ______________ alternative -->
-
-<!-- * Increase the ___________ size, the ______________ between the believed true value and the null value -->
-
-<!-- Confirmation bias: looking for _________ that supports our ideas -->
-
-<!-- * Always should write $H_A$ based on the _____________ _____________ prior to _________ collection! -->
-
-<!-- \setstretch{1} -->
-
-<!-- Recall from the blood donation study, that we concluded there was very strong evidence that the true proportion of Montana residents who are eligible to donate blood differs from 0.10. -->
-
-<!-- \setstretch{1.5} -->
-
-<!-- Since, we made the decision to ____________ the null hypothesis, we have the possibility of a _____________ error. -->
-
-<!-- \setstretch{1} -->
-
-<!-- * What is the probability of this error? -->
-
-<!-- \vspace{0.2in} -->
-
-<!-- * Write the error in context of the problem. -->
-
-<!-- \vspace{0.5in} -->
-
-<!-- For each of the following changes to the blood donation study, determine whether the power of the test would increase or decrease. -->
-
-<!-- \setstretch{1.5} -->
-<!-- * If we decreased the sample size from 200 to 100, power would __________. -->
-
-<!-- * If we decreased the significance level from 0.05 to 0.01, power would __________. -->
-
-<!-- * If we changed the research question to only asking if the probability a Montana resident eligible to donate blood actually does so is greater than 0.10, power would ____________.  -->
-
-<!--     * This is an example of ____________ ______________. -->
-
-<!-- \setstretch{1}     -->
-
-<!-- #### Practical importance {-} -->
-
-<!-- * A result can be ______________ significant but not _____________ important. -->
-
-<!-- * Statistically significant: $\text{p-value} < \alpha$ -->
-
-<!--     * Depends on the _____________, the __________ ___________, and the selected ______________ level. -->
-
-<!-- * Practically important: the ___________ seen in the data is -->
-<!-- meaningful and has _____________  -->
-<!-- applications. -->
-
-<!--     * Depends on the __________ and subjective opinion. -->
-
-<!-- Example: An Austrian study of heights of 507,125 military recruits reported that men born in spring were statistically significantly taller than men born in the fall (p-value < 0.0001). A confidence interval for the true difference in mean height between men born in spring and men born in fall was (0.598, 0.602) cm.  -->
-
-<!-- Is there statistical significance? -->
-
-<!-- \vspace{0.3in} -->
-
-<!-- Is there practical importance?  -->
-
-<!-- \vspace{0.3in} -->
 
 ### Concept Check
 

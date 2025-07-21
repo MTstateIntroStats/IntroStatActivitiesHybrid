@@ -35,9 +35,9 @@ According to an article in *Sleep* [@watson2015], experts recommend adults (>18 
 
 * Variable:
 
-* Type of variable:
+    * Type of variable:
 
-#### Summarizing quantitative variables {-}
+#### R Instructions {-}
 
 * Download the R script file and data file for this activity
 
@@ -57,13 +57,15 @@ sleep <- read.csv("datasetname.csv")
 
 #### Ask a research question {-}
 
+* Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
+
 **Parameter of interest in context of the study:**
 
-\vspace{1in}
+\vspace{0.8in}
 
 **Null Hypothesis (in words):**
 
-\vspace{1in}
+\vspace{0.8in}
 
 **Null Hypothesis (in notation):**
 
@@ -71,7 +73,7 @@ sleep <- read.csv("datasetname.csv")
 
 **Alternative Hypothesis (in words):**
 
-\vspace{1in}
+\vspace{0.8in}
 
 **Alternative Hypothesis (in notation):**
 
@@ -146,11 +148,11 @@ sleep %>%
 ```
 3. Report the mean of the `Shift` variable.  Why does it make sense that this value is the same as the null value?
 
-\vspace{0.9in}
+\vspace{0.6in}
 
 4. Report the standard deviation of the `Shift` variable. How does this compare to the standard deviation for the variable `SleepHours`?  Explain why these values are the same.
 
-\vspace{0.9in}
+\vspace{0.6in}
 
 \newpage
 

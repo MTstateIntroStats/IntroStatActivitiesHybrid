@@ -29,7 +29,7 @@ To review these concepts, see Chapter 21 in the textbook.
 
 ### Golf driving distance
 
-In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and sex was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
+In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and league (PGA or LPGA) was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 * Observational units:
 
@@ -60,7 +60,7 @@ golf %>% # Pipe data set into...
 ggplot(aes(x = Driving_Distance, y = Percent_Accuracy))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (yards)",  # Label x-axis
-       y = "Percent Accuracy",  # Label y-axis
+       y = "Percent Accuracy (%)",  # Label y-axis
        title = "Scatterplot of Driving Distance by Percent Accuracy
        for Professional Golfers") + 
                # Be sure to tile your plots
@@ -97,6 +97,8 @@ The scatterplot generated earlier and the residual plots shown below will be use
 
 
 #### Ask a research question {-}
+
+Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
 **Parameter of interest in context of the study:**
 
@@ -168,7 +170,7 @@ The $t^*$ multiplier comes from a $t$-distribution with $n-2$ degrees of freedom
 
 * Enter the degrees of freedom for yy
 
-* Highlight and run line 35
+* Highlight and run line 34
 
 
 ``` r
@@ -217,7 +219,7 @@ Using the R script file for this activity...
 
 * Enter your answers for question 3 in place of the `xx`'s to produce the null distribution with 10000 simulations.  
 
-* Highlight and run lines 32--37.
+* Highlight and run lines 38--43.
 
 
 ``` r
@@ -250,6 +252,10 @@ regression_bootstrap_CI(Percent_Accuracy~Driving_Distance, # response ~ explanat
    number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
 ```
 
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
 ### Multivariable plots {-}
 
 Another variable that may affect the percent accuracy is the which league the golfer is part of. We will look at how this variable may change the relationship between driving distance and percent accuracy. 
@@ -260,7 +266,7 @@ golf %>%
   ggplot(aes(x = Driving_Distance, y = Percent_Accuracy, color=League))+  # Specify variables
   geom_point(aes(shape = League), size = 2, alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (yards)",  # Label x-axis
-       y = "Percent Accuracy",  # Label y-axis
+       y = "Percent Accuracy (%)",  # Label y-axis
        color = "League", shape = "League",
        title = "Scatterplot of Golf Driving Distance and Percent 
        Accuracy by League for Professional Golfers") + # Be sure to title your plots
@@ -272,17 +278,17 @@ golf %>%
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
-3. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
+4. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
 \vspace{1in}
 
-
-
-4.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q11 to explain your answer.
+5.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q4 to explain your answer.
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-1} \includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-2} \end{center}
 
 \vspace{0.8in}
+
+\newpage
 
 ### Take-home messages
 

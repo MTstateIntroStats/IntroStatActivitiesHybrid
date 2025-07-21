@@ -6,7 +6,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 ### Key topics
 
-Module 13 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables. The **summary measure** for two quantitative variables is either the **slope** of a regression line or the **correlation** between the two variables.
+Module 12 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for two quantitative variables. The **summary measure** for two quantitative variables is either the **slope** of a regression line or the **correlation** between the two variables.
 
 * Notation for a sample regression slope: $b_1$
 

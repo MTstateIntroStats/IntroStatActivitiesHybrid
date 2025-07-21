@@ -1,6 +1,6 @@
 ## Video Notes: Regression and Correlation
 
-Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 13.
+Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 12.
 
 ### Course Videos
 
@@ -12,13 +12,13 @@ Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following vid
 
 * Ch 7
 
-* 21.1
-
-* 21.3
-
 * 21.4TheoryTests
 
 * 21.4TheoryIntervals
+
+* Optional: 21.1
+
+* Optional: 21.3
 
 
 \setstretch{1}
@@ -267,7 +267,7 @@ Interpret the coefficient of determination between gestation and birthweight.
 
 \newpage
 
-#### Multivariable plots - Video Chapter7 {-}
+### Multivariable plots - Video Chapter7 {-}
 
 Aesthetics: visual property of the objects in your plot
 
@@ -365,7 +365,196 @@ Be prepared for group discussion in the next class. One member from the table sh
 \vspace{0.2in}
 \newpage
 
-### Video Notes: Inference for Two Quantitative Variables
+### Theoretical Testing for Slope - Video 21.4to21.5TheoryTests {-}
+
+Conditions:
+
+\setstretch{1.5}
+
+* Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
+
+    * Check this assumption by examining the ____________________________ of the two variables, and ____________________________________________. The pattern in the residual plot should display a horizontal line.
+
+* Independence (for both simulation-based and theory-based methods)
+
+    * One______________________________for an observational unit has no impact on  ________________________________.
+
+* Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
+
+    * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
+
+* Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
+
+    * Check this assumption by examining a _________________________________, which should appear approximately normal
+    
+\setstretch{1}
+    
+Example:
+
+It is a generally accepted fact that the more carats a diamond has, the more expensive that diamond will be. The question is, how much more expensive? Data on thousands of diamonds were collected for this data set. We will only look at one type of cut (“Ideal”) and diamonds less than 1 carat. Does the association between carat size and price have a linear relationship for these types of diamonds? What can we state about the association between carat size and price?
+
+
+
+Scatterplot:
+
+``` r
+Diamonds %>% # Pipe data set into...
+    ggplot(aes(x = carat, y = price))+  # Specify variables
+    geom_point(alpha=0.5) +  # Add scatterplot of points
+    labs(x = "carat",  # Label x-axis
+       y = "price ($)",  # Label y-axis
+       title = "Scatterplot of Diamonds Carats vs Price") +
+               # Be sure to title your plots
+    geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+Diagnostic plots:
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+
+Check the conditions for the ocean data:
+
+Scatterplot:
+
+
+
+
+
+``` r
+water %>% # Pipe data set into...
+ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
+  geom_point(alpha=0.5) +  # Add scatterplot of points
+  labs(x = "salinity (PSUs)",  # Label x-axis
+       y = "temperature (C)",  # Label y-axis
+       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
+               # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+Diagnostic plots:
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+Like with paired data the $t$-distribution can be used to model slope and correlation. 
+
+\setstretch{1.5}
+
+* For two quantitative variables we use the ______-distribution
+with _____________________ degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+Theory-based test:
+
+* Calculate the standardized statistic
+
+* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
+
+Equation for the standardized slope:
+
+\vspace{0.8in}
+
+### Optional Notes: Video Example (Video 21.4TheoryTests) {-}
+
+Calculate the standardized slope for the ocean data
+
+
+``` r
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients,3)
+```
+
+```
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+```
+
+\vspace{1in}
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/pvalueoce-1} \end{center}
+
+Interpret the standardized statistic:
+
+\vspace{0.8in}
+
+To find the theory-based p-value:
+
+
+``` r
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients,3)
+```
+
+```
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+```
+
+or
+
+
+``` r
+pt(-8.670, df = 98, lower.tail=TRUE)
+#> [1] 4.623445e-14
+```
+
+\newpage
+
+
+
+### Theoretical Confidence Interval for Slope - Video 21.4TheoryInterval {-}
+
+* Calculate the interval centered at the sample statistic
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.6in}
+
+### Optional Notes: Video Example (Video 21.4TheoryInterval) {-}
+
+
+``` r
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
+round(summary(lm.water)$coefficients, 3)
+```
+
+```
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+```
+
+Using the ocean data, calculate a 95\% confidence interval for the true slope.
+
+* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
+
+
+``` r
+qt(0.975, df=98, lower.tail = TRUE)
+```
+
+```
+#> [1] 1.984467
+```
+
+\vspace{1in}
+
+
+### Video Notes: Inference for Two Quantitative Variables {-}
 
 \setstretch{1}
 
@@ -416,51 +605,39 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-21-1} \end{center}
 
-Describe the four characteristics of the scatterplot:
+<!-- Describe the four characteristics of the scatterplot: -->
 
-\vspace{1in}
+<!-- \vspace{1in} -->
 
-Linear model output:
+<!-- Linear model output: -->
 
+<!-- ```{r, echo=TRUE, collapse=FALSE} -->
+<!-- lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory) -->
+<!-- round(summary(lm.water)$coefficients, 3) -->
+<!-- ``` -->
 
-``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients, 3)
-```
+<!-- Correlation: -->
 
-```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
+<!-- ```{r, echo=TRUE, collapse=FALSE} -->
+<!-- cor(T_degC~Salnty, data=water) -->
+<!-- ``` -->
+<!-- Write the least squares equation of the line in context of the problem: -->
 
-Correlation:
+<!-- \vspace{0.5in} -->
 
+<!-- Interpret the value of slope in the context of the problem: -->
 
-``` r
-cor(T_degC~Salnty, data=water)
-```
+<!-- \vspace{0.5in} -->
 
-```
-#> [1] -0.6588365
-```
-Write the least squares equation of the line in context of the problem:
+<!-- Report and describe the correlation value: -->
 
-\vspace{0.5in}
+<!-- \vspace{0.5in} -->
 
-Interpret the value of slope in the context of the problem:
+<!-- Calculate and interpret the coefficient of determination: -->
 
-\vspace{0.5in}
-
-Report and describe the correlation value:
-
-\vspace{0.5in}
-
-Calculate and interpret the coefficient of determination:
-
-\vspace{0.8in}
+<!-- \vspace{0.8in} -->
 
 #### Simulation-based method {-}
 
@@ -471,6 +648,8 @@ Conditions:
 * Linear relationship:
 
 \vspace{0.3in}
+
+\newpage
 
 * Simulate many samples assuming $H_0: \beta_1 = 0$ or $H_0: \rho =0$
 
@@ -502,7 +681,7 @@ regression_test(T_degC ~ Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
 \newpage
 
@@ -520,7 +699,7 @@ regression_test(T_degC~Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
 Explain why the null distribution is centered at the value of zero:
 
@@ -580,7 +759,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-24-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -608,7 +787,7 @@ regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-25-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -621,193 +800,6 @@ Confidence interval interpretation:
 * Order of subtraction when comparing two groups
 
 \vspace{0.8in}
-
-#### Theory-based method - Video 21.4to21.5TheoryTests {-}
-
-Conditions:
-
-\setstretch{1.5}
-
-* Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
-
-    * Check this assumption by examining the ____________________________ of the two variables, and ____________________________________________. The pattern in the residual plot should display a horizontal line.
-
-\newpage
-
-* Independence (for both simulation-based and theory-based methods)
-
-    * One______________________________for an observational unit has no impact on  ________________________________.
-
-* Constant variability (for theory-based methods only): the variability of points around the least squares line remains roughly constant
-
-    * Check this assumption by examining the ________________________________. The variability in the residuals around zero should be approximately the same for all fitted values.
-
-* Nearly normal residuals (for theory-based methods only): residuals must be nearly normal
-
-    * Check this assumption by examining a _________________________________, which should appear approximately normal
-    
-\setstretch{1}
-    
-Example:
-
-It is a generally accepted fact that the more carats a diamond has, the more expensive that diamond will be. The question is, how much more expensive? Data on thousands of diamonds were collected for this data set. We will only look at one type of cut (“Ideal”) and diamonds less than 1 carat. Does the association between carat size and price have a linear relationship for these types of diamonds? What can we state about the association between carat size and price?
-
-
-
-Scatterplot:
-
-``` r
-Diamonds %>% # Pipe data set into...
-    ggplot(aes(x = carat, y = price))+  # Specify variables
-    geom_point(alpha=0.5) +  # Add scatterplot of points
-    labs(x = "carat",  # Label x-axis
-       y = "price ($)",  # Label y-axis
-       title = "Scatterplot of Diamonds Carats vs Price") +
-               # Be sure to title your plots
-    geom_smooth(method = "lm", se = FALSE)  # Add regression line
-
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-18-1} \end{center}
-
-\newpage
-
-Diagnostic plots:
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-19-1} \end{center}
-
-
-Check the conditions for the ocean data:
-
-Scatterplot:
-
-``` r
-water %>% # Pipe data set into...
-ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
-  geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "salinity (PSUs)",  # Label x-axis
-       y = "temperature (C)",  # Label y-axis
-       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") + 
-               # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
-
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-20-1} \end{center}
-
-\newpage
-
-Diagnostic plots:
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-21-1} \end{center}
-
-Like with paired data the $t$-distribution can be used to model slope and correlation. 
-
-\setstretch{1.5}
-
-* For two quantitative variables we use the ______-distribution
-with _____________________ degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-Theory-based test:
-
-* Calculate the standardized statistic
-
-* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
-
-Equation for the standardized slope:
-
-\vspace{0.8in}
-
-Calculate the standardized slope for the ocean data
-
-
-``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients,3)
-```
-
-```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
-
-\vspace{1in}
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/pvalueoce-1} \end{center}
-
-Interpret the standardized statistic:
-
-\vspace{0.8in}
-
-To find the theory-based p-value:
-
-
-``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients,3)
-```
-
-```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
-
-or
-
-
-``` r
-pt(-8.670, df = 98, lower.tail=TRUE)
-#> [1] 4.623445e-14
-```
-
-\newpage
-
-
-
-#### Theory-based method {-}
-
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.6in}
-
-
-
-``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients, 3)
-```
-
-```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
-
-Using the ocean data, calculate a 95\% confidence interval for the true slope.
-
-* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
-
-
-``` r
-qt(0.975, df=98, lower.tail = TRUE)
-```
-
-```
-#> [1] 1.984467
-```
-
-\vspace{1in}
 
 ### Concept Check
 

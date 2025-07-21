@@ -30,9 +30,6 @@ Conditions for the sample distribution of $\hat{p}$.
     * Success-Failure Condition: There are at least 10 successes and 10 failures in the sample 
 
 $$n \times \hat{p} \ge 10$$ and $$n \times (1-\hat{p}) \ge 10$$
-
-\newpage
-
 5. Are the conditions met to model the data with the Normal distribution?
 
 \vspace{0.6in}

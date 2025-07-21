@@ -27,6 +27,8 @@ Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild m
 
     * Success:
 
+#### R Instructions {-}
+
 * Upload and open the R script file for the Module 9 lab. Upload and import the csv file, `mushrooms_edibility`. 
 
 * Enter the name of the data set (see the environment tab) for datasetname.csv in the R script file in line 8. 

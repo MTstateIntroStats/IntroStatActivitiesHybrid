@@ -9,19 +9,19 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 ### Course Videos
 
-* QuantitativeData
+* 5.2to5.4
 
-* 5.5to5.6
+* 5.5
 
 * 5.7
 
 * 17.2
 
-* 17.3TheoryTests
+* 17.1
 
 \setstretch{1}
 
-### Summarizing quantitative data - Videos 5.2to5.4 and 5.5to5.6 {-}
+### Summarizing quantitative data - Video 5.2to5.4 {-}
 
 #### Types of plots {-}
 
@@ -82,24 +82,10 @@ Two measures of center:
     the sum by the sample size
     
 * Notation used for the population mean:
-    
-    - Single quantitative variable:
        
 \vspace{0.1in}
-        
-\rgi \rgi - One categorical and one quantitative variable:
-    
-\vspace{0.1in}
-
-\rgi \rgi \rgi - Subscripts represent the ___________ variable groups
     
 * Notation used for the sample mean:
-    
-\rgi \rgi - Single quantitative variable:
-
-\vspace{0.1in}
-
-\rgi \rgi - One categorical and one quantitative variable:
     
 \vspace{0.1in}
 
@@ -141,6 +127,8 @@ Two measures of spread:
 
 \newpage
 
+### Summarizing quantitative data - Video 5.5 {-}
+
 Boxplot (3rd type of plot for quantitative variables)
 
     - Five number summary: minimum, Q1, median, Q3, maximum
@@ -155,8 +143,9 @@ moving %>%
   labs(title = "Boxplot of Age of Buyers from Gallatin 
        County Home Sales", #Title your plot
        x = "Age", #x-axis label
-       y = "") #y-axis label
-
+       y = "") + #y-axis label
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
 
@@ -199,7 +188,7 @@ Interpret the value of s for the age of buyers.
 
 \rgi Mean or Median
 
-\rgi \rgi - Report the measure of center for the boxplot of age of buyers for Gallatin County home sales.
+\rgi \rgi - Report the measure of center based on the boxplot of age of buyers for Gallatin County home sales.
 
 \vspace{0.3in}
 
@@ -220,49 +209,15 @@ Interpret the value of s for the age of buyers.
 \rgi \rgi - Use these formulas to show that there are no outliers in the distribution of age of buyers from Gallatin County home sales.
 
 \vspace{0.8in}
-\newpage
-
-Let's look at side-by-side boxplot of the variable age by state of origin moved from.
-
-
-``` r
-moving %>%  # Data set piped into...
-  ggplot(aes(y = Age, x = From))+  # Identify variables
-  geom_boxplot()+  # Tell it to make a box plot
-  labs(title = "Side by side box plot of Age by State of Origin 
-  of Buyers from Gallatin County Home Sales",  # Title
-       x = "State of Origin",    # x-axis label
-       y = "Age")  # y-axis label
-```
-
-
-
-\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
-* Which state of origin had the oldest median age of buyers from sampled home sales?
-
-\vspace{0.4in}
-
-* Which state of origin had the most variability in age of buyers from sampled home sales?
-
-\vspace{0.4in}
-
-* Which state of origin had the most symmetric distribution of ages of buyers from sampled home sales?
-
-\vspace{0.4in}
-
-* Which state of origin had outliers for the age of buyers from sampled home sales?
-
-\vspace{0.4in}
 
 \newpage
 
-#### Robust statistics - Video 5.7 {-}
+### Robust statistics - Video 5.7 {-}
 
 Let's review the summary statistics and histogram of age of buyers from sampled home sales.
 
 
-\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 
 ```
@@ -288,7 +243,7 @@ When the distribution is skewed with outliers use the _____________ as the measu
 
 \newpage
 
-### Video notes single quantitative variable inference
+### Simulation-based Testing for a Single Mean - Video 17.2 {-}
 
 \setstretch{1}
 
@@ -315,12 +270,15 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
   geom_boxplot() +  # Create boxplot
   labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot
        x = "Weight (kg)", # Label for x axis
-       y = "Frequency") # Label for y axis
+       y = "") + # Label for y axis  
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+
 ```
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-11-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-11-2} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-10-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-10-2} \end{center}
 
 \newpage
 
@@ -334,7 +292,7 @@ pb %>%
 #> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
 
-### Hypothesis testing {-}
+#### Hypothesis testing {-}
 
 \setstretch{1.5}
 
@@ -374,7 +332,9 @@ ___________________.
 
     * Find the proportion of simulations at least as extreme as $\bar{x}$
 
-Example:  Is there evidence that male polar bears weigh less than 370kg (previously recorded measure), on average?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+### Optional Notes: Video Example (Video 17.2) {-}
+
+Is there evidence that male polar bears weigh less than 370kg (previously recorded measure), on average?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
 
 Hypotheses:
 
@@ -388,7 +348,6 @@ $H_A:$
 
 \vspace{0.2in}
 
-\newpage
 
 In words:
 
@@ -427,9 +386,8 @@ one_mean_test(pb$Weight,   #Enter the object name and variable
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
-\newpage
 
 Interpretation of the p-value:
 
@@ -443,6 +401,7 @@ Interpretation of the p-value:
 
 
 \vspace{0.8in}
+\newpage
 
 Conclusion:
 
@@ -454,69 +413,117 @@ Conclusion:
 
 \vspace{0.8in}
 
-#### Theory-based method {-}
+### Simuation-based Confidence Intervals for a Single Mean - Video 17.1 {-}
 
-Conditions for inference using theory-based methods:
+* Reminder: review summary measures and plots discussed in the Module 6 material and Chapter 5 of the textbook.
 
-- Independence:
+* The summary measure for a single quantitative variable is the ______________.
 
-\vspace{0.2in}
-
-- Large enough sample size:
-
-\vspace{0.2in}
-
-### $t$-distribution {-}
-
-In the theoretical approach, we use the Central Limit Theorem (CLT) to tell us that---under certain conditions---the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$, and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
-
-$$\bar{x} \sim N\left(\mu_0, \frac{\sigma}{\sqrt{n}}\right)$$
 \setstretch{1.5}
 
-* Estimate the population standard deviation, $\sigma$, with the
-___________________________ standard deviation, ________.
+Notation:
 
-* For a single quantitative variable we use the ____ - distribution
-with _______________
-degrees of freedom to approximate the sampling distribution.
+- Population mean:
+
+- Population standard deviation:
+
+- Sample mean:
+
+- Sample standard deviation:
+
+- Sample size:
 
 \setstretch{1}
 
-The $t^*$ multiplier is the value at the given percentile of the $t$-distribution with $n - 1$ degrees of freedom.
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/tstarpb-1} \end{center}
-
-* Calculate the standardized statistic
-
-* Find the area under the $t$-distribution with $n - 1$ df at least as extreme as the standardized statistic
-
-Equation for the standard error of the sample mean:
-
-\vspace{0.5in}
-
-Equation for the standardized sample mean:
-
-\vspace{0.5in}
-
-Calculate the standardized sample mean weight of adult male polar bears:
-
-\vspace{0.4in}
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/pvaluepb-1} \end{center}
-
-Interpret the standardized sample mean weight:
-
-\vspace{0.8in}
-
-To find the theory-based p-value:
+Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
 
 
 ``` r
-pt(-4.683, df=82, lower.tail=TRUE)
-#> [1] 5.531605e-06
+pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
 ```
+
+Plots of the data:
+
+
+``` r
+pb %>%
+    ggplot(aes(x = Weight)) +   # Name variable to plot
+    geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
+    labs(title = "Histogram of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "Frequency") # Label for y axis
+
+pb %>% # Data set piped into...
+ggplot(aes(x = Weight)) +   # Name variable to plot
+  geom_boxplot() +  # Create boxplot
+  labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "") + # Label for y axis
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+```
+
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-15-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-15-2} \end{center}
+
+Summary Statistics:
+
+
+``` r
+pb %>%
+  summarise(favstats(Weight)) #Gives the summary statistics
+#>     min    Q1 median     Q3   max     mean       sd  n missing
+#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
+```
+### Confidence interval {-}
+
+#### Simulation-based method{-}
+
+* Label cards with the values from the data set
+
+* Sample with replacement (bootstrap) from the original sample $n$ times
+
+* Plot the simulated sample mean on the bootstrap distribution
+
+* Repeat at least 10000 times (simulations)
+
+* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+
+* ie. 95% CI = (2.5th percentile, 97.5th percentile)
+
+Conditions for inference for a single mean:
+
+- Independence:
+
+\vspace{0.5in}
+
+
+``` r
+set.seed(216)
+one_mean_CI(pb$Weight,
+  summary_measure = "mean",
+  number_repetitions = 10000,
+  confidence_level = 0.95)
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-17-1} \end{center}
+The confidence interval estimates the ________________
+of ____________________.
+
+Confidence interval interpretation:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+
+* Parameter of interest
+
+* Calculated interval
+
+* Order of subtraction when comparing two groups
+
+\vspace{0.8in}
 
 ### Concept Check
 

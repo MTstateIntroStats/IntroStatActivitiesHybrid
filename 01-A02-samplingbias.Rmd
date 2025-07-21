@@ -40,7 +40,7 @@ For this activity, you will read a speech given by Jim Becenti, a member of the 
 
 1. Circle ten words in Jim Becenti's speech which are a representative sample of the length of words in the entire text.  Describe your method for selecting this sample.
 
-\vspace{0.3in}
+\vspace{0.7in}
 
 2. Fill in the table below with your selected words from the previous question and the length of each word (number of letters/digits in the word):
 \vspace{1mm}

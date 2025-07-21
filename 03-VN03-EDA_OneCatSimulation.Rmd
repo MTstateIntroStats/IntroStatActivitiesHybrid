@@ -275,7 +275,9 @@ include_graphics("images/soe_gradient_gray.png")
 ```
 
 \rgi \rgi - The __________________the p-value, the ___________________ the evidence against the null hypothesis.
-    
+
+\newpage
+
 * Write a conclusion based on the p-value.
 
 \rgi \rgi - Answers the ________________ question.

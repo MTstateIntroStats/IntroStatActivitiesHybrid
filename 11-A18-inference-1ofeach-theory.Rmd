@@ -52,7 +52,7 @@ In a study comparing immersive virtual reality (VR) to traditional hands-on meth
 
 * Highlight and run lines 1--8
 
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=TRUE, echo=TRUE}
 moon <- read.csv("https://www.math.montana.edu/courses/s216/data/VR_Moon.csv")
 ```
 
@@ -88,12 +88,12 @@ To create the plots of the data:
 
 * Highlight and run lines 12 - 17
 
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 moon %>%  # Data set piped into...
   ggplot(aes(y = TestScore, x = Method))+  # Identify variables
   geom_boxplot()+  # Tell it to make a box plot
   labs(title = "Don't forget to title your plot!",  # Title
-       x = "Methods",    # x-axis label
+       x = "Teaching method",    # x-axis label
        y = "Test Score (points)")  # y-axis label
 ```
 
@@ -103,7 +103,7 @@ To find the summary statistic:
 
 * Highlight and run lines 21--22
 
-```{r, echo=TRUE, eval=FALSE, collapse=FALSE}
+```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
 moon %>%
   reframe(favstats(TestScore~Method))
 ```

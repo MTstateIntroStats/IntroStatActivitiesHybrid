@@ -1,20 +1,178 @@
 ## Video Notes: Inference for Independent Samples 
 
-Read Chapters 19 and 20 in the course textbook.  Use the following videos to complete the video notes for Module 10.
+Read Section 5.6 and Chapters 19 and 20 in the course textbook.  Use the following videos to complete the video notes for Module 11.
 
 ### Course Videos
 
-* 19.1
-
-* 19.2
+* 5.6
 
 * 19.3TheoryTests
 
 * 19.4TheoryInterval
 
+* Optional: 19.1
+
+* Optional: 19.2
+
 \setstretch{1}
 
-### Single categorical, single quantitative variable with independent samples {-}
+### Theory-based method - Video 19.3TheoryTests {-}
+
+Example: Every year, orange and black monarch butterflies migrate from their summer breeding grounds in the US and Canada to mountain forests in central Mexico, where they hibernate for the winter. Due to abnormal weather patterns and drought affecting monarch habitats and feeding grounds, the population of monarch butterflies is estimated to have decreased by 53% from the 2018-2019 wintering season to the 2019-2020 wintering season (WWF, 2020). While conservationists often resort to captive-rearing with the goal of raising biologically indistinct individuals for release into the wild, tagging studies have shown that captive-reared monarchs have lower migratory success compared to wild monarchs. For this study, the researchers raised 67 monarchs (descended from wild monarchs) from eggs to maturity and then compared them to a group of 40 wild-caught monarchs. The researchers want to explore whether the maximum grip strength (how many Newtons a butterfly exerts at the moment of release when gently tugged from a mesh-covered perch) differs between captive-reared and wild-caught monarchs. Use Captive – Wild for order of subtraction.
+
+Write the null and alternative hypotheses in notation.
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+
+
+
+``` r
+butterfly <-read.csv("data/butterfly1.csv")
+```
+
+
+
+
+``` r
+butterflies %>%
+    reframe(favstats(MaxGrip~Monarch_Group))
+#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
+#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
+#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
+```
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+Conditions:
+
+* Independence: the response for one observational unit will not influence the outcome for another observational unit
+
+* Large enough sample size
+
+\vspace{1in}
+
+Like with paired data the t-distribution can be used to model the difference in means. 
+
+\setstretch{1.5}
+
+* For independent samples we use the ______- distribution
+with ________________ degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+Theory-based test:
+
+* Calculate the standardized statistic
+
+* Find the area under the t-distribution with the smallest $n - 1$ df [min($n_1-1, n_2-1$)] at least as extreme as the standardized statistic
+
+Equation for the standard error of the difference in sample mean:
+
+\vspace{0.5in}
+
+Equation for the standardized difference in sample mean:
+
+\vspace{0.5in}
+
+\newpage
+
+### Optional Notes: Video Example (Video 19.3TheoryTests) {-}
+
+Are the conditions met to analyze the butterfly data using theory based-methods?
+
+\vspace{0.8in}
+
+Calculate the standardized difference in mean max grip strength.
+
+* First calculate the $SE(\bar{x}_1 - \bar{x}_2)$
+
+\vspace{0.6in}
+
+* Then calculate the T-score
+
+\vspace{1in}
+
+What theoretical distribution should we use to find the p-value?
+
+\vspace{0.3in}
+
+To find the theory-based p-value:
+
+
+``` r
+pt(-5, df=39, lower.tail=TRUE)*2
+```
+
+```
+#> [1] 1.252417e-05
+```
+
+Conclusion: 
+
+* Amount of evidence
+    
+* Parameter of interest 
+    
+* Direction of the alternative hypothesis
+
+\vspace{0.6in}
+
+### Confidence Interval - Video 19.3TheoryIntervals {-}
+
+* Calculate the interval centered at the sample statistic
+
+\rgi $\text{statistic} \pm \text{margin of error}$
+
+\vspace{0.8in}
+
+### Optional Notes: Video Example (Video 19.3TheoryIntervals) {-}
+
+Using the butterfly data, calculate the 99\% confidence interval.
+
+
+``` r
+butterflies %>%
+    reframe(favstats(MaxGrip~Monarch_Group))
+```
+
+```
+#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
+#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
+#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
+```
+
+* Need the $t^*$ multiplier for a 99\% confidence interval from a t-distribution with _________ df.
+
+
+``` r
+qt(0.995, df=39, lower.tail = TRUE)
+```
+
+```
+#> [1] 2.707913
+```
+
+* We will use the same value for the $SE(\bar{x}_1-\bar{x}_2)$ as calculated for the standardized statistic.
+
+\vspace{1in}
+
+Calculate the margin of error for a 99\% confidence interval for the parameter of interest.
+
+\vspace{0.5in}
+
+Calculate a 99\% confidence interval for the parameter of interest.
+
+\vspace{0.6in}
+
+
+### Optional Notes: Simulation Testing for a Difference in Means: Video 19.1 {-}
 
 \setstretch{1.5}
 
@@ -71,7 +229,7 @@ Why should we treat this as two independent groups rather than paired data?
 
 \vspace{0.6in}
 
-### Hypothesis Testing {-}
+#### Hypothesis Testing {-}
 
 Conditions:
 
@@ -137,8 +295,9 @@ letters%>%
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
+\newpage
 
 #### Simulation-based method {-}
 
@@ -171,7 +330,7 @@ two_mean_test(Memorized~Grouped, #Enter the names of the variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 Explain why the null distribution is centered at the value of zero:
 
@@ -199,13 +358,12 @@ Conclusion:
 
 \vspace{0.6in}
 
-\newpage
 
-### Confidence interval {-}
+#### Confidence interval {-}
 
 To estimate the difference in true mean we will create a confidence interval.
 
-#### Simulation-based method - Video 19.2 {-}
+### Optional Notes: Simulation Confidence Interval for a Difference in Means - Video 19.2 {-}
 
 * Write the response variable values on cards
 
@@ -233,7 +391,7 @@ two_mean_bootstrap_CI(Memorized ~ Grouped, #Enter the name of the variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 Confidence interval interpretation:
 
@@ -247,158 +405,6 @@ Confidence interval interpretation:
 
 \vspace{0.8in}
 
-#### Theory-based method - Video 19.3TheoryTests {-}
-
-Example: Every year, orange and black monarch butterflies migrate from their summer breeding grounds in the US and Canada to mountain forests in central Mexico, where they hibernate for the winter. Due to abnormal weather patterns and drought affecting monarch habitats and feeding grounds, the population of monarch butterflies is estimated to have decreased by 53% from the 2018-2019 wintering season to the 2019-2020 wintering season (WWF, 2020). While conservationists often resort to captive-rearing with the goal of raising biologically indistinct individuals for release into the wild, tagging studies have shown that captive-reared monarchs have lower migratory success compared to wild monarchs. For this study, the researchers raised 67 monarchs (descended from wild monarchs) from eggs to maturity and then compared them to a group of 40 wild-caught monarchs. The researchers want to explore whether the maximum grip strength (how many Newtons a butterfly exerts at the moment of release when gently tugged from a mesh-covered perch) differs between captive-reared and wild-caught monarchs. Use Captive – Wild for order of subtraction.
-
-Write the null and alternative hypotheses in notation.
-
-$H_0:$
-
-\vspace{0.2in}
-
-$H_A:$
-
-\vspace{0.2in}
-
-
-``` r
-butterfly <-read.csv("data/butterfly1.csv")
-
-butterflies <- butterfly %>% na.omit() %>%
-    rename(Monarch_Group = "Monarch.Group",
-           MaxGrip = "Max.Grip.Strength..N.") %>%
-    mutate(Monarch_Group = factor(Monarch_Group),
-           Sex = factor(Sex)) %>%
-    mutate(Monarch_Group = fct_collapse(Monarch_Group,"Captive" = c("Incubator - Fall conditions", "Rearing room - summer conditions"), "Wild" = "Wild migrants"))
-
-butterflies %>%
-    reframe(favstats(MaxGrip~Monarch_Group))
-```
-
-```
-#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
-#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
-#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
-```
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-1ofeach_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-Conditions:
-
-* Independence: the response for one observational unit will not influence the outcome for another observational unit
-
-* Large enough sample size
-
-\vspace{1in}
-
-Like with paired data the t-distribution can be used to model the difference in means. 
-
-\setstretch{1.5}
-
-* For independent samples we use the ______- distribution
-with ________________ degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-Theory-based test:
-
-* Calculate the standardized statistic
-
-* Find the area under the t-distribution with the smallest $n - 1$ df [min($n_1-1, n_2-1$)] at least as extreme as the standardized statistic
-
-Equation for the standard error of the difference in sample mean:
-
-\vspace{0.5in}
-
-Equation for the standardized difference in sample mean:
-
-\vspace{0.5in}
-
-Are the conditions met to analyze the butterfly data using theory based-methods?
-
-\vspace{0.8in}
-
-Calculate the standardized difference in mean max grip strength.
-
-* First calculate the $SE(\bar{x}_1 - \bar{x}_2)$
-
-\vspace{0.6in}
-
-* Then calculate the T-score
-
-\vspace{1in}
-
-What theoretical distribution should we use to find the p-value?
-
-\vspace{0.3in}
-
-To find the theory-based p-value:
-
-
-``` r
-pt(-5, df=39, lower.tail=FALSE)*2
-```
-
-```
-#> [1] 1.999987
-```
-
-Conclusion: 
-
-* Amount of evidence
-    
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
-
-\vspace{0.6in}
-
-#### Confidence Interval - Video 19.3TheoryIntervals {-}
-
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.8in}
-
-Using the butterfly data, calculate the 99\% confidence interval.
-
-
-``` r
-butterflies %>%
-    reframe(favstats(MaxGrip~Monarch_Group))
-```
-
-```
-#>   Monarch_Group   min    Q1 median     Q3   max      mean         sd  n missing
-#> 1       Captive 0.081 0.162  0.217 0.2845 0.596 0.2363731 0.09412948 67       0
-#> 2          Wild 0.108 0.271  0.352 0.4330 0.650 0.3607500 0.14066796 40       0
-```
-
-* Need the $t^*$ multiplier for a 99\% confidence interval from a t-distribution with _________ df.
-
-
-``` r
-qt(0.995, df=39, lower.tail = TRUE)
-```
-
-```
-#> [1] 2.707913
-```
-
-* We will use the same value for the $SE(\bar{x}_1-\bar{x}_2)$ as calculated for the standardized statistic.
-
-\vspace{1in}
-
-Calculate the margin of error for a 99\% confidence interval for the parameter of interest.
-
-\vspace{0.5in}
-
-Calculate a 99\% confidence interval for the parameter of interest.
-
-\vspace{0.6in}
 
 ### Concept Check
 

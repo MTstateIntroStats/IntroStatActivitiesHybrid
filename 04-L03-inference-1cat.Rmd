@@ -20,7 +20,7 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 * Success:
 
-#### Activity intro {-}
+#### R Instructions {-}
 
 * Download the R script file and the data file (US_dogs.csv) from Canvas
 
@@ -28,7 +28,12 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 
 * Enter the name of the dataset for datasetname.csv.
 
-* Highlight and run lines 1 - 6 
+* Highlight and run lines 1 - 6 to load the data set 
+
+```{r, echo=TRUE, eval=FALSE}
+dogs <- read.csv("datasetname.csv")
+```
+
 
 1.  What is the value of the point estimate?
 

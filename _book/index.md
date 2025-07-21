@@ -69,11 +69,11 @@ STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nin
     - Read through the introduction to the day's in-class activity.
     - Read through the week's homework assignment and note any questions you may have on the content.
 * _During class meeting_:
-    - Work through the guided activity, in-class activity or weekly lab with your classmates and instructor, taking detailed notes on your answers to each question in the activity.
+    - Work through the activities and labs with your classmates and instructor, taking detailed notes on your answers to each question in the activity.
 * _After class meeting_:
     - Complete any parts of the activity you did not complete in class.
     - Review the activity solutions in the Math and Stat Center, and take notes on key points.
-    - Complete any remaining assigned readings for the week.
+    - Complete any remaining assigned readings videos, and quizzes for the week.
     - Complete the week's homework assignment.
 
 \nocite{*}

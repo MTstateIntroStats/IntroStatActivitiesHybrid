@@ -38,16 +38,16 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, 
 
 #### R instructions{-}
 
-* Upload and open the R script file for Week 12 lab. 
+* Upload and open the R script file for Module 11 lab. 
 
-* Upload and import the csv file, `dinosaur`. 
+* Upload the csv file, `dinosaur`. 
 
-* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 10 and the name of the explanatory and response variable in line 12. 
+* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 9 and the name of the explanatory and response variable in line 11. 
 
 * Highlight and run lines 1--16 to load the data and create a plot of the data. 
 
 ```{r, echo=TRUE, eval=FALSE}
-dinos <- datasetname
+dinos <- read.csv("datasetname.csv")
 dinos %>%
   ggplot(aes(y = response, x = explanatory)) +
   geom_boxplot() +
@@ -87,9 +87,9 @@ We will use the `two_mean_test()` function in R (in the `catstats` package) to s
 
 6.  Simulate a null distribution and compute the p-value. 
 
-* Using the R script file for this lab, enter the correct values in place of the `xx`'s to produce the null distribution with 1000 simulations.  
+* Using the R script file for this lab, enter the correct values in place of the `xx`'s to produce the null distribution with 10000 simulations.  
 
-* Highlight and run lines 28--33.  
+* Highlight and run lines 25--30.  
 
 ```{r, echo = TRUE, eval = FALSE}
 two_mean_test(response~explanatory, #Enter the names of the variables
@@ -99,9 +99,6 @@ two_mean_test(response~explanatory, #Enter the names of the variables
               as_extreme_as = xx,  # Observed statistic
               direction = "xx")  # Direction of alternative: "greater", "less", or "two-sided"
 ```
-|        Sketch the null distribution created using the `two_mean_test` code.
-
-\vspace{1.5in}
 
 ### Communicate the results and answer the research question {-}
 
@@ -121,7 +118,7 @@ We will use the `two_mean_bootstrap_CI()` function in R (in the `catstats` packa
 
 * Fill in the missing values/numbers in the `two_mean_bootstrap_CI()` function to create the 98\% confidence interval.  
 
-* Highlight and run lines 38--42. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
+* Highlight and run lines 34--38. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
 
 ```{r, echo = TRUE, eval = FALSE}
 two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables

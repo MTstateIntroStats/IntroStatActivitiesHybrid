@@ -1,6 +1,6 @@
 ## Video Notes: Regression and Correlation
 
-Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 13.
+Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 12.
 
 ### Course Videos
 
@@ -262,7 +262,7 @@ Interpret the coefficient of determination between gestation and birthweight.
 
 \newpage
 
-#### Multivariable plots - Video Chapter7 {-}
+### Multivariable plots - Video Chapter7 {-}
 
 Aesthetics: visual property of the objects in your plot
 
@@ -350,7 +350,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 \vspace{0.2in}
 \newpage
 
-#### Theoretical Testing for Slope - Video 21.4to21.5TheoryTests {-}
+### Theoretical Testing for Slope - Video 21.4to21.5TheoryTests {-}
 
 Conditions:
 
@@ -359,8 +359,6 @@ Conditions:
 * Linearity (for both simulation-based and theory-based methods): the data should follow a linear trend.
 
     * Check this assumption by examining the ____________________________ of the two variables, and ____________________________________________. The pattern in the residual plot should display a horizontal line.
-
-\newpage
 
 * Independence (for both simulation-based and theory-based methods)
 
@@ -402,8 +400,6 @@ Diamonds %>% # Pipe data set into...
 
 ```
 
-\newpage
-
 Diagnostic plots:
 ```{r}
 lm.diamond <- lm(price~carat, data=Diamonds) #lm(response~explanatory)
@@ -417,6 +413,16 @@ hist(lm.diamond$resid, xlab="Residuals", ylab="Frequency",
 Check the conditions for the ocean data:
 
 Scatterplot:
+
+```{r, echo=FALSE}
+bottle <- read.csv("data/bottle.csv")
+bottles <- bottle %>%
+    na.omit()
+set.seed(1)
+water<-bottles[c(sample((1:814247), 100, replace=FALSE)),]
+```
+
+
 ```{r, echo=TRUE, warning=FALSE}
 water %>% # Pipe data set into...
 ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
@@ -429,10 +435,9 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
 
 ```
 
-\newpage
-
 Diagnostic plots:
 ```{r}
+lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
 par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
 plot(lm.water, which=1) # Residual vs fitted values
 hist(lm.water$resid, xlab="Residuals", ylab="Frequency",
@@ -458,7 +463,7 @@ Equation for the standardized slope:
 
 \vspace{0.8in}
 
-##### Optional Notes: Video Example (Video 21.4TheoryTests) {-}
+### Optional Notes: Video Example (Video 21.4TheoryTests) {-}
 
 Calculate the standardized slope for the ocean data
 
@@ -501,7 +506,7 @@ pt(-8.670, df = 98, lower.tail=TRUE)
 
 
 
-#### Theoretical Confidence Interval for Slope - Video 21.4TheoryInterval {-}
+### Theoretical Confidence Interval for Slope - Video 21.4TheoryInterval {-}
 
 * Calculate the interval centered at the sample statistic
 
@@ -509,7 +514,7 @@ pt(-8.670, df = 98, lower.tail=TRUE)
 
 \vspace{0.6in}
 
-##### Optional Notes: Video Example (Video 21.4TheoryInterval) {-}
+### Optional Notes: Video Example (Video 21.4TheoryInterval) {-}
 
 ```{r, echo=TRUE, collapse=FALSE}
 lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
@@ -527,7 +532,7 @@ qt(0.975, df=98, lower.tail = TRUE)
 \vspace{1in}
 
 
-### Video Notes: Inference for Two Quantitative Variables
+### Video Notes: Inference for Two Quantitative Variables {-}
 
 \setstretch{1}
 
@@ -622,6 +627,8 @@ Conditions:
 * Linear relationship:
 
 \vspace{0.3in}
+
+\newpage
 
 * Simulate many samples assuming $H_0: \beta_1 = 0$ or $H_0: \rho =0$
 
