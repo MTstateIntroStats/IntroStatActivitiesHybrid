@@ -127,7 +127,7 @@ When performing inference on a least squares line, the follow conditions are gen
 The scatterplot and the residual plots will be used to assess the conditions for approximating the data with the $t$-distribution.     
 
 \begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
-12. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
+10. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
 
 \vspace{1in}
 
@@ -139,14 +139,14 @@ $$
  
 We will use the linear model output above to get the estimate for slope and standard error.
 
-13.  Calculate the standardized slope.
+11.  Calculate the standardized slope.
 
 \vspace{1in}
 
-14.  Using the linear model output, report the p-value for the test of significance.
+12.  Using the linear model output, report the p-value for the test of significance.
 
 \vspace{0.5in}
-15. Based on the p-value, how much evidence is there against the null hypothesis?
+13. Based on the p-value, how much evidence is there against the null hypothesis?
 
 \vspace{0.5in}
 
@@ -165,7 +165,7 @@ qt(0.995, 601) #95% t* multiplier
 #> [1] 2.584034
 ```
 
-16. Calculate the 99% confidence interval for the true slope.
+14. Calculate the 99% confidence interval for the true slope.
 \vspace{1in}
 
 \newpage

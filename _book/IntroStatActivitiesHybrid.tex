@@ -18716,12 +18716,12 @@ To find the \(t^*\) multiplier for a 99\% confidence interval:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df=}\DecValTok{198}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{qt}\NormalTok{(}\FloatTok{0.995}\NormalTok{, }\AttributeTok{df=}\DecValTok{198}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-#> [1] 1.972017
+#> [1] 2.600887
 \end{verbatim}
 
 Calculate the margin of error:
@@ -18895,7 +18895,7 @@ Simulated bootstrap distribution:
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ hw\_diff}\SpecialCharTok{$}\NormalTok{ht\_diff, }\CommentTok{\# Enter vector of differences}
             \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples for CI}
-            \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{,  }\CommentTok{\# Confidence level in decimal form}
+            \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{,  }\CommentTok{\# Confidence level in decimal form}
             \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\# Not needed when entering vector of differences}
 \end{Highlighting}
 \end{Shaded}
@@ -20416,7 +20416,7 @@ The scatterplot and the residual plots will be used to assess the conditions for
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{11}
+\setcounter{enumi}{9}
 \tightlist
 \item
   Are the conditions met to use the \(t\)-distribution to approximate the sampling distribution of our test statistic?
@@ -20434,7 +20434,7 @@ We will use the linear model output above to get the estimate for slope and stan
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
+\setcounter{enumi}{10}
 \tightlist
 \item
   Calculate the standardized slope.
@@ -20444,7 +20444,7 @@ We will use the linear model output above to get the estimate for slope and stan
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{13}
+\setcounter{enumi}{11}
 \tightlist
 \item
   Using the linear model output, report the p-value for the test of significance.
@@ -20454,7 +20454,7 @@ We will use the linear model output above to get the estimate for slope and stan
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{14}
+\setcounter{enumi}{12}
 \tightlist
 \item
   Based on the p-value, how much evidence is there against the null hypothesis?
@@ -20480,7 +20480,7 @@ The \(t^*\) multiplier comes from the \(t\)-distribution with \(n-2\) df. Recall
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{15}
+\setcounter{enumi}{13}
 \tightlist
 \item
   Calculate the 99\% confidence interval for the true slope.

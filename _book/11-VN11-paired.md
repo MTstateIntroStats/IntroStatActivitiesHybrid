@@ -229,11 +229,11 @@ To find the $t^*$ multiplier for a 99\% confidence interval:
 
 
 ``` r
-qt(0.975, df=198, lower.tail = TRUE)
+qt(0.995, df=198, lower.tail = TRUE)
 ```
 
 ```
-#> [1] 1.972017
+#> [1] 2.600887
 ```
 
 Calculate the margin of error:
@@ -378,7 +378,7 @@ Simulated bootstrap distribution:
 set.seed(216)
 paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
             number_repetitions = 10000, # Number of bootstrap samples for CI
-            confidence_level = 0.95,  # Confidence level in decimal form
+            confidence_level = 0.99,  # Confidence level in decimal form
             which_first = 1)  # Not needed when entering vector of differences
 ```
 
