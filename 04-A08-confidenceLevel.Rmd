@@ -117,7 +117,7 @@ $$\hat{p}\pm z^* \times SE(\hat{p})$$
 
 #### Simulation methods {-}
 
-We could also use simulation-based methods to analyze these data.  Note the imputs into the R code to create the null and bootstrap distribution.
+We could also use simulation-based methods to analyze these data.  Note the inputs into the R code to create the null and bootstrap distribution.
 
 ```{r, echo=TRUE}
 one_proportion_test(probability_success=0.1,

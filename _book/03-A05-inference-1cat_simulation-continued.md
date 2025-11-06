@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 5:  Helper-Hinderer (continued)
 
 \setstretch{1}

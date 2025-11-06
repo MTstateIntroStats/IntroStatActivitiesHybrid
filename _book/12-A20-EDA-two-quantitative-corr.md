@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 20:  IPEDS (continued)
 
 \setstretch{1}

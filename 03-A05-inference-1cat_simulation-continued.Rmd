@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 5:  Helper-Hinderer (continued)
 
 \setstretch{1}
@@ -72,6 +77,7 @@ To use the computer simulation, we will need to enter the
 We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
 
 ```{r, echo=TRUE, eval = TRUE}
+set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
