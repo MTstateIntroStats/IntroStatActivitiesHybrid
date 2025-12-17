@@ -211,6 +211,7 @@ Using the R script file for this activity, enter your answers for question 5 in 
 
 
 ``` r
+set.seed(216)
 two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
     data = good, # Name of data set
     first_in_subtraction = "Hurry", # Order of subtraction: enter the name of Group 1
@@ -262,6 +263,7 @@ We will use the `two_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 
 ``` r
+set.seed(216)
 two_proportion_bootstrap_CI(formula = Behavior~Condition, 
          data=good, # Name of data set
          first_in_subtraction = "Hurry", # Order of subtraction: enter the name of Group 1

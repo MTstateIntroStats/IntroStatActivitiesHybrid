@@ -203,7 +203,7 @@ pnorm(4.769, # Enter value of standardized statistic
 
 \vspace{0.4in}
 
-### Impacts on the p-value {-}
+### Two-sided test {-}
 
 Suppose that we want to show that the true proportion of male boxers **differs** from that in the general population.
 
@@ -224,66 +224,56 @@ Suppose that we want to show that the true proportion of male boxers **differs**
 
 \vspace{0.2in}
 
-Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.162$) of male boxers that are left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as below:
+<!-- Suppose instead of 500 male boxers the researchers only took a sample of 300 male boxers and found the same proportion ($\hat{p}=0.162$) of male boxers that are left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as below: -->
 
-$$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{300}} = 0.017$$.
+<!-- $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{300}} = 0.017$$. -->
 
-The standardized statistic for this new sample is calculated below:
+<!-- The standardized statistic for this new sample is calculated below: -->
 
-$$Z = \frac{0.162-0.1}{0.017} = 3.64$$
+<!-- $$Z = \frac{0.162-0.1}{0.017} = 3.64$$ -->
 
-\newpage
+<!-- \newpage -->
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/Norcur-1} 
-
-}
-
-\caption{Standard Normal Curve}(\#fig:Norcur)
-\end{figure}
+<!-- ```{r Norcur, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"} -->
+<!-- openintro::normTail() -->
+<!-- ```  -->
 
 
-12.  How does the decrease in sample size affect the p-value?
+<!-- 12.  How does the decrease in sample size affect the p-value? -->
 
-\vspace{0.3in}
+<!-- \vspace{0.3in} -->
 
-Suppose another sample of 500 male boxers was taken and 68 were found to be left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as before:
+<!-- Suppose another sample of 500 male boxers was taken and 68 were found to be left-handed.  Since we are still assuming the same null value, 0.1, the standard error would be calculated as before: -->
 
-$$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$.
+<!-- $$SE_0(\hat{p})=\sqrt{\frac{0.1(1-0.1)}{500}} = 0.013$$. -->
 
-The standardized statistic for this new sample is calculated below:
+<!-- The standardized statistic for this new sample is calculated below: -->
 
-$$Z = \frac{0.136-0.1}{0.013} = 2.769$$
+<!-- $$Z = \frac{0.136-0.1}{0.013} = 2.769$$ -->
 
-\begin{figure}
+<!-- ```{r Norcuv, warning=FALSE, out.width="50%", echo = FALSE, fig.align='center', fig.cap="Standard Normal Curve"} -->
+<!-- openintro::normTail() -->
+<!-- ```  -->
 
-{\centering \includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/Norcuv-1} 
+<!-- 13.  How does a statistic closer to the null value affect the p-value? -->
 
-}
+<!-- \vspace{0.3in} -->
 
-\caption{Standard Normal Curve}(\#fig:Norcuv)
-\end{figure}
+<!-- \newpage -->
 
-13.  How does a statistic closer to the null value affect the p-value?
+<!-- 14.  Summarize how each of the following affected the p-value: -->
 
-\vspace{0.3in}
+<!-- a) Switching to a two-sided test. -->
 
-\newpage
+<!-- \vspace{0.4in} -->
 
-14.  Summarize how each of the following affected the p-value:
+<!-- b) Using a smaller sample size. -->
 
-a) Switching to a two-sided test.
+<!-- \vspace{0.4in} -->
 
-\vspace{0.4in}
+<!-- c) Using a sample statistic closer to the null value. -->
 
-b) Using a smaller sample size.
-
-\vspace{0.4in}
-
-c) Using a sample statistic closer to the null value.
-
-\vspace{0.4in}
+<!-- \vspace{0.4in} -->
 
 ### Take-home messages
 
@@ -293,9 +283,6 @@ c) Using a sample statistic closer to the null value.
 
 3.  The p-value for a two-sided test is approximately two times the value for a one-sided test.  A two-sided test provides less evidence against the null hypothesis.
 
-4.  The larger the sample size, the smaller the sample to sample variability.  This will result in a larger standardized statistic and more evidence against the null hypothesis.
-
-5.  The farther the statistic is from the null value, the larger the standardized statistic.  This will result in a smaller p-value and more evidence against the null hypothesis.
 
 ### Additional notes
 

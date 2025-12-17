@@ -95,6 +95,7 @@ We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 
 ``` r
+set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
@@ -114,6 +115,8 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 **Interpretation of the 95\% confidence interval in context.**
 
 \vspace{.6in}
+
+\newpage
 
 #### Communicate the results and answer the research question {-}
 
@@ -135,6 +138,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 
 ``` r
+set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use

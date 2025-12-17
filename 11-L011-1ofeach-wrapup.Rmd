@@ -51,10 +51,9 @@ dinos <- read.csv("datasetname.csv")
 dinos %>%
   ggplot(aes(y = response, x = explanatory)) +
   geom_boxplot() +
-  labs(title = "Side-by-side Box Plots of Femur Length by Rugosity
-       for Carnivorous Dinosaur",
-       x = "Rugose structures on the backbone",
-       y = "Femur length (cm)")
+  labs(title = "Don't forget to title your plot!",
+       x = "Label the x-axis",
+       y = "Label the y-axis (Don't forget units!)")
 ```
 
 3. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?

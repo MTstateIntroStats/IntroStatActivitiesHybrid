@@ -38,6 +38,7 @@ $$\text{probability} = \frac{\text{number of ways an event can happen}}{\text{to
 For example, to calculate the probability of a coin flip landing on heads; there are only two outcomes (heads or tails) and only one possibility way to land on heads. 
 
 $$P(heads) = \frac{1}{2} = 0.5$$
+
 The figure below shows the long-run proportion of times a simulated coin flip lands on heads on the y-axis, and the number of tosses on the x-axis. Notice how the long-run proportion starts converging to 0.5 as the number of tosses increases.
 
 ```{r confounding, fig.cap="", out.width="65%"}
@@ -121,18 +122,26 @@ If a card drawn is an ace, what is the probability the card drawn is red.
 
 ### Calculating probabilities from a two-way table {-}
 
+Let's start with creating the two-way table.  Your instructor will work through creating the table with the class.
+
 1. In 2014, the website FiveThirtyEight examined the works of Bob Ross to see what trends could be found. They determined that of all the paintings he created, 95% of them contained at least one “happy tree.” Of those works with a happy tree, 43% contained at least one “almighty mountain.” Of the paintings that did not have at least one happy tree, only 10% contained at least one almighty mountain.
 \vspace{1mm}
 
 Let $A$ = Bob Ross painting contains a happy tree, and $B$ = Bob Ross painting contains an almighty mountain
 \vspace{0.1in}
 
+Create a hypothetical two-way table to represent the situation. 
+
 \begin{center}
 \begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.25in}  $A$ \hspace{.25in} & \hspace{0.25in} $A^C$ \hspace{0.25in} & \hspace{0.25in} Total \hspace{0.25in} \\ \hline
- $B$ & 40850 & 500 & 41350 \\ \hline
- $B^C$ & 54150 & 4500 & 58650 \\ \hline
-Total & 95000 & 5000 & 100000 \\ \hline
+\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\
+& & & \\ \hline
+$B$& & & \\
+& & & \\ \hline
+$B^C$& & & \\
+& & & \\ \hline
+Total & & & 100,000 \\
+& & & \\ \hline
 \end{tabular}
 \end{center}
 \vspace{.1in}
@@ -151,51 +160,51 @@ c. What is the probability that a selected Bob Ross painting does not contain a 
 
 \newpage
 
-2. A recent study of population decline of white-tailed deer in Wyoming due to chronic wasting disease [@edmunds2016] (CWD) reported that 35.4\% of white-tailed deer have CWD.  The survival rate of deer with CWD is 39.6\% and the survival rate of deer without CWD is 80.1\%.  
-\vspace{1mm}
+<!-- 2. A recent study of population decline of white-tailed deer in Wyoming due to chronic wasting disease [@edmunds2016] (CWD) reported that 35.4\% of white-tailed deer have CWD.  The survival rate of deer with CWD is 39.6\% and the survival rate of deer without CWD is 80.1\%.   -->
+<!-- \vspace{1mm} -->
 
-    Let $A$ = the event a deer has CWD, and $B$ = the event the deer survives.
-\vspace{0.1in}
+<!--     Let $A$ = the event a deer has CWD, and $B$ = the event the deer survives. -->
+<!-- \vspace{0.1in} -->
 
-    a. Identify what each numerical value given in the problem represents in probability notation.
-\vspace{.1in}
+<!--     a. Identify what each numerical value given in the problem represents in probability notation. -->
+<!-- \vspace{.1in} -->
 
-        0.354 =  
-\vspace{.1in}
- 
-        0.396 =  
-\vspace{.1in}
+<!--         0.354 =   -->
+<!-- \vspace{.1in} -->
 
-        0.801 =  
-\vspace{.1in}
+<!--         0.396 =   -->
+<!-- \vspace{.1in} -->
 
-    b. Create a hypothetical two-way table to represent the situation.  
-    
-\begin{center}
-\begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
-& & & \\ \hline
-$B$& & & \\ 
-& & & \\ \hline
-$B^C$& & & \\ 
-& & & \\ \hline
-Total & & & 100,000 \\ 
-& & & \\ \hline
-\end{tabular}
-\end{center}
-\vspace{.1in}
+<!--         0.801 =   -->
+<!-- \vspace{.1in} -->
 
-   c. Find $P(A \mbox{ and } B)$. What does this probability represent in the context of the problem?
-\vspace{.8in}
+<!--     b. Create a hypothetical two-way table to represent the situation.   -->
 
-   d. Find the probability that a deer that has CWD does not survive. What is the notation used for this probability?
-\vspace{.8in}
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|c|c|c|c|} \hline -->
+<!-- \hspace{0.8in} & \hspace{0.35in} $A$ \hspace{.35in} & \hspace{0.35in} $A^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\  -->
+<!-- & & & \\ \hline -->
+<!-- $B$& & & \\  -->
+<!-- & & & \\ \hline -->
+<!-- $B^C$& & & \\  -->
+<!-- & & & \\ \hline -->
+<!-- Total & & & 100,000 \\  -->
+<!-- & & & \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+<!-- \vspace{.1in} -->
 
-   e.  What is the probability that a deer does not survive given they do not have CWD?  What is the notation used for this probability?
+<!--    c. Find $P(A \mbox{ and } B)$. What does this probability represent in the context of the problem? -->
+<!-- \vspace{.8in} -->
+
+<!--    d. Find the probability that a deer that has CWD does not survive. What is the notation used for this probability? -->
+<!-- \vspace{.8in} -->
+
+<!--    e.  What is the probability that a deer does not survive given they do not have CWD?  What is the notation used for this probability? -->
 
 \newpage 
 
-3. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A recent study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
+2. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A recent study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
 \vspace{1mm}
 
     Let $A$ = the event the child has strep throat, and $B$ = the event the child has a positive RADT.

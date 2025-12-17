@@ -45,37 +45,6 @@ It has long been reported that the mean body temperature of adults is $98.6^{\ci
 
 \vspace{0.8in}
 
-In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
-
-\newpage
-
-Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
-
-* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
-
-* **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
-
-    - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
-
-    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
-    
-    - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
- 
-
-Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the standard Normal distribution. Enter the **$t$-distribution**!
-
-
-As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{07-A11-quantitative_theory_files/figure-latex/tdist-1} 
-
-}
-
-\caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}(\#fig:tdist)
-\end{figure}
-    
 #### Summarize and visualize the data {-}
 
 The following code is used to create a boxplot of the data.
@@ -121,6 +90,38 @@ bodytemp %>%
 4. Report the sample mean of the study.  Give appropriate notation.
 
 \vspace{0.3in}
+
+In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
+
+\newpage
+
+Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
+
+* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
+
+* **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
+
+    - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
+
+    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    
+    - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+ 
+
+Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the standard Normal distribution. Enter the **$t$-distribution**!
+
+
+As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and dotted lines) are centered at 0 just like a standard Normal distribution (solid line), but are slightly wider.  The variability of a $t$-distribution depends on its degrees of freedom, which is calculated from the sample size of a study.  (For a single sample of $n$ observations or paired differences, the degrees of freedom is equal to $n-1$.) Recall from previous classes that larger sample sizes tend to result in narrower sampling distributions.  We see that here as well.  The larger the sample size, the larger the degrees of freedom, the narrower the $t$-distribution.  (In fact, a $t$-distribution with infinite degrees of freedom actually IS the standard Normal distribution!)
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{07-A11-quantitative_theory_files/figure-latex/tdist-1} 
+
+}
+
+\caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}(\#fig:tdist)
+\end{figure}
+
 
 **Verify the independence condition is met:**
 \vspace{0.8in}

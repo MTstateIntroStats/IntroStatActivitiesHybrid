@@ -33,7 +33,9 @@ mac <- read.csv("datasetname.csv")
 
 #### Summarize and visualize the data {-} 
 
-* To find the correlation between the variables, `log_GDP` and `dollar_price` highlight and run lines 13--16 in the R script file.
+* To find the correlation between the variables, `log_GDP` and `dollar_price` enter the name of the explanatory and response variable
+
+* Highlight and run lines 13--16 in the R script file.
 
 ```{r, echo=TRUE, eval=FALSE}
 mac %>% 
@@ -72,17 +74,20 @@ round(summary(bigmacLM)$coefficients,3) # Display coefficient summary
 
 \vspace{0.3in}
 
+* Enter the name of the explanatory and response variable in the code to create the scatterplot
+
+* Add a title and x and y axes labels
+
 * Highlight and run lines 28--33 to create the scatterplot to check for linearity.
 
 ```{r, echo=TRUE, eval=FALSE, warning=FALSE}
 #Scatterplot
 mac %>% # Pipe data set into...
-  ggplot(aes(x = dollar_price, y = log_GDP))+  # Specify variables
+  ggplot(aes(x = explanatory, y = response))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "Big Mac Cost",  # Label x-axis
-       y = "log GDP",  # Label y-axis
-       title = "Scatterplot of Big Mac Cost vs. log GDP per person
-       for Countries in 2022") +  # Be sure to tile your plots
+  labs(x = "include an x-axis label (don't forget units)",  # Label x-axis
+       y = "include an y-axis label (don't forget units)",  # Label y-axis
+       title = "A title should include type of plot, OUs, variables") +  # Be sure to tile your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
@@ -153,7 +158,7 @@ Using the R script file for this activity, enter your answers for question 9 in 
 * Highlight and run lines 47--53. 
 
 ```{r, echo=TRUE, eval=FALSE}
-regression_test(log_GDP~dollar_price, # response ~ explanatory
+regression_test(response~explanatory, # response ~ explanatory
                data = mac, # Name of data set
                direction = "xx", # Sign in alternative ("greater", "less", "two-sided")
                summary_measure  = "xx", # "slope" or "correlation"
@@ -175,7 +180,7 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 * Highlight and run lines 58--62. 
 
 ```{r, echo=TRUE, eval=FALSE}
-regression_bootstrap_CI(log_GDP~dollar_price, # response ~ explanatory
+regression_bootstrap_CI(response~explanatory, # response ~ explanatory
    data = mac, # Name of data set
    confidence_level = xx, # Confidence level as decimal
    summary_measure = "xx", # Slope or correlation

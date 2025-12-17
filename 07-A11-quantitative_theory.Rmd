@@ -45,6 +45,41 @@ It has long been reported that the mean body temperature of adults is $98.6^{\ci
 
 \vspace{0.8in}
 
+#### Summarize and visualize the data {-}
+
+The following code is used to create a boxplot of the data.
+
+* Download the R script file and upload to the RStudio server.
+
+* Open the R script file and highlight and run lines 1--14.
+
+```{r, echo=TRUE, eval=TRUE}
+bodytemp <- read.csv("https://math.montana.edu/courses/s216/data/normal_temperature.csv")
+bodytemp %>%
+  ggplot(aes(x = Temp))+
+  geom_boxplot()+
+  labs(title="Boxplot of Body Temperatures for Stat 216 Students",
+       x = "body temperature (*F)") +
+        theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+```
+
+* Highlight and run lines 17 - 18 to get the summary statistics for the variable `Temp`.
+
+```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
+bodytemp %>% 
+  summarise(favstats(Temp))
+```
+#### Check theoretical conditions {-}
+
+3. Report the sample size of the study. Give appropriate notation.
+
+\vspace{0.3in}
+
+4. Report the sample mean of the study.  Give appropriate notation.
+
+\vspace{0.3in}
+
 In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
 
 \newpage
@@ -89,41 +124,7 @@ for (i in 1:4){
 legend("topright", inset=.05, title="Distributions",
   labels, lwd=2, lty=type, col=colors)
 ```
-    
-#### Summarize and visualize the data {-}
 
-The following code is used to create a boxplot of the data.
-
-* Download the R script file and upload to the RStudio server.
-
-* Open the R script file and highlight and run lines 1--14.
-
-```{r, echo=TRUE, eval=TRUE}
-bodytemp <- read.csv("https://math.montana.edu/courses/s216/data/normal_temperature.csv")
-bodytemp %>%
-  ggplot(aes(x = Temp))+
-  geom_boxplot()+
-  labs(title="Boxplot of Body Temperatures for Stat 216 Students",
-       x = "body temperature (*F)") +
-        theme(axis.text.y = element_blank(), 
-          axis.ticks.y = element_blank()) # Removes y-axis ticks
-```
-
-* Highlight and run lines 17 - 18 to get the summary statistics for the variable `Temp`.
-
-```{r, echo=TRUE, eval=TRUE, collapse=FALSE}
-bodytemp %>% 
-  summarise(favstats(Temp))
-```
-#### Check theoretical conditions {-}
-
-3. Report the sample size of the study. Give appropriate notation.
-
-\vspace{0.3in}
-
-4. Report the sample mean of the study.  Give appropriate notation.
-
-\vspace{0.3in}
 
 **Verify the independence condition is met:**
 \vspace{0.8in}

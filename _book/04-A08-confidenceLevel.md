@@ -65,14 +65,6 @@ In the interpretation of a 95\% confidence interval, we say that we are 95\% con
 
 \vspace{0.5in}
 
-4. Change the confidence level to 90\%.  What happened to the width of the intervals?
-
-\vspace{0.2in}
-
-5. Write down the `Running Total` for the proportion of intervals that contain $\pi$ using a 90\% confidence level.
-
-\vspace{0.4in}
-
 **Interpretation of the level of confidence:**
 
 \vspace{0.8in}
@@ -84,6 +76,8 @@ To calculate a theory-based 95\% confidence interval for $\pi$, we will first fi
 $$SE(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}$$
 
 Note that we do not include a "0" subscript, since we are not assuming a null hypothesis. 
+
+Recall from the last activity, the sample proportion is $$\hat{p}=\frac{81}{500}=0.162$$.
 
 **Calculate the standard error of the sample proportion to find a 95\% confidence interval.**
 
@@ -124,17 +118,18 @@ $$\hat{p}\pm z^* \times SE(\hat{p})$$
 \vspace{1in}
 
 
-6.  Interpret the 95\% confidence **interval** in the context of the problem.
+4.  Interpret the 95\% confidence **interval** in the context of the problem.
 \vspace{1in}
 
 \newpage
 
 #### Simulation methods {-}
 
-We could also use simulation-based methods to analyze these data.  Note the imputs into the R code to create the null and bootstrap distribution.
+We could also use simulation-based methods to analyze these data.  Note the inputs into the R code to create the null and bootstrap distribution.
 
 
 ``` r
+set.seed(216)
 one_proportion_test(probability_success=0.1,
                     sample_size=500,
                     number_repetitions=10000,
@@ -145,10 +140,11 @@ one_proportion_test(probability_success=0.1,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 
 ``` r
+set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 500,
                             number_successes = 81,
                             number_repetitions = 10000,
@@ -157,9 +153,9 @@ one_proportion_bootstrap_CI(sample_size = 500,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-7. Explain why the results for simulation methods and theory-based methods are similar.
+5. Explain why the results for simulation methods and theory-based methods are similar.
 
 \vspace{1in}
 
@@ -174,13 +170,13 @@ The standard error of the sample proportion for this study with the smaller samp
 
  $$SE(\hat{p}) = \sqrt{\frac{0.162\times (1-0.162)}{300}} = 0.0213$$
  
-8.  Is the standard error of the sample proportion for this study smaller or larger than the value calculated earlier?
+6.  Is the standard error of the sample proportion for this study smaller or larger than the value calculated earlier?
 
 \vspace{0.3in}
  
 Recall that the $z^*$ multiplier is 1.96 for a 95\% confidence interval.
 
-9. Calculate the 95\% confidence interval for this study with the smaller sample size.
+7. Calculate the 95\% confidence interval for this study with the smaller sample size.
 
 \vspace{1in}
 
@@ -188,7 +184,7 @@ The width of the confidence interval is found by calculating the difference betw
 
 $$\text{width of CI = upper CI value - lower CI value}$$
 
-10. Compare the interval found in question 9 to the interval calculated prior to question 6.  
+8. Compare the interval found in question 7 to the interval calculated prior to question 4.  
 
 
 * Did the center of the interval change?  
@@ -200,7 +196,7 @@ $$\text{width of CI = upper CI value - lower CI value}$$
 \vspace{0.5in}
     
     
-* Calculate the width of the interval from prior to question 6.
+* Calculate the width of the interval from prior to question 4.
     
 \vspace{0.5in}
     
@@ -217,11 +213,11 @@ $$\text{width of CI} = 2 \times \text{ME}$$
 
 
     
-11.  Using the width of the interval with the smaller sample size calculated in question 10, calculate the margin of error.
+9.  Using the width of the interval with the smaller sample size calculated in question 8, calculate the margin of error.
 
 \vspace{0.4in}
 
-12.  What impact does decreasing the sample size have on the width of the confidence interval?
+10.  What impact does decreasing the sample size have on the width of the confidence interval?
 
 \vspace{0.4in}
 

@@ -82,8 +82,17 @@ e. Calculate the value of the summary statistic to answer the research question.
 f. Interpret the value of the summary statistic in context of the problem:
     
 \vspace{0.3in}
+
+g. What type of graph(s) would be appropriate for this research question?
+
+\vspace{0.3in}
+
+h. Using the provided R file create a graph of the data. Sketch the graph below:
+
+\vspace{2in}
+
     
-g. Assess if the following conditions are met:
+i. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.5in}
@@ -91,40 +100,40 @@ g. Assess if the following conditions are met:
     Success-Failure (must be met to use theory-based methods):
 \vspace{0.6in}
     
-h. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+j. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.2in}
        
-i.  Interpret the p-value in the context of the problem.
+k.  Interpret the p-value in the context of the problem.
 \vspace{0.7in}
         
-j.  Write a conclusion to the research question based on the p-value.
+l.  Write a conclusion to the research question based on the p-value.
 \vspace{0.7in}
         
-k. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
+m. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-l. Use the provided R script file to find a 95\% confidence interval.
+n. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.3in}
         
-m. Interpret the 95\% confidence interval in context of the problem.
+o. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.7in}
 
-n. Regardless to your answer in part g, calculate the standardized statistic.
+p. Regardless to your answer in part g, calculate the standardized statistic.
 \vspace{0.4in}
 
-o. Interpret the value of the standardized statistic in context of the problem.
+q. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.7in}
 
-p. Use the provided R script file to find the theory-based p-value. 
+r. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
 q. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-r. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+t. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.7in}
 
-s. What is the scope of inference for this study?
+u. What is the scope of inference for this study?
 \vspace{0.8in}
 
 \newpage
@@ -171,9 +180,20 @@ e. Write the summary statistic to answer the research question with appropriate 
 \vspace{0.3in}
 
 f. Interpret the value of the summary statistic in context of the problem:
+\vspace{0.7in}
+
+g. What type of graph(s) would be appropriate for this research question?
+
 \vspace{0.3in}
 
-g. Assess if the following conditions are met:
+\newpage
+
+h. Using the provided R file create a graph of the data. Sketch the graph below:
+
+\vspace{2in}
+
+
+i. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.8in}
@@ -182,40 +202,40 @@ g. Assess if the following conditions are met:
 
 \vspace{0.8in}
     
-h. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+j. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.3in}
        
-i.  Interpret the p-value in the context of the problem.
+k.  Interpret the p-value in the context of the problem.
 \vspace{0.8in}
         
-j.  Write a conclusion to the research question based on the p-value.
+l.  Write a conclusion to the research question based on the p-value.
 \vspace{0.8in}
         
-k. Using a significance level of $\alpha = 0.1$, what statistical decision will you make about the null hypothesis?
+m. Using a significance level of $\alpha = 0.1$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-l. Use the provided R script file to find a 90\% confidence interval.
+n. Use the provided R script file to find a 90\% confidence interval.
 \vspace{0.3in}
         
-m. Interpret the 90\% confidence interval in context of the problem.
+o. Interpret the 90\% confidence interval in context of the problem.
 \vspace{0.8in}
 
-n. Regardless to your answer in part g, calculate the standardized statistic.
+p. Regardless to your answer in part g, calculate the standardized statistic.
 \vspace{0.4in}
 
-o. Interpret the value of the standardized statistic in context of the problem.
+q. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.8in}
 
-p. Use the provided R script file to find the theory-based p-value. 
+r. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-q. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
+s. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-r. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+t. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.8in}
 
-s. What is the scope of inference for this study?
+u. What is the scope of inference for this study?
 \vspace{0.8in}
 
 \newpage
@@ -267,7 +287,16 @@ e. Calculate the value of summary statistic to answer the research question. Giv
 f. Interpret the value of the summary statistic in context of the problem:
 \vspace{0.3in}
 
-g. Assess if the following conditions are met:
+g. What type of graph(s) would be appropriate for this research question?
+
+\vspace{0.3in}
+
+h. Using the provided R file create a graph of the data. Sketch the graph below:
+
+\vspace{2in}
+
+
+i. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.8in}
@@ -276,40 +305,40 @@ g. Assess if the following conditions are met:
 
 \vspace{0.8in}
     
-h. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+j. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.3in}
        
-i.  Interpret the p-value in the context of the problem.
+k.  Interpret the p-value in the context of the problem.
 \vspace{0.8in}
         
-j.  Write a conclusion to the research question based on the p-value.
+l.  Write a conclusion to the research question based on the p-value.
 \vspace{0.8in}
         
-k. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
+m. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-l. Use the provided R script file to find a 95\% confidence interval.
+n. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.3in}
         
-m. Interpret the 95\% confidence interval in context of the problem.
+o. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.8in}
 
-n. Regardless to your answer in part g, calculate the standardized statistic.
+p. Regardless to your answer in part g, calculate the standardized statistic.
 \vspace{0.4in}
 
-o. Interpret the value of the standardized statistic in context of the problem.
+q. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.8in}
 
-p. Use the provided R script file to find the theory-based p-value. 
+r. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-q. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
+s. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-r. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+t. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.8in}
 
-s. What is the scope of inference for this study?
+u. What is the scope of inference for this study?
 \vspace{0.8in}
 
 \newpage
@@ -354,7 +383,17 @@ e. Interpret the value of slope in context of the problem.
 
 \vspace{0.3in}
 
-f. Assess if the following conditions are met:
+f. What type of graph(s) would be appropriate for this research question?
+
+\vspace{0.3in}
+
+g. Using the provided R file create a graph of the data. Sketch the graph below:
+
+\vspace{2in}
+
+\newpage
+
+h. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.8in}
@@ -368,40 +407,40 @@ f. Assess if the following conditions are met:
     Normality of Residuals:
 \vspace{0.8in}
     
-g. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+i. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.3in}
        
-h.  Interpret the p-value in the context of the problem.
+j.  Interpret the p-value in the context of the problem.
 \vspace{0.8in}
         
-i.  Write a conclusion to the research question based on the p-value.
+k.  Write a conclusion to the research question based on the p-value.
 \vspace{0.8in}
         
-k. Using a significance level of $\alpha = 0.01$, what statistical decision will you make about the null hypothesis?
+l. Using a significance level of $\alpha = 0.01$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-k. Use the provided R script file to find a 99\% confidence interval.
+m. Use the provided R script file to find a 99\% confidence interval.
 \vspace{0.3in}
         
-l. Interpret the 99\% confidence interval in context of the problem.
+n. Interpret the 99\% confidence interval in context of the problem.
 \vspace{0.7in}
 
-m. Regardless to your answer in part g, calculate the standardized statistic.
+o. Regardless to your answer in part g, calculate the standardized statistic.
 \vspace{0.4in}
 
-n. Interpret the value of the standardized statistic in context of the problem.
+p. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.7in}
 
-o. Use the provided R script file to find the theory-based p-value. 
+q. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-p. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
+r. Use the provided R script file to find the appropriate t* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-q. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+s. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.7in}
 
-r. What is the scope of inference for this study?
+t. What is the scope of inference for this study?
 \vspace{0.7in}
 
 \newpage

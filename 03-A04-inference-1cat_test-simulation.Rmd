@@ -113,11 +113,13 @@ infants %>% count(choice)  # Count number in each choice category
 The following formula is used to calculate the proportion of successes in the sample.
 
 $$\hat{p} = \frac{\mbox{number of successes}}{\mbox{total number of observational units}}$$
-\newpage
+\vspace{1mm}
 
 2.  Using the R output and the formula given, calculate the summary statistic (sample proportion) to represent the research question.  Recall that `choosing the helper toy` is a considered a success.  Use appropriate notation.
 
 \vspace{0.5in}
+
+\newpage
 
 To visually display this data we can use either a frequency bar plot or a relative frequency bar plot. 
 

@@ -36,17 +36,7 @@ In class today, we will revisit the study on infants as described below.
 A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
 
-1.  Report the sample proportion (summary statistic) calculated in the previous activity.
-
-\vspace{0.3in}
-
-2.  Write the alternative hypothesis in words in context of the problem.  Remember the direction we are testing is dependent on the research question.
-
-\vspace{0.8in}
-
 Today, we will use the computer to simulate a null distribution of 10000 different samples of 16 infants, plotting the proportion who chose the helper in each sample, based on the assumption that the true proportion of infants who choose the helper is 0.5 (or that the null hypothesis is true).  
-
-\newpage
 
 To use the computer simulation, we will need to enter the 
 
@@ -57,7 +47,7 @@ To use the computer simulation, we will need to enter the
 * the "direction" (matches the direction of the alternative hypothesis).
 
 
-3.  What values should be entered for each of the following into the one proportion test to create 10000 simulations?
+1.  What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 
 \vspace{1mm}
 * Probability of success (null value):
@@ -88,23 +78,23 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 ### Notes on the null distribution {-}
 
-\vspace{2in}
+\vspace{1.25in}
 
-4. Circle the observed statistic (value from question 1) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
+2. Circle the observed statistic (value from question 1) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
 
 \vspace{0.3in}
 
-5. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot.
+3. Is the observed statistic likely to happen or unlikely to happen if the true proportion of infants who choose the helper is 0.5?  Explain your answer using the plot.
 
 \vspace{0.5in}
 
-6.  Using the simulation, what is the proportion of simulated samples that generated a sample proportion at the observed statistic or greater, if the true proportion of infants who choose the helper is 0.5? *Hint*: Look under the simulation.
+4.  Using the simulation, what is the proportion of simulated samples that generated a sample proportion at the observed statistic or greater, if the true proportion of infants who choose the helper is 0.5? *Hint*: Look under the simulation.
 
 \vspace{0.3in}
 
 ### Notes on the p-value {-}
 
-The value in question 6 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
+The value in question 4 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
 
 \vspace{1.5in}
 
@@ -134,11 +124,54 @@ When we write a conclusion we answer the research question by stating how much e
 
 #### Generalization {-}
 
-7. To what group of observational units can the results be generalized to?
+5. To what group of observational units can the results be generalized to?
 
 \vspace{0.5in}
 
-\newpage
+#### Impacts on the p-value {-}
+
+Let's see how each of the following with change the p-value.
+
+In another sample of 16 infants, only 10 selected the helper toy.  The null distribution created below reflects this new sample.
+
+```{r, echo=TRUE, eval = TRUE}
+set.seed(216)
+one_proportion_test(probability_success = 0.5, # Null hypothesis value
+          sample_size = 16, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 0.625, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+6.  Note that this statistic ($\frac{10}{16} = 0.625$) is closer to the null value of 0.5 than the original statistic ($\frac{14}{16}=0.875$). Is the p-value for this new study larger or smaller than for the original statistic?
+
+\vspace{0.3in}
+
+In still another study, the researchers took a sample of 32 infants and from this study found that 28 selected the helper toy ($\hat{p} = \frac{28}{32}= 0.875$).  The null distribution created below reflects this new study.
+
+```{r, echo=TRUE, eval = TRUE}
+set.seed(216)
+one_proportion_test(probability_success = 0.5, # Null hypothesis value
+          sample_size = 32, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 0.875, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+7.  Is the p-value found for the larger sample size ($n=32$) larger or smaller than the p-value found with the smaller sample size ($n=16$).
+
+\vspace{0.3in}
+
+8.  Summarize how each of the following affected the p-value: 
+
+a) Using a larger sample size.
+
+\vspace{0.4in}
+
+b) Using a sample statistic closer to the null value.
+
+\vspace{0.4in}
+
 
 ### Take-home messages
 
@@ -147,6 +180,10 @@ When we write a conclusion we answer the research question by stating how much e
 2. The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) is the null hypothesis is true.
 
 3. The smaller the p-value of the test, the more evidence there is **against** the null hypothesis.
+
+4.  The larger the sample size, the smaller the sample to sample variability.  This will result in a larger standardized statistic and more evidence against the null hypothesis.
+
+5.  The farther the statistic is from the null value, the larger the standardized statistic.  This will result in a smaller p-value and more evidence against the null hypothesis.
 
 ### Additional notes
 

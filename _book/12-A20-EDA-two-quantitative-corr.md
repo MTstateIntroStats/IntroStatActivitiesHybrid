@@ -3,7 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Activity 20:  IPEDS (continued)
+## Activity 20:  Penguins
 
 \setstretch{1}
 
@@ -36,76 +36,32 @@ In today's activity, we will review summary measures and plots for two quantitat
 
 To review these concepts, see Chapter 6 in the textbook.  
 
-### The Integrated Postsecondary Education Data System (IPEDS)
+### Penguins
 
-We will continue to assess the IPEDS data set collected on a subset of institutions that met the following selection criteria [@ipeds]:
+The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including flipper length and body mass. The researchers were interested in the relationship between flipper length and body mass and wondered if flipper length could be used to accurately predict the body mass of these three penguin species. 
 
-* Degree granting 
+* Upload and import the `Antarctica_Penguins` csv file and the provided R script file for this activity. Enter the name of the data set for `datasetname` in the R script file in line 4....
 
-* United States only
-
-* Title IV participating
-
-* Not for profit
-
-* 2-year or 4-year or above
-
-* Has full-time first-time undergraduates
-
-Some of the variables collected and their descriptions are below. Note that several variables have missing values for some institutions (denoted by “NA”).
-
-| **Variable** 	| **Description** |
-|----	|-------------	|
-| `UnitID` | Unique institution identifier |
-| `Name` | Institution name |
-| `State` | State abbreviation |
-| `Sector` | whether public or private |
-| `LandGrant` | Is this a land-grant institution (Yes/No) |
-| `Size` | Institution size category based on total student enrolled for credit, Fall 2018: Under 1,000, 1,000 - 4,999, 5,000 - 9,999, 10,000 - 19,999, 20,000 and above |
-| `Cost_OutofState` | Cost of attendance for full-time out-of-state undergraduate students |
-| `Cost_InState` | Cost of attendance for full-time in-state undergraduate students |
-| `Retention` | Retention rate is the percent of the undergraduate students that re-enroll in the next year |
-| `Graduation_Rate` | 6-year graduation rate for undergraduate students |
-| `SATMath_75` | 75th percentile Math SAT score |
-| `ACT_75` | 75th percentile ACT score |
-
-The code below reads in the needed data set, IPEDS_2018.csv, and filters out the 2-year institutions. 
-
-* Highlight and run lines 1--11 to load the data set and filter out the 2-year institutions.
+First we will create a scatterplot of the flipper length and body mass.  Notice that we are using flipper length to predict body mass.  This makes flipper length the explanatory variable. **Make sure to give your plot a descriptive title.** Highlight and run lines 1--13 in the R script file.  **Upload a copy of your scatterplot to Gradescope.**
 
 
 ``` r
-IPEDS <- read.csv("https://www.math.montana.edu/courses/s216/data/IPEDS_2018.csv") 
-IPEDS <- IPEDS %>%
-  filter(Sector != "Public 2-year") #Filters the data set to remove Public 2-year
-IPEDS <- IPEDS %>%
-  filter(Sector != "Private 2-year") #Filters the data set to remove Private 2-year
-IPEDS <- na.omit(IPEDS)
-```
-
-To create a scatterplot of the 75th percentile Math SAT score by retention rate for 4-year US Higher Education Institutions...
-
-* Enter the variable `SATMath_75` for explanatory and `Retention` for response in line 16.
-
-* Highlight and run lines 15--21.
-
-
-``` r
-IPEDS %>% # Data sest pipes into...
-    ggplot(aes(x = SATMath_75, y = Retention))+  # Specify variables
-    geom_point(alpha=0.5) +  # Add scatterplot of points
-    labs(x = "75th Percentile SAT Math Score",  # Label x-axis
-       y = "Retention Rate (%)",  # Label y-axis
-       title = "Scatterplot of SAT Math Score vs. Retention Rate for 
-       4-year US Higher Education Institutions") + 
-    # Be sure to title your plots with the type of plot, observational units, variable(s)
-    geom_smooth(method = "lm", se = FALSE) + # Add regression line
-    theme_bw()
+penguins <- read.csv("data/Antarctica_Penguins.csv") #Creates the object penguins
+penguins <- na.omit(penguins)
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g))+  # Specify variables
+  geom_point() +  # Add scatterplot of points
+  labs(x = "flipper length (mm)",  # Label x-axis
+       y = "body mass (g)",  # Label y-axis
+       title = "Scatterplot of Body Mass by Flipper Length for 
+       Antarctica Penguins") + # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-1-1} \end{center}
+
 
 1. Describe the relationship, using the four characteristics of scatterplots, between 75th percentile SAT Math score and retention rate.
 
@@ -113,68 +69,67 @@ IPEDS %>% # Data sest pipes into...
 
 #### Slope of the Least Squares Linear Regression Line {-}
 
-There are three summary measures calculated from two quantitative variables: slope, correlation, and the coefficient of determination.  We will first assess the slope of the least squares regression line between 75th percentile SAT Math score and retention rate.  
+There are three summary measures calculated from two quantitative variables: slope, correlation, and the coefficient of determination.  We will again start with an assessment of the regression slope.
 
-* Enter `Retention` for response and `SATMath_75` for explanatory in line 25
+* Enter `body_mass_g` for response and `flipper_length_mm` for explanatory in line ...
 
-* Highlight and run lines 25--26 to fit the linear model.
+* Highlight and run lines ... to fit the linear model.
 
 
 ``` r
 # Fit linear model: y ~ x
-IPEDSLM <- lm(Retention~SATMath_75, data=IPEDS)
-round(summary(IPEDSLM)$coefficients,3) # Display coefficient summary
+PenguinsLM <- lm(body_mass_g~flipper_length_mm, data=penguins)
+round(summary(PenguinsLM)$coefficients,5) # Display coefficient summary
 ```
 
 ```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)    0.059      1.898   0.031    0.975
-#> SATMath_75     0.125      0.003  40.485    0.000
+#>                      Estimate Std. Error   t value Pr(>|t|)
+#> (Intercept)       -5865.81792  309.34034 -18.96234        0
+#> flipper_length_mm    50.12002    1.53517  32.64781        0
 ```
 
 2.  Write out the least squares regression line using the summary statistics from the R output in context of the problem.
 
-\vspace{0.5in}
+\vspace{0.7in}
 
-3. Interpret the value of slope.
+3. Interpret the value of slope in context of the problem.
 
 \vspace{0.8in}
 
-4. Predict the retention rate for a 4-year US higher education institution with a 75th percentile SAT Math score of 440.
+\newpage
 
-\vspace{0.4in}
+4. Predict the body mass of a penguin with a flipper length of 230mm.
 
-5. Calculate the residual for a 4-year US higher education institution with a 75th percentile SAT Math score of 440 and a retention rate of 24%.
+\vspace{0.6in}
 
-\vspace{0.4in}
+5. Calculate the residual for a penguin with a flipper length of 230mm and a body mass of 6050g.
+
+\vspace{0.6in}
 
 #### Correlation  {-}
 
-Correlation measures the strength and the direction of the linear relationship between two quantitative variables.  The closer the value of correlation to $+1$ or $-1$, the stronger the linear relationship.  Values close to zero indicate a very weak linear relationship between the two variables.  
+Additionally, we can find the value of correlation.
 
 The following output creates a correlation matrix between several pairs of quantitative variables.  
 
 
 ``` r
-IPEDS %>%  # Data set pipes into
-  select(c("Retention", "Cost_InState", 
-           "Graduation_Rate", "Salary", 
-           "SATMath_75", "ACT_75")) %>%
+penguins %>%  # Data set pipes into
+  select(c("bill_length_mm", "bill_depth_mm", 
+           "flipper_length_mm", "body_mass_g")) %>%
   cor(use="pairwise.complete.obs") %>%
   round(3)
 ```
 
 ```
-#>                 Retention Cost_InState Graduation_Rate Salary SATMath_75 ACT_75
-#> Retention           1.000        0.388           0.832  0.698      0.767  0.768
-#> Cost_InState        0.388        1.000           0.563  0.365      0.502  0.514
-#> Graduation_Rate     0.832        0.563           1.000  0.683      0.817  0.833
-#> Salary              0.698        0.365           0.683  1.000      0.747  0.706
-#> SATMath_75          0.767        0.502           0.817  0.747      1.000  0.920
-#> ACT_75              0.768        0.514           0.833  0.706      0.920  1.000
+#>                   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+#> bill_length_mm             1.000        -0.229             0.652       0.589
+#> bill_depth_mm             -0.229         1.000            -0.579      -0.473
+#> flipper_length_mm          0.652        -0.579             1.000       0.873
+#> body_mass_g                0.589        -0.473             0.873       1.000
 ```
 
-6.  What is the value of correlation between SATMath_75 and Retention?
+6.  What is the value of correlation between flipper length and body mass?
 
 \vspace{0.3in}
 
@@ -187,34 +142,36 @@ Another summary measure used to explain the linear relationship between two quan
 |    Use the variances of the response and the residuals:  $r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}$
 
 
-7.  Use the correlation, $r$, found in question 6, to calculate the coefficient of determination between SATMath_75 and Retention, $r^2$.
+7.  Use the correlation, $r$, found in question 6, to calculate the coefficient of determination between flipper length and body mass, $r^2$.
 
 \vspace{.4in}
 
-The variance of the response variable, Retention (%), is $s_{Retention}^2 = 138.386$ $\%^2$  and the variability in the residuals is $s_{RES}^2 = 56.934$ \%$^2$.  Use these values to calculate the coefficient of determination.
+The variance of the response variable, body mass (g), is $s_{\text{body mass}}^2 = 647761.2$ $\%^2$, the variance of the explanatory variable, flipper length (mm), is $s_{\text{flipper length}}^2 = 196.6214$, and the variance in the residuals is $s_{RES}^2 = 154308.4$ \%$^2$.  Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
 
 In the next part of the activity we will explore what the coefficient of determination measures. 
 
-In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between SATMath_75 and Retention. The value of the y-intercept, 76.387, is the mean of the response variable when there is no relationship between the two variables.  To find the sum of squares total (SST) we find the residual ($residual = y - \hat{y}$) for each response value from the horizontal line (from the value of 76.387).  Each residual is squared and the sum of the squared values is calculated.  The SST gives the **total variability in the response variable, Retention**.  
+In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between flipper length and body mass. The value of the y-intercept, 4209.057, is the mean of the response variable when there is no relationship between the two variables.  To find the sum of squares total (SST) we find the residual ($residual = y - \hat{y}$) for each response value from the horizontal line (from the value of 4209.057).  Each residual is squared and the sum of the squared values is calculated.  The SST gives the **total variability in the response variable, Retention**.  
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-The calculated value for the SST is 158451.8.  
+**The calculated value for the SST is 215704477.919.**
 
 <!-- 6.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST). -->
 <!-- \vspace{3mm} -->
 
 <!--     SST =  -->
 
-This next scatterplot, shows the plotted data with the best fit regression line.  This is the line of best fit between budget and revenue and has the smallest sum of squares error (SSE).  The SSE is calculated by finding the residual from each response value to the regression line.  Each residual is squared and the sum of the squared values is calculated.
+This next scatterplot, shows the plotted data with the best fit regression line.  This is the line of best fit between flipper length and body mass and has the smallest sum of squares error (SSE).  The SSE is calculated by finding the residual from each response value to the regression line.  Each residual is squared and the sum of the squared values is calculated.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-The calculated value for the SSE is 65133.022.
+**The calculated value for the SSE is 51230376.045.**
+
+\newpage
 
 <!-- * Go to the website www.rossmanchance.com/ISIapplets.html and click on Corr/Regresssion under Quantitative Response.   -->
 
@@ -244,27 +201,34 @@ The calculated value for the SSE is 65133.022.
 
 \vspace{0.6in}
 
-8.  Write a sentence interpreting the coefficient of determination in context of the problem.
+**Interpretation of the coefficient of determination in context of the problem.**
 
-\newpage
+\vspace{0.8in}
 
 
 #### Multivariable plots {-}
 
-When adding another categorical predictor, we can add that variable as shape or color to the plot.  In the following code we have added the variable `Size`.  
+Another variable collected on the penguins was bill depth (mm).  The following scatterplot shows the relationship between bill depth and body mass.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1} \end{center}
+8.  Describe the relationship between bill depth and body mass.
+
+\vspace{0.8in}
+
+
+When adding another categorical predictor, we can add that variable as shape or color to the plot.  
 
 
 ``` r
-IPEDS$Size <- factor(IPEDS$Size, levels = c("< 1000", "1,000-4,999", "5,000-9,999",
-                                            "10,000-19,999", "20,000 and above"))
-IPEDS %>% # Data set pipes into...
-    ggplot(aes(x = SATMath_75, y = Retention, shape = Size, color=Size))+  # Specify variables
+
+penguins %>% # Data set pipes into...
+    ggplot(aes(x = bill_depth_mm, y = body_mass_g, shape = species, color=species))+  # Specify variables
     geom_point(alpha=0.5) +  # Add scatterplot of points
-    labs(x = "75th Percentile SAT Math Score",  # Label x-axis
-       y = "Retention Rate (%)",  # Label y-axis
-       title = "Scatterplot of SAT Math Score vs. Retention Rate for 
-       4-year US Higher Education Institutions by Size") + 
-    # Be sure to title your plots with the type of plot, observational units, variable(s)
+    labs(x = "bill depth (mm)",  # Label x-axis
+       y = "body mass (g)",  # Label y-axis
+       title = "Scatterplot of Body Mass vs. Bill Depth for 
+       Antarctica Penguins by Species") + # Be sure to title your plots
     geom_smooth(method = "lm", se = FALSE) + # Add regression line
     scale_color_grey()
 ```
@@ -272,17 +236,21 @@ IPEDS %>% # Data set pipes into...
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1} \end{center}
-9. Does the relationship between 75th percentile SAT math score and retention rate of 4-year institutions change depending on the level of size?
+**Note that the relationship between bill depth and body mass is now positive based on the penguin species.  This is an example of what?**
+
+\vspace{0.4in}
+
+**Does the relationship between bill depth and body mass for Antarctica penguins change depending on the species?**
 
 \vspace{0.8in}
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-2} \end{center}
-10.  Is size of the higher education institution associated with retention rate?  Is size of the higher education institution associated with 75th percentile SAT Math Score?  
+
+
+\begin{center}\includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-2} \end{center}
+**Is species of Antarctica penguins associated with body mass?  Is species of Antarctica penguins associated with bill depth?**
 
 \vspace{1in}
-
-\newpage
 
 ### Take-home messages
 

@@ -199,6 +199,8 @@ Next we will calculate a theory-based confidence interval.  To calculate a theor
 
 $$\bar{x}_d\pm t^* \times SE(\bar{x}_d).$$
 
+\newpage
+
 We will need to find the $t^*$ multiplier using the function `qt()`. 
 
 * Enter the appropriate percentile in the R code to find the multiplier for a 90\% confidence interval.
@@ -242,8 +244,8 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 
 
 ``` r
-    paired_test(data = color_diff$differences,   # Vector of differences 
-                                         # or data set with column for each group
+set.seed(216)
+paired_test(data = color_diff$differences,   # Vector of differences
             shift = -2.3,   # Shift needed for bootstrap hypothesis test
             as_extreme_as = 2.3,  # Observed statistic
             direction = "greater",  # Direction of alternative
@@ -265,6 +267,7 @@ We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package
 
 
 ``` r
+set.seed(216)
 paired_bootstrap_CI(data = color_diff$differences, # Enter vector of differences
                     number_repetitions = 10000, # Number of bootstrap samples for CI
                     confidence_level =0.9,  # Confidence level in decimal form

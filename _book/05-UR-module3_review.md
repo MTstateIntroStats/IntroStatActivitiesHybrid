@@ -53,6 +53,7 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 
 ``` r
+set.seed(216)
 one_proportion_test(probability_success = 0.2, #Null hypothesis value
                     sample_size = 1753, #Enter sample size
                     number_repetitions = 10000, #Enter number of simulations

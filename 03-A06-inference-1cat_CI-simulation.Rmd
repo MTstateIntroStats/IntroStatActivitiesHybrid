@@ -94,6 +94,7 @@ To use the computer simulation to create a bootstrap distribution, we will need 
 We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample proportions and calculate a confidence interval. Using the provided R script file, fill in the values/words for each `xx` with your answers from question 6 in the one proportion bootstrap confidence interval (CI) code to create a bootstrap distribution with 10000 simulations. Then highlight and run lines 1--9.
 
 ```{r, echo=TRUE, eval=TRUE}
+set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
@@ -109,6 +110,8 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 **Interpretation of the 95\% confidence interval in context.**
 
 \vspace{.6in}
+
+\newpage
 
 #### Communicate the results and answer the research question {-}
 
@@ -129,6 +132,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 9.  The following R code produced the bootstrap distribution with 10000 simulations that follows.  Circle the value that changed in the code. 
 
 ```{r, echo=TRUE, out.width="70%"}
+set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use

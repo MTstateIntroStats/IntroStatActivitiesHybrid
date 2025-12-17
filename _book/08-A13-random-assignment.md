@@ -73,7 +73,7 @@ When both these conditions are met, if we observe an association between the exp
 
 4. You will now investigate how randomly assigning subjects impacts a study's scope of inference.  
 
-*  Navigate to the "Randomizing Subjects" applet under the "Other Applets" heading at: http://www.rossmanchance.com/ISIapplets.html.  This applet lists the sex and height of each of the 24 subjects.  Click "Show Graphs" to see a bar chart showing the sex of each subject.  Currently, the applet is showing the strategy outlined in question 3.  
+*  Navigate to the "Randomizing Subjects" applet under the "Other Applets" heading at: http://www.rossmanchance.com/ISIapplets.html.  This applet lists the sex and height of each of the 24 subjects.  Click "Show Graphs" to see a bar chart showing the sex of each subject.  
 
 * Click "Randomize".  
 
@@ -90,7 +90,8 @@ When both these conditions are met, if we observe an association between the exp
 \vspace{1.25in}
 
 6.  Does random assignment *always* balance the placebo and drug groups based on the sex of the participants?  Does random assignment *tend* to make the placebo and drug groups *roughly* the same with respect to the distribution of sex?  Use your plot from question5 to justify your answers.
-\vspace{0.5in}
+
+\vspace{0.8in}
 
 7. Change the drop-down menu below Group 2 from "sex" to "height".  The applet now calculates the average height in the placebo and drug groups for each of the 1000 random assignments.  The dot plot displays the distribution of the difference in mean heights (placebo - drug) for each random assignment. Based on this dot plot, is height distributed equally, on average, between the two groups?  Explain how you know.
 \vspace{0.5in}

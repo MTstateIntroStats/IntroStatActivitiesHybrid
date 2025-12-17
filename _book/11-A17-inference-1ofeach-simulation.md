@@ -182,7 +182,7 @@ two_mean_test(number_of_uses ~ condition, #Enter the names of the variables
 
 \newpage
 
-4.  Report the p-value. Based off of this p-value, write a conclusion to the hypothesis test.
+4.  Report the p-value. Interpret the p-value in context of the problem.
 
 \vspace{0.9in}
 
@@ -210,6 +210,7 @@ Using the R script file for this activity, enter your answers for question 5 in 
 
 
 ``` r
+set.seed(216)
 two_mean_bootstrap_CI(number_of_uses ~ condition, #Enter the name of the variables
                       data = rude,  # Enter the name of the data set
                       first_in_subtraction = "rudeness", # First value in order of subtraction

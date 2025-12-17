@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 1:  Intro to Data Analysis and Sampling Bias
 
 \setstretch{1}
@@ -29,17 +34,54 @@ For more on these concepts, read Chapter 1 and 2 in the textbook and review the 
 
 \newpage
 
-#### Further analysis of class data set {-}
+#### Review of data set {-}
 
-1. What are the observational units or cases for the data collected in class on day 1?
-  
-  \vspace{0.3in}
+In the Fall of 2025 a data set was collected on Stat 216 students in class on day 1.  The following instructions were provided to the students:
+
+When creating a data set for use in R it is important to use single words or an underscore between words. Each outcome must be written the same way each time.  Make sure to use all lowercase letters when responding to the following questions to have consistency between responses.  Do not give units of measure for numerical values within the data set.  For `Residency` use in_state or out_state as the two outcomes. 
+
+* Major: what is your declared major?
+
+* Residency: do you have in-state or out-of-state residency?
+
+* Num_Credits: how many credits are you taking this semester?
+
+* Dominant_hand: are you left or right-handed?
+
+* Hand_span:  what is the width of your dominant hand from the tip of your thumb to the tip of your pinky with your hand spread out measured in cm?
+
+* Grip_dominant: what is the grip strength measured in lbs for your dominant hand?
+
+* Grip_nondominant: what is the grip strength measured in lbs for your non-dominant hand?
+
+The following code reads in this data set and gives a snapshot of the variables collected.  In a data set, the columns represent the variables collected on the observational units and there is one row of data for each observational unit.
+
+
+``` r
+data <- read.csv("data/Fall2025_DataCollection.csv")
+glimpse(data)
+#> Rows: 875
+#> Columns: 7
+#> $ Major                   <chr> "Microbiology ", "Psychology ", "Business ", "~
+#> $ Residency               <chr> "in state", "In state", "Out of state", "Out o~
+#> $ Num_Credits             <chr> "15", "19", "17", "16", "15", "18", "16", "15"~
+#> $ Dominant_hand           <chr> "right", "right", "right", "right", "right", "~
+#> $ Hand_Span               <chr> "8in", "17.5 cm", "22.25", "21 cm", "19", "22"~
+#> $ GripStrength_DomHand    <chr> "53.7", "54 lbs", "64", "88.3", "44.4", "86.4"~
+#> $ GripStrength_NonDomHand <chr> "45.4", "32.4 lbs ", "68", "84.4", "42.2", "70~
+```
+
+1. What are the observational units or cases for the data collected?
+
+  \vspace{0.5in}
 
 2. How many observations are reported in the data set? This is the **sample size**.
 
-\vspace{0.3in}
+\vspace{0.5in}
 
-3. The header for each column in the data set describes each variable measured on the observational unit. For each column of data, fill in the following table identifying the type of each variable.
+\newpage
+
+3. Using the glimpse of the data, fill in the following table identifying the type of each variable.
 
 * If the variable is categorical, indicate in the third column of the following table whether the variable is binary.
 
@@ -79,7 +121,7 @@ Grip strength non-dominant hand & & & \\
 
 Complete Q5 together as a class:
 
-5. A television station is interested in predicting whether or not local voters will pass a referendum to legalize marijuana for adult.  The TV station asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum.  Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
+5. A television station is interested in predicting whether or not local voters will pass a referendum to legalize marijuana for adult use.  The TV station asks its viewers to phone in and indicate whether they are in favor or opposed to the referendum.  Of the 2241 viewers who phoned in, forty-five percent were opposed to legalizing marijuana.
 \vspace{0.1in}
 
     Sample size:
@@ -111,7 +153,7 @@ Complete Q5 together as a class:
 
 \newpage
 
-7. To gauge the interest of Bozeman City Voters in a new swimming pool, a local organization stood outside of the Bogart Pool in Bozeman, MT, during open hours.  One of the questions they asked was, "Since the Bogart Pool is in such bad repair, don't you agree that the city should fund a new pool?"
+7. To gauge the interest of Bozeman City Voters in a new swimming pool, a local organization stood outside of the Bogert Pool in Bozeman, MT, during open hours.  One of the questions they asked was, "Since the Bogert Pool is in such bad repair, don't you agree that the city should fund a new pool?"
 \vspace{0.1in}
 
     Sample size:

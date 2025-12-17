@@ -56,8 +56,17 @@ d. Use the R script file to find the mean and standard deviation of the balance 
 e. Interpret the value of the summary statistic in context of the problem:
     
 \vspace{0.3in}
+
+f. What type of graph(s) would be appropriate for this research question?
+
+\vspace{0.3in}
+
+g. Using the provided R file create a graph of the data. Sketch the graph below:
+
+\vspace{2in}
+
     
-f. Assess if the following conditions are met:
+h. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.5in}
@@ -65,40 +74,40 @@ f. Assess if the following conditions are met:
     Normality (must be met to use theory-based methods):
 \vspace{0.6in}
     
-g. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+i. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.2in}
        
-h.  Interpret the p-value in the context of the problem.
+j.  Interpret the p-value in the context of the problem.
 \vspace{0.7in}
         
-i.  Write a conclusion to the research question based on the p-value.
+k.  Write a conclusion to the research question based on the p-value.
 \vspace{0.7in}
         
-j. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
+l. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
     
-k. Use the provided R script file to find a 95\% confidence interval.
+m. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.3in}
         
-l. Interpret the 95\% confidence interval in context of the problem.
+n. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.7in}
 
-m. Regardless to your answer in part f, calculate the standardized statistic.
+o. Regardless to your answer in part f, calculate the standardized statistic.
 \vspace{0.4in}
 
-n. Interpret the value of the standardized statistic in context of the problem.
+p. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.7in}
 
-o. Use the provided R script file to find the theory-based p-value. 
+q. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-p. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
+r. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.5in}
 
-q. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+s. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.7in}
 
-r. To what group of observational units do the results apply?
+t. To what group of observational units do the results apply?
 \vspace{0.8in}
 
 <!-- 2. Use the appropriate Exam 2 Review R script file and analyze the following research question: The proportion of university graduates in the US is 42%.  "Is there evidence that the proportion of university graduates in the Islands differs from the proportion in the US?" -->

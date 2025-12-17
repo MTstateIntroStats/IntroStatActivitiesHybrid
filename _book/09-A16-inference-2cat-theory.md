@@ -23,14 +23,6 @@ To review these concepts, see Chapter 15 in your textbook.
 
 ### Winter sports helmet use and head injury 
 
-In this activity we will focus on theory-based methods. The sampling distribution of a difference in proportions can be mathematically modeled using the normal distribution if certain conditions are met.
-
-Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
-
-* **Independence**: The data are independent within and between the two groups. (*Remember*: This also must be true to use simulation methods!)
-
-* **Success-failure condition**: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
-
 A study was reported in "Helmet Use and Risk of Head Injuries in Alpine Skiers and Snowboarders" by Sullheim et. al., [@sulheim2017], on the use of helmets and head injuries for skiers and snowboarders involved in accidents.  The summary results from a random sample of 3562 skiers and snowboarders involved in accidents is shown in the two-way table below. 
 
 |                | Helmet Use | No Helmet Use | Total |
@@ -74,6 +66,13 @@ skiers %>% # Data set piped into...
 
 
 \begin{center}\includegraphics[width=0.6\linewidth]{09-A16-inference-2cat-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
+In this activity we will focus on theory-based methods. The sampling distribution of a difference in proportions can be mathematically modeled using the normal distribution if certain conditions are met.
+
+Conditions for the sampling distribution of $\hat{p}_1-\hat{p}_2$ to follow an approximate normal distribution:
+
+* **Independence**: The data are independent within and between the two groups. (*Remember*: This also must be true to use simulation methods!)
+
+* **Success-failure condition**: This condition is met if we have at least 10 successes and 10 failures in each sample. Equivalently, we check that all cells in the table have at least 10 observations.
 
 **Verify the independence condition is met.**
 
@@ -198,13 +197,9 @@ We will use the `pnorm()` function in R to find the p-value.
 
 
 ``` r
-pnorm(-2.855, # Enter value of standardized statistic
+pnorm(xx, # Enter value of standardized statistic
       m=0, s=1, # Using the standard normal mean = 0, sd = 1
       lower.tail=TRUE) # Gives a p-value less than the standardized statistic
-```
-
-```
-#> [1] 0.002151841
 ```
 
 **Interpretation of the p-value:**
@@ -283,7 +278,7 @@ $$ME = 1.645 \times 0.012 = 0.020$$
 $$(0.128 - 0.171) \pm 0.02$$
 $$(-0.063, -0.023)$$
 
-5. How did an increase in sample size impact the width of the confidence interal?
+5. How did an increase in sample size impact the width of the confidence interval?
 
 \vspace{0.4in}
 

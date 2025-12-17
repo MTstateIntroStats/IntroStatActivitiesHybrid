@@ -50,7 +50,7 @@ For each of the following scenarios, determine whether the samples are paired or
 
 ### Tattoo Effect on Sweat Rate 
 
-The popularity of tattoos has increased tremendously in the last 10 years particularly among athletes and military personnel. A study reported in *Medicine & Science in Sports & Exercise* [@luetkemeier2017] looked at whether skin tattoos altered a person's sweat rate.  The study participants were 10 healthy men with a tattoo.  According to the article, sweat was stimulated by iontophoresis using agar gel disks impregnated with 0.5% pilocarpine nitrate.  The sweat rate was determined by weighing the disk before and after sweat collection. Sweat rate was measured on both the tattooed skin and untattooed skin from the same participant.  We will use these data to assess the difference in sweat rate between the tattooed and untattooed skin (tat - notat).
+The popularity of tattoos has increased tremendously in the last 10 years particularly among athletes and military personnel. A study reported in *Medicine & Science in Sports & Exercise* [@luetkemeier2017] looked at whether skin tattoos altered a person's sweat rate.  The study participants were 10 healthy men with a tattoo.  According to the article, sweat was stimulated by iontophoresis using agar gel disks impregnated with 0.5% pilocarpine nitrate.  The sweat rate ($\frac{mg}{cm^2 \times min}$) was determined by weighing the disk before and after sweat collection. Sweat rate was measured on both the tattooed skin and untattooed skin from the same participant.  We will use these data to assess the difference in sweat rate between the tattooed and untattooed skin (tat - notat).
 
 * Observational units:
 
@@ -110,10 +110,10 @@ tat_diff %>%
 tat_diff %>% 
     ggplot(aes(x = differences)) +
     geom_boxplot()+
-    labs(title="Boxplot of the difference in Sweat Rate (mg·cm^2 per
-    min) for Adult Men with Tattoos comparing Tattooed and Untattooed 
-    Skin (tat-notat)", x="difference in sweat rate (mg·cm^2 per
-    min)", y="") +
+    labs(title="Boxplot of the difference in Sweat Rate 
+    (mg per (cm^2*min)) for Adult Men with Tattoos comparing
+    Tattooed and Untattooed Skin (tat-notat)", 
+    x="difference in sweat rate (mg per (cm^2*min))", y="") +
         theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 
@@ -121,7 +121,7 @@ tat_diff %>%
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A22-EDA-paired_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.65\linewidth]{13-A22-EDA-paired_files/figure-latex/unnamed-chunk-2-1} \end{center}
 6. What four characteristics do we use to describe the plot of a quantitative variable?
 
 \vspace{0.6in}
@@ -148,7 +148,7 @@ tat_diff %>%
 
 \vspace{0.3in}
 
-12. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg*cm^2}{min}$.  Does this interval provide evidence in support of the alternative hypothesis? Explain why.
+12. The authors reported that the confidence interval for the mean difference was −0.17 ± 0.11 $\frac{mg}{cm^2\times min}$.  Does this interval provide evidence in support of the alternative hypothesis? Explain why.
 
 \vspace{0.8in}
 

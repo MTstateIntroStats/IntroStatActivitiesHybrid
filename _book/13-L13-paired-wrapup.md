@@ -69,8 +69,7 @@ swearing_diff %>%
 swearing_diff %>% 
     ggplot(aes(x = differences)) +
     geom_boxplot()+
-    labs(title="Boxplot of the Difference in Time Participants Held Their Hand 
-         in Ice Water while Swearing or while Saying a Neutral Word (Swearing - Neutral)", 
+    labs(title="Don't forget to add a title!", 
          x = "difference in time (sec)", y= "") +
     theme(axis.text.y = element_blank(), 
           axis.ticks.y = element_blank()) # Removes y-axis ticks
@@ -113,11 +112,11 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 ### Communicate the results and answer the research question {-}
 
-8.  Report the p-value. Based off of this p-value and a 1% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?
+8.  Report the p-value. Based off of this p-value and a 5% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?
 
 \vspace{0.5in}
 
-9. Do you expect the 98\% confidence interval to contain the null value of zero?  Explain.
+9. Do you expect the 90\% confidence interval to contain the null value of zero?  Explain.
 
 \vspace{0.8in}
 
@@ -125,7 +124,7 @@ paired_test(data = swearing$differences,   # Vector of differences
 
 We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample mean differences and calculate a confidence interval. 
 
-10. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 98\% confidence interval.  Highlight and run lines 43--46. 
+10. Using bootstrapping and the provided R script file, find a 90\% confidence interval. Fill in the missing values/numbers in the `paired_bootstrap_CI()` function to create the 90\% confidence interval.  Highlight and run lines 43--46. 
 
 ``` r
 paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differences
@@ -133,7 +132,7 @@ paired_bootstrap_CI(data = swearing_diff$differences, # Enter vector of differen
                     confidence_level = xx,  # Confidence level in decimal form
                     which_first = 1)  # Not needed when entering vector of differences
 ```
-Report the 98\% confidence interval in interval notation.
+Report the 90\% confidence interval in interval notation.
 
 \vspace{0.3in}
 

@@ -92,7 +92,7 @@ The `favstats()` function from the `mosaic` package gives the summary statistics
 sleep %>%
     summarize(favstats(variable))
 ```
-1. About how far is each number of hours of sleep for a Stat 216 student from the mean number of hours of sleep, on average?
+1. About how far is each number of hours of sleep for an MSU student from the mean number of hours of sleep, on average? Report the value and the appropriate notation
 
 \vspace{0.3in}
 
@@ -188,6 +188,7 @@ The `one_mean_test` will be used to find the p-value for the simulation test.  F
 
 
 ``` r
+set.seed(216)
 one_mean_test(sleep$SleepHours,#Enter the object name and variable
               null_value = 7,
               summary_measure = "mean",  #Can choose between mean or median
@@ -232,6 +233,7 @@ Use the provided R script file to find a 95\% confidence interval.
 
 
 ``` r
+set.seed(216)
 one_mean_CI(sleep$SleepHours, #Enter the name of the variable
             summary_measure = "mean", #choose the mean or median
             number_repetitions = 10000,  # Number of simulations

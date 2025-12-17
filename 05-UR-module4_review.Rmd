@@ -51,15 +51,10 @@ Where $$SE_0(\hat{p})=\sqrt\frac{\pi_0\times (1-\pi_0)}{n}$$
 
 \vspace{0.4in}
 
-```{r simpleNormalcurve, fig.cap="A standard normal curve.", warning=TRUE, out.width="50%", fig.align ="center", echo=FALSE}
-openintro::normTail(m = 0, s = 1)
-```
-
 ```{r Normcurve, warning=TRUE, out.width="50%", fig.align ="center", echo=FALSE}
 openintro::normTail(m = 0, s = 1)
 ```
-
-\newpage
+\vspace{0.3in}
 
 8. Interpret the standardized statistic in context of the problem.
 
@@ -82,6 +77,7 @@ pnorm(9.333, # Enter value of standardized statistic
 9. Report the value of the p-value.
 
 \vspace{0.1in}
+\newpage
 
 Simulation Method:
 ```{r, out.width="85%", echo=TRUE}
@@ -109,6 +105,7 @@ Note that we do not include a "0" subscript, since we are not assuming a null hy
 11.  Calculate the standard error of the sample proportion to find a 95\% confidence interval.
 
 \vspace{0.5in}
+\newpage
 
 To find the confidence interval, we will add and subtract the **margin of error** to the point estimate:
 

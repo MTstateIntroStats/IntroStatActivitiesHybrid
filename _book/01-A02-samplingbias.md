@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 2: American Indian Address
 
 \setstretch{1}
@@ -14,13 +19,11 @@
 
 In this activity, we will examine unbiased and biased methods of sampling. Some terms covered in this activity are:
 
-
 * Random sample
 
 * Unbiased vs biased methods of selection
 
 * Generalization
-
 
 To review these concepts, see Chapter 2 in the textbook. 
 
@@ -28,13 +31,14 @@ To review these concepts, see Chapter 2 in the textbook.
 
 Prior to the next class, complete questions 1--3.
 
-### American Indian Address
+### American Indian Address {-}
 
 For this activity, you will read a speech given by Jim Becenti, a member of the Navajo American Indian tribe, who spoke about the employment problems his people faced at an Office of Indian Affairs meeting in Phoenix, Arizona, on January 30, 1947 [@becentispeech]. His speech is below:
 
 **It is hard for us to go outside the reservation where we meet strangers. I have been off the reservation ever since I was sixteen. Today I am sorry I quit the Santa Fe [Railroad]. I worked for them in 1912--13. You are enjoying life, liberty, and happiness on the soil the American Indian had, so it is your responsibility to give us a hand, brother. Take us out of distress. I have never been to vocational school. I have very little education. I look at the white man who is a skilled laborer. When I was a young man I worked for a man in Gallup as a carpenter’s helper. He treated me as his own brother. I used his tools. Then he took his tools and gave me a list of tools I should buy and I started carpentering just from what I had seen. We have no alphabetical language.**
 
 **We see things with our eyes and can always remember it. I urge that we help my people to progress in skilled labor as well as common labor. The hope of my people is to change our ways and means in certain directions, so they can help you someday as taxpayers. If not, as you are going now, you will be burdened the rest of your life. The hope of my people is that you will continue to help so that we will be all over the United States and have a hand with you, and give us a brotherly hand so we will be happy as you are. Our reservation is awful small. We did not know the capacity of the range until the white man come and say “you raise too much sheep, got to go somewhere else,” resulting in reduction to a skeleton where the Indians can’t make a living on it. For eighty years we have been confused by the general public, and what is the condition of the Navajo today? Starvation! We are starving for education. Education is the main thing and the only thing that is going to make us able to compete with you great men here talking to us.**
+
 
 #### By eye selection {-}
 
@@ -113,7 +117,7 @@ The plot created in question 1 is a sampling distribution of statistics.  This s
     Where does the value of 3.95 fall in the plot given? Near the center of the distribution? In the tails of the distribution?
 \vspace{0.3in}
 
-3.  Based on the class discussion, would you say the sampling method used ("by-eye" selection) by the class is biased or unbiased?  Justify your answer.  
+3.  Would you say the sampling method used ("by-eye" selection) by the class is biased or unbiased?  Justify your answer.  
 \vspace{0.5in}
 
 4.  If the sampling method is biased, what type of sampling bias (selection, response, non-response) is present?  What is the direction of the bias, i.e., does the method tend to overestimate or underestimate the population mean word length?
@@ -123,50 +127,71 @@ The plot created in question 1 is a sampling distribution of statistics.  This s
 
 Suppose instead of attempting to select a representative sample by eye (which did not work), each student used a random number generator to select a simple random sample of 10 words. A **simple random sample** relies on a random mechanism to choose a sample, without replacement, from the population, such that every sample of size 10 is equally likely to be chosen.
 
-To use a random number generator to select a simple random sample, you first need a numbered list of all the words in the population, called a **sampling frame**. You can then generate 10 random numbers from the numbers 1 to 359 (the number of words in the population), and the chosen random numbers correspond to the chosen words in your sample.
+Later in the semester we will learn more about how to use `R` - for today we will have a short introduction using the `R` studio server.  Download the provided `R` script file from canvas.  
 
-5. Use the random number generator at https://istats.shinyapps.io/RandomNumbers/ to select a simple random sample from the population of all 359 words in the speech. 
+5. Login to the `R` studio server using your netID login.  Upload the file to the server using the following instructions.  
 
-* Set "Choose Minimum" to 1 and "Choose Maximum" to 359 to represent the 359 words in the population (the sampling frame).
+* Click "Upload" in the "Files" tab in the bottom right window of RStudio. In the pop-up window, click "Choose File", and navigate to the folder where the Activity R script file is saved (most likely in your downloads folder). Click "Open"; then click "Ok". 
 
-* Set "How many numbers do you want to generate?" to 10 and ensure the "No" option is selected under "Sample with Replacement?" 
+* Once the file is uploaded, you should see the uploaded file appear in the list of files in the bottom right window. Click on the `R` script file name to open the file in the Editor window (upper left window).  
 
-* Click "Generate".
+The following code will take a random sample of 10 words from the population of 359 words.  
 
-Fill in the table on the next page with the random numbers selected and use the Becenti.csv data file found on Canvas to determine each number’s corresponding word and word length (number of letters/digits in the word):
+* In the `R` script file, highlight and run lines 1--7 
+
+
+
+
+``` r
+sample(words$Word, 10)
+```
+
+<!-- To use a random number generator to select a simple random sample, you first need a numbered list of all the words in the population, called a **sampling frame**. You can then generate 10 random numbers from the numbers 1 to 359 (the number of words in the population), and the chosen random numbers correspond to the chosen words in your sample. -->
+
+<!-- 5. Use the random number generator at https://istats.shinyapps.io/RandomNumbers/ to select a simple random sample from the population of all 359 words in the speech.  -->
+
+<!-- * Set "Choose Minimum" to 1 and "Choose Maximum" to 359 to represent the 359 words in the population (the sampling frame). -->
+
+<!-- * Set "How many numbers do you want to generate?" to 10 and ensure the "No" option is selected under "Sample with Replacement?"  -->
+
+<!-- * Click "Generate". -->
+
+\newpage
+
+Fill in the table with the random words selected and calculate the word length (number of letters/digits in the word):
 
 \begin{center}
-\begin{tabular}{|l|l|p{1in}|} \hline
-Observation & Number & Length  \\ \hline
-1 & & \\ 
-& & \\ \hline
-2 & & \\ 
-& & \\ \hline
-3 & & \\ 
-& & \\ \hline
-4 & & \\ 
-& & \\ \hline
-5 & & \\ 
-& & \\ \hline
-6 & & \\ 
-& & \\ \hline
-7 & & \\
-& & \\ \hline
-8 & & \\ 
-& & \\ \hline
-9 & &\\ 
-& & \\ \hline
-10 & & \\ 
-& & \\ \hline
+\begin{tabular}{|p{2.5in}|p{1in}|} \hline
+Word  & Length  \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
+ & \\ 
+ & \\ \hline
 \end{tabular}
 \end{center}
 
-6. Calculate the mean word length in your selected sample in question 5. Is this value a parameter or a statistic?
+6. Calculate the mean word length in your selected sample above. Is this value a parameter or a statistic?
 \vspace{0.3in}
 
-7. Report your mean word length in the Google sheet.  Your instructor will create a visualization of the distribution of results generated by your class. Draw a picture of the plot here. Include a descriptive $x$-axis label.  Report the mean and standard deviation of the samples.
+7. Report your mean word length as instructed.  Your instructor will create a visualization of the distribution of results generated by your class. Draw a picture of the plot here. Include a descriptive $x$-axis label.  Report the mean and standard deviation of the samples.
 
-\vspace{2.25in}
+\vspace{2.5in}
 
 <!-- A dot plot and summary statistics of the average word lengths from random samples of size 10 from a Spring 2023 class of 82 students is provided. -->
 
@@ -190,8 +215,8 @@ Observation & Number & Length  \\ \hline
 <!--   summarise(favstats(letters)) -->
 <!-- ``` -->
 
-8.  Where does the value 3.95, the true mean word length, fall in the distribution given? Near the center of the distribution?  In the tails of the distribution?  Circle this value on the provided distribution.
-\vspace{0.3in}
+<!-- 8.  Where does the value 3.95, the true mean word length, fall in the distribution given? Near the center of the distribution?  In the tails of the distribution?  Circle this value on the provided distribution. -->
+<!-- \vspace{0.3in} -->
 
 One set of randomly generated sample mean word lengths from a single class may not be large enough to visualize the distribution results. 
 
@@ -212,59 +237,69 @@ One set of randomly generated sample mean word lengths from a single class may n
 <!-- 6. The plot labeled “Statistics” displays the 1,000 randomly generated sample mean word lengths (the sampling distribution). Sketch this plot below. Include a descriptive $x$-axis label and be sure to write down the provided mean and SD (standard deviation) of the distribution. -->
 <!-- \vspace{2in} -->
 
-\newpage
-
-The following plot illustrates a sampling distribution of 1000 samples of size 10 selected at random from the sample.  
 
 
-\begin{center}\includegraphics[width=0.75\linewidth]{images/bencenti_sampling10} \end{center}
+<!-- The following plot illustrates a sampling distribution of 1000 samples of size 10 selected at random from the sample.   -->
 
-9. What is the center value (mean) of the distribution displayed above?
-\vspace{0.3in}
+<!-- ```{r, fig.align = "center", out.width="75%"} -->
+<!-- include_graphics("images/bencenti_sampling10.png") -->
+<!-- ``` -->
 
-10. Explain why the sampling method of using a random number generator to generate a sample is a "better" method than choosing 10 words “by eye”.
-\vspace{0.8in}
+\newpage 
 
-11.  Is random selection an unbiased method of selection?  Explain your answer. Be sure to reference the plot from before Q9.
+The following is a plot of 1000 random samples of size 10 created in `R`.  To re-create this plot run lines 11--27 in the `R` script file.
+
+
+\begin{center}\includegraphics[width=0.65\linewidth]{01-A02-samplingbias_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+It would be useful to know what the center (mean) is for this sampling distribution.  The distribution you created in the `R` script file may vary a little from what is reported in your coursepack. To find the mean and standard deviation from your distribution run lines 31--32.
+
+
+``` r
+mean(srs_means)
+#> [1] 3.9714
+sd(srs_means)
+#> [1] 0.7223599
+```
+
+8. Would you say this sampling method used (random selection) is biased or unbiased?  Justify your answer.  
 \vspace{0.5in}
 
-\newpage
+The following two plots show the sampling distribution of  convenience samples of size 10 from the population of word length (top) and the simple random sample created above (bottom).
 
-### Effect of sample size {-}
+\begin{center}\includegraphics[width=0.7\linewidth]{01-A02-samplingbias_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-We will now consider the impact of sample size.
-
-12. First, consider if each student had selected 30 words, instead of 10, by eye. Do you think this would make the plot from the previous activity centered on 3.95 (the true mean word length)?  Explain your answer.
-\vspace{0.4in}
-
-Now we will select 30 words instead of 10 words at random.  The following plot illustrates a sampling distribution of 1000 samples of size 30 selected at random from the sample.
-
-<!-- *  In the "One Variable with Sampling” Rossman/Chance web applet(http://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=gettysburg.), change the Sample size to 100. -->
-
-<!-- *  Click “Draw Samples”. -->
-
-<!-- The plot labeled “Statistics” displays the 1,000 randomly generated sample mean word lengths. Sketch this plot below.  Include a descriptive $x$-axis label and be sure to write down the provided mean and SD (standard deviation) of the distribution. -->
-<!-- \vspace{2in} -->
+The mean and standard deviation for the convenience sample is provided below.
 
 
-\begin{center}\includegraphics[width=0.75\linewidth]{images/bencenti_sampling30} \end{center}
+``` r
+mean(convenience_means)
+#> [1] 4.8243
+sd(convenience_means)
+#> [1] 0.8334471
+```
 
-13. Compare the values of the standard deviation of the plots before question 9 and before question 13. Which plot shows the smallest standard deviation?
-\vspace{0.4in}
 
-14. Using the evidence from your simulations, answer the following research questions:
-
-\rgi Does changing the sample size impact whether the sample estimates are unbiased? Explain your answer.
-\vspace{0.5in}
-
-\rgi Does changing the sample size impact the variability (spread) of sample estimates? Explain your answer
-\vspace{0.5in}
-
-15. What is the purpose of random selection of a sample from the population? 
+9.  Compare the two distributions shown above.  What is similar between the two distributions?  What is different?
 
 \vspace{0.8in}
 
-\newpage
+10. Using the plots above, explain why using a random number generator to generate a sample is a "better" method than choosing 10 words “by eye” (convenience sample).
+\vspace{0.8in}
+
+11.  Is random selection an unbiased method of selection?  Explain your answer. Be sure to reference the created plots.
+\vspace{0.5in}
+
+Later in the semester we will learn about the Scope of Inference for a study.  A diagram of Scope of Inference is show below:
+
+
+\begin{center}\includegraphics[width=0.75\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
+In this activity we have focused on sampling methods.  Note that the sampling method used to select the sample determines the group of observation units the results of a study apply to. This is "generalization."  We will explore causation in Module 8.
+
+12. What is the purpose of random selection of a sample from the population?
+
+\vspace{0.8in}
+
 
 ### Take-home messages
 
@@ -278,9 +313,6 @@ Now we will select 30 words instead of 10 words at random.  The following plot i
 
 5. Random selection eliminates selection bias.  However, random selection will not eliminate response or non-response bias.
 
-6. The larger the sample size, the more similar (less variable) the statistics will be from different samples.  
-
-7. Sample size has no impact on whether a *sampling method* is biased or not. Taking a larger sample using a biased method will still result in a sample that is not representative of the population.
 
 ### Additional notes
 

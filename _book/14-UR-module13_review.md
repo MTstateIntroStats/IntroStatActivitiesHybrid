@@ -72,6 +72,7 @@ The following code creates the null distribution for this study.
 
 ``` r
 # Simulation-based test for slope
+set.seed(216)
 regression_test(Danceability~Valance, # response ~ explanatory
                data = songs, # name of data set
                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
@@ -92,11 +93,30 @@ regression_test(Danceability~Valance, # response ~ explanatory
 
 \vspace{1in}
 
+We could also test correlation:
+
+
+``` r
+# Simulation-based test for slope
+set.seed(216)
+regression_test(Danceability~Valance, # response ~ explanatory
+               data = songs, # name of data set
+               direction = "greater", # sign in alternative ("greater", "less", "two-sided")
+               summary_measure = "correlation", 
+               as_extreme_as = 0.501, #observed slope
+               number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
 Now let's estimate the true regression slope for the relationship between valance and danceability of songs.
 
 
 ``` r
 # Bootstrap CI for slope
+set.seed(216)
 regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
                         data = songs, # name of data set
                         confidence_level = 0.99, # confidence level as decimal
@@ -106,9 +126,30 @@ regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 9.  Interpret the 99% confidence interval in context of the problem.
+
+\vspace{1in}
+
+To create the confidence interval for correlation.
+
+
+``` r
+# Bootstrap CI for correlation
+set.seed(216)
+regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
+                        data = songs, # name of data set
+                        confidence_level = 0.99, # confidence level as decimal
+                        summary_measure =  "correlation", # slope or correlation
+                        number_repetitions = 10000) #Number of simulated samples for null distribution
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+10.  Interpret the 99% confidence interval for correlation in context of the problem.
 
 \vspace{1in}
 
@@ -126,8 +167,8 @@ When performing inference on a least squares line, the follow conditions are gen
 
 The scatterplot and the residual plots will be used to assess the conditions for approximating the data with the $t$-distribution.     
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
-10. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
+11. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
 
 \vspace{1in}
 
@@ -139,16 +180,17 @@ $$
  
 We will use the linear model output above to get the estimate for slope and standard error.
 
-11.  Calculate the standardized slope.
+12.  Calculate the standardized slope.
 
 \vspace{1in}
 
-12.  Using the linear model output, report the p-value for the test of significance.
+13.  Using the linear model output, report the p-value for the test of significance.
 
 \vspace{0.5in}
-13. Based on the p-value, how much evidence is there against the null hypothesis?
+14. Based on the p-value, how much evidence is there against the null hypothesis?
 
 \vspace{0.5in}
+\newpage
 
 Recall that a confidence interval is calculated by adding and subtracting the margin of error to the point estimate.  
 $$\mbox{point estimate}\pm t^* \times SE(estimate)$$
@@ -165,7 +207,7 @@ qt(0.995, 601) #95% t* multiplier
 #> [1] 2.584034
 ```
 
-14. Calculate the 99% confidence interval for the true slope.
+15. Calculate the 99% confidence interval for the true slope.
 \vspace{1in}
 
 \newpage

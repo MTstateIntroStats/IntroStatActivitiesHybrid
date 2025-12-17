@@ -223,6 +223,7 @@ Using the R script file for this activity...
 
 
 ``` r
+set.seed(216)
 regression_test(Percent_Accuracy~Driving_Distance, # response ~ explanatory
                data = golf, # Name of data set
                direction = "less", # Sign in alternative ("greater", "less", "two-sided")
@@ -245,6 +246,7 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 
 
 ``` r
+set.seed(216)
 regression_bootstrap_CI(Percent_Accuracy~Driving_Distance, # response ~ explanatory
    data = golf, # Name of data set
    confidence_level = 0.95, # Confidence level as decimal
