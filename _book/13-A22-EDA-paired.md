@@ -52,13 +52,18 @@ For each of the following scenarios, determine whether the samples are paired or
 
 The popularity of tattoos has increased tremendously in the last 10 years particularly among athletes and military personnel. A study reported in *Medicine & Science in Sports & Exercise* [@luetkemeier2017] looked at whether skin tattoos altered a person's sweat rate.  The study participants were 10 healthy men with a tattoo.  According to the article, sweat was stimulated by iontophoresis using agar gel disks impregnated with 0.5% pilocarpine nitrate.  The sweat rate ($\frac{mg}{cm^2 \times min}$) was determined by weighing the disk before and after sweat collection. Sweat rate was measured on both the tattooed skin and untattooed skin from the same participant.  We will use these data to assess the difference in sweat rate between the tattooed and untattooed skin (tat - notat).
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
+\vspace{2mm}
 * Response variable:
 
+    * Units?:
 
+\vspace{2mm}
 ### Exploring Paired Data
 
 5. Explain why this is a paired study design and not independent groups.

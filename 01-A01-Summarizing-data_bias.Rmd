@@ -165,7 +165,7 @@ Complete Q5 together as a class:
 
 1. There are two types of variables: categorical (groups) and quantitative (numerical measures).
 
-2. We will learn more about summarizing variable later in the semester.  Categorical variables are summarized by calculating a proportion from the data and quantitative variables are summarized by finding the mean and the standard deviation.
+2. We will learn more about summarizing variables later in the semester.  Categorical variables are summarized by calculating a proportion from the data and quantitative variables are summarized by finding the mean and the standard deviation (more later on this).
 
 3.  There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias.
 

@@ -38,12 +38,16 @@ Atrial fibrillation is an irregular and often elevated heart rate. In some peopl
 
 Suppose 24 subjects with permanent atrial fibrillation have volunteered to participate in this study. There are 16 subjects that self-identified as male and 8 subjects that self-identified as female.
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
+\vspace{2mm}
 * Response variable:
 
+\vspace{2mm}
 1. Brainstorm with your table on ways to create two groups: placebo and drug group.  Write down your groups ideas.
 
 \vspace{1.5in}

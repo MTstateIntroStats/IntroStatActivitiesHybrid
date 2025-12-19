@@ -1,5 +1,10 @@
 ## Module 4 Review - Theory-based Methods for a Single Proportion
 
+```{r}
+set.seed(216)
+```
+
+
 Statistician Jessica Utts has conducted an extensive analysis of Ganzfeld studies that have investigated psychic functioning. Ganzfeld studies involve a "sender" and a "receiver." Two people are placed in separate rooms.  The sender looks at a "target" image on a television screen and attempts to transmit information about the target to the receiver.  The receiver is then shown four possible choices or targets, one of which is the correct target and the other three are "decoys."  The receiver must choose the one he or she thinks best matches the description transmitted by the sender.  If the correct target is chosen by the receiver, the session is a "hit."  Otherwise, it is a miss.  Utts reported that her analysis considered a total of 2,124 sessions and found a total of 709 "hits" (Utts, 2010).  Is there evidence of psychic ability?
 
 1.	Write the parameter of interest in context of the study.
@@ -81,7 +86,6 @@ pnorm(9.333, # Enter value of standardized statistic
 
 Simulation Method:
 ```{r, out.width="85%", echo=TRUE}
-set.seed(216)
 one_proportion_test(probability_success = 0.25, #Null hypothesis value
                     sample_size = 2124, #Enter sample size
                     number_repetitions = 10000, #Enter number of simulations
@@ -133,7 +137,6 @@ qnorm(0.975) # Multiplier for 95% confidence interval
 
 Simulation Methods:
 ```{r, out.width="85%", echo=TRUE}
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 2124, # Sample size
                     number_successes = 709, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use

@@ -22,12 +22,15 @@ in words and using appropriate statistical symbols.
 
 Scientists have devised a new way to measure a person’s level of arsenic poisoning by examining toenail clippings.  Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire.  An arsenic level greater than 0.150 ppm is considered hazardous.   Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)?  How high is the arsenic concentration for New Hampshire residents with a private well?
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Variable:
 
-    * Type of variable:
+    * Units?:
 
+\vspace{2mm}
 1. What does $\mu$ represent in the context of this study?
 
 \vspace{0.8in}
@@ -52,7 +55,7 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 * Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 11. 
 
-* Enter the name of the variable in lines 15
+* Enter the name of the variable in lines 13 and 15
 
 * Write a title for the plot between the quotations and an x-axis label
 

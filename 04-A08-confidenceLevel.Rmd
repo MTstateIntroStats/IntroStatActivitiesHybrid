@@ -1,5 +1,9 @@
 ## Activity 8:  Confidence intervals and what confidence means
 
+```{r,echo=FALSE}
+set.seed(216)
+```
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -113,8 +117,7 @@ $$\hat{p}\pm z^* \times SE(\hat{p})$$
 
 We could also use simulation-based methods to analyze these data.  Note the inputs into the R code to create the null and bootstrap distribution.
 
-```{r, echo=TRUE, out.width="55%"}
-set.seed(216)
+```{r, echo=TRUE, out.width="60%"}
 one_proportion_test(probability_success=0.1,
                     sample_size=500,
                     number_repetitions=10000,
@@ -123,8 +126,7 @@ one_proportion_test(probability_success=0.1,
                     summary_measure="proportion")
 ```
 
-```{r, echo=TRUE, out.width="55%"}
-set.seed(216)
+```{r, echo=TRUE, out.width="60%"}
 one_proportion_bootstrap_CI(sample_size = 500,
                             number_successes = 81,
                             number_repetitions = 10000,

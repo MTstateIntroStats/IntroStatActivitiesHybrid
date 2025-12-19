@@ -1,5 +1,7 @@
 ## Activity 8:  Confidence intervals and what confidence means
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -129,7 +131,6 @@ We could also use simulation-based methods to analyze these data.  Note the inpu
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success=0.1,
                     sample_size=500,
                     number_repetitions=10000,
@@ -140,11 +141,10 @@ one_proportion_test(probability_success=0.1,
 
 
 
-\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 
 ``` r
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 500,
                             number_successes = 81,
                             number_repetitions = 10000,
@@ -153,7 +153,7 @@ one_proportion_bootstrap_CI(sample_size = 500,
 
 
 
-\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 5. Explain why the results for simulation methods and theory-based methods are similar.
 

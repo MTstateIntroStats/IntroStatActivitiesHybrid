@@ -31,21 +31,24 @@ To review these concepts, see Chapters 9 and 17 in the textbook.
 
 According to an article in *Sleep* [@watson2015], experts recommend adults (>18 years old) get at least 7 hours of sleep per night. A professor at MSU is interested in the sleep habits of MSU students.  The professor obtained a representative sample of MSU students and asked each student to report the amount of sleep they get on a typical night.  Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Variable:
 
-    * Type of variable:
+    * Units?:
 
+\vspace{2mm}
 #### R Instructions {-}
 
 * Download the R script file and data file for this activity
 
 * Upload both files to the RStudio server and open the R script file
 
-* Enter the name of the dataset for datasetname.csv 
+* Enter the name of the dataset for datasetname.csv in line 8
 
-* Highlight and run lines 1--8 to load the data
+* Highlight and run lines 1--8 to load the data set
 
 
 ``` r
@@ -184,11 +187,10 @@ The `one_mean_test` will be used to find the p-value for the simulation test.  F
 
 * Enter your answers for question 5 in place of the `xx`'s to produce the null distribution with 10000 simulations.
 
-* Highlight and run lines 36--42.
+* Highlight and run lines 29--35.
 
 
 ``` r
-set.seed(216)
 one_mean_test(sleep$SleepHours,#Enter the object name and variable
               null_value = 7,
               summary_measure = "mean",  #Can choose between mean or median
@@ -229,11 +231,10 @@ Use the provided R script file to find a 95\% confidence interval.
 
 * Enter the appropriate confidence level for `xx`.
 
-* Highlight and run lines 46--49.
+* Highlight and run lines 39--42.
 
 
 ``` r
-set.seed(216)
 one_mean_CI(sleep$SleepHours, #Enter the name of the variable
             summary_measure = "mean", #choose the mean or median
             number_repetitions = 10000,  # Number of simulations

@@ -35,13 +35,16 @@ Activities from module 3 covered simulation-based methods for hypothesis tests i
 
 Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers [@richardson2019]. Is there evidence that there is an over-prevalence of left-handed fighters?  In this random sample of 500 professional male boxers, 81 were left-handed.
 
+\vspace{2mm}
+
 * Observational units:
 
+\vspace{2mm}
 * Variable:
 
-    * Type of variable:
-
     * Success:
+    
+\vspace{2mm}
 
 ### R Instructions {-}
 

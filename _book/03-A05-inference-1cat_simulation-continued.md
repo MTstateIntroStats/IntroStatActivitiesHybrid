@@ -5,6 +5,8 @@ output:
 ---
 ## Activity 5:  Helper-Hinderer (continued)
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -64,11 +66,10 @@ To use the computer simulation, we will need to enter the
 \vspace{.2in}
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
+We will use the `one_proportion_test()` function in R (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -79,7 +80,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 ### Notes on the null distribution {-}
 
@@ -140,7 +141,6 @@ In another sample of 16 infants, only 10 selected the helper toy.  The null dist
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -151,7 +151,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
 6.  Note that this statistic ($\frac{10}{16} = 0.625$) is closer to the null value of 0.5 than the original statistic ($\frac{14}{16}=0.875$). Is the p-value for this new study larger or smaller than for the original statistic?
 
 \vspace{0.3in}
@@ -160,7 +160,6 @@ In still another study, the researchers took a sample of 32 infants and from thi
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 32, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -171,7 +170,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-5-1} \end{center}
 7.  Is the p-value found for the larger sample size ($n=32$) larger or smaller than the p-value found with the smaller sample size ($n=16$).
 
 \vspace{0.3in}

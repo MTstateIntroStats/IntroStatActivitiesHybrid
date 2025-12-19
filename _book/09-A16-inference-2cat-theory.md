@@ -33,16 +33,21 @@ A study was reported in "Helmet Use and Risk of Head Injuries in Alpine Skiers a
 
 Is there evidence that safety helmet use is associated with a reduced risk of head injury for skiers and snowboarders?
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
     * Group 1:
 
+\vspace{2mm}
 * Response variable:
 
     * Success:
-    
+
+\vspace{2mm}
+   
 #### R Instructions {-}
 
 * Download the R script file from Canvas and upload to the RStudio server

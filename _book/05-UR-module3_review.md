@@ -1,9 +1,6 @@
 ## Module 3 Review - Simulation Methods for a Single Proportion
 
 
-``` r
-hearing <- read.csv("data/hearing_loss.csv")
-```
 
 A recent study examined hearing loss data for 1753 U.S. teenagers. In this sample, 328 were found to have some level of hearing loss. News of this study spread quickly, with many news articles blaming the prevalence of hearing loss on the higher use of ear buds by teens. At MSNBC.com (8/17/2010), Carla Johnson summarized the study with the headline: “1 in 5 U.S. teens has hearing loss, study says.”  Is this an appropriate or a misleading headline?
 
@@ -53,7 +50,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success = 0.2, #Null hypothesis value
                     sample_size = 1753, #Enter sample size
                     number_repetitions = 10000, #Enter number of simulations
@@ -107,7 +103,6 @@ one_proportion_test(probability_success = 0.2, #Null hypothesis value
 
 
 ``` r
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 1753, # Sample size
                     number_successes = 328, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use

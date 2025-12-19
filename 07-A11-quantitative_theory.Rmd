@@ -29,11 +29,15 @@ To review these concepts, see Chapters 11 and 17 in the textbook.
 
 It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of $98.6^{\circ}$F??
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Variable:
 
-    * Type of variable:
+    * Units?:
+    
+\vspace{2mm}
 
 #### Ask a research question {-}
 

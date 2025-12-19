@@ -1,5 +1,7 @@
 ## Activity 15:  The Good Samaritan 
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -31,16 +33,20 @@ To review these concepts, see Chapter 15 in your textbook.
 
 Researchers at the Princeton University wanted to investigate influences on behavior [@darley1973].  The researchers randomly selected 67 students from the Princeton Theological Seminary to participate in a study.  Only 47 students chose to participate in the study, and the data below includes 40 of those students (7 students were removed from the study for various reasons).  As all participants were theology majors planning a career as a preacher, the expectation was that all would have a similar disposition when it comes to helping behavior.  Each student was then shown a 5-minute presentation on the Good Samaritan, a parable in the Bible which emphasizes the importance of helping others.  After the presentation, the students were told they needed to give a talk on the Good Samaritan parable at a building across campus.  Half the students were told they were late for the presentation; the other half told they could take their time getting across campus (the condition was randomly assigned).  On the way between buildings, an actor pretending to be a homeless person in distress asked the student for help.  The researchers recorded whether the student helped the actor or not.  The results of the study are shown in the table below.  Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation?  Use the order of subtraction hurry – no hurry.
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
     * Group 1:
 
+\vspace{2mm}
 * Response variable:
 
     * Success:
-    
+
+\vspace{2mm}
 \newpage
 
 \begin{center}
@@ -180,7 +186,7 @@ The segmented bar plot below shows the relationship between the variables for **
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \newpage
 
@@ -211,7 +217,6 @@ Using the R script file for this activity, enter your answers for question 5 in 
 
 
 ``` r
-set.seed(216)
 two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
     data = good, # Name of data set
     first_in_subtraction = "Hurry", # Order of subtraction: enter the name of Group 1
@@ -223,7 +228,7 @@ two_proportion_test(formula = Behavior~Condition, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 #### Notes on the null distribution {-}
 
@@ -263,7 +268,6 @@ We will use the `two_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 
 ``` r
-set.seed(216)
 two_proportion_bootstrap_CI(formula = Behavior~Condition, 
          data=good, # Name of data set
          first_in_subtraction = "Hurry", # Order of subtraction: enter the name of Group 1
@@ -274,7 +278,7 @@ two_proportion_bootstrap_CI(formula = Behavior~Condition,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 #### Notes on the bootstrap distribution {-}
 

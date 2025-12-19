@@ -1,6 +1,9 @@
 ## Module 8 and 9 Review 
 
 
+
+
+
 ``` r
 allergy <- read.csv("https://math.montana.edu/courses/s216/data/PeanutAllergy.csv") 
 allergy %>% group_by(Treatment) %>% count(Allergy)
@@ -94,7 +97,7 @@ two_proportion_test(formula = Allergy ~ Treatment, #response~explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 11.  Interpret the p-value in context of the problem:
 
 \vspace{1in}
@@ -119,7 +122,7 @@ two_proportion_bootstrap_CI(formula = Allergy~Treatment,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 13. Interpret the 90\% confidence interval in context of the problem.
 
@@ -193,9 +196,5 @@ qnorm(0.95, lower.tail = TRUE)
 \vspace{1in}
 
 20. What is the scope of inference for this study?
-
-
-
-
 
 \newpage

@@ -1,5 +1,9 @@
 ## Module 11 Review - Independent Samples
 
+```{r, echo=FALSE}
+set.seed(216)
+```
+
 The “social brain hypothesis,” or the “social intelligence hypothesis,” suggests that living in socially cohesive groups with differentiated relationships requires a higher cognitive load, in turn resulting in higher brain volume. There is evidence this hypothesis holds for primates and some other mammal groups, but it hasn’t been explored in birds, as most birds typically have temporary social groupings that lack clear relationships. However, woodpeckers have a wide range of clearly differing social relationships while also having the benefit of being physiologically and environmentally similar across species. Researchers want to know if the “social brain hypothesis” holds true for woodpeckers: is the average brain volume (in mm^3) smaller for woodpeckers that tend to be solitary compared to woodpeckers that tend to live in pairs or groups? For the purpose of this study, “solitary” birds are classified as those that only pair-bond to breed, and otherwise are solitary for more than half a year each year. “Group-living” birds are those that spend more than half the year in communal groups or flocks. Researchers examined 61 species of woodpeckers.  Use solitary - group living as the order of subtraction
 
 The summary of the data and boxplots are given below:
@@ -45,7 +49,6 @@ ggplot(aes(x = SocialCategory, y = Volume)) +
 In the two_mean_test function, enter the response~explanatory variable names in for the formula (response~explanatory) and the name of the data set (woodpeckers) for data.  Since the order of subtraction is `solitary` - `group_living` enter `solitary` for first_in_subtraction.  Enter the summary statistic in for as_extreme_as and choose the direction to match the alternative hypothesis.
 
 ```{r, echo = TRUE, eval = TRUE, out.width="70%"}
-set.seed(216)
 two_mean_test(Volume~SocialCategory, data = woodpeckers,  #Variables and data
                     first_in_subtraction = "solitary", #First value in order of subtraction
                     number_repetitions = 10000,  #Number of simulations
@@ -75,7 +78,6 @@ D.	We could conclude that the brain volume for species of woodpeckers that live 
 To find the 99% confidence interval for the true difference in mean brain volume for species of woodpeckers that live in groups and species of woodpeckers that live solo use the two_mean_bootstrap_CI.  The inputs are similar as to what we used in the two_mean_test.
 
 ```{r, echo = TRUE, eval = TRUE, out.width="70%"}
-set.seed(216)
 two_mean_bootstrap_CI(Volume~SocialCategory, data = woodpeckers,  #Variables and data
                       first_in_subtraction = "solitary", #First value in order of subtraction
                       number_repetitions = 10000,  #Number of simulations

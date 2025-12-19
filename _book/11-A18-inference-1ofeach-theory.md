@@ -34,19 +34,26 @@ To review these concepts, see Chapter 19 in the textbook.
 
 In a study comparing immersive virtual reality (VR) to traditional hands-on methods, researchers recruited 115 undergraduate students to assess the effectiveness of these approaches in teaching complex scientific concepts like Moon phases [@madden2020]. Participants were randomly assigned to experience either a VR simulation replicating the Sun-Earth-Moon system or a hands-on activity where they physically manipulated models to observe Moon phases. The students were given a 14 multiple choice question quiz about Moon phases and the Moon’s motion relative to the Earth to evaluate their understanding of Moon phases and the Moon's motion. Each question had only one correct answer, and the participant’s score was the sum of the number of correct answers, with all questions weighted equally (with a maximum score of 14).  Is there evidence of a difference, on average, in student learning comparing those using VR methods to those using the traditional method? Use order of subtraction VR – Hands-on. 
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
     * Group 1:
 
+\vspace{2mm}
 * Response variable:
+
+    * Units?:
+
+\vspace{2mm}
 
 #### R instructions{-}
 
-* Download the RScript file and dataset from Canvas and upload to the RStudio server
+* Download the R script file and dataset from Canvas and upload to the RStudio server
 
-* Open the RScript file
+* Open the R script file
 
 * Enter the name of the data set for datasetname in line 8
 

@@ -72,7 +72,7 @@ paired_test(data = heartrate$Diff,   #Vector of differences or data set with col
 
 \vspace{0.5in}
 
-*  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
+*  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 16 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
 
 \vspace{0.5in}
 *  The 95% confidence interval would be entirely positive.

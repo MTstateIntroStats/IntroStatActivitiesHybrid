@@ -191,11 +191,11 @@
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
 \makeatother
-\subtitle{Fall 2025\\
+\subtitle{Spring 2026\\
 Montana State University}
 \author{Melinda Yager\\
 Jade Schmidt\\
-Stacey Hancock}
+Dr.~Mark Greenwood}
 \date{}
 
 \begin{document}
@@ -958,7 +958,7 @@ Complete Q5 together as a class:
 \item
   There are two types of variables: categorical (groups) and quantitative (numerical measures).
 \item
-  We will learn more about summarizing variable later in the semester. Categorical variables are summarized by calculating a proportion from the data and quantitative variables are summarized by finding the mean and the standard deviation.
+  We will learn more about summarizing variables later in the semester. Categorical variables are summarized by calculating a proportion from the data and quantitative variables are summarized by finding the mean and the standard deviation (more later on this).
 \item
   There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias.
 \end{enumerate}
@@ -1110,21 +1110,21 @@ The plot created in question 1 is a sampling distribution of statistics. This sa
 
 Suppose instead of attempting to select a representative sample by eye (which did not work), each student used a random number generator to select a simple random sample of 10 words. A \textbf{simple random sample} relies on a random mechanism to choose a sample, without replacement, from the population, such that every sample of size 10 is equally likely to be chosen.
 
-Later in the semester we will learn more about how to use \texttt{R} - for today we will have a short introduction using the \texttt{R} studio server. Download the provided \texttt{R} script file from canvas.
+Later in the semester we will learn more about how to use R - for today we will have a short introduction using the \texttt{R} studio server. Download the provided R script file from canvas.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
 \tightlist
 \item
-  Login to the \texttt{R} studio server using your netID login. Upload the file to the server using the following instructions.
+  Login to the R studio server using your netID login. Upload the file to the server using the following instructions.
 \end{enumerate}
 
 \begin{itemize}
 \item
   Click ``Upload'' in the ``Files'' tab in the bottom right window of RStudio. In the pop-up window, click ``Choose File'', and navigate to the folder where the Activity R script file is saved (most likely in your downloads folder). Click ``Open''; then click ``Ok''.
 \item
-  Once the file is uploaded, you should see the uploaded file appear in the list of files in the bottom right window. Click on the \texttt{R} script file name to open the file in the Editor window (upper left window).
+  Once the file is uploaded, you should see the uploaded file appear in the list of files in the bottom right window. Click on the R script file name to open the file in the Editor window (upper left window).
 \end{itemize}
 
 The following code will take a random sample of 10 words from the population of 359 words.
@@ -1132,7 +1132,7 @@ The following code will take a random sample of 10 words from the population of 
 \begin{itemize}
 \tightlist
 \item
-  In the \texttt{R} script file, highlight and run lines 1--7
+  In the R script file, highlight and run lines 1--7
 \end{itemize}
 
 \begin{Shaded}
@@ -1187,11 +1187,11 @@ One set of randomly generated sample mean word lengths from a single class may n
 
 \newpage
 
-The following is a plot of 1000 random samples of size 10 created in \texttt{R}. To re-create this plot run lines 11--27 in the \texttt{R} script file.
+The following is a plot of 1000 random samples of size 10 created in \texttt{R}. To re-create this plot run lines 11--28 in the \texttt{R} script file.
 
 \begin{center}\includegraphics[width=0.65\linewidth]{01-A02-samplingbias_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-It would be useful to know what the center (mean) is for this sampling distribution. The distribution you created in the \texttt{R} script file may vary a little from what is reported in your coursepack. To find the mean and standard deviation from your distribution run lines 31--32.
+It would be useful to know what the center (mean) is for this sampling distribution. The distribution you created in the \texttt{R} script file may vary a little from what is reported in your coursepack. To find the mean and standard deviation from your distribution run lines 32--33.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1268,7 +1268,7 @@ In this activity we have focused on sampling methods. Note that the sampling met
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  When we use a biased method of selection, we will over or underestimate the parameter.
+  When we use a biased method of selection, we will over or underestimate the parameter, on average.
 \item
   If the sampling method is biased, inferences made about the population based on a sample estimate will not be valid.
 \item
@@ -1721,7 +1721,7 @@ To calculate the probability of an event happening:
 
 \[\text{probability} = \frac{\text{number of ways an event can happen}}{\text{total number of possible outcomes}}\]
 
-For example, to calculate the probability of a coin flip landing on heads; there are only two outcomes (heads or tails) and only one possibility way to land on heads.
+For example, to calculate the probability of a coin flip landing on heads; there are only two outcomes (heads or tails) and only one possible way to land on heads.
 
 \[P(heads) = \frac{1}{2} = 0.5\]
 
@@ -1751,10 +1751,10 @@ We will use the notation P(event) to represent the probability of an event and u
   \begin{itemize}
   \tightlist
   \item
-    \(P(A^C) = 1 - P(A)\)
+    Additionally, we can find the complement of event A by subtracting the probability of A from 1: \(P(A^C) = 1 - P(A)\)
   \end{itemize}
 \item
-  \(P(A and B)\) represents the probability of events A and B
+  \(P(A \text{ and } B)\) represents the probability of events A and B
 \item
   \(P(A|B)\) represents the probability of event A, given event B
 \item
@@ -1870,7 +1870,7 @@ Total & & & 100,000 \\
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \item
-  Since the early 1980s, the rapid antigen detection test (RADT) of group A \emph{streptococci} has been used to detect strep throat. A recent study of the accuracy of this test shows that the \textbf{sensitivity}, the probability of a positive RADT given the person has strep throat, is 86\% in children, while the \textbf{specificity}, the probability of a negative RADT given the person does not have strep throat, is 92\% in children. The \textbf{prevalence}, the probability of having group A strep, is 37\% in children. (Stewart et al. 2014)
+  Since the early 1980s, the rapid antigen detection test (RADT) of group A \emph{streptococci} has been used to detect strep throat. A study of the accuracy of this test shows that the \textbf{sensitivity}, the probability of a positive RADT given the person has strep throat, is 86\% in children, while the \textbf{specificity}, the probability of a negative RADT given the person does not have strep throat, is 92\% in children. The \textbf{prevalence}, the probability of having group A strep, is 37\% in children. (Stewart et al. 2014)
   \vspace{1mm}
 
   Let \(A\) = the event the child has strep throat, and \(B\) = the event the child has a positive RADT.
@@ -3037,19 +3037,28 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 A study by Hamblin, Wynn, and Bloom reported in Nature (Hamblin, Wynn, and Bloom 2007) was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: \url{https://youtu.be/anCaGBsBOxM}. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the \emph{helper} toy and 2 chose the \emph{hinderer} toy.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Variable:
 
   \begin{itemize}
-  \item
-    Type of variable:
+  \tightlist
   \item
     Success:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{Ask a research question}\label{ask-a-research-question}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
@@ -3485,11 +3494,10 @@ To use the computer simulation, we will need to enter the
   Direction (\texttt{"greater"}, \texttt{"less"}, or \texttt{"two-sided"}):
 \end{itemize}
 
-We will use the \texttt{one\_proportion\_test()} function in \texttt{R} (in the \texttt{catstats} package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided \texttt{R} script file, fill in the values/words for each \texttt{xx} with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
+We will use the \texttt{one\_proportion\_test()} function in R (in the \texttt{catstats} package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided \texttt{R} script file, fill in the values/words for each \texttt{xx} with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Null hypothesis value}
           \AttributeTok{sample\_size =} \DecValTok{16}\NormalTok{, }\CommentTok{\# Enter sample size}
           \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
@@ -3499,7 +3507,7 @@ We will use the \texttt{one\_proportion\_test()} function in \texttt{R} (in the 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \subsection*{Notes on the null distribution}\label{notes-on-the-null-distribution}
 \addcontentsline{toc}{subsection}{Notes on the null distribution}
@@ -3587,7 +3595,6 @@ In another sample of 16 infants, only 10 selected the helper toy. The null distr
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Null hypothesis value}
           \AttributeTok{sample\_size =} \DecValTok{16}\NormalTok{, }\CommentTok{\# Enter sample size}
           \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
@@ -3597,7 +3604,7 @@ In another sample of 16 infants, only 10 selected the helper toy. The null distr
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3613,7 +3620,6 @@ In still another study, the researchers took a sample of 32 infants and from thi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.5}\NormalTok{, }\CommentTok{\# Null hypothesis value}
           \AttributeTok{sample\_size =} \DecValTok{32}\NormalTok{, }\CommentTok{\# Enter sample size}
           \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
@@ -3623,7 +3629,7 @@ In still another study, the researchers took a sample of 32 infants and from thi
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3852,7 +3858,6 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{16}\NormalTok{, }\CommentTok{\# Sample size}
                     \AttributeTok{number\_successes =} \DecValTok{14}\NormalTok{, }\CommentTok{\# Observed number of successes}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
@@ -3860,7 +3865,7 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \subsubsection*{Notes on the bootstrap distribution}\label{notes-on-the-bootstrap-distribution}
 \addcontentsline{toc}{subsubsection}{Notes on the bootstrap distribution}
@@ -3915,7 +3920,6 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{16}\NormalTok{, }\CommentTok{\# Sample size}
                     \AttributeTok{number\_successes =} \DecValTok{14}\NormalTok{, }\CommentTok{\# Observed number of successes}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
@@ -3923,7 +3927,7 @@ We will use the \texttt{one\_proportion\_bootstrap\_CI()} function in R (in the 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3943,7 +3947,7 @@ In many of our studies we will write a paragraph summarizing the results of the 
 
 \setstretch{3}
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy. In a sample of 16 infants, 14 chose the helper toy. A simulation null distribution with 10000 simulations was created in RStudio. The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater. This resulted in a p-value of 0.0024. We would observe a sample proportion of 0.875 or greater with a probability of 0.0024 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5. In addition, a 95\% confidence interval was found for the parameter of interest. We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.75 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy. In a sample of 16 infants, 14 chose the helper toy. A simulation null distribution with 10000 simulations was created in RStudio. The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater. This resulted in a p-value of 0.0026. We would observe a sample proportion of 0.875 or greater with a probability of 0.0026 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5. In addition, a 95\% confidence interval was found for the parameter of interest. We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.688 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
 
 \setstretch{1}
 
@@ -4563,19 +4567,28 @@ Activities from module 3 covered simulation-based methods for hypothesis tests i
 
 Left-handedness is a trait that is found in about 10\% of the general population. Past studies have shown that left-handed men are over-represented among professional boxers (Richardson and Gilman 2019). Is there evidence that there is an over-prevalence of left-handed fighters? In this random sample of 500 professional male boxers, 81 were left-handed.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Variable:
 
   \begin{itemize}
-  \item
-    Type of variable:
+  \tightlist
   \item
     Success:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsection*{R Instructions}\label{r-instructions-1}
 \addcontentsline{toc}{subsection}{R Instructions}
@@ -5017,7 +5030,6 @@ We could also use simulation-based methods to analyze these data. Note the input
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success=}\FloatTok{0.1}\NormalTok{,}
                     \AttributeTok{sample\_size=}\DecValTok{500}\NormalTok{,}
                     \AttributeTok{number\_repetitions=}\DecValTok{10000}\NormalTok{,}
@@ -5027,11 +5039,10 @@ We could also use simulation-based methods to analyze these data. Note the input
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{500}\NormalTok{,}
                             \AttributeTok{number\_successes =} \DecValTok{81}\NormalTok{,}
                             \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,}
@@ -5039,7 +5050,7 @@ We could also use simulation-based methods to analyze these data. Note the input
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{04-A08-confidenceLevel_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5187,13 +5198,26 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 The American Veterinary Medical Association estimated in 2010 that approximately 49\% of dog owners in the U.S. own dogs that are classified as ``mixed breed.'' As part of a larger 2022 international study (Banton 2022) about overall dog health, survey participants were asked, among other things, to report whether their dog was purebred or a mixed breed. Seven hundred and fifty (750) dog owners from the U.S. were recruited to complete an online survey via an email indicating they had been randomly selected by Qualtrics (an ``experience management'' company that specializes in surveys). Three hundred sixty-four (364) out of 675 respondents from the U.S. reported they owned a mixed breed dog. In the last decade, has the proportion of dog owners in the U.S. that own a mixed breed dog has changed from the value reported in 2010?
 
+\vspace{1mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
 \item
   Variable:
-\item
-  Type of variable:
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
 \item
   Success:
 \end{itemize}
@@ -5336,7 +5360,7 @@ We will use the \texttt{one\_proportion\_test()} function in \texttt{R} (in the 
   Report the p-value from the study.
 \end{enumerate}
 
-\vspace{0.2in}
+\newpage
 
 \subsubsection*{Bootstrap distribution}\label{bootstrap-distribution}
 \addcontentsline{toc}{subsubsection}{Bootstrap distribution}
@@ -5917,12 +5941,6 @@ Total &  &  & 100000 \\ \hline
 
 \section{Module 3 Review - Simulation Methods for a Single Proportion}\label{module-3-review---simulation-methods-for-a-single-proportion}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{hearing }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/hearing\_loss.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 A recent study examined hearing loss data for 1753 U.S. teenagers. In this sample, 328 were found to have some level of hearing loss. News of this study spread quickly, with many news articles blaming the prevalence of hearing loss on the higher use of ear buds by teens. At MSNBC.com (8/17/2010), Carla Johnson summarized the study with the headline: ``1 in 5 U.S. teens has hearing loss, study says.'' Is this an appropriate or a misleading headline?
 
 \begin{enumerate}
@@ -6024,7 +6042,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.2}\NormalTok{, }\CommentTok{\#Null hypothesis value}
                     \AttributeTok{sample\_size =} \DecValTok{1753}\NormalTok{, }\CommentTok{\#Enter sample size}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#Enter number of simulations}
@@ -6121,7 +6138,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{1753}\NormalTok{, }\CommentTok{\# Sample size}
                     \AttributeTok{number\_successes =} \DecValTok{328}\NormalTok{, }\CommentTok{\# Observed number of successes}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
@@ -6307,7 +6323,6 @@ Simulation Method:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.25}\NormalTok{, }\CommentTok{\#Null hypothesis value}
                     \AttributeTok{sample\_size =} \DecValTok{2124}\NormalTok{, }\CommentTok{\#Enter sample size}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#Enter number of simulations}
@@ -6317,7 +6332,7 @@ Simulation Method:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6399,7 +6414,6 @@ Simulation Methods:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{sample\_size =} \DecValTok{2124}\NormalTok{, }\CommentTok{\# Sample size}
                     \AttributeTok{number\_successes =} \DecValTok{709}\NormalTok{, }\CommentTok{\# Observed number of successes}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples to use}
@@ -6407,7 +6421,7 @@ Simulation Methods:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{05-UR-module4_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7596,11 +7610,11 @@ Look through the provided table of variable descriptions. The \texttt{UnitID} an
 \subsubsection*{R Instructions}\label{r-instructions-3}
 \addcontentsline{toc}{subsubsection}{R Instructions}
 
-The \texttt{favstats()} function from the \texttt{mosaic} package gives the summary statistics for a quantitative variable. The \texttt{R} output below provides the summary statistics for the variable \texttt{Graduation\_Rate}. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate.
+The \texttt{favstats()} function from the \texttt{mosaic} package gives the summary statistics for a quantitative variable. The R output below provides the summary statistics for the variable \texttt{Graduation\_Rate}. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate.
 
 \begin{itemize}
 \item
-  Highlight and run lines 1--12 in the provided \texttt{R} script file to load the data set. Check that the summary statistics match the output given in the coursepack.
+  Highlight and run lines 1--12 in the provided R script file to load the data set. Check that the summary statistics match the output given in the coursepack.
 \item
   Notice that the 2-year institutions were removed so the observational units for this study are \textbf{4-year US degree-granting higher education institutions in 2018.}
 \end{itemize}
@@ -7626,18 +7640,38 @@ The \texttt{favstats()} function from the \texttt{mosaic} package gives the summ
 
 Two measures of center:
 
+\vspace{1mm}
+
 \begin{itemize}
+\tightlist
 \item
   Mean:
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
 \item
   Median:
 \end{itemize}
 
+\vspace{1mm}
+
 Two measures of spread:
 
+\vspace{1mm}
+
 \begin{itemize}
+\tightlist
 \item
   Standard deviation:
+\end{itemize}
+
+\vspace{1mm}
+
+\begin{itemize}
+\tightlist
 \item
   Interpretation of the standard deviation:
 \end{itemize}
@@ -7907,18 +7941,28 @@ To review these concepts, see Chapters 9 and 17 in the textbook.
 
 According to an article in \emph{Sleep} (Watson 2015), experts recommend adults (\textgreater18 years old) get at least 7 hours of sleep per night. A professor at MSU is interested in the sleep habits of MSU students. The professor obtained a representative sample of MSU students and asked each student to report the amount of sleep they get on a typical night. Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Variable:
 
   \begin{itemize}
   \tightlist
   \item
-    Type of variable:
+    Units?:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{R Instructions}\label{r-instructions-4}
 \addcontentsline{toc}{subsubsection}{R Instructions}
@@ -7929,9 +7973,9 @@ According to an article in \emph{Sleep} (Watson 2015), experts recommend adults 
 \item
   Upload both files to the RStudio server and open the R script file
 \item
-  Enter the name of the dataset for datasetname.csv
+  Enter the name of the dataset for datasetname.csv in line 8
 \item
-  Highlight and run lines 1--8 to load the data
+  Highlight and run lines 1--8 to load the data set
 \end{itemize}
 
 \begin{Shaded}
@@ -8153,12 +8197,11 @@ The \texttt{one\_mean\_test} will be used to find the p-value for the simulation
 \item
   Enter your answers for question 5 in place of the \texttt{xx}'s to produce the null distribution with 10000 simulations.
 \item
-  Highlight and run lines 36--42.
+  Highlight and run lines 29--35.
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_mean\_test}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{SleepHours,}\CommentTok{\#Enter the object name and variable}
               \AttributeTok{null\_value =} \DecValTok{7}\NormalTok{,}
               \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{,  }\CommentTok{\#Can choose between mean or median}
@@ -8204,12 +8247,11 @@ Use the provided R script file to find a 95\% confidence interval.
 \item
   Enter the appropriate confidence level for \texttt{xx}.
 \item
-  Highlight and run lines 46--49.
+  Highlight and run lines 39--42.
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_mean\_CI}\NormalTok{(sleep}\SpecialCharTok{$}\NormalTok{SleepHours, }\CommentTok{\#Enter the name of the variable}
             \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }\CommentTok{\#choose the mean or median}
             \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\# Number of simulations}
@@ -8745,18 +8787,28 @@ To review these concepts, see Chapters 11 and 17 in the textbook.
 
 It has long been reported that the mean body temperature of adults is \(98.6^{\circ}\)F. There have been a few articles that challenge this assertion. (LUETKEMEIER 2017) In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature. Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of \(98.6^{\circ}\)F??
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Variable:
 
   \begin{itemize}
   \tightlist
   \item
-    Type of variable:
+    Units?:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{Ask a research question}\label{ask-a-research-question-2}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
@@ -9316,18 +9368,28 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 Scientists have devised a new way to measure a person's level of arsenic poisoning by examining toenail clippings. Scientists measured the arsenic levels (in parts per million or ppm) in toenail clippings from 19 randomly selected individuals with private wells in New Hampshire. An arsenic level greater than 0.150 ppm is considered hazardous. Is there evidence the ground water in New Hampshire has hazardous levels of arsenic concentration (as seen in the arsenic levels of New Hampshire residents)? How high is the arsenic concentration for New Hampshire residents with a private well?
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Variable:
 
   \begin{itemize}
   \tightlist
   \item
-    Type of variable:
+    Units?:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -9379,7 +9441,7 @@ Scientists have devised a new way to measure a person's level of arsenic poisoni
 \item
   Enter the name of the data set (see the environment tab) for \texttt{datasetname} in the R script file in line 11.
 \item
-  Enter the name of the variable in lines 15
+  Enter the name of the variable in lines 13 and 15
 \item
   Write a title for the plot between the quotations and an x-axis label
 \item
@@ -10917,14 +10979,31 @@ Atrial fibrillation is an irregular and often elevated heart rate. In some peopl
 
 Suppose 24 subjects with permanent atrial fibrillation have volunteered to participate in this study. There are 16 subjects that self-identified as male and 8 subjects that self-identified as female.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
+\tightlist
 \item
   Explanatory variable:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
+\tightlist
 \item
   Response variable:
 \end{itemize}
+
+\vspace{2mm}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -11177,26 +11256,41 @@ In this study, there are two variables studied: \texttt{Light}: level of light i
 
 Is there evidence that level of light in a child's room at night is associated with level of myopia later in life?
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
   \begin{itemize}
   \tightlist
   \item
-    Type of variable:
+    Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
 
   \begin{itemize}
   \tightlist
   \item
-    Type of variable:
+    Success:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{Notes on two categorical variables}\label{notes-on-two-categorical-variables}
 \addcontentsline{toc}{subsubsection}{Notes on two categorical variables}
@@ -11319,7 +11413,7 @@ Two types of plots can be created to display two categorical variables. To exami
 
 \vspace{1in}
 
-We could also plot the data using a mosaic plot which is shown below.
+We could also plot the data using a mosaic plot which is shown on the next page.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11452,9 +11546,17 @@ To review these concepts, see Chapter 15 in your textbook.
 
 Researchers at the Princeton University wanted to investigate influences on behavior (Darley and Batson 1973). The researchers randomly selected 67 students from the Princeton Theological Seminary to participate in a study. Only 47 students chose to participate in the study, and the data below includes 40 of those students (7 students were removed from the study for various reasons). As all participants were theology majors planning a career as a preacher, the expectation was that all would have a similar disposition when it comes to helping behavior. Each student was then shown a 5-minute presentation on the Good Samaritan, a parable in the Bible which emphasizes the importance of helping others. After the presentation, the students were told they needed to give a talk on the Good Samaritan parable at a building across campus. Half the students were told they were late for the presentation; the other half told they could take their time getting across campus (the condition was randomly assigned). On the way between buildings, an actor pretending to be a homeless person in distress asked the student for help. The researchers recorded whether the student helped the actor or not. The results of the study are shown in the table below. Do these data provide evidence that those in a hurry will be less likely to help people in need in this situation? Use the order of subtraction hurry -- no hurry.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -11463,6 +11565,11 @@ Researchers at the Princeton University wanted to investigate influences on beha
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
 
@@ -11473,6 +11580,7 @@ Researchers at the Princeton University wanted to investigate influences on beha
   \end{itemize}
 \end{itemize}
 
+\vspace{2mm}
 \newpage
 
 \begin{center}
@@ -11648,7 +11756,7 @@ We will now simulate a \textbf{null distribution} of sample differences in propo
 
 The segmented bar plot below shows the relationship between the variables for \textbf{one simulation assuming the null hypothesis is true}.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \newpage
 
@@ -11709,7 +11817,6 @@ Using the R script file for this activity, enter your answers for question 5 in 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_proportion\_test}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Behavior}\SpecialCharTok{\textasciitilde{}}\NormalTok{Condition, }\CommentTok{\# response \textasciitilde{} explanatory}
     \AttributeTok{data =}\NormalTok{ good, }\CommentTok{\# Name of data set}
     \AttributeTok{first\_in\_subtraction =} \StringTok{"Hurry"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
@@ -11720,7 +11827,7 @@ Using the R script file for this activity, enter your answers for question 5 in 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \subsubsection*{Notes on the null distribution}\label{notes-on-the-null-distribution-2}
 \addcontentsline{toc}{subsubsection}{Notes on the null distribution}
@@ -11797,7 +11904,6 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in R (in the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_proportion\_bootstrap\_CI}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Behavior}\SpecialCharTok{\textasciitilde{}}\NormalTok{Condition, }
          \AttributeTok{data=}\NormalTok{good, }\CommentTok{\# Name of data set}
          \AttributeTok{first\_in\_subtraction =} \StringTok{"Hurry"}\NormalTok{, }\CommentTok{\# Order of subtraction: enter the name of Group 1}
@@ -11807,7 +11913,7 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in R (in the 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-A15-inference-2cat-simulation_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \subsubsection*{Notes on the bootstrap distribution}\label{notes-on-the-bootstrap-distribution-2}
 \addcontentsline{toc}{subsubsection}{Notes on the bootstrap distribution}
@@ -12299,9 +12405,17 @@ Total & 752 & 2810 & 3562 \\
 
 Is there evidence that safety helmet use is associated with a reduced risk of head injury for skiers and snowboarders?
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -12310,6 +12424,11 @@ Is there evidence that safety helmet use is associated with a reduced risk of he
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
 
@@ -12319,6 +12438,8 @@ Is there evidence that safety helmet use is associated with a reduced risk of he
     Success:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{R Instructions}\label{r-instructions-8}
 \addcontentsline{toc}{subsubsection}{R Instructions}
@@ -12602,9 +12723,17 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild mushrooms carries the risk of accidental poisoning. Even a single bite of the wrong mushroom can be enough to cause fatal poisoning. An amateur mushroom hunter is interested in finding an easy rule to differentiate poisonous and edible mushrooms. They think that the mushroom's gills (the part which holds and releases spores) might be related to a mushroom's edibility. They used a data set of 8124 mushrooms and their descriptions. For each mushroom, the data set includes whether it is edible (e) or poisonous (p) and the size of the gills (broad (b) or narrow (n)). Is there evidence gill size is associated with whether a mushroom is poisonous? PLEASE NOTE: According to The Audubon Society Field Guide to North American Mushrooms, there is no simple rule for determining the edibility of a mushroom; no rule like ``leaflets three, let it be'\,' for Poisonous Oak and Ivy.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -12613,6 +12742,11 @@ Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild m
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
 
@@ -12622,6 +12756,8 @@ Wild mushrooms, such as chanterelles or morels, are delicious, but eating wild m
     Success:
   \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{R Instructions}\label{r-instructions-9}
 \addcontentsline{toc}{subsubsection}{R Instructions}
@@ -12983,9 +13119,9 @@ There are about 4 million tourists to Yellowstone National Park per year. One of
 #> 1  43 59     76 83 108 72.31438 13.89032 299       0
 \end{verbatim}
 
-The following code created the boxplot of waiting time.
+The following code creates the boxplot of waiting time.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -13003,7 +13139,7 @@ The following code created the boxplot of waiting time.
   Report and interpret the standard deviation of reported wait time in context of the study.
   \vspace{0.2in}
 \item
-  Descripe the plot using the four characteristics for boxplots.
+  Describe the plot using the four characteristics for boxplots.
 \end{enumerate}
 
 \vspace{1in}
@@ -13051,7 +13187,6 @@ We will start with simulation methods.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_mean\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ geyser}\SpecialCharTok{$}\NormalTok{waiting,   }\CommentTok{\#Object and variable}
               \AttributeTok{null\_value =} \DecValTok{30}\NormalTok{, }\CommentTok{\#null value for the study}
               \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{42.31438}\NormalTok{,   }\CommentTok{\#Shift needed for bootstrap hypothesis test}
@@ -13062,7 +13197,7 @@ We will start with simulation methods.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -13090,7 +13225,6 @@ In the next part of the activity, we will estimate the mean wait time for Old Fa
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_mean\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ geyser}\SpecialCharTok{$}\NormalTok{waiting,   }\CommentTok{\#Object and variable}
             \AttributeTok{summary\_measure =} \StringTok{"mean"}\NormalTok{, }
             \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{, }\CommentTok{\#Level of context as a decimal}
@@ -13098,7 +13232,7 @@ In the next part of the activity, we will estimate the mean wait time for Old Fa
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -13706,7 +13840,7 @@ The variable whether or not a child developed a peanut allergy is the \_\_\_\_\_
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -13743,7 +13877,7 @@ We will use the \texttt{two\_proportion\_bootstrap\_CI()} function in \texttt{R}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module8_9_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -14756,9 +14890,17 @@ To review these concepts, see Chapter 19 in the textbook.
 
 A study in the Academy of Management Journal (Porath 2017) investigated how rude behaviors influence a victim's task performance. Randomly selected college students enrolled in a management course were randomly assigned to one of two experimental conditions: rudeness condition (45 students) and control group (53 students). Each student was asked to write down as many uses for a brick as possible in five minutes; this value (total number of uses) was used as a performance measure for each student, where higher values indicate better performance. During this time another individual showed up late for class. For those students in the rudeness condition, the facilitator displayed rudeness by berating the students in general for being irresponsible and unprofessional (due to the late-arriving person). No comments were made about the late-arriving person for students in the control group. Is there evidence that the average performance score for students in the rudeness condition is lower than for students in the control group? Use the order of subtraction of rudeness -- control.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -14767,9 +14909,22 @@ A study in the Academy of Management Journal (Porath 2017) investigated how rude
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    units?
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{R instructions}\label{r-instructions-10}
 \addcontentsline{toc}{subsubsection}{R instructions}
@@ -14804,7 +14959,7 @@ To create a plot of the data and a table of summary statistics:
 \NormalTok{rude }\SpecialCharTok{\%\textgreater{}\%}
 \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ condition, }\AttributeTok{y =}\NormalTok{ number\_of\_uses)) }\SpecialCharTok{+}
     \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Number of Uses for a Brick based on Behavior Condition}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Side by side boxplots of Number of Uses for a Brick based on Behavior Condition}
 \StringTok{         for College Students in a Management Course"}\NormalTok{,}
          \AttributeTok{x =} \StringTok{"Behavior"}\NormalTok{,}
          \AttributeTok{y =} \StringTok{"Number of uses"}\NormalTok{) }
@@ -14817,7 +14972,7 @@ To create a plot of the data and a table of summary statistics:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \subsubsection*{Quantitative variables review}\label{quantitative-variables-review}
 \addcontentsline{toc}{subsubsection}{Quantitative variables review}
@@ -14923,7 +15078,6 @@ We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstat
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_mean\_test}\NormalTok{(number\_of\_uses }\SpecialCharTok{\textasciitilde{}}\NormalTok{ condition, }\CommentTok{\#Enter the names of the variables}
               \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the dataset}
               \AttributeTok{first\_in\_subtraction =} \StringTok{"rudeness"}\NormalTok{, }\CommentTok{\# First outcome in order of subtraction}
@@ -14933,7 +15087,7 @@ We will use the \texttt{two\_mean\_test()} function in R (in the \texttt{catstat
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \subsubsection*{Notes on the null distribution}\label{notes-on-the-null-distribution-3}
 \addcontentsline{toc}{subsubsection}{Notes on the null distribution}
@@ -14992,11 +15146,10 @@ The response variable name is \texttt{number\_of\_uses} and the explanatory vari
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 5 in place of the \texttt{xx}'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 33--37.
+Using the R script file for this activity, enter your answers for question 5 in place of the \texttt{xx}'s to produce the bootstrap distribution with 10000 simulations to create a 99\% confidence interval; highlight and run lines 33--37.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(number\_of\_uses }\SpecialCharTok{\textasciitilde{}}\NormalTok{ condition, }\CommentTok{\#Enter the name of the variables}
                       \AttributeTok{data =}\NormalTok{ rude,  }\CommentTok{\# Enter the name of the data set}
                       \AttributeTok{first\_in\_subtraction =} \StringTok{"rudeness"}\NormalTok{, }\CommentTok{\# First value in order of subtraction}
@@ -15005,7 +15158,7 @@ Using the R script file for this activity, enter your answers for question 5 in 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \subsubsection*{Notes on the bootstrap distribution}\label{notes-on-the-bootstrap-distribution-3}
 \addcontentsline{toc}{subsubsection}{Notes on the bootstrap distribution}
@@ -15083,9 +15236,17 @@ To review these concepts, see Chapter 19 in the textbook.
 
 In a study comparing immersive virtual reality (VR) to traditional hands-on methods, researchers recruited 115 undergraduate students to assess the effectiveness of these approaches in teaching complex scientific concepts like Moon phases (Madden 2020). Participants were randomly assigned to experience either a VR simulation replicating the Sun-Earth-Moon system or a hands-on activity where they physically manipulated models to observe Moon phases. The students were given a 14 multiple choice question quiz about Moon phases and the Moon's motion relative to the Earth to evaluate their understanding of Moon phases and the Moon's motion. Each question had only one correct answer, and the participant's score was the sum of the number of correct answers, with all questions weighted equally (with a maximum score of 14). Is there evidence of a difference, on average, in student learning comparing those using VR methods to those using the traditional method? Use order of subtraction VR -- Hands-on.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -15094,18 +15255,31 @@ In a study comparing immersive virtual reality (VR) to traditional hands-on meth
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{R instructions}\label{r-instructions-11}
 \addcontentsline{toc}{subsubsection}{R instructions}
 
 \begin{itemize}
 \item
-  Download the RScript file and dataset from Canvas and upload to the RStudio server
+  Download the R script file and dataset from Canvas and upload to the RStudio server
 \item
-  Open the RScript file
+  Open the R script file
 \item
   Enter the name of the data set for datasetname in line 8
 \item
@@ -15368,9 +15542,17 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 The backbone of heavy, two-legged, carnivorous dinosaurs, such as the \emph{T. rex}, is subject to stress. Intriguingly, these dinosaurs have protrusions (rugosity) at the top and sides of their spinal vertebrae, potentially for extra support. These protrusions do not seem to be present in smaller carnivorous dinosaurs. MSU paleontologists hypothesize that the presence of the protrusions is associated with the size of the two-legged carnivorous dinosaurs, potentially allowing them to grow big (Wilson 2016). To test this hypothesis, the researchers collected multiple scientific papers describing the fossil bones of 57 two-legged carnivorous dinosaur species. Then, they checked for the presence or absence of these rugose protrusions from photographs published in the papers and collected measurements of the length in centimeters of the femur (or thigh) bone. Femur length is a proxy for dinosaur size. Is there evidence that the presence of the protusions result in larger dinosaurs? Use present \(-\) absent as the order of subtraction.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
 
@@ -15379,9 +15561,22 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the \emph{T. r
   \item
     Group 1:
   \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -15409,7 +15604,7 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the \emph{T. r
 \item
   Upload and open the R script file for Module 11 lab.
 \item
-  Upload the csv file, \texttt{dinosaur}.
+  Upload the csv file, \texttt{dinosaur.csv}.
 \item
   Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 9 and the name of the explanatory and response variable in line 11.
 \item
@@ -15439,9 +15634,9 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the \emph{T. r
 
 \begin{itemize}
 \item
-  Enter the name of the explanatory variable for \texttt{explanatory} and the response variable for \texttt{response} in line 23.
+  Enter the name of the explanatory variable for \texttt{explanatory} and the response variable for \texttt{response} in line 21.
 \item
-  Run lines 22--23 to find the summary statistics.
+  Run lines 20--21 to find the summary statistics.
 \end{itemize}
 
 \begin{Shaded}
@@ -15546,7 +15741,7 @@ We will use the \texttt{two\_mean\_bootstrap\_CI()} function in R (in the \textt
 \item
   Fill in the missing values/numbers in the \texttt{two\_mean\_bootstrap\_CI()} function to create the 98\% confidence interval.
 \item
-  Highlight and run lines 34--38. \textbf{Upload a copy of the bootstrap distribution created to Gradescope for your group.}
+  Highlight and run lines 34--38.
 \end{itemize}
 
 \begin{Shaded}
@@ -16957,13 +17152,43 @@ The code below reads in the needed data set, IPEDS\_2018.csv, and filters out th
 
 For this study, we will look to see if 75th percentile math SAT score can be used to predict the retention rate of 4-year higher education institutions.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Use the provided R script file to create a scatterplot to examine the relationship between 75th percentile Math SAT score by retention rate for 4-year US Higher Education Institutions by filling in the variable names for explanatory and response in line 16. Note, we are using the 75th percentile Math SAT score to predict the retention rate.
 \item
@@ -16972,7 +17197,7 @@ For this study, we will look to see if 75th percentile math SAT score can be use
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data sest pipes into...}
+\NormalTok{IPEDS }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
     \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SATMath\_75, }\AttributeTok{y =}\NormalTok{ Retention))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
     \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
     \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"75th Percentile SAT Math Score"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
@@ -17024,7 +17249,7 @@ Assess the four features of the scatterplot that describe this relationship.
 \subsubsection*{Slope}\label{slope-1}
 \addcontentsline{toc}{subsubsection}{Slope}
 
-The linear model function in R (\texttt{lm()}) gives us the summary for the least squares regression line. The estimate for \texttt{(Intercept)} is the \(y\)-intercept for the line of least squares, and the estimate for \texttt{STAMath\_75} (the \(x\)-variable name) is the value of \(b_1\), the slope.
+The linear model function in R (\texttt{lm()}) gives us the summary for the least squares regression line. The estimate for \texttt{(Intercept)} is the estimated \(y\)-intercept, \(b_0\) for the line of least squares, and the estimate for \texttt{STAMath\_75} (the \(x\)-variable name) is the value of \(b_1\), the estimated slope.
 
 \begin{itemize}
 \item
@@ -17037,14 +17262,14 @@ The linear model function in R (\texttt{lm()}) gives us the summary for the leas
 \begin{Highlighting}[]
 \CommentTok{\# Fit linear model: y \textasciitilde{} x}
 \NormalTok{IPEDSLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Retention}\SpecialCharTok{\textasciitilde{}}\NormalTok{SATMath\_75, }\AttributeTok{data=}\NormalTok{IPEDS)}
-\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(IPEDSLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(IPEDSLM)}\SpecialCharTok{$}\NormalTok{coefficients, }\DecValTok{5}\NormalTok{) }\CommentTok{\# Display coefficient summary}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)    0.059      1.898   0.031    0.975
-#> SATMath_75     0.125      0.003  40.485    0.000
+#>             Estimate Std. Error  t value Pr(>|t|)
+#> (Intercept)  0.05926    1.89844  0.03121   0.9751
+#> SATMath_75   0.12481    0.00308 40.48525   0.0000
 \end{verbatim}
 
 \textbf{Write out the least squares regression line using the summary statistics provided above in context of the problem.}
@@ -17150,7 +17375,7 @@ The following output creates a correlation matrix between several pairs of quant
 \item
   Influential points are outliers that change the regression line; these points are far from the line of regression
 \item
-  High leverage points are outliers that are extreme in the x-axis; these points are far from the mean of the x-axis
+  High leverage points are outliers that are extreme in the x-axis; these points are far from the mean of the variable on the x-axis
 \end{itemize}
 
 Let's review the scatterplot between the two variables.
@@ -17167,14 +17392,14 @@ Let's review the scatterplot between the two variables.
 
 \vspace{0.1in}
 
-Earlier in the activity we identified a couple of observations that are potential outliers. Two of these values are (\(445, 11\)) and (\(710,40\)). The following plot was created without these points included.
+Earlier in the activity we identified a couple of observations that are potential outliers. One of these values is (\(445, 11\)). The following plot was created without this point included.
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A19-EDA-two-quantitative_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \begin{verbatim}
 #>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)    0.412      1.841   0.224    0.823
-#> SATMath_75     0.124      0.003  41.598    0.000
+#> (Intercept)    0.861      1.875   0.459    0.646
+#> SATMath_75     0.124      0.003  40.598    0.000
 \end{verbatim}
 
 \begin{enumerate}
@@ -17182,7 +17407,7 @@ Earlier in the activity we identified a couple of observations that are potentia
 \setcounter{enumi}{5}
 \tightlist
 \item
-  Note that the slope of the line has not changed much between the original data set and the data set with the values removed. Would you consider either of these points to be influential?
+  Note that the slope of the line has not changed much between the original data set and the data set with the values removed. Would you consider this point to be influential?
 \end{enumerate}
 
 \vspace{0.6in}
@@ -17192,7 +17417,7 @@ Earlier in the activity we identified a couple of observations that are potentia
 \setcounter{enumi}{6}
 \tightlist
 \item
-  In the next plot, note that three extreme values have been added to the data set. Circle these points on the plot.
+  In the next plot, note that one extreme values have been added to the data set. Circle this point on the plot.
 \end{enumerate}
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A19-EDA-two-quantitative_files/figure-latex/unnamed-chunk-8-1} \end{center}
@@ -17202,17 +17427,21 @@ Earlier in the activity we identified a couple of observations that are potentia
 \setcounter{enumi}{7}
 \tightlist
 \item
-  The linear model and correlation output for the data set with the added points is provided below. Did the slope and/or value of correlation change?
+  The linear model and correlation output for the data set with the added point is provided below. Did the slope and/or value of correlation change?
 \end{enumerate}
+
+Linear model output for the data set with the added points:
 
 \begin{verbatim}
 #>                  Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)         5.575      2.163   2.577     0.01
-#> IPEDS.SATMath_75    0.116      0.004  32.919     0.00
+#> (Intercept)         2.408      2.031   1.186    0.236
+#> IPEDS.SATMath_75    0.121      0.003  36.650    0.000
 \end{verbatim}
 
+Correlation between the 75th percentile Math SAT score and retention rate for the data set with the added point:
+
 \begin{verbatim}
-#> [1] 0.6970002
+#> [1] 0.7347292
 \end{verbatim}
 
 \vspace{0.5in}
@@ -17234,7 +17463,9 @@ Earlier in the activity we identified a couple of observations that are potentia
 \item
   Two quantitative variables are graphically displayed in a scatterplot. The explanatory variable is on the \(x\)-axis and the response variable is on the \(y\)-axis. When describing the relationship between two quantitative variables we look at the form (linear or non-linear), direction (positive or negative), strength, and for the presence of outliers.
 \item
-  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation (\(r\)), slope of the regression line (\(b_1\)), and the coefficient of determination (\(r^2\)).
+  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation (\(r\)), slope of the regression line (\(b_1\)), and the coefficient of determination (\(r^2\)). In this activity, we reviewed the first two summary measures, correlation and slope. We will explore the coefficient of determination in the next activity.
+\item
+  Points that are far from the mean of the predictor (x-axis variable) and that do not follow the pattern of the relationship can impact the line and be influential.
 \end{enumerate}
 
 \subsection{Additional notes}\label{additional-notes-18}
@@ -17284,27 +17515,35 @@ To review these concepts, see Chapter 6 in the textbook.
 
 \subsection{Penguins}\label{penguins}
 
-The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including flipper length and body mass. The researchers were interested in the relationship between flipper length and body mass and wondered if flipper length could be used to accurately predict the body mass of these three penguin species.
+The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica over a period of three summers. Researchers took various body measurements on the penguins, including flipper length (mm), bill depth (mm), bill length (mm), sex, species (Adelie, Chinstrap, Gentoo), and body mass (g). The researchers were interested in the relationship between bill depth and body mass and wondered if flipper length could be used to accurately predict the body mass of these three penguin species.
 
 \begin{itemize}
 \tightlist
 \item
-  Upload and import the \texttt{Antarctica\_Penguins} csv file and the provided R script file for this activity. Enter the name of the data set for \texttt{datasetname} in the R script file in line 4\ldots.
+  Upload and import the \texttt{Antarctica\_Penguins} csv file and the provided R script file for this activity. Enter the name of the data set for \texttt{datasetname} in the R script file in line 6
 \end{itemize}
 
-First we will create a scatterplot of the flipper length and body mass. Notice that we are using flipper length to predict body mass. This makes flipper length the explanatory variable. \textbf{Make sure to give your plot a descriptive title.} Highlight and run lines 1--13 in the R script file. \textbf{Upload a copy of your scatterplot to Gradescope.}
+First we will create a scatterplot of the bill depth and body mass. Notice that we are using bill depth to predict body mass. This makes bill depth the explanatory variable.
+
+\begin{itemize}
+\item
+  Enter bill\_depth for explanatory and body\_mass for response in line 9
+\item
+  Highlight and run lines 1--15 in the R script file.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{penguins }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/Antarctica\_Penguins.csv"}\NormalTok{) }\CommentTok{\#Creates the object penguins}
 \NormalTok{penguins }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(penguins)}
 \NormalTok{penguins }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm, }\AttributeTok{y =}\NormalTok{ body\_mass\_g))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_depth, }\AttributeTok{y =}\NormalTok{ body\_mass))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
   \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"flipper length (mm)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"bill depth (mm)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
        \AttributeTok{y =} \StringTok{"body mass (g)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
-       \AttributeTok{title =} \StringTok{"Scatterplot of Body Mass by Flipper Length for }
-\StringTok{       Antarctica Penguins"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Be sure to title your plots}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Body Mass by Bill Depth for }
+\StringTok{       Antarctica Penguins"}\NormalTok{) }\SpecialCharTok{+}
+    \CommentTok{\# Be sure to title your plots}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
 \end{Highlighting}
 \end{Shaded}
@@ -17315,7 +17554,7 @@ First we will create a scatterplot of the flipper length and body mass. Notice t
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Describe the relationship, using the four characteristics of scatterplots, between 75th percentile SAT Math score and retention rate.
+  Describe the relationship, using the four characteristics of scatterplots, between bill depth and body mass.
 \end{enumerate}
 
 \vspace{1in}
@@ -17327,7 +17566,7 @@ There are three summary measures calculated from two quantitative variables: slo
 
 \begin{itemize}
 \item
-  Enter \texttt{body\_mass\_g} for response and \texttt{flipper\_length\_mm} for explanatory in line \ldots{}
+  Enter \texttt{body\_mass} for response and \texttt{bill\_depth} for explanatory in line \ldots{}
 \item
   Highlight and run lines \ldots{} to fit the linear model.
 \end{itemize}
@@ -17335,15 +17574,15 @@ There are three summary measures calculated from two quantitative variables: slo
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Fit linear model: y \textasciitilde{} x}
-\NormalTok{PenguinsLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(body\_mass\_g}\SpecialCharTok{\textasciitilde{}}\NormalTok{flipper\_length\_mm, }\AttributeTok{data=}\NormalTok{penguins)}
+\NormalTok{PenguinsLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(body\_mass}\SpecialCharTok{\textasciitilde{}}\NormalTok{bill\_depth, }\AttributeTok{data=}\NormalTok{penguins)}
 \FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(PenguinsLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{5}\NormalTok{) }\CommentTok{\# Display coefficient summary}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-#>                      Estimate Std. Error   t value Pr(>|t|)
-#> (Intercept)       -5865.81792  309.34034 -18.96234        0
-#> flipper_length_mm    50.12002    1.53517  32.64781        0
+#>              Estimate Std. Error  t value Pr(>|t|)
+#> (Intercept) 7528.6205  341.58707 22.04012        0
+#> bill_depth  -193.4424   19.77623 -9.78156        0
 \end{verbatim}
 
 \begin{enumerate}
@@ -17373,7 +17612,7 @@ There are three summary measures calculated from two quantitative variables: slo
 \setcounter{enumi}{3}
 \tightlist
 \item
-  Predict the body mass of a penguin with a flipper length of 230mm.
+  Predict the body mass of a penguin with a bill depth of 17.3 mm.
 \end{enumerate}
 
 \vspace{0.6in}
@@ -17383,7 +17622,7 @@ There are three summary measures calculated from two quantitative variables: slo
 \setcounter{enumi}{4}
 \tightlist
 \item
-  Calculate the residual for a penguin with a flipper length of 230mm and a body mass of 6050g.
+  Calculate the residual for a penguin with a bill depth of 17.3 mm and a body mass of 5600 g.
 \end{enumerate}
 
 \vspace{0.6in}
@@ -17398,19 +17637,19 @@ The following output creates a correlation matrix between several pairs of quant
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{penguins }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set pipes into}
-  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length\_mm"}\NormalTok{, }\StringTok{"bill\_depth\_mm"}\NormalTok{, }
-           \StringTok{"flipper\_length\_mm"}\NormalTok{, }\StringTok{"body\_mass\_g"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length"}\NormalTok{, }\StringTok{"bill\_depth"}\NormalTok{, }
+           \StringTok{"flipper\_length"}\NormalTok{, }\StringTok{"body\_mass"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-#>                   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-#> bill_length_mm             1.000        -0.229             0.652       0.589
-#> bill_depth_mm             -0.229         1.000            -0.579      -0.473
-#> flipper_length_mm          0.652        -0.579             1.000       0.873
-#> body_mass_g                0.589        -0.473             0.873       1.000
+#>                bill_length bill_depth flipper_length body_mass
+#> bill_length          1.000     -0.229          0.652     0.589
+#> bill_depth          -0.229      1.000         -0.579    -0.473
+#> flipper_length       0.652     -0.579          1.000     0.873
+#> body_mass            0.589     -0.473          0.873     1.000
 \end{verbatim}
 
 \begin{enumerate}
@@ -17418,82 +17657,21 @@ The following output creates a correlation matrix between several pairs of quant
 \setcounter{enumi}{5}
 \tightlist
 \item
-  What is the value of correlation between flipper length and body mass?
+  What is the value of correlation between bill depth and body mass?
 \end{enumerate}
 
 \vspace{0.3in}
 
-\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}
-\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
-
-Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination (\(r^2\)). The coefficient of determination, \(r^2\), can also be used to describe the strength of the linear relationship between two quantitative variables. The value of \(r^2\) (a value between 0 and 1) represents the \textbf{proportion of variation in the response that is explained by the least squares line with the explanatory variable}. There are two ways to calculate the coefficient of determination:
-
-~~~Square the correlation coefficient: \(r^2 = (r)^2\)
-
-~~~Use the variances of the response and the residuals: \(r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}\)
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Use the correlation, \(r\), found in question 6, to calculate the coefficient of determination between flipper length and body mass, \(r^2\).
-\end{enumerate}
-
-\vspace{.4in}
-
-The variance of the response variable, body mass (g), is \(s_{\text{body mass}}^2 = 647761.2\) \(\%^2\), the variance of the explanatory variable, flipper length (mm), is \(s_{\text{flipper length}}^2 = 196.6214\), and the variance in the residuals is \(s_{RES}^2 = 154308.4\) \%\(^2\). Use these values to calculate the coefficient of determination.
-
-\vspace{1in}
-
-In the next part of the activity we will explore what the coefficient of determination measures.
-
-In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between flipper length and body mass. The value of the y-intercept, 4209.057, is the mean of the response variable when there is no relationship between the two variables. To find the sum of squares total (SST) we find the residual (\(residual = y - \hat{y}\)) for each response value from the horizontal line (from the value of 4209.057). Each residual is squared and the sum of the squared values is calculated. The SST gives the \textbf{total variability in the response variable, Retention}.
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-4-1} \end{center}
-
-\textbf{The calculated value for the SST is 215704477.919.}
-
-This next scatterplot, shows the plotted data with the best fit regression line. This is the line of best fit between flipper length and body mass and has the smallest sum of squares error (SSE). The SSE is calculated by finding the residual from each response value to the regression line. Each residual is squared and the sum of the squared values is calculated.
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
-
-\textbf{The calculated value for the SSE is 51230376.045.}
-
-\newpage
-
-\textbf{Calculate the value for \(r^2\) using the values for SST and SSE provided below each of the previous graphs.}
-
-\vspace{0.6in}
-
-\textbf{Interpretation of the coefficient of determination in context of the problem.}
-
-\vspace{0.8in}
-
 \subsubsection*{Multivariable plots}\label{multivariable-plots}
 \addcontentsline{toc}{subsubsection}{Multivariable plots}
 
-Another variable collected on the penguins was bill depth (mm). The following scatterplot shows the relationship between bill depth and body mass.
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  Describe the relationship between bill depth and body mass.
-\end{enumerate}
-
-\vspace{0.8in}
-
-When adding another categorical predictor, we can add that variable as shape or color to the plot.
+Recall earlier we noted two clouds of data in the scatterplot. Let's explore another variable that may account for the two clouds of point shown on the scatterplot. When adding a categorical predictor, we can add that variable as shape and/or color to the plot.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{penguins }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set pipes into...}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_depth\_mm, }\AttributeTok{y =}\NormalTok{ body\_mass\_g, }\AttributeTok{shape =}\NormalTok{ species, }\AttributeTok{color=}\NormalTok{species))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_depth, }\AttributeTok{y =}\NormalTok{ body\_mass, }\AttributeTok{shape =}\NormalTok{ species, }\AttributeTok{color=}\NormalTok{species))}\SpecialCharTok{+}  
+    \CommentTok{\# Specify variables}
     \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
     \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"bill depth (mm)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
        \AttributeTok{y =} \StringTok{"body mass (g)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
@@ -17504,9 +17682,9 @@ When adding another categorical predictor, we can add that variable as shape or 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
-\textbf{Note that the relationship between bill depth and body mass is now positive based on the penguin species. This is an example of what?}
+\textbf{Note that the relationship between bill depth and body mass is now positive when considering the relationship within each species. This is an example of what?}
 
 \vspace{0.4in}
 
@@ -17514,11 +17692,72 @@ When adding another categorical predictor, we can add that variable as shape or 
 
 \vspace{0.8in}
 
-\begin{center}\includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-2} \end{center}
+For the remainder of this study, we will only look at the Gentoo species.
 
-\textbf{Is species of Antarctica penguins associated with body mass? Is species of Antarctica penguins associated with bill depth?}
+\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}
+\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
+
+Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination (\(r^2\)). The coefficient of determination, \(r^2\), can also be used to describe the strength of the linear relationship between two quantitative variables. The value of \(r^2\) (a value between 0 and 1) represents the \textbf{proportion of variation in the response that is explained by the least squares line with the explanatory variable}. There are two ways to calculate the coefficient of determination:
+
+~~~Square the correlation coefficient: \(r^2 = (r)^2\)
+
+~~~Use the variances of the response and the residuals: \(r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}\)
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{penguin\_sub }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# Data set pipes into}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length"}\NormalTok{, }\StringTok{"bill\_depth"}\NormalTok{, }
+           \StringTok{"flipper\_length"}\NormalTok{, }\StringTok{"body\_mass"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{round}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+#>                bill_length bill_depth flipper_length body_mass
+#> bill_length        1.00000    0.64409        0.66179   0.66707
+#> bill_depth         0.64409    1.00000        0.70891   0.71827
+#> flipper_length     0.66179    0.70891        1.00000   0.71087
+#> body_mass          0.66707    0.71827        0.71087   1.00000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Use the correlation, \(r\), found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, \(r^2\), for the Gentoo species.
+\end{enumerate}
+
+\vspace{.4in}
+
+The variance of the response variable, body mass (g), is \(s_{\text{body mass}}^2 = 249759.1\) \(\%^2\), the variance of the explanatory variable, bill depth (mm), is \(s_{\text{bill depth}}^2 = 0.968145\) \(\%^2\), and the variance in the residuals is \(s_{RES}^2 = 120907.1\) \%\(^2\). Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
+
+In the next part of the activity we will explore what the coefficient of determination measures.
+
+In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between bill depth and body mass. The value of the y-intercept, 5090.625, is the mean of the response variable when there is no relationship between the two variables. To find the sum of squares total (SST) we find the residual (\(residual = y - \hat{y}\)) for each response value from the horizontal line (from the value of 5090.625). Each residual is squared and the sum of the squared values is calculated. The SST gives the \textbf{total variability in the response variable, body mass}.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+\textbf{The calculated value for the SST is 29721328.125.}
+
+This next scatterplot, shows the plotted data with the best fit regression line. This is the line of best fit between bill depth and body mass and has the smallest sum of squares error (SSE). The SSE is calculated by finding the residual from each response value to the regression line. Each residual is squared and the sum of the squared values is calculated.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+\textbf{The calculated value for the SSE is 14387948.480.}
+
+\textbf{Calculate the value for \(r^2\) using the values for SST and SSE provided below each of the previous graphs.}
+
+\vspace{0.6in}
+
+\textbf{Interpretation of the coefficient of determination in context of the problem.}
+
+\vspace{0.8in}
 
 \subsection{Take-home messages}\label{take-home-messages-19}
 
@@ -17577,13 +17816,38 @@ To review these concepts, see Chapter 21 in the textbook.
 
 In golf the goal is to complete a hole with as few strokes as possible. A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway. Data were collected on 354 PGA and LPGA players in 2008 ({``Average Driving Distance and Fairway Accuracy''} 2008). For each player, the average driving distance (yards), fairway accuracy (percentage), and league (PGA or LPGA) was measured. Use these data to assess, ``Does a professional golfer give up accuracy when they hit the ball farther?''
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Explanatory variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
 \end{itemize}
 
 \subsection*{R Instructions}\label{r-instructions-14}
@@ -17621,14 +17885,14 @@ To create a scatterplot showing the relationship between the driving distance an
   \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Driving Distance (yards)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
        \AttributeTok{y =} \StringTok{"Percent Accuracy (\%)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
-       \AttributeTok{title =} \StringTok{"Scatterplot of Driving Distance by Percent Accuracy}
+       \AttributeTok{title =} \StringTok{"Scatterplot of Percent Accuracy by Driving Distance }
 \StringTok{       for Professional Golfers"}\NormalTok{) }\SpecialCharTok{+} 
-               \CommentTok{\# Be sure to tile your plots}
+               \CommentTok{\# Be sure to title your plots}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line}
 \addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
@@ -17671,9 +17935,11 @@ When performing inference on a least squares line, the follow conditions are gen
   \end{itemize}
 \end{itemize}
 
+\newpage
+
 The scatterplot generated earlier and the residual plots shown below will be used to assess these conditions for approximating the data with the \(t\)-distribution.
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \textbf{Verify the conditions are met to use theory-based methods}
 
@@ -17858,7 +18124,6 @@ Using the R script file for this activity\ldots{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_test}\NormalTok{(Percent\_Accuracy}\SpecialCharTok{\textasciitilde{}}\NormalTok{Driving\_Distance, }\CommentTok{\# response \textasciitilde{} explanatory}
                \AttributeTok{data =}\NormalTok{ golf, }\CommentTok{\# Name of data set}
                \AttributeTok{direction =} \StringTok{"less"}\NormalTok{, }\CommentTok{\# Sign in alternative ("greater", "less", "two{-}sided")}
@@ -17868,7 +18133,7 @@ Using the R script file for this activity\ldots{}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval-2}
 \addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
@@ -17884,7 +18149,6 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_bootstrap\_CI}\NormalTok{(Percent\_Accuracy}\SpecialCharTok{\textasciitilde{}}\NormalTok{Driving\_Distance, }\CommentTok{\# response \textasciitilde{} explanatory}
    \AttributeTok{data =}\NormalTok{ golf, }\CommentTok{\# Name of data set}
    \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{, }\CommentTok{\# Confidence level as decimal}
@@ -17893,7 +18157,7 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \subsection*{Multivariable plots}\label{multivariable-plots-1}
 \addcontentsline{toc}{subsection}{Multivariable plots}
@@ -17915,7 +18179,7 @@ Another variable that may affect the percent accuracy is the which league the go
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -17927,7 +18191,7 @@ Another variable that may affect the percent accuracy is the which league the go
   Explain the association between league and each of the other two variables. Use the following plots in addition to the scatterplot from Q4 to explain your answer.
 \end{enumerate}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-1} \includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-2} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-10-1} \includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-10-2} \end{center}
 
 \vspace{0.8in}
 
@@ -17975,13 +18239,13 @@ Use this space to summarize your thoughts and take additional notes on this week
 
 \subsection{Big Mac Index}\label{big-mac-index}
 
-Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country? The log GDP per person and the adjusted dollar equivalent to purchase a Big Mac was found on a random sample of 55 countries in January of 2022. The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates. Is there evidence of a positive relationship between Big Mac cost (\texttt{dollar\_price}) and the log GDP per person (\texttt{log\_GDP})?
+Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country? The GDP per person (\$) the adjusted dollar equivalent to purchase a Big Mac (\$) was found on a random sample of 55 countries in January of 2022. The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates. Is there evidence of a positive relationship between Big Mac cost (\texttt{dollar\_price}) and the GDP per person (\texttt{GDP\_dollar})?
 
 \begin{itemize}
 \item
   Upload and open the R script file for Module 12 lab.
 \item
-  Upload the csv file, \texttt{big\_mac\_adjusted\_index\_S22.csv}.
+  Upload the csv file, \texttt{big\_mac\_adjusted\_index\_22.csv}.
 \item
   Enter the name of the data set for datasetname in the R script file in line 9.
 \item
@@ -17995,52 +18259,108 @@ Can the relative cost of a Big Mac across different countries be used to predict
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-5}
-\addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
+\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line-1}
+\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Is there independence between the responses for the observational units? Justify your answer.
+\end{enumerate}
+
+\vspace{0.3in}
+
+The following code will create a scatterplot and residuals vs.~fitted plot to check for linearity.
 
 \begin{itemize}
+\tightlist
 \item
-  To find the correlation between the variables, \texttt{log\_GDP} and \texttt{dollar\_price} enter the name of the explanatory and response variable
-\item
-  Highlight and run lines 13--16 in the R script file.
+  Highlight and run lines 14--24
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"log\_GDP"}\NormalTok{, }\StringTok{"dollar\_price"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\CommentTok{\# Set graphics parameters to plot 2 plots in 1 row}
+\CommentTok{\#Scatterplot}
+\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dollar\_price, }\AttributeTok{y =}\NormalTok{ GDP\_dollar))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"big mac cost ($)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{" gdp per person ($)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"Scatterplot of GDP per Person by Big Mac Cost for }
+\StringTok{       Countries in 2022"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+
+\CommentTok{\#Diagnostic plots to check linearity}
+\NormalTok{macLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(GDP\_dollar}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\AttributeTok{data =}\NormalTok{ mac) }\CommentTok{\# Fit linear regression model}
+\FunctionTok{plot}\NormalTok{(macLM, }\AttributeTok{which=}\DecValTok{1}\NormalTok{) }\CommentTok{\# Residual vs fitted values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.47\linewidth]{12-L12-regression-wrapup_files/figure-latex/unnamed-chunk-4-1} \includegraphics[width=0.47\linewidth]{12-L12-regression-wrapup_files/figure-latex/unnamed-chunk-4-2} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Is the linearity condition met to use regression methods to analyze the data? Justify your answer.
+\end{enumerate}
+
+\vspace{0.3in}
+
+One way to ``fix'' the issues with linearity is to take the log of either the response, explanatory or both variables. Let's check for linearity after log transforming the response variable.
+
+\begin{itemize}
+\item
+  Enter the \texttt{dollar\_price} for explanatory and \texttt{log\_GDP} for response in line 32
+\item
+  Enter a title and x and y axes labels
+\item
+  Highlight and run lines 31--40
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Scatterplot}
+\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dollar\_price, }\AttributeTok{y =}\NormalTok{ log\_GDP))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"include an x{-}axis label (don\textquotesingle{}t forget units)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
+       \AttributeTok{y =} \StringTok{"include an y{-}axis label (don\textquotesingle{}t forget units)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
+       \AttributeTok{title =} \StringTok{"A title should include type of plot, OUs, variables"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
+\CommentTok{\#Diagnostic plots to check linearity}
+\NormalTok{macLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\AttributeTok{data =}\NormalTok{ mac) }\CommentTok{\# Fit linear regression model}
+\FunctionTok{plot}\NormalTok{(macLM, }\AttributeTok{which=}\DecValTok{1}\NormalTok{) }\CommentTok{\# Residual vs fitted values}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
 \item
-  Report the value of correlation between the variables.
-  \vspace{0.2in}
-\item
-  Calculate the value of the coefficient of determination between \texttt{log\_GDP} and \texttt{dollar\_price}.
-  \vspace{0.4in}
-\item
-  Interpret the value of the coefficient of determination in context of the problem.
-  \vspace{0.6in}
+  Assess linearity using the scatterplot and the residuals vs.~fitted plot for the log transformed data.
 \end{enumerate}
 
-In the next part of the activity we will assess the linear model between Big Mac cost and log GDP.
+\vspace{0.8in}
+
+For the remainder of this lab we will use the log transformed response variable, \texttt{log\_GDP}.
 
 \begin{itemize}
+\tightlist
 \item
-  Enter the variable \texttt{log\_GDP} for \texttt{response} and the variable \texttt{dollar\_price} for \texttt{explanatory} in line 22.
-\item
-  Highlight and run lines 22--23 to get the linear model output.
+  Highlight and run lines 44--427 to produce the histogram of residuals needed to assess normality of residuals condition
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Fit linear model: y \textasciitilde{} x}
-\NormalTok{bigmacLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(response}\SpecialCharTok{\textasciitilde{}}\NormalTok{explanatory, }\AttributeTok{data=}\NormalTok{mac)}
-\FunctionTok{round}\NormalTok{(}\FunctionTok{summary}\NormalTok{(bigmacLM)}\SpecialCharTok{$}\NormalTok{coefficients,}\DecValTok{3}\NormalTok{) }\CommentTok{\# Display coefficient summary}
+\CommentTok{\#Diagnostic plots}
+\NormalTok{bigmacLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\AttributeTok{data =}\NormalTok{ mac) }\CommentTok{\# Fit linear regression model}
+\FunctionTok{hist}\NormalTok{(bigmacLM}\SpecialCharTok{$}\NormalTok{resid, }\AttributeTok{xlab=}\StringTok{"Residuals"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Histogram of Residuals"}\NormalTok{) }\CommentTok{\# Histogram of residuals}
 \end{Highlighting}
 \end{Shaded}
 
@@ -18049,90 +18369,17 @@ In the next part of the activity we will assess the linear model between Big Mac
 \setcounter{enumi}{3}
 \tightlist
 \item
-  Give the value of the slope of the regression line. Interpret this value in context of the problem.
-  \vspace{0.6in}
-\end{enumerate}
-
-\subsubsection*{Conditions for the least squares line}\label{conditions-for-the-least-squares-line-1}
-\addcontentsline{toc}{subsubsection}{Conditions for the least squares line}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Is there independence between the responses for the observational units? Justify your answer.
-\end{enumerate}
-
-\vspace{0.3in}
-
-\begin{itemize}
-\item
-  Enter the name of the explanatory and response variable in the code to create the scatterplot
-\item
-  Add a title and x and y axes labels
-\item
-  Highlight and run lines 28--33 to create the scatterplot to check for linearity.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Scatterplot}
-\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Pipe data set into...}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ explanatory, }\AttributeTok{y =}\NormalTok{ response))}\SpecialCharTok{+}  \CommentTok{\# Specify variables}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Add scatterplot of points}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"include an x{-}axis label (don\textquotesingle{}t forget units)"}\NormalTok{,  }\CommentTok{\# Label x{-}axis}
-       \AttributeTok{y =} \StringTok{"include an y{-}axis label (don\textquotesingle{}t forget units)"}\NormalTok{,  }\CommentTok{\# Label y{-}axis}
-       \AttributeTok{title =} \StringTok{"A title should include type of plot, OUs, variables"}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Be sure to tile your plots}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\# Add regression line}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  Is the linearity condition met to use regression methods to analyze the data? Justify your answer.
-\end{enumerate}
-
-\vspace{0.3in}
-
-\begin{itemize}
-\tightlist
-\item
-  Highlight and run lines 38--42 to produce the diagnostic plots needed to assess conditions to use theory-based methods.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Diagnostic plots}
-\NormalTok{bigmacLM }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(log\_GDP}\SpecialCharTok{\textasciitilde{}}\NormalTok{dollar\_price, }\AttributeTok{data =}\NormalTok{ mac) }\CommentTok{\# Fit linear regression model}
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\CommentTok{\# Set graphics parameters to plot 2 plots in 1 row}
-\FunctionTok{plot}\NormalTok{(bigmacLM, }\AttributeTok{which=}\DecValTok{1}\NormalTok{) }\CommentTok{\# Residual vs fitted values}
-\FunctionTok{hist}\NormalTok{(bigmacLM}\SpecialCharTok{$}\NormalTok{resid, }\AttributeTok{xlab=}\StringTok{"Residuals"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
-     \AttributeTok{main =} \StringTok{"Histogram of Residuals"}\NormalTok{) }\CommentTok{\# Histogram of residuals}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
   Are the conditions met to use the \(t\)-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.
 \end{enumerate}
 
 \vspace{1.5in}
-
-\newpage
 
 \subsubsection*{Ask a research question}\label{ask-a-research-question-6}
 \addcontentsline{toc}{subsubsection}{Ask a research question}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
+\setcounter{enumi}{4}
 \tightlist
 \item
   Write out the null and alternative hypotheses in notation to test \emph{correlation} between Big Mac cost and log GDP.
@@ -18147,6 +18394,39 @@ In the next part of the activity we will assess the linear model between Big Mac
 ~~~\(H_A:\)
 
 \vspace{.2in}
+
+\subsubsection*{Summary statistics}\label{summary-statistics}
+\addcontentsline{toc}{subsubsection}{Summary statistics}
+
+\begin{itemize}
+\item
+  To find the correlation between the variables, \texttt{log\_GDP} and \texttt{dollar\_price} enter the name of the explanatory and response variable
+\item
+  Highlight and run lines 51--54 in the R script file.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mac }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"explanatory"}\NormalTok{, }\StringTok{"response"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{cor}\NormalTok{(}\AttributeTok{use=}\StringTok{"pairwise.complete.obs"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{round}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  Report the value of correlation between the variables.
+  \vspace{0.2in}
+\item
+  Calculate the value of the coefficient of determination between \texttt{log\_GDP} and \texttt{dollar\_price}.
+  \vspace{0.4in}
+\item
+  Interpret the value of the coefficient of determination in context of the problem.
+  \vspace{0.6in}
+\end{enumerate}
 
 \subsubsection*{Use statistical inferential methods to draw inferences from the data}\label{use-statistical-inferential-methods-to-draw-inferences-from-the-data-6}
 \addcontentsline{toc}{subsubsection}{Use statistical inferential methods to draw inferences from the data}
@@ -18205,7 +18485,7 @@ Using the R script file for this activity, enter your answers for question 9 in 
 \begin{itemize}
 \tightlist
 \item
-  Highlight and run lines 47--53.
+  Highlight and run lines 59--64.
 \end{itemize}
 
 \begin{Shaded}
@@ -18228,8 +18508,6 @@ Using the R script file for this activity, enter your answers for question 9 in 
   \vspace{0.3in}
 \end{enumerate}
 
-\newpage
-
 \subsubsection*{Simulation-based confidence interval}\label{simulation-based-confidence-interval-3}
 \addcontentsline{toc}{subsubsection}{Simulation-based confidence interval}
 
@@ -18239,7 +18517,7 @@ We will use the \texttt{regression\_bootstrap\_CI()} function in R (in the \text
 \item
   Fill in the \texttt{xx}'s in the the provided R script file to find a 90\% confidence interval.
 \item
-  Highlight and run lines 58--62.
+  Highlight and run lines 69--73.
 \end{itemize}
 
 \begin{Shaded}
@@ -19064,14 +19342,36 @@ For each of the following scenarios, determine whether the samples are paired or
 
 The popularity of tattoos has increased tremendously in the last 10 years particularly among athletes and military personnel. A study reported in \emph{Medicine \& Science in Sports \& Exercise} (LUETKEMEIER 2017) looked at whether skin tattoos altered a person's sweat rate. The study participants were 10 healthy men with a tattoo. According to the article, sweat was stimulated by iontophoresis using agar gel disks impregnated with 0.5\% pilocarpine nitrate. The sweat rate (\(\frac{mg}{cm^2 \times min}\)) was determined by weighing the disk before and after sweat collection. Sweat rate was measured on both the tattooed skin and untattooed skin from the same participant. We will use these data to assess the difference in sweat rate between the tattooed and untattooed skin (tat - notat).
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
+\tightlist
 \item
   Explanatory variable:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsection{Exploring Paired Data}\label{exploring-paired-data}
 
@@ -19286,14 +19586,36 @@ The interference of conflicting color stimuli upon the time for reading 100 word
 
 The article reports on the results of a study in which seventy college undergraduates were given forms with 100 names of colors written in black ink, and the same 100 names of colors written in another color (i.e., the word purple written in green ink). The total time (in seconds) for reading the 100 words printed in black, and the total time (in seconds) for reading the 100 words printed in different colors were recorded for each subject. The order in which the forms (black or color) were given was randomized to the subjects. Does printing the name of colors in a different color increase the time it takes to read the words? Use color \(-\) black as the order of subtraction.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
+\tightlist
 \item
   Explanatory variable:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \subsubsection*{Identify the scenario}\label{identify-the-scenario}
 \addcontentsline{toc}{subsubsection}{Identify the scenario}
@@ -19353,7 +19675,7 @@ Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate
   \end{itemize}
 \end{itemize}
 
-\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-6}
+\subsubsection*{Summarize and visualize the data}\label{summarize-and-visualize-the-data-5}
 \addcontentsline{toc}{subsubsection}{Summarize and visualize the data}
 
 Since the original data from the study are not available, we simulated data to match the means and standard deviations reported in the article. We will use these simulated data in the analysis below.
@@ -19386,7 +19708,7 @@ The following code plots each subject's time to read the colored words (above) a
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-1-1} \includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-1-2} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-2-2} \end{center}
 
 The following code gives the summary statistics for the pairwise differences.
 
@@ -19563,7 +19885,6 @@ We will use the \texttt{paired\_test()} function in R (in the \texttt{catstats} 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{paired\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ color\_diff}\SpecialCharTok{$}\NormalTok{differences,   }\CommentTok{\# Vector of differences}
             \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{2.3}\NormalTok{,   }\CommentTok{\# Shift needed for bootstrap hypothesis test}
             \AttributeTok{as\_extreme\_as =} \FloatTok{2.3}\NormalTok{,  }\CommentTok{\# Observed statistic}
@@ -19573,7 +19894,7 @@ We will use the \texttt{paired\_test()} function in R (in the \texttt{catstats} 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \subsection*{Simulation confidence interval}\label{simulation-confidence-interval}
 \addcontentsline{toc}{subsection}{Simulation confidence interval}
@@ -19589,7 +19910,6 @@ We will use the \texttt{paired\_bootstrap\_CI()} function in R (in the \texttt{c
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ color\_diff}\SpecialCharTok{$}\NormalTok{differences, }\CommentTok{\# Enter vector of differences}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Number of bootstrap samples for CI}
                     \AttributeTok{confidence\_level =}\FloatTok{0.9}\NormalTok{,  }\CommentTok{\# Confidence level in decimal form}
@@ -19597,7 +19917,7 @@ We will use the \texttt{paired\_bootstrap\_CI()} function in R (in the \texttt{c
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \newpage
 
@@ -19645,14 +19965,36 @@ Use this space to summarize your thoughts and take additional notes on today's a
 
 Profanity (language considered obscene or taboo) and society's attitude about its acceptableness is a highly debated topic, but does swearing serve a physiological purpose or function? Previous research has shown that swearing produces increased heart rates and higher levels of skin conductivity. It is theorized that since swearing provokes intense emotional responses, it acts as a distracter, allowing a person to withstand higher levels of pain. To explore the relationship between swearing and increased pain tolerance, researchers from Keele University (Staffordshire, UK) recruited 83 native English-speaking participants (Stephens and Robertson 2020). Each volunteer performed two trials holding a hand in an ice-water bath, once while repeating the ``f-word'' every three seconds, and once while repeating a neutral word (``table''). The order of the word to repeat was randomly assigned. Researchers recorded the length of time, in seconds, from the moment the participant indicated they were in pain until they removed their hand from the ice water for each trial. They hope to find evidence that pain tolerance is greater (longer times) when a person swears compared to when they say a neutral word, on average. Use Swear -- Neutral as the order of subtraction.
 
+\vspace{2mm}
+
 \begin{itemize}
+\tightlist
 \item
   Observational units:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
+\tightlist
 \item
   Explanatory variable:
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{itemize}
 \item
   Response variable:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Units?:
+  \end{itemize}
 \end{itemize}
+
+\vspace{2mm}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20723,7 +21065,7 @@ We will start with simulation methods.
 \begin{itemize}
 \tightlist
 \item
-  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 1 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
+  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 16 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
 \end{itemize}
 
 \vspace{0.5in}

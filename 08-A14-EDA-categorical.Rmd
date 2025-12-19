@@ -44,16 +44,20 @@ In this study, there are two variables studied: `Light`: level of light in room 
 
 Is there evidence that level of light in a child's room at night is associated with level of myopia later in life?
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
-    * Type of variable:
+    * Group 1:
 
+\vspace{2mm}
 * Response variable:
 
-    * Type of variable:
-    
+    * Success:
+
+\vspace{2mm}   
 #### Notes on two categorical variables {-}
 
 \vspace{2in}
@@ -141,7 +145,7 @@ ggplot(aes(x = Light, fill = Sight)) +   # This specifies the variables
 
 \vspace{1in}
 
-We could also plot the data using a mosaic plot which is shown below.  
+We could also plot the data using a mosaic plot which is shown on the next page.  
 
 ```{r, out.width="75%", echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 myopia$Sight <- factor(myopia$Sight, levels = c("No Myopia", "Myopia", "High Myopia"))

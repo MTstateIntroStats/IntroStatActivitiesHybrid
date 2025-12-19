@@ -35,7 +35,7 @@ To calculate the probability of an event happening:
 
 $$\text{probability} = \frac{\text{number of ways an event can happen}}{\text{total number of possible outcomes}}$$
 
-For example, to calculate the probability of a coin flip landing on heads; there are only two outcomes (heads or tails) and only one possibility way to land on heads. 
+For example, to calculate the probability of a coin flip landing on heads; there are only two outcomes (heads or tails) and only one possible way to land on heads. 
 
 $$P(heads) = \frac{1}{2} = 0.5$$
 
@@ -59,9 +59,9 @@ We will use the notation P(event) to represent the probability of an event and u
 
 * $P(A^C)$ represents the probability of the complement of event A
 
-    * $P(A^C) = 1 - P(A)$
+    * Additionally, we can find the complement of event A by subtracting the probability of A from 1:  $P(A^C) = 1 - P(A)$
     
-* $P(A and B)$ represents the probability of events A and B
+* $P(A \text{ and } B)$ represents the probability of events A and B
 
 * $P(A|B)$ represents the probability of event A, given event B
 
@@ -208,7 +208,7 @@ c. What is the probability that a selected Bob Ross painting does not contain a 
 
 \newpage 
 
-2. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A recent study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
+2. Since the early 1980s, the rapid antigen detection test (RADT) of group A *streptococci* has been used to detect strep throat. A study of the accuracy of this test shows that the **sensitivity**, the probability of a positive RADT given the person has strep throat, is 86% in children, while the **specificity**, the probability of a negative RADT given the person does not have strep throat, is 92% in children.  The **prevalence**, the probability of having group A strep, is 37% in children. [@stewart2014]
 \vspace{1mm}
 
     Let $A$ = the event the child has strep throat, and $B$ = the event the child has a positive RADT.

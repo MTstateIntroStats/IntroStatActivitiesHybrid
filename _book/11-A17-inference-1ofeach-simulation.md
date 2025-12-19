@@ -1,5 +1,6 @@
 ## Activity 17:  Does behavior impact performance?
 
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -33,14 +34,20 @@ To review these concepts, see Chapter 19 in the textbook.
 
 A study in the Academy of Management Journal [@porath2017] investigated how rude behaviors influence a victim’s task performance. Randomly selected college students enrolled in a management course were randomly assigned to one of two experimental conditions: rudeness condition (45 students) and control group (53 students). Each student was asked to write down as many uses for a brick as possible in five minutes; this value (total number of uses) was used as a performance measure for each student, where higher values indicate better performance. During this time another individual showed up late for class. For those students in the rudeness condition, the facilitator displayed rudeness by berating the students in general for being irresponsible and unprofessional (due to the late-arriving person). No comments were made about the late-arriving person for students in the control group. Is there evidence that the average performance score for students in the rudeness condition is lower than for students in the control group? Use the order of subtraction of rudeness – control.
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
     * Group 1:
 
+\vspace{2mm}
 * Response variable:
 
+    * units?
+
+\vspace{2mm}
 #### R instructions{-}
 
 * Download the R script file from Canvas and upload to the RStudio server
@@ -65,7 +72,7 @@ To create a plot of the data and a table of summary statistics:
 rude %>%
 ggplot(aes(x = condition, y = number_of_uses)) +
     geom_boxplot() + 
-    labs(title = "Number of Uses for a Brick based on Behavior Condition
+    labs(title = "Side by side boxplots of Number of Uses for a Brick based on Behavior Condition
          for College Students in a Management Course",
          x = "Behavior",
          y = "Number of uses") 
@@ -79,7 +86,7 @@ rude %>%
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 
 #### Quantitative variables review  {-}
@@ -163,7 +170,6 @@ We will use the `two_mean_test()` function in R (in the `catstats` package) to s
 
 
 ``` r
-set.seed(216)
 two_mean_test(number_of_uses ~ condition, #Enter the names of the variables
               data = rude,  # Enter the name of the dataset
               first_in_subtraction = "rudeness", # First outcome in order of subtraction
@@ -174,7 +180,7 @@ two_mean_test(number_of_uses ~ condition, #Enter the names of the variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 #### Notes on the null distribution{-}
 
@@ -206,11 +212,10 @@ The response variable name is `number_of_uses` and the explanatory variable name
 
 \vspace{.15in}
 
-Using the R script file for this activity, enter your answers for question 5 in place of the `xx`'s to produce the bootstrap distribution with 10000 simulations; highlight and run lines 33--37.
+Using the R script file for this activity, enter your answers for question 5 in place of the `xx`'s to produce the bootstrap distribution with 10000 simulations to create a 99\% confidence interval; highlight and run lines 33--37.
 
 
 ``` r
-set.seed(216)
 two_mean_bootstrap_CI(number_of_uses ~ condition, #Enter the name of the variables
                       data = rude,  # Enter the name of the data set
                       first_in_subtraction = "rudeness", # First value in order of subtraction
@@ -220,7 +225,7 @@ two_mean_bootstrap_CI(number_of_uses ~ condition, #Enter the name of the variabl
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{11-A17-inference-1ofeach-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 #### Notes on the bootstrap distribution{-}
 

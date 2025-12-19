@@ -73,9 +73,9 @@ Look through the provided table of variable descriptions.  The `UnitID` and `Nam
 
 #### R Instructions {-}
 
-The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The `R` output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate. 
+The `favstats()` function from the `mosaic` package gives the summary statistics for a quantitative variable. The R output below provides the summary statistics for the variable `Graduation_Rate`. The summary statistics provided are the two measures of center (mean and median) and two measures of spread (standard deviation and the quartile values to calculate the IQR) for undergraduate 6-year graduation rate. 
 
-* Highlight and run lines 1--12 in the provided `R` script file to load the data set.  Check that the summary statistics match the output given in the coursepack.
+* Highlight and run lines 1--12 in the provided R script file to load the data set.  Check that the summary statistics match the output given in the coursepack.
 
 * Notice that the 2-year institutions were removed so the observational units for this study are **4-year US degree-granting higher education institutions in 2018.**
 
@@ -93,18 +93,22 @@ IPEDS %>%
 
 Two measures of center:
 
+\vspace{1mm}
 * Mean:
 
+\vspace{1mm}
 * Median:
 
+\vspace{1mm}
 Two measures of spread:
 
+\vspace{1mm}
 * Standard deviation:
 
+\vspace{1mm}
 * Interpretation of the standard deviation:
 
 \vspace{0.8in}
-
 
 * Interquartile range: $IQR = Q_3 - Q_1$:
 

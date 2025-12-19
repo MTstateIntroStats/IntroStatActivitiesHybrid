@@ -1,5 +1,8 @@
 ## Module 12 Lab: Big Mac Index
 
+
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -16,11 +19,11 @@
 
 ### Big Mac Index
 
-Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country?  The log GDP per person and the adjusted dollar equivalent to purchase a Big Mac was found on a random sample of 55 countries in January of 2022.  The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates.  Is there evidence of a positive relationship between Big Mac cost (`dollar_price`) and the log GDP per person (`log_GDP`)?
+Can the relative cost of a Big Mac across different countries be used to predict the Gross Domestic Product (GDP) per person for that country?  The GDP per person (\$) the adjusted dollar equivalent to purchase a Big Mac (\$) was found on a random sample of 55 countries in January of 2022.  The cost of a Big Mac in each country was adjusted to US dollars based on current exchange rates.  Is there evidence of a positive relationship between Big Mac cost (`dollar_price`) and the GDP per person (`GDP_dollar`)?
 
 * Upload and open the R script file for Module 12 lab. 
 
-* Upload the csv file, `big_mac_adjusted_index_S22.csv`. 
+* Upload the csv file, `big_mac_adjusted_index_22.csv`. 
 
 * Enter the name of the data set for datasetname in the R script file in line 9. 
 
@@ -32,94 +35,90 @@ Can the relative cost of a Big Mac across different countries be used to predict
 mac <- read.csv("datasetname.csv")
 ```
 
-#### Summarize and visualize the data {-} 
 
-* To find the correlation between the variables, `log_GDP` and `dollar_price` enter the name of the explanatory and response variable
-
-* Highlight and run lines 13--16 in the R script file.
-
-
-``` r
-mac %>% 
-  select(c("log_GDP", "dollar_price")) %>%
-  cor(use="pairwise.complete.obs") %>%
-  round(3)
-```
-
-1.  Report the value of correlation between the variables. 
-\vspace{0.2in}
-
-2. Calculate the value of the coefficient of determination between `log_GDP` and `dollar_price`.
-\vspace{0.4in}
-
-3. Interpret the value of the coefficient of determination in context of the problem.
-\vspace{0.6in}
-
-In the next part of the activity we will assess the linear model between Big Mac cost and log GDP.  
-
-* Enter the variable `log_GDP` for `response` and the variable `dollar_price` for `explanatory` in line 22.  
-
-* Highlight and run lines 22--23 to get the linear model output. 
-
-
-``` r
-# Fit linear model: y ~ x
-bigmacLM <- lm(response~explanatory, data=mac)
-round(summary(bigmacLM)$coefficients,3) # Display coefficient summary
-```
-
-4. Give the value of the slope of the regression line.  Interpret this value in context of the problem.
-\vspace{0.6in}
 
 #### Conditions for the least squares line {-}
 
-5. Is there independence between the responses for the observational units?  Justify your answer.
+1. Is there independence between the responses for the observational units?  Justify your answer.
 
 \vspace{0.3in}
 
-* Enter the name of the explanatory and response variable in the code to create the scatterplot
+The following code will create a scatterplot and residuals vs. fitted plot to check for linearity.
 
-* Add a title and x and y axes labels
+* Highlight and run lines 14--24
 
-* Highlight and run lines 28--33 to create the scatterplot to check for linearity.
+
+``` r
+par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
+#Scatterplot
+mac %>% # Pipe data set into...
+  ggplot(aes(x = dollar_price, y = GDP_dollar))+  # Specify variables
+  geom_point(alpha=0.5) +  # Add scatterplot of points
+  labs(x = "big mac cost ($)",  # Label x-axis
+       y = " gdp per person ($)",  # Label y-axis
+       title = "Scatterplot of GDP per Person by Big Mac Cost for 
+       Countries in 2022") +
+    geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+#Diagnostic plots to check linearity
+macLM <- lm(GDP_dollar~dollar_price, data = mac) # Fit linear regression model
+plot(macLM, which=1) # Residual vs fitted values
+```
+
+
+
+\begin{center}\includegraphics[width=0.47\linewidth]{12-L12-regression-wrapup_files/figure-latex/unnamed-chunk-4-1} \includegraphics[width=0.47\linewidth]{12-L12-regression-wrapup_files/figure-latex/unnamed-chunk-4-2} \end{center}
+
+2. Is the linearity condition met to use regression methods to analyze the data?  Justify your answer.
+
+\vspace{0.3in}
+
+One way to "fix" the issues with linearity is to take the log of either the response, explanatory or both variables.  Let's check for linearity after log transforming the response variable.
+
+* Enter the `dollar_price` for explanatory and `log_GDP` for response in line 32
+
+* Enter a title and x and y axes labels
+
+* Highlight and run lines 31--40
 
 
 ``` r
 #Scatterplot
 mac %>% # Pipe data set into...
-  ggplot(aes(x = explanatory, y = response))+  # Specify variables
+  ggplot(aes(x = dollar_price, y = log_GDP))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "include an x-axis label (don't forget units)",  # Label x-axis
        y = "include an y-axis label (don't forget units)",  # Label y-axis
-       title = "A title should include type of plot, OUs, variables") +  # Be sure to tile your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+       title = "A title should include type of plot, OUs, variables") +
+    geom_smooth(method = "lm", se = FALSE)  # Add regression line
+#Diagnostic plots to check linearity
+macLM <- lm(log_GDP~dollar_price, data = mac) # Fit linear regression model
+plot(macLM, which=1) # Residual vs fitted values
 ```
 
-6. Is the linearity condition met to use regression methods to analyze the data?  Justify your answer.
+3.  Assess linearity using the scatterplot and the residuals vs. fitted plot for the log transformed data.
 
-\vspace{0.3in}
+\vspace{0.8in}
 
-* Highlight and run lines 38--42 to produce the diagnostic plots needed to assess conditions to use theory-based methods. 
+For the remainder of this lab we will use the log transformed response variable, `log_GDP`.
+
+* Highlight and run lines 44--427 to produce the histogram of residuals needed to assess normality of residuals condition
 
 
 ``` r
 #Diagnostic plots
 bigmacLM <- lm(log_GDP~dollar_price, data = mac) # Fit linear regression model
-par(mfrow=c(1,2)) # Set graphics parameters to plot 2 plots in 1 row
-plot(bigmacLM, which=1) # Residual vs fitted values
 hist(bigmacLM$resid, xlab="Residuals", ylab="Frequency",
      main = "Histogram of Residuals") # Histogram of residuals
 ```
 
-7. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.
+4. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of the standardized statistic? Justify your answer.
 
 \vspace{1.5in}
 
-\newpage
- 
 #### Ask a research question {-}
 
-8. Write out the null and alternative hypotheses in notation to test *correlation* between Big Mac cost and log GDP.
+5. Write out the null and alternative hypotheses in notation to test *correlation* between Big Mac cost and log GDP.
 
 \vspace{.2in}
 
@@ -130,6 +129,30 @@ hist(bigmacLM$resid, xlab="Residuals", ylab="Frequency",
 |    $H_A:$
 
 \vspace{.2in}
+
+#### Summary statistics {-}
+
+* To find the correlation between the variables, `log_GDP` and `dollar_price` enter the name of the explanatory and response variable
+
+* Highlight and run lines 51--54 in the R script file.
+
+
+``` r
+mac %>% 
+  select(c("explanatory", "response")) %>%
+  cor(use="pairwise.complete.obs") %>%
+  round(5)
+```
+
+6.  Report the value of correlation between the variables. 
+\vspace{0.2in}
+
+7. Calculate the value of the coefficient of determination between `log_GDP` and `dollar_price`.
+\vspace{0.4in}
+
+8. Interpret the value of the coefficient of determination in context of the problem.
+\vspace{0.6in}
+
 
 #### Use statistical inferential methods to draw inferences from the data {-}
 
@@ -160,7 +183,7 @@ The response variable name is `log_GDP` and the explanatory variable name is `do
 
 Using the R script file for this activity, enter your answers for question 9 in place of the `xx`'s to produce the null distribution with 10000 simulations. 
 
-* Highlight and run lines 47--53. 
+* Highlight and run lines 59--64. 
 
 
 ``` r
@@ -175,7 +198,6 @@ regression_test(response~explanatory, # response ~ explanatory
 10.  Report the p-value from the R output. 
 \vspace{0.3in}
 
-\newpage
 
 #### Simulation-based confidence interval {-}
 
@@ -183,7 +205,7 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 
 * Fill in the `xx`'s in the the provided R script file to find a 90\% confidence interval. 
 
-* Highlight and run lines 58--62. 
+* Highlight and run lines 69--73. 
 
 
 ``` r

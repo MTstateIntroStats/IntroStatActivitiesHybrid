@@ -1,5 +1,8 @@
 ## Activity 21: Golf Driving Distance
 
+
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -31,11 +34,18 @@ To review these concepts, see Chapter 21 in the textbook.
 
 In golf the goal is to complete a hole with as few strokes as possible.  A long driving distance to start a hole can help minimize the strokes necessary to complete the hole, as long as that drive stays on the fairway.  Data were collected on 354 PGA and LPGA players in 2008 [@pga].  For each player, the average driving distance (yards), fairway accuracy (percentage), and league (PGA or LPGA) was measured.  Use these data to assess, "Does a professional golfer give up accuracy when they hit the ball farther?"
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
+    * Units?:
+
+\vspace{2mm}
 * Response variable:
+
+    * Units?:
 
 ### R Instructions {-}
 * Download the R script file from Canvas and open in the RStudio server
@@ -61,15 +71,15 @@ ggplot(aes(x = Driving_Distance, y = Percent_Accuracy))+  # Specify variables
   geom_point(alpha=0.5) +  # Add scatterplot of points
   labs(x = "Driving Distance (yards)",  # Label x-axis
        y = "Percent Accuracy (%)",  # Label y-axis
-       title = "Scatterplot of Driving Distance by Percent Accuracy
+       title = "Scatterplot of Percent Accuracy by Driving Distance 
        for Professional Golfers") + 
-               # Be sure to tile your plots
+               # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 #### Conditions for the least squares line {-}
 
@@ -87,10 +97,12 @@ When performing inference on a least squares line, the follow conditions are gen
 * *Nearly normal residuals* (for theory-based methods only: residuals must be nearly normal.
     - Check this assumption by examining a histogram of the residuals, which should appear approximately normal.
 
+\newpage
+
 The scatterplot generated earlier and the residual plots shown below will be used to assess these conditions for approximating the data with the $t$-distribution.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-4-1} \end{center}
 **Verify the conditions are met to use theory-based methods**
 
 \vspace{3in}
@@ -223,7 +235,6 @@ Using the R script file for this activity...
 
 
 ``` r
-set.seed(216)
 regression_test(Percent_Accuracy~Driving_Distance, # response ~ explanatory
                data = golf, # Name of data set
                direction = "less", # Sign in alternative ("greater", "less", "two-sided")
@@ -234,7 +245,7 @@ regression_test(Percent_Accuracy~Driving_Distance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 #### Simulation-based confidence interval {-}
 
@@ -246,7 +257,6 @@ We will use the `regression_bootstrap_CI()` function in R (in the `catstats` pac
 
 
 ``` r
-set.seed(216)
 regression_bootstrap_CI(Percent_Accuracy~Driving_Distance, # response ~ explanatory
    data = golf, # Name of data set
    confidence_level = 0.95, # Confidence level as decimal
@@ -256,7 +266,7 @@ regression_bootstrap_CI(Percent_Accuracy~Driving_Distance, # response ~ explanat
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 ### Multivariable plots {-}
 
@@ -278,7 +288,7 @@ golf %>%
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 4. Does the association between driving distance and percent accuracy change depending on which league the golfer is a part of?  Explain your answer.  
 \vspace{1in}
@@ -286,7 +296,7 @@ golf %>%
 5.  Explain the association between league and each of the other two variables.  Use the following plots in addition to the scatterplot from Q4 to explain your answer.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-1} \includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-9-2} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-10-1} \includegraphics[width=0.7\linewidth]{12-A21-regression-theory_files/figure-latex/unnamed-chunk-10-2} \end{center}
 
 \vspace{0.8in}
 

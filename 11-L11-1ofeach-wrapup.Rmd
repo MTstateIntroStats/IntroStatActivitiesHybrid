@@ -20,13 +20,20 @@
 
 The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, is subject to stress. Intriguingly, these dinosaurs have protrusions (rugosity) at the top and sides of their spinal vertebrae, potentially for extra support. These protrusions do not seem to be present in smaller carnivorous dinosaurs. MSU paleontologists hypothesize that the presence of the protrusions is associated with the size of the two-legged carnivorous dinosaurs, potentially allowing them to grow big [@wilson2016]. To test this hypothesis, the researchers collected multiple scientific papers describing the fossil bones of 57 two-legged carnivorous dinosaur species. Then, they checked for the presence or absence of these rugose protrusions from photographs published in the papers and collected measurements of the length in centimeters of the femur (or thigh) bone. Femur length is a proxy for dinosaur size. Is there evidence that the presence of the protusions result in larger dinosaurs?  Use present $-$ absent as the order of subtraction.
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
     * Group 1:
 
+\vspace{2mm}
 * Response variable:
+
+    * Units?
+
+\vspace{2mm}
 
 1.  Write out the parameter of interest in context of the study.
 
@@ -40,7 +47,7 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, 
 
 * Upload and open the R script file for Module 11 lab. 
 
-* Upload the csv file, `dinosaur`. 
+* Upload the csv file, `dinosaur.csv`. 
 
 * Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 9 and the name of the explanatory and response variable in line 11. 
 
@@ -59,9 +66,9 @@ dinos %>%
 3. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
 \vspace{0.4in}
 
-* Enter the name of the explanatory variable for `explanatory` and the response variable for `response` in line 23.  
+* Enter the name of the explanatory variable for `explanatory` and the response variable for `response` in line 21.  
 
-* Run lines 22--23 to find the summary statistics.
+* Run lines 20--21 to find the summary statistics.
 
 ```{r, echo=TRUE, eval=FALSE}
 dinos %>% 
@@ -117,7 +124,7 @@ We will use the `two_mean_bootstrap_CI()` function in R (in the `catstats` packa
 
 * Fill in the missing values/numbers in the `two_mean_bootstrap_CI()` function to create the 98\% confidence interval.  
 
-* Highlight and run lines 34--38. **Upload a copy of the bootstrap distribution created to Gradescope for your group.** 
+* Highlight and run lines 34--38. 
 
 ```{r, echo = TRUE, eval = FALSE}
 two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables

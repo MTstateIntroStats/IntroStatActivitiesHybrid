@@ -127,17 +127,17 @@ The plot created in question 1 is a sampling distribution of statistics.  This s
 
 Suppose instead of attempting to select a representative sample by eye (which did not work), each student used a random number generator to select a simple random sample of 10 words. A **simple random sample** relies on a random mechanism to choose a sample, without replacement, from the population, such that every sample of size 10 is equally likely to be chosen.
 
-Later in the semester we will learn more about how to use `R` - for today we will have a short introduction using the `R` studio server.  Download the provided `R` script file from canvas.  
+Later in the semester we will learn more about how to use R - for today we will have a short introduction using the `R` studio server.  Download the provided R script file from canvas.  
 
-5. Login to the `R` studio server using your netID login.  Upload the file to the server using the following instructions.  
+5. Login to the R studio server using your netID login.  Upload the file to the server using the following instructions.  
 
 * Click "Upload" in the "Files" tab in the bottom right window of RStudio. In the pop-up window, click "Choose File", and navigate to the folder where the Activity R script file is saved (most likely in your downloads folder). Click "Open"; then click "Ok". 
 
-* Once the file is uploaded, you should see the uploaded file appear in the list of files in the bottom right window. Click on the `R` script file name to open the file in the Editor window (upper left window).  
+* Once the file is uploaded, you should see the uploaded file appear in the list of files in the bottom right window. Click on the R script file name to open the file in the Editor window (upper left window).  
 
 The following code will take a random sample of 10 words from the population of 359 words.  
 
-* In the `R` script file, highlight and run lines 1--7 
+* In the R script file, highlight and run lines 1--7 
 
 
 
@@ -247,12 +247,12 @@ One set of randomly generated sample mean word lengths from a single class may n
 
 \newpage 
 
-The following is a plot of 1000 random samples of size 10 created in `R`.  To re-create this plot run lines 11--27 in the `R` script file.
+The following is a plot of 1000 random samples of size 10 created in `R`.  To re-create this plot run lines 11--28 in the `R` script file.
 
 
 \begin{center}\includegraphics[width=0.65\linewidth]{01-A02-samplingbias_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-It would be useful to know what the center (mean) is for this sampling distribution.  The distribution you created in the `R` script file may vary a little from what is reported in your coursepack. To find the mean and standard deviation from your distribution run lines 31--32.
+It would be useful to know what the center (mean) is for this sampling distribution.  The distribution you created in the `R` script file may vary a little from what is reported in your coursepack. To find the mean and standard deviation from your distribution run lines 32--33.
 
 
 ``` r
@@ -303,7 +303,7 @@ In this activity we have focused on sampling methods.  Note that the sampling me
 
 ### Take-home messages
 
-1.	When we use a biased method of selection, we will over or underestimate the parameter.
+1.	When we use a biased method of selection, we will over or underestimate the parameter, on average.
 
 2. If the sampling method is biased, inferences made about the population based on a sample estimate will not be valid.
 

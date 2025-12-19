@@ -56,7 +56,7 @@ rmd_files: [
   "12-VN12-1ofeach.Rmd",
   "11-A17-inference-1ofeach-simulation.Rmd",
   "11-A18-inference-1ofeach-theory.Rmd",
-  "11-L011-1ofeach-wrapup.Rmd",
+  "11-L11-1ofeach-wrapup.Rmd",
   "12-KT-Module12_Reg.Rmd",
   "13-VN13-regression.Rmd",
   "12-A19-EDA-two-quantitative.Rmd",

@@ -49,14 +49,17 @@ We will work through a five-step process to complete a hypothesis test for a sin
 
 A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy?  In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
+\vspace{2mm}
+
 * Observational units:
+
+\vspace{2mm}
 
 * Variable:
 
-    * Type of variable:
-
     * Success:
 
+\vspace{2mm}
 #### Ask a research question {-}
 
 * Research question:

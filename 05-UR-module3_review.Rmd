@@ -1,6 +1,7 @@
 ## Module 3 Review - Simulation Methods for a Single Proportion
 
-```{r, echo = TRUE, message=FALSE}
+```{r, echo = FALSE, message=FALSE}
+set.seed(216)
 hearing <- read.csv("data/hearing_loss.csv")
 ```
 
@@ -51,7 +52,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 \vspace{0.2in}
 
 ```{r, echo=TRUE}
-set.seed(216)
 one_proportion_test(probability_success = 0.2, #Null hypothesis value
                     sample_size = 1753, #Enter sample size
                     number_repetitions = 10000, #Enter number of simulations
@@ -101,7 +101,6 @@ include_graphics("images/soe_gradient_gray.png")
 \vspace{.1in}
 
 ```{r, echo=TRUE, eval=TRUE}
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 1753, # Sample size
                     number_successes = 328, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use

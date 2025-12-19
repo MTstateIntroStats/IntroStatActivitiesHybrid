@@ -5,6 +5,10 @@ output:
 ---
 ## Activity 5:  Helper-Hinderer (continued)
 
+```{r,echo=FALSE}
+set.seed(216)
+```
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -64,10 +68,9 @@ To use the computer simulation, we will need to enter the
 \vspace{.2in}
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
-We will use the `one_proportion_test()` function in `R` (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
+We will use the `one_proportion_test()` function in R (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
 
 ```{r, echo=TRUE, eval = TRUE}
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -135,7 +138,6 @@ Let's see how each of the following with change the p-value.
 In another sample of 16 infants, only 10 selected the helper toy.  The null distribution created below reflects this new sample.
 
 ```{r, echo=TRUE, eval = TRUE}
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -150,7 +152,6 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 In still another study, the researchers took a sample of 32 infants and from this study found that 28 selected the helper toy ($\hat{p} = \frac{28}{32}= 0.875$).  The null distribution created below reflects this new study.
 
 ```{r, echo=TRUE, eval = TRUE}
-set.seed(216)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 32, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations

@@ -1,5 +1,7 @@
 ## Activity 6:  Helper-Hinderer --- Simulation-based Confidence Interval
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -95,7 +97,6 @@ We will use the `one_proportion_bootstrap_CI()` function in R (in the `catstats`
 
 
 ``` r
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
@@ -104,7 +105,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 #### Notes on the bootstrap distribution {-}
 
@@ -138,7 +139,6 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 
 ``` r
-set.seed(216)
 one_proportion_bootstrap_CI(sample_size = 16, # Sample size
                     number_successes = 14, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
@@ -147,7 +147,7 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 
 10.  Report both the 95\% confidence interval and the 90\% confidence interval (question 9).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
@@ -161,7 +161,7 @@ In many of our studies we will write a paragraph summarizing the results of the 
 
 \setstretch{3}
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy.  In a sample of 16 infants, 14 chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of 0.0024.  We would observe a sample proportion of 0.875 or greater with a probability of 0.0024 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.75 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy.  In a sample of 16 infants, 14 chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of 0.0026.  We would observe a sample proportion of 0.875 or greater with a probability of 0.0026 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.688 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
 
 \setstretch{1}
 

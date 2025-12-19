@@ -38,23 +38,28 @@ To review these concepts, see Chapter 6 in the textbook.
 
 ### Penguins
 
-The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica. Researchers took various body measurements on the penguins, including flipper length and body mass. The researchers were interested in the relationship between flipper length and body mass and wondered if flipper length could be used to accurately predict the body mass of these three penguin species. 
+The Palmer Station Long Term Ecological Research Program sampled three penguin species on islands in the Palmer Archipelago in Antarctica over a period of three summers. Researchers took various body measurements on the penguins, including flipper length (mm), bill depth (mm), bill length (mm), sex, species (Adelie, Chinstrap, Gentoo), and body mass (g). The researchers were interested in the relationship between bill depth and body mass and wondered if flipper length could be used to accurately predict the body mass of these three penguin species. 
 
-* Upload and import the `Antarctica_Penguins` csv file and the provided R script file for this activity. Enter the name of the data set for `datasetname` in the R script file in line 4....
+* Upload and import the `Antarctica_Penguins` csv file and the provided R script file for this activity. Enter the name of the data set for `datasetname` in the R script file in line 6
 
-First we will create a scatterplot of the flipper length and body mass.  Notice that we are using flipper length to predict body mass.  This makes flipper length the explanatory variable. **Make sure to give your plot a descriptive title.** Highlight and run lines 1--13 in the R script file.  **Upload a copy of your scatterplot to Gradescope.**
+First we will create a scatterplot of the bill depth and body mass.  Notice that we are using bill depth to predict body mass.  This makes bill depth the explanatory variable. 
+
+* Enter bill_depth for explanatory and body_mass for response in line 9
+
+* Highlight and run lines 1--15 in the R script file. 
 
 
 ``` r
 penguins <- read.csv("data/Antarctica_Penguins.csv") #Creates the object penguins
 penguins <- na.omit(penguins)
 penguins %>%
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g))+  # Specify variables
+  ggplot(aes(x = bill_depth, y = body_mass))+  # Specify variables
   geom_point() +  # Add scatterplot of points
-  labs(x = "flipper length (mm)",  # Label x-axis
+  labs(x = "bill depth (mm)",  # Label x-axis
        y = "body mass (g)",  # Label y-axis
-       title = "Scatterplot of Body Mass by Flipper Length for 
-       Antarctica Penguins") + # Be sure to title your plots
+       title = "Scatterplot of Body Mass by Bill Depth for 
+       Antarctica Penguins") +
+    # Be sure to title your plots
   geom_smooth(method = "lm", se = FALSE)  # Add regression line
 ```
 
@@ -63,29 +68,30 @@ penguins %>%
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 
-1. Describe the relationship, using the four characteristics of scatterplots, between 75th percentile SAT Math score and retention rate.
+1. Describe the relationship, using the four characteristics of scatterplots, between bill depth and body mass.
 
 \vspace{1in}
+
 
 #### Slope of the Least Squares Linear Regression Line {-}
 
 There are three summary measures calculated from two quantitative variables: slope, correlation, and the coefficient of determination.  We will again start with an assessment of the regression slope.
 
-* Enter `body_mass_g` for response and `flipper_length_mm` for explanatory in line ...
+* Enter `body_mass` for response and `bill_depth` for explanatory in line ...
 
 * Highlight and run lines ... to fit the linear model.
 
 
 ``` r
 # Fit linear model: y ~ x
-PenguinsLM <- lm(body_mass_g~flipper_length_mm, data=penguins)
+PenguinsLM <- lm(body_mass~bill_depth, data=penguins)
 round(summary(PenguinsLM)$coefficients,5) # Display coefficient summary
 ```
 
 ```
-#>                      Estimate Std. Error   t value Pr(>|t|)
-#> (Intercept)       -5865.81792  309.34034 -18.96234        0
-#> flipper_length_mm    50.12002    1.53517  32.64781        0
+#>              Estimate Std. Error  t value Pr(>|t|)
+#> (Intercept) 7528.6205  341.58707 22.04012        0
+#> bill_depth  -193.4424   19.77623 -9.78156        0
 ```
 
 2.  Write out the least squares regression line using the summary statistics from the R output in context of the problem.
@@ -98,11 +104,11 @@ round(summary(PenguinsLM)$coefficients,5) # Display coefficient summary
 
 \newpage
 
-4. Predict the body mass of a penguin with a flipper length of 230mm.
+4. Predict the body mass of a penguin with a bill depth of 17.3 mm.
 
 \vspace{0.6in}
 
-5. Calculate the residual for a penguin with a flipper length of 230mm and a body mass of 6050g.
+5. Calculate the residual for a penguin with a bill depth of 17.3 mm and a body mass of 5600 g.
 
 \vspace{0.6in}
 
@@ -115,23 +121,54 @@ The following output creates a correlation matrix between several pairs of quant
 
 ``` r
 penguins %>%  # Data set pipes into
-  select(c("bill_length_mm", "bill_depth_mm", 
-           "flipper_length_mm", "body_mass_g")) %>%
+  select(c("bill_length", "bill_depth", 
+           "flipper_length", "body_mass")) %>%
   cor(use="pairwise.complete.obs") %>%
   round(3)
 ```
 
 ```
-#>                   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-#> bill_length_mm             1.000        -0.229             0.652       0.589
-#> bill_depth_mm             -0.229         1.000            -0.579      -0.473
-#> flipper_length_mm          0.652        -0.579             1.000       0.873
-#> body_mass_g                0.589        -0.473             0.873       1.000
+#>                bill_length bill_depth flipper_length body_mass
+#> bill_length          1.000     -0.229          0.652     0.589
+#> bill_depth          -0.229      1.000         -0.579    -0.473
+#> flipper_length       0.652     -0.579          1.000     0.873
+#> body_mass            0.589     -0.473          0.873     1.000
 ```
 
-6.  What is the value of correlation between flipper length and body mass?
+6.  What is the value of correlation between bill depth and body mass?
 
 \vspace{0.3in}
+
+#### Multivariable plots {-}
+
+Recall earlier we noted two clouds of data in the scatterplot.  Let's explore another variable that may account for the two clouds of point shown on the scatterplot.  When adding a categorical predictor, we can add that variable as shape and/or color to the plot.  
+
+
+``` r
+penguins %>% # Data set pipes into...
+    ggplot(aes(x = bill_depth, y = body_mass, shape = species, color=species))+  
+    # Specify variables
+    geom_point(alpha=0.5) +  # Add scatterplot of points
+    labs(x = "bill depth (mm)",  # Label x-axis
+       y = "body mass (g)",  # Label y-axis
+       title = "Scatterplot of Body Mass vs. Bill Depth for 
+       Antarctica Penguins by Species") + # Be sure to title your plots
+    geom_smooth(method = "lm", se = FALSE) + # Add regression line
+    scale_color_grey()
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-4-1} \end{center}
+**Note that the relationship between bill depth and body mass is now positive when considering the relationship within each species.  This is an example of what?**
+
+\vspace{0.4in}
+
+**Does the relationship between bill depth and body mass for Antarctica penguins change depending on the species?**
+
+\vspace{0.8in}
+
+For the remainder of this study, we will only look at the Gentoo species.
 
 #### Coefficient of determination (squared correlation) {-}
 
@@ -142,36 +179,56 @@ Another summary measure used to explain the linear relationship between two quan
 |    Use the variances of the response and the residuals:  $r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}$
 
 
-7.  Use the correlation, $r$, found in question 6, to calculate the coefficient of determination between flipper length and body mass, $r^2$.
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+
+
+``` r
+penguin_sub %>%  # Data set pipes into
+  select(c("bill_length", "bill_depth", 
+           "flipper_length", "body_mass")) %>%
+  cor(use="pairwise.complete.obs") %>%
+  round(5)
+```
+
+```
+#>                bill_length bill_depth flipper_length body_mass
+#> bill_length        1.00000    0.64409        0.66179   0.66707
+#> bill_depth         0.64409    1.00000        0.70891   0.71827
+#> flipper_length     0.66179    0.70891        1.00000   0.71087
+#> body_mass          0.66707    0.71827        0.71087   1.00000
+```
+7.  Use the correlation, $r$, found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, $r^2$, for the Gentoo species.
 
 \vspace{.4in}
 
-The variance of the response variable, body mass (g), is $s_{\text{body mass}}^2 = 647761.2$ $\%^2$, the variance of the explanatory variable, flipper length (mm), is $s_{\text{flipper length}}^2 = 196.6214$, and the variance in the residuals is $s_{RES}^2 = 154308.4$ \%$^2$.  Use these values to calculate the coefficient of determination.
+The variance of the response variable, body mass (g), is $s_{\text{body mass}}^2 = 249759.1$ $\%^2$, the variance of the explanatory variable, bill depth (mm), is $s_{\text{bill depth}}^2 = 0.968145$ $\%^2$, and the variance in the residuals is $s_{RES}^2 = 120907.1$ \%$^2$.  Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
 
 In the next part of the activity we will explore what the coefficient of determination measures. 
 
-In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between flipper length and body mass. The value of the y-intercept, 4209.057, is the mean of the response variable when there is no relationship between the two variables.  To find the sum of squares total (SST) we find the residual ($residual = y - \hat{y}$) for each response value from the horizontal line (from the value of 4209.057).  Each residual is squared and the sum of the squared values is calculated.  The SST gives the **total variability in the response variable, Retention**.  
+In the first scatterplot, we see the data plotted with a horizontal line. Note that the regression line in this plot has a slope of zero; this assumes there is no relationship between bill depth and body mass. The value of the y-intercept, 5090.625, is the mean of the response variable when there is no relationship between the two variables.  To find the sum of squares total (SST) we find the residual ($residual = y - \hat{y}$) for each response value from the horizontal line (from the value of 5090.625).  Each residual is squared and the sum of the squared values is calculated.  The SST gives the **total variability in the response variable, body mass**.  
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
-**The calculated value for the SST is 215704477.919.**
+
+
+
+**The calculated value for the SST is 29721328.125.**
 
 <!-- 6.  Write down the value of SSE given in this image.  Since this is the sum of squared errors (SSE) for the horizontal line we call this the total sum of squares (SST). -->
 <!-- \vspace{3mm} -->
 
 <!--     SST =  -->
 
-This next scatterplot, shows the plotted data with the best fit regression line.  This is the line of best fit between flipper length and body mass and has the smallest sum of squares error (SSE).  The SSE is calculated by finding the residual from each response value to the regression line.  Each residual is squared and the sum of the squared values is calculated.
+This next scatterplot, shows the plotted data with the best fit regression line.  This is the line of best fit between bill depth and body mass and has the smallest sum of squares error (SSE).  The SSE is calculated by finding the residual from each response value to the regression line.  Each residual is squared and the sum of the squared values is calculated.
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
-**The calculated value for the SSE is 51230376.045.**
-
-\newpage
+**The calculated value for the SSE is 14387948.480.**
 
 <!-- * Go to the website www.rossmanchance.com/ISIapplets.html and click on Corr/Regresssion under Quantitative Response.   -->
 
@@ -205,52 +262,6 @@ This next scatterplot, shows the plotted data with the best fit regression line.
 
 \vspace{0.8in}
 
-
-#### Multivariable plots {-}
-
-Another variable collected on the penguins was bill depth (mm).  The following scatterplot shows the relationship between bill depth and body mass.
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-6-1} \end{center}
-8.  Describe the relationship between bill depth and body mass.
-
-\vspace{0.8in}
-
-
-When adding another categorical predictor, we can add that variable as shape or color to the plot.  
-
-
-``` r
-
-penguins %>% # Data set pipes into...
-    ggplot(aes(x = bill_depth_mm, y = body_mass_g, shape = species, color=species))+  # Specify variables
-    geom_point(alpha=0.5) +  # Add scatterplot of points
-    labs(x = "bill depth (mm)",  # Label x-axis
-       y = "body mass (g)",  # Label y-axis
-       title = "Scatterplot of Body Mass vs. Bill Depth for 
-       Antarctica Penguins by Species") + # Be sure to title your plots
-    geom_smooth(method = "lm", se = FALSE) + # Add regression line
-    scale_color_grey()
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-7-1} \end{center}
-**Note that the relationship between bill depth and body mass is now positive based on the penguin species.  This is an example of what?**
-
-\vspace{0.4in}
-
-**Does the relationship between bill depth and body mass for Antarctica penguins change depending on the species?**
-
-\vspace{0.8in}
-
-
-
-
-\begin{center}\includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.45\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-8-2} \end{center}
-**Is species of Antarctica penguins associated with body mass?  Is species of Antarctica penguins associated with bill depth?**
-
-\vspace{1in}
 
 ### Take-home messages
 

@@ -5,14 +5,15 @@ There are about 4 million tourists to Yellowstone National Park per year.  One o
 
 
 
+
 ```
 #>   min Q1 median Q3 max     mean       sd   n missing
 #> 1  43 59     76 83 108 72.31438 13.89032 299       0
 ```
 
-The following code created the boxplot of waiting time. 
+The following code creates the boxplot of waiting time. 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 	
 1.  Report and interpret the value of $Q_1$ in context of the study.
@@ -22,7 +23,7 @@ The following code created the boxplot of waiting time.
 2.  Report and interpret the standard deviation of reported wait time in context of the study.
 \vspace{0.2in}
 
-3.  Descripe the plot using the four characteristics for boxplots.
+3.  Describe the plot using the four characteristics for boxplots.
 
 \vspace{1in}
 
@@ -46,7 +47,6 @@ We will start with simulation methods.
 
 
 ``` r
-set.seed(216)
 one_mean_test(data = geyser$waiting,   #Object and variable
               null_value = 30, #null value for the study
               shift = -42.31438,   #Shift needed for bootstrap hypothesis test
@@ -58,7 +58,7 @@ one_mean_test(data = geyser$waiting,   #Object and variable
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 8. Interpret the p-value of the test.
 
@@ -74,7 +74,6 @@ In the next part of the activity, we will estimate the mean wait time for Old Fa
 
 
 ``` r
-set.seed(216)
 one_mean_CI(data = geyser$waiting,   #Object and variable
             summary_measure = "mean", 
             confidence_level = 0.99, #Level of context as a decimal
@@ -83,7 +82,7 @@ one_mean_CI(data = geyser$waiting,   #Object and variable
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{10-UR-module6_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 10.  How many simulations are at and below the value of 70.241?
 

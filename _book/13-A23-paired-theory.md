@@ -3,6 +3,8 @@
 <!-- Data set source: http://users.stat.ufl.edu/~winner/datasets.html -->
 <!-- Data simulated to match means and SDs in article. -->
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -46,11 +48,18 @@ The abstract of the article "Studies of interference in serial verbal reactions"
 
 The article reports on the results of a study in which seventy college undergraduates were given forms with 100 names of colors written in black ink, and the same 100 names of colors written in another color (i.e., the word purple written in green ink).  The total time (in seconds) for reading the 100 words printed in black, and the total time (in seconds) for reading the 100 words printed in different colors were recorded for each subject. The order in which the forms (black or color) were given was randomized to the subjects. Does printing the name of colors in a different color increase the time it takes to read the words?  Use color $-$ black as the order of subtraction.
 
+\vspace{2mm}
 * Observational units:
 
+\vspace{2mm}
 * Explanatory variable:
 
+\vspace{2mm}
 * Response variable:
+
+    - Units?:
+
+\vspace{2mm}
 
 #### Identify the scenario {-}
 
@@ -131,7 +140,7 @@ color_diff %>%
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-1-1} \includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-1-2} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-2-2} \end{center}
 
 The following code gives the summary statistics for the pairwise differences.
 
@@ -244,7 +253,6 @@ We will use the `paired_test()` function in R (in the `catstats` package) to sim
 
 
 ``` r
-set.seed(216)
 paired_test(data = color_diff$differences,   # Vector of differences
             shift = -2.3,   # Shift needed for bootstrap hypothesis test
             as_extreme_as = 2.3,  # Observed statistic
@@ -255,7 +263,7 @@ paired_test(data = color_diff$differences,   # Vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 ### Simulation confidence interval {-}
 
@@ -267,7 +275,6 @@ We will use the `paired_bootstrap_CI()` function in R (in the `catstats` package
 
 
 ``` r
-set.seed(216)
 paired_bootstrap_CI(data = color_diff$differences, # Enter vector of differences
                     number_repetitions = 10000, # Number of bootstrap samples for CI
                     confidence_level =0.9,  # Confidence level in decimal form
@@ -276,7 +283,7 @@ paired_bootstrap_CI(data = color_diff$differences, # Enter vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-A23-paired-theory_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \newpage 
 

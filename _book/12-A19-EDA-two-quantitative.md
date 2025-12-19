@@ -81,11 +81,21 @@ IPEDS <- na.omit(IPEDS)
 
 For this study, we will look to see if 75th percentile math SAT score can be used to predict the retention rate of 4-year higher education institutions.
 
+\vspace{2mm}
 * Observational units:
+
+\vspace{2mm}   
 
 * Explanatory variable:
 
+    * Units?:
+
+\vspace{2mm}
 * Response variable:
+
+    * Units?:
+
+\vspace{2mm}
 
 * Use the provided R script file to create a scatterplot to examine the relationship between 75th percentile Math SAT score by retention rate for 4-year US Higher Education Institutions by filling in the variable names for explanatory and response in line 16. Note, we are using the 75th percentile Math SAT score to predict the retention rate.
 
@@ -93,7 +103,7 @@ For this study, we will look to see if 75th percentile math SAT score can be use
 
 
 ``` r
-IPEDS %>% # Data sest pipes into...
+IPEDS %>% # Data set pipes into...
     ggplot(aes(x = SATMath_75, y = Retention))+  # Specify variables
     geom_point(alpha=0.5) +  # Add scatterplot of points
     labs(x = "75th Percentile SAT Math Score",  # Label x-axis
@@ -129,7 +139,7 @@ Assess the four features of the scatterplot that describe this relationship.
 
 #### Slope {-}
 
-The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the $y$-intercept for the line of least squares, and the estimate for `STAMath_75` (the $x$-variable name) is the value of $b_1$, the slope.  
+The linear model function in R (`lm()`) gives us the summary for the least squares regression line.  The estimate for `(Intercept)` is the estimated $y$-intercept, $b_0$ for the line of least squares, and the estimate for `STAMath_75` (the $x$-variable name) is the value of $b_1$, the estimated slope.  
 
 * Enter `Retention` for response and `SATMath_75` for explanatory in line 25
 
@@ -139,13 +149,13 @@ The linear model function in R (`lm()`) gives us the summary for the least squar
 ``` r
 # Fit linear model: y ~ x
 IPEDSLM <- lm(Retention~SATMath_75, data=IPEDS)
-round(summary(IPEDSLM)$coefficients,3) # Display coefficient summary
+round(summary(IPEDSLM)$coefficients, 5) # Display coefficient summary
 ```
 
 ```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)    0.059      1.898   0.031    0.975
-#> SATMath_75     0.125      0.003  40.485    0.000
+#>             Estimate Std. Error  t value Pr(>|t|)
+#> (Intercept)  0.05926    1.89844  0.03121   0.9751
+#> SATMath_75   0.12481    0.00308 40.48525   0.0000
 ```
 
 **Write out the least squares regression line using the summary statistics provided above in context of the problem.**
@@ -223,7 +233,7 @@ IPEDS %>%  # Data set pipes into
 
 * Influential points are outliers that change the regression line; these points are far from the line of regression
 
-* High leverage points are outliers that are extreme in the x-axis; these points are far from the mean of the x-axis
+* High leverage points are outliers that are extreme in the x-axis; these points are far from the mean of the variable on the x-axis
 
 Let's review the scatterplot between the two variables.  
 
@@ -233,7 +243,7 @@ Let's review the scatterplot between the two variables.
 
 \vspace{0.1in}
 
-Earlier in the activity we identified a couple of observations that are potential outliers.  Two of these values are ($445, 11$) and ($710,40$).  The following plot was created without these points included.
+Earlier in the activity we identified a couple of observations that are potential outliers.  One of these values is ($445, 11$).  The following plot was created without this point included.
 
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A19-EDA-two-quantitative_files/figure-latex/unnamed-chunk-6-1} \end{center}
@@ -241,28 +251,33 @@ Earlier in the activity we identified a couple of observations that are potentia
 
 ```
 #>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)    0.412      1.841   0.224    0.823
-#> SATMath_75     0.124      0.003  41.598    0.000
+#> (Intercept)    0.861      1.875   0.459    0.646
+#> SATMath_75     0.124      0.003  40.598    0.000
 ```
 
-6. Note that the slope of the line has not changed much between the original data set and the data set with the values removed.  Would you consider either of these points to be influential?
+6. Note that the slope of the line has not changed much between the original data set and the data set with the values removed.  Would you consider this point to be influential?
 
 \vspace{0.6in}
 
-7. In the next plot, note that three extreme values have been added to the data set.  Circle these points on the plot.
+7. In the next plot, note that one extreme values have been added to the data set.  Circle this point on the plot.
 
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A19-EDA-two-quantitative_files/figure-latex/unnamed-chunk-8-1} \end{center}
-8.  The linear model and correlation output for the data set with the added points is provided below.  Did the slope and/or value of correlation change?
+8.  The linear model and correlation output for the data set with the added point is provided below.  Did the slope and/or value of correlation change?
+
+Linear model output for the data set with the added points:
 
 ```
 #>                  Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)         5.575      2.163   2.577     0.01
-#> IPEDS.SATMath_75    0.116      0.004  32.919     0.00
+#> (Intercept)         2.408      2.031   1.186    0.236
+#> IPEDS.SATMath_75    0.121      0.003  36.650    0.000
 ```
 
+Correlation between the 75th percentile Math SAT score and retention rate for the data set with the added point:
+
+
 ```
-#> [1] 0.6970002
+#> [1] 0.7347292
 ```
 \vspace{0.5in}
 
@@ -274,7 +289,9 @@ Earlier in the activity we identified a couple of observations that are potentia
 
 1.	Two quantitative variables are graphically displayed in a scatterplot.  The explanatory variable is on the $x$-axis and the response variable is on the $y$-axis.  When describing the relationship between two quantitative variables we look at the form (linear or non-linear), direction (positive or negative), strength, and for the presence of outliers. 
 
-2.  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation ($r$), slope of the regression line ($b_1$), and the coefficient of determination ($r^2$).  
+2.  There are three summary statistics used to summarize the relationship between two quantitative variables: correlation ($r$), slope of the regression line ($b_1$), and the coefficient of determination ($r^2$).  In this activity, we reviewed the first two summary measures, correlation and slope.  We will explore the coefficient of determination in the next activity.
+
+3. Points that are far from the mean of the predictor (x-axis variable) and that do not follow the pattern of the relationship can impact the line and be influential. 
 
 ### Additional notes
 

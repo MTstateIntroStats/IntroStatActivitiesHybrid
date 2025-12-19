@@ -1,5 +1,10 @@
 ## Module 8 and 9 Review 
 
+```{r}
+set.seed(216)
+```
+
+
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, collapse=FALSE}
 allergy <- read.csv("https://math.montana.edu/courses/s216/data/PeanutAllergy.csv") 
 allergy %>% group_by(Treatment) %>% count(Allergy)
@@ -167,9 +172,5 @@ qnorm(0.95, lower.tail = TRUE)
 \vspace{1in}
 
 20. What is the scope of inference for this study?
-
-
-
-
 
 \newpage

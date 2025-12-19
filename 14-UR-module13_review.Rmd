@@ -1,5 +1,8 @@
 ## Module 12 Review - Regression
 
+```{r, echo=FALSE}
+set.seed(216)
+```
 
 Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  Among the variables measured on these songs, we will look at the relationship between Valance and Danceability.  Valance measures the positive mood of a song; the higher the point value the more positive the mood of the song.  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Is there evidence that songs with a higher valance value are more danceable, on average?
 
@@ -52,7 +55,6 @@ cor(songs$Danceability, songs$Valance)
 The following code creates the null distribution for this study.
 ```{r, out.width="70%", echo=TRUE}
 # Simulation-based test for slope
-set.seed(216)
 regression_test(Danceability~Valance, # response ~ explanatory
                data = songs, # name of data set
                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
@@ -73,7 +75,6 @@ We could also test correlation:
 
 ```{r, out.width="70%", echo=TRUE}
 # Simulation-based test for slope
-set.seed(216)
 regression_test(Danceability~Valance, # response ~ explanatory
                data = songs, # name of data set
                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
@@ -86,7 +87,6 @@ Now let's estimate the true regression slope for the relationship between valanc
 
 ```{r, out.width="70%", echo=TRUE}
 # Bootstrap CI for slope
-set.seed(216)
 regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
                         data = songs, # name of data set
                         confidence_level = 0.99, # confidence level as decimal
@@ -102,7 +102,6 @@ To create the confidence interval for correlation.
 
 ```{r, out.width="70%", echo=TRUE}
 # Bootstrap CI for correlation
-set.seed(216)
 regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
                         data = songs, # name of data set
                         confidence_level = 0.99, # confidence level as decimal
