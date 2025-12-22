@@ -273,7 +273,7 @@ IPEDS4 %>% # Data sest pipes into...
     geom_smooth(method = "lm", se = FALSE) + # Add regression line
     theme_bw()
 ```
-8.  The linear model and correlation output for the data set with the added point is provided below.  Did the slope and/or value of correlation change?
+8.  The linear model and correlation output for the data set with the added point is provided below.  Did the slope and/or value of correlation change in a noticeable way?
 
 Linear model output for the data set with the added points:
 ```{r, echo=FALSE, collapse = FALSE, eval=TRUE}
@@ -289,9 +289,9 @@ cor(IPEDS4$IPEDS.Retention,IPEDS4$IPEDS.SATMath_75)
 ```
 \vspace{0.5in}
 
-9. Are the values of slope and correlation resistant to outliers?
+9. Earlier in the semester, we learned that the median and the IQR are resistant to outliers.  In other words, they are not influenced by the presence of outliers.  Are the values of slope and correlation resistant to outliers?  Explain your answer using the previous examples in this activity.
 
-\vspace{0.6in}
+\vspace{0.68in}
 
 ### Take-home messages
 

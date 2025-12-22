@@ -17427,7 +17427,7 @@ Earlier in the activity we identified a couple of observations that are potentia
 \setcounter{enumi}{7}
 \tightlist
 \item
-  The linear model and correlation output for the data set with the added point is provided below. Did the slope and/or value of correlation change?
+  The linear model and correlation output for the data set with the added point is provided below. Did the slope and/or value of correlation change in a noticeable way?
 \end{enumerate}
 
 Linear model output for the data set with the added points:
@@ -17451,10 +17451,10 @@ Correlation between the 75th percentile Math SAT score and retention rate for th
 \setcounter{enumi}{8}
 \tightlist
 \item
-  Are the values of slope and correlation resistant to outliers?
+  Earlier in the semester, we learned that the median and the IQR are resistant to outliers. In other words, they are not influenced by the presence of outliers. Are the values of slope and correlation resistant to outliers? Explain your answer using the previous examples in this activity.
 \end{enumerate}
 
-\vspace{0.6in}
+\vspace{0.68in}
 
 \subsection{Take-home messages}\label{take-home-messages-18}
 
@@ -17662,6 +17662,37 @@ The following output creates a correlation matrix between several pairs of quant
 
 \vspace{0.3in}
 
+\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}
+\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
+
+Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination (\(r^2\)). The coefficient of determination, \(r^2\), can also be used to describe the strength of the linear relationship between two quantitative variables. The value of \(r^2\) (a value between 0 and 1) represents the \textbf{proportion of variation in the response that is explained by the least squares line with the explanatory variable}. There are two ways to calculate the coefficient of determination:
+
+~~~Square the correlation coefficient: \(r^2 = (r)^2\)
+
+~~~Use the variances of the response and the residuals: \(r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}\)
+
+Later in this activity, we will explore more about what the coefficient of determination measures.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Use the correlation, \(r\), found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, \(r^2\), for Antarctica penguins.
+\end{enumerate}
+
+\vspace{.4in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  The coefficient of determination between bill depth and flipper length is 33.5\%. Calculate the correlation between these variables from this value. How can we tell if the value of correlation should be positive or negative?
+\end{enumerate}
+
+\vspace{0.8in}
+
 \subsubsection*{Multivariable plots}\label{multivariable-plots}
 \addcontentsline{toc}{subsubsection}{Multivariable plots}
 
@@ -17686,18 +17717,20 @@ Recall earlier we noted two clouds of data in the scatterplot. Let's explore ano
 
 \textbf{Note that the relationship between bill depth and body mass is now positive when considering the relationship within each species. This is an example of what?}
 
-\vspace{0.4in}
+\vspace{0.5in}
 
 \textbf{Does the relationship between bill depth and body mass for Antarctica penguins change depending on the species?}
 
 \vspace{0.8in}
 
+\newpage
+
 For the remainder of this study, we will only look at the Gentoo species.
 
-\subsubsection*{Coefficient of determination (squared correlation)}\label{coefficient-of-determination-squared-correlation}
-\addcontentsline{toc}{subsubsection}{Coefficient of determination (squared correlation)}
+\subsubsection*{Coefficient of determination (revisited)}\label{coefficient-of-determination-revisited}
+\addcontentsline{toc}{subsubsection}{Coefficient of determination (revisited)}
 
-Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination (\(r^2\)). The coefficient of determination, \(r^2\), can also be used to describe the strength of the linear relationship between two quantitative variables. The value of \(r^2\) (a value between 0 and 1) represents the \textbf{proportion of variation in the response that is explained by the least squares line with the explanatory variable}. There are two ways to calculate the coefficient of determination:
+We will now revisit the coefficient of determination for the relationship between bill depth and body mass for just the Genetoo species. As a reminder, these are the formulas used to calculate the coefficient of determination:
 
 ~~~Square the correlation coefficient: \(r^2 = (r)^2\)
 
@@ -17725,7 +17758,7 @@ Another summary measure used to explain the linear relationship between two quan
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
+\setcounter{enumi}{8}
 \tightlist
 \item
   Use the correlation, \(r\), found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, \(r^2\), for the Gentoo species.
@@ -17733,7 +17766,7 @@ Another summary measure used to explain the linear relationship between two quan
 
 \vspace{.4in}
 
-The variance of the response variable, body mass (g), is \(s_{\text{body mass}}^2 = 249759.1\) \(\%^2\), the variance of the explanatory variable, bill depth (mm), is \(s_{\text{bill depth}}^2 = 0.968145\) \(\%^2\), and the variance in the residuals is \(s_{RES}^2 = 120907.1\) \%\(^2\). Use these values to calculate the coefficient of determination.
+The variance of the response variable, body mass (g), is \(s_{\text{body mass}}^2 = 249759.1\) \(g^2\), the variance of the explanatory variable, bill depth (mm), is \(s_{\text{bill depth}}^2 = 0.968145\) \(mm^2\), and the variance in the residuals is \(s_{RES}^2 = 120907.1\) \(g^2\). Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
 
@@ -17750,6 +17783,8 @@ This next scatterplot, shows the plotted data with the best fit regression line.
 \begin{center}\includegraphics[width=0.7\linewidth]{12-A20-EDA-two-quantitative-corr_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 \textbf{The calculated value for the SSE is 14387948.480.}
+
+\newpage
 
 \textbf{Calculate the value for \(r^2\) using the values for SST and SSE provided below each of the previous graphs.}
 

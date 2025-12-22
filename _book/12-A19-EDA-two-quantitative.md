@@ -263,7 +263,7 @@ Earlier in the activity we identified a couple of observations that are potentia
 
 
 \begin{center}\includegraphics[width=0.6\linewidth]{12-A19-EDA-two-quantitative_files/figure-latex/unnamed-chunk-8-1} \end{center}
-8.  The linear model and correlation output for the data set with the added point is provided below.  Did the slope and/or value of correlation change?
+8.  The linear model and correlation output for the data set with the added point is provided below.  Did the slope and/or value of correlation change in a noticeable way?
 
 Linear model output for the data set with the added points:
 
@@ -281,9 +281,9 @@ Correlation between the 75th percentile Math SAT score and retention rate for th
 ```
 \vspace{0.5in}
 
-9. Are the values of slope and correlation resistant to outliers?
+9. Earlier in the semester, we learned that the median and the IQR are resistant to outliers.  In other words, they are not influenced by the presence of outliers.  Are the values of slope and correlation resistant to outliers?  Explain your answer using the previous examples in this activity.
 
-\vspace{0.6in}
+\vspace{0.68in}
 
 ### Take-home messages
 

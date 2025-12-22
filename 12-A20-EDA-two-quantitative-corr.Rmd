@@ -118,6 +118,24 @@ penguins %>%  # Data set pipes into
 
 \vspace{0.3in}
 
+#### Coefficient of determination (squared correlation) {-}
+
+Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination ($r^2$). The coefficient of determination, $r^2$, can also be used to describe the strength of the linear relationship between two quantitative variables. The value of $r^2$ (a value between 0 and 1) represents the **proportion of variation in the response that is explained by the least squares line with the explanatory variable**.  There are two ways to calculate the coefficient of determination: 
+
+|    Square the correlation coefficient:  $r^2 = (r)^2$
+
+|    Use the variances of the response and the residuals:  $r^2 = \dfrac{s_y^2 - s_{RES}^2}{s_y^2} = \dfrac{SST - SSE}{SST}$
+
+Later in this activity, we will explore more about what the coefficient of determination measures.
+
+7.  Use the correlation, $r$, found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, $r^2$, for Antarctica penguins.
+
+\vspace{.4in}
+
+8.  The coefficient of determination between bill depth and flipper length is 33.5\%.  Calculate the correlation between these variables from this value. How can we tell if the value of correlation should be positive or negative?
+
+\vspace{0.8in}
+
 #### Multivariable plots {-}
 
 Recall earlier we noted two clouds of data in the scatterplot.  Let's explore another variable that may account for the two clouds of point shown on the scatterplot.  When adding a categorical predictor, we can add that variable as shape and/or color to the plot.  
@@ -136,17 +154,19 @@ penguins %>% # Data set pipes into...
 ```
 **Note that the relationship between bill depth and body mass is now positive when considering the relationship within each species.  This is an example of what?**
 
-\vspace{0.4in}
+\vspace{0.5in}
 
 **Does the relationship between bill depth and body mass for Antarctica penguins change depending on the species?**
 
 \vspace{0.8in}
 
+\newpage
+
 For the remainder of this study, we will only look at the Gentoo species.
 
-#### Coefficient of determination (squared correlation) {-}
+#### Coefficient of determination (revisited) {-}
 
-Another summary measure used to explain the linear relationship between two quantitative variables is the coefficient of determination ($r^2$). The coefficient of determination, $r^2$, can also be used to describe the strength of the linear relationship between two quantitative variables. The value of $r^2$ (a value between 0 and 1) represents the **proportion of variation in the response that is explained by the least squares line with the explanatory variable**.  There are two ways to calculate the coefficient of determination: 
+We will now revisit the coefficient of determination for the relationship between bill depth and body mass for just the Genetoo species.  As a reminder, these are the formulas used to calculate the coefficient of determination: 
 
 |    Square the correlation coefficient:  $r^2 = (r)^2$
 
@@ -179,13 +199,14 @@ penguin_sub %>%  # Data set pipes into
   cor(use="pairwise.complete.obs") %>%
   round(5)
 ```
-7.  Use the correlation, $r$, found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, $r^2$, for the Gentoo species.
+9.  Use the correlation, $r$, found in the correlation matrix, to calculate the coefficient of determination between bill depth and body mass, $r^2$, for the Gentoo species.
 
 \vspace{.4in}
 
-The variance of the response variable, body mass (g), is $s_{\text{body mass}}^2 = 249759.1$ $\%^2$, the variance of the explanatory variable, bill depth (mm), is $s_{\text{bill depth}}^2 = 0.968145$ $\%^2$, and the variance in the residuals is $s_{RES}^2 = 120907.1$ \%$^2$.  Use these values to calculate the coefficient of determination.
+The variance of the response variable, body mass (g), is $s_{\text{body mass}}^2 = 249759.1$ $g^2$, the variance of the explanatory variable, bill depth (mm), is $s_{\text{bill depth}}^2 = 0.968145$ $mm^2$, and the variance in the residuals is $s_{RES}^2 = 120907.1$ $g^2$.  Use these values to calculate the coefficient of determination.
 
 \vspace{1in}
+
 
 In the next part of the activity we will explore what the coefficient of determination measures. 
 
@@ -254,6 +275,8 @@ penguin_sub %>%
 <!-- 11. Click on `Show Squared Residuals`.  Write down the value for SSE. -->
 
 <!-- \vspace{0.5in} -->
+
+\newpage
 
 **Calculate the value for $r^2$ using the values for SST and SSE provided below each of the previous graphs.**
 

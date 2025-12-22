@@ -476,8 +476,9 @@
 \contentsline {subsection}{\numberline {12.4.3}Penguins}{305}{subsection.12.4.3}%
 \contentsline {subsubsection}{Slope of the Least Squares Linear Regression Line}{306}{Item.586}%
 \contentsline {subsubsection}{Correlation}{307}{Item.590}%
-\contentsline {subsubsection}{Multivariable plots}{307}{Item.591}%
-\contentsline {subsubsection}{Coefficient of determination (squared correlation)}{308}{Item.591}%
+\contentsline {subsubsection}{Coefficient of determination (squared correlation)}{307}{Item.591}%
+\contentsline {subsubsection}{Multivariable plots}{308}{Item.593}%
+\contentsline {subsubsection}{Coefficient of determination (revisited)}{309}{Item.593}%
 \contentsline {subsection}{\numberline {12.4.4}Take-home messages}{311}{subsection.12.4.4}%
 \contentsline {subsection}{\numberline {12.4.5}Additional notes}{311}{subsection.12.4.5}%
 \contentsline {section}{\numberline {12.5}Activity 21: Golf Driving Distance}{312}{section.12.5}%
@@ -489,25 +490,25 @@
 \contentsline {subsubsection}{Conditions for the least squares line}{313}{subsection.12.5.3}%
 \contentsline {subsubsection}{Ask a research question}{314}{subsection.12.5.3}%
 \contentsline {subsubsection}{Summarize and visualize the data}{315}{subsection.12.5.3}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{315}{Item.596}%
-\contentsline {paragraph}{Hypothesis test}{315}{Item.596}%
-\contentsline {paragraph}{Confidence interval}{316}{Item.596}%
-\contentsline {subsubsection}{Communicate the results and answer the research question}{316}{Item.596}%
-\contentsline {subsubsection}{Simulation-based hypothesis test}{316}{Item.597}%
-\contentsline {subsubsection}{Simulation-based confidence interval}{317}{Item.598}%
-\contentsline {subsection}{Multivariable plots}{318}{Item.598}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{315}{Item.598}%
+\contentsline {paragraph}{Hypothesis test}{315}{Item.598}%
+\contentsline {paragraph}{Confidence interval}{316}{Item.598}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{316}{Item.598}%
+\contentsline {subsubsection}{Simulation-based hypothesis test}{316}{Item.599}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{317}{Item.600}%
+\contentsline {subsection}{Multivariable plots}{318}{Item.600}%
 \contentsline {subsection}{\numberline {12.5.4}Take-home messages}{320}{subsection.12.5.4}%
 \contentsline {subsection}{\numberline {12.5.5}Additional notes}{320}{subsection.12.5.5}%
 \contentsline {section}{\numberline {12.6}Module 12 Lab: Big Mac Index}{321}{section.12.6}%
 \contentsline {subsection}{\numberline {12.6.1}Learning outcomes}{321}{subsection.12.6.1}%
 \contentsline {subsection}{\numberline {12.6.2}Big Mac Index}{321}{subsection.12.6.2}%
 \contentsline {subsubsection}{Conditions for the least squares line}{321}{subsection.12.6.2}%
-\contentsline {subsubsection}{Ask a research question}{323}{Item.609}%
-\contentsline {subsubsection}{Summary statistics}{323}{Item.610}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{323}{Item.613}%
-\contentsline {subsubsection}{Hypothesis test}{323}{Item.613}%
-\contentsline {subsubsection}{Simulation-based confidence interval}{324}{Item.615}%
-\contentsline {subsubsection}{Communicate the results and answer the research question}{324}{Item.616}%
+\contentsline {subsubsection}{Ask a research question}{323}{Item.611}%
+\contentsline {subsubsection}{Summary statistics}{323}{Item.612}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{323}{Item.615}%
+\contentsline {subsubsection}{Hypothesis test}{323}{Item.615}%
+\contentsline {subsubsection}{Simulation-based confidence interval}{324}{Item.617}%
+\contentsline {subsubsection}{Communicate the results and answer the research question}{324}{Item.618}%
 \contentsline {chapter}{\numberline {13}Exploratory Data Analysis and Inference for a Quantitative Response with Paired Samples}{327}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Vocabulary Review and Key Topics}{327}{section.13.1}%
 \contentsline {subsection}{\numberline {13.1.1}Key topics}{327}{subsection.13.1.1}%
@@ -534,7 +535,7 @@
 \contentsline {subsection}{\numberline {13.3.3}Paired vs.~Independent Samples}{338}{subsection.13.3.3}%
 \contentsline {subsection}{\numberline {13.3.4}Tattoo Effect on Sweat Rate}{339}{subsection.13.3.4}%
 \contentsline {subsection}{\numberline {13.3.5}Exploring Paired Data}{339}{subsection.13.3.5}%
-\contentsline {subsubsection}{R Instructions}{339}{Item.627}%
+\contentsline {subsubsection}{R Instructions}{339}{Item.629}%
 \contentsline {subsection}{\numberline {13.3.6}Take home messages}{342}{subsection.13.3.6}%
 \contentsline {subsection}{\numberline {13.3.7}Additional notes}{342}{subsection.13.3.7}%
 \contentsline {section}{\numberline {13.4}Activity 23: Color Interference}{343}{section.13.4}%
@@ -542,29 +543,29 @@
 \contentsline {subsection}{\numberline {13.4.2}Terminology review}{343}{subsection.13.4.2}%
 \contentsline {subsection}{\numberline {13.4.3}Color Interference}{343}{subsection.13.4.3}%
 \contentsline {subsubsection}{Identify the scenario}{344}{subsection.13.4.3}%
-\contentsline {subsubsection}{Ask a research question}{344}{Item.638}%
-\contentsline {subsubsection}{Summarize and visualize the data}{345}{Item.638}%
-\contentsline {subsubsection}{Check theoretical conditions}{346}{Item.638}%
-\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{347}{Item.640}%
-\contentsline {subsection}{Simulation Hypothesis Test}{348}{Item.647}%
-\contentsline {subsection}{Simulation confidence interval}{349}{Item.647}%
+\contentsline {subsubsection}{Ask a research question}{344}{Item.640}%
+\contentsline {subsubsection}{Summarize and visualize the data}{345}{Item.640}%
+\contentsline {subsubsection}{Check theoretical conditions}{346}{Item.640}%
+\contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{347}{Item.642}%
+\contentsline {subsection}{Simulation Hypothesis Test}{348}{Item.649}%
+\contentsline {subsection}{Simulation confidence interval}{349}{Item.649}%
 \contentsline {subsection}{\numberline {13.4.4}Take-home messages}{350}{subsection.13.4.4}%
 \contentsline {subsection}{\numberline {13.4.5}Additional notes}{350}{subsection.13.4.5}%
 \contentsline {section}{\numberline {13.5}Module 13 Lab: Swearing}{351}{section.13.5}%
 \contentsline {subsection}{\numberline {13.5.1}Learning outcomes}{351}{subsection.13.5.1}%
 \contentsline {subsection}{\numberline {13.5.2}Swearing}{351}{subsection.13.5.2}%
-\contentsline {subsubsection}{R instructions}{352}{Item.653}%
-\contentsline {subsection}{Use statistical inferential methods to draw inferences from the data}{352}{Item.655}%
-\contentsline {subsection}{Hypothesis test}{352}{Item.656}%
-\contentsline {subsection}{Communicate the results and answer the research question}{353}{Item.657}%
-\contentsline {subsection}{Confidence interval}{353}{Item.659}%
+\contentsline {subsubsection}{R instructions}{352}{Item.655}%
+\contentsline {subsection}{Use statistical inferential methods to draw inferences from the data}{352}{Item.657}%
+\contentsline {subsection}{Hypothesis test}{352}{Item.658}%
+\contentsline {subsection}{Communicate the results and answer the research question}{353}{Item.659}%
+\contentsline {subsection}{Confidence interval}{353}{Item.661}%
 \contentsline {chapter}{\numberline {14}Unit 3 Review}{356}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Key Topics}{356}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Module Review}{356}{subsection.14.0.2}%
 \contentsline {section}{\numberline {14.1}Key Topics Exam 3}{357}{section.14.1}%
 \contentsline {subsection}{Descriptive statistics and study design}{357}{section.14.1}%
-\contentsline {subsection}{Hypothesis testing}{357}{Item.673}%
-\contentsline {subsection}{Confidence interval}{358}{Item.690}%
+\contentsline {subsection}{Hypothesis testing}{357}{Item.675}%
+\contentsline {subsection}{Confidence interval}{358}{Item.692}%
 \contentsline {section}{\numberline {14.2}Module 11 Review - Independent Samples}{359}{section.14.2}%
 \contentsline {section}{\numberline {14.3}Module 12 Review - Regression}{363}{section.14.3}%
 \contentsline {section}{\numberline {14.4}Module 13 Review - Paired Data}{370}{section.14.4}%
