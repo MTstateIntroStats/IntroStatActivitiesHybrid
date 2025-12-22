@@ -1,6 +1,8 @@
 ## Module 13 Review - Paired Data
 
 
+
+
 Students in an introductory statistics class were asked to participate in an experiment to answer this question.  Each student flipped a coin to determine which exercise to complete first.  If the coin landed on heads the student would do jumping jacks for 30 seconds and then measure their heart rate in beats per minute (bpm).  After a 2 minute break the student would do bicycle kicks for 30 seconds and then record their heart rate.  If the coin landed on tails the student would complete bicycle kicks first followed by jumping jacks using the same times as above. For this study we will use the order of subtraction jumping jacks – bicycle kicks. Which exercise, jumping jacks or bicycle kicks will raise your heart rate more? 
 
 
@@ -12,7 +14,7 @@ Students in an introductory statistics class were asked to participate in an exp
 
 The following code created the boxplot of differences. 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 	
 1.  What is the study design (observational or randomized experiment)?
@@ -51,7 +53,6 @@ We will start with simulation methods.
 
 
 ``` r
-set.seed(216)
 paired_test(data = heartrate$Diff,   #Vector of differences or data set with column for each group
             shift = -7.605,   #Shift needed for bootstrap hypothesis test
             as_extreme_as = 7.605,  #Observed statistic
@@ -62,7 +63,7 @@ paired_test(data = heartrate$Diff,   #Vector of differences or data set with col
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 9. Based on the p-value for this study, which of the following are true?	
 
@@ -90,7 +91,6 @@ Bootstrap CI simulation to create a 95% confidence interval
 
 
 ``` r
-set.seed(216)
 paired_bootstrap_CI(data = heartrate$Diff, #Enter vector of differences
                     number_repetitions = 10000, #Number of bootstrap samples for CI
                     confidence_level = 0.95,  #Confidence level in decimal form
@@ -99,7 +99,7 @@ paired_bootstrap_CI(data = heartrate$Diff, #Enter vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
  
 10.  Interpret the 95% confidence interval in context of the study.

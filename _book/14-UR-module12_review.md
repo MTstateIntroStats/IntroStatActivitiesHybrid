@@ -1,5 +1,7 @@
 ## Module 11 Review - Independent Samples
 
+
+
 The “social brain hypothesis,” or the “social intelligence hypothesis,” suggests that living in socially cohesive groups with differentiated relationships requires a higher cognitive load, in turn resulting in higher brain volume. There is evidence this hypothesis holds for primates and some other mammal groups, but it hasn’t been explored in birds, as most birds typically have temporary social groupings that lack clear relationships. However, woodpeckers have a wide range of clearly differing social relationships while also having the benefit of being physiologically and environmentally similar across species. Researchers want to know if the “social brain hypothesis” holds true for woodpeckers: is the average brain volume (in mm^3) smaller for woodpeckers that tend to be solitary compared to woodpeckers that tend to live in pairs or groups? For the purpose of this study, “solitary” birds are classified as those that only pair-bond to breed, and otherwise are solitary for more than half a year each year. “Group-living” birds are those that spend more than half the year in communal groups or flocks. Researchers examined 61 species of woodpeckers.  Use solitary - group living as the order of subtraction
 
 The summary of the data and boxplots are given below:
@@ -29,7 +31,7 @@ ggplot(aes(x = SocialCategory, y = Volume)) +
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 1. Write out the parameter of interest in context of the problem.  Use proper notation.
 
@@ -55,7 +57,6 @@ In the two_mean_test function, enter the response~explanatory variable names in 
 
 
 ``` r
-set.seed(216)
 two_mean_test(Volume~SocialCategory, data = woodpeckers,  #Variables and data
                     first_in_subtraction = "solitary", #First value in order of subtraction
                     number_repetitions = 10000,  #Number of simulations
@@ -65,7 +66,7 @@ two_mean_test(Volume~SocialCategory, data = woodpeckers,  #Variables and data
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 5.  Based on the p-value for this study, explain why each of the following are false.
 
@@ -90,7 +91,6 @@ To find the 99% confidence interval for the true difference in mean brain volume
 
 
 ``` r
-set.seed(216)
 two_mean_bootstrap_CI(Volume~SocialCategory, data = woodpeckers,  #Variables and data
                       first_in_subtraction = "solitary", #First value in order of subtraction
                       number_repetitions = 10000,  #Number of simulations
@@ -99,7 +99,7 @@ two_mean_bootstrap_CI(Volume~SocialCategory, data = woodpeckers,  #Variables and
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 6. Interpret the confidence interval in context of the problem.
 

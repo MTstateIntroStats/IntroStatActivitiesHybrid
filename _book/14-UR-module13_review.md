@@ -1,6 +1,7 @@
 ## Module 12 Review - Regression
 
 
+
 Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs.  Among the variables measured on these songs, we will look at the relationship between Valance and Danceability.  Valance measures the positive mood of a song; the higher the point value the more positive the mood of the song.  Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song.  Is there evidence that songs with a higher valance value are more danceable, on average?
 
 
@@ -17,7 +18,7 @@ ggplot(aes(x = Valance, y = Danceability))+  #Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 1.  Identify the explanatory variable and the response variable.
 
@@ -72,7 +73,6 @@ The following code creates the null distribution for this study.
 
 ``` r
 # Simulation-based test for slope
-set.seed(216)
 regression_test(Danceability~Valance, # response ~ explanatory
                data = songs, # name of data set
                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
@@ -83,7 +83,7 @@ regression_test(Danceability~Valance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 7. Report the value of the p-value.  Interpret this value in context of the problem.
 
@@ -98,7 +98,6 @@ We could also test correlation:
 
 ``` r
 # Simulation-based test for slope
-set.seed(216)
 regression_test(Danceability~Valance, # response ~ explanatory
                data = songs, # name of data set
                direction = "greater", # sign in alternative ("greater", "less", "two-sided")
@@ -109,14 +108,13 @@ regression_test(Danceability~Valance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 Now let's estimate the true regression slope for the relationship between valance and danceability of songs.
 
 
 ``` r
 # Bootstrap CI for slope
-set.seed(216)
 regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
                         data = songs, # name of data set
                         confidence_level = 0.99, # confidence level as decimal
@@ -126,7 +124,7 @@ regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 9.  Interpret the 99% confidence interval in context of the problem.
 
@@ -137,7 +135,6 @@ To create the confidence interval for correlation.
 
 ``` r
 # Bootstrap CI for correlation
-set.seed(216)
 regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
                         data = songs, # name of data set
                         confidence_level = 0.99, # confidence level as decimal
@@ -147,7 +144,7 @@ regression_bootstrap_CI(Danceability~Valance, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 10.  Interpret the 99% confidence interval for correlation in context of the problem.
 
@@ -167,7 +164,7 @@ When performing inference on a least squares line, the follow conditions are gen
 
 The scatterplot and the residual plots will be used to assess the conditions for approximating the data with the $t$-distribution.     
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-8-1} \end{center}
 11. Are the conditions met to use the $t$-distribution to approximate the sampling distribution of our test statistic?
 
 \vspace{1in}

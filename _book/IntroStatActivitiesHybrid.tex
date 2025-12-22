@@ -20403,7 +20403,7 @@ The summary of the data and boxplots are given below:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20452,7 +20452,6 @@ In the two\_mean\_test function, enter the response\textasciitilde explanatory v
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_mean\_test}\NormalTok{(Volume}\SpecialCharTok{\textasciitilde{}}\NormalTok{SocialCategory, }\AttributeTok{data =}\NormalTok{ woodpeckers,  }\CommentTok{\#Variables and data}
                     \AttributeTok{first\_in\_subtraction =} \StringTok{"solitary"}\NormalTok{, }\CommentTok{\#First value in order of subtraction}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\#Number of simulations}
@@ -20461,7 +20460,7 @@ In the two\_mean\_test function, enter the response\textasciitilde explanatory v
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20515,7 +20514,6 @@ To find the 99\% confidence interval for the true difference in mean brain volum
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{two\_mean\_bootstrap\_CI}\NormalTok{(Volume}\SpecialCharTok{\textasciitilde{}}\NormalTok{SocialCategory, }\AttributeTok{data =}\NormalTok{ woodpeckers,  }\CommentTok{\#Variables and data}
                       \AttributeTok{first\_in\_subtraction =} \StringTok{"solitary"}\NormalTok{, }\CommentTok{\#First value in order of subtraction}
                       \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\#Number of simulations}
@@ -20523,7 +20521,7 @@ To find the 99\% confidence interval for the true difference in mean brain volum
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module12_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20647,7 +20645,7 @@ Spotify created a list of the top songs around the world for the past 10 years a
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20741,7 +20739,6 @@ The following code creates the null distribution for this study.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Simulation{-}based test for slope}
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_test}\NormalTok{(Danceability}\SpecialCharTok{\textasciitilde{}}\NormalTok{Valance, }\CommentTok{\# response \textasciitilde{} explanatory}
                \AttributeTok{data =}\NormalTok{ songs, }\CommentTok{\# name of data set}
                \AttributeTok{direction =} \StringTok{"greater"}\NormalTok{, }\CommentTok{\# sign in alternative ("greater", "less", "two{-}sided")}
@@ -20751,7 +20748,7 @@ The following code creates the null distribution for this study.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20778,7 +20775,6 @@ We could also test correlation:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Simulation{-}based test for slope}
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_test}\NormalTok{(Danceability}\SpecialCharTok{\textasciitilde{}}\NormalTok{Valance, }\CommentTok{\# response \textasciitilde{} explanatory}
                \AttributeTok{data =}\NormalTok{ songs, }\CommentTok{\# name of data set}
                \AttributeTok{direction =} \StringTok{"greater"}\NormalTok{, }\CommentTok{\# sign in alternative ("greater", "less", "two{-}sided")}
@@ -20788,14 +20784,13 @@ We could also test correlation:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 Now let's estimate the true regression slope for the relationship between valance and danceability of songs.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Bootstrap CI for slope}
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_bootstrap\_CI}\NormalTok{(Danceability}\SpecialCharTok{\textasciitilde{}}\NormalTok{Valance, }\CommentTok{\# response \textasciitilde{} explanatory}
                         \AttributeTok{data =}\NormalTok{ songs, }\CommentTok{\# name of data set}
                         \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{, }\CommentTok{\# confidence level as decimal}
@@ -20804,7 +20799,7 @@ Now let's estimate the true regression slope for the relationship between valanc
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20821,7 +20816,6 @@ To create the confidence interval for correlation.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Bootstrap CI for correlation}
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{regression\_bootstrap\_CI}\NormalTok{(Danceability}\SpecialCharTok{\textasciitilde{}}\NormalTok{Valance, }\CommentTok{\# response \textasciitilde{} explanatory}
                         \AttributeTok{data =}\NormalTok{ songs, }\CommentTok{\# name of data set}
                         \AttributeTok{confidence\_level =} \FloatTok{0.99}\NormalTok{, }\CommentTok{\# confidence level as decimal}
@@ -20830,7 +20824,7 @@ To create the confidence interval for correlation.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20859,7 +20853,7 @@ When performing inference on a least squares line, the follow conditions are gen
 
 The scatterplot and the residual plots will be used to assess the conditions for approximating the data with the \(t\)-distribution.
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module13_review_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -20948,7 +20942,7 @@ Students in an introductory statistics class were asked to participate in an exp
 
 The following code created the boxplot of differences.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -21032,7 +21026,6 @@ We will start with simulation methods.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{paired\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff,   }\CommentTok{\#Vector of differences or data set with column for each group}
             \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{7.605}\NormalTok{,   }\CommentTok{\#Shift needed for bootstrap hypothesis test}
             \AttributeTok{as\_extreme\_as =} \FloatTok{7.605}\NormalTok{,  }\CommentTok{\#Observed statistic}
@@ -21042,7 +21035,7 @@ We will start with simulation methods.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -21098,7 +21091,6 @@ Bootstrap CI simulation to create a 95\% confidence interval
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff, }\CommentTok{\#Enter vector of differences}
                     \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#Number of bootstrap samples for CI}
                     \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{,  }\CommentTok{\#Confidence level in decimal form}
@@ -21106,7 +21098,7 @@ Bootstrap CI simulation to create a 95\% confidence interval
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
