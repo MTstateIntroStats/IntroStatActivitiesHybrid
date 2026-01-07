@@ -50,6 +50,7 @@ A study in the Academy of Management Journal [@porath2017] investigated how rude
     * units?
 
 \vspace{2mm}
+
 #### R instructions{-}
 
 * Download the R script file from Canvas and upload to the RStudio server
@@ -60,8 +61,6 @@ A study in the Academy of Management Journal [@porath2017] investigated how rude
 # Read in data set
 rude <- read.csv("https://math.montana.edu/courses/s216/data/rude.csv")
 ```
-
-\newpage
 
 To create a plot of the data and a table of summary statistics:
 
@@ -174,7 +173,6 @@ two_mean_test(number_of_uses ~ condition, #Enter the names of the variables
 
 \vspace{1.5in}
 
-\newpage
 
 4.  Report the p-value. Interpret the p-value in context of the problem.
 

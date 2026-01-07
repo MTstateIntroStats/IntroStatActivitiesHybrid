@@ -404,15 +404,15 @@
 \contentsline {subsection}{\numberline {11.3.2}Terminology review}{259}{subsection.11.3.2}%
 \contentsline {subsection}{\numberline {11.3.3}Behavior and Performance}{259}{subsection.11.3.3}%
 \contentsline {subsubsection}{R instructions}{259}{subsection.11.3.3}%
-\contentsline {subsubsection}{Quantitative variables review}{261}{subsection.11.3.3}%
-\contentsline {subsubsection}{Ask a research question}{262}{Item.542}%
-\contentsline {subsubsection}{Numerically Summarize the data}{262}{Item.542}%
+\contentsline {subsubsection}{Quantitative variables review}{260}{subsection.11.3.3}%
+\contentsline {subsubsection}{Ask a research question}{261}{Item.542}%
+\contentsline {subsubsection}{Numerically Summarize the data}{261}{Item.542}%
 \contentsline {subsubsection}{Use statistical inferential methods to draw inferences from the data}{262}{Item.543}%
 \contentsline {paragraph}{Hypothesis test}{262}{Item.543}%
 \contentsline {subsubsection}{Notes on the null distribution}{263}{Item.543}%
-\contentsline {paragraph}{Confidence interval}{264}{Item.544}%
-\contentsline {subsubsection}{Notes on the bootstrap distribution}{265}{Item.545}%
-\contentsline {subsection}{\numberline {11.3.4}Take-home messages}{265}{subsection.11.3.4}%
+\contentsline {paragraph}{Confidence interval}{263}{Item.544}%
+\contentsline {subsubsection}{Notes on the bootstrap distribution}{264}{Item.545}%
+\contentsline {subsection}{\numberline {11.3.4}Take-home messages}{264}{subsection.11.3.4}%
 \contentsline {subsection}{\numberline {11.3.5}Additional notes}{265}{subsection.11.3.5}%
 \contentsline {section}{\numberline {11.4}Activity 18: Moon Phases and Virtual Reality}{266}{section.11.4}%
 \contentsline {subsection}{\numberline {11.4.1}Learning outcomes}{266}{subsection.11.4.1}%
