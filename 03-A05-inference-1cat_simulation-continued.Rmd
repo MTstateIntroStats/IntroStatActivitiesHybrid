@@ -83,7 +83,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 \vspace{1.25in}
 
-2. Circle the observed statistic (value from question 1) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
+2. Circle the observed statistic (value calculated in Activity 4) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
 
 \vspace{0.3in}
 
