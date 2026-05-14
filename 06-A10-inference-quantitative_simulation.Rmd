@@ -13,7 +13,7 @@ in words and using appropriate statistical symbols.
 
 ### Terminology review
 
-In today's activity, we will use simulation-based and theory-based methods to analyze a single quantitative variable.  Some terms covered in this activity are:
+In today's activity, we will use simulation-based to analyze a single quantitative variable.  Some terms covered in this activity are:
 
 * Null hypothesis
 
