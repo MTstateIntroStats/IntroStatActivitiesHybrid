@@ -322,7 +322,7 @@ ___________________.
 
 * Simulate many samples assuming $H_0: \mu = \mu_0$
 
-    * Shift the data by the difference between $\mu_0$ and $\bar{x}$
+    * Shift the data by the difference between $\mu_0$ and $\bar{y}$
 
     * Sample with replacement $n$ times from the shifted data
 
@@ -330,7 +330,7 @@ ___________________.
 
     * Repeat 10000 times (simulations) to create the null distribution
 
-    * Find the proportion of simulations at least as extreme as $\bar{x}$
+    * Find the proportion of simulations at least as extreme as $\bar{y}$
 
 ### Optional Notes: Video Example (Video 17.2) {-}
 
@@ -370,7 +370,7 @@ pb %>%
 ```
 Find the difference:
 
-$\mu_0 - \bar{x} =$
+$\mu_0 - \bar{y} =$
 
 
 ``` r

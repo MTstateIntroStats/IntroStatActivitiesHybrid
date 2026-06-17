@@ -133,6 +133,18 @@ two_proportion_bootstrap_CI(formula = response~explanatory,
 
 9.  Write a paragraph summarizing the results of the study.  **Upload your group's paragraph to Gradescope.** Be sure to describe:
 
+* Introduction statement
+
+    * Research question
+    
+    * Observational units
+    
+    * Variables (type)
+    
+    * Sampling method
+    
+    * Study Design
+
 * Summary statistic and interpretation
 
     * Summary measure (in context)

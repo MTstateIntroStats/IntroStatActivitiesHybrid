@@ -51,11 +51,11 @@ c. Alternative Hypothesis:
    
 d. Use the R script file to find the mean and standard deviation of the balance time.
 
-\vspace{0.8in}
+\vspace{0.3in}
 
 e. Interpret the value of the summary statistic in context of the problem:
     
-\vspace{0.3in}
+\vspace{0.5in}
 
 f. What type of graph(s) would be appropriate for this research question?
 
@@ -92,7 +92,7 @@ m. Use the provided R script file to find a 95\% confidence interval.
 n. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.7in}
 
-o. Regardless to your answer in part f, calculate the standardized statistic.
+o. Regardless to your answer in part h, calculate the standardized statistic.
 \vspace{0.4in}
 
 p. Interpret the value of the standardized statistic in context of the problem.

@@ -55,11 +55,15 @@ Scientists have devised a new way to measure a person’s level of arsenic poiso
 
 * Enter the name of the data set (see the environment tab) for `datasetname` in the R script file in line 11. 
 
-* Enter the name of the variable in lines 13 and 15
+* Run lines 1--8 to load the data
+
+#### Exploratory Data Analysis {-}
+
+* Enter the name of the variable in lines 14 and 16
 
 * Write a title for the plot between the quotations and an x-axis label
 
-* Highlight and run lines 1--21 to load the data and create a plot of the data. 
+* Highlight and run lines 13--22 to load the data and create a plot of the data. 
 
 
 ``` r
@@ -80,7 +84,7 @@ water %>% # Data set piped into...
 
 \vspace{0.8in}
 
-6.  What is the value of $\bar{x}$?  What is the sample size?
+6.  What is the value of $\bar{y}$?  What is the sample size?
 \vspace{0.25in}
 
 7. How far, on average, is each arsenic level from the mean arsenic level?  What is the appropriate notation for this value?
@@ -123,7 +127,7 @@ one_mean_test(water$variable,   #Enter the name of the variable
 
 \vspace{0.5in}
 
-11. Do you expect the 98\% confidence interval to contain the null value of 0.150?  Explain.
+11. Do you expect the 90\% confidence interval to contain the null value of 0.150?  Explain.
 
 \vspace{0.8in}
 
@@ -131,7 +135,7 @@ one_mean_test(water$variable,   #Enter the name of the variable
 
 We will use the `one_mean_CI()` function in R (in the `catstats` package) to simulate a bootstrap distribution of sample means and calculate a confidence interval. 
 
-12. Using bootstrapping and the provided R script file, find a 98\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 98\% confidence interval.   
+12. Using bootstrapping and the provided R script file, find a 90\% confidence interval. Fill in the missing values/numbers in the `one_mean_CI()` function to create the 90\% confidence interval.   
 
 
 ``` r
@@ -140,13 +144,23 @@ one_mean_CI(data = water$variable, # Enter vector of differences
             number_repetitions = 10000, # Number of bootstrap samples for CI
             confidence_level = xx)  # Confidence level in decimal form
 ```
-Report the 98\% confidence interval in interval notation.
+Report the 90\% confidence interval in interval notation.
 
 \vspace{0.3in}
 
 \newpage
 
 13. Write a paragraph summarizing the results of the study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
+
+* Introduction statement
+
+    * Research question
+    
+    * Observational units
+    
+    * Variable (type)
+    
+    * Sampling method
 
 * Summary statistic and interpretation
 
@@ -171,6 +185,8 @@ Report the 98\% confidence interval in interval notation.
     * Parameter of interest
     
     * Calculated interval
+    
+    * Order of subtraction when comparing two groups
 
 * Conclusion (written to answer the research question)
 

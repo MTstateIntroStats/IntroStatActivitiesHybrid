@@ -27,7 +27,7 @@ To review these concepts, see Chapters 11 and 17 in the textbook.
 
 ### Body Temperature
 
-It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of $98.6^{\circ}$F??
+It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of $98.6^{\circ}$F?
 
 \vspace{2mm}
 * Observational units:
@@ -95,11 +95,11 @@ bodytemp %>%
 
 \vspace{0.3in}
 
-In general, the sampling distribution for a sample mean, $\bar{x}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
+In general, the sampling distribution for a sample mean, $\bar{y}$, based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a Normal distribution when certain conditions are met.
 
 \newpage
 
-Conditions for the sampling distribution of $\bar{x}$ to follow an approximate Normal distribution:
+Conditions for the sampling distribution of $\bar{y}$ to follow an approximate Normal distribution:
 
 * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
@@ -138,10 +138,10 @@ As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and 
 
 To find the standardized statistic for the mean we will use the following formula:
 
-$$T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},$$
+$$T = \frac{\bar{y} - \mu_0}{SE(\bar{y})},$$
 where the standard error of the sample mean is:
 
-$$SE(\bar{x})=\frac{s}{\sqrt{n}}.$$
+$$SE(\bar{y})=\frac{s}{\sqrt{n}}.$$
 
 **Calculate the standard error of the sample mean.**
 
@@ -190,7 +190,7 @@ To find the p-value for the theory-based test in R:
 
 Next we will calculate a theory-based confidence interval.  To calculate a theory-based confidence interval for the a single mean, use the following formula:
 
-$$\bar{x}\pm t^* \times SE(\bar{x}).$$
+$$\bar{y}\pm t^* \times SE(\bar{y}).$$
 
 
 We will need to find the $t^*$ multiplier using the function `qt()`. 

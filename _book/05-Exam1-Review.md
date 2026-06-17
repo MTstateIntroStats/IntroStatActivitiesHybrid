@@ -37,7 +37,7 @@ Use the provided data set from the Islands [@islands] (Exam1ReviewData.csv) and 
 
 \vspace{0.1in}
 
-3. What type of bias may be present in this study? Explain.
+3. What type of sampling bias may be present in this study? Explain.
 
 \vspace{0.6in}
 
@@ -51,7 +51,26 @@ a. What is the name of the variable to be assessed in this research question?
     What type of variable (categorical or quantitative) is the variable you identified?
 \vspace{0.3in}
 
-b. Use the R script file to get the counts for each level of the variable. Fill in the following table with the variable name, levels of the variable, and counts using the values from the R output.
+b. Parameter of Interest:
+\vspace{0.5in}
+    
+c. Null Hypothesis:
+        
+    Notation:
+\vspace{0.3in}
+    
+    Words:
+\vspace{0.5in}
+    
+d. Alternative Hypothesis:
+    
+    Notation:
+\vspace{0.3in}
+    
+    Words:
+\vspace{0.5in}
+
+e. Use the R script file to get the counts for each level of the variable. Fill in the following table with the variable name, levels of the variable, and counts using the values from the R output.
 
 \begingroup
 \setlength{\tabcolsep}{14pt}
@@ -72,21 +91,20 @@ b. Use the R script file to get the counts for each level of the variable. Fill 
 \endgroup
 
 
-c. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
+f. Calculate the value of the summary statistic to answer the research question. Give appropriate notation.
 
 \vspace{0.5in}
 
-d. What type of graph(s) would be appropriate for this research question?
+g. What type of graph(s) would be appropriate for this research question?
 
 \vspace{0.3in}
 
-e. Using the provided R file create a graph of the data. Sketch the graph below:
+h. Using the provided R file create a graph of the data. Sketch the graph below:
 
 \vspace{2in}
 
-\newpage
 
-f. Assess if the following conditions are met:
+i. Assess if the following conditions are met:
 
     Independence (needed for both simulation and theory-based methods):
 \vspace{0.5in}
@@ -94,40 +112,40 @@ f. Assess if the following conditions are met:
     Success-Failure (must be met to use theory-based methods):
 \vspace{0.6in}
     
-g. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
+j. Use the provided R script file to find the simulation p-value to assess the research question.  Report the p-value.
 \vspace{0.2in}
        
-h.  Interpret the p-value in the context of the problem.
+k.  Interpret the p-value in the context of the problem.
 \vspace{0.8in}
         
-i.  Write a conclusion to the research question based on the p-value.
+l.  Write a conclusion to the research question based on the p-value.
 \vspace{0.8in}
         
-j. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
+m. Using a significance level of $\alpha = 0.05$, what statistical decision will you make about the null hypothesis?
 \vspace{0.3in}
-    
-k. Use the provided R script file to find a 95\% confidence interval.
+
+n. Use the provided R script file to find a 95\% confidence interval.
 \vspace{0.4in}
         
-l. Interpret the 95\% confidence interval in context of the problem.
+o. Interpret the 95\% confidence interval in context of the problem.
 \vspace{0.8in}
 
-m. Regardless to your answer in part f, calculate the standardized statistic.
+p. Regardless to your answer in part i, calculate the standardized statistic.
 \vspace{0.8in}
 
-n. Interpret the value of the standardized statistic in context of the problem.
+q. Interpret the value of the standardized statistic in context of the problem.
 \vspace{0.8in}
 
-o. Use the provided R script file to find the theory-based p-value. 
+r. Use the provided R script file to find the theory-based p-value. 
 \vspace{0.3in}
 
-p. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
+s. Use the provided R script file to find the appropriate z* multiplier and calculate the theory-based confidence interval. 
 \vspace{0.8in}
 
-q. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
+t. Does the theory-based p-value and CI match those found using simulation methods?  Explain why or why not.
 \vspace{0.8in}
 
-r. To what group of observational units do the results apply?
+u. To what group of observational units do the results apply?
 \vspace{0.8in}
 
 \newpage

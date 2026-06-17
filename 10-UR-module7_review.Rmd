@@ -116,6 +116,44 @@ Types of Errors:
 
 10. Interpret this error in context of the study.
 
+\vspace{0.5in}
 
+#### Errors and Power {-}
+
+Women are considered anemic if they have a hemoglobin level of less than 12.0 g/dl. An iron supplement manufacturer reports that they can increase the level of hemoglobin by 1.5 g/dl. If the supplement does not work, there will be no change in the hemoglobin level.  The researchers believe the mean change in hemoglobin level for all women is 2 g/dl from the true mean change in hemoglobin level, on average.  The manufacturer plans to use a significance level of 0.01 and hold the probability of concluding that the supplement does not increase the hemoglobin level, when really it does to 10%.  
+
+a.  What values would we enter into the power applet to find the minimum sample size needed?
+
+* Null Hypothesis Value $\mu_0$:
+
+\vspace{0.1in}
+
+* Alternative Hypothesis direction:
+
+\vspace{0.1in}
+
+* True value of $\mu$:
+
+\vspace{0.1in}
+	
+* Type I Error $\alpha$:
+
+\vspace{0.1in}
+
+* Population Std. Dev. $\sigma$:
+
+b.  What is the desired power of the test?
+
+\vspace{2.5in}
+
+c.  The results from the power applet indicate a minimum sample size of 23 would be needed.  If the manufacturer used a sample size of 40, would the power of the test increase or decrease?
+
+\vspace{0.2in}
+
+* What if a significance level of 0.05 was used?
+
+\vspace{0.2in}
+
+d.  Interpret the power of the test in context of the study.
 \newpage
 

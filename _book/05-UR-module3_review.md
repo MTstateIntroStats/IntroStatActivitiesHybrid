@@ -8,7 +8,6 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 \vspace{0.8in}
 
-
 2.	Write the null hypothesis in words and notation in context of the problem.
 
 \vspace{1in}
@@ -24,7 +23,25 @@ A recent study examined hearing loss data for 1753 U.S. teenagers. In this sampl
 
 5.  Calculate the summary statistic.  Use proper notation.
 
-\vspace{0.3in}
+\vspace{0.4in}
+
+The following is a plot of the data.
+
+
+``` r
+hearing %>% # Data set piped into...
+    ggplot(aes(x = hearing_loss)) +   # This specifies the variable
+    geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
+    labs(title = "Relative Frequency Bar Plot of Hearing Loss Status \n for US Teens",  
+       # Give your plot a title
+       x = "whether teen has hearing loss",   # Label the x axis
+       y = "Relative Frequency")  # Label the y axis
+```
+
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
 
 6. What values should be entered for each of the following into the one proportion test to create 10000 simulations?
 
@@ -61,15 +78,13 @@ one_proportion_test(probability_success = 0.2, #Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 7.  Interpret the p-value in context of the problem.
 
 \vspace{1in}
 
 8.	How much evidence does the data provide against the null hypothesis?
-
-
 
 
 \begin{center}\includegraphics[width=0.9\linewidth]{images/soe_gradient_gray} \end{center}
@@ -111,7 +126,7 @@ one_proportion_bootstrap_CI(sample_size = 1753, # Sample size
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{05-UR-module3_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 12.  Explain how to use cards to create one bootstrap sample.
 

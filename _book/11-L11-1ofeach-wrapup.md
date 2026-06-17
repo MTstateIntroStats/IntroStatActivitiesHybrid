@@ -18,7 +18,7 @@
 
 ### Dinosaurs
 
-The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, is subject to stress. Intriguingly, these dinosaurs have protrusions (rugosity) at the top and sides of their spinal vertebrae, potentially for extra support. These protrusions do not seem to be present in smaller carnivorous dinosaurs. MSU paleontologists hypothesize that the presence of the protrusions is associated with the size of the two-legged carnivorous dinosaurs, potentially allowing them to grow big [@wilson2016]. To test this hypothesis, the researchers collected multiple scientific papers describing the fossil bones of 57 two-legged carnivorous dinosaur species. Then, they checked for the presence or absence of these rugose protrusions from photographs published in the papers and collected measurements of the length in centimeters of the femur (or thigh) bone. Femur length is a proxy for dinosaur size. Is there evidence that the presence of the protusions result in larger dinosaurs?  Use present $-$ absent as the order of subtraction.
+The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, is subject to stress. Intriguingly, these dinosaurs have protrusions (rugosity) at the top and sides of their spinal vertebrae, potentially for extra support. These protrusions do not seem to be present in smaller carnivorous dinosaurs. MSU paleontologists hypothesize that the presence of the protrusions is associated with the size of the two-legged carnivorous dinosaurs, potentially allowing them to grow big [@wilson2016]. To test this hypothesis, the researchers collected multiple scientific papers describing the fossil bones of 57 two-legged carnivorous dinosaur species. Then, they checked for the presence or absence of these rugose protrusions from photographs published in the papers and collected measurements of the length in centimeters of the femur (or thigh) bone. Femur length is a proxy for dinosaur size. Is there evidence that the presence of the protrusions result in larger dinosaurs?  Use present $-$ absent as the order of subtraction.
 
 \vspace{2mm}
 * Observational units:
@@ -49,27 +49,40 @@ The backbone of heavy, two-legged, carnivorous dinosaurs, such as the *T. rex*, 
 
 * Upload the csv file, `dinosaur.csv`. 
 
-* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 9 and the name of the explanatory and response variable in line 11. 
+* Enter the name of the data set (see the environment tab) for datasetname in the R script file in line 8 
 
-* Highlight and run lines 1--16 to load the data and create a plot of the data. 
+* Highlight and run lines 1--8 to load the data.
 
 
 ``` r
 dinos <- read.csv("datasetname.csv")
+```
+
+#### Plot of the data {-}
+
+* To create a plot of the data, enter the name of the explanatory and response variable in line 14. 
+
+* Add a title and axes labels
+
+* Highlight and run lines 13--18
+
+
+``` r
 dinos %>%
   ggplot(aes(y = response, x = explanatory)) +
   geom_boxplot() +
-  labs(title = "Don't forget to title your plot!",
-       x = "Label the x-axis",
-       y = "Label the y-axis (Don't forget units!)")
+  labs(title = "Don't forget to title your plot!", #Title should include type of plot, 
+       #observational units, and variables plotted
+       x = "Label the x-axis", #add an x-axis label
+       y = "Label the y-axis (Don't forget units!)") #add a y-axis label
 ```
 
-3. Based on the plots, does there appear to be some evidence in favor of the alternative hypothesis?  How do you know?
-\vspace{0.4in}
 
-* Enter the name of the explanatory variable for `explanatory` and the response variable for `response` in line 21.  
+#### Summary statistics {-}
 
-* Run lines 20--21 to find the summary statistics.
+* Enter the name of the explanatory variable for `explanatory` and the response variable for `response` in line 23.  
+
+* Run lines 22--23 to find the summary statistics.
 
 
 ``` r
@@ -78,12 +91,12 @@ dinos %>%
 ```
 
 
-4.  Calculate the summary statistic for the research question. Use proper notation.
+3.  Calculate the summary statistic for the research question. Use proper notation.
 \vspace{0.3in}
 
 ### Use statistical inferential methods to draw inferences from the data {-}
 
-5.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
+4.  Using the provided graphs and summary statistics, determine if both theory-based methods and simulation methods could be used to analyze the data.  Explain your reasoning.
 
 \vspace{0.8in}
 
@@ -93,11 +106,11 @@ Remember that the null distribution is created based on the assumption the null 
 
 We will use the `two_mean_test()` function in R (in the `catstats` package) to simulate the null distribution of differences in sample means and compute a p-value. 
 
-6.  Simulate a null distribution and compute the p-value. 
+5.  Simulate a null distribution and compute the p-value. 
 
 * Using the R script file for this lab, enter the correct values in place of the `xx`'s to produce the null distribution with 10000 simulations.  
 
-* Highlight and run lines 25--30.  
+* Highlight and run lines 28--33.  
 
 
 ``` r
@@ -111,11 +124,11 @@ two_mean_test(response~explanatory, #Enter the names of the variables
 
 ### Communicate the results and answer the research question {-}
 
-7.  Report the p-value. Based off of this p-value and a 1% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?
+6.  Report the p-value. Based off of this p-value and a 1% significance level, what decision would you make about the null hypothesis?  What potential error might you be making based on that decision?
 
 \vspace{0.5in}
 
-8. Do you expect the 98\% confidence interval to contain the null value of zero?  Explain.
+7. Do you expect the 98\% confidence interval to contain the null value of zero?  Explain.
 
 \vspace{0.8in}
 
@@ -123,11 +136,11 @@ two_mean_test(response~explanatory, #Enter the names of the variables
 
 We will use the `two_mean_bootstrap_CI()` function in R (in the `catstats` package) to simulate the bootstrap distribution of sample differences in means and calculate a confidence interval. 
 
-9. Using bootstrapping and the provided R script file, find a 98\% confidence interval. 
+8. Using bootstrapping and the provided R script file, find a 98\% confidence interval. 
 
 * Fill in the missing values/numbers in the `two_mean_bootstrap_CI()` function to create the 98\% confidence interval.  
 
-* Highlight and run lines 34--38. 
+* Highlight and run lines 37--41. 
 
 
 ``` r
@@ -142,8 +155,20 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
 
 \vspace{0.2in}
 
-10.  Write a paragraph summarizing the results of this study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
+9.  Write a paragraph summarizing the results of this study.  **Upload a copy of your group's paragraph to Gradescope.** Be sure to describe:
 
+* Introduction statement
+
+    * Research question
+    
+    * Observational units
+    
+    * Variables (roll & type)
+    
+    * Sampling method
+    
+    * Study Design
+    
 * Summary statistic and interpretation
 
     * Summary measure (in context)
@@ -191,6 +216,6 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
 
 \newpage
 
-Paragraph:
+Paragraph (continued):
 
 \newpage

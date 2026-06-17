@@ -8,7 +8,7 @@ Review the Golden Ticket posted in the resources at the end of the coursepack fo
 
 Module 11 will cover exploratory data analysis and both simulation-based and theory-based methods of inference for a quantitative response variable with independent samples. The **summary measure** for a quantitative response with independent samples is a **difference in means**. 
 
-* Notation for a difference in sample means: $\bar{x}_1 - \bar{x}_2$, where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
+* Notation for a difference in sample means: $\bar{y}_1 - \bar{y}_2$, where 1 represents the 1st group of the explanatory variable and 2 represents the 2nd group
 
 * Notation for a difference in population means: $\mu_1 - \mu_2$
 
@@ -106,9 +106,9 @@ $$H_A: \mu_1 - \mu_2 \left\{
 
 #### Theory-based inference for a difference in means {-}
 
-* **Conditions for the sampling distribution of $\bar{x}_1 - \bar{x}_2$ to follow an approximate normal distribution**:
+* **Conditions for the sampling distribution of $\bar{y}_1 - \bar{y}_2$ to follow an approximate normal distribution**:
 
-    * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample and there is independence between groups. (*Remember*: This also must be true to use simulation methods!)
+    * **Independence**: the sample’s observations are independent. (*Remember*: This also must be true to use simulation methods!)
 
      * **Normality Condition**: either the sample observations come from a normally distributed population or we have a large enough sample size.  _When we have two samples, we need to check this condition for each group!_ To check this condition, use the following rules of thumb (for both $n_1$ and $n_2$):
      
@@ -119,20 +119,20 @@ $$H_A: \mu_1 - \mu_2 \left\{
          - $n \ge 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 * **Standard error of the sample difference in means**:
-$$SE(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
+$$SE(\bar{y}_1 - \bar{y}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$
 
 * **Standardized sample difference in means**:
-$$T = \frac{\bar{x}_1-\bar{x}_2-0}{SE(\bar{x}_1 - \bar{x}_2)}$$
+$$T = \frac{\bar{y}_1-\bar{y}_2-0}{SE(\bar{y}_1 - \bar{y}_2)}$$
     * Use the `pt` function in R to find a theory-based p-value for a hypothesis test involving a difference in means by finding the area under a $t$-distribution with $\min(n_1-1, n_2-1)$ (the minimum sample size minus 1) degrees of freedom where $T$ is as or more extreme as the value observed (in the direction of $H_A$).
 
 * **Margin of error**: half the width of the confidence interval. For a difference in means, the margin of error is:
-$$ME = t^* \times SE(\bar{x}_1 - \bar{x}_2)$$
+$$ME = t^* \times SE(\bar{y}_1 - \bar{y}_2)$$
 where $t^*$ is the **multiplier**, corresponding to the desired confidence level found from a $t$-distribution with $\min(n_1-1, n_2-1)$ degrees of freedom. 
 
     * Use the `qt` function in R to find the $t^*$ multiplier with $\min(n_1-1, n_2-1)$ degrees of freedom.
 
     * To find the endpoints of a confidence interval, add and subtract the margin of error to the sample statistic. The confidence interval for a population difference in means is:
-    $$\bar{x}_1 - \bar{x}_2 \pm ME$$
+    $$\bar{y}_1 - \bar{y}_2 \pm ME$$
 
 
 

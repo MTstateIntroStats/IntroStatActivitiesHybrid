@@ -37,8 +37,39 @@ In class today, we will revisit the study on infants as described below.
 
 A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intended to check young kids' feelings about helpful and non-helpful behavior. Non-verbal infants ages 6 to 10 months were shown short videos with different shapes either helping or hindering the climber. As a class we will watch this short video to see how the experiment was run: https://youtu.be/anCaGBsBOxM. Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy? In the study, of the 16 infants age 6 to 10 months, 14 chose the *helper* toy and 2 chose the *hinderer* toy.
 
+#### Sampling distribution of the sample proportion. {-}
 
-Today, we will use the computer to simulate a null distribution of 10000 different samples of 16 infants, plotting the proportion who chose the helper in each sample, based on the assumption that the true proportion of infants who choose the helper is 0.5 (or that the null hypothesis is true).  
+The sampling distribution is a distribution of a statistic from all possible samples of size $n$ from the population.  The mean of the sampling distribution should be close to the parameter value and the standard deviation of the sampling distribution will estimate the variability of the statistic from sample to sample.  
+
+To create a sampling distribution of the statistic, we would take infinite samples of size $n$ from the population and plot the proportion from each sample.  To illustrate this idea we will revisit the Becenti address looking at the mean word length.  
+
+
+```
+#>   min Q1 median Q3 max     mean       sd   n missing
+#> 1   1  2      3  5  14 3.952646 2.300228 359       0
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-2-1} \end{center}
+Note that the mean of this small population ($N=359$) is 3.9526.  Typically, we don't have such small population sizes so we need a way to simulate the sampling distribution of the statistic to estimate the sample to sample variability.  Repeat samples of size 10 are taken from the population of words and the sample mean of each sample is plotted below.
+
+
+```
+#>   min  Q1 median  Q3 max     mean        sd   n missing
+#> 1 2.1 3.3    3.9 4.4 6.7 3.934557 0.7954711 305       0
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+The mean of this simulated distribution is 3.934557, which is close to the true mean from the population. The standard deviation is 0.7954711 - this measures how far each statistic is from the true mean word length, on average.  Later in the semester, we will learn how this variability is affected by the sample size.
+
+
+Today, we will use the computer to simulate the sampling distribution of the sample proportion by creating a null distribution of 10000 different samples of 16 infants, plotting the proportion who will choose the helper in each sample, based on the assumption that the true proportion of infants who choose the helper is 0.5 (or that the null hypothesis is true).  
+
+\newpage
 
 To use the computer simulation, we will need to enter the 
 
@@ -66,10 +97,11 @@ To use the computer simulation, we will need to enter the
 \vspace{.2in}
 * Direction (`"greater"`, `"less"`, or `"two-sided"`):
 
-We will use the `one_proportion_test()` function in R (in the `catstats` package) to simulate the null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 3 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.
+The following shows one possible distribution of simulated sample proportions assuming the null hypothesis, true proportion of non-verbal infants aged 6 to 10 months that will choose the helper toy is 0.5, is true.
 
 
 ``` r
+set.seed(100)
 one_proportion_test(probability_success = 0.5, # Null hypothesis value
           sample_size = 16, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -80,13 +112,31 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 ### Notes on the null distribution {-}
 
-\vspace{1.25in}
+\newpage
 
-2. Circle the observed statistic (value from question 1) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
+Using R, we will use the `one_proportion_test()` function (in the `catstats` package) to simulate another null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 1 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.  *Note that the value for the mean, standard deviation, and p-value slightly changed.*
+
+
+``` r
+set.seed(216)
+one_proportion_test(probability_success = 0.5, # Null hypothesis value
+          sample_size = 16, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 0.875, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-5-1} \end{center}
+For the remainder of the questions in this activity use this 2nd created simulated null distribution.
+
+2. Circle the observed statistic (value calculated in Activity 4) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
 
 \vspace{0.3in}
 
@@ -97,6 +147,8 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 4.  Using the simulation, what is the proportion of simulated samples that generated a sample proportion at the observed statistic or greater, if the true proportion of infants who choose the helper is 0.5? *Hint*: Look under the simulation.
 
 \vspace{0.3in}
+
+\newpage
 
 ### Notes on the p-value {-}
 
@@ -133,59 +185,6 @@ When we write a conclusion we answer the research question by stating how much e
 
 \vspace{0.5in}
 
-#### Impacts on the p-value {-}
-
-Let's see how each of the following with change the p-value.
-
-In another sample of 16 infants, only 10 selected the helper toy.  The null distribution created below reflects this new sample.
-
-
-``` r
-one_proportion_test(probability_success = 0.5, # Null hypothesis value
-          sample_size = 16, # Enter sample size
-          number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = 0.625, # Observed statistic
-          direction = "greater", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-4-1} \end{center}
-6.  Note that this statistic ($\frac{10}{16} = 0.625$) is closer to the null value of 0.5 than the original statistic ($\frac{14}{16}=0.875$). Is the p-value for this new study larger or smaller than for the original statistic?
-
-\vspace{0.3in}
-
-In still another study, the researchers took a sample of 32 infants and from this study found that 28 selected the helper toy ($\hat{p} = \frac{28}{32}= 0.875$).  The null distribution created below reflects this new study.
-
-
-``` r
-one_proportion_test(probability_success = 0.5, # Null hypothesis value
-          sample_size = 32, # Enter sample size
-          number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = 0.875, # Observed statistic
-          direction = "greater", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-5-1} \end{center}
-7.  Is the p-value found for the larger sample size ($n=32$) larger or smaller than the p-value found with the smaller sample size ($n=16$).
-
-\vspace{0.3in}
-
-8.  Summarize how each of the following affected the p-value: 
-
-a) Using a larger sample size.
-
-\vspace{0.4in}
-
-b) Using a sample statistic closer to the null value.
-
-\vspace{0.4in}
-
-
 ### Take-home messages
 
 1. The null distribution is created based on the assumption the null hypothesis is true. We compare the sample statistic to the distribution to find the likelihood of observing this statistic.
@@ -194,11 +193,10 @@ b) Using a sample statistic closer to the null value.
 
 3. The smaller the p-value of the test, the more evidence there is **against** the null hypothesis.
 
-4.  The larger the sample size, the smaller the sample to sample variability.  This will result in a larger standardized statistic and more evidence against the null hypothesis.
-
-5.  The farther the statistic is from the null value, the larger the standardized statistic.  This will result in a smaller p-value and more evidence against the null hypothesis.
 
 ### Additional notes
+
+Activities 4--6 cover the material in Module 3.  For more practice with simulation hypothesis testing of a single categorical variable use the Module 3 Review worksheet in the Unit 1 Review Materials (pgs. 105--108).
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 

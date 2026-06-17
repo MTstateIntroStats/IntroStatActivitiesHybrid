@@ -1,0 +1,70 @@
+## Module 8 Review 
+
+1. Two widely used antidepressants for major depressive disorder (MDD) are escitalopram and sertraline. In this study, 211 people diagnosed with MDD were recruited to participate in an eight-week trial. They were randomly assigned to receive either escitalopram or sertraline, without the inclusion of a placebo. At the end of the eight weeks, participants were evaluated using the Clinical Global Impression – Improvement scale (CGI-I). The CGI-I ranges from 1 to 7, where a score of 1-2 indicates there has been some level of improvement in the participant’s mental health. The results of the study are reported in the table and plot below.  Is there evidence of a difference in likelihood of some level of improvement for people diagnosed with MDD between those taking escitalopram and those taking sertraline? Use Escitalopram – Sertraline as the order of subtraction.
+
+|               | Escitalopram | Sertraline |  Total   |
+|---------------|--------------|------------|----------|
+| Improvement   |      75      |     83     |   158    |   
+| No Improvement|      29      |     24     |    53    |  
+| Total         |     104      |    107     |   211    | 
+
+```{r, echo=FALSE, out.width="70%"}
+depression <- read.csv("data/depression.csv")
+depression %>%
+  ggplot(aes(x = drug, fill = score)) +
+  geom_bar(stat = "count", position = "fill") +
+  labs(title = "Segmented Bar Plot of Type of Drug by CGI-I Score 
+       for People with MDD",
+       y = "Relative Frequency",
+       x = "Type of Drug",
+       fill = "Whether they showed improvement") +
+  scale_fill_grey()
+```
+
+a.	Identify the role (explanatory or response) and the type (categorical or quantitative) for the variables in this study.
+
+\vspace{0.6in}
+
+b.	Identify the study design (observational study or randomized experiment) for this study.
+
+\vspace{0.4in}
+
+c.	Identify the sampling method for this study.
+
+\vspace{0.4in}
+
+
+d. If we find evidence of a difference in likelihood of some level of improvement between the two types of drug, what is the scope of inference for this study?
+
+\vspace{0.8in}
+
+2. Research was carried out to explore whether the method of studying, either individually or in a group, has any significant impact on a student’s final exam performance, specifically whether they pass or fail. The data for this study were gathered from a sample of 200 undergraduate students in an Introductory Chemistry class who voluntarily participated by reporting their study habits and exam outcomes (pass or fail) after their first midterm. The results of the study are reported in the table below.  Is there evidence of an association between how undergraduate students choose to study and their exam results?  Use Group – Individual as the order of subtraction.
+
+
+|            |    Group     | Individual |  Total   |
+|------------|--------------|------------|----------|
+| Pass       |      73      |     59     |   132    |   
+| Fail       |      30      |     38     |    68    |  
+| Total      |     103      |     97     |   200    | 
+
+
+a.  Calculate the proportion of students that failed the final exam among those that studied in a group.  Use proper notation with appropriate subscripts.
+
+\vspace{0.6in}
+
+b. Calculate the proportion of students that failed the final exam among those that studied as an individual.  Use proper notation with appropriate subscripts.
+
+\vspace{0.6in}
+
+c. Calculate and interpret the difference in proportion of students that failed the final exam between those who studied in a group and those that studied as an individual.
+
+\vspace{1.2in}
+
+d. Calculate the relative risk of failing the final exam for students that studied in a group compared to those that studied as an individual.  
+
+\vspace{1in}
+
+e. Interpret the value in part d) as a percent change in context of the problem.
+
+
+\newpage

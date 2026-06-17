@@ -145,7 +145,7 @@ To visually display this data we can use either a frequency bar plot or a relati
 infants %>% # Data set piped into...
     ggplot(aes(x = variable)) +   # This specifies the variable
     geom_bar(stat = "count") +  # Tell it to make a bar plot
-    labs(title = "Frequency Bar Plot of Toy Choice for Pre-verbal Infants",  
+    labs(title = "Frequency Bar Plot of Toy Choice for Pre-verbal Infants ages 6 to 10 months",  
        # Give your plot a title
        x = "Toy Choice",   # Label the x axis
        y = "Frequency")  # Label the y axis
@@ -164,7 +164,7 @@ We could also choose to display the data as a proportion in a **relative frequen
 infants %>% # Data set piped into...
     ggplot(aes(x = choice)) +   # This specifies the variable
     geom_bar(aes(y = after_stat(prop), group = 1)) +  # Tell it to make a bar plot with proportions
-    labs(title = "Relative Frequency Bar Plot of Toy \n Choice for Pre-verbal Infants",  
+    labs(title = "Relative Frequency Bar Plot of Toy \n Choice for Pre-verbal Infants ages 6 to 10 months",  
        # Give your plot a title
        x = "Toy Choice",   # Label the x axis
        y = "Relative Frequency")  # Label the y axis
@@ -296,7 +296,6 @@ In the next class, we will continue to assess the strength of evidence against t
 
 1. Two types of plots are used for plotting categorical variables: frequency bar plots, relative frequency bar plots.
 
-
 2. In a hypothesis test we have two competing hypotheses, the null hypothesis and the alternative hypothesis.  The null hypothesis represents either a skeptical perspective or a perspective of no difference or no effect. The alternative hypothesis represents a new perspective such as the possibility that there has been a change or that there is a treatment effect in an experiment.  
 
 3. In a simulation-based test, we create a distribution of possible simulated statistics for our sample if the null hypothesis is true.  Then we see if the calculated observed statistic from the data is likely or unlikely to occur when compared to the null distribution.  
@@ -305,6 +304,6 @@ In the next class, we will continue to assess the strength of evidence against t
 
 ### Additional notes
 
-Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+Activities 4--6 cover the material in Module 3.  Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage

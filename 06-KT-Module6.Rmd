@@ -10,7 +10,7 @@ Module 6 will introduce exploratory data analysis and inference using simulation
 The **summary measure** for one quantitative variable is the **mean**.
 Additionally, we can find the five number summary (min, Q1, median, Q3, max) as well as the sample standard deviation.
 
-* Notation for a sample mean: $\bar{x}$
+* Notation for a sample mean: $\bar{y}$
 
 * Notation for a sample standard deviation: $s$
 
@@ -30,11 +30,11 @@ Additionally, we can find the five number summary (min, Q1, median, Q3, max) as 
 
 #### Sample statistics for a single quantitative variable {-}
 
-* **Mean**, $\bar{x}$: the average
+* **Mean**, $\bar{y}$: the average
 $$ 
-\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n},
+\bar{y} = \frac{y_1 + y_2 + \cdots + y_n}{n},
 $$
-where $x_1, x_2, \ldots, x_n$ are the data values and $n$ is the sample size.
+where $y_1, y_2, \ldots, y_n$ are the data values and $n$ is the sample size.
 
 
 * **Median**: value at the 50th percentile; approximately 50\% of data values are at or below the value of the median.
@@ -49,11 +49,11 @@ where $x_1, x_2, \ldots, x_n$ are the data values and $n$ is the sample size.
 
 \newpage
 
-* **Sample standard deviation**, $s$: on average, each value in the data set is $s$ units from the mean of the data set ($\bar{x}$). We will always calculate $s$ using R, but it is calculated using the following formula:
+* **Sample standard deviation**, $s$: on average, each value in the data set is $s$ units from the mean of the data set ($\bar{y}$). We will always calculate $s$ using R, but it is calculated using the following formula:
 $$
-s = \sqrt{\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2}{n-1}},
+s = \sqrt{\frac{(y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdots + (y_n-\bar{y})^2}{n-1}},
 $$
-where $x_1, x_2, \ldots, x_n$ are the data values, $\bar{x}$ is the sample mean, and $n$ is the sample size.
+where $y_1, y_2, \ldots, y_n$ are the data values, $\bar{y}$ is the sample mean, and $n$ is the sample size.
 
 * **Interquartile range**: the range of the data between the two quartiles: $IQR = Q_3-Q_1$.
 

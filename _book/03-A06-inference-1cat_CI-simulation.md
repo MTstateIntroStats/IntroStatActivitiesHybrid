@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Activity 6:  Helper-Hinderer --- Simulation-based Confidence Interval
 
 
@@ -117,8 +122,6 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 \vspace{.6in}
 
-\newpage
-
 #### Communicate the results and answer the research question {-}
 
 7.  Is the value 0.5 (the null value) in the 95\% confidence interval?
@@ -129,39 +132,71 @@ one_proportion_bootstrap_CI(sample_size = 16, # Sample size
 
 \vspace{0.5in}
 
-#### Effect of confidence level {-}
 
-8.  Suppose instead of finding a 95\% confidence interval, we found a 90\% confidence interval.  Would you expect the 90\% confidence interval to be narrower or wider?  Explain your answer.
-
-\vspace{0.4in}
-
-9.  The following R code produced the bootstrap distribution with 10000 simulations that follows.  Circle the value that changed in the code. 
-
-
-``` r
-one_proportion_bootstrap_CI(sample_size = 16, # Sample size
-                    number_successes = 14, # Observed number of successes
-                    number_repetitions = 10000, # Number of bootstrap samples to use
-                    confidence_level = 0.90) # Confidence level as a decimal
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{03-A06-inference-1cat_CI-simulation_files/figure-latex/unnamed-chunk-3-1} \end{center}
-
-
-10.  Report both the 95\% confidence interval and the 90\% confidence interval (question 9).  Is the 90\% confidence interval narrower or wider than the 95\% confidence interval?
-
-\vspace{0.5in}
 \newpage
 
-#### Concluding paragraph {-}
+#### Statistical Analysis Write-up {-}
 
-In many of our studies we will write a paragraph summarizing the results of the study. The following is a summary paragraph for the infant study.  
+In many of our studies we will write a paragraph summarizing the results of the study. The following is a summary paragraph for the infant study.  The paragraph should include an introduction, the interpretation of the sample statistic, p-value and interpretation, confidence interval and interpretation, conclusion statement, and generalization.
+
+\setstretch{1}
+
+**An introduction including the observational units and variable(s) in the study and their role and type.  The introduction should also include the sampling method and research question.**
 
 \setstretch{3}
 
-Researchers were interested if infants observe social cues and would be more likely to choose the helper toy.  In a sample of 16 infants, 14 chose the helper toy.  A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of 0.0026.  We would observe a sample proportion of 0.875 or greater with a probability of 0.0026 IF we assume the true proportion of non-verbal infants who would choose the helper toy is 0.5. Based on this p-value, there is very strong evidence that the true proportion of infants age 6 to 10 months who will choose the helper toy is greater than 0.5.  In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the true proportion of infants age 6 to 10 months who will choose the helper toy is between 0.688 and 1. The results of this study can be generalized to the sample of non-verbal infants as the researchers did not select a random sample.
+\leftskip=1cm 
+
+Researchers were interested if infants observe social cues and would be more likely to choose the helper toy. The observational units in this study are 16 non-verbal infants ages 6 to 10 months old.  This is a convenience sample of infants.  On each infant the researchers recorded whether or not the infant choose the helper toy.  This is a categorical variable.  Researchers were hoping to assess: Are non-verbal infants more likely to choose the helper toy?
+
+\leftskip=0cm
+
+**Report and interpret the sample statistic in context of the study.**
+
+\leftskip=1cm 
+
+From the study, it was reported that the proportion of 16 infants that choose the helper toy was 0.875. 
+
+\leftskip=0cm
+
+**Report how the p-value was found.  Include an interpretation of the p-value.**
+
+\leftskip=1cm 
+
+A simulation null distribution with 10000 simulations was created in RStudio.  The p-value was found by calculating the proportion of simulations in the null distribution at the sample statistic of 0.875 and greater.  This resulted in a p-value of 0.0026.  We would observe a sample proportion of 0.875 or greater with a probability of 0.0026, IF we assume the true proportion of non-verbal infants age 6 to 10 months who would choose the helper toy is 0.5.
+
+\leftskip=0cm
+
+\newpage
+
+**Report and interpret the confidence interval.**
+
+\leftskip=1cm 
+
+In addition, a 95\% confidence interval was found for the parameter of interest.  We are 95\% confident that the true proportion of non-verbal infants age 6 to 10 months who will choose the helper toy is between 0.688 and 1.
+
+\leftskip=0cm
+
+
+**Write a conclusion for the study.**
+
+\leftskip=1cm
+
+Based on the p-value of 0.0026, there is very strong evidence that the true proportion of non-verbal infants age 6 to 10 months who will choose the helper toy is greater than 0.5.
+
+\leftskip=0cm
+
+\vspace{0.2in}
+
+\setstretch{1}
+
+**And last, report the scope of inference for the study.  Since there is only a single categorical variable in this study, we only need to discuss generalization.**
+
+\setstretch{3}
+
+\leftskip=1cm
+
+The results of this study can be generalized to the sample of non-verbal infants or similar observational units as the researchers did not select a random sample.
 
 \setstretch{1}
 
@@ -171,15 +206,15 @@ Researchers were interested if infants observe social cues and would be more lik
 
 1.	The goal in a hypothesis test is to assess the strength of evidence for an effect, while the goal in creating a confidence interval is to determine how large the effect is.  A **confidence interval** is a range of *plausible* values for the parameter of interest.  
 
-2. A confidence interval is built around the point estimate or observed calculated statistic from the sample.  This means that the sample statistic is always the center of the confidence interval. A confidence interval includes a measure of sample to sample variability represented by the **margin of error**.   
+2. In simulation-based methods (bootstrapping), a simulated distribution of possible sample statistics is created showing the possible sample-to-sample variability.  Then we find the middle $X$ percent of the distribution around the sample statistic using the percentile method to give the range of values for the confidence interval.  This shows us that we are $X$% confident that the parameter is within this range, where $X$ represents the level of confidence.
 
-3. In simulation-based methods (bootstrapping), a simulated distribution of possible sample statistics is created showing the possible sample-to-sample variability.  Then we find the middle $X$ percent of the distribution around the sample statistic using the percentile method to give the range of values for the confidence interval.  This shows us that we are $X$% confident that the parameter is within this range, where $X$ represents the level of confidence.
+3.  When the null value is within the confidence interval, it is a plausible value for the parameter of interest; thus, we would find a larger p-value for a hypothesis test of that null value.  Conversely, if the null value is NOT within the confidence interval, we would find a small p-value for the hypothesis test and strong evidence against this null hypothesis. 
 
-4.  When the null value is within the confidence interval, it is a plausible value for the parameter of interest; thus, we would find a larger p-value for a hypothesis test of that null value.  Conversely, if the null value is NOT within the confidence interval, we would find a small p-value for the hypothesis test and strong evidence against this null hypothesis. 
-
-5. To create one simulated sample on the bootstrap distribution for a sample proportion, label $n$ cards with the original responses.  Draw with replacement $n$ times.  Calculate and plot the resampled proportion of successes.
+4. To create one simulated sample on the bootstrap distribution for a sample proportion, label $n$ cards with the original responses.  Draw with replacement $n$ times.  Calculate and plot the resampled proportion of successes.
 
 ### Additional notes
+
+Activities 4--6 cover the material in Module 3.  For more practice with simulation confidence intervals for a single categorical variable use the Module 3 Review worksheet in the Unit 1 Review Materials (pgs. 105--108).
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 

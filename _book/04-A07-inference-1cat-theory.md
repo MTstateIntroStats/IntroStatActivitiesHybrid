@@ -1,4 +1,4 @@
-## Activity 7:  Handedness of Male Boxers
+## Activity 7:  Handedness of Professional Male Boxers
 
 \setstretch{1}
 
@@ -105,13 +105,34 @@ boxers %>% # Data set piped into...
 
 \newpage
 
+### Simulation methods {-}
+
+We could use simulation methods to analyze the research question. The following is the null distribution of 10,000 simulations.
+
+
+``` r
+set.seed(216)
+one_proportion_test(probability_success = 0.1, # Null hypothesis value
+          sample_size = 500, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 0.162, # Observed statistic
+          direction = "greater", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+In today's activity, we will use theory-based methods.
+
 ### Theory-based methods {-}
 
 The sampling distribution of a single proportion --- how that proportion varies from sample to sample --- can be mathematically modeled using the normal distribution if certain conditions are met.
 
 Conditions for the sampling distribution of $\hat{p}$ to follow an approximate normal distribution:
 
-* **Independence**: The sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
+* **Independence**: The sample’s observations are independent. (*Remember*: This also must be true to use simulation methods!)
 
 * **Large enough sample size**: Success-failure condition: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}≥10$  and $n(1-\hat{p})≥10$.
 
@@ -145,7 +166,7 @@ For this study, the null standard error of the sample proportion is calculated u
 
 $$SE_0(\hat{p})=\sqrt{\frac{0.1\times(1-0.1)}{500}} = 0.013$$.
 
-Each sample proportion of male boxers that are left-handed is 0.013 from the true proportion of male boxers that are left-handed, on average.
+Each sample proportion of professional male boxers that are left-handed is 0.013 from the true proportion of professional male boxers that are left-handed, on average.
 
 \newpage
 
@@ -208,7 +229,7 @@ pnorm(4.769, # Enter value of standardized statistic
 
 ### Two-sided test {-}
 
-Suppose that we want to show that the true proportion of male boxers **differs** from that in the general population.
+Suppose that we want to show that the true proportion of professional male boxers **differs** from that in the general population.
 
 10.  Write out the alternative hypothesis in notation for this new research question.
 
@@ -280,7 +301,7 @@ Suppose that we want to show that the true proportion of male boxers **differs**
 
 ### Take-home messages
 
-1.	Both simulation and theory-based methods can be used to find a p-value for a hypothesis test.  In order to use theory-based methods we need to check that both the independence and the success-failure conditions are met. 
+1.	Both simulation and theory-based methods can be used to find a p-value for a hypothesis test.  In order to use theory-based methods we need to check that both the independence and **the success-failure conditions** are met. 
 
 2.  The standardized statistic measures how many standard errors the statistic is from the null value. The larger the standardized statistic the more evidence there is against the null hypothesis.
 
@@ -288,6 +309,8 @@ Suppose that we want to show that the true proportion of male boxers **differs**
 
 
 ### Additional notes
+
+Activities 7--9 cover the material in Module 4.  For more practice with theory-based hypothesis testing of a single categorical variable use the Module 4 Review worksheet in the Unit 1 Review Materials (pgs. 109--113).
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 

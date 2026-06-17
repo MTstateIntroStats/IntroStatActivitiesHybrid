@@ -30,7 +30,7 @@ Statistics is the study of how best to collect, analyze, and draw conclusions fr
 
 For more on these concepts, read Chapter 1 and 2 in the textbook and review the Module 1 Vocabulary Review and Key Topics.
 
-### Notes on Observational Units and Variables {-}
+#### Notes on Observational Units and Variables {-}
 
 \newpage
 
@@ -101,7 +101,7 @@ Grip strength non-dominant hand & & & \\
 
 \vspace{2.5in}
 
-### Notes on Sampling Methods and Types of bias {-}
+#### Notes on Sampling Methods and Types of bias {-}
 
 \vspace{5in}
 
@@ -170,6 +170,8 @@ Complete Q5 together as a class:
 3.  There are three types of bias to be aware of when designing a sampling method: selection bias, non-response bias, and response bias.
 
 ### Additional notes
+
+For more practice on types of bias, as well as identifying the observational units and variable(s) in a study, use the Module 1 Review worksheet in the Unit 1 Review Materials (pgs.101--102).
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered, and to write down the names and contact information of your teammates.
 

@@ -64,7 +64,7 @@ The remainder of this activity will be spent investigating how different factors
 
 * Do not change the scales for "Sample size n" or "Type I Error $\alpha$" or "Population Std. Dev. $\sigma$".
 
-The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was $n = 30$ and the significance level was $\alpha = 0.05$.  This means the red distribution is showing the distribution of possible sample mean amounts spent on textbooks per year (in hundreds of dollars) for a sample of 30 college students ($\bar{x}$) if we assume the null hypothesis is true.
+The red distribution you see is the scaled-Normal distribution representing the null distribution for this hypothesis test, if the sample size was $n = 30$ and the significance level was $\alpha = 0.05$.  This means the red distribution is showing the distribution of possible sample mean amounts spent on textbooks per year (in hundreds of dollars) for a sample of 30 college students ($\bar{y}$) if we assume the null hypothesis is true.
 
 3.  Based off this distribution and your alternative hypothesis, give one possible sample mean which you think would lead to rejecting the null hypothesis.  Explain how you decided on your value.
 \vspace{0.4in}

@@ -1,4 +1,4 @@
-## Activity 10: Inference for a Single Quantitative Variable: Simulation Methods
+## Activity 11: Inference for a Single Quantitative Variable: Simulation Methods
 
 \setstretch{1}
 
@@ -13,7 +13,7 @@ in words and using appropriate statistical symbols.
 
 ### Terminology review
 
-In today's activity, we will use simulation-based and theory-based methods to analyze a single quantitative variable.  Some terms covered in this activity are:
+In today's activity, we will use simulation-based to analyze a single quantitative variable.  Some terms covered in this activity are:
 
 * Null hypothesis
 
@@ -57,10 +57,9 @@ sleep <- read.csv("datasetname.csv")
 
 
 
+\newpage
 
-#### Ask a research question {-}
-
-* Is there evidence that MSU students get less than the recommended 7 hours of sleep per night, on average?
+#### Hypothesis Testing for a Single Mean {-}
 
 **Parameter of interest in context of the study:**
 
@@ -129,9 +128,9 @@ sleep %>% # Data set piped into...
 
 \vspace{2in}
 
-To simulate the null distribution of sample means we will use a bootstrapping method.  Recall that the null distribution must be created under the assumption that the null hypothesis is true.  Therefore, before bootstrapping, we will need to *shift* each data point by the difference $\mu_0 - \bar{x}$.  This will ensure that the mean of the shifted data is $\mu_0$ (rather than the mean of the original data, $\bar{x}$), and that the simulated null distribution will be centered at the null value.  
+To simulate the null distribution of sample means we will use a bootstrapping method.  Recall that the null distribution must be created under the assumption that the null hypothesis is true.  Therefore, before bootstrapping, we will need to *shift* each data point by the difference $\mu_0 - \bar{y}$.  This will ensure that the mean of the shifted data is $\mu_0$ (rather than the mean of the original data, $\bar{y}$), and that the simulated null distribution will be centered at the null value.  
 
-* Calculate the difference $\mu_0 - \bar{x}$.  Based on the sign of this difference, will we need to shift the data up or down?
+* Calculate the difference $\mu_0 - \bar{y}$.  Based on the sign of this difference, will we need to shift the data up or down?
 
 \vspace{0.4in}
 
@@ -157,8 +156,6 @@ sleep %>%
 
 \vspace{0.6in}
 
-\newpage
-
 5. What inputs should be entered for each of the following to create the simulated null distribution?
 \vspace{1mm}
 
@@ -168,7 +165,7 @@ sleep %>%
 * Summary measure ("mean" or "median"):
 
 \vspace{0.15in}
-* Shift (difference between $\mu_0 -\bar{x}$):
+* Shift (difference between $\mu_0 -\bar{y}$):
 
 \vspace{0.15in}
 
@@ -262,11 +259,11 @@ one_mean_CI(sleep$SleepHours, #Enter the name of the variable
 
 ### Take-home messages
 
-1.	We use bootstrapping---sampling with replacement---from the shifted data to generate a null distribution of simulated sample means. In order to ensure that the null distribution is centered at the null value, $\mu_0$, we shift the data by adding $\mu_0 - \bar{x}$ to each value in the original data set. Note that if this value of the shift is negative, we are shifting the data down; if it is positive, we shift the data up.
+1.	We use bootstrapping---sampling with replacement---from the shifted data to generate a null distribution of simulated sample means. In order to ensure that the null distribution is centered at the null value, $\mu_0$, we shift the data by adding $\mu_0 - \bar{y}$ to each value in the original data set. Note that if this value of the shift is negative, we are shifting the data down; if it is positive, we shift the data up.
 
 2.  The mean of the shifted data will equal the null value, $\mu_0$, but the standard deviation of the shifted data will be the same as the standard deviation of the original data.
 
-3.  As in the one proportion scenario, we calculate the p-value for a simulation-based hypothesis test for a single mean by finding the proportion of simulated sample means that are as or more extreme (in the direction of $H_A$) as the observed sample mean, $\bar{x}$.
+3.  As in the one proportion scenario, we calculate the p-value for a simulation-based hypothesis test for a single mean by finding the proportion of simulated sample means that are as or more extreme (in the direction of $H_A$) as the observed sample mean, $\bar{y}$.
 
 
 ### Additional notes

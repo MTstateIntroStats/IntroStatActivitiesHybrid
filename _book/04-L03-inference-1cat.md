@@ -36,12 +36,35 @@ The American Veterinary Medical Association estimated in 2010 that approximately
 dogs <- read.csv("datasetname.csv")
 ```
 
+#### Use statistical analysis methods to draw inferences from the data {-}
 
-1.  What is the value of the point estimate? Report the value with the appropriate notation.
+1.  Write out the parameter of interest in words, in context of the study.
+
+\vspace{0.5in}
+
+2.  Write out the null and alternative hypotheses in notation.
+
+\vspace{1mm}
+
+| $H_0:$
 
 \vspace{0.3in}
 
-2. Create a plot of the data using the R code. Make sure to include an appropriate title with type of plot, observational units, and variable.  
+| $H_A:$
+
+\vspace{0.3in}
+
+3. Will theory-based methods give the same results as simulation based methods?  Explain your answer.
+
+\vspace{1in}
+
+#### Exploratory Data Analysis {-}
+
+4.  What is the value of the point estimate? Report the value with the appropriate notation.
+
+\vspace{0.3in}
+
+5. Create a plot of the data using the R code. Make sure to include an appropriate title with type of plot, observational units, and variable.  
 
 
 ``` r
@@ -54,29 +77,6 @@ dogs %>% # Data set piped into...
        y = "Relative Frequency")  # Label the y axis
 ```
 
-#### Use statistical analysis methods to draw inferences from the data {-}
-
-3.  Write out the parameter of interest in words, in context of the study.
-
-\vspace{0.5in}
-
-\newpage
-
-4.  Write out the null and alternative hypotheses in notation.
-
-\vspace{1mm}
-
-| $H_0:$
-
-\vspace{0.3in}
-
-| $H_A:$
-
-\vspace{0.3in}
-
-5. Will theory-based methods give the same results as simulation based methods?  Explain your answer.
-
-\vspace{1in}
 
 #### Null Distribution {-}
 
@@ -151,14 +151,22 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
 8. Write a paragraph summarizing the results of the study.  Be sure to describe:
 
+* Introduction statement
+
+    * Research question
+    
+    * Observational units
+    
+    * Variable (type)
+    
+    * Sampling method
+
 * Summary statistic and interpretation
 
     * Summary measure (in context)
     
     * Value of the statistic 
     
-    * Order of subtraction when comparing two groups
-
 * P-value and interpretation
 
     * Statement about probability or proportion of samples
@@ -191,13 +199,10 @@ one_proportion_bootstrap_CI(sample_size = xx, # Sample size
 
     * To what group of observational units do the results apply (target population or observational units similar to the sample)?
 	
-    * What type of inference is appropriate (causal or non-causal)?
 
 **Upload a copy of your group's paragraph to Gradescope.** 
 
-\newpage
-
-Paragraph (continued):
+Paragraph:
 
 \newpage
 

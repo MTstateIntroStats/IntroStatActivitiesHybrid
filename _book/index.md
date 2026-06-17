@@ -8,7 +8,7 @@ author: |
     | Jade Schmidt
     | Dr. Mark Greenwood
 subtitle: |
-    | Spring 2026
+    | Fall 2026
     | Montana State University
 output: 
     pdf_document:
@@ -18,7 +18,7 @@ biblio-style: apalike
 nocite: '@*'
 site: bookdown::bookdown_site
 documentclass: report
-description: This is the coursepack of in-class activities for STAT 216 Spring 2026.
+description: This is the coursepack of in-class activities for STAT 216 Fall 2026.
 location: Montana State University
 ---
 

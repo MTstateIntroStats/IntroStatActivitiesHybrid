@@ -316,6 +316,8 @@ In this activity we have focused on sampling methods.  Note that the sampling me
 
 ### Additional notes
 
+For more practice on sampling methods, use the Module 1 Review worksheet in the Unit 1 Review Materials (pgs.101--102).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage
