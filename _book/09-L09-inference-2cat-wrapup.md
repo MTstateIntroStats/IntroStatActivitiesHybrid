@@ -155,7 +155,7 @@ two_proportion_bootstrap_CI(formula = response~explanatory,
     
     * Observational units
     
-    * Variables (type)
+    * Variables (roll & type)
     
     * Sampling method
     
