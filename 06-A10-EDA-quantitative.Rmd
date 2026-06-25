@@ -165,7 +165,7 @@ ggplot(aes(x = Cost_InState)) +   # Name variable to plot
           axis.ticks.y = element_blank()) # Removes y-axis ticks
 ```
 
-Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
+Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence.  Any values less than the lower fence or greater than the upper fence would be flagged as outliers.
 
 $$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.25in}

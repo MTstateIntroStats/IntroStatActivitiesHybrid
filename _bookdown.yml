@@ -72,8 +72,8 @@ rmd_files: [
   "14-UR-unit3review.Rmd",
   "14-UR-keytopics3.Rmd",
   "14-UR-module12_review.Rmd",
-  "14-UR-module13_review.Rmd",
   "14-UR-module11_review.Rmd",
+  "14-UR-module13_review.Rmd",
   "15-FinalExam-review.Rmd",
   "16-goldenticket.Rmd",
   "17-references.Rmd"

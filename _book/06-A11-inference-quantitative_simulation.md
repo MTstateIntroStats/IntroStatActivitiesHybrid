@@ -29,7 +29,7 @@ To review these concepts, see Chapters 9 and 17 in the textbook.
 
 ### Body Temperature
 
-It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of $98.6^{\circ}$F?
+It has long been reported that the mean body temperature of adults is $98.6^{\circ}$F.  There have been a few articles that challenge this assertion. [@luetkemeier2017]  In 2018, a sample of 52 STAT 216 undergraduates were asked to report their body temperature.  Is there evidence that the average body temperature of STAT 216 undergraduates differs from the known temperature of $98.6^{\circ}$F?
 
 \vspace{2mm}
 * Observational units:
@@ -94,7 +94,7 @@ The `favstats()` function from the `mosaic` package gives the summary statistics
 bodytemp %>%
     summarize(favstats(variable))
 ```
-1. About how far is each body temperature for a Stat 216 undergraduate from the mean body temperature, on average? Report the value and the appropriate notation
+1. About how far is each body temperature for a STAT 216 undergraduate from the mean body temperature, on average? Report the value and the appropriate notation
 
 \vspace{0.3in}
 

@@ -152,7 +152,7 @@ Researchers were interested if infants observe social cues and would be more lik
 
 \leftskip=1cm 
 
-From the study, it was reported that the proportion of 16 infants that choose the helper toy was 0.875. 
+From the study, it was reported that the proportion of the 16 infants that chose the helper toy was 0.875. 
 
 \leftskip=0cm
 

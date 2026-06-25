@@ -133,7 +133,8 @@ ggplot(aes(x = Light, fill = Sight)) +   # This specifies the variables
        Myopia for Children",  
        # Make sure to title your plot 
        x = "Level of Light",   # Label the x axis
-       y = "")  + # Remove y axis label
+       y = "", # Remove y axis label
+       fill = "Level of Myopia")  +  # Fill label
   scale_fill_grey()  # Make figure black and weight
 ```
 
@@ -151,11 +152,11 @@ We could also plot the data using a mosaic plot which is shown on the next page.
 myopia$Sight <- factor(myopia$Sight, levels = c("No Myopia", "Myopia", "High Myopia"))
 myopia %>% # Data set piped into...
   ggplot() +   # This specifies the variables
-  geom_mosaic(aes(x=product(Light), fill = Sight)) +  # Tell it to make a mosaic plot
+  geom_mosaic(aes(x=product(Sight, Light), fill = Sight)) +  # Tell it to make a mosaic plot
   labs(title = "Mosaic Plot of Night Light Use by Level of
        Myopia for Children",  # Make sure to title your plot 
-       x = "Level of Light",   # Label the x axis
-       y = "") +  # Remove y axis label
+       x = "Level of Light", y = "",
+       fill = "Level of Myopia")  +  # Fill label
   scale_fill_grey(guide = guide_legend(reverse = TRUE))  # Make figure black and white
 ```
 

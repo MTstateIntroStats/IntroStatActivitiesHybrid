@@ -27,7 +27,7 @@ To review these concepts, see Chapters 9 & 14 in your textbook.
 
 ### Steps of the statistical investigation process
 
-We will work through a five-step process to complete a hypothesis test for a single proportion, first introduced in the activity in week 1.
+We will work through a five-step process to complete a hypothesis test for a single proportion.
 
 * **Ask a research question** that can be addressed by collecting data. What are the researchers trying to show?
 

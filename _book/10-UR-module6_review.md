@@ -42,7 +42,7 @@ The following code creates the boxplot of waiting time.
 
 We will start with simulation methods. 
 	
-7.  Calculate the difference $\mu_0 - \bar{x}$.  Will we need to shift the data up or down?
+7.  Calculate the difference $\mu_0 - \bar{y}$.  Will we need to shift the data up or down?
 \vspace{0.5in}
 
 

@@ -112,9 +112,9 @@ Conditions for the sampling distribution of $\bar{y}$ to follow an approximate N
 
     - $n < 30$: If the sample size $n$ is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
-    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    - $30 \leq n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of $\bar{y}$ is nearly normal, even if the underlying distribution of individual observations is not.
     
-    - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{y}$ is nearly normal, even if the underlying distribution of individual observations is not.
  
 
 Like we saw in Chapter **5**, we will not know the values of the parameters and must use the sample data to estimate them.  Unlike with proportions, in which we only needed to estimate the population proportion, $\pi$, quantitative sample data must be used to estimate both a population mean $\mu$ and a population standard deviation $\sigma$. This additional uncertainty will require us to use a theoretical distribution that is just a bit wider than the standard Normal distribution. Enter the **$t$-distribution**!
@@ -131,6 +131,7 @@ As you can seen from Figure \@ref(fig:tdist), the $t$-distributions (dashed and 
 \caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}(\#fig:tdist)
 \end{figure}
 
+\newpage
 
 **Verify the independence condition is met:**
 \vspace{0.8in}

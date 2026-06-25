@@ -41,9 +41,9 @@ A study by Hamblin, Wynn, and Bloom reported in Nature [@hamblin2007] was intend
 
 #### Sampling distribution of the sample proportion. {-}
 
-The sampling distribution is a distribution of a statistic from all possible samples of size $n$ from the population.  The mean of the sampling distribution should be close to the parameter value and the standard deviation of the sampling distribution will estimate the variability of the statistic from sample to sample.  
+The sampling distribution is a distribution of a statistic from all possible samples of size $n$ from the population.  The mean of the sampling distribution should be close to the parameter value and the standard deviation of the sampling distribution will estimate the variability of statistics from sample to sample.  
 
-To create a sampling distribution of the statistic, we would take infinite samples of size $n$ from the population and plot the proportion from each sample.  To illustrate this idea we will revisit the Becenti address looking at the mean word length.  
+To create a sampling distribution of the statistic, we would take infinite samples of size $n$ from the population and plot the statistic from each sample.  To illustrate this idea we will revisit the Becenti address looking at the mean word length.  
 
 ```{r}
 Becenti <- read.csv("data/Becenti.csv")
@@ -109,7 +109,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
 
 \newpage
 
-Using R, we will use the `one_proportion_test()` function (in the `catstats` package) to simulate another null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 1 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.  *Note that the value for the mean, standard deviation, and p-value slightly changed.*
+Using R, we will use the `one_proportion_test()` function (in the `catstats` package) to simulate another null distribution of sample proportions and compute a p-value. Using the provided `R` script file, fill in the values/words for each `xx` with your answers from question 1 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16.  *Note that the value for the mean, standard deviation, and p-value changed slightly.*
 
 ```{r, echo=TRUE, eval = TRUE}
 set.seed(216)
@@ -120,7 +120,7 @@ one_proportion_test(probability_success = 0.5, # Null hypothesis value
           direction = "greater", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
 ```
-For the remainder of the questions in this activity use this 2nd created simulated null distribution.
+For the remainder of the questions in this activity use this 2nd simulated null distribution.
 
 2. Circle the observed statistic (value calculated in Activity 4) on the null distribution.  Where does this statistic fall in the null distribution: Is it near the center of the distribution (near 0.5) or in one of the tails of the distribution?  
 
@@ -176,7 +176,7 @@ When we write a conclusion we answer the research question by stating how much e
 
 1. The null distribution is created based on the assumption the null hypothesis is true. We compare the sample statistic to the distribution to find the likelihood of observing this statistic.
 
-2. The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) is the null hypothesis is true.
+2. The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) if the null hypothesis is true.
 
 3. The smaller the p-value of the test, the more evidence there is **against** the null hypothesis.
 

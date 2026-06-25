@@ -1,5 +1,7 @@
 ## Activity 7:  Handedness of Professional Male Boxers
 
+
+
 \setstretch{1}
 
 ### Learning outcomes
@@ -12,7 +14,7 @@
 
 * Interpret and evaluate a p-value for a theory-based hypothesis test for a single proportion.
 
-* Use the normal distribution to find the p-value.
+* Use the standard normal distribution to find the p-value.
 
 
 ### Terminology review
@@ -82,7 +84,7 @@ boxers %>% # Data set piped into...
 
 
 
-\begin{center}\includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
 1.  What type of plot was created of these data?
 
 \vspace{0.2in}
@@ -111,7 +113,6 @@ We could use simulation methods to analyze the research question. The following 
 
 
 ``` r
-set.seed(216)
 one_proportion_test(probability_success = 0.1, # Null hypothesis value
           sample_size = 500, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
@@ -122,7 +123,7 @@ one_proportion_test(probability_success = 0.1, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 In today's activity, we will use theory-based methods.
 
@@ -136,15 +137,13 @@ Conditions for the sampling distribution of $\hat{p}$ to follow an approximate n
 
 * **Large enough sample size**: Success-failure condition: We *expect* to see at least 10 successes and 10 failures in the sample, $n\hat{p}≥10$  and $n(1-\hat{p})≥10$.
 
-### Additional notes on Theory-based methods {-}
+\newpage
 
-\vspace{1.4in}
-
-* Verify that the independence condition is satisfied.
+* Verify that the independence condition for the male professional boxer study is satisfied.
 
 \vspace{0.3in}
 
-* Verify that the sample size is large enough.
+* Verify that the sample size for the male professional boxer study is large enough.
 
 \vspace{0.5in}
 
@@ -168,8 +167,6 @@ $$SE_0(\hat{p})=\sqrt{\frac{0.1\times(1-0.1)}{500}} = 0.013$$.
 
 Each sample proportion of professional male boxers that are left-handed is 0.013 from the true proportion of professional male boxers that are left-handed, on average.
 
-\newpage
-
 Label the standard normal distribution shown below with the null value as the center value (below the value of zero).  Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null.  Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
 
 \vspace{2mm}
@@ -183,7 +180,7 @@ Label the standard normal distribution shown below with the null value as the ce
 \caption{Standard Normal Curve}(\#fig:Normcur)
 \end{figure}
 
-6.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
+6.  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution shown.
 
 \vspace{0.6in}
 

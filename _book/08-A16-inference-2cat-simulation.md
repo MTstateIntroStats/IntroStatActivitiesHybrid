@@ -92,9 +92,9 @@ Remember, we define the parameter for a single categorical variable as the true 
 
 For this study we are identifying two parameters and looking at the difference between these two parameters.  
 
-* $\pi_\text{hurry}$ = long-run proportion of Princeton Theological Seminary students assigned to hurry that helped the actor
+* $\pi_\text{hurry}$ = long-run proportion of Princeton Theological Seminary students in a hurry that helped the actor
 
-* $\pi_\text{no hurry}$ = long-run proportion of Princeton Theological Seminary students assigned not to hurry that helped the actor
+* $\pi_\text{no hurry}$ = long-run proportion of Princeton Theological Seminary students not in a hurry that helped the actor
 
 **Parameter of interest in context of the study:**
 

@@ -226,6 +226,8 @@ Each of the activities in this workbook is designed to target specific learning 
 
 All activities and labs in this coursepack will be completed during class time. Parts of each lab will be turned in on Gradescope. To aid in your understanding, read through the introduction for each activity before attending class each day.
 
+Additional review activities for each Module are provided at the end of each Unit. These review activities will be completed during weekly review sessions throughout the semester.
+
 STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine hours per week outside of class to achieve a good grade in this class. By ``good'' we mean at least a C because a grade of D or below does not count toward fulfilling degree requirements. Many of you set your goals higher than just getting a C, and we fully support that. You need roughly nine hours per week to review past activities, read feedback on previous assignments, complete current assignments, and prepare for the next day's class. A typical week in the life of a STAT 216 student looks like:
 
 \begin{itemize}
@@ -265,6 +267,8 @@ STAT 216 is a 3-credit in-person course. In our experience, it takes six to nine
     Complete any remaining assigned readings videos, and quizzes for the week.
   \item
     Complete the week's homework assignment.
+  \item
+    Attend weekly review sessions
   \end{itemize}
 \end{itemize}
 
@@ -3017,7 +3021,7 @@ To review these concepts, see Chapters 9 \& 14 in your textbook.
 
 \subsection{Steps of the statistical investigation process}\label{steps-of-the-statistical-investigation-process-1}
 
-We will work through a five-step process to complete a hypothesis test for a single proportion, first introduced in the activity in week 1.
+We will work through a five-step process to complete a hypothesis test for a single proportion.
 
 \begin{itemize}
 \item
@@ -3438,9 +3442,9 @@ A study by Hamblin, Wynn, and Bloom reported in Nature (Hamblin et al. 2007) was
 \subsubsection*{Sampling distribution of the sample proportion.}\label{sampling-distribution-of-the-sample-proportion.}
 \addcontentsline{toc}{subsubsection}{Sampling distribution of the sample proportion.}
 
-The sampling distribution is a distribution of a statistic from all possible samples of size \(n\) from the population. The mean of the sampling distribution should be close to the parameter value and the standard deviation of the sampling distribution will estimate the variability of the statistic from sample to sample.
+The sampling distribution is a distribution of a statistic from all possible samples of size \(n\) from the population. The mean of the sampling distribution should be close to the parameter value and the standard deviation of the sampling distribution will estimate the variability of statistics from sample to sample.
 
-To create a sampling distribution of the statistic, we would take infinite samples of size \(n\) from the population and plot the proportion from each sample. To illustrate this idea we will revisit the Becenti address looking at the mean word length.
+To create a sampling distribution of the statistic, we would take infinite samples of size \(n\) from the population and plot the statistic from each sample. To illustrate this idea we will revisit the Becenti address looking at the mean word length.
 
 \begin{verbatim}
 #>   min Q1 median Q3 max     mean       sd   n missing
@@ -3548,7 +3552,7 @@ The following shows one possible distribution of simulated sample proportions as
 
 \newpage
 
-Using R, we will use the \texttt{one\_proportion\_test()} function (in the \texttt{catstats} package) to simulate another null distribution of sample proportions and compute a p-value. Using the provided \texttt{R} script file, fill in the values/words for each \texttt{xx} with your answers from question 1 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16. \emph{Note that the value for the mean, standard deviation, and p-value slightly changed.}
+Using R, we will use the \texttt{one\_proportion\_test()} function (in the \texttt{catstats} package) to simulate another null distribution of sample proportions and compute a p-value. Using the provided \texttt{R} script file, fill in the values/words for each \texttt{xx} with your answers from question 1 in the one proportion test to create a null distribution with 10000 simulations. Then highlight and run lines 1--16. \emph{Note that the value for the mean, standard deviation, and p-value changed slightly.}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3564,7 +3568,7 @@ Using R, we will use the \texttt{one\_proportion\_test()} function (in the \text
 
 \begin{center}\includegraphics[width=0.7\linewidth]{03-A05-inference-1cat_simulation-continued_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-For the remainder of the questions in this activity use this 2nd created simulated null distribution.
+For the remainder of the questions in this activity use this 2nd simulated null distribution.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3647,7 +3651,7 @@ When we write a conclusion we answer the research question by stating how much e
 \item
   The null distribution is created based on the assumption the null hypothesis is true. We compare the sample statistic to the distribution to find the likelihood of observing this statistic.
 \item
-  The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) is the null hypothesis is true.
+  The p-value measures the probability of observing the sample statistic or more extreme (in direction of the alternative hypothesis) if the null hypothesis is true.
 \item
   The smaller the p-value of the test, the more evidence there is \textbf{against} the null hypothesis.
 \end{enumerate}
@@ -3888,7 +3892,7 @@ Researchers were interested if infants observe social cues and would be more lik
 
 \leftskip=1cm
 
-From the study, it was reported that the proportion of 16 infants that choose the helper toy was 0.875.
+From the study, it was reported that the proportion of the 16 infants that chose the helper toy was 0.875.
 
 \leftskip=0cm
 
@@ -4522,7 +4526,7 @@ Be prepared for group discussion in the next class. One member from the table sh
 \item
   Interpret and evaluate a p-value for a theory-based hypothesis test for a single proportion.
 \item
-  Use the normal distribution to find the p-value.
+  Use the standard normal distribution to find the p-value.
 \end{itemize}
 
 \subsection{Terminology review}\label{terminology-review-5}
@@ -4611,7 +4615,7 @@ Left-handedness is a trait that is found in about 10\% of the general population
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4659,7 +4663,6 @@ We could use simulation methods to analyze the research question. The following 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{216}\NormalTok{)}
 \FunctionTok{one\_proportion\_test}\NormalTok{(}\AttributeTok{probability\_success =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\# Null hypothesis value}
           \AttributeTok{sample\_size =} \DecValTok{500}\NormalTok{, }\CommentTok{\# Enter sample size}
           \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\# Enter number of simulations}
@@ -4669,7 +4672,7 @@ We could use simulation methods to analyze the research question. The following 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-3-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{04-A07-inference-1cat-theory_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 In today's activity, we will use theory-based methods.
 
@@ -4687,15 +4690,12 @@ Conditions for the sampling distribution of \(\hat{p}\) to follow an approximate
   \textbf{Large enough sample size}: Success-failure condition: We \emph{expect} to see at least 10 successes and 10 failures in the sample, \(n\hat{p}≥10\) and \(n(1-\hat{p})≥10\).
 \end{itemize}
 
-\subsection*{Additional notes on Theory-based methods}\label{additional-notes-on-theory-based-methods}
-\addcontentsline{toc}{subsection}{Additional notes on Theory-based methods}
-
-\vspace{1.4in}
+\newpage
 
 \begin{itemize}
 \tightlist
 \item
-  Verify that the independence condition is satisfied.
+  Verify that the independence condition for the male professional boxer study is satisfied.
 \end{itemize}
 
 \vspace{0.3in}
@@ -4703,7 +4703,7 @@ Conditions for the sampling distribution of \(\hat{p}\) to follow an approximate
 \begin{itemize}
 \tightlist
 \item
-  Verify that the sample size is large enough.
+  Verify that the sample size for the male professional boxer study is large enough.
 \end{itemize}
 
 \vspace{0.5in}
@@ -4728,8 +4728,6 @@ For this study, the null standard error of the sample proportion is calculated u
 
 Each sample proportion of professional male boxers that are left-handed is 0.013 from the true proportion of professional male boxers that are left-handed, on average.
 
-\newpage
-
 Label the standard normal distribution shown below with the null value as the center value (below the value of zero). Label the tick marks to the right of the null value by adding 1 standard error to the null value to represent 1 standard error, 2 standard errors, and 3 standard errors from the null. Repeat this process to the left of the null value by subtracting 1 standard error for each tick mark.
 
 \vspace{2mm}
@@ -4748,7 +4746,7 @@ Label the standard normal distribution shown below with the null value as the ce
 \setcounter{enumi}{5}
 \tightlist
 \item
-  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution above.
+  Using the null standard error of the sample proportion, calculate the standardized sample proportion (Z). Mark this value on the standard normal distribution shown.
 \end{enumerate}
 
 \vspace{0.6in}
@@ -8072,7 +8070,7 @@ Next we will create a boxplot of the variable \texttt{Cost\_InState}.
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A10-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-Use the following formulas to find the invisible fence on both ends of the distribution. Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
+Use the following formulas to find the invisible fence on both ends of the distribution. Draw a dotted line at the invisible fence. Any values less than the lower fence or greater than the upper fence would be flagged as outliers.
 
 \[\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR\]
 \vspace{1.25in}
@@ -8256,7 +8254,7 @@ To review these concepts, see Chapters 9 and 17 in the textbook.
 
 \subsection{Body Temperature}\label{body-temperature}
 
-It has long been reported that the mean body temperature of adults is \(98.6^{\circ}\)F. There have been a few articles that challenge this assertion. ({LUETKEMEIER} 2017) In 2018, a sample of 52 Stat 216 undergraduates were asked to report their body temperature. Is there evidence that the average body temperature of Stat 216 undergraduates differs from the known temperature of \(98.6^{\circ}\)F?
+It has long been reported that the mean body temperature of adults is \(98.6^{\circ}\)F. There have been a few articles that challenge this assertion. ({LUETKEMEIER} 2017) In 2018, a sample of 52 STAT 216 undergraduates were asked to report their body temperature. Is there evidence that the average body temperature of STAT 216 undergraduates differs from the known temperature of \(98.6^{\circ}\)F?
 
 \vspace{2mm}
 
@@ -8349,7 +8347,7 @@ The \texttt{favstats()} function from the \texttt{mosaic} package gives the summ
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  About how far is each body temperature for a Stat 216 undergraduate from the mean body temperature, on average? Report the value and the appropriate notation
+  About how far is each body temperature for a STAT 216 undergraduate from the mean body temperature, on average? Report the value and the appropriate notation
 \end{enumerate}
 
 \vspace{0.3in}
@@ -9240,9 +9238,9 @@ Conditions for the sampling distribution of \(\bar{y}\) to follow an approximate
   \item
     \(n < 30\): If the sample size \(n\) is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
   \item
-    \(30 \leq n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(30 \leq n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \item
-    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \end{itemize}
 \end{itemize}
 
@@ -9258,6 +9256,8 @@ As you can seen from Figure \ref{fig:tdist}, the \(t\)-distributions (dashed and
 
 \caption{Comparison of the standard Normal vs t-distribution with various degrees of freedom}\label{fig:tdist}
 \end{figure}
+
+\newpage
 
 \textbf{Verify the independence condition is met:}
 \vspace{0.8in}
@@ -11739,7 +11739,8 @@ Two types of plots can be created to display two categorical variables. To exami
 \StringTok{       Myopia for Children"}\NormalTok{,  }
        \CommentTok{\# Make sure to title your plot }
        \AttributeTok{x =} \StringTok{"Level of Light"}\NormalTok{,   }\CommentTok{\# Label the x axis}
-       \AttributeTok{y =} \StringTok{""}\NormalTok{)  }\SpecialCharTok{+} \CommentTok{\# Remove y axis label}
+       \AttributeTok{y =} \StringTok{""}\NormalTok{, }\CommentTok{\# Remove y axis label}
+       \AttributeTok{fill =} \StringTok{"Level of Myopia"}\NormalTok{)  }\SpecialCharTok{+}  \CommentTok{\# Fill label}
   \FunctionTok{scale\_fill\_grey}\NormalTok{()  }\CommentTok{\# Make figure black and weight}
 \end{Highlighting}
 \end{Shaded}
@@ -11767,11 +11768,11 @@ We could also plot the data using a mosaic plot which is shown on the next page.
 \NormalTok{myopia}\SpecialCharTok{$}\NormalTok{Sight }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(myopia}\SpecialCharTok{$}\NormalTok{Sight, }\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"No Myopia"}\NormalTok{, }\StringTok{"Myopia"}\NormalTok{, }\StringTok{"High Myopia"}\NormalTok{))}
 \NormalTok{myopia }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Data set piped into...}
   \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}   \CommentTok{\# This specifies the variables}
-  \FunctionTok{geom\_mosaic}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{product}\NormalTok{(Light), }\AttributeTok{fill =}\NormalTok{ Sight)) }\SpecialCharTok{+}  \CommentTok{\# Tell it to make a mosaic plot}
+  \FunctionTok{geom\_mosaic}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{product}\NormalTok{(Sight, Light), }\AttributeTok{fill =}\NormalTok{ Sight)) }\SpecialCharTok{+}  \CommentTok{\# Tell it to make a mosaic plot}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mosaic Plot of Night Light Use by Level of}
 \StringTok{       Myopia for Children"}\NormalTok{,  }\CommentTok{\# Make sure to title your plot }
-       \AttributeTok{x =} \StringTok{"Level of Light"}\NormalTok{,   }\CommentTok{\# Label the x axis}
-       \AttributeTok{y =} \StringTok{""}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Remove y axis label}
+       \AttributeTok{x =} \StringTok{"Level of Light"}\NormalTok{, }\AttributeTok{y =} \StringTok{""}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{"Level of Myopia"}\NormalTok{)  }\SpecialCharTok{+}  \CommentTok{\# Fill label}
   \FunctionTok{scale\_fill\_grey}\NormalTok{(}\AttributeTok{guide =} \FunctionTok{guide\_legend}\NormalTok{(}\AttributeTok{reverse =} \ConstantTok{TRUE}\NormalTok{))  }\CommentTok{\# Make figure black and white}
 \end{Highlighting}
 \end{Shaded}
@@ -11981,9 +11982,9 @@ For this study we are identifying two parameters and looking at the difference b
 
 \begin{itemize}
 \item
-  \(\pi_\text{hurry}\) = long-run proportion of Princeton Theological Seminary students assigned to hurry that helped the actor
+  \(\pi_\text{hurry}\) = long-run proportion of Princeton Theological Seminary students in a hurry that helped the actor
 \item
-  \(\pi_\text{no hurry}\) = long-run proportion of Princeton Theological Seminary students assigned not to hurry that helped the actor
+  \(\pi_\text{no hurry}\) = long-run proportion of Princeton Theological Seminary students not in a hurry that helped the actor
 \end{itemize}
 
 \textbf{Parameter of interest in context of the study:}
@@ -13590,7 +13591,7 @@ We will start with simulation methods.
 \setcounter{enumi}{6}
 \tightlist
 \item
-  Calculate the difference \(\mu_0 - \bar{x}\). Will we need to shift the data up or down?
+  Calculate the difference \(\mu_0 - \bar{y}\). Will we need to shift the data up or down?
   \vspace{0.5in}
 \end{enumerate}
 
@@ -13690,7 +13691,7 @@ The following code created the boxplot of waiting time.
 
 In the last module review, we used simulation methods to analyze these data. Now we will use theory-based methods.
 
-Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate Normal distribution:
+Conditions for the sampling distribution of \(\bar{y}\) to follow an approximate Normal distribution:
 
 \begin{itemize}
 \item
@@ -13702,9 +13703,9 @@ Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate
   \item
     \(n < 30\): If the sample size \(n\) is less than 30 and the distribution of the data is approximately normal with no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
   \item
-    \(30 \leq n < 100\): If the sample size \(n\) is betwe 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(30 \leq n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the data, then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \item
-    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \end{itemize}
 \end{itemize}
 
@@ -13729,10 +13730,10 @@ Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate
 
 To find the standardized statistic for the mean we will use the following formula:
 
-\[T = \frac{\bar{x} - \mu_0}{SE(\bar{x})},\]
+\[T = \frac{\bar{y} - \mu_0}{SE(\bar{y})},\]
 where the standard error of the sample mean difference is:
 
-\[SE(\bar{x})=\frac{s}{\sqrt{n}}.\]
+\[SE(\bar{y})=\frac{s}{\sqrt{n}}.\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -13786,7 +13787,7 @@ The following code calculates the p-value for the study.
 
 To calculate a theory-based confidence interval for the a single mean, use the following formula:
 
-\[\bar{x}\pm t^* \times SE(\bar{x}).\]
+\[\bar{y}\pm t^* \times SE(\bar{y}).\]
 
 We will need to find the \(t^*\) multiplier using the function \texttt{qt()}.
 
@@ -14716,9 +14717,9 @@ R code to find the summary statistics for a quantitative response variable with 
     \item
       \(n < 30\): The distribution of the sample must be approximately normal with no outliers.
     \item
-      \(30 \le n < 100\): We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
+      \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
     \item
-      \(n \ge 100\): Can assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+      \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
     \end{itemize}
   \end{itemize}
 \item
@@ -15735,9 +15736,9 @@ The sampling distribution for \(\bar{y}_1-\bar{y}_2\) can be modeled using a nor
   \item
     \(n < 30\): If the sample size \(n\) is less than 30 and there are no clear outliers in the data, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
   \item
-    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \item
-    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{x}\) is nearly normal, even if the underlying distribution of individual observations is not.
+    \(n \geq 100\): If the sample size \(n\) is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of \(\bar{y}\) is nearly normal, even if the underlying distribution of individual observations is not.
   \end{itemize}
 \end{itemize}
 
@@ -16378,7 +16379,7 @@ Module 12 will cover exploratory data analysis and both simulation-based and the
     \item
       \(30 \le n < 100\): We can relax the condition a little; the distribution of the sample differences must have no extreme outliers or skewness.
     \item
-      \(n \ge 100\): Can assume the sampling distribution of \(\bar{x}_d\) is nearly normal, even if the underlying distribution of individual observations is not.
+      \(n \ge 100\): Can assume the sampling distribution of \(\bar{y}_d\) is nearly normal, even if the underlying distribution of individual observations is not.
     \end{itemize}
   \end{itemize}
 \item
@@ -18137,7 +18138,7 @@ Hypotheses involving two quantitative variables can be expressed either in terms
 \item
   \textbf{Standardized slope}:
   \[
-  T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
+  T = \frac{\mbox{slope estimate}-\mbox{null value}}{SE} = \frac{b_1-0}{SE(b_1)}.
   \]
 
   \begin{itemize}
@@ -21070,7 +21071,324 @@ For a 95\% confidence interval we are finding the \(t^*\) value at the 99.5th pe
 
 \newpage
 
-\section{Module 12 Review - Regression}\label{module-12-review---regression}
+\section{Module 12 Review - Paired Data}\label{module-12-review---paired-data}
+
+Students in an introductory statistics class were asked to participate in an experiment to answer this question. Each student flipped a coin to determine which exercise to complete first. If the coin landed on heads the student would do jumping jacks for 30 seconds and then measure their heart rate in beats per minute (bpm). After a 2 minute break the student would do bicycle kicks for 30 seconds and then record their heart rate. If the coin landed on tails the student would complete bicycle kicks first followed by jumping jacks using the same times as above. For this study we will use the order of subtraction jumping jacks -- bicycle kicks. Which exercise, jumping jacks or bicycle kicks will raise your heart rate more?
+
+\begin{verbatim}
+#>   min Q1 median Q3 max     mean       sd  n missing
+#> 1 -16 -4      8 15  57 7.604651 15.91666 43       0
+\end{verbatim}
+
+The following code created the boxplot of differences.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the study design (observational or randomized experiment)?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Is this paired study or two independent samples?
+\end{enumerate}
+
+\vspace{0.2in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  What are the roles and types of each variable?
+\end{enumerate}
+
+\vspace{0.3in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  What is the scope of inference for this study?
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Write the parameter of interest for this study.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Write the null hypothesis in notation.
+\end{enumerate}
+
+\vspace{0.5in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Write the alternative hypothesis in words.
+\end{enumerate}
+
+\vspace{0.8in}
+
+We will start with simulation methods.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Calculate the difference \(\mu_0 - \bar{y}_d\). Will we need to shift the data up or down?
+  \vspace{0.5in}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paired\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff,   }\CommentTok{\#Vector of differences or data set with column for each group}
+            \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{7.605}\NormalTok{,   }\CommentTok{\#Shift needed for bootstrap hypothesis test}
+            \AttributeTok{as\_extreme\_as =} \FloatTok{7.605}\NormalTok{,  }\CommentTok{\#Observed statistic}
+            \AttributeTok{direction =} \StringTok{"two{-}sided"}\NormalTok{,  }\CommentTok{\#Direction of alternative}
+            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\#Number of simulated samples for null distribution}
+            \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\#Not needed when using calculated differences}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Based on the p-value for this study, which of the following are true?
+\end{enumerate}
+
+\vspace{0.3mm}
+
+\begin{itemize}
+\tightlist
+\item
+  There is very strong evidence that there is a true difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks (jumping jacks -- bicycle kicks), on average.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 16 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  The 95\% confidence interval would be entirely positive.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  There could be a potential Type I error.
+\end{itemize}
+
+\vspace{0.5in}
+
+\begin{itemize}
+\tightlist
+\item
+  We would conclude that there is evidence of a difference in heart rates between exercises, on average, when in fact there is not.
+\end{itemize}
+
+\vspace{0.5in}
+
+Bootstrap CI simulation to create a 95\% confidence interval
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff, }\CommentTok{\#Enter vector of differences}
+                    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#Number of bootstrap samples for CI}
+                    \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{,  }\CommentTok{\#Confidence level in decimal form}
+                    \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\#Not needed when entering vector of differences}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Interpret the 95\% confidence interval in context of the study.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Interpret the confidence level in context of the study. What does confidence mean?
+\end{enumerate}
+
+\vspace{0.8in}
+
+Next we will use theory-based methods.
+
+The sampling distribution for \(\bar{y}\) based on a sample of size \(n\) from a population with a true mean \(\mu\) and true standard deviation \(\sigma\) can be modeled using a normal distribution when certain conditions are met.
+
+Conditions for the sampling distribution of \(\bar{y}\) to follow an approximate normal distribution:
+
+\begin{itemize}
+\item
+  \textbf{Independence}: the sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
+\item
+  \textbf{Normality Condition}: either the sample differences come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
+
+  \begin{itemize}
+  \item
+    \(n < 30\): If the sample size \(n\) is less than 30 and there are no clear outliers in the distribution of differences, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
+  \item
+    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the differences of differences, then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal to satisfy the condition
+  \item
+    \(n \ge 100\): If the sample size is greater than 100 then we typically assume the sampling distribution of \(\bar{y}\) is nearly normal to satisfy the condition, even if the underlying distribution of individual observations is not.
+  \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Are the conditions met to model the data with theory-based methods?
+\end{enumerate}
+
+\vspace{0.8in}
+
+To find the standardized statistic for the paired differences we will use the following formula:
+
+\[T = \frac{\bar{y}_d - \text{null value}}{SE(\bar{y}_d)},\]
+
+where the standard error of the sample mean difference is:
+
+\[SE(\bar{y}_d)=\frac{s_d}{\sqrt{n}}.\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Calculate the standard error of the mean difference.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Calculate the standardized mean difference.
+\end{enumerate}
+
+\vspace{0.6in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Interpret the standardized statistic in context of the problem.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/pvalue-1} 
+
+}
+
+\end{figure}
+
+\newpage
+
+P-value for the test:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(}\FloatTok{3.133}\NormalTok{, }\AttributeTok{df=}\DecValTok{41}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 0.003190457}
+\end{Highlighting}
+\end{Shaded}
+
+To calculate the 95\% theory-based confidence interval for the paired mean difference, use the following formula:
+
+\[\bar{y}_d\pm t^* SE(\bar{y}_d).\]
+
+We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. For a 95\% confidence level, we are finding the \(t^*\) value at the 97.5th percentile with \texttt{df} = \(n_d - 1 = 42 - 1 = 41\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{42}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 2.018082}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/tstar4-1} 
+
+}
+
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  Calculate the 95\% confidence interval.
+\end{enumerate}
+
+\vspace{0.8in}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  Write a conclusion to the research question.
+\end{enumerate}
+
+\newpage
+
+\section{Module 13 Review - Regression}\label{module-13-review---regression}
 
 Spotify created a list of the top songs around the world for the past 10 years and several different audio features of those songs. Among the variables measured on these songs, we will look at the relationship between Valance and Danceability. Valance measures the positive mood of a song; the higher the point value the more positive the mood of the song. Danceability measures how easy it is to dance to a song; the higher the point value the easier it is to dance to the song. Is there evidence that songs with a higher valance value are more danceable, on average?
 
@@ -21369,323 +21687,6 @@ The \(t^*\) multiplier comes from the \(t\)-distribution with \(n-2\) df. Recall
 \item
   Calculate the 99\% confidence interval for the true slope.
   \vspace{1in}
-\end{enumerate}
-
-\newpage
-
-\section{Module 13 Review - Paired Data}\label{module-13-review---paired-data}
-
-Students in an introductory statistics class were asked to participate in an experiment to answer this question. Each student flipped a coin to determine which exercise to complete first. If the coin landed on heads the student would do jumping jacks for 30 seconds and then measure their heart rate in beats per minute (bpm). After a 2 minute break the student would do bicycle kicks for 30 seconds and then record their heart rate. If the coin landed on tails the student would complete bicycle kicks first followed by jumping jacks using the same times as above. For this study we will use the order of subtraction jumping jacks -- bicycle kicks. Which exercise, jumping jacks or bicycle kicks will raise your heart rate more?
-
-\begin{verbatim}
-#>   min Q1 median Q3 max     mean       sd  n missing
-#> 1 -16 -4      8 15  57 7.604651 15.91666 43       0
-\end{verbatim}
-
-The following code created the boxplot of differences.
-
-\begin{center}\includegraphics[width=0.6\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-3-1} \end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  What is the study design (observational or randomized experiment)?
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Is this paired study or two independent samples?
-\end{enumerate}
-
-\vspace{0.2in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  What are the roles and types of each variable?
-\end{enumerate}
-
-\vspace{0.3in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  What is the scope of inference for this study?
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Write the parameter of interest for this study.
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  Write the null hypothesis in notation.
-\end{enumerate}
-
-\vspace{0.5in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  Write the alternative hypothesis in words.
-\end{enumerate}
-
-\vspace{0.8in}
-
-We will start with simulation methods.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\tightlist
-\item
-  Calculate the difference \(\mu_0 - \bar{x}_d\). Will we need to shift the data up or down?
-  \vspace{0.5in}
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{paired\_test}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff,   }\CommentTok{\#Vector of differences or data set with column for each group}
-            \AttributeTok{shift =} \SpecialCharTok{{-}}\FloatTok{7.605}\NormalTok{,   }\CommentTok{\#Shift needed for bootstrap hypothesis test}
-            \AttributeTok{as\_extreme\_as =} \FloatTok{7.605}\NormalTok{,  }\CommentTok{\#Observed statistic}
-            \AttributeTok{direction =} \StringTok{"two{-}sided"}\NormalTok{,  }\CommentTok{\#Direction of alternative}
-            \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{,  }\CommentTok{\#Number of simulated samples for null distribution}
-            \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\#Not needed when using calculated differences}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-4-1} \end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
-\tightlist
-\item
-  Based on the p-value for this study, which of the following are true?
-\end{enumerate}
-
-\vspace{0.3mm}
-
-\begin{itemize}
-\tightlist
-\item
-  There is very strong evidence that there is a true difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks (jumping jacks -- bicycle kicks), on average.
-\end{itemize}
-
-\vspace{0.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  If there is no true mean difference in heart rates for Intro Stat students who did jumping jacks and bicycle kicks, in 16 out of 10000 simulated samples, we would observe a sample mean difference in heart rates of 6.429 bpm or more extreme in both tails.
-\end{itemize}
-
-\vspace{0.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  The 95\% confidence interval would be entirely positive.
-\end{itemize}
-
-\vspace{0.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  There could be a potential Type I error.
-\end{itemize}
-
-\vspace{0.5in}
-
-\begin{itemize}
-\tightlist
-\item
-  We would conclude that there is evidence of a difference in heart rates between exercises, on average, when in fact there is not.
-\end{itemize}
-
-\vspace{0.5in}
-
-Bootstrap CI simulation to create a 95\% confidence interval
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{paired\_bootstrap\_CI}\NormalTok{(}\AttributeTok{data =}\NormalTok{ heartrate}\SpecialCharTok{$}\NormalTok{Diff, }\CommentTok{\#Enter vector of differences}
-                    \AttributeTok{number\_repetitions =} \DecValTok{10000}\NormalTok{, }\CommentTok{\#Number of bootstrap samples for CI}
-                    \AttributeTok{confidence\_level =} \FloatTok{0.95}\NormalTok{,  }\CommentTok{\#Confidence level in decimal form}
-                    \AttributeTok{which\_first =} \DecValTok{1}\NormalTok{)  }\CommentTok{\#Not needed when entering vector of differences}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{14-UR-module11_review_files/figure-latex/unnamed-chunk-5-1} \end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{9}
-\tightlist
-\item
-  Interpret the 95\% confidence interval in context of the study.
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{10}
-\tightlist
-\item
-  Interpret the confidence level in context of the study. What does confidence mean?
-\end{enumerate}
-
-\vspace{0.8in}
-
-Next we will use theory-based methods.
-
-The sampling distribution for \(\bar{x}\) based on a sample of size \(n\) from a population with a true mean \(\mu\) and true standard deviation \(\sigma\) can be modeled using a normal distribution when certain conditions are met.
-
-Conditions for the sampling distribution of \(\bar{x}\) to follow an approximate normal distribution:
-
-\begin{itemize}
-\item
-  \textbf{Independence}: the sample's observations are independent, e.g., are from a simple random sample. (\emph{Remember}: This also must be true to use simulation methods!)
-\item
-  \textbf{Normality Condition}: either the sample differences come from a normally distributed population or we have a large enough sample size. To check this condition, use the following rules of thumb:
-
-  \begin{itemize}
-  \item
-    \(n < 30\): If the sample size \(n\) is less than 30 and there are no clear outliers in the distribution of differences, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
-  \item
-    \(30 \le n < 100\): If the sample size \(n\) is between 30 and 100 and there are no particularly extreme outliers in the differences of differences, then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal to satisfy the condition
-  \item
-    \(n \ge 100\): If the sample size is greater than 100 then we typically assume the sampling distribution of \(\bar{x}\) is nearly normal to satisfy the condition, even if the underlying distribution of individual observations is not.
-  \end{itemize}
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{11}
-\tightlist
-\item
-  Are the conditions met to model the data with theory-based methods?
-\end{enumerate}
-
-\vspace{0.8in}
-
-To find the standardized statistic for the paired differences we will use the following formula:
-
-\[T = \frac{\bar{x}_d - \text{null value}}{SE(\bar{x}_d)},\]
-
-where the standard error of the sample mean difference is:
-
-\[SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.\]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{12}
-\tightlist
-\item
-  Calculate the standard error of the mean difference.
-\end{enumerate}
-
-\vspace{0.6in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{13}
-\tightlist
-\item
-  Calculate the standardized mean difference.
-\end{enumerate}
-
-\vspace{0.6in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{14}
-\tightlist
-\item
-  Interpret the standardized statistic in context of the problem.
-\end{enumerate}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/pvalue-1} 
-
-}
-
-\end{figure}
-
-\newpage
-
-P-value for the test:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(}\FloatTok{3.133}\NormalTok{, }\AttributeTok{df=}\DecValTok{41}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{FALSE}\NormalTok{)}
-\CommentTok{\#\textgreater{} [1] 0.003190457}
-\end{Highlighting}
-\end{Shaded}
-
-To calculate the 95\% theory-based confidence interval for the paired mean difference, use the following formula:
-
-\[\bar{x}_d\pm t^* SE(\bar{x}_d).\]
-
-We will need to find the \(t^*\) multiplier using the function \texttt{qt()}. For a 95\% confidence level, we are finding the \(t^*\) value at the 97.5th percentile with \texttt{df} = \(n_d - 1 = 42 - 1 = 41\).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qt}\NormalTok{(}\FloatTok{0.975}\NormalTok{, }\AttributeTok{df =} \DecValTok{42}\NormalTok{, }\AttributeTok{lower.tail=}\ConstantTok{TRUE}\NormalTok{)}
-\CommentTok{\#\textgreater{} [1] 2.018082}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{14-UR-module11_review_files/figure-latex/tstar4-1} 
-
-}
-
-\end{figure}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{15}
-\tightlist
-\item
-  Calculate the 95\% confidence interval.
-\end{enumerate}
-
-\vspace{0.8in}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{16}
-\tightlist
-\item
-  Write a conclusion to the research question.
 \end{enumerate}
 
 \newpage

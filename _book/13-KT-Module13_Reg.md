@@ -169,7 +169,7 @@ $$H_A: \beta_1 \left\{
 
 * **Standardized slope**:
 $$
-T = \frac{\mbox{slope estimate}-null value}{SE} = \frac{b_1-0}{SE(b_1)}.
+T = \frac{\mbox{slope estimate}-\mbox{null value}}{SE} = \frac{b_1-0}{SE(b_1)}.
 $$
 
     * The p-value can be found from the linear model (`lm`) R output or by using the `pt` function in R to find the area under a $t$-distribution with $n-2$ degrees of freedom where $T$ is as or more extreme as the value observed (in the direction of $H_A$).

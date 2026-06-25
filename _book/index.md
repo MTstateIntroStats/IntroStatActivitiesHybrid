@@ -61,6 +61,8 @@ Each of the activities in this workbook is designed to target specific learning 
 
 All activities and labs in this coursepack will be completed during class time.  Parts of each lab will be turned in on Gradescope. To aid in your understanding, read through the introduction for each activity before attending class each day.  
 
+Additional review activities for each Module are provided at the end of each Unit.  These review activities will be completed during weekly review sessions throughout the semester.   
+
 STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nine hours per week outside of class to achieve a good grade in this class.  By “good” we mean at least a C because a grade of D or below does not count toward fulfilling degree requirements. Many of you set your goals higher than just getting a C, and we fully support that. You need roughly nine hours per week to review past activities, read feedback on previous assignments, complete current assignments, and prepare for the next day's class. A typical week in the life of a STAT 216 student looks like:
 
 * _Prior to class meeting_:
@@ -75,5 +77,6 @@ STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nin
     - Review the activity solutions in the Math and Stat Center, and take notes on key points.
     - Complete any remaining assigned readings videos, and quizzes for the week.
     - Complete the week's homework assignment.
+    - Attend weekly review sessions
 
 \nocite{*}

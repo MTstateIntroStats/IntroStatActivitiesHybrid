@@ -1,4 +1,4 @@
-## Module 13 Review - Paired Data
+## Module 12 Review - Paired Data
 
 
 
@@ -48,7 +48,7 @@ The following code created the boxplot of differences.
 
 We will start with simulation methods. 
 	
-8.  Calculate the difference $\mu_0 - \bar{x}_d$.  Will we need to shift the data up or down?
+8.  Calculate the difference $\mu_0 - \bar{y}_d$.  Will we need to shift the data up or down?
 \vspace{0.5in}
 
 
@@ -112,18 +112,18 @@ paired_bootstrap_CI(data = heartrate$Diff, #Enter vector of differences
 
 Next we will use theory-based methods.
 
-The sampling distribution for $\bar{x}$ based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a normal distribution when certain conditions are met.
+The sampling distribution for $\bar{y}$ based on a sample of size $n$ from a population with a true mean $\mu$ and true standard deviation $\sigma$ can be modeled using a normal distribution when certain conditions are met.
 
-Conditions for the sampling distribution of $\bar{x}$ to follow an approximate normal distribution:
+Conditions for the sampling distribution of $\bar{y}$ to follow an approximate normal distribution:
 
 * **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
 
 * **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
     - $n < 30$: If the sample size $n$ is less than 30 and there are no clear outliers in the distribution of differences, then we typically assume the data come from a nearly normal distribution to satisfy the condition.
 
-    - $30 \le n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the differences of differences, then we typically assume the sampling distribution of $\bar{x}$ is nearly normal to satisfy the condition
+    - $30 \le n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers in the differences of differences, then we typically assume the sampling distribution of $\bar{y}$ is nearly normal to satisfy the condition
     
-    - $n \ge 100$: If the sample size is greater than 100 then we typically assume the sampling distribution of $\bar{x}$ is nearly normal to satisfy the condition, even if the underlying distribution of individual observations is not.
+    - $n \ge 100$: If the sample size is greater than 100 then we typically assume the sampling distribution of $\bar{y}$ is nearly normal to satisfy the condition, even if the underlying distribution of individual observations is not.
     
 12.  Are the conditions met to model the data with theory-based methods?
 
@@ -131,11 +131,11 @@ Conditions for the sampling distribution of $\bar{x}$ to follow an approximate n
 
 To find the standardized statistic for the paired differences we will use the following formula:
 
-$$T = \frac{\bar{x}_d - \text{null value}}{SE(\bar{x}_d)},$$
+$$T = \frac{\bar{y}_d - \text{null value}}{SE(\bar{y}_d)},$$
 
 where the standard error of the sample mean difference is:
 
-$$SE(\bar{x}_d)=\frac{s_d}{\sqrt{n}}.$$
+$$SE(\bar{y}_d)=\frac{s_d}{\sqrt{n}}.$$
 
 13. Calculate the standard error of the mean difference.
 
@@ -171,7 +171,7 @@ P-value for the test:
 
 To calculate the 95\% theory-based confidence interval for the paired mean difference, use the following formula:
 
-$$\bar{x}_d\pm t^* SE(\bar{x}_d).$$
+$$\bar{y}_d\pm t^* SE(\bar{y}_d).$$
 
 We will need to find the $t^*$ multiplier using the function `qt()`. For a 95\% confidence level, we are finding the $t^*$ value at the 97.5th percentile with `df` = $n_d - 1 = 42 - 1 = 41$.
 

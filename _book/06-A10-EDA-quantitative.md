@@ -181,7 +181,7 @@ ggplot(aes(x = Cost_InState)) +   # Name variable to plot
 
 \begin{center}\includegraphics[width=0.7\linewidth]{06-A10-EDA-quantitative_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
-Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence to show how the outliers were detected (any values less than the lower fence or greater than the upper fence were flagged as outliers).
+Use the following formulas to find the invisible fence on both ends of the distribution.  Draw a dotted line at the invisible fence.  Any values less than the lower fence or greater than the upper fence would be flagged as outliers.
 
 $$\text{Lower Fence:} ~~~ Q_1 - 1.5\times IQR~~~~~~~\text{Upper Fence:} ~~~ Q_3 + 1.5\times IQR$$
 \vspace{1.25in}

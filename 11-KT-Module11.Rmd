@@ -110,9 +110,9 @@ two_mean_bootstrap_CI(response ~ explanatory, #Enter the name of the variables
      
          - $n < 30$: The distribution of the sample must be approximately normal with no outliers.
          
-         - $30 \le n < 100$: We can relax the condition a little; the distribution of the sample must have no extreme outliers or skewness.
-         
-         - $n \ge 100$: Can assume the sampling distribution of $\bar{x}$ is nearly normal, even if the underlying distribution of individual observations is not.
+         - $30 \le n < 100$: If the sample size $n$ is between 30 and 100 and there are no particularly extreme outliers, then we typically assume the sampling distribution of $\bar{y}$ is nearly normal, even if the underlying distribution of individual observations is not.
+    
+         - $n \geq 100$: If the sample size $n$ is at least 100 (regardless of the presence of skew or outliers), we typically assume the sampling distribution of $\bar{y}$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 * **Standard error of the sample difference in means**:
 $$SE(\bar{y}_1 - \bar{y}_2) = \sqrt{\frac{{s_1}^2}{n_1}+\frac{{s_2}^2}{n_2}}$$

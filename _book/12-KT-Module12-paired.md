@@ -87,7 +87,7 @@ $$H_A: \mu_d\left\{
          
          - $30 \le n < 100$: We can relax the condition a little; the distribution of the sample differences must have no extreme outliers or skewness.
          
-         - $n \ge 100$: Can assume the sampling distribution of $\bar{x}_d$ is nearly normal, even if the underlying distribution of individual observations is not.
+         - $n \ge 100$: Can assume the sampling distribution of $\bar{y}_d$ is nearly normal, even if the underlying distribution of individual observations is not.
          
 
 * **Standard error of the sample mean difference**:
