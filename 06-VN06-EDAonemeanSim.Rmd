@@ -3,66 +3,23 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Video Notes: Exploratory Data Analysis and Hypothesis Testing of Quantitative Variables
+## Video Notes: Analysis of One Quantitative Variable
 
 Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the video notes for Module 6.
 
 ### Course Videos
 
-* 5.2to5.4
+* One_Quantitative_Variable_Statistics
 
-* 5.5
+* One_Quantitative_Variable_Plots
 
-* 5.7
+* Simulation_Tests_One_Quantitative_Variable
 
-* 17.2
-
-* 17.1
+* Bootstrap_Tests_One_Quantitative_Variable
 
 \setstretch{1}
 
-### Summarizing quantitative data - Video 5.2to5.4 {-}
-
-#### Types of plots {-}
-
-We will revisit the moving to Montana data set and plot the age of the buyers.
-
-```{r, echo=FALSE}
-moving <- read.csv("data/moving_to_mt.csv")
-```
-
-Dotplot:
-
-\vspace{0.5in}
-
-```{r, echo=TRUE, out.width="75%"}
-moving %>%
-  ggplot(aes(x = Age))+ #Enter variable to plot
-  geom_dotplot() + 
-  labs(title = "Dotplot of Age of Buyers from Gallatin 
-       County Home Sales", #Title your plot
-       x = "Age", #x-axis label
-       y = "Proportion") #y-axis label
-```
-
-\newpage
-
-Histogram:
-
-\vspace{0.2in}
-
-```{r, echo=TRUE, out.width="70%"}
-moving %>%
-  ggplot(aes(x = Age))+
-  geom_histogram(binwidth = 7) + 
-  labs(title = "Histogram of Age of Buyers from Gallatin 
-       County Home Sales",
-       #Title your plot
-       x = "Age",
-       y = "Count")
-```
-
-\setstretch{1.5}
+### Video: One Quantitative Variable - Statistics (sections 5.2, 5.4, 5.5 and 5.7) {-}
 
 Quantitative data can be numerically summarized by finding:
 
@@ -70,8 +27,7 @@ Two measures of center:
 
 * Mean: ____________ of all the _____________ in the data set.
 
-    - Sum the values in the data set and divide
-    the sum by the sample size
+    - Sum the values in the data set and divide the sum by the sample size
     
 * Notation used for the population mean:
        
@@ -117,13 +73,112 @@ Two measures of spread:
 
 \setstretch{1}
 
-\newpage
+* The ___________ is a robust measure of center.
 
-### Summarizing quantitative data - Video 5.5 {-}
+* The ___________ is a robust measure of spread.
 
-Boxplot (3rd type of plot for quantitative variables)
+* Robust means not _________________ by outliers.
+
+When the distribution is symmetric without outliers, use the ____________ as the measure of center and the ___________ as the measure of spread.
+
+When the distribution is skewed or has outliers, use the _____________ as the measure of center and the ____________ as the measure of spread.
+
+\setstretch{1}
+
+
+### Video: One Quantitative Variable - Plots (sections 5.2, 5.3 and 5.5) {-}
+
+Three types of plots for displaying one quantitative variable:
+
+\setstretch{1.5}
+
+* Dotplot: each dot represents one __________________________; x-axis represents the scale of the ____________________; y-axis represents the ___________________________
+
+
+* Histogram: Similar to dotplot, but the observational units are "binned".  Y-axis represents the number of observational units (frequency) in each "bin"
+
+\rgi How is a histogram different from a bar plot?
+
+\vspace{0.4in}
+
+
+* Boxplot: displays the five number summary
 
     - Five number summary: minimum, Q1, median, Q3, maximum
+    - The box starts at ____________________
+    - The line within the box is plotted at the __________________
+    - The box ends at __________________
+    - The whiskers extend to the lowest and highest _______________________ values in the dataset
+    - The dots beyond the whiskers represent _______________________.
+    
+
+#### Four characteristics of plots for quantitative variables {-}
+
+* Center: mean or median
+
+* Spread or Variability: standard deviation or IQR
+
+* Shape: overall pattern of the data
+
+  \rgi \rgi Which type of plot is best used when determining the shape of the distribution?
+  
+  \vspace{0.2in}
+
+```{r, out.width="80%"}
+include_graphics("images/shape2.png")
+```
+* Outliers: unusually large or small values in the dataset. Values that are "far" from the rest of the data.
+
+\rgi Typically use the 1.5IQR rule for determining outliers:
+
+\rgi values less than __________________________ are considered low outliers
+
+\rgi values greater than __________________________ are considered high outliers
+
+
+
+#### Optional notes: Additional Example {-}
+
+We will revisit the moving to Montana data set and plot the age of the buyers.
+
+```{r, echo=FALSE}
+moving <- read.csv("data/moving_to_mt.csv")
+```
+
+Dotplot:
+
+\vspace{0.5in}
+
+```{r, echo=TRUE, out.width="75%"}
+moving %>%
+  ggplot(aes(x = Age))+ #Enter variable to plot
+  geom_dotplot() + 
+  labs(title = "Dotplot of Age of Buyers from Gallatin 
+       County Home Sales", #Title your plot
+       x = "Age", #x-axis label
+       y = "Proportion") #y-axis label
+```
+
+ 
+
+Histogram:
+
+\vspace{0.2in}
+
+```{r, echo=TRUE, out.width="70%"}
+moving %>%
+  ggplot(aes(x = Age))+
+  geom_histogram(binwidth = 7) + 
+  labs(title = "Histogram of Age of Buyers from Gallatin 
+       County Home Sales",
+       #Title your plot
+       x = "Age",
+       y = "Count")
+```
+
+\setstretch{1.5}
+
+Boxplot:
 
 \vspace{0.3in}
 
@@ -143,92 +198,40 @@ moving %>%
 favstats(moving$Age)
 ```
 
+What is the mean age of buyers?  Write it using proper notation.
+
+\vspace{0.3in}
 
 Interpret the value of $Q_3$ for the age of buyers.
 
 \vspace{0.5in}
 
-Interpret the value of s for the age of buyers.
+Interpret the value of $s$ for the age of buyers.
 
 \vspace{0.5in}
 
-\newpage
+ 
 
 #### Four characteristics of plots for quantitative variables {-}
 
-* Shape: overall pattern of the data
-
-```{r, out.width="80%"}
-include_graphics("images/shape2.png")
-```
 
 \rgi \rgi - What is the shape of the distribution of age of buyers for Gallatin County home sales?
 
 \vspace{0.3in}
 
-* Center:  
-
-\rgi Mean or Median
-
-\rgi \rgi - Report the measure of center based on the boxplot of age of buyers for Gallatin County home sales.
+* Report the measure of center based on the boxplot of age of buyers for Gallatin County home sales.
 
 \vspace{0.3in}
 
-* Spread (or variability):
-
-\rgi Standard deviation or IQR
-
-\rgi \rgi - Report the IQR for the distribution of age of buyers from Gallatin County home sales.
+* Report the IQR for the distribution of age of buyers from Gallatin County home sales.
 
 \vspace{0.3in}
 
-* Outliers?
-
-\rgi values < $Q_1 - 1.5 \times IQR$
-
-\rgi values > $Q_3 + 1.5 \times IQR$
-
-\rgi \rgi - Use these formulas to show that there are no outliers in the distribution of age of buyers from Gallatin County home sales.
+* Use the formulas to show that there are no outliers in the distribution of age of buyers from Gallatin County home sales.
 
 \vspace{0.8in}
 
-\newpage
-
-### Robust statistics - Video 5.7 {-}
-
-Let's review the summary statistics and histogram of age of buyers from sampled home sales.
-
-```{r, echo=FALSE, out.width="85%"}
-moving %>%
-  ggplot(aes(x = Age))+
-  geom_histogram(binwidth = 7) + 
-  labs(title = "Histogram of Age of Buyers from Gallatin 
-       County Home Sales", 
-       x = "Age",
-       y = "Count")
-```
-
-```{r, echo=FALSE, collapse=FALSE}
-favstats(moving$Age)
-```
-
-\setstretch{1.5}
-
-Notice that the _____________ has been pulled in the direction of the _______________.  
-
-* The ___________ is a robust measure of center.
-
-* The ___________ is a robust measure of spread.
-
-* Robust means not _________________ by outliers.
-
-When the distribution is symmetric use the ____________ as the measure of center and the ___________ as the measure of spread.
-
-When the distribution is skewed with outliers use the _____________ as the measure of center and the ____________ as the measure of spread.
-
-\setstretch{1}
-
-\newpage
+ 
 
 ### Simulation-based Testing for a Single Mean - Video 17.2 {-}
 
@@ -261,7 +264,7 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
 
 ```
 
-\newpage
+ 
 
 Summary Statistics:
 
@@ -371,7 +374,7 @@ Interpretation of the p-value:
 
 
 \vspace{0.8in}
-\newpage
+ 
 
 Conclusion:
 
@@ -496,4 +499,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 3. How do we determine the direction of the alternative hypothesis?
 
 
+ 
 \newpage

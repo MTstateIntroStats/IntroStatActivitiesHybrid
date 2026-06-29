@@ -4,7 +4,7 @@ output:
   html_document: default
 ---
 
-## Video Notes: Exploratory Data Analysis of Categorical Variables
+## Video Notes: Analysis of One Categorical Variable
 
 Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use the following videos to complete the video notes for Module 3.
 
@@ -384,7 +384,7 @@ Review the Martian Alphabet example from sections 9.1 and 9.3.2
 \vspace{0.3in}
 
 
-###Video: Simulation Tests for One Categorical Variable (section 14.1) {-}
+### Video: Simulation Tests for One Categorical Variable (section 14.1) {-}
 
 Review the Medical Consultant example from section 14.1.
 
