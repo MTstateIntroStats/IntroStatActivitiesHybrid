@@ -10,31 +10,24 @@ Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use
 
 ### Course Videos
 
-* 4.1_OneProp
+* One_Categorical_Variable_EDA
 
-* 4.2_OneProp
+* Hypothesis_Testing
 
-* Chapter9
+* Simulation_Tests_One_Categorical_Variable
 
-* 14.1
+* Confidence_Intervals
 
-* Chapter10
+* Bootstrap_Intervals_One_Categorical_Variable
 
-* 14.2
-
-<!-- * 5.2to5.4 -->
-
-<!-- * 5.5to5.6 -->
-
-<!-- * 5.7 -->
 
 \setstretch{1}
 
-### Summarizing categorical data - Video 4.1_OneProp {-}
+### Video: One Categorical Variable EDA (sections 4.1 and 4.2 - summarizing and displaying one categorical variable) {-}
 
 * A ______________ is calculated on data from a sample
 
-* The parameter of interest is what we want to know from the population.
+* The ________________ is calculated on data from a population; it is typically unknown and therefore we will define it *in words*
 
 * Includes:
 
@@ -60,14 +53,39 @@ Notation used for the sample proportion:
 \vspace{0.2in}
 
 \setstretch{1.5}
-Categorical data can be reported in a ____________table, 
-which plots counts or a ______________________________ table, which plots the proportion.
+Categorical data can be summarized in a ____________________ table, which reports counts or a ________________ ________________ table, which reports proportions.
 
 \setstretch{1}
 
+Types of plots for a single categorical variable:
+
+\vspace{0.4in}
+
 \vspace{2mm}
 
-#### Optional Notes: Video Example {-}
+Example from section 4.1 using the `email` data set:
+
+* Identify the observational units.
+
+\vspace{0.2in}
+
+* What type of variable is `number`?
+
+\vspace{0.2in}
+
+* Is Table 4.3 a frequency or relative frequency table?
+
+\vspace{0.2in}
+
+* What proportion of emails had no number in them?  Is this value a statistic or a parameter?  Write it using proper notation.
+
+\vspace{0.3in}
+
+\setstretch{1.5}
+
+* Compare the two plots (frequency bar plot and relative frequency bar plot) of the variable `number` in Figure 4.1 in section 4.2 of the text.  Note that the x-axis is the _______________ in the two plots.  However, the ______________ differs.  The scale for the frequency bar plot goes from _______________________________ and the scale for the relative frequency bar plot is from ______________________________.
+
+#### Optional Notes: Additional Example {-}
 
 Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
 
@@ -121,16 +139,6 @@ moving %>%
 \vspace{0.2in}
 
 
-#### Displaying categorical variables - Video 4.2_OneProp {-}
-
-* Types of plots for a single categorical variable
-
-\vspace{0.4in}
-
-<!-- * Types of plots for two categorical variables -->
-
-<!-- \vspace{0.4in} -->
-
 The following code in `R` will create a frequency bar plot of the variable, `From`.
 
 ```{r, echo=TRUE, out.width="65%"}
@@ -161,13 +169,10 @@ moving %>%
        x = "State of Origin") #x-axis label
 ```
 
-\setstretch{1.5}
-
-* Note: the x-axis is the _______________ between the frequency bar plot and the relative frequency bar plot.  However, the ______________ differs.  The scale for the frequency bar plot goes from _______________________________ and the scale for the relative frequency bar plot is from ______________________________.
 
 \setstretch{1}
 
-### Hypothesis Testing - Video Chapter9 {-}
+### Video: Hypothesis Testing (chapter 9) {-}
 
 Purpose of a hypothesis test:
 
@@ -186,16 +191,6 @@ General steps of a hypothesis test
 4.	Calculate a p-value.
 
 5.	Draw conclusions based on a p-value.
-
-### Hypothesis Testing/Justice System {-}
-
-\setstretch{1.5}
-
-* Two possible outcomes:
-
-    - Strong evidence against __________________ -> ____________________
-    
-    - Not enough evidence against _____________________ -> ______________________
 
 
 ### Hypotheses {-}
@@ -226,7 +221,7 @@ Notation:
 
 * What the researcher hopes is ________________.
 
-* The sign of the alternative hypothesis reflects the ______________________________.
+* The sign of the alternative hypothesis reflects the _________________ __________________.
 
 Notation *(write all three options)*:
 
@@ -274,9 +269,8 @@ assuming the ________ hypothesis is __________.
 include_graphics("images/soe_gradient_gray.png")
 ```
 
-\rgi \rgi - The __________________the p-value, the ___________________ the evidence against the null hypothesis.
+\rgi \rgi - The __________________ the p-value, the ___________________ the evidence against the null hypothesis.
 
-\newpage
 
 * Write a conclusion based on the p-value.
 
@@ -310,6 +304,22 @@ include_graphics("images/soe_gradient_gray.png")
 \rgi \rgi \rgi - Results are not _____________________ significant.
 
 \setstretch{1}
+
+### Hypothesis Testing/Justice System {-}
+
+\setstretch{1.5}
+
+* Null hypothesis: The defendant is _____________________
+
+* Alternative hypothesis: The defendant is _______________________
+
+* Prosecution collects evidence (data) and presents that evidence to a jury
+
+* Two possible outcomes:
+
+    - Strong evidence against __________________ -> jury finds the defendant ____________________
+    
+    - Not enough evidence against _____________________ -> jury finds the defendant ______________________
     
 <!-- ### One proportion test {-} -->
 
@@ -339,28 +349,155 @@ include_graphics("images/soe_gradient_gray.png")
 
 <!-- 	        * If the response variable is categorical, define a ‘success’ in context -->
 
-#### Hypothesis testing {-}
+#### Example: Martian Alphabet {-}
 
-Conditions:
+Review the Martian Alphabet example from sections 9.1 and 9.3.2
 
-* Independence:
+* Write the null hypothesis in words and in notation:
+
+  \rgi \rgi In words: $H_0: $
+  
+  \rgi \rgi In notation:  $H_0: \pi = $_____, where $\pi$ represents the ___________ proportion of humans that would ____________________________. 
+  
+* Write the alternative hypothesis in words and in notation:
+
+  \rgi \rgi In words: $H_A: $
+  
+  \rgi \rgi In notation:  $H_0: \pi $_________ (a ________ sign represents the research question - that humans have a ___________________ for choosing Bumba on the left)
+  
+* What is the value of the statistic?  Write it using proper notation.
+  
+\vspace{0.2in}
+  
+* Review Figure 9.2.  Why is the plot centered around 0.5?  What does each "dot" on the plot represent?
+  
+\vspace{0.4in}
+  
+* Does the statistic seem likely or unlikely to occur if humans are picking a shape randomly?  What about Figure 9.2 helps us to answer this question?
+  
+\vspace{0.4in}
+ 
+\setstretch{1.5}
+ 
+  * The p-value of the test is ________________.  This p-value provides ______________________ evidence against the ________________________ hypothesis and for the ____________________ hypothesis.  The results from this study _________________________ be considered statistically significant.
 
 \vspace{0.3in}
 
-<!-- Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc. -->
 
-<!-- \rgi Always of form:  “parameter” = null value -->
+###Video: Simulation Tests for One Categorical Variable (section 14.1) {-}
 
-<!-- $H_0:$ -->
+Review the Medical Consultant example from section 14.1.
 
-<!-- \vspace{0.5in} -->
+Identify the observational units.
 
-<!-- $H_A:$ -->
+\vspace{0.3in}
 
-<!-- \vspace{0.5in} -->
+Identify the variable collected. 
 
-<!-- * Research question determines the direction of the alternative hypothesis. -->
-### Confidence interval - Video Chapter10 {-}
+\vspace{0.3in}
+
+Is the variable categorical or quantitative? If categorical, define a "success"; if quantitative, state the units of measure.
+
+\vspace{0.3in}
+
+Define the parameter in words and write it using proper notation
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses in words and in proper notation:
+
+  \rgi In words:
+
+  \rgi \rgi $H_0:$
+
+\vspace{0.45in}
+
+  \rgi \rgi $H_A:$
+
+\vspace{0.45in}
+
+  \rgi In notation:
+
+\vspace{1mm}
+
+  \rgi \rgi $H_0:$
+
+\vspace{0.2in}
+
+  \rgi \rgi $H_A:$
+
+\vspace{0.2in}
+
+Calculate the value of the statistic and write it using proper notation: 
+
+\vspace{0.2in}
+
+#### Simulation-based method {-}
+
+* Simulate many samples assuming $H_0: \pi = \pi_0$
+
+    * Create a spinner with that represents the null value
+
+    * Spin the spinner $n$ times
+
+    * Calculate and plot the simulated sample proportion from each simulation
+
+    * Repeat 10000 times (simulations) to create the null distribution
+
+    * Find the proportion of simulations at least as extreme as $\hat{p}$
+
+```{r, echo=TRUE}
+set.seed(216)
+one_proportion_test(probability_success = 0.10, # Null hypothesis value
+          sample_size = 62, # Enter sample size
+          number_repetitions = 10000, # Enter number of simulations
+          as_extreme_as = 3/62, # Observed statistic
+          direction = "less", # Specify direction of alternative hypothesis
+          summary_measure = "proportion") # Reporting proportion or number of successes?
+```
+
+Explain why the null distribution is centered at the value of approximately 0.10:
+
+\vspace{0.5in}
+
+Where is the red line plotted on the null distribution?  Why is that value important?
+
+\vspace{0.3in}
+
+Why is the area left of the red line shaded on the null distribution?
+
+\vspace{0.3in}
+
+Interpretation of the p-value:
+
+* Statement about probability or proportion of samples
+
+* Statistic (summary measure and value) and Direction of the alternative 
+    
+* Null hypothesis 
+
+* Context of the problem (observational units, variable(s))
+
+\vspace{0.8in}
+
+Conclusion: 
+
+* Amount of evidence
+    
+* Parameter of interest 
+    
+* Direction of the alternative hypothesis
+
+\vspace{0.6in}
+
+Generalization:
+
+* Can the results of the study be generalized to the target population?
+
+\vspace{0.4in}
+
+
+### Video: Confidence intervals (chapter 10) {-}
 
 \rgi $\text{statistic} \pm \text{margin of error}$
 
@@ -416,117 +553,42 @@ What is bootstrapping?
 
 * Randomly sample with replacement from the original sample $n$ times.
 
+#### Example: Medical Consultant {-}
 
-#### Optional Notes: Video Example (Video 14.1) {-}
+Review the Medical Consultant example in section 10.1.
 
-A 2007 study published in the Behavioral Ecology and Sociobiology Journal was titled “Why do blue-eyed men prefer blue-eyed women?” [@laeng2007] In this study, conducted in Norway, 114 volunteer heterosexual blue-eyed males rated the attractiveness of 120 pictures of females.  The researchers recorded which eye-color (blue, green, or brown) was rated the highest, on average.  In the sample, 51 of the volunteers rated the blue-eyed women the most attractive.  Do blue-eyed heterosexual men tend to find blue-eyed women the most attractive?
-
-Parameter of interest:
-
-\vspace{0.5in}
-
-Write the null and alternative hypotheses for the blue-eyed study:
-
-<!-- In words:  -->
-
-<!-- $H_0:$ -->
-
-<!-- \vspace{0.45in} -->
-
-<!-- $H_A:$ -->
-
-<!-- \vspace{0.45in} -->
-
-In notation:
-
-\vspace{1mm}
-
-$H_0:$
-
-\vspace{0.2in}
-
-$H_A:$
-
-\vspace{0.2in}
-
-Statistic: 
-
+* Is 0.048 the statistic or the parameter?  How do you know?
+  
 \vspace{0.4in}
 
-Is the independence condition met to analyze these data using a simulation-based approach? 
+* Review Figure 10.6 in section 10.1.2.  
+  
+  * Why is the plot centered near 0.048?  What does each "dot" on the plot represent?
+  
+  \vspace{0.4in}
+  
+  * Why are the 2.5th and 97.5th percentiles of the bootstrap distribution marked?  What are the values of these two percentiles?
+  
+  \vspace{0.3in}
+  
+  * Interpret the confidence interval:  We are _______% _____________________ that, in the ________________, the true probability (or proportion) of complications is between ____________ and _________.
+  
+\vspace{0.3in}
 
-\vspace{0.2in}
-
-#### Simulation-based method {-}
-
-* Simulate many samples assuming $H_0: \pi = \pi_0$
-
-    * Create a spinner with that represents the null value
-
-    * Spin the spinner $n$ times
-
-    * Calculate and plot the simulated sample proportion from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $\hat{p}$
-
-```{r, echo=TRUE}
-set.seed(216)
-one_proportion_test(probability_success = 0.333, # Null hypothesis value
-          sample_size = 114, # Enter sample size
-          number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = 0.447, # Observed statistic
-          direction = "greater", # Specify direction of alternative hypothesis
-          summary_measure = "proportion") # Reporting proportion or number of successes?
-```
-
-Explain why the null distribution is centered at the value of approximately 0.333:
-
-\vspace{0.5in}
-
-Interpretation of the p-value:
-
-* Statement about probability or proportion of samples
-
-* Statistic (summary measure and value)
-    
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
-
-\vspace{0.8in}
-
-Conclusion: 
-
-* Amount of evidence
-    
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
-
-\vspace{0.6in}
-
-Generalization:
-
-* Can the results of the study be generalized to the target population?
-
-\vspace{0.4in}
 
  
+###Video: Bootstrap Confidence Intervals for One Categorical Variable (section 14.2) {-}
 
-#### Optional Notes: Video Example (Video 14.2) {-}
-
-Let's revisit the blue-eyed male study to estimate the *proportion of ALL heterosexual blue-eyed males who tend to find blue-eyed women the most attractive* by creating a 90\% confidence interval. 
+Review the Medical Consultant study from section 14.2.
 
 Bootstrap distribution:
    
 ```{r, echo=TRUE}
 set.seed(216)
-one_proportion_bootstrap_CI(sample_size = 114, # Sample size
-                    number_successes = 51, # Observed number of successes
+one_proportion_bootstrap_CI(sample_size = 62, # Sample size
+                    number_successes = 3, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
-                    confidence_level = 0.90) # Confidence level as a decimal
+                    confidence_level = 0.95) # Confidence level as a decimal
 ```
 
 Confidence interval interpretation:
@@ -537,8 +599,6 @@ Confidence interval interpretation:
     
 * Calculated interval
     
-* Order of subtraction when comparing two groups
-
 \vspace{0.8in}
 
 
@@ -546,22 +606,22 @@ Confidence interval interpretation:
 How does changing the confidence level impact the width of the confidence interval?
 
 
-95\% Confidence Interval:
+90\% Confidence Interval:
 
 ```{r, echo=TRUE, out.width="70%"}
 set.seed(216)
-one_proportion_bootstrap_CI(sample_size = 114, # Sample size
-                    number_successes = 51, # Observed number of successes
+one_proportion_bootstrap_CI(sample_size = 62, # Sample size
+                    number_successes = 3, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
-                    confidence_level = 0.95) # Confidence level as a decimal
+                    confidence_level = 0.90) # Confidence level as a decimal
 ```
 
 99\% Confidence Interval:
 
 ```{r, echo=TRUE, out.width="70%"}
 set.seed(216)
-one_proportion_bootstrap_CI(sample_size = 114, # Sample size
-                    number_successes = 51, # Observed number of successes
+one_proportion_bootstrap_CI(sample_size = 62, # Sample size
+                    number_successes = 3, # Observed number of successes
                     number_repetitions = 10000, # Number of bootstrap samples to use
                     confidence_level = 0.99) # Confidence level as a decimal
 ```
