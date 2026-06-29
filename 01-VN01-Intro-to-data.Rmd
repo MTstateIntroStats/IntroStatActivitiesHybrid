@@ -11,17 +11,19 @@ Read through Sections 1.1 -- 1.3 and 2.1 in the course textbook and watch the co
 
 ### Course Videos
 
-* 1.2.1and1.2.2
+* Data_Basics
 
-* 2.1
+* Sampling
 
-### Data basics: Video 1.2.1and1.2.2 {-}
+### Video: Data Basics (sections 1.2.1 and 1.2.2)  {-}
 
-Data:  _______________________________ used to answer research questions
+Data:  observations used to answer research questions
 
-Observational unit or case:  the people or things we _____________________ data from; represents the ___________ in each data set
+Observational unit or case:  the people or things we _____________________ data from; in a data set, each _________________ represents one observational unit.
 
-Variable: characteristics measured on each _______________________________.
+* The number of observational units in a data set is called the ____________________ __________________ and is denoted by the letter ___________ .
+
+Variable: ______________________ measured on each observational unit; in a dataset, each ___________________ represents one variable.
 
 #### Types of variables {-}
 
@@ -37,7 +39,45 @@ Variable: characteristics measured on each _______________________________.
 
 \setstretch{1.5}
 
-Example:  The Bureau of Transportation Statistics [@bts] collects data on all forms of public transportation. The data set seen here includes several variables collect on flights departing on a random sample of 150 US airports in December of 2019.
+Example:  Review the `loan50` data set discussed in section 1.2.1 of the textbook.  
+
+* Identify the sample size. Write it using proper notation.
+
+\vspace{0.2in}
+
+* What are the observational units?
+
+\vspace{0.2in}
+
+* Review Table 1.4 in section 1.2.1 of the textbook, listing the 7 variables in the `loan50` data set.  Identify which variables are categorical.
+
+\vspace{0.2in}
+
+* Identify which variables are quantitative.
+
+\vspace{0.2in}
+
+Summary measure: the *type* of number (mean/proportion/correlation/etc.) used to summarize an entire data set
+
+\rgi Examples: 
+
+\rgi \rgi proportion of loans when the person owns a home
+
+\vspace{0.3in}
+    
+\rgi \rgi mean (or average) interest rate
+    
+\vspace{0.3in}
+
+* The summary measure (mean/proportion/correlation/etc.) and type of plot (bar plot/histogram/scatterplot/etc.) used depends on the type (categorical or quantitative) of variable(s) being summarized! 
+
+
+\setstretch{1}
+
+
+#### Optional Notes: Additional Example {-}
+
+The Bureau of Transportation Statistics [@bts] collects data on all forms of public transportation. The data set seen here includes several variables collect on flights departing on a random sample of 150 US airports in December of 2019.
 
 \vspace{1mm}
 
@@ -59,70 +99,49 @@ glimpse(airport)
 \vspace{0.2in}
 
 
-#### Exploratory data analysis (EDA) {-}
-
-Summary statistic: a single number which _______________________ an entire data set
-
-* Also called the point estimate.
-
-\rgi Examples: 
-
-\rgi \rgi proportion of people who had a stroke
-
-\vspace{0.3in}
-    
-\rgi \rgi mean (or average) age
-    
-\vspace{0.3in}
-
-* The summary statistic and type of plot used depends on the type (categorical or quantitative) of variable(s)!  
 
 
-\setstretch{1}
-
-
-### Sampling Methods: Video 2.1 {-}
+### Video: Sampling (section 2.1) {-}
 
 \setstretch{1.5}
 
-The method used to collect data will impact 
+The method used to collect data will impact **who the results apply to** and **what type of conclusions** can be drawn.
 
-* Target population: all _______________ or ______________ of interest 
+* Target population: all ____________________________ of interest 
 
-* Sample:________________ or ________________ from which data is collected
+* Sample: the group of ____________________________ from which data is collected; a subset of the target population
 
 \setstretch{1}
 
-Example: Many high schools moved to partial or fully online schooling in Spring of 2020. Did students who graduated in 2020 tend to have a lower GPA during freshman year of college than the previous class of college freshmen? A nationally representative sample of 1000 college students who were freshmen in AY19-20 and 1000 college students who were freshmen in AY20-21 was taken to answer this question.
+#### Parameters and statistics {-}
 
-* What is the target population?
 
-\vspace{0.2in}
+Statistic: a single number which summarizes data from a ____________________; also called the **point estimate**
 
-* What is the sample?
+* The value of the statistic will _______________ from one sample to the next, called the __________________ __________________
 
-\vspace{0.2in}
+Parameter: a single number which summarizes data from a _______________________
+
+* The value of the parameter is ____________________, but is typically ____________________
+
+* We estimate the value of the parameter by calculating a _________________________
+
+ 
 
 #### Good vs. bad sampling {-}
 
 \setstretch{1.5}
 
-GOAL: to have a sample that is _______________ of the
-______________ _______________ on the variable(s) of interest
+GOAL: to have a sample that is __________________ of the __________________ on the variable(s) of interest
+
+* If the sample is ____________________, then it is reasonable to believe the value of the _________________ will be close to the value of the _____________________!
 
 \setstretch{1}
-
-* Unbiased sample methods:
-
-\vspace{0.5in}
-
-\rgi \rgi Simple random sample
 
 * Biased sampling method: 
 
 \vspace{0.5in}
 
-\newpage
 
 ### Types of Sampling Bias {-}
 
@@ -155,8 +174,7 @@ Example of Response Bias: Police officer pulls you over and asks if you have bee
     
 Words of caution:
 
-* Convenience samples: gathering data for those who are easily
-accessible; online polls
+* Convenience samples: gathering data for those who are easily accessible; online polls
 
 \setstretch{1.5}
 
@@ -166,14 +184,30 @@ accessible; online polls
     
 \rgi \rgi Response bias? 
 
-* Random sampling reduces _________________ bias, but 
-has no impact on ________________ or ______________ bias.
+* Random sampling reduces _________________ bias, but has no impact on ________________ or ______________ bias.
 
 \setstretch{1}
 
-\newpage
+* Unbiased sample methods:
 
-#### Optional Notes: Video Example {-}
+\vspace{0.5in}
+
+\rgi \rgi Simple random sample
+
+#### Optional Notes: Additional Examples {-}
+
+Many high schools moved to partial or fully online schooling in Spring of 2020. Did students who graduated in 2020 tend to have a lower GPA during freshman year of college than the previous class of college freshmen? A nationally representative sample of 1000 college students who were freshmen in AY19-20 and 1000 college students who were freshmen in AY20-21 was taken to answer this question.
+
+* What is the target population?
+
+\vspace{0.2in}
+
+* What is the sample?
+
+\vspace{0.2in}
+
+Discuss whether any type(s) of bias would be present for each of the data collection methods described below:
+
 
 A radio talk show asks people to phone in their views on whether the United States should pay off its debt to the United Nations.
 
