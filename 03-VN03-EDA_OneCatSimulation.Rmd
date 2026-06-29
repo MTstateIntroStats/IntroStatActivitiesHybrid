@@ -451,7 +451,7 @@ set.seed(216)
 one_proportion_test(probability_success = 0.10, # Null hypothesis value
           sample_size = 62, # Enter sample size
           number_repetitions = 10000, # Enter number of simulations
-          as_extreme_as = 3/62, # Observed statistic
+          as_extreme_as = 0.0484, # Observed statistic
           direction = "less", # Specify direction of alternative hypothesis
           summary_measure = "proportion") # Reporting proportion or number of successes?
 ```
@@ -474,21 +474,31 @@ Interpretation of the p-value:
 
 * Statistic (summary measure and value) and Direction of the alternative 
     
-* Null hypothesis 
+* Null hypothesis (population reference, summary measure, equal to null value)
 
 * Context of the problem (observational units, variable(s))
 
-\vspace{0.8in}
+Two example p-value interpretations are provided below.  Identify each of the components within the two examples:
+
+* Example 1: There is a 12.36% probability of observing three (3) or fewer complications out of sixty-two (63) liver donor surgeries in the US, if the true proportion of complications is 0.10.
+
+* Example 2: If 10% of all liver donor surgeries in the US result in a complication, 1236/10000 samples would simulate a proportion of complications of 0.048 or less. 
+
+\vspace{0.1in}
 
 Conclusion: 
 
 * Amount of evidence
     
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
 
-\vspace{0.6in}
+* Context (observational units, variable(s))
+
+An example conclusion is provided below.  Identify each of the components within the example:
+
+* There is little to no that the proportion of all liver donor surgeries in the US that result in a complication is less than 0.10.
+
+\vspace{0.1in}
 
 Generalization:
 
