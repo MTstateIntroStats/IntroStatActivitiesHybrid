@@ -1,14 +1,14 @@
 ## Video Notes: Probability 
 
-Read Chapters 23 in the course textbook.  Use the following videos to complete the video notes for Module 2.
+Read Chapter 23 in the course textbook.  Use the following videos to complete the video notes for Module 2.
 
 ### Course Videos
 
-* Chapter23
+* Probability
 
 \setstretch{1}
 
-### Probability {-}
+### Video: Probability (chapter 23) {-}
 
 Example: Two variables were collected on a random sample of people who had ever been married; whether a person had ever smoked and whether a person had ever been divorced. The data are displayed in the following table. This survey was based on a random sample in the United States in the early 1990s, so the data should be representative of the adult population who had ever been married at that time. 
 
@@ -48,79 +48,81 @@ Total & 612 & 1057 & 1669 \\
 
 \setstretch{1.5}
 
-* Event: something that could occur, something we want to find the probability of
+* Random process: one in which the outcome is _____________________
 
-    * Getting a four when rolling a fair die
+    * Example: Rolling a fair die
+    
+* Event: something that could occur, something we want to find the probability of; Denoted using a capital letter.
 
-* Complement: opposite of the event
+    * Example: Getting a four when rolling a fair die
 
-    * Getting any value but a four when rolling a fair die
+* Complement: opposite of the event; Denoted using a ___________________
 
-* The probability of an event is the ______________ proportion of times the event would occur if the ________________ process were repeated indefinitely.
+    * Example: Getting any value but a four when rolling a fair die
 
-    * For example, the probability of getting a four when rolling a fair die is ___________.
+* The probability of an event is the _________________ _________________ of times the event would occur if the random process were repeated __________________; Denoted using $P(event)$
 
-* Unconditional probabilities
+    * Example: the probability of getting a four when rolling a fair die is ___________.
 
-    * An ____________________probability is calculated from the entire population not_____________________________
-    on the occurrence of another event.
+* Unconditional probability: calculated from the _____________________
 
-    * Examples:
+    * Unconditional probabilities do **not** depend any event occurring.
+    
+    * The denominator of the probability will always be ___________________________.
+    
+    * Two types of unconditional probabilities:
 
         * The probability of a single event
 
-            * The probability a selected Stat 216 student is a computer science major.
+            * Example from section 23.2: The probability of being late to class
 
         * An “And” probability
 
-            * The probability a selected Stat 216 student is a computer science major and a freshman.
+            * Example from section 23.2: The probability of finding an open parking spot in Lot 6 **and** being late to class
 
-* Conditional probabilities
+* Conditional probabilities:  calculated _______________________ on the occurrence of another event.
 
-    * A _____________________ probability is calculated
-_______________________ on the occurrence of another event.
+    * The denominator of the probability will be the total for the event _____________________________ (or the event that is known to have occurred)
 
-    * Examples:
+    * Example from section 23.2: The probability of being late to class, *given* that you parked in Lot 18
 
-        * The probability of event A given B
-
-            * The probability a selected freshman Stat 216 student is a computer science major.
-
-        * The probability of event B given A
-
-            * The probability a selected computer science Stat 216 student is a freshman
+    * Example from section 23.2: The probability of having parked in Lot 18, *given* that you were late to class
+    
+**Optional practice:** For each of the four probability questions about divorce and smoking status from the beginning of these vide notes, determine if the calculated probability was a conditional or unconditional probability and write it using proper notation.
 
 \setstretch{1}
 
-* Let event D be a person has gone through a divorce
+<!-- Example: -->
 
-* Let event S be a person smokes
+<!-- * Let event D be a person has gone through a divorce -->
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|} \hline
-\hspace{0.8in} & \hspace{0.35in} Has divorced \hspace{.35in} & \hspace{0.35in} Has never divorced  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
-& & & \\ \hline
-Smokes & 238 & 247 & 485 \\ 
-& & & \\ \hline
-Does not smoke & 374 & 810 & 1184 \\ 
-& & & \\ \hline
-Total & 612 & 1057 & 1669 \\ 
-& & & \\ \hline
-\end{tabular}
-\end{center}
-\vspace{.1in}
+<!-- * Let event S be a person smokes -->
 
-Calculate and interpret each of the following:
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|c|c|c|c|} \hline -->
+<!-- \hspace{0.8in} & \hspace{0.35in} Has divorced \hspace{.35in} & \hspace{0.35in} Has never divorced  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\  -->
+<!-- & & & \\ \hline -->
+<!-- Smokes & 238 & 247 & 485 \\  -->
+<!-- & & & \\ \hline -->
+<!-- Does not smoke & 374 & 810 & 1184 \\  -->
+<!-- & & & \\ \hline -->
+<!-- Total & 612 & 1057 & 1669 \\  -->
+<!-- & & & \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+<!-- \vspace{.1in} -->
 
-\setstretch{1.5}
+<!-- Calculate and interpret each of the following: -->
 
-* $P(S^C)=$
+<!-- \setstretch{1.5} -->
 
-\vspace{0.6in}
+<!-- * $P(S^C)=$ -->
 
-* $P(D^C|S^C)=$
+<!-- \vspace{0.6in} -->
 
-\vspace{0.6in}
+<!-- * $P(D^C|S^C)=$ -->
+
+<!-- \vspace{0.6in} -->
 
 <!-- #### Finding probabilities from a table {-} -->
 
@@ -161,11 +163,6 @@ Calculate and interpret each of the following:
 
 <!-- \vspace{0.2in} -->
 
-\setstretch{1}
-
-
-
-\setstretch{1}
 
 #### Creating a hypothetical two-way table {-}
 
@@ -183,7 +180,76 @@ Steps:
 
 * Add the row values together for each column to find the column totals.
 
-Example:  An airline has noticed that 30\% of passengers pre-pay for checked bags at the time the ticket is purchased.  The no-show rate among customers that pre-pay for checked bags is 5\%, compared to 15\% among customers that do not pre-pay for checked bags.
+Example:  As a student at Montana State University, suppose your first class on Mondays is in Wilson Hall at 8:00am and you commute to school. You have a Bobcat parking permit. From past experience, you know that there is a 20% chance of finding an open parking spot in Lot 6 by Animal Bioscience. Otherwise, you have to park in Lot 18 by graduate housing. If you find a spot in Lot 6, you only have a 5% chance of being late to class. However, if you have to park in Lot 18, you have a 15% chance of being late to class. What is the probability that you will be late to class this Monday?
+
+* Let event A = finding an open parking spot in Lot 6 by Animal Bioscience
+* Let event C = being late to class
+
+\setstretch{1.5}
+
+Start by identifying the probability notation for each value given.
+
+* 0.20 = 
+
+\vspace{0.1in}
+
+* 0.05 = 
+
+\vspace{0.1in}
+
+* 0.15 = 
+
+\vspace{0.1in}
+
+* Note for the table below, we will use 100,000 hypothetical Mondays (instead of 1,000 as shown in the textbook)
+
+\setstretch{1}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+\hspace{0.8in} & \hspace{0.35in} $C$ \hspace{.35in} & \hspace{0.35in} $C^C$  \hspace{0.35in} & \hspace{0.3in} Total \hspace{0.3in} \\ 
+& & & \\ \hline
+$A$& & & \\ 
+& & & \\ \hline
+$A^C$& & & \\ 
+& & & \\ \hline
+Total & & & 100,000 \\ 
+& & & \\ \hline
+\end{tabular}
+\end{center}
+\vspace{.1in}
+
+For each of the following, determine if the probability is conditional or unconditional.  Then write the probability in proper notation and calculate the value.
+
+* What is the probability you are not late to class?  
+
+\vspace{1in}
+
+* What is the probability that you park in Lot 6 and you are not late to class
+
+\vspace{1in}
+
+* Given that you were late to class, what is the probability you parked in Lot 18? 
+
+\vspace{1in}
+
+#### Diagnostic tests {-}
+
+* Sensitivity:
+
+\vspace{0.3in}
+
+* Specificity:
+
+\vspace{0.3in}
+
+* Prevalence:
+
+\vspace{0.3in}
+
+#### Optional Notes: Additional Example {-}
+
+An airline has noticed that 30\% of passengers pre-pay for checked bags at the time the ticket is purchased.  The no-show rate among customers that pre-pay for checked bags is 5\%, compared to 15\% among customers that do not pre-pay for checked bags.
 
 * Let event B = customer pre-pays for checked bag
 * Let event N = customer no shows
@@ -223,20 +289,6 @@ Total & & & 100,000 \\
 * What is the probability that a randomly selected customer who shows for the flight, pre-purchased checked bags?
 
 \vspace{1in}
-
-#### Diagnostic tests {-}
-
-* Sensitivity:
-
-\vspace{0.3in}
-
-* Specificity:
-
-\vspace{0.3in}
-
-* Prevalence:
-
-\vspace{0.3in}
 
 
 ### Concept Check
