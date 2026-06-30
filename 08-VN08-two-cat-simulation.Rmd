@@ -819,7 +819,7 @@ In a study reported in the New England Journal of Medicine [@doit2015], one-hund
 
 <!-- \vspace{0.8in} -->
 
-#### Optional Notes: Additional Example(s) {-}
+#### Optional Notes: Additional Example {-}
 
 People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@bhavsar2022].
 
