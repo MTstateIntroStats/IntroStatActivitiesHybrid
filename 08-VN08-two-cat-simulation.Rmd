@@ -686,9 +686,9 @@ Conclusion with scope of inference:
 
  
 
-### Confidence interval for a Difference in Proportion - Video 15.2 {-}
+### Video: Bootstrap Confidence Interval for Two Categorical Variables (section 15.2) {-}
 
-To estimate the difference in true proportion we will create a confidence interval.
+To estimate the difference in true proportion, we will create a confidence interval.
 
 #### Simulation-based method {-}
 
@@ -698,7 +698,7 @@ To estimate the difference in true proportion we will create a confidence interv
     
 * Sample with replacement __________ times in explanatory variable group 1 and ________ times in explanatory variable group 2
 
-    * Calculate and plot the simulated _________________ _____ _______________ __________________ from each simulation
+* Calculate and plot the simulated _________________ _____ _______________ __________________ from each simulation
 
 * Repeat 10000 times (simulations) to create the _________________ distribution
 
@@ -709,6 +709,8 @@ To estimate the difference in true proportion we will create a confidence interv
 #### Optional Notes: Additional Example {-}
 
 Returning to the cocaine example, we will estimate the difference in true proportion of cocaine addicts that stay clean for those on the desipramine and those on the placebo.
+
+Bootstrap distribution:
 
 ```{r, echo=TRUE, eval=TRUE}
 set.seed(216)

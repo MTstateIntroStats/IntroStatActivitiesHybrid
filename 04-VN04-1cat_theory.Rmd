@@ -102,7 +102,7 @@ General steps of a hypothesis test
 
 3.	Model a sampling distribution which assumes the null hypothesis is true.
 
-\rgi \rgi - If the conditions are met, the sampling distribution which assumes the null hypothesis is true is the standard Normal (N(0,1)) distribution
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample proportion which assumes the null hypothesis is true is the standard Normal (N(0,1)) distribution
 
 4.	Calculate a p-value.
 
@@ -222,7 +222,7 @@ Label the standardized sample proportion (standardized statistic) on the standar
 openintro::normTail(m = 0, s = 1)
 ```
 
-To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis.
+To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis).
 
 ```{r, echo=TRUE, collapse=FALSE}
 pnorm(0.59, lower.tail = FALSE)

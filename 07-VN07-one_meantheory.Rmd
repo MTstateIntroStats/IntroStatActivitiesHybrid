@@ -55,7 +55,7 @@ General steps of a hypothesis test
 
 3.	Model a sampling distribution which assumes the null hypothesis is true.
 
-\rgi \rgi - If the conditions are met, the sampling distribution which assumes the null hypothesis is true is the $t$-distribution with $n-1$ degrees of freedom
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample mean which assumes the null hypothesis is true is the $t$-distribution with $n-1$ degrees of freedom
 
 4.	Calculate a p-value.
 
@@ -229,7 +229,7 @@ Calculate the standard error of the sample mean weight:
 
 \vspace{0.3in}
 
-To find the $t^*$ multiplier for a 90\% confidence interval:
+To find the $t^*$ multiplier for a 90% confidence interval:
 
 ```{r, echo=TRUE}
 qt(0.95, df = 82)
