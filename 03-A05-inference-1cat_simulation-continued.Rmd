@@ -140,7 +140,7 @@ For the remainder of the questions in this activity use this 2nd simulated null 
 
 The value in question 4 is the **p-value**.  The smaller the p-value, the more evidence we have against the null hypothesis. 
 
-\vspace{1.5in}
+\vspace{0.2in}
 
 
 ```{r, out.width="90%"}

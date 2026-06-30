@@ -109,7 +109,7 @@
 \contentsline {subsection}{Notes on the p-value}{64}{Item.80}%
 \contentsline {subsubsection}{Interpret the p-value}{64}{Item.80}%
 \contentsline {subsubsection}{Communicate the results and answer the research question}{64}{Item.80}%
-\contentsline {subsubsection}{Generalization}{65}{Item.80}%
+\contentsline {subsubsection}{Generalization}{64}{Item.80}%
 \contentsline {subsection}{\numberline {3.4.4}Take-home messages}{65}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}Additional notes}{65}{subsection.3.4.5}%
 \contentsline {section}{\numberline {3.5}Activity 6: Helper-Hinderer --- Simulation-based Confidence Interval}{66}{section.3.5}%
@@ -124,70 +124,5 @@
 \contentsline {subsubsection}{Statistical Analysis Write-up}{69}{Item.91}%
 \contentsline {subsection}{\numberline {3.5.4}Take-home messages}{71}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Additional notes}{71}{subsection.3.5.5}%
-\contentsline {chapter}{\numberline {4}Inference for a Single Categorical Variable: Theory-based Methods}{72}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Vocabulary Review and Key Topics}{72}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Key topics}{72}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Vocabulary}{72}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Video Notes: Inference for One Categorical Variable using Theory-based Methods}{74}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Course Videos}{74}{subsection.4.2.1}%
-\contentsline {subsection}{Theory-based methods}{74}{subsection.4.2.1}%
-\contentsline {subsubsection}{Video: Theory-Based Inference (chapter 11)}{74}{subsection.4.2.1}%
-\contentsline {subsection}{68-95-99.7 Rule}{76}{subsection.4.2.1}%
-\contentsline {subsubsection}{Video: Theoretical Tests for One Categorical Variable (section 14.3.1 and 14.3.2)}{77}{Item.100}%
-\contentsline {subsubsection}{Video: Theoretical Confidence Intervals for One Categorical Variable (section 14.3.3)}{80}{Item.100}%
-\contentsline {subsubsection}{Theory-based method for a single categorical variable}{80}{Item.100}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}Interpreting confidence level}{82}{subsubsection.4.2.1.1}%
-\contentsline {subsection}{\numberline {4.2.2}Concept Check}{82}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Activity 7: Handedness of Professional Male Boxers}{83}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Learning outcomes}{83}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Terminology review}{83}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Handedness of male boxers}{83}{subsection.4.3.3}%
-\contentsline {subsection}{R Instructions}{83}{subsection.4.3.3}%
-\contentsline {subsection}{Hypotheses and summary statistics}{84}{Item.103}%
-\contentsline {subsection}{Simulation methods}{85}{Item.107}%
-\contentsline {subsection}{Theory-based methods}{85}{Item.107}%
-\contentsline {subsection}{Two-sided test}{87}{Item.111}%
-\contentsline {subsection}{\numberline {4.3.4}Take-home messages}{88}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Additional notes}{88}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Activity 8: Confidence intervals and what confidence means}{89}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Learning outcomes}{89}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Terminology review}{89}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Handedness of male boxers continued}{89}{subsection.4.4.3}%
-\contentsline {subsection}{What does \emph {confidence} mean?}{89}{subsection.4.4.3}%
-\contentsline {subsubsection}{Notes on theory-based confidence intervals}{90}{Item.119}%
-\contentsline {subsubsection}{Simulation methods}{92}{Item.120}%
-\contentsline {subsection}{\numberline {4.4.4}Take-home messages}{93}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Additional notes}{93}{subsection.4.4.5}%
-\contentsline {section}{\numberline {4.5}Activity 9: Impacts on the P-value and Confidence Interval}{94}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Learning outcomes}{94}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Terminology review}{94}{subsection.4.5.2}%
-\contentsline {subsubsection}{Impacts on the p-value}{94}{subsection.4.5.2}%
-\contentsline {subsubsection}{Change in sample size}{96}{figure.4.4}%
-\contentsline {subsubsection}{Effect of Confidence Level}{97}{Item.131}%
-\contentsline {subsubsection}{Effect of sample size on the width of the confidence interval}{98}{Item.134}%
-\contentsline {subsection}{\numberline {4.5.3}Take-home messages}{100}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Additional notes}{100}{subsection.4.5.4}%
-\contentsline {section}{\numberline {4.6}Module 3 and 4 Lab: Mixed Breed Dogs in the U.S.}{101}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Learning outcomes}{101}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Mixed Breed Dogs in the U.S.}{101}{subsection.4.6.2}%
-\contentsline {subsubsection}{R Instructions}{101}{subsection.4.6.2}%
-\contentsline {subsubsection}{Use statistical analysis methods to draw inferences from the data}{101}{subsection.4.6.2}%
-\contentsline {subsubsection}{Exploratory Data Analysis}{102}{Item.145}%
-\contentsline {subsubsection}{Null Distribution}{102}{Item.147}%
-\contentsline {subsubsection}{Bootstrap distribution}{103}{Item.148}%
-\contentsline {subsubsection}{Summarize the results of the study}{103}{Item.149}%
-\contentsline {chapter}{\numberline {5}Unit 1 Review}{105}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Key Topics}{105}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Module Review}{105}{subsection.5.0.2}%
-\contentsline {section}{\numberline {5.1}Key Topics Exam 1}{106}{section.5.1}%
-\contentsline {subsection}{Descriptive statistics and study design}{106}{section.5.1}%
-\contentsline {subsection}{Hypothesis testing}{106}{Item.161}%
-\contentsline {subsection}{\numberline {5.1.1}Confidence intervals}{107}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Probability}{107}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Module 1 Review - Sampling Methods}{108}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Module 2 Review - Probability}{110}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Module 3 Review - Simulation Methods for a Single Proportion}{112}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Module 4 Review - Theory-based Methods for a Single Proportion}{116}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Group Exam 1 Review}{121}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Golden Ticket to Descriptive and Inferential Statistical Methods}{125}{section.5.7}%
-\contentsline {chapter}{References}{127}{chapter*.3}%
+\contentsline {section}{\numberline {3.6}Golden Ticket to Descriptive and Inferential Statistical Methods}{72}{section.3.6}%
+\contentsline {chapter}{References}{74}{chapter*.3}%

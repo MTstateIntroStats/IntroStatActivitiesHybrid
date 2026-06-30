@@ -384,11 +384,15 @@ Review the Martian Alphabet example from sections 9.1 and 9.3.2
 
   \rgi \rgi In words: $H_0:$
   
+\vspace{0.4in}
+  
   \rgi \rgi In notation:  $H_0:\pi=$ _____, where $\pi$ represents the ___________ proportion of humans that would ____________________________. 
   
 * Write the alternative hypothesis in words and in notation:
 
   \rgi \rgi In words: $H_A:$
+
+\vspace{0.4in}
   
   \rgi \rgi In notation:  $H_A:\pi$ _________ (a ________ sign represents the research question - that humans have a ___________________ for choosing Bumba on the left)
   
@@ -443,6 +447,8 @@ Write the null and alternative hypotheses in words and in proper notation:
 
 \vspace{0.45in}
 
+\newpage
+
   \rgi In notation:
   
 \vspace{1mm}
@@ -486,7 +492,7 @@ one_proportion_test(probability_success = 0.10, # Null hypothesis value
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{03-VN03-EDA_OneCatSimulation_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.65\linewidth]{03-VN03-EDA_OneCatSimulation_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 Explain why the null distribution is centered at the value of approximately 0.10:
 
