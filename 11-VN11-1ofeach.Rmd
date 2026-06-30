@@ -503,9 +503,7 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="",
 
 ```
 
-* We will use the same value for the $SE(\bar{y}_1-\bar{y}_2)$ as calculated for the standardized statistic.
-
-\vspace{1in}
+* We will use the same value for $SE(\bar{y}_1-\bar{y}_2)$ as calculated for the standardized statistic.
 
 Calculate the margin of error for a 90\% confidence interval for the parameter of interest.
 
@@ -514,6 +512,8 @@ Calculate the margin of error for a 90\% confidence interval for the parameter o
 Calculate a 90\% confidence interval for the parameter of interest.
 
 \vspace{0.6in}
+
+Interpret the confidence interval:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     

@@ -22,7 +22,7 @@ Conditions for inference using theory-based methods:
 
 - Large enough sample size:
 
-\vspace{0.2in}
+\vspace{1in}
 
 #### $t$-distribution {-}
 
