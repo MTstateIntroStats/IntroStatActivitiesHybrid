@@ -231,6 +231,10 @@ Notation *(write all three options)*:
 
 #### Simulation-based method {-}
 
+Condition: Observational units must be **independent**, meaning
+
+\vspace{0.2in}
+
 \setstretch{1.5}
 
 Creation of the null distribution
@@ -239,7 +243,7 @@ Creation of the null distribution
 
 \vspace{0.2in}
 
-* Find the proportion of ___________________ at least as extreme as the observed sample ____________
+* Find the proportion of ___________________ at least as extreme as the observed ___________________
 
 * The null distribution estimates the sample to sample variability expected in the population
 
@@ -247,6 +251,8 @@ Creation of the null distribution
 
 
 #### Theory-based method {-}
+
+Conditions: Independence and a large enough sample size
 
 * Use a mathematical model to determine a distribution under the null hypothesis
 
@@ -260,8 +266,7 @@ Creation of the null distribution
 
 * What does the p-value measure?
 
-    * Probability of observing the sample ___________________ or more __________ 
-assuming the ________ hypothesis is __________.
+    * Probability of observing the ___________________ or _________________ assuming the ____________ hypothesis is ______________.
     
 * How much evidence does the p-value provide against the null hypothesis?
 
@@ -269,7 +274,7 @@ assuming the ________ hypothesis is __________.
 include_graphics("images/soe_gradient_gray.png")
 ```
 
-\rgi \rgi - The __________________ the p-value, the ___________________ the evidence against the null hypothesis.
+\rgi \rgi - The __________________ the p-value, the ___________________ the evidence **against** the null hypothesis.
 
 
 * Write a conclusion based on the p-value.
@@ -474,6 +479,10 @@ Why is the area left of the red line shaded on the null distribution?
 
 \vspace{0.3in}
 
+What is the p-value of the test?
+
+\vspace{0.2in}
+
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
@@ -482,7 +491,7 @@ Interpretation of the p-value:
     
 * Null hypothesis (population reference, summary measure, equal to null value)
 
-* Context of the problem (observational units, variable(s))
+* Context of the problem (observational units, variable (if variable is categorical, define "success"))
 
 Two example p-value interpretations are provided below.  Identify each of the components within the two examples:
 
@@ -498,7 +507,7 @@ Conclusion:
     
 * For the alternative hypothesis (population reference, summary measure, direction, null value)
 
-* Context (observational units, variable(s))
+* Context (observational units, variable (if variable is categorical, define "success"))
 
 An example conclusion is provided below.  Identify each of the components within the example:
 
@@ -615,7 +624,7 @@ Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variable (if variable is categorical, define "success"))
     
 * Calculated interval
     
