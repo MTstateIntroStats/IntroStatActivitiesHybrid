@@ -10,14 +10,13 @@ Read Chapter 11 and Sections 14.3 and 14.4 in the course textbook.  Use the foll
 
 * Theoretical_Intervals_One_Categorical_Variable
 
-
 \setstretch{1}
 
 ### Theory-based methods {-}
 
 #### Video: Theory-Based Inference (chapter 11) {-}
 
-\setstretch{1.5}
+\setstretch{1.4}
 
 The Central Limit Theorem tells us that the ______________ distribution of a sample proportion (and sample mean and sample differences) will be approximately ______________ if the sample size is ______________ ________________.
 
@@ -33,7 +32,7 @@ Conditions of the CLT:
 
 * Large enough sample size:
 
-\vspace{0.3in}
+\vspace{0.2in}
 
 Normal distribution:
 
@@ -41,7 +40,7 @@ Normal distribution:
 
 * Standard normal distribution:  $N(0,1)$
 
-```{r simpleNormalc, warning=FALSE, out.width="45%"}
+```{r simpleNormalc, warning=FALSE, out.width="43%"}
 openintro::normTail(m = 0, s = 1)
 ```
 
@@ -73,6 +72,8 @@ pnorm(mean = 1500, sd = 300, q = 1800)
 
 \vspace{1mm}
 
+\newpage
+
 We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.73 proportion of ACT scores using the qnorm() function.
 
 ```{r, echo=TRUE, out.width="60%"}
@@ -91,6 +92,8 @@ normTail(m = 21, s = 5, L = 24)
 ```{r, out.width="65%"}
 include_graphics("images/Empirical_Rule_Mark_bw.png")
 ```
+
+\newpage
 
 General steps of a hypothesis test
 
@@ -232,6 +235,8 @@ Interpretation of the p-value:
 
 \vspace{0.6in}
 
+Conclusion:
+
 * Amount of evidence
     
 * For the alternative hypothesis (population reference, summary measure, direction, null value)
@@ -281,31 +286,33 @@ qnorm(0.975, lower.tail=TRUE)
 
 Equation for the standard error of the sample proportion, *NOT* assuming the null is true:
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 Example: Refer to the payday loan borrowers example from section 14.3.3. Estimate the true proportion of payday loan borrowers that would support the regulation.
 
 Calculate the standard error of the sample proportion of payday loan borrowers that would support the regulation *when NOT assuming the null hypothesis is true*:
 
-\vspace{0.3in}
+\vspace{0.4in}
 
-From the image below, what multiplier ($z^\star$) should be used to create a 95% confidence interval for the parameter?  Explain why 97.5% of the distribution is shaded (why are we using the 97.5th percentile to create a 95% confidence interval?)
+\newpage
+
+From the below, what multiplier ($z^\star$) should be used to create a 95% confidence interval for the parameter?  Explain why 97.5% of the distribution is shaded (why are we using the 97.5th percentile to create a 95% confidence interval?)
 
 \vspace{0.3in}
 
 For a 95\% confidence interval:
-```{r, echo=TRUE, out.width="60%"}
+```{r, echo=TRUE, out.width="50%"}
 openintro::normTail(m = 0, s = 1, L=1.96)
 qnorm(0.975, lower.tail=TRUE)
 ```
 
 Calculate the margin of error for the 95% confidence interval from the payday loan borrowers data:
 
-\vspace{0.3in}
+\vspace{0.4in}
 
 Calculate the 95% confidence interval from the payday loan borrowers data:
 
-\vspace{0.3in}
+\vspace{0.4in}
 
 
 Confidence interval interpretation:
@@ -317,6 +324,8 @@ Confidence interval interpretation:
 * Calculated interval
     
 \vspace{0.8in}
+
+\newpage
 
 #### Interpreting confidence level
 

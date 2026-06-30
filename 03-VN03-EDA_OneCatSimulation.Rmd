@@ -29,7 +29,7 @@ Read Chapter 3, 4, 9, 10 and Sections 14.1 and 14.2 in the course textbook.  Use
 
 * The ________________ is calculated on data from a population; it is typically unknown and therefore we will define it *in words*
 
-* Includes:
+* The parameter should include:
 
     * Population word (true, long-run, population)
     
@@ -317,9 +317,9 @@ include_graphics("images/soe_gradient_gray.png")
 
 * Two possible outcomes:
 
-    - Strong evidence against __________________ -> jury finds the defendant ____________________
+    - Strong evidence against ________________ -> jury finds the defendant _________________
     
-    - Not enough evidence against _____________________ -> jury finds the defendant ______________________
+    - Not enough evidence against ___________________ -> jury finds the defendant ___________________
     
 <!-- ### One proportion test {-} -->
 
@@ -355,15 +355,15 @@ Review the Martian Alphabet example from sections 9.1 and 9.3.2
 
 * Write the null hypothesis in words and in notation:
 
-  \rgi \rgi In words: $H_0: $
+  \rgi \rgi In words: $H_0:$
   
-  \rgi \rgi In notation:  $H_0: \pi = $_____, where $\pi$ represents the ___________ proportion of humans that would ____________________________. 
+  \rgi \rgi In notation:  $H_0:\pi=$ _____, where $\pi$ represents the ___________ proportion of humans that would ____________________________. 
   
 * Write the alternative hypothesis in words and in notation:
 
-  \rgi \rgi In words: $H_A: $
+  \rgi \rgi In words: $H_A:$
   
-  \rgi \rgi In notation:  $H_0: \pi $_________ (a ________ sign represents the research question - that humans have a ___________________ for choosing Bumba on the left)
+  \rgi \rgi In notation:  $H_A:\pi$ _________ (a ________ sign represents the research question - that humans have a ___________________ for choosing Bumba on the left)
   
 * What is the value of the statistic?  Write it using proper notation.
   
@@ -379,9 +379,9 @@ Review the Martian Alphabet example from sections 9.1 and 9.3.2
  
 \setstretch{1.5}
  
-  * The p-value of the test is ________________.  This p-value provides ______________________ evidence against the ________________________ hypothesis and for the ____________________ hypothesis.  The results from this study _________________________ be considered statistically significant.
+  * The p-value of the test is ________________.  This p-value provides ________________ evidence against the ___________________ hypothesis and for the ___________________ hypothesis.  The results from this study ___________________ be considered statistically significant.
 
-\vspace{0.3in}
+\vspace{0.1in}
 
 
 ### Video: Simulation Tests for One Categorical Variable (section 14.1) {-}
@@ -417,7 +417,7 @@ Write the null and alternative hypotheses in words and in proper notation:
 \vspace{0.45in}
 
   \rgi In notation:
-
+  
 \vspace{1mm}
 
   \rgi \rgi $H_0:$
@@ -480,7 +480,7 @@ Interpretation of the p-value:
 
 Two example p-value interpretations are provided below.  Identify each of the components within the two examples:
 
-* Example 1: There is a 12.36% probability of observing three (3) or fewer complications out of sixty-two (63) liver donor surgeries in the US, if the true proportion of complications is 0.10.
+* Example 1: There is a 12.36\% probability of observing three (3) or fewer complications out of sixty-two (63) liver donor surgeries in the US, if the true proportion of complications is 0.10.
 
 * Example 2: If 10% of all liver donor surgeries in the US result in a complication, 1236/10000 samples would simulate a proportion of complications of 0.048 or less. 
 
@@ -506,6 +506,7 @@ Generalization:
 
 \vspace{0.4in}
 
+\newpage
 
 ### Video: Confidence intervals (chapter 10) {-}
 
@@ -581,13 +582,16 @@ Review the Medical Consultant example in section 10.1.
   
   \vspace{0.3in}
   
+\setstretch{1.5}
+  
   * Interpret the confidence interval:  We are _______% _____________________ that, in the ________________, the true probability (or proportion) of complications is between ____________ and _________.
   
 \vspace{0.3in}
 
+\setstretch{1}
 
  
-###Video: Bootstrap Confidence Intervals for One Categorical Variable (section 14.2) {-}
+### Video: Bootstrap Confidence Intervals for One Categorical Variable (section 14.2) {-}
 
 Review the Medical Consultant study from section 14.2.
 
@@ -611,10 +615,7 @@ Confidence interval interpretation:
     
 \vspace{0.8in}
 
-
-
-How does changing the confidence level impact the width of the confidence interval?
-
+#### How does changing the confidence level impact the width of the confidence interval? {-}
 
 90\% Confidence Interval:
 
@@ -645,11 +646,11 @@ Be prepared for group discussion in the next class. One member from the table sh
 \vspace{0.3in}
 
 
-2.  Write the alternative hypothesis for this study in notation?  How was the direction of the alternative hypothesis determined?
+2.  Write the alternative hypothesis for the Martian Alphabet study in notation?  How was the direction of the alternative hypothesis determined?
 
 \vspace{0.4in}
 
-3. Do the results of the confidence interval *match* the results based on the p-value?
+3. Do the results of the confidence interval for the Medical Consultant study *match* the results based on the p-value?
 
 \vspace{0.5in}
 

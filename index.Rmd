@@ -40,7 +40,7 @@ location: Montana State University
 \newpage
 \thispagestyle{empty}
 
-This resource was developed by Melinda Yager, Jade Schmidt, and Stacey Hancock in 2021 to accompany the online textbook: Hancock, S., Carnegie, N., Meyer, E., Schmidt, J., and Yager, M. (2021). _Montana State Introductory Statistics with R_. Montana State University. [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/).
+This resource was developed by Melinda Yager, Jade Schmidt, and Stacey Hancock in 2021 to accompany the online textbook: Hancock, S., Carnegie, N., Meyer, E., Schmidt, J., Yager, M., and Greenwood, M. (2026). _Montana State Introductory Statistics with R_. Montana State University. [https://mtstateintrostats.github.io/IntroStatTextbook/](https://mtstateintrostats.github.io/IntroStatTextbook/).
 
 This resource is released under a [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license unless otherwise noted.
 
@@ -77,6 +77,6 @@ STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nin
     - Review the activity solutions in the Math and Stat Center, and take notes on key points.
     - Complete any remaining assigned readings videos, and quizzes for the week.
     - Complete the week's homework assignment.
-    - Attend weekly review sessions
+    - Attend weekly review sessions or complete the review worksheets
 
 \nocite{*}

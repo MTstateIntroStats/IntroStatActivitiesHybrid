@@ -82,7 +82,7 @@ Total & 612 & 1057 & 1669 \\
 
 * Conditional probabilities:  calculated _______________________ on the occurrence of another event.
 
-    * The denominator of the probability will be the total for the event _____________________________ (or the event that is known to have occurred)
+    * The denominator of the probability will be the total for the event ________________ (or the event that is known to have occurred)
 
     * Example from section 23.2: The probability of being late to class, *given* that you parked in Lot 18
 
@@ -295,7 +295,7 @@ Total & & & 100,000 \\
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
-1. Calculate and interpret the following: $P(D^C|S^C)=$.
+1. In the parking example, calculate and interpret the following: $P(A^C|C^C)=$.
 
 \vspace{1in}
 

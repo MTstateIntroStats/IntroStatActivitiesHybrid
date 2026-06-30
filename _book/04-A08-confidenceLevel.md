@@ -175,7 +175,7 @@ one_proportion_bootstrap_CI(sample_size = 500,
 
 ### Additional notes
 
-Activities 7--9 cover the material in Module 4.  For more practice with theory-based confidence intervals for a single categorical variable use the Module 4 Review worksheet in the Unit 1 Review Materials (pgs. 109--113).
+Activities 7--9 cover the material in Module 4.  For more practice with theory-based confidence intervals for a single categorical variable use the Module 4 Review worksheet in the Unit 1 Review Materials (pgs. 116--120).
 
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 

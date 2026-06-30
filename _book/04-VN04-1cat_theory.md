@@ -4,19 +4,19 @@ Read Chapter 11 and Sections 14.3 and 14.4 in the course textbook.  Use the foll
 
 ### Course Videos
 
-* Chapter11
+* Theory_Based_Inference
 
-* 14.3TheoryTests
+* Theoretical_Tests_One_Categorical_Variable
 
-* 14.3TheoryIntervals
-
-<!-- * Chapter12 -->
+* Theoretical_Intervals_One_Categorical_Variable
 
 \setstretch{1}
 
 ### Theory-based methods {-}
 
-#### Central limit theorem - Video Chapter11 {-}
+#### Video: Theory-Based Inference (chapter 11) {-}
+
+\setstretch{1.4}
 
 The Central Limit Theorem tells us that the ______________ distribution of a sample proportion (and sample mean and sample differences) will be approximately ______________ if the sample size is ______________ ________________.
 
@@ -32,7 +32,7 @@ Conditions of the CLT:
 
 * Large enough sample size:
 
-\vspace{0.3in}
+\vspace{0.2in}
 
 Normal distribution:
 
@@ -41,9 +41,7 @@ Normal distribution:
 * Standard normal distribution:  $N(0,1)$
 
 
-\begin{center}\includegraphics[width=0.45\linewidth]{04-VN04-1cat_theory_files/figure-latex/simpleNormalc-1} \end{center}
-
-\newpage
+\begin{center}\includegraphics[width=0.43\linewidth]{04-VN04-1cat_theory_files/figure-latex/simpleNormalc-1} \end{center}
 
 Standardized statistic: Z - score
 
@@ -53,24 +51,24 @@ Standardized statistic: Z - score
 
 \vspace{0.5in}
 
-* Measures the ___________ of standard _____________ the statistic is from the null value
+* Measures the number of ________________ _______________ the statistic is above or below the null value
 
-Example(s):  Heights of Caucasian American adult males are roughly Normally distributed with a mean of 1.72 m and a standard deviation of 0.28 m. Find and interpret the z-score for a man who is 5’4” (1.626 m) tall. Round your answer to three decimal places.
-
-\vspace{0.6in}
-
-Heights of Caucasian American adult females are roughly Normally distributed with a mean of 1.59 meters and a standard deviation of 0.22 meters.  Which is more unusual: a 5’4” (1.626 m) tall male or a 5’9” (1.753 m) tall female?
+Examples from section 11.2: SAT scores follow a nearly normal distribution with a mean of 1500 points and a standard deviation of 300 points. Find and interpret the z-score for Nell, who scored 1800 points on their SAT. Round your answer to three decimal places.
 
 \vspace{0.6in}
 
-In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the probability of a man being under 1.626 meters tall.
+ACT scores also follow a nearly normal distribution with mean of 21 points and a standard deviation of 5 points. Find and interpret the z-score for Sian, who scored 24 points on their ACT. Round your answer to three decimal places.  Who performed better - Nell or Sian?
+
+\vspace{0.6in}
+
+In a Normal curve, the area under the curve is equal to 1, representing a probability.  Therefore the shaded area represents the **percentile** for Nell, or the probability of scoring less than or equal to 1800 points on the SAT.
 
 
 ``` r
 library(openintro)
-normTail(m = 1.72, s = 0.28, L = 1.626)
-pnorm(mean = 1.72, sd = 0.28, q = 1.626)
-#> [1] 0.3685432
+normTail(m = 1500, s = 300, L = 1800)
+pnorm(mean = 1500, sd = 300, q = 1800)
+#> [1] 0.8413447
 ```
 
 
@@ -79,13 +77,15 @@ pnorm(mean = 1.72, sd = 0.28, q = 1.626)
 
 \vspace{1mm}
 
-We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.75 proportion of male adult Caucasian heights using the qnorm() function.
+\newpage
+
+We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.73 proportion of ACT scores using the qnorm() function.
 
 
 ``` r
-qnorm(mean = 1.72, sd = 0.28, p = 0.75)
-#> [1] 1.908857
-normTail(m = 1.72, s = 0.28, L = 1.909)
+qnorm(mean = 21, sd = 5, p = 0.726)
+#> [1] 24.0038
+normTail(m = 21, s = 5, L = 24)
 ```
 
 
@@ -103,6 +103,8 @@ normTail(m = 1.72, s = 0.28, L = 1.909)
 
 \begin{center}\includegraphics[width=0.65\linewidth]{images/Empirical_Rule_Mark_bw} \end{center}
 
+\newpage
+
 General steps of a hypothesis test
 
 1.	Write a research question and hypotheses.
@@ -115,27 +117,54 @@ General steps of a hypothesis test
 
 5.	Draw conclusions based on a p-value.
 
-\newpage
 
-#### Theoretical Testing for a Single Proportion - Video 14.3TheoryTests {-}
+#### Video: Theoretical Tests for One Categorical Variable (section 14.3.1 and 14.3.2) {-}
 
-Example:  The American Red Cross reports that 10% of US residents eligible to donate blood actually do donate.  A poll conducted on a representative of 200 Montana residents eligible to donate blood found that 33 had donated blood sometime in their life.  Do Montana residents donate at a different rate than US population?
+Review the payday loan borrowers example from section 14.3.2.
 
-Hypotheses:
+Identify the observational units.
 
-In notation:  
+\vspace{0.3in}
 
-$H_0:$
+Identify the variable collected. 
+
+\vspace{0.3in}
+
+Is the variable categorical or quantitative? If categorical, define a "success"; if quantitative, state the units of measure.
+
+\vspace{0.3in}
+
+Define the parameter in words and write it using proper notation
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses in words and in proper notation:
+
+  \rgi In words:
+
+  \rgi \rgi $H_0:$
+
+\vspace{0.45in}
+
+  \rgi \rgi $H_A:$
+
+\vspace{0.45in}
+
+  \rgi In notation:
+
+\vspace{1mm}
+
+  \rgi \rgi $H_0:$
 
 \vspace{0.2in}
 
-$H_A:$
+  \rgi \rgi $H_A:$
 
 \vspace{0.2in}
 
-Parameter of interest (what does $\pi$ represent in this context?):
+Calculate the value of the statistic and write it using proper notation: 
 
-\vspace{0.6in}
+\vspace{0.2in}
 
 Conditions for inference using theory-based methods:
 
@@ -148,7 +177,7 @@ Conditions for inference using theory-based methods:
 
 \vspace{1in}
 
-Are the conditions met to analyze the blood donations data using theory-based methods?
+Are the conditions met to analyze the payday loan borrowers data using theory-based methods?
 
 \vspace{1in}
 
@@ -158,7 +187,7 @@ To use theory-based methods to perform a hypothesis test:
 
 * 2nd: Find the area under the standard normal distribution at least as extreme as the standardized statistic
 
-Equation for the standard error of the sample proportion assuming the null hypothesis is true:
+Equation for the standard error of the sample proportion, assuming the null hypothesis is true:
 
 \vspace{0.5in}
 
@@ -166,66 +195,67 @@ Equation for the standard error of the sample proportion assuming the null hypot
 
 * This value measures how far each possible sample statistic is from the null value, on average.
 
+* This should give a similar value to the _________________ _______________ of a simulated null distribution!
+
 \setstretch{1}
 
-Equation for the standardized sample proportion:
+Equation for the standardized sample proportion (standardized statistic when analyzing one categorical variable):
 
 \vspace{0.5in}
 
 \setstretch{1.5}
 
-* This value measures how many standard deviations the sample proportion is above/below the null value.
+* This value measures how many ________________ _________________ the sample ________________ is above/below the ______________ _______________.
 
 \setstretch{1}
 
-##### Optional Notes: Video Example (Video 14.3TheoryTests) {-}
-
-Calculate the standardized sample proportion of Montana residents that have donated blood sometime in their life.
-
-* First calculate the standard error of the sample proportion assuming the null hypothesis is true
+Calculate the standard error of the sample proportion of payday loan borrowers that would support the regulation *when assuming the null hypothesis is true*:
 
 \vspace{0.3in}
 
-* Then calculate the Z score.
+Calculate the standardized sample proportion of payday loan borrowers that would support the regulation (the Z-score):
 
 \vspace{0.5in}
-
-
-\begin{center}\includegraphics[width=0.5\linewidth]{04-VN04-1cat_theory_files/figure-latex/standNormalc-1} \end{center}
 
 Interpret the standardized statistic
 
 \vspace{0.5in}
 
-To find the p-value, find the area under the standard normal distribution at the standardized statistic and more extreme.
+
+Label the standardized sample proportion (standardized statistic) on the standard Normal distribution below and shade the area representing the p-value.
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{04-VN04-1cat_theory_files/figure-latex/standNormalc-1} \end{center}
+
+To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis.
 
 
 ``` r
-pnorm(3.064, lower.tail = FALSE)*2
+pnorm(0.59, lower.tail = FALSE)
 ```
 
 ```
-#> [1] 0.002183989
+#> [1] 0.2775953
 ```
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
 
-* Statistic (summary measure and value)
+* Statistic (summary measure and value) and Direction of the alternative 
     
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
+* Null hypothesis (population reference, summary measure, equal to null value)
+
+* Context of the problem (observational units, variable(s))
 
 \vspace{0.6in}
 
-Conclusion: 
+Conclusion:
 
 * Amount of evidence
     
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context (observational units, variable(s))
 
 \vspace{0.5in}
 
@@ -239,7 +269,7 @@ Generalization:
 
 \vspace{0.4in}
 
-#### Theoretical Confidence Intervals for a Single Proportion - Video 14.3TheoryIntervals {-}
+#### Video: Theoretical Confidence Intervals for One Categorical Variable (section 14.3.3) {-}
 
 * Interval of __________ values for the parameter of interest
 
@@ -272,17 +302,42 @@ qnorm(0.975, lower.tail=TRUE)
 
 \setstretch{1}
 
-Equation for the standard error of the sample proportion *NOT* assuming the null is true:
+Equation for the standard error of the sample proportion, *NOT* assuming the null is true:
 
-\vspace{0.5in}
+\vspace{0.4in}
 
-##### Optional Notes: Video Example (Video 14.3TheoryIntervals) {-}
+Example: Refer to the payday loan borrowers example from section 14.3.3. Estimate the true proportion of payday loan borrowers that would support the regulation.
 
-  Estimate the true proportion of Montana residents that have donated blood at least once in their life.
+Calculate the standard error of the sample proportion of payday loan borrowers that would support the regulation *when NOT assuming the null hypothesis is true*:
 
-Find a 95\% confidence interval:
+\vspace{0.4in}
 
-\vspace{1in}
+\newpage
+
+From the below, what multiplier ($z^\star$) should be used to create a 95% confidence interval for the parameter?  Explain why 97.5% of the distribution is shaded (why are we using the 97.5th percentile to create a 95% confidence interval?)
+
+\vspace{0.3in}
+
+For a 95\% confidence interval:
+
+``` r
+openintro::normTail(m = 0, s = 1, L=1.96)
+qnorm(0.975, lower.tail=TRUE)
+#> [1] 1.959964
+```
+
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{04-VN04-1cat_theory_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+Calculate the margin of error for the 95% confidence interval from the payday loan borrowers data:
+
+\vspace{0.4in}
+
+Calculate the 95% confidence interval from the payday loan borrowers data:
+
+\vspace{0.4in}
+
 
 Confidence interval interpretation:
 
@@ -292,11 +347,11 @@ Confidence interval interpretation:
     
 * Calculated interval
     
-* Order of subtraction when comparing two groups
-
 \vspace{0.8in}
 
-#### Interpreting confidence level - Video 14.3TheoryIntervals {-}
+\newpage
+
+#### Interpreting confidence level
 
 \setstretch{1.5}
 
