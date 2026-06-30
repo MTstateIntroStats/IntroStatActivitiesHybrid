@@ -362,11 +362,15 @@ Review the Martian Alphabet example from sections 9.1 and 9.3.2
 
   \rgi \rgi In words: $H_0:$
   
+\vspace{0.4in}
+  
   \rgi \rgi In notation:  $H_0:\pi=$ _____, where $\pi$ represents the ___________ proportion of humans that would ____________________________. 
   
 * Write the alternative hypothesis in words and in notation:
 
   \rgi \rgi In words: $H_A:$
+
+\vspace{0.4in}
   
   \rgi \rgi In notation:  $H_A:\pi$ _________ (a ________ sign represents the research question - that humans have a ___________________ for choosing Bumba on the left)
   
@@ -421,6 +425,8 @@ Write the null and alternative hypotheses in words and in proper notation:
 
 \vspace{0.45in}
 
+\newpage
+
   \rgi In notation:
   
 \vspace{1mm}
@@ -451,7 +457,7 @@ Calculate the value of the statistic and write it using proper notation:
 
     * Find the proportion of simulations at least as extreme as $\hat{p}$
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, out.width="65%"}
 set.seed(216)
 one_proportion_test(probability_success = 0.10, # Null hypothesis value
           sample_size = 62, # Enter sample size
