@@ -15,7 +15,7 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 * Simulation_Tests_One_Quantitative_Variable
 
-* Bootstrap_Tests_One_Quantitative_Variable
+* Bootstrap_Intervals_One_Quantitative_Variable
 
 \setstretch{1}
 
@@ -269,8 +269,7 @@ $H_A:$
 
 \setstretch{1.5}
 
-* Direction of the alternative depends on the __________________
-___________________.
+* Direction of the alternative depends on the __________________ ___________________.
 
 \setstretch{1}
 
