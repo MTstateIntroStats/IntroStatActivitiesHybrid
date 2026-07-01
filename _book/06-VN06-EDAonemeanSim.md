@@ -3,72 +3,23 @@ output:
   pdf_document: default
   html_document: default
 ---
-## Video Notes: Exploratory Data Analysis and Hypothesis Testing of Quantitative Variables
+## Video Notes: Analysis of One Quantitative Variable
 
-Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the video notes for Module 6.
+Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the Module 6 video notes.
 
 ### Course Videos
 
-* 5.2to5.4
+* One_Quantitative_Variable_Statistics
 
-* 5.5
+* One_Quantitative_Variable_Plots
 
-* 5.7
+* Simulation_Tests_One_Quantitative_Variable
 
-* 17.2
-
-* 17.1
+* Bootstrap_Intervals_One_Quantitative_Variable
 
 \setstretch{1}
 
-### Summarizing quantitative data - Video 5.2to5.4 {-}
-
-#### Types of plots {-}
-
-We will revisit the moving to Montana data set and plot the age of the buyers.
-
-
-
-Dotplot:
-
-\vspace{0.5in}
-
-
-``` r
-moving %>%
-  ggplot(aes(x = Age))+ #Enter variable to plot
-  geom_dotplot() + 
-  labs(title = "Dotplot of Age of Buyers from Gallatin 
-       County Home Sales", #Title your plot
-       x = "Age", #x-axis label
-       y = "Proportion") #y-axis label
-```
-
-
-
-\begin{center}\includegraphics[width=0.75\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-2-1} \end{center}
-
-\newpage
-
-Histogram:
-
-\vspace{0.2in}
-
-
-``` r
-moving %>%
-  ggplot(aes(x = Age))+
-  geom_histogram(binwidth = 7) + 
-  labs(title = "Histogram of Age of Buyers from Gallatin 
-       County Home Sales",
-       #Title your plot
-       x = "Age",
-       y = "Count")
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-3-1} \end{center}
+### Video: One Quantitative Variable - Statistics (sections 5.2, 5.4, 5.5 and 5.7) {-}
 
 \setstretch{1.5}
 
@@ -78,14 +29,11 @@ Two measures of center:
 
 * Mean: ____________ of all the _____________ in the data set.
 
-    - Sum the values in the data set and divide
-    the sum by the sample size
+    - Sum the values in the data set and divide the sum by the sample size
     
-* Notation used for the population mean:
-       
-\vspace{0.1in}
+    - Notation used for the population mean:
     
-* Notation used for the sample mean:
+    - Notation used for the sample mean:
     
 \vspace{0.1in}
 
@@ -113,6 +61,8 @@ Two measures of spread:
 
 \rgi Formula:
 
+\newpage
+
 \rgi \rgi Quartile 3 (Q3) - value at the 75th percentile
 
 \rgi \rgi - ____________ % of values are at and _____________ the value of Q3
@@ -123,15 +73,130 @@ Two measures of spread:
 
 \vspace{1mm}
 
+* The ___________ is a robust measure of center.
+
+* The ___________ is a robust measure of spread.
+
+* Robust means not _________________ by outliers.
+
+When the distribution is symmetric without outliers, use the ____________ as the measure of center and the ___________ as the measure of spread.
+
+When the distribution is skewed or has outliers, use the _____________ as the measure of center and the ____________ as the measure of spread.
+
 \setstretch{1}
 
-\newpage
 
-### Summarizing quantitative data - Video 5.5 {-}
+### Video: One Quantitative Variable - Plots (sections 5.2, 5.3 and 5.5) {-}
 
-Boxplot (3rd type of plot for quantitative variables)
+Three types of plots for displaying one quantitative variable:
+
+\setstretch{1.5}
+
+* Dotplot: each dot represents one __________________________
+
+\rgi \rgi - x-axis represents the scale of the ____________________
+
+\rgi \rgi - y-axis represents the ___________________________
+
+
+* Histogram: Similar to dotplot, but the observational units are "binned".  
+
+\rgi \rgi - Y-axis represents the number of observational units (frequency) in each "bin"
+
+\rgi \rgi How is a histogram different from a bar plot?
+
+\vspace{0.3in}
+
+
+* Boxplot: displays the five number summary
 
     - Five number summary: minimum, Q1, median, Q3, maximum
+    
+    - The box starts at ____________________
+    
+    - The line within the box is plotted at the __________________
+    
+    - The box ends at __________________
+    
+    - The whiskers extend to the lowest and highest _______________________ values in the dataset
+    
+    - The dots beyond the whiskers represent _______________________.
+    
+
+#### Four characteristics of plots for quantitative variables {-}
+
+* Center: mean or median
+
+* Spread or Variability: standard deviation or IQR
+
+* Shape: overall pattern of the data
+
+  \rgi \rgi Which type of plot is best used when determining the shape of the distribution?
+  
+  \vspace{0.2in}
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{images/shape2} \end{center}
+* Outliers: unusually large or small values in the dataset. Values that are "far" from the rest of the data.
+
+\rgi Typically use the $1.5 \times IQR$ rule for determining outliers:
+
+\rgi values less than __________________________ are considered low outliers
+
+\rgi values greater than __________________________ are considered high outliers
+
+
+
+#### Optional notes: Additional Example {-}
+
+We will revisit the moving to Montana data set and plot the age of the buyers.
+
+
+
+Dotplot:
+
+\vspace{0.3in}
+
+
+``` r
+moving %>%
+  ggplot(aes(x = Age))+ #Enter variable to plot
+  geom_dotplot() + 
+  labs(title = "Dotplot of Age of Buyers from Gallatin 
+       County Home Sales", #Title your plot
+       x = "Age", #x-axis label
+       y = "Proportion") #y-axis label
+```
+
+
+
+\begin{center}\includegraphics[width=0.75\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+ 
+
+Histogram:
+
+\vspace{0.2in}
+
+
+``` r
+moving %>%
+  ggplot(aes(x = Age))+
+  geom_histogram(binwidth = 7) + 
+  labs(title = "Histogram of Age of Buyers from Gallatin 
+       County Home Sales",
+       #Title your plot
+       x = "Age",
+       y = "Count")
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\setstretch{1.5}
+
+Boxplot:
 
 \vspace{0.3in}
 
@@ -150,7 +215,7 @@ moving %>%
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 
 ``` r
@@ -162,92 +227,135 @@ favstats(moving$Age)
 #>   20 28     36 49.25  77 39.77 14.35471 100       0
 ```
 
+What is the mean age of buyers?  Write it using proper notation.
+
+\vspace{0.3in}
 
 Interpret the value of $Q_3$ for the age of buyers.
 
 \vspace{0.5in}
 
-Interpret the value of s for the age of buyers.
+Interpret the value of $s$ for the age of buyers.
 
 \vspace{0.5in}
 
-\newpage
+ 
 
 #### Four characteristics of plots for quantitative variables {-}
 
-* Shape: overall pattern of the data
 
-
-\begin{center}\includegraphics[width=0.8\linewidth]{images/shape2} \end{center}
-
-\rgi \rgi - What is the shape of the distribution of age of buyers for Gallatin County home sales?
+What is the shape of the distribution of age of buyers for Gallatin County home sales?
 
 \vspace{0.3in}
 
-* Center:  
-
-\rgi Mean or Median
-
-\rgi \rgi - Report the measure of center based on the boxplot of age of buyers for Gallatin County home sales.
+Report the measure of center based on the boxplot of age of buyers for Gallatin County home sales.
 
 \vspace{0.3in}
 
-* Spread (or variability):
-
-\rgi Standard deviation or IQR
-
-\rgi \rgi - Report the IQR for the distribution of age of buyers from Gallatin County home sales.
+Report the IQR for the distribution of age of buyers from Gallatin County home sales.
 
 \vspace{0.3in}
 
-* Outliers?
-
-\rgi values < $Q_1 - 1.5 \times IQR$
-
-\rgi values > $Q_3 + 1.5 \times IQR$
-
-\rgi \rgi - Use these formulas to show that there are no outliers in the distribution of age of buyers from Gallatin County home sales.
+Use the formulas to show that there are no outliers in the distribution of age of buyers from Gallatin County home sales.
 
 \vspace{0.8in}
 
-\newpage
+ 
 
-### Robust statistics - Video 5.7 {-}
+### Simulation-based Testing for One Quantitative Variable (section 17.2) {-}
 
-Let's review the summary statistics and histogram of age of buyers from sampled home sales.
+\setstretch{1}
 
-
-\begin{center}\includegraphics[width=0.85\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
-
-```
-#>  min Q1 median    Q3 max  mean       sd   n missing
-#>   20 28     36 49.25  77 39.77 14.35471 100       0
-```
+#### Hypothesis testing {-}
 
 \setstretch{1.5}
 
-Notice that the _____________ has been pulled in the direction of the _______________.  
-
-* The ___________ is a robust measure of center.
-
-* The ___________ is a robust measure of spread.
-
-* Robust means not _________________ by outliers.
-
-When the distribution is symmetric use the ____________ as the measure of center and the ___________ as the measure of spread.
-
-When the distribution is skewed with outliers use the _____________ as the measure of center and the ____________ as the measure of spread.
+* Hypotheses are always written about the _________________________.  For a single mean we will use the notation ___________.
 
 \setstretch{1}
+
+Null Hypothesis:
+
+$H_0:$
+
+\vspace{0.2in}
+Alternative Hypothesis:
+
+$H_A:$
+
+\vspace{0.2in}
+
+\setstretch{1.5}
+
+* Direction of the alternative depends on the __________________ ___________________.
+
+\setstretch{1}
+
+#### Simulation-based method {-}
+
+* Simulate many samples assuming $H_0: \mu = \mu_0$
+
+    * Shift the data by the difference between _____________________
+
+    * Sample with replacement ____________ times from the shifted data
+
+    * Plot the simulated shifted sample _____________ from each simulation
+
+    * Repeat 10000 times (simulations) to create the ____________ distribution
+
+    * Find the proportion of _____________ ______________ at least as extreme as ________________
 
 \newpage
 
-### Simulation-based Testing for a Single Mean - Video 17.2 {-}
+* Conditions for inference for a single mean:
 
-\setstretch{1}
+\rgi \rgi - Independence:
 
-Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+#### Optional notes: Additional Example {-}
+
+Adult male polar bears historically have weighed, on average, 370kg.  Scientists are concerned that reduction in food availability and a shortened hunting season may be negatively impacting their weights. The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea. Is there evidence that male polar bears in the Southern Beaufort Sea weigh less than 370kg, on average?  
+
+
+Identify the observational units.
+
+\vspace{0.3in}
+
+Identify the variable collected. 
+
+\vspace{0.3in}
+
+Is the variable categorical or quantitative? If categorical, define a "success"; if quantitative, state the units of measure.
+
+\vspace{0.3in}
+
+Define the parameter in words and write it using proper notation
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses in words and in proper notation:
+
+  \rgi In words:
+
+  \rgi \rgi $H_0:$
+
+\vspace{0.45in}
+
+  \rgi \rgi $H_A:$
+
+\vspace{0.45in}
+
+  \rgi In notation:
+  
+\vspace{1mm}
+
+  \rgi \rgi $H_0:$
+
+\vspace{0.2in}
+
+  \rgi \rgi $H_A:$
+
+\vspace{0.2in}
+
 
 
 ``` r
@@ -278,11 +386,9 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-10-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-10-2} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-8-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-8-2} \end{center}
 
-\newpage
-
-Summary Statistics:
+Summary statistics:
 
 
 ``` r
@@ -292,83 +398,11 @@ pb %>%
 #> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
 
-#### Hypothesis testing {-}
-
-\setstretch{1.5}
-
-* Hypotheses are always written about the _________________________.  For a single mean we will use the notation ___________.
-
-\setstretch{1}
-
-Null Hypothesis:
-
-$H_0:$
-
-\vspace{0.2in}
-Alternative Hypothesis:
-
-$H_A:$
+Write the value of the statistic.  Use proper notation: 
 
 \vspace{0.2in}
 
-\setstretch{1.5}
-
-* Direction of the alternative depends on the __________________
-___________________.
-
-\setstretch{1}
-
-#### Simulation-based method {-}
-
-* Simulate many samples assuming $H_0: \mu = \mu_0$
-
-    * Shift the data by the difference between $\mu_0$ and $\bar{y}$
-
-    * Sample with replacement $n$ times from the shifted data
-
-    * Plot the simulated shifted sample mean from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $\bar{y}$
-
-### Optional Notes: Video Example (Video 17.2) {-}
-
-Is there evidence that male polar bears weigh less than 370kg (previously recorded measure), on average?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
-
-Hypotheses:
-
-In notation:
-
-$H_0:$
-
-\vspace{0.2in}
-
-$H_A:$
-
-\vspace{0.2in}
-
-
-In words:
-
-$H_0:$
-
-\vspace{0.6in}
-
-$H_A:$
-
-\vspace{0.6in}
-
-Reminder of summary statistics:
-
-
-``` r
-pb %>%
-  summarise(favstats(Weight)) #Gives the summary statistics
-#>     min    Q1 median     Q3   max     mean       sd  n missing
-#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
-```
-Find the difference:
+How much would the data need to be shifted in order to assume the null hypothesis is true?  Find the difference:
 
 $\mu_0 - \bar{y} =$
 
@@ -386,56 +420,74 @@ one_mean_test(pb$Weight,   #Enter the object name and variable
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
+Where is the null distribution centered?  Why does that make sense?
+
+\vspace{0.5in}
+
+Where is the red line plotted on the null distribution?  Why is that value important?
+
+\vspace{0.3in}
+
+Why is the area left of the red line shaded on the null distribution?
+
+\vspace{0.3in}
+
+What is the p-value of the test?
+
+\vspace{0.2in}
 
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
 
-* Statistic (summary measure and value)
+* Statistic (summary measure and value) and Direction of the alternative 
+    
+* Null hypothesis (population reference, summary measure, equal to null value)
 
-* Direction of the alternative
-
-* Null hypothesis (in context)
+* Context of the problem (observational units, variable (if variable is quantitative, include units))
 
 
 \vspace{0.8in}
+ 
 \newpage
 
 Conclusion:
 
 * Amount of evidence
+    
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
 
-* Parameter of interest
-
-* Direction of the alternative hypothesis
+* Context (observational units, variable  (if variable is quantitative, include units))
 
 \vspace{0.8in}
 
-### Simuation-based Confidence Intervals for a Single Mean - Video 17.1 {-}
 
-* Reminder: review summary measures and plots discussed in the Module 6 material and Chapter 5 of the textbook.
 
-* The summary measure for a single quantitative variable is the ______________.
+### Bootstrap Confidence Intervals for One Quantitative Variable (section 17.1) {-}
 
-\setstretch{1.5}
+A confidence interval gives a range of plausible values for the ________________________ .
 
-Notation:
+#### Simulation-based method{-}
 
-- Population mean:
+* Label cards with the values from the _________________________
 
-- Population standard deviation:
+* Sample with replacement (bootstrap) from the original sample _____________ times
 
-- Sample mean:
+* Plot the simulated sample _______________ from each simulation
 
-- Sample standard deviation:
+* Repeat at least 10000 times (simulations) to create the ________________ distribution
 
-- Sample size:
+* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+
+\rgi \rgi - ie. 95% CI = (2.5th percentile, 97.5th percentile)
 
 \setstretch{1}
 
-Example:  What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+#### Optional notes: Additional Example {-}
+
+What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
 
 
 ``` r
@@ -465,7 +517,7 @@ ggplot(aes(x = Weight)) +   # Name variable to plot
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-15-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-15-2} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-12-1} \includegraphics[width=0.6\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-12-2} \end{center}
 
 Summary Statistics:
 
@@ -476,27 +528,9 @@ pb %>%
 #>     min    Q1 median     Q3   max     mean       sd  n missing
 #> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
-### Confidence interval {-}
 
-#### Simulation-based method{-}
 
-* Label cards with the values from the data set
-
-* Sample with replacement (bootstrap) from the original sample $n$ times
-
-* Plot the simulated sample mean on the bootstrap distribution
-
-* Repeat at least 10000 times (simulations)
-
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
-
-* ie. 95% CI = (2.5th percentile, 97.5th percentile)
-
-Conditions for inference for a single mean:
-
-- Independence:
-
-\vspace{0.5in}
+Confidence Interval:
 
 
 ``` r
@@ -504,26 +538,31 @@ set.seed(216)
 one_mean_CI(pb$Weight,
   summary_measure = "mean",
   number_repetitions = 10000,
-  confidence_level = 0.95)
+  confidence_level = 0.90)
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-17-1} \end{center}
-The confidence interval estimates the ________________
-of ____________________.
+\begin{center}\includegraphics[width=0.7\linewidth]{06-VN06-EDAonemeanSim_files/figure-latex/unnamed-chunk-14-1} \end{center}
+What is the 5th percentile of the bootstrap distribution?  The 95th percentile?
+
+\vspace{0.3in}
+
+Why is the bootstrap distribution centered near 324?  Why is that number important?
+
+\vspace{0.4in}
 
 Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
-
-* Parameter of interest
-
+    
+* Parameter of interest (including context: observational units, variable (if variable is quantitative, include units))
+    
 * Calculated interval
 
-* Order of subtraction when comparing two groups
-
 \vspace{0.8in}
+
+
 
 ### Concept Check
 
@@ -540,4 +579,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 3. How do we determine the direction of the alternative hypothesis?
 
 
+ 
 \newpage

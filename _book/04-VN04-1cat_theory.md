@@ -113,7 +113,13 @@ General steps of a hypothesis test
 
 3.	Model a sampling distribution which assumes the null hypothesis is true.
 
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample proportion which assumes the null hypothesis is true is the standard Normal (N(0,1)) distribution
+
 4.	Calculate a p-value.
+
+\rgi \rgi - Calculate the standardized sample proportion ($Z$) and compare that to the standard Normal (N(0,1)) distribution.
+
+\rgi \rgi - P-value will be the area under the curve beyond $Z$ (in the direction of the alternative hypothesis)
 
 5.	Draw conclusions based on a p-value.
 
@@ -199,6 +205,8 @@ Equation for the standard error of the sample proportion, assuming the null hypo
 
 \setstretch{1}
 
+\newpage
+
 Equation for the standardized sample proportion (standardized statistic when analyzing one categorical variable):
 
 \vspace{0.5in}
@@ -227,7 +235,7 @@ Label the standardized sample proportion (standardized statistic) on the standar
 
 \begin{center}\includegraphics[width=0.5\linewidth]{04-VN04-1cat_theory_files/figure-latex/standNormalc-1} \end{center}
 
-To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis.
+To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis).
 
 
 ``` r
@@ -245,7 +253,7 @@ Interpretation of the p-value:
     
 * Null hypothesis (population reference, summary measure, equal to null value)
 
-* Context of the problem (observational units, variable(s))
+* Context of the problem (observational units, variable (if variable is categorical, define "success"))
 
 \vspace{0.6in}
 
@@ -255,7 +263,7 @@ Conclusion:
     
 * For the alternative hypothesis (population reference, summary measure, direction, null value)
 
-* Context (observational units, variable(s))
+* Context (observational units, variable (if variable is categorical, define "success"))
 
 \vspace{0.5in}
 
@@ -312,7 +320,7 @@ Calculate the standard error of the sample proportion of payday loan borrowers t
 
 \vspace{0.4in}
 
-\newpage
+ 
 
 From the below, what multiplier ($z^\star$) should be used to create a 95% confidence interval for the parameter?  Explain why 97.5% of the distribution is shaded (why are we using the 97.5th percentile to create a 95% confidence interval?)
 
@@ -343,13 +351,13 @@ Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variable (if variable is categorical, define "success"))
     
 * Calculated interval
     
 \vspace{0.8in}
 
-\newpage
+ 
 
 #### Interpreting confidence level
 
@@ -385,5 +393,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 <!-- \vspace{0.6in} -->
 
-
 \newpage
+ 

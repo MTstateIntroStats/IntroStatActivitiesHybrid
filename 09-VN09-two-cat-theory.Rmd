@@ -37,6 +37,7 @@ General steps of a hypothesis test
 4.	Calculate a p-value.
 
 \rgi \rgi - Calculate the standardized difference in sample proportions ($Z$) and compare that to the standard Normal (N(0,1)) distribution.
+
 \rgi \rgi - P-value will be the area under the curve beyond $Z$ (in the direction of the alternative hypothesis)
 
 5.	Draw conclusions based on a p-value.
@@ -65,7 +66,7 @@ Equation for the standardized difference in sample proportions (standardized sta
 
 #### Optional Notes: Additional Example {-}
 
-Example: In Modules 3 and 4, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?  Use land grant - non-land-grant as the order of subtraction.
+Example: Earlier in the semester, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?  Use land grant - non-land-grant as the order of subtraction.
 
 What are the observational units in this study?
 
@@ -126,11 +127,11 @@ Are the conditions met to analyze the university data using theory-based methods
 \vspace{0.8in}
  
 
-* Calculate the standard error of the difference in sample proportions, assuming the null hypothesis is true
+Calculate the standard error of the difference in sample proportions, assuming the null hypothesis is true
 
 \vspace{0.4in}
 
-* Calculate the standardized difference in sample proportions ($Z$) of higher education institutions that offer tenure between land grant universities and non-land grant universities.
+Calculate the standardized difference in sample proportions ($Z$) of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
 \vspace{0.4in}
 
@@ -140,7 +141,7 @@ Interpret the standardized statistic.
 
 Label the standardized difference in sample proportions (standardized statistic) on the standard Normal distribution below and shade the area representing the p-value.
 
-```{r standNormalc, warning=FALSE, out.width="50%"}
+```{r standNormald, warning=FALSE, out.width="50%"}
 openintro::normTail(m = 0, s = 1)
 ```
 
@@ -177,7 +178,7 @@ Conclusion with scope of inference:
 
 \vspace{0.8in}
 
- 
+\newpage
 
 ### Theoretical Confidence Interval for Two Categorical Variables (section 15.3.2) {-}
 
@@ -191,7 +192,7 @@ For two categorical variables,
 
 * $\text{statistic}$ = ___________________
 
-* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic} = $ ____________ $\times$ ______________
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}=$ ____________ $\times$ ______________
 
 The $z^*$ multiplier is the value at the given percentile(s) of the standard Normal (N(0,1)) distribution.
 

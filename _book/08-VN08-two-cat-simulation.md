@@ -4,28 +4,27 @@ Read Sections 1.2, 2.2 - 2.4, 15.1, 15.2, Chapter 4 and Chapter 16 in the course
 
 ### Course Videos
 
-* 1.2.3to1.2.5
+* Variable_Roles
 
-* 2.2to2.4
+* Study_Design
 
-* 4.1_TwoProp
+* Two_Categorical_Variables_Statistics
 
-* 4.2_TwoProp
+* Two_Categorical_Variables_Plots
 
-* 4.4
+* Simulation_Tests_Two_Categorical_Variables
 
-* 15.1
+* Bootstrap_Intervals_Two_Categorical_Variables
 
-* 15.2
+* Relative_Risk
 
-* RelativeRisk
+### Video: Variable Roles (sections 1.2.3 and 1.2.4) {-}
 
-### Relationships between variables - Video 1.2.3to1.2.5 {-}
+\setstretch{1.5}
 
 Explanatory variable: predictor variable
 
-* The variable researchers think *may be* _____________ 
-the other variable.
+* The variable researchers think *may be* _____________ the other variable.
     
 * In an experiment, what the researchers _____________ or ________________.
     
@@ -36,6 +35,8 @@ Response variable:
 * The variable researchers think *may be* ___________________ by the other variable.
 
 * Always simply ________________ or __________________; never controlled by researchers.
+
+\setstretch{1}
 
 Examples:
 
@@ -83,19 +84,35 @@ In the Physician's Health Study [@physhealth], male physicians participated in a
 
 \setstretch{1}
 
-### Observational studies, experiments, and scope of inference: Video 2.2to2.4 {-}
+### Video: Study Design (sections 1.2.5, 2.2, 2.3 and 2.4) {-}
 
-* Review
+#### Confounding variables {-}
 
-    - Explanatory variable: the variable researchers think *may be* affecting the other variable.
+\setstretch{1.5}
+
+Confounding variable: 
+
+* associated with both the ________________ and the _________________ variable
     
-    - Response variable: the variable researchers think *may be* influenced by the other variable.
+* explains the association shown by the data 
+
+\setstretch{1}
+
+Example from section 2.2:  Suppose a study tracked sunscreen use and skin cancer, and it was found that the more sunscreen someone used, the more likely the person was to have skin cancer. 
+
+* Explanatory variable: 
+
+\vspace{0.2 in}
+
+* Response variable: 
+
+\vspace{0.2 in}
 
 * Confounding variable: 
-    - associated with both the explanatory and the response variable
-    - explains the association shown by the data 
 
-Example: 
+\vspace{0.2 in}
+
+From the study, can we determine that more sunscreen use *causes* skin cancer?
 
 \vspace{0.8in}
 
@@ -103,12 +120,12 @@ Example:
 
 * Observational study: 
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 * Experiment: 
 
-\vspace{0.5in}
-\newpage
+\vspace{0.3in}
+ 
  
 Principles of experimental design
 
@@ -124,11 +141,49 @@ Principles of experimental design
 * Blocking: group based on certain characteristics
 \vspace{1mm}
 
-### Optional Notes: Video Examples (Video 2.2to2.4) {-}
+#### Scope of Inference {-}
+
+To determine the scope of inference for a study, ask yourself two questions:
+
+1. How was the sample selected?
+
+* Random sample with no sampling bias:
+
+\vspace{0.3in}
+
+* Non-random sample with sampling bias:
+
+\vspace{0.3in}
+
+
+2. What is the study design?
+
+* Randomized experiment:
+    
+\vspace{0.3in}
+
+* Observational study:
+    
+\vspace{0.3in}
+
+Scope of Inference Table:
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
+
+Determining scope of inference means identifying which of the four cells the study would fall into in the image above!
+
+
+#### Optional Notes: Additional Example(s) {-}
     
 Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
 
 * What is the study design?
+    
+\vspace{0.5in}
+
+* What is the scope of inference for this study?
+
     
 \vspace{0.5in}
 
@@ -136,67 +191,30 @@ Example: It is well known that humans have more difficulty differentiating betwe
 Example: In the Physician's Health Study [@physhealth], male physicians participated in a study to determine whether taking a daily low-dose aspirin reduced the risk of heart attacks. The male physicians were randomly assigned to the treatment groups. After five years, 104 of the 11,037 male physicians taking a daily low-dose aspirin had experienced a heart attack while 189 of the 11,034 male physicians taking a placebo had experienced a heart attack. 
 
 * What is the study design?
-    
+
 \vspace{0.5in}
+
 
 * Assuming these data provide evidence that the low-dose aspirin group had a lower rate of heart attacks than the placebo group, is it valid for the researchers to conclude the lower rate of heart attacks was caused by the daily low-dose aspirin regimen?
 
 \vspace{0.5in}
     
-#### Scope of Inference {-}
 
-1. How was the sample selected?
+ 
 
-* Random sample with no sampling bias:
-
-\vspace{0.35in}
-
-* Non-random sample with sampling bias:
-
-\vspace{0.35in}
-
-\newpage
-
-2. What is the study design?
-
-* Randomized experiment:
-    
-\vspace{0.35in}
-
-* Observational study:
-    
-\vspace{0.35in}
-
-Scope of Inference Table:
-
-
-\begin{center}\includegraphics[width=0.65\linewidth]{images/ScopeOfInferenceGreyscale} \end{center}
-
-Example: It is well known that humans have more difficulty differentiating between faces of people from different races than people within their own race. A 2018 study published in the Journal of Experimental Psychology [@levin2000]: Human Perception and Performance investigated a similar phenomenon with gender. In the study, volunteers were shown several pictures of strangers. Half the volunteers were randomly assigned to rate the attractiveness of the individuals pictured. The other half were told to rate the distinctiveness of the faces seen. Both groups were then shown a slideshow of faces (some that had been rated in the first part of the study, some that were new to the volunteer) and asked to determine if each face was old or new. Researchers found people were better able to recognize faces of their own gender when asked to rate the distinctiveness of the faces, compared to when asked to rate the attractiveness of the faces.
-
-* What is the scope of inference for this study?
-
-\vspace{0.5in}
+### Video: Two Categorical Variables - Statistics (section 4.1)  {-}
 
 \setstretch{1.5}
-
-\newpage
-
-### Summarizing two categorical variables - Video 4.1_TwoProp {-}
 
 * The summary measure for two categorical variables is the ______________________ in _____________________________.
 
 Notation used for the population difference in proportion:
-    
-* Two categorical variables:
     
 \vspace{0.2in}
 
 \rgi \rgi - Subscripts represent the __________________ variable groups
     
 Notation used for the sample difference in proportion:
-    
-* Two categorical variables
     
 \vspace{0.2in}
 
@@ -206,9 +224,29 @@ When we have two categorical variables we report the data in a  _______________ 
 
 \vspace{2mm}
 
-For today's videos we will again use the `moving_to_mt` data set.
+Example from section 4.1 using the `email` data set:
 
-Example from the Video:  Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
+
+* Of emails had no number in them, what proportion were spam? Write it using proper notation.
+
+\vspace{0.3in}
+
+* Of emails had a small number in them, what proportion were spam? Write it using proper notation.
+
+\vspace{0.3in}
+
+* Of emails had a big number in them, what proportion were spam? Write it using proper notation.
+
+\vspace{0.3in}
+
+* Do the variables `number` and `spam` appear to be associated?  How can you tell?
+
+\vspace{0.5in}
+
+
+#### Optional notes: Additional Example {-}
+
+Gallatin Valley is the fastest growing county in Montana.  You’ll often hear Bozeman residents complaining about the ‘out-of-staters’ moving in.  A local real estate agent recorded data on a random sample of 100 home sales over the last year at her company and noted where the buyers were moving from as well as the age of the person or average age of a couple buying a home.  The variable age was binned into two categories, "Under30" and "Over30." Additionally, the variable, state the buyers were moving from, was created as a binary variable, "Out" for a location out of state and "In" for a location in state.  
 
 The following code reads in the data set, `moving_to_mt` and names the object moving.
 
@@ -260,11 +298,9 @@ moving %>%
 
 \vspace{0.2in}
 
-\setstretch{1}
 
 If we want to know what proportion of each age group is from each state, we would calculate the proportion of home sales with buyers from each state within each age group. In other words, divide the number of home sales from each state with buyers that are over 30 by the total for row 1, the total number of home sales with buyers over 30.
 
-\setstretch{1}
 
 * What proportion of sampled home sales with buyers under 30-years-old were from California?
 
@@ -273,8 +309,6 @@ If we want to know what proportion of each age group is from each state, we woul
 * What notation should be used for this value?
 
 \vspace{0.2in}
-
-\setstretch{1.5}
 
 Additionally, we could find the proportion of home sales with buyers in each state for each age group.  Here we would calculate the proportion of home sales with buyers in each age group within each state.  Divide the number of home sales with buyers in each age group from CA by the total for column 1, the total number of home sales with buyers from CA.
 
@@ -303,8 +337,6 @@ Additionally, we could find the proportion of home sales with buyers in each sta
 
 \vspace{0.4in}
 
-\newpage
-
 * Calculate the difference in proportion of home sales in Gallatin County over 30 years old from other parts of Montana and from California. Use MT - CA as the order of subtraction.  Give appropriate notation.
 
 \vspace{0.4in}
@@ -313,9 +345,35 @@ Additionally, we could find the proportion of home sales with buyers in each sta
 
 \vspace{0.5in}
 
-### Plots for two categorical variables - Video 4.2_TwoProp {-}
 
-In a segmented bar plot, the bar for each category will sum to 1.  In this first plot, we are plotting the row proportions calculated conditional on the age group.
+
+### Video: Two Categorical Variables - Plots (section 4.2) {-}
+
+Two types of plots for displaying two categorical variables:
+
+\setstretch{1.5}
+
+* Segmented bar plot: 
+
+\rgi \rgi - _____________________ variable will be represented by the bars
+
+\rgi \rgi - _____________________ variable will be represented by the segments
+
+\rgi \rgi - The segments within the bar will add to _________ (meaning the y-axis scale will be from 0 to ___________)
+
+
+* Mosaic plot: Same as the segmented bar plot but the width of the bar is determined by ________________
+
+\vspace{0.4in}
+
+\setstretch{1}
+
+
+#### Optional notes: Additional Example {-}
+
+Using the same Gallatin County home sales data, we can plot the `From` and `Age_Group` variables discussed in the previous video.
+
+In this first plot, we are plotting the row proportions calculated conditional on the age group.
 
 
 ``` r
@@ -353,6 +411,10 @@ moving %>%
 
 \begin{center}\includegraphics[width=0.55\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
+Which of these two plots could have been used to estimate the difference in proportion of home sales in Gallatin County over 30 years old from other parts of Montana and from California.
+
+\vspace{0.3in}
+
 Mosaic plot:
 
 ``` r
@@ -377,90 +439,108 @@ moving %>% # Data set piped into...
 
 \vspace{0.2in}
 
-\newpage
+ 
 
-### Simpson's paradox - Video 4.4 {-}
+### Video: Simpson's paradox (section 4.4) {-}
 
 \setstretch{1.5}
 
-* When an apparent _____________ between explanatory and response variables reverses when accounting for ______________ variable.
+* When an apparent association between _________________ and __________________ variables reverses when accounting for a ______________ variable.
 
 \setstretch{1}
 
-Example: The "Berkeley Dataset" contains all 12,763 applicants to UC-Berkeley's graduate programs in Fall 1973. This dataset was published by UC Berkeley researchers in an analysis to understand the possible gender bias in admissions and has now become a classic example of Simpson's Paradox.
+Review the example from section 4.4 discussing homicide convictions involving multiple murders in Florida between 1976 and 1987.
+
+* What is the explanatory variable?
+
+\vspace{0.3in}
+
+* What is the response variable?
+
+\vspace{0.3in}
+
+* Among Caucasian defendants, what proportion received the death penalty?  Write this value using proper notation:
+
+\vspace{0.3in}
+
+* Among African American defendants, what proportion received the death penalty?  Write this value using proper notation:
+
+\vspace{0.3in}
+
+* Which race of defendant appears to have a higher proportion receive the death penalty in these types of cases?
+
+\vspace{0.2in}
+
+* What is the potential confounding variable?
+
+\vspace{0.3in}
+
+* When the victim was Caucasian, what proportion Caucasian defendants received the death penalty? What proportion of African American defendants received the death penalty? Which race of defendant appears to have a higher proportion receive the death penalty in these types of cases?
+
+\vspace{0.4in}
+
+* When the victim was African American, what proportion Caucasian defendants received the death penalty? What proportion of African American defendants received the death penalty? Which race of defendant appears to have a higher proportion receive the death penalty in these types of cases?
+
+\vspace{0.4in}
 
 
-``` r
-discrim <- read.csv ("data/berkeley.csv")
+<!-- Example: The "Berkeley Dataset" contains all 12,763 applicants to UC-Berkeley's graduate programs in Fall 1973. This dataset was published by UC Berkeley researchers in an analysis to understand the possible gender bias in admissions and has now become a classic example of Simpson's Paradox. -->
 
-discrim %>%
-  ggplot(aes(x =Gender, fill = Admission))+
-  geom_bar(stat = "count", position = "fill") +
-  labs(title = "Segmented bar plot of Sex of Berkley Applicants by
-       Admission Status",
-       y = "Relative Frequency",
-       x = "Sex") +
-  scale_fill_grey()
-```
+<!-- ```{r, echo=TRUE, out.width="85%"} -->
+<!-- discrim <- read.csv ("data/berkeley.csv") -->
 
+<!-- discrim %>% -->
+<!--   ggplot(aes(x =Gender, fill = Admission))+ -->
+<!--   geom_bar(stat = "count", position = "fill") + -->
+<!--   labs(title = "Segmented bar plot of Sex of Berkley Applicants by -->
+<!--        Admission Status", -->
+<!--        y = "Relative Frequency", -->
+<!--        x = "Sex") + -->
+<!--   scale_fill_grey() -->
+<!-- ``` -->
 
+<!-- The data showed that 44\% of male applicants were accepted and 35\% of female applicants were accepted.  Does it appear that the female students are discriminated against? -->
 
-\begin{center}\includegraphics[width=0.85\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-7-1} \end{center}
+<!-- \vspace{0.1in} -->
 
-The data showed that 44\% of male applicants were accepted and 35\% of female applicants were accepted.  Does it appear that the female students are discriminated against?
-
-\vspace{0.1in}
-
-We can break down the data by major.  A major code (either A, B, C, D, E, F, or Other) was used.
-
-\newpage
-
-Here we look at the relationship between admission status and sex for Program A and for Program B.
+<!-- We can break down the data by major.  A major code (either A, B, C, D, E, F, or Other) was used. -->
 
 
-\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_AB} \end{center}
 
-Showing Program C and Program D.
+<!-- Here we look at the relationship between admission status and sex for Program A and for Program B. -->
+
+<!-- ```{r, out.width="85%"} -->
+<!-- include_graphics("images/SimPara_AB.png") -->
+<!-- ``` -->
+
+<!-- Showing Program C and Program D. -->
+
+<!-- ```{r, out.width="85%"} -->
+<!-- include_graphics("images/SimPara_cD.png") -->
+<!-- ``` -->
+
+<!-- And finally, Program E and F. -->
+
+<!-- ```{r, out.width="85%"} -->
+<!-- include_graphics("images/SimPara_EF.png") -->
+<!-- ``` -->
+
+<!-- We can see in several programs the acceptance rate is actually HIGHER for females than for males. -->
+
+<!-- \vspace{1in} -->
+
+ 
 
 
-\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_cD} \end{center}
-
-And finally, Program E and F.
-
-
-\begin{center}\includegraphics[width=0.85\linewidth]{images/SimPara_EF} \end{center}
-
-We can see in several programs the acceptance rate is actually HIGHER for females than for males.
-
-\vspace{1in}
-
-\newpage
-
-
-### Simulation Testing for a Difference in Proportions - Video 15.1 {-}
+### Video: Simulation Testing for Two Categorical Variables (section 15.1) {-}
 
 \setstretch{1.5}
 
 * In this module, we will study inference for a ______________________ explanatory variable and a _________________________ response.
 
+* The _____________________ variable will determine the two groups being compared.
 
-\setstretch{1}
-
-Example: In a double-blind experiment [@Weiss1988] on 48 cocaine addicts hoping to overcome their addiction, half were randomly assigned to a drug called desipramine and the other half a placebo.  The addicts were followed for 6 weeks to see whether they were still clean.  Is desipramine more effective at helping cocaine addicts overcome their addiction than the placebo?
-
-Observational units: 
-
-\vspace{0.15in}
-
-Explanatory variable:
-
-\vspace{0.15in}
-
-Response variable:
-
-\vspace{0.15in}
-
-\setstretch{1.5}
+* A "success" will be the level of the __________________ variable being compared between the two groups.
 
 Notation:
 
@@ -468,11 +548,13 @@ Notation:
 
 * Population proportion for group 2:
 
+* Parameter (difference in population proportions): 
+
 * Sample proportion for group 1:
 
 * Sample proportion for group 2:
 
-* Sample difference in proportions: 
+* Statistic (difference in sample proportions): 
 
 * Sample size for group 1:
 
@@ -500,13 +582,48 @@ $H_A:$
 
 * Research question determines the direction of the alternative hypothesis.
 
-\newpage
+ 
+#### Simulation-based method {-}
 
-### Optional Notes: Video Example (Video 15.1) {-}
+\setstretch{1.5}
 
-Write the null and alternative hypotheses for the cocaine study:
+* Simulate many samples assuming $H_0: \pi_1 = \pi_2$
 
-In notation:
+    * Write the ___________________ variable on cards
+
+    * Mix the ___________________ variable groups together
+    
+    * Shuffle cards into two "new" _________________ variable groups, the sample sizes of the original groups ($n_1$ and $n_2$)
+
+    * Calculate and plot the simulated ____________ _____ ___________ ____________ from each simulation
+
+    * Repeat 10000 times (simulations) to create the ____________ distribution
+
+    * Find the proportion of _____________ at least as extreme as _____________
+
+\setstretch{1}
+
+#### Optional Notes: Additional Example {-}
+
+Example: In a double-blind experiment [@Weiss1988] on 48 cocaine addicts hoping to overcome their addiction, half were randomly assigned to a drug called desipramine and the other half a placebo.  The addicts were followed for 6 weeks to see whether they were still clean.  Is desipramine more effective at helping cocaine addicts overcome their addiction than the placebo?  Use desipramine - placebo as the order of subtraction.
+
+Observational units: 
+
+\vspace{0.2in}
+
+Explanatory variable (include: what is group 1?): 
+
+\vspace{0.2in}
+
+Response variable (include: what is a "success"?):
+
+\vspace{0.2in}
+
+Define the parameter in words and write it using proper notation
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses in proper notation:
 
 $H_0:$
 
@@ -535,11 +652,11 @@ cocaine %>% group_by(drug) %>% count(outcome)
 #> 3 placebo     clean        4
 #> 4 placebo     relapsed    20
 ```
-Summary statistic:
+Calculate the summary statistic and write it using proper notation:
 
 \vspace{0.3in}
 
-Interpretation:
+Interpretation of the summary statistic:
 
 \vspace{0.4in}
 
@@ -557,27 +674,13 @@ cocaine%>%
 
 
 
-\begin{center}\includegraphics[width=0.6\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 Is the independence condition met for simulation inference?
 
 \vspace{0.4in}
 
-#### Simulation-based method {-}
-
-* Simulate many samples assuming $H_0: \pi_1 = \pi_2$
-
-    * Write the response variable values on cards
-
-    * Mix the explanatory variable groups together
-    
-    * Shuffle cards into two explanatory variable groups to represent the sample size in each group ($n_1$ and $n_2$)
-
-    * Calculate and plot the simulated difference in sample proportions from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $\hat{p}_1 - \hat{p}_2$
+Null distribution:
     
 
 ``` r
@@ -593,31 +696,47 @@ two_proportion_test(formula = outcome~drug, # response ~ explanatory
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 Explain why the null distribution is centered at the value of zero:
 
 \vspace{1in}
 
+Where is the red line plotted on the null distribution?  Why is that value important?
+
+\vspace{0.3in}
+
+Why is the area right of the red line shaded on the null distribution?
+
+\vspace{0.3in}
+
+What is the p-value of the test?
+
+\vspace{0.2in}
+
+
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
 
-* Statistic (summary measure and value)
+* Statistic (summary measure and value) and Direction of the alternative 
     
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
+* Null hypothesis (population reference, summary measure, equal to null value)
+
+* Context of the problem (observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
+
 
 \vspace{0.8in}
+
+\newpage
 
 Conclusion with scope of inference: 
 
 * Amount of evidence
     
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context of the problem (observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
 
 * Generalization
 
@@ -625,29 +744,36 @@ Conclusion with scope of inference:
 
 \vspace{0.8in}
 
-\newpage
+ 
 
-### Confidence interval for a Difference in Proportion - Video 15.2 {-}
+### Video: Bootstrap Confidence Interval for Two Categorical Variables (section 15.2) {-}
 
-To estimate the difference in true proportion we will create a confidence interval.
+To estimate the difference in true proportion, we will create a confidence interval.
 
 #### Simulation-based method {-}
 
-* Write the response variable values on cards
+\setstretch{1.5}
 
-* Keep explanatory variable groups separate
+* Write the response variable outcomes (success/failure) on cards
+
+* Keep explanatory variable groups ______________
     
-* Sample with replacement $n_1$ times in explanatory variable group 1 and $n_2$ times in explanatory variable group 2
+* Sample with replacement __________ times in explanatory variable group 1 and ________ times in explanatory variable group 2
 
-* Calculate and plot the simulated difference in sample proportions from each simulation
+* Calculate and plot the simulated ____________ _____ ___________ ____________ from each simulation
 
-* Repeat 10000 times (simulations) to create the bootstrap distribution
+* Repeat 10000 times (simulations) to create the _______________ distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
-### Optional Notes: Video Example (Video 15.2) {-}
+\setstretch{1}
+
+
+#### Optional Notes: Additional Example {-}
 
 Returning to the cocaine example, we will estimate the difference in true proportion of cocaine addicts that stay clean for those on the desipramine and those on the placebo.
+
+Bootstrap distribution:
 
 
 ``` r
@@ -662,58 +788,85 @@ two_proportion_bootstrap_CI(formula = outcome ~ drug,
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{08-VN08-two-cat-simulation_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+What percent of bootstrap resampled difference in proportions were less than or equal to 0.083?  Less than or equal to 0.708?
+
+\vspace{0.3in}
+
+Why is the bootstrap distribution centered near 0.417?  Why is that number important?
+
+\vspace{0.4in}
 
 Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
     
 * Calculated interval
-    
-* Order of subtraction when comparing two groups
 
 \vspace{0.8in}
 
-### Relative Risk - Video RelativeRisk {-}
 
-* Relative risk is the ratio of the risks in two different categories of an explanatory variable.
+### Video: Relative Risk (section 15.1.3) {-}
 
-Relative Risk:
+\setstretch{1.5}
+
+* Relative risk is the __________________ of the risk of "success" comparing two groups.
+
+Notation:
+
+* Population relative risk:
+
+* Sample relative risk:
+
+\newpage
+
+There are three ways to interpret relative risk:
+
+
+* Compare the risk of group 1 to group 2:  The risk of ____________________ is group 1 is ________ times the risk of __________________ in group 2.
+
+* Discuss an increase/decrease in risk: The risk of ____________________ is group 1 is ________ times **higher/lower** than the risk of __________________ in group 2.
+
+* Discuss an *percent* increase/decrease in risk: The risk of ____________________ is group 1 is ________ % **higher/lower** than the risk of __________________ in group 2.
+
+\vspace{0.2in}
+
+\setstretch{1}
+
+If doing a hypothesis test of relative risk:
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+
+* Research question determines the direction of the alternative hypothesis.
+
+
+
+
+#### Optional Notes: Additional Example {-}
+
+In a study reported in the New England Journal of Medicine [@doit2015], one-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2% of those in the placebo group.
+
+* Calculate the proportion of children that were desensitized, among those in the peanut flour group.
 
 \vspace{0.3in}
 
-Example: In a study reported in the New England Journal of Medicine [@doit2015], one-hundred fifty (150) children who had shown sensitivity to peanuts were randomized to receive a flour containing a peanut protein or a placebo flour for 2.5 years. At age 5 years, children were tested with a standard skin prick to see if they had an allergic reaction to peanut protein (yes or no). 71% of those in the peanut flour group no longer demonstrated a peanut allergy compared to 2% of those in the placebo group.
+* Calculate the proportion of children that were desensitized, among those in the placebo group.
+
+\vspace{0.3in}
 
 * Calculate the relative risk of desensitization comparing the peanut flour group to the placebo group.
 
 \vspace{0.6in}
 
-\setstretch{1.5}
-
-* Interpretation:
-
-    * The proportion of successes in group 1 is the $RR$ ________________ the proportion of successes in group 2.
-
-Increase in risk:
-
-\vspace{0.3in}
-
-* Interpretation:
-
-    * The proportion of successes in group 1 is the $(RR-1)$ ______________
-higher/lower than the proportion of successes in group 2.
-
-Percent increase in risk:
-
-\vspace{0.3in}
-
-* Interpretation:
-
-    * The proportion of successes in group 1 is the $(RR-1)\times 100$ __________ higher/lower than the proportion of successes in group 2.
-
-\setstretch{1}
 
 * Interpret the value of relative risk from the peanut study in context of the problem.
 
@@ -723,52 +876,31 @@ Percent increase in risk:
 
 \vspace{0.8in}
 
-* Find the percent increase (or decrease) in risk of desensitization and interpret this value in context of the problem.
+* Find the *percent* increase (or decrease) in risk of desensitization and interpret this value in context of the problem.
 
 \vspace{0.8in}
 
-### Optional Notes: Video Example (Video RelativeRisk) {-}
+<!-- ### Optional Notes: Video Example (Video RelativeRisk) {-} -->
 
-Within the peanut flour group, the percent desensitized within each age group (at start of study) is as follows:
+<!-- Within the peanut flour group, the percent desensitized within each age group (at start of study) is as follows: -->
 
-1-year-olds: 71\%; 2-year-olds: 35\%; 3-year-olds: 19\%
+<!-- 1-year-olds: 71\%; 2-year-olds: 35\%; 3-year-olds: 19\% -->
 
-* Calculate the relative risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group.
+<!-- * Calculate the relative risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group. -->
 
-\vspace{0.8in}
+<!-- \vspace{0.8in} -->
 
-* Interpret the percent increase (or decrease) in risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group.
+<!-- * Interpret the percent increase (or decrease) in risk of desensitization comparing the 3 year olds to the 2 year olds within the peanut flour group. -->
 
-\vspace{0.8in}
+<!-- \vspace{0.8in} -->
 
-#### Relative risk in the news {-}
+#### Optional Notes: Additional Example {-}
 
 People 50 and older who have had a mild case of covid-19 are 15\% more likely to develop shingles (herpes zoster) within six months than are those who have not been infected by the coronavirus, according to research published in the journal Open Forum Infectious Diseases [@bhavsar2022].
 
 * What was the calculated relative risk of developing shingles when comparing those who has mild COVID-19 to those who had not had COVID-19, among the 50 and older population?
 
 \vspace{0.8in}
-
-#### Testing Relative Risk {-}
-
-In Unit 2, we tested for a difference in proportion.  We could also test for relative risk.
-
-\setstretch{1.5}
-
-Null Hypothesis:
-
-$H_0:$
-
-\vspace{0.2in}
-
-Alternative Hypothesis:
-
-$H_A:$
-
-\vspace{0.2in}
-
-\setstretch{1}
-
 
 ### Concept Check
 
@@ -787,4 +919,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 \vspace{0.5in}
 
 4. What does relative risk measure?
+ 
 \newpage

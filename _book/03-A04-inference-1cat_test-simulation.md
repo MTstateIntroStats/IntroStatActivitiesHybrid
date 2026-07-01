@@ -304,6 +304,8 @@ In the next class, we will continue to assess the strength of evidence against t
 
 ### Additional notes
 
-Activities 4--6 cover the material in Module 3.  Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
+Activities 4--6 cover the material in Module 3.  Use the Module 3 Review in the Unit 1 Review Material (pgs. 113--116) for more practice problems.  
+
+Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage

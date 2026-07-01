@@ -214,6 +214,8 @@ The following table shows counts showing the combined counts of high myopia and 
 
 ### Additional notes
 
+Activities 14--16 cover the material in Module 8.  For more practice with exploratory data analysis (difference in proportion and relative risk) use the Module 8 Review worksheet in the Unit 2 Review Materials (pgs. 255--256).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage

@@ -177,6 +177,9 @@ Now let's investigate how changes in different factors influence the power of a 
     * _Increase_ the distance between the null value and the parameter value (note that we don't have control over this!)
 
 ### Additional notes
+
+Activity 12--13 cover the material in Module 7.  For more practice with errors and power use the Module 7 Review worksheet in the Unit 2 Review Materials (pgs. 251--254).
+
 Use this space to summarize your thoughts and take additional notes on today’s activity and material covered.
 
 \newpage

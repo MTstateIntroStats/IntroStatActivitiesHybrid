@@ -5,7 +5,7 @@ output:
 ---
 ## Video Notes: Analysis of One Quantitative Variable
 
-Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the video notes for Module 6.
+Read Chapters 5 and 17 in the course textbook.  Use the following videos to complete the Module 6 video notes.
 
 ### Course Videos
 
@@ -21,6 +21,8 @@ Read Chapters 5 and 17 in the course textbook.  Use the following videos to comp
 
 ### Video: One Quantitative Variable - Statistics (sections 5.2, 5.4, 5.5 and 5.7) {-}
 
+\setstretch{1.5}
+
 Quantitative data can be numerically summarized by finding:
 
 Two measures of center: 
@@ -30,8 +32,6 @@ Two measures of center:
     - Sum the values in the data set and divide the sum by the sample size
     
     - Notation used for the population mean:
-       
-\vspace{0.1in}
     
     - Notation used for the sample mean:
     
@@ -61,6 +61,8 @@ Two measures of spread:
 
 \rgi Formula:
 
+\newpage
+
 \rgi \rgi Quartile 3 (Q3) - value at the 75th percentile
 
 \rgi \rgi - ____________ % of values are at and _____________ the value of Q3
@@ -70,8 +72,6 @@ Two measures of spread:
 \rgi \rgi - _____________ % of values are at and _____________ the value of Q1
 
 \vspace{1mm}
-
-\setstretch{1}
 
 * The ___________ is a robust measure of center.
 
@@ -105,7 +105,7 @@ Three types of plots for displaying one quantitative variable:
 
 \rgi \rgi How is a histogram different from a bar plot?
 
-\vspace{0.4in}
+\vspace{0.3in}
 
 
 * Boxplot: displays the five number summary
@@ -140,7 +140,7 @@ include_graphics("images/shape2.png")
 ```
 * Outliers: unusually large or small values in the dataset. Values that are "far" from the rest of the data.
 
-\rgi Typically use the 1.5IQR rule for determining outliers:
+\rgi Typically use the $1.5 \times IQR$ rule for determining outliers:
 
 \rgi values less than __________________________ are considered low outliers
 
@@ -158,7 +158,7 @@ moving <- read.csv("data/moving_to_mt.csv")
 
 Dotplot:
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 ```{r, echo=TRUE, out.width="75%"}
 moving %>%
@@ -286,7 +286,9 @@ $H_A:$
     * Repeat 10000 times (simulations) to create the ____________ distribution
 
     * Find the proportion of _____________ ______________ at least as extreme as ________________
-    
+
+\newpage
+
 * Conditions for inference for a single mean:
 
 \rgi \rgi - Independence:
@@ -417,6 +419,7 @@ Interpretation of the p-value:
 
 \vspace{0.8in}
  
+\newpage
 
 Conclusion:
 

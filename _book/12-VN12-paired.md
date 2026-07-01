@@ -1,22 +1,24 @@
 ## Video Notes: Inference for Paired Data 
 
-Read Chapters 17 and 18 in the course textbook.  Use the following videos to complete the video notes for Module 13.
+Read 18 in the course textbook.  Use the following videos to complete the video notes for Module 12.
 
 ### Course Videos
 
-* PairedData
+* Paired_Data
 
-* 18.3
+* Simulation_Inference_Paired_Data
 
-* Optional Video: 18.1and18.2
+* Theoretical_Inference_Paired_Data
 
 
 \setstretch{1}
 
 
-### Single categorical, single quantitative variables - Video Paired_Data {-}
+### Video: Paired Data (introduction to Chapter 18) {-}
 
-* In this module, we will study inference for a ______________________ explanatory variable and a _________________________ response variable where the two groups are ____________________________.
+\setstretch{1.5}
+
+* In this module, we will study a ______________________ explanatory variable and a _________________________ response variable where the two groups are ____________________________.
 
 ### Paired vs. Independent Samples {-}
 
@@ -24,13 +26,9 @@ Two groups are paired if an observational unit in one group is connected to an o
 	
 \rgi Data are paired if the samples are ___________________
 	
-Examples: 
+\rgi \rgi - Most often occurs if an observational unit is measured __________________ 
 
-* Change in test score from pre and post test
-
-* Weight of college students before and after 1st year
-
-* Change in blood pressure
+\rgi \rgi - Other paired designs: Matched pairs
 
 \begin{figure}
 
@@ -47,7 +45,7 @@ Example 1:  Three hundred registered voters were selected at random to participa
 
 \vspace{0.3in}
 
-\newpage
+ 
 
 Example 2: Thirty dogs were selected at random from those residing at the humane society last month. The 30 dogs were split at random into two groups. The first group of 15 dogs was trained to perform a certain task using a reward method. The second group of 15 dogs was trained to perform the same task using a reward-punishment method. 
 
@@ -61,199 +59,34 @@ Example 3: Fifty skiers volunteered to study how different waxes impacted their 
 
 \vspace{0.3in}
 
-Example: Is there a difference in heights between husbands and wives?  The heights were measured on the husband and wife in a random sample of 199 married couples from Great Britain [@gbmarried]. 
-
-For a paired experiment, we look at the difference between responses for each unit (pair), rather than just the average difference between treatment groups
-
-
-
-``` r
-hw <-read.csv("data/husbands_wives_ht.csv")
-paired_observed_plot(hw)
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-1-1} \end{center}
-
-
-
-<!-- ```{r, echo=TRUE, collapse=FALSE} -->
-<!-- hw_diff %>% -->
-<!--     summarise(favstats(ht_husband)) -->
-<!-- ``` -->
-
-<!-- ```{r, echo=TRUE, collapse=FALSE} -->
-<!-- hw_diff %>% -->
-<!--     summarise(fav_stats(ht_wife)) -->
-<!-- ``` -->
-
-
-``` r
-hw_diff %>%
-    summarise(fav_stats(ht_diff))
-```
-
-```
-#>   min   Q1 median  Q3 max     mean       sd   n missing
-#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
-```
+* The summary measure for paired data is the ______________ _________________
 
 \setstretch{1.5}
 
-* The summary measure for paired data is the _______________________.
-
-\newpage
-
-* Mean difference: the average _______________ in the _________________ 
-variable outcomes for observational units between ____________________ variable groups
+\rgi \rgi - The mean difference found by taking the difference in the _________________ variable measurements between the two paired observations, then finding the ____________________________ of those differences.
 
 \setstretch{1}
 
-Notation for the Paired differences
+Notation for the paired differences
 
-* Population mean of the differences:
+* Parameter: Population mean of the differences:
+
+* Statistic: Sample mean of the differences: 
 
 * Population standard deviation of the differences:
 
-* Sample mean of the differences: 
-
 * Sample standard deviation of the differences: 
 
-### Theory-based method - Video 18.3 {-}
+* Sample size of the differences (or number of pairs):
 
-#### t-distribution {-}
+### Video: Simulation Inference for Paired Data (sections 18.1 and 18.2) {-}
 
-In the theoretical approach, we use the CLT to tell us that the distribution of sample means will be approximately normal, centered at the assumed true mean under $H_0$ and with standard deviation $\frac{\sigma}{\sqrt{n}}$.
-
-$$\bar{y} \sim N(\mu_0, \frac{\sigma_d}{\sqrt{n}})$$
-\setstretch{1.5}
-
-* Estimate the population standard deviation, $\sigma_d$, with the
-___________________________ standard deviation, ________.
-
-* For a single quantitative variable we use the ____ - distribution
-with _______________
-degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-* **Independence**: the sample’s observations are independent, e.g., are from a simple random sample. (*Remember*: This also must be true to use simulation methods!)
-
-* **Normality Condition**: either the sample differences come from a normally distributed population or we have a large enough sample size.  To check this condition, use the following rules of thumb:
-
-\rgi \rgi $n < 30$: 
-    
-\vspace{0.2in}
-
-\rgi \rgi $30 \leq n < 100$: 
-    
-\vspace{0.2in}
-
-\rgi \rgi $n \geq 100$: 
-    
-\vspace{0.2in}
-
-Theory-based Hypothesis Test:
-
-* Calculate the standardized statistic 
-
-* Find the area under the t-distribution with $n - 1$ df at least as extreme as the standardized statistic
-
-Equation for the standard error for the sample mean difference:
-
-\vspace{0.5in}
-
-Equation for the standardized sample mean difference:
-
-\vspace{0.5in}
-
-### Optional Notes: Video Example (Video 18.3) {-}
-
-Reminder of summary statistics for height data:
-
-``` r
-hw_diff %>%
-    summarise(fav_stats(ht_diff))
-```
-
-```
-#>   min   Q1 median  Q3 max     mean       sd   n missing
-#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
-```
-
-Calculate the standardized sample mean difference in height:
-
-* 1st calculate the standard error of the sample mean difference
-
-\vspace{0.5in}
-
-* Then calculate the T score
-
-\vspace{0.5in}
-
-What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
-
-\vspace{0.3in}
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/pvalueheight-1} \end{center}
-
-To find the p-value:
-
-
-``` r
-pt(24.84, df = 198, lower.tail=FALSE)*2
-```
-
-```
-#> [1] 9.477617e-63
-```
-
-
-Theory-based Confidence Interval:
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.5in}
-
-
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
-
-For the height data, we will use a t-distribution with _________ df.
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/tstar-1} \end{center}
-
-To find the $t^*$ multiplier for a 99\% confidence interval:
-
-
-``` r
-qt(0.995, df=198, lower.tail = TRUE)
-```
-
-```
-#> [1] 2.600887
-```
-
-Calculate the margin of error:
-\vspace{0.4in}
-
-Calculate the theory-based confidence interval.
-\vspace{0.5in}
-
-
-### Optional Notes: Simulation Inference for a Mean Difference - Video 18.1and18.2 {-}
-
-Conditions for inference for paired data:
+Conditions for simulation inference for paired data:
 
 - Independence:
 
 \vspace{0.5in}
 
-Is the independence condition met for the height study?
-
-\vspace{0.5in}
 	
 #### Hypothesis testing {-}
 
@@ -273,9 +106,60 @@ $H_A:$
 
 * Research question determines the direction of the alternative hypothesis.
 
-Write the null and alternative for the height study:
+#### Simulation-based Hypothesis Tests {-}
 
-In notation:
+* Simulate many samples assuming $H_0: \mu_d = 0$
+
+* Shift the data by the difference between __________ and _____________.  Label cards with these shifted values.
+
+* Sample with replacement ___________ times from the shifted data
+
+* Plot the simulated shifted sample ______________________________ from each simulation
+
+* Repeat 10000 times (simulations) to create the ________________ distribution
+
+* Find the proportion of simulations at least as extreme as _____________________
+    
+#### Simulation-based Confidence Intervals {-}
+
+* Label cards with the values from the _______________ _________________
+
+* Sample with replacement (bootstrap) from the original sample differences _____________ times
+
+* Plot the simulated sample _______________ _______________ from each simulation
+
+* Repeat at least 10000 times (simulations) to create the ________________ distribution
+
+* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
+
+
+
+#### Optional Notes: Additional Example {-}
+
+
+Example: Is there a difference in heights between husbands and wives?  The heights were measured on the husband and wife in a random sample of 199 married couples from Great Britain [@gbmarried]. Use husband - wife as the order of subtraction.
+
+Observational units: 
+
+\vspace{0.2in}
+
+Response variable (include: units of measure):
+
+\vspace{0.2in}
+
+Explanatory variable (include: what is group 1?): 
+
+\vspace{0.2in}
+
+Why should these data be treated as paired?
+
+\vspace{0.4in}
+
+Define the parameter in words and write it using proper notation.
+
+\vspace{0.5in}
+
+Write the null and alternative hypothesis in notation:
 
 $H_0:$
 
@@ -284,23 +168,25 @@ $H_0:$
 $H_A:$
 
 \vspace{0.2in}
-
-#### Simulation-based method {-}
-
-* Simulate many samples assuming $H_0: \mu_d = 0$
-
-    * Shift the data by the difference between $\mu_0$ and $\bar{y}_d$
-
-    * Sample with replacement $n$ times from the shifted data
-
-    * Plot the simulated shifted sample mean from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $\bar{y}_d$
     
-Reminder of summary statistics:
+Is the independence condition met for the height study?
 
+\vspace{0.5in}
+
+
+
+``` r
+hw <-read.csv("data/husbands_wives_ht.csv")
+paired_observed_plot(hw)
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-1-1} \end{center}
+
+
+
+Summary statistics for height data:
 
 ``` r
 hw_diff %>%
@@ -312,12 +198,16 @@ hw_diff %>%
 #> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
 ```
 
-Find the difference:
+Write the value of the statistic.  Use proper notation: 
 
-$\mu_0 - \bar{y}_d =$
+\vspace{0.2in}
+
+How much would the data need to be shifted in order to assume the null hypothesis is true?  Find the difference:
+
+$\mu_0 - \bar{y} =$
 
 
-Simulated null distribution:
+Null distribution:
 
 
 ``` r
@@ -333,70 +223,253 @@ paired_test(data = hw_diff$ht_diff,   # Vector of differences
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-8-1} \end{center}
-Interpret the p-value:
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+Where are the red lines plotted on the null distribution?  Explain why both values are important.
+
+\vspace{0.4in}
+
+
+What is the p-value of the test?
+
+\vspace{0.2in}
+
+Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
 
-* Statistic (summary measure and value)
+* Statistic (summary measure and value) and Direction of the alternative 
     
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
+* Null hypothesis (population reference, summary measure, equal to null value)
+
+* Context of the problem (observational units, variables (for paired data, include: both explanatory variable "groups"/measurements, units of measure of the response variable, and order of subtraction))
 
 \vspace{0.8in}
 
-Conclusion: 
+Conclusion with scope of inference: 
 
 * Amount of evidence
     
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context of the problem (observational units, variables (for paired data, include: both explanatory variable "groups"/measurements, units of measure of the response variable, and order of subtraction))
+
+* Generalization
+
+* Causation
 
 \vspace{0.8in}
 
 
-### Confidence interval {-}
-
-#### Simulation-based method{-}
-
-* Label cards with the values (differences) from the data set
-
-* Sample with replacement (bootstrap) from the original sample $n$ times
-
-* Plot the simulated sample mean on the bootstrap distribution
-
-* Repeat at least 10000 times (simulations)
-
-* Find the cut-offs for the middle X% (confidence level) in a bootstrap distribution.
-
-Simulated bootstrap distribution:
+Bootstrap distribution:
 
 
 ``` r
 set.seed(216)
 paired_bootstrap_CI(data = hw_diff$ht_diff, # Enter vector of differences
             number_repetitions = 10000, # Number of bootstrap samples for CI
-            confidence_level = 0.99,  # Confidence level in decimal form
+            confidence_level = 0.98,  # Confidence level in decimal form
             which_first = 1)  # Not needed when entering vector of differences
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
-Interpret the 99\% confidence interval:
+Interpret the 98\% confidence interval:
+
+Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variables (for paired data, include: both explanatory variable "groups"/measurements, units of measure of the response variable, and order of subtraction))
     
 * Calculated interval
-    
-* Order of subtraction when comparing two groups
 
 \vspace{0.8in}
+
+
+
+
+### Video: Theory-Based Inference for Paired Data (section 18.3) {-}
+
+Conditions to use theory-based inference for paired data:
+
+* **Independence**: 
+
+\vspace{0.6in}
+
+* **Normality Condition**: 
+
+\vspace{1in}
+
+#### t-distribution {-}
+
+In the theoretical approach, we use the CLT to tell us that the distribution of a sample mean difference will be approximately normal, centered at the assumed true mean difference under $H_0$ and with standard deviation $\frac{\sigma_d}{\sqrt{n}}$.
+
+$$\bar{y_d} \sim N(\mu_0, \frac{\sigma_d}{\sqrt{n}})$$
+\setstretch{1.5}
+
+* Estimate the population standard deviation, $\sigma_d$, with the ___________________________ standard deviation, ________.
+
+* For paired data (similar to a single quantitative variable) we use the ____ - distribution with _______________ degrees of freedom to approximate the sampling distribution.
+
+\setstretch{1}
+
+#### Hypothesis Testing
+
+Equation for the standard error of the sample mean difference:
+
+\vspace{0.5in}
+
+Equation for the standardized sample mean difference:
+
+\vspace{0.5in}
+
+
+General steps of a hypothesis test
+
+1.	Write a research question and hypotheses.
+
+2.	Collect data and calculate a summary statistic.
+
+3.	Model a sampling distribution which assumes the null hypothesis is true.
+
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample mean difference which assumes the null hypothesis is true is the $t$-distribution with $n-1$ degrees of freedom
+
+4.	Calculate a p-value.
+
+\rgi \rgi - Calculate the standardized sample mean difference ($T$) and compare that to the $t$-distribution with $n-1$ degrees of freedom.
+\rgi \rgi - P-value will be the area under the curve beyond $T$ (in the direction of the alternative hypothesis)
+
+5.	Draw conclusions based on a p-value.
+
+
+#### Confidence Intervals
+
+General formula for a confidence interval is always:
+
+\rgi \rgi $\text{statistic} \pm \text{margin of error}$
+
+\rgi \rgi where $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}$
+
+For paired data,
+
+* $\text{statistic}$ = ___________
+
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic} = $ ____________ $\times$ ______________
+
+The formula for the standard error of the mean difference is the same as was used for a hypothesis test: $SE(\overline{y_d}) = \frac{s_d}{\sqrt{n}}$
+
+The $t^*$ multiplier is the value at the given percentile(s) of the t-distribution with $n- 1$ degrees of freedom.
+
+#### Optional Notes: Additional Example {-}
+
+
+Here are a few reminders of the height data from the previous video:
+
+
+
+``` r
+hw <-read.csv("data/husbands_wives_ht.csv")
+paired_observed_plot(hw)
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+
+
+Summary statistics for height data:
+
+``` r
+hw_diff %>%
+    summarise(fav_stats(ht_diff))
+```
+
+```
+#>   min   Q1 median  Q3 max     mean       sd   n missing
+#> 1 -96 83.5    131 179 303 130.5427 74.13608 199       0
+```
+
+Calculate the standard error of the sample mean difference:
+
+\vspace{0.5in}
+
+Calculate the standardized sample mean difference in height (standardized statistic):
+
+\vspace{0.5in}
+
+What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
+
+\vspace{0.3in}
+
+Label the standardized sample mean difference (standardized statistic) on the theoretical distribution below and shade the area representing the p-value.
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/tstarpb2-1} \end{center}
+
+To find the p-value:
+
+
+``` r
+pt(24.84, df = 198, lower.tail=FALSE)*2
+```
+
+```
+#> [1] 9.477617e-63
+```
+
+
+To find the confidence interval:
+
+First, use `R` to find the $t^*$ multiplier for a 98\% confidence interval:
+
+
+``` r
+qt(0.99, df=198, lower.tail = TRUE)
+```
+
+```
+#> [1] 2.345328
+```
+
+
+Draw a line at the provided $t^\star$ on the $t$-distribution with 198 degrees of freedom shown below, and label the percentile of the $t^\star$ value.  
+
+
+
+``` r
+
+x <- seq(-4, 4, length=100)
+hx<-dt(x, 198)
+degf <- 198
+
+plot(x, hx, type="l", lty=1, lwd=3, xlab="",
+  ylab="Density", main="t-distribution with 198 df")
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{12-VN12-paired_files/figure-latex/tstar-1} \end{center}
+
+
+* We will use the same value for $SE(\bar{y}_d)$ as calculated for the standardized statistic.
+
+Calculate the margin of error for a 98\% confidence interval for the parameter of interest.
+
+\vspace{0.5in}
+
+Calculate a 98\% confidence interval for the parameter of interest.
+
+\vspace{0.6in}
+
+Does your confidence interval and p-value agree?
+
+\vspace{0.5in}
+
 
 
 
@@ -412,4 +485,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \vspace{1in}
 
+ 
 \newpage

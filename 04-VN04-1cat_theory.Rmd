@@ -72,6 +72,7 @@ pnorm(mean = 1500, sd = 300, q = 1800)
 
 \vspace{1mm}
 
+\newpage
 
 We can also reverse that order.  Given a percentage, we can find the associated percentile, or quantile.  Here we display calculating the value that cuts off the lower 0.73 proportion of ACT scores using the qnorm() function.
 
@@ -92,7 +93,7 @@ normTail(m = 21, s = 5, L = 24)
 include_graphics("images/Empirical_Rule_Mark_bw.png")
 ```
 
-
+\newpage
 
 General steps of a hypothesis test
 
@@ -107,6 +108,7 @@ General steps of a hypothesis test
 4.	Calculate a p-value.
 
 \rgi \rgi - Calculate the standardized sample proportion ($Z$) and compare that to the standard Normal (N(0,1)) distribution.
+
 \rgi \rgi - P-value will be the area under the curve beyond $Z$ (in the direction of the alternative hypothesis)
 
 5.	Draw conclusions based on a p-value.
@@ -192,6 +194,8 @@ Equation for the standard error of the sample proportion, assuming the null hypo
 * This should give a similar value to the _________________ _______________ of a simulated null distribution!
 
 \setstretch{1}
+
+\newpage
 
 Equation for the standardized sample proportion (standardized statistic when analyzing one categorical variable):
 

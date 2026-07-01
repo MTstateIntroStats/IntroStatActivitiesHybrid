@@ -77,6 +77,6 @@ STAT 216 is a 3-credit in-person course.  In our experience, it takes six to nin
     - Review the activity solutions in the Math and Stat Center, and take notes on key points.
     - Complete any remaining assigned readings videos, and quizzes for the week.
     - Complete the week's homework assignment.
-    - Attend weekly review sessions or complete the review worksheets
+    - Attend weekly review sessions or complete the provided review worksheets
 
 \nocite{*}

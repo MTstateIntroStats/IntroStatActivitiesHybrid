@@ -304,6 +304,8 @@ two_proportion_bootstrap_CI(formula = Behavior~Condition,
 
 ### Additional notes
 
+Activities 14--16 cover the material in Module 8 and activity 17 covers the material in Module 9.  For more practice with inference for a difference in proportions (both simulation and theory-based) use the Module 8 and 9 Review worksheet in the Unit 2 Review Materials (pgs. 257--262).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage

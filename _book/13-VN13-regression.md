@@ -1,31 +1,65 @@
 ## Video Notes: Regression and Correlation
 
-Read Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 12.
+Read section 5.1 and Chapters 6, 7, 8, 21, and 22 in the course textbook.  Use the following videos to complete the video notes for Module 13.
 
 ### Course Videos
 
-* 6.1
+* Two_Quantitative_Variables_Plots
 
-* 6.2
+* Two_Quantitative_Variables_Linear_Regression
 
-* 6.3
+* Two_Quantitative_Variables_Statistics
 
-* Ch 7
+* Multivariate_Plots
 
-* 21.4TheoryTests
+* Simulation_Inference_Two_Quantitative_Variables
 
-* 21.4TheoryIntervals
-
-* Optional: 21.1
-
-* Optional: 21.3
+* Theoretical_Inference_Two_Quantitative_Variables
 
 
 \setstretch{1}
 
-### Summary measures and plots for two quantitative variables - Videos 6.1 - 6.3 {-}
+### Video: Two Quantitative Variables - Plots (sections 5.1, 6.1 and 6.3) {-}
 
-Example: Data were collected from 1236 births between 1960 and 1967 in the San Francisco East Bay area to better understand what variables contributed to child birthweight, as children with low birthweight often suffer from an array of complications later in life [@babies]. There were some missing values in the study and with those observations removed we have a total of 1223 births.
+
+#### Type of plot {-}
+
+\setstretch{1.5} 
+
+A __________________ is used to display the relationship between two ___________________ variables.
+
+ - Each dot on the scatterplot represents one ______________________________
+ - The ___________________ variable is plotted on the x-axis
+ - The ___________________ variable is plotted on the y-axis
+ 
+
+\setstretch{1}
+ 
+
+Four characteristics of the scatterplot:
+	
+* Form: 
+
+\vspace{0.2in}
+
+* Direction: 
+
+\vspace{0.2in}
+
+* Strength: 
+
+\vspace{0.2in}
+
+* Outliers: 
+
+\vspace{0.2in}
+
+
+In this course, we will focus on *linear* relationships between two quantitative variables. 
+
+#### Optional Notes: Additional Example {-}
+
+Data were collected from 1236 births between 1960 and 1967 in the San Francisco East Bay area to better understand what variables contributed to child birthweight, as children with low birthweight often suffer from an array of complications later in life [@babies]. There were some missing values in the study and with those observations removed we have a total of 1223 births.
 
 
 ``` r
@@ -46,39 +80,18 @@ glimpse(babies)
 ```
 
 
-Here you see a glimpse of the data.  The 1223 rows correspond to the sample size.  The case variable is labeling each pregnancy 1 through 1223.  Then 7 variables are recorded.  birthweight (bwt), length of gestation in days, parity is called an indicator variable telling us if the pregnancy was a first pregnancy (labeled as 0) or not (labeled as 1) were recorded about the child and pregnancy.  The age, height, and weight were recorded for the mother giving birth, as was smoke, another indicator variable where 0 means the mother did not smoke during pregnancy, and 1 indicates that she did smoke while pregnant.  
+Here you see a glimpse of the data.  The 1223 rows correspond to the sample size. The 8 columns indicate that 8 variables were recorded:
+
+* `case` is an indicator variable labeling each pregnancy 1 through 1223
+* `bwt` gives the birthweight
+* `gestation` is the length of gestation in days
+* `parity` is an indicator variable telling us if the pregnancy was a first pregnancy (labeled as 0) or not (labeled as 1) 
+* `age` gives the age of the mother
+* `height` gives the height of the mother
+* `weight` gives the weight of the mother
+* `smoke` is an indicator variable telling us if the mother smoked during pregnancy (labeled at 1) or not (labeled as 0)  
 
 \setstretch{1.5}
-
-#### Type of plot {-}
-
-A __________________ is used to display the relationship
-between two ___________________ variables.
-
-\setstretch{1}
-\newpage
-
-Four characteristics of the scatterplot:
-	
-* Form: 
-
-\vspace{0.2in}
-
-* Direction: 
-
-\vspace{0.2in}
-
-* Strength: 
-
-\vspace{0.2in}
-
-* Outliers: 
-
-\vspace{0.2in}
-
-\rgi \rgi - Influential points: outliers that change the regression line; far from the line of regression
-
-\rgi \rgi - High leverage points: outliers that are extreme in the x\- axis; far from the mean of the x-axis
 
 The following shows a scatterplot of length of gestation as a predictor of birthweight.
 
@@ -99,14 +112,110 @@ ggplot(aes(x = gestation, y = bwt))+  # Specify variables
 
 
 \begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-2-1} \end{center}
+Observational units: 
+
+\vspace{0.2in}
+
+Response variable (include: units of measure):
+
+\vspace{0.2in}
+
+Explanatory variable (include: units of measure): 
+
+\vspace{0.2in}
 
 Describe the scatterplot using the four characteristics of a scatterplot.
 
 \vspace{1in}
 
+
+
+
+### Video: Two Quantitative Variables - Linear Regression (sections 6.1 and 6.2) {-}
+
 \setstretch{1.5}
 
-The summary measures for two quantitative variables are:
+When the form of the relationship between two quantitative variables is linear, we will calculate the ________________ ________________ __________________ __________________
+
+* Least-squares regression line general form: $\hat{y}=b_0+b_1\times x$ (put y and x in the context of the problem) or $\widehat{response}=b_0+b_1 \times \text{explanatory}$
+
+\rgi \rgi - $\hat{y}$ or $\widehat{\text{response}}$ is
+
+\vspace{0.1in}
+
+\rgi \rgi - $b_0$ is
+    
+\vspace{0.1in}
+
+\rgi \rgi - $b_1$ is 
+    
+\vspace{0.1in}
+
+\rgi \rgi - $x$ or explanatory is 
+    
+\vspace{0.1in}
+
+* The `Estimate` column from the linear model (`lm()`) output in `R` will give the value of the ___________________ and the ______________.
+    
+
+* We can predict values of the ___________ variable by plugging in a given __________ variable value using the least squares equation line.
+
+* A prediction of a response variable value for an explanatory  value outside the range of x values is called _______________.
+
+* To find how far the predicted value deviates from the actual value we find the ____________.
+
+\vspace{0.3in}
+    
+* To find the "least squares" regression line, the line with the ____________ SSE (sum of squared errors) is found.
+    
+\rgi \rgi - To find SSE, the residual for each data point is found, squared and all the squared residuals are added together
+
+
+
+#### Optional Notes: Additional Example {-}
+
+Using the same data on San Francisco births in the 1980's from the previous video, and continuing to use days of gestation as a predictor of birth weight, we get the following linear model output from `R`:
+
+
+``` r
+# Fit linear model: y ~ x
+babiesLM <- lm(bwt ~ gestation, data=babies)
+round(summary(babiesLM)$coefficients,3) # Display coefficient summary
+```
+
+```
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  -10.064      8.322  -1.209    0.227
+#> gestation      0.464      0.030  15.609    0.000
+```
+Write the equation of the least squares regression line, in context.
+
+\vspace{0.6in}
+
+Predict the birth weight for a birth with a baby born at 310 days gestation.
+
+\vspace{0.5in}
+
+Calculate the residual for a baby with a birth weight of 151 ounces that was born at 310 days gestation.
+
+\vspace{0.5in}
+
+Is this value (310, 151) above or below the line of regression?  Did the line of regression overestimate or underestimate the birth weight?
+
+\vspace{0.2in}
+
+Predict the birth weight for a birth with a baby born at 0 days gestation.  What is the statistical term for this prediction?
+
+\vspace{0.5in}
+
+
+
+
+### Video: Two Quantitative Variables - Statistics (sections 6.1 and 6.2) {-}
+
+\setstretch{1.5}
+
+This video will discuss three possible summary measures for two quantitative variables are:
 
 * ____________________________
 
@@ -116,28 +225,50 @@ The summary measures for two quantitative variables are:
 
 \setstretch{1}
 
-Notation:
-
-* Population slope: 
-
-* Population correlation:
-
-* Sample slope:
-
-* Sample correlation:
-
-
 #### Correlation {-}
 
-Correlation is always between the values of _______ and ________.  
+* Correlation is always between the values of _______ and ________.  
 
-* Measures the _____________ and ______________ of the linear relationship between two quantitative variables.
+* Measures the _____________ and ______________ of a linear relationship between two quantitative variables.
 
-* The stronger the relationship between the variables the closer the value of _______________ is to ________ or ________.
+* The stronger the relationship between the variables, the closer the value of _______________ is to ________ or ________.
 
 * The sign gives the _________________.
 
-The following code creates a correlation matrix between different quantitative variables in the data set.
+* Notation: 
+
+
+#### Coefficient of Determination {-}
+
+The coefficient of determination can be found by squaring the value of correlation, using the variances for each variable or using the SSE (sum of squares error) and SST (sum of squares total)
+
+* $r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}$
+
+* The coefficient of determination measures the ____________ of total variation in the ___________ variable that is explained by the changes in the _____________ variable.
+
+* Notation: 
+
+
+#### Slope {-}
+
+* The slope is the value in the `Estimate` column and the ___________________ variable row of the `lm()` output from `R`
+
+* Notation:
+
+\rgi \rgi - Statistic: Sample slope: 
+
+\rgi \rgi - Parameter: Population slope: 
+
+* $\text{Slope} = b_1 = \frac{\text{rise}}{\text{run}} = \frac{b_1}{1}$
+
+\rgi \rgi - Remember, we "run" horizontally (on the ___________) and "rise" vertically (on the ______________), so slope tells how much we expect to "rise" if we "run" 1 unit.
+
+\rgi \rgi - Interpretation of slope: an increase in the _____________ variable of 1 unit is associated with an increase/decrease in the ________________ variable by the value of slope, on average.
+
+
+#### Optional Notes: Additional Example {-}
+
+Using the same data on San Francisco births in the 1980's from the previous video, the following code creates a correlation matrix between different quantitative variables in the data set.
 
 
 ``` r
@@ -157,52 +288,53 @@ babies %>%
 ```
 \setstretch{1.5}
 
-The value of correlation between gestation and birthweight is ______________. This shows a ___________, _____________ relationship between gestation and birthweight.
+What is the correlation between gestation and birth weight?  Write this using proper notation.
+
+\vspace{0.3in}
+
+\setstretch{1.5}
+
+This value of correlation indicates a ___________, _____________ ______________ relationship between gestation and birth weight.
 
 \setstretch{1}
 
-#### Slope {-}
-* Least-squares regression line: $\hat{y}=b_0+b_1\times x$ (put y and x in the context of the problem) or $\widehat{response}=b_0+b_1 \times \text{explanatory}$
-
-* $\hat{y}$ or $\widehat{\text{response}}$ is
-
-\vspace{0.1in}
-
-* $b_0$ is
-    
-\vspace{0.1in}
-
-* $b_1$ is 
-    
-\vspace{0.1in}
-
-* $x$ or explanatory is 
-    
-\vspace{0.1in}
-
-\setstretch{1.5}
-    * The estimates for the linear model output will give the value of the ___________________ and the ______________.
-    
-* Interpretation of slope: an increase in the _____________ variable of 1 unit is associated with an increase/decrease in the ________________ variable by the value of slope, on average.
-
-* Interpretation of the y-intercept: for a value of 0 for the _____________ variable, the predicted value for the __________ variable would be the value of y-intercept.
-
-* We can predict values of the ___________ variable by plugging in a given __________ variable value using the least squares equation line.
-
-* A prediction of a response variable value for an explanatory  value outside the range of x values is called _______________.
-
-* To find how far the predicted value deviates from the actual value we find the ____________.
+Use the correlation to calculate the coefficient of determination between gestation and birth weight.  Write this using proper notation.
 
 \vspace{0.3in}
-    
-* To find the least squares regression line the line with the __________ SSE is found.
 
-    SSE = sum of squared errors
-    
-    * To find SSE, the residual for each data point is found, squared and all the squared residuals are summed together
-    
-The linear model output for this study is given below:
+Alternative, we could use SST and SSE to calculate the coefficient of determination.
 
+\setstretch{1}
+
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+On the left, you see the scatterplot using gestation to predict birth weight with a horizontal line used as the regression line. The horizontal line is plotted at the average birth weight ($\overline{y}$).
+
+* What is the slope of this horizontal line?
+
+\vspace{0.2in}
+
+* What does this slope assume about the relationship between gestation and birth weight?
+
+\vspace{0.4in}
+
+From the plot on the left using the horizontal, the residual ($y_i - \overline{y}$) for each of the 1223 observations was calculated, each residual was squared, and the sum of those 1223 squared residuals was calculated to be 406753.48.  This indicates that $SST = 406753.48$.
+
+
+The same process was completed for the plot on the right, using the least squares regression line to calculate each residual ($y_i - \hat{y}$).  The sum of those 1223 squared residuals was calculated calculated to be 339092.13.  This indicates that $SSE = 339092.13$.
+
+Calculate the coefficient of determination between gestation and birth weight using the provided values of SST and SSE.
+
+\vspace{0.3in}
+
+Interpret the coefficient of determination between gestation and birth weight.
+
+\vspace{0.5in}
+
+ 
 
 ``` r
 # Fit linear model: y ~ x
@@ -215,59 +347,20 @@ round(summary(babiesLM)$coefficients,3) # Display coefficient summary
 #> (Intercept)  -10.064      8.322  -1.209    0.227
 #> gestation      0.464      0.030  15.609    0.000
 ```
-Write the least squares equation of the line.
+As a reminder, the least squares regression line from these data is $\widehat{birthweight} = -10.064 + 0.464\times gestation$
 
-\vspace{0.6in}
+Write the value of the slope of the line using proper notation.
+
+\vspace{0.3in}
 
 Interpret the slope in context of the problem.
 
 \vspace{0.6in}
 
-Interpret the y-intercept in context of the problem.
-
-\vspace{0.6in}
-
-Predict the birthweight for a birth with a baby born at 310 days gestation.
-
-\vspace{0.5in}
-
-Calculate the residual for a birth of a baby with a birthweight of 151 ounces and born at 310 days gestation.
-
-\vspace{0.5in}
-
-Is this value (310, 151) above or below the line of regression?  Did the line of regression overestimate or underestimate the birthweight?
-
-\vspace{0.2in}
-
-#### Coefficient of Determination {-}
-
-The coefficient of determination can be found by squaring the value of correlation, using the variances for each variable or using the SSE (sum of squares error) and SST (sum of squares total)
-
-* $r^2 = (r)^2 = \frac{SST - SSE}{SST} = \frac{s^2_y - s^2_{residual}}{s^2_y}$
-
-* The coefficient of determination measures the ____________ of total variation in the ___________ variable that is explained by the changes in the _____________ variable.
-
-
-\setstretch{1}
 
 
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
-The value for SST was calculated as 406753.48.  The value for SSE was calculated as 339092.13.
-
-Calculate the coefficient of determination between gestation and birthweight.
-
-\vspace{0.3in}
-
-Interpret the coefficient of determination between gestation and birthweight.
-
-\vspace{0.5in}
-
-\newpage
-
-### Multivariable plots - Video Chapter7 {-}
+### Video: Multivariate plots (chapter 7) {-}
 
 Aesthetics: visual property of the objects in your plot
 
@@ -279,9 +372,21 @@ Aesthetics: visual property of the objects in your plot
 
 * Size - to represent ________________ variables
 
+Adding a categorical predictor:
+
+\setstretch{1.5}
+
+* Look at the regression line for each level of the ______________ variable
+
+\rgi \rgi - If the slopes are ________________, the two explanatory variables do not _______________ to help explain the response variable.
+
+\rgi \rgi - If the slopes _________________, the relationship between the quantitative explanatory variable and the quantitative response variable _____________________ the categorical explanatory variable.
+
 \setstretch{1}
 
-Adding the quantitative variable maternal age to the scatterplot between gestation and birthweight.
+#### Optional Notes: Additional Examples {-}
+
+Using the same data on San Francisco births in the 1980's from the previous video, the following scatterplot has added the quantitative variable maternal age to the display using gestation to predict birth weight.
 
 
 ``` r
@@ -298,12 +403,10 @@ ggplot(aes(x = gestation, y = bwt))+  # Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
-\newpage
+\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 
-Let's add the categorical variable, whether a mother smoked, to the scatterplot between gestation and birthweight.
+Here, we add the categorical variable `smoke` to the scatterplot using gestation to predict birth weight.
 
 
 ``` r
@@ -326,7 +429,7 @@ babies %>% # Data set pipes into...
 
 
 
-\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 Does the relationship between length of gestation and birthweight appear to depend upon maternal smoking status? 
 
@@ -336,38 +439,255 @@ Is the variable smoking status a potential confounding variable?
 
 \vspace{1in}
 
-Adding a categorical predictor:
 
-\setstretch{1.5}
 
-* Look at the regression line for each level of the ______________
 
-* If the slopes are ________________, the two predictor variables do not _______________ to help explain the response
 
-* If the slopes _________________, there is an interaction between the categorical predictor and the relationship between the two quantitative variables.
+### Video: Simulation Inference for Two Quantitative Variables (sections 21.1, 21.2 and 21.3) {-}
 
-\setstretch{1}
+For two quantitative variables, the summary measure to be used for hypothesis testing and confidence intervals is ________________.
 
-### Concept Check
+Conditions for simulation inference for two quantitative variables:
 
-Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
+* Independence: 
 
-1.  What are the three summary measures for two quantitative variables?
+\vspace{0.4in}
+
+* Linear relationship:
+
+\vspace{0.4in}
+
+#### Simulation-Based Hypothesis Testing {-}
+
+Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
+
+\rgi Always of form:  “parameter” = null value
+
+$H_0:$
 
 \vspace{0.5in}
 
-2. What are the four characteristics used to describe a scatterplot?
+$H_A:$
 
 \vspace{0.5in}
 
-3. When we add a categorical predictor variable to a scatterplot of two quantitative variables, what summary measure will we compare across the categories to assess the change in the relationship between the two quantitative variables.
+* Research question determines the alternative hypothesis.
+
+
+Simulate many samples assuming $H_0: \beta_1 = 0$
+
+* Write the __________________ variable values on cards
+
+* Hold the ____________________ variable values constant and shuffle the cards (so the response values are now with a difference explanatory value)
+    
+* Plot the shuffled data points to find the least squares line of regression
+
+* Calculate and plot the simulated ____________________ from each simulation
+
+* Repeat 10000 times (simulations) to create the ____________ distribution
+
+* Find the proportion of simulations at least as extreme as _____________
+
+
+#### Simulation-based Confidence Intervals {-}
+
+To estimate the true slope we will create a confidence interval.
+
+* Write the explanatory and response value pairs on cards
+
+* Sample pairs with replacement ________ times
+
+* Plot the resampled data points to find the least squares line of regression
+    
+* Calculate and plot the simulated ____________________ from each simulation
+
+* Repeat 10000 times (simulations) to create the ____________ distribution
+
+* Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
+
+
+
+#### Optional Notes: Additional Example {-}
+
+Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. [@ocean]  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
+
+Observational units: 
 
 \vspace{0.2in}
-\newpage
 
-### Theoretical Testing for Slope - Video 21.4to21.5TheoryTests {-}
+Response variable (include: units of measure):
 
-Conditions:
+\vspace{0.2in}
+
+Explanatory variable (include: units of measure): 
+
+\vspace{0.2in}
+
+Why should analyze these data using slope instead of treating the data as paired measurements?
+
+\vspace{0.4in}
+
+Define the parameter in words and write it using proper notation.
+
+\vspace{0.5in}
+
+Write the null and alternative hypothesis in notation:
+
+$H_0:$
+
+\vspace{0.2in}
+
+$H_A:$
+
+\vspace{0.2in}
+    
+Is the independence condition met for the ocean study?
+
+\vspace{0.5in}
+
+
+
+
+Scatterplot of the data:
+
+
+``` r
+water %>% # Pipe data set into...
+ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
+  geom_point(alpha=0.5) +  # Add scatterplot of points
+  labs(x = "salinity (PSUs)",  # Label x-axis
+       y = "temperature (C)",  # Label y-axis
+       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") +
+               # Be sure to title your plots
+  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+Is the linearity condition met for the ocean study?
+
+\vspace{0.5in}
+
+Linear model output from `R`:
+
+
+``` r
+# Fit linear model: y ~ x
+waterLM <- lm(T_degC ~ Salnty, data=water)
+round(summary(waterLM)$coefficients,3) # Display coefficient summary
+```
+
+```
+#>             Estimate Std. Error t value Pr(>|t|)
+#> (Intercept)  197.156     21.478    9.18        0
+#> Salnty        -5.514      0.636   -8.67        0
+```
+
+Write the equation of the least squares regression line, in context.
+
+\vspace{0.6in}
+
+
+Write the value of the statistic.  Use proper notation.
+
+\vspace{0.2in}
+
+
+Null distribution:   
+
+
+``` r
+set.seed(216)
+regression_test(T_degC ~ Salnty, # response ~ explanatory
+               data = water, # Name of data set
+               direction = "less", # Sign in alternative ("greater", "less", "two-sided")
+               summary_measure = "slope", # "slope" or "correlation"
+               as_extreme_as = -5.514, # Observed slope or correlation
+               number_repetitions = 10000) # Number of simulated samples for null distribution
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+What does one "dot" on this null distribution represent?  *Hint: use the x-axis label!*
+
+\vspace{0.5in}
+
+
+Where is the red line plotted on the null distribution?  Why is this value important?  Why is the area to the left of the red line shaded?
+
+\vspace{0.4in}
+
+
+What is the p-value of the test?
+
+\vspace{0.2in}
+
+
+Interpretation of the p-value:
+
+* Statement about probability or proportion of samples
+
+* Statistic (summary measure and value) and Direction of the alternative 
+    
+* Null hypothesis (population reference, summary measure, equal to null value)
+
+* Context of the problem (observational units, variables (for two quantitative variables, include: both variables, both units of measure))
+
+\vspace{0.8in}
+
+Conclusion with scope of inference: 
+
+* Amount of evidence
+    
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context of the problem (observational units, variables (for two quantitative variables, include: both variables, both units of measure))
+
+* Generalization
+
+* Causation
+
+\vspace{0.8in}
+
+
+Bootstrap distribution: 
+
+
+``` r
+set.seed(216)
+regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
+   data = water, # Name of data set
+   confidence_level = 0.95, # Confidence level as decimal
+   summary_measure = "slope", # Slope or correlation
+   number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
+```
+
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+Confidence interval interpretation:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+* Parameter of interest (including context: observational units, variables (for two quantitative variables, include: both variables, both units of measure))
+
+\rgi \rgi - *Note: slope has an interpretation, so stating "true slope between the variables" is in the interval is insufficient!  You must interpret what the slope is actually measuring!*
+    
+* Calculated interval
+
+\vspace{0.8in}
+
+
+
+### Video: Theoretical Inference for Two Quantitative Variables (sections 21.5 and 21.6) {-}
+
+Conditions to use theory-based inference for two quantitative variables:
 
 \setstretch{1.5}
 
@@ -411,16 +731,69 @@ Diamonds %>% # Pipe data set into...
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 Diagnostic plots:
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 
-Check the conditions for the ocean data:
 
-Scatterplot:
+For slope (similar to a single quantitative variable), we use the ____ - distribution with _______________ degrees of freedom to approximate the sampling distribution.
+
+#### Hypothesis Testing
+
+We will simply use the ________________ column and the ________________ variable row of the `lm()` output from `R` to obtain the standard error of the sample slope ($SE(b_1)$).
+
+Equation for the standardized sample slope:
+
+\vspace{0.8in}
+
+\setstretch{1}
+
+General steps of a hypothesis test
+
+1.	Write a research question and hypotheses.
+
+2.	Collect data and calculate a summary statistic.
+
+3.	Model a sampling distribution which assumes the null hypothesis is true.
+
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample slope is the $t$-distribution with $n-2$ degrees of freedom
+
+4.	Calculate a p-value.
+
+\rgi \rgi - Calculate the standardized sample slope ($T$) and compare that to the $t$-distribution with $n-2$ degrees of freedom.
+\rgi \rgi - P-value will be the area under the curve beyond $T$ (in the direction of the alternative hypothesis)
+
+5.	Draw conclusions based on a p-value.
+
+
+#### Confidence Intervals
+
+General formula for a confidence interval is always:
+
+\rgi \rgi $\text{statistic} \pm \text{margin of error}$
+
+\rgi \rgi where $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}$
+
+For two quantitative variables, the summary measure used will be slope and therefore
+
+* $\text{statistic}$ = ___________
+
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic} = $ ____________ $\times$ ______________
+
+We will still use the ________________ column and the ________________ variable row of the `lm()` output from `R` to obtain the standard error of the sample slope ($SE(b_1)$).
+
+The $t^*$ multiplier is the value at the given percentile(s) of the t-distribution with $n- 2$ degrees of freedom.
+
+
+
+#### Optional Notes: Additional Example {-}
+
+We will again refer to the Pacific Ocean measurements from the previous video.
+
+Scatterplot of the data using salinity of the water to predict the temperature:
 
 
 
@@ -440,34 +813,16 @@ ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 Diagnostic plots:
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
-Like with paired data the $t$-distribution can be used to model slope and correlation. 
+Are the conditions met to use a theoretical approach to analyze the slope of the least squares regression line using salinity to predict temperature in the Pacific Ocean?
 
-\setstretch{1.5}
+\vspace{1.5in}
 
-* For two quantitative variables we use the ______-distribution
-with _____________________ degrees of freedom to approximate the sampling distribution.
-
-\setstretch{1}
-
-Theory-based test:
-
-* Calculate the standardized statistic
-
-* Find the area under the $t$-distribution with $n - 2$ df at least as extreme as the standardized statistic
-
-Equation for the standardized slope:
-
-\vspace{0.8in}
-
-### Optional Notes: Video Example (Video 21.4TheoryTests) {-}
-
-Calculate the standardized slope for the ocean data
 
 
 ``` r
@@ -481,30 +836,46 @@ round(summary(lm.water)$coefficients,3)
 #> Salnty        -5.514      0.636   -8.67        0
 ```
 
-\vspace{1in}
+Using the `lm()` output above, identify the value of $SE(b_1)$ = 
 
+\vspace{0.2in}
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/pvalueoce-1} \end{center}
+Calculate the standardized sample slope (standardized statistic):
+
+\vspace{0.5in}
 
 Interpret the standardized statistic:
 
 \vspace{0.8in}
 
-To find the theory-based p-value:
+Where in the `lm()` output could we have found the standardized statistic (instead of calculating it)?
+
+\vspace{0.3in}
+
+What theoretical distribution should we use to find the p-value using the value of the standardized statistic?
+
+\vspace{0.3in}
+
+Label the standardized sample slope (standardized statistic) on the theoretical distribution below and shade the area representing the p-value.
 
 
 ``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients,3)
-```
+
+x <- seq(-4, 4, length=100)
+hx<-dt(x, 98)
+degf <- 98
+
+plot(x, hx, type="l", lty=1, lwd=3, xlab="",
+  ylab="Density", main="t-distribution with 98 df")
 
 ```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
 
-or
+
+
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/pvalueoce-1} \end{center}
+
+
+To find the theory-based p-value:
 
 
 ``` r
@@ -512,35 +883,14 @@ pt(-8.670, df = 98, lower.tail=TRUE)
 #> [1] 4.623445e-14
 ```
 
-\newpage
+Where in the `lm()` output could we have found the p-value (instead of using the `R` code above)?  Is p-value provided in the `lm()` output the correct p-value for our test?
+
+\vspace{0.3in}
 
 
+To find a 95% confidence interval for the true slope, 
 
-### Theoretical Confidence Interval for Slope - Video 21.4TheoryInterval {-}
-
-* Calculate the interval centered at the sample statistic
-
-\rgi $\text{statistic} \pm \text{margin of error}$
-
-\vspace{0.6in}
-
-### Optional Notes: Video Example (Video 21.4TheoryInterval) {-}
-
-
-``` r
-lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory)
-round(summary(lm.water)$coefficients, 3)
-```
-
-```
-#>             Estimate Std. Error t value Pr(>|t|)
-#> (Intercept)  197.156     21.478    9.18        0
-#> Salnty        -5.514      0.636   -8.67        0
-```
-
-Using the ocean data, calculate a 95\% confidence interval for the true slope.
-
-* Need the $t^*$ multiplier for a 95\% confidence interval from a t-distribution with _________ df.
+* First, use `R` to find the $t^*$ multiplier for a 95\% confidence interval:
 
 
 ``` r
@@ -551,267 +901,60 @@ qt(0.975, df=98, lower.tail = TRUE)
 #> [1] 1.984467
 ```
 
-\vspace{1in}
-
-
-### Video Notes: Inference for Two Quantitative Variables {-}
-
-\setstretch{1}
-
-Example:  Oceanic temperature is important for sea life.  The California Cooperative Oceanic Fisheries Investigations has measured several variables on the Pacific Ocean for more than 70 years hoping to better understand weather patterns and impacts on ocean life. [@ocean]  For this example, we will look at the most recent 100 measurements of salt water salinity (measured in PSUs or practical salinity units) and the temperature of the ocean measured in degrees Celsius. Is there evidence that water temperature in the Pacific Ocean tends to decrease with higher levels of salinity?
-
-
-### Hypothesis Testing - Video 21.1 {-}
-
-Null hypothesis assumes “no effect”, “no difference”, “nothing interesting happening”, etc.
-
-\rgi Always of form:  “parameter” = null value
-
-$H_0:$
-
-\vspace{0.5in}
-
-$H_A:$
-
-\vspace{0.5in}
-
-* Research question determines the alternative hypothesis.
-
-Write the null and alternative for the ocean study:
-
-In notation:
-
-$H_0:$
-
-\vspace{0.2in}
-
-$H_A:$
-
-\vspace{0.2in}
-
+Draw a line at the provided $t^\star$ on the $t$-distribution with 98 degrees of freedom shown below, and label the percentile of the $t^\star$ value.  
 
 
 ``` r
-water %>% # Pipe data set into...
-ggplot(aes(x = Salnty, y = T_degC))+  # Specify variables
-  geom_point(alpha=0.5) +  # Add scatterplot of points
-  labs(x = "salinity (PSUs)",  # Label x-axis
-       y = "temperature (C)",  # Label y-axis
-       title = "Scatterplot of Pacific Ocean Salinity vs Temperature") +
-               # Be sure to title your plots
-  geom_smooth(method = "lm", se = FALSE)  # Add regression line
+
+x <- seq(-4, 4, length=100)
+hx<-dt(x, 98)
+degf <- 98
+
+plot(x, hx, type="l", lty=1, lwd=3, xlab="",
+  ylab="Density", main="t-distribution with 98 df")
 
 ```
 
 
 
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-21-1} \end{center}
+\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/tstar-1} \end{center}
 
-<!-- Describe the four characteristics of the scatterplot: -->
+* We will use the same value for $SE(b_1)$ as used for the standardized statistic.
 
-<!-- \vspace{1in} -->
-
-<!-- Linear model output: -->
-
-<!-- ```{r, echo=TRUE, collapse=FALSE} -->
-<!-- lm.water <- lm(T_degC~Salnty, data=water) # lm(response~explanatory) -->
-<!-- round(summary(lm.water)$coefficients, 3) -->
-<!-- ``` -->
-
-<!-- Correlation: -->
-
-<!-- ```{r, echo=TRUE, collapse=FALSE} -->
-<!-- cor(T_degC~Salnty, data=water) -->
-<!-- ``` -->
-<!-- Write the least squares equation of the line in context of the problem: -->
-
-<!-- \vspace{0.5in} -->
-
-<!-- Interpret the value of slope in the context of the problem: -->
-
-<!-- \vspace{0.5in} -->
-
-<!-- Report and describe the correlation value: -->
-
-<!-- \vspace{0.5in} -->
-
-<!-- Calculate and interpret the coefficient of determination: -->
-
-<!-- \vspace{0.8in} -->
-
-#### Simulation-based method {-}
-
-Conditions:
-
-* Independence: the response for one observational unit will not influence another observational unit
-
-* Linear relationship:
-
-\vspace{0.3in}
-
-\newpage
-
-* Simulate many samples assuming $H_0: \beta_1 = 0$ or $H_0: \rho =0$
-
-    * Write the response variable values on cards
-
-    * Hold the explanatory variable values constant
-    
-    * Shuffle a new response variable to an explanatory variable
-    
-    * Plot the shuffled data points to find the least squares line of regression
-
-    * Calculate and plot the simulated slope or correlation from each simulation
-
-    * Repeat 10000 times (simulations) to create the null distribution
-
-    * Find the proportion of simulations at least as extreme as $b_1$ or $r$
-    
-To test slope:    
-
-``` r
-set.seed(216)
-regression_test(T_degC ~ Salnty, # response ~ explanatory
-               data = water, # Name of data set
-               direction = "less", # Sign in alternative ("greater", "less", "two-sided")
-               summary_measure = "slope", # "slope" or "correlation"
-               as_extreme_as = -5.514, # Observed slope or correlation
-               number_repetitions = 10000) # Number of simulated samples for null distribution
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-22-1} \end{center}
-
-\newpage
-
-To test correlation:
-
-``` r
-set.seed(216)
-regression_test(T_degC~Salnty, # response ~ explanatory
-               data = water, # Name of data set
-               direction = "less", # Sign in alternative ("greater", "less", "two-sided")
-               summary_measure = "correlation", # "slope" or "correlation"
-               as_extreme_as = -0.659, # Observed slope or correlation
-               number_repetitions = 10000) # Number of simulated samples for null distribution
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-23-1} \end{center}
-
-Explain why the null distribution is centered at the value of zero:
+Calculate the margin of error for a 95\% confidence interval for the parameter of interest.
 
 \vspace{0.5in}
 
-Interpretation of the p-value:
-
-* Statement about probability or proportion of samples
-
-* Statistic (summary measure and value)
-    
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
-
-\vspace{0.8in}
-
-Conclusion: 
-
-* Amount of evidence
-    
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+Calculate a 95\% confidence interval for the parameter of interest.
 
 \vspace{0.6in}
 
-### Confidence interval - Video 21.3 {-}
 
-To estimate the true slope (or true correlation) we will create a confidence interval.
-
-#### Simulation-based method{-}
-
-* Write the explanatory and response value pairs on cards
-
-* Sample pairs with replacement $n$ times
-
-* Plot the resampled data points to find the least squares line of regression
-    
-* Calculate and plot the simulated slope (or correlation) from each simulation
-
-* Repeat 10000 times (simulations) to create the bootstrap distribution
-
-* Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
-
-Returning to the ocean example, we will estimate the true slope between salinity and temperature of the Pacific Ocean.
-
-
-``` r
-set.seed(216)
-regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
-   data = water, # Name of data set
-   confidence_level = 0.95, # Confidence level as decimal
-   summary_measure = "slope", # Slope or correlation
-   number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-24-1} \end{center}
-
-Confidence interval interpretation:
-
-* How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-    
-* Parameter of interest
-    
-* Calculated interval
-    
-* Order of subtraction when comparing two groups
-
-\vspace{0.8in}
-
-Now we will estimate the true correlation between salinity and temperature of the Pacific Ocean.
-
-
-``` r
-set.seed(216)
-regression_bootstrap_CI(T_degC~Salnty, # response ~ explanatory
-   data = water, # Name of data set
-   confidence_level = 0.95, # Confidence level as decimal
-   summary_measure = "correlation", # Slope or correlation
-   number_repetitions = 10000) # Number of simulated samples for bootstrap distribution
-```
-
-
-
-\begin{center}\includegraphics[width=0.7\linewidth]{13-VN13-regression_files/figure-latex/unnamed-chunk-25-1} \end{center}
-
-Confidence interval interpretation:
-
-* How confident you are (e.g., 90\%, 95\%, 98\%, 99\%)
-    
-* Parameter of interest
-    
-* Calculated interval
-    
-* Order of subtraction when comparing two groups
-
-\vspace{0.8in}
 
 ### Concept Check
 
 Be prepared for group discussion in the next class. One member from the table should write the answers to the following on the whiteboard.
 
-1. Explain why theory-based methods should not be used to analyze the salinity study?
+1.  What are the three summary measures for two quantitative variables?
+
+\vspace{0.5in}
+
+2. What are the four characteristics used to describe a scatterplot?
+
+\vspace{0.5in}
+
+3. When we add a categorical predictor variable to a scatterplot of two quantitative variables, what summary measure will we compare across the categories to assess the change in the relationship between the two quantitative variables.
+
+\vspace{0.2in}
+
+4. Explain why theory-based methods should not be used to analyze the salinity study?
 
 \vspace{0.6in}
 
-2. What is the proper notation for the population slope? Population correlation?
+5. What is the proper notation for the population slope? Population correlation?
 
 \vspace{0.4in}
 
 
+ 
 \newpage

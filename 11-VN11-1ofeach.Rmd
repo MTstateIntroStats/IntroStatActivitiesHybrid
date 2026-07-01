@@ -409,7 +409,7 @@ Interpret the standardized statistic.
 
 Label the standardized difference in sample means (standardized statistic) on the theoretical distribution below and shade the area representing the p-value.
 
-```{r, tstarpb2, echo = F}
+```{r, tstarpb3, echo = F}
 
 x <- seq(-5, 5, length=100)
 hx<-dt(x, 39)

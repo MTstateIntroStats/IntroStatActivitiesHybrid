@@ -20,6 +20,8 @@ Read Sections 1.2, 2.2 - 2.4, 15.1, 15.2, Chapter 4 and Chapter 16 in the course
 
 ### Video: Variable Roles (sections 1.2.3 and 1.2.4) {-}
 
+\setstretch{1.5}
+
 Explanatory variable: predictor variable
 
 * The variable researchers think *may be* _____________ the other variable.
@@ -33,6 +35,8 @@ Response variable:
 * The variable researchers think *may be* ___________________ by the other variable.
 
 * Always simply ________________ or __________________; never controlled by researchers.
+
+\setstretch{1}
 
 Examples:
 
@@ -84,9 +88,15 @@ In the Physician's Health Study [@physhealth], male physicians participated in a
 
 #### Confounding variables {-}
 
+\setstretch{1.5}
+
 Confounding variable: 
-    - associated with both the ________________ and the _________________ variable
-    - explains the association shown by the data 
+
+* associated with both the ________________ and the _________________ variable
+    
+* explains the association shown by the data 
+
+\setstretch{1}
 
 Example from section 2.2:  Suppose a study tracked sunscreen use and skin cancer, and it was found that the more sunscreen someone used, the more likely the person was to have skin cancer. 
 
@@ -110,11 +120,11 @@ From the study, can we determine that more sunscreen use *causes* skin cancer?
 
 * Observational study: 
 
-\vspace{0.5in}
+\vspace{0.3in}
 
 * Experiment: 
 
-\vspace{0.5in}
+\vspace{0.3in}
  
  
 Principles of experimental design
@@ -139,26 +149,26 @@ To determine the scope of inference for a study, ask yourself two questions:
 
 * Random sample with no sampling bias:
 
-\vspace{0.35in}
+\vspace{0.3in}
 
 * Non-random sample with sampling bias:
 
-\vspace{0.35in}
+\vspace{0.3in}
 
 
 2. What is the study design?
 
 * Randomized experiment:
     
-\vspace{0.35in}
+\vspace{0.3in}
 
 * Observational study:
     
-\vspace{0.35in}
+\vspace{0.3in}
 
 Scope of Inference Table:
 
-```{r, fig.align = "center", out.width="65%"}
+```{r, fig.align = "center", out.width="60%"}
 include_graphics("images/ScopeOfInferenceGreyscale.png")
 ```
 
@@ -195,6 +205,8 @@ Example: In the Physician's Health Study [@physhealth], male physicians particip
 
 ### Video: Two Categorical Variables - Statistics (section 4.1)  {-}
 
+\setstretch{1.5}
+
 * The summary measure for two categorical variables is the ______________________ in _____________________________.
 
 Notation used for the population difference in proportion:
@@ -207,8 +219,6 @@ Notation used for the sample difference in proportion:
     
 \vspace{0.2in}
 
-\setstretch{1.5}
-
 When we have two categorical variables we report the data in a  _______________ or two-way table with the _______________ variable on the columns and the ____________ variable on the rows.
 
 \setstretch{1}
@@ -218,15 +228,15 @@ When we have two categorical variables we report the data in a  _______________ 
 Example from section 4.1 using the `email` data set:
 
 
-* Of emails had no number in them, what proportion were spam? Write it using proper notation.
+* Of emails that had no number in them, what proportion were spam? Write it using proper notation.
 
 \vspace{0.3in}
 
-* Of emails had a small number in them, what proportion were spam? Write it using proper notation.
+* Of emails that had a small number in them, what proportion were spam? Write it using proper notation.
 
 \vspace{0.3in}
 
-* Of emails had a big number in them, what proportion were spam? Write it using proper notation.
+* Of emails that had a big number in them, what proportion were spam? Write it using proper notation.
 
 \vspace{0.3in}
 
@@ -272,11 +282,9 @@ moving %>%
 
 \vspace{0.2in}
 
-\setstretch{1}
 
 If we want to know what proportion of each age group is from each state, we would calculate the proportion of home sales with buyers from each state within each age group. In other words, divide the number of home sales from each state with buyers that are over 30 by the total for row 1, the total number of home sales with buyers over 30.
 
-\setstretch{1}
 
 * What proportion of sampled home sales with buyers under 30-years-old were from California?
 
@@ -285,8 +293,6 @@ If we want to know what proportion of each age group is from each state, we woul
 * What notation should be used for this value?
 
 \vspace{0.2in}
-
-\setstretch{1.5}
 
 Additionally, we could find the proportion of home sales with buyers in each state for each age group.  Here we would calculate the proportion of home sales with buyers in each age group within each state.  Divide the number of home sales with buyers in each age group from CA by the total for column 1, the total number of home sales with buyers from CA.
 
@@ -340,9 +346,11 @@ Two types of plots for displaying two categorical variables:
 \rgi \rgi - The segments within the bar will add to _________ (meaning the y-axis scale will be from 0 to ___________)
 
 
-* Mosaic plot: Same as the segmented bar plot but the width of the bar is determined by ___________________________________________________
+* Mosaic plot: Same as the segmented bar plot but the width of the bar is determined by ________________
 
 \vspace{0.4in}
+
+\setstretch{1}
 
 
 #### Optional notes: Additional Example {-}
@@ -406,7 +414,7 @@ moving %>% # Data set piped into...
 
 \setstretch{1.5}
 
-* When an apparent association between _____________________ and _____________________ variables reverses when accounting for a ______________ variable.
+* When an apparent association between _________________ and __________________ variables reverses when accounting for a ______________ variable.
 
 \setstretch{1}
 
@@ -503,8 +511,6 @@ Review the example from section 4.4 discussing homicide convictions involving mu
 
 * A "success" will be the level of the __________________ variable being compared between the two groups.
 
-\setstretch{1.5}
-
 Notation:
 
 * Population proportion for group 1:
@@ -548,6 +554,8 @@ $H_A:$
  
 #### Simulation-based method {-}
 
+\setstretch{1.5}
+
 * Simulate many samples assuming $H_0: \pi_1 = \pi_2$
 
     * Write the ___________________ variable on cards
@@ -556,12 +564,13 @@ $H_A:$
     
     * Shuffle cards into two "new" _________________ variable groups, the sample sizes of the original groups ($n_1$ and $n_2$)
 
-    * Calculate and plot the simulated _________________ _____ _______________ __________________ from each simulation
+    * Calculate and plot the simulated ____________ _____ ___________ ____________ from each simulation
 
     * Repeat 10000 times (simulations) to create the ____________ distribution
 
-    * Find the proportion of ___________________ at least as extreme as ____________________________
-    
+    * Find the proportion of _____________ at least as extreme as _____________
+
+\setstretch{1}
 
 #### Optional Notes: Additional Example {-}
 
@@ -670,6 +679,8 @@ Interpretation of the p-value:
 
 \vspace{0.8in}
 
+\newpage
+
 Conclusion with scope of inference: 
 
 * Amount of evidence
@@ -692,18 +703,21 @@ To estimate the difference in true proportion, we will create a confidence inter
 
 #### Simulation-based method {-}
 
+\setstretch{1.5}
+
 * Write the response variable outcomes (success/failure) on cards
 
 * Keep explanatory variable groups ______________
     
 * Sample with replacement __________ times in explanatory variable group 1 and ________ times in explanatory variable group 2
 
-* Calculate and plot the simulated _________________ _____ _______________ __________________ from each simulation
+* Calculate and plot the simulated ____________ _____ ___________ ____________ from each simulation
 
-* Repeat 10000 times (simulations) to create the _________________ distribution
+* Repeat 10000 times (simulations) to create the _______________ distribution
 
 * Find the cut-offs for the middle X\% (confidence level) in a bootstrap distribution.
 
+\setstretch{1}
 
 
 #### Optional Notes: Additional Example {-}
@@ -743,6 +757,8 @@ Confidence interval interpretation:
 
 ### Video: Relative Risk (section 15.1.3) {-}
 
+\setstretch{1.5}
+
 * Relative risk is the __________________ of the risk of "success" comparing two groups.
 
 Notation:
@@ -751,9 +767,10 @@ Notation:
 
 * Sample relative risk:
 
+\newpage
+
 There are three ways to interpret relative risk:
 
-\setstretch{1.5}
 
 * Compare the risk of group 1 to group 2:  The risk of ____________________ is group 1 is ________ times the risk of __________________ in group 2.
 
@@ -762,6 +779,8 @@ There are three ways to interpret relative risk:
 * Discuss an *percent* increase/decrease in risk: The risk of ____________________ is group 1 is ________ % **higher/lower** than the risk of __________________ in group 2.
 
 \vspace{0.2in}
+
+\setstretch{1}
 
 If doing a hypothesis test of relative risk:
 

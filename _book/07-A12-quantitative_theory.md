@@ -255,6 +255,8 @@ Mark on the $t$-distribution found below the values of $\pm t^*$.  Draw a line a
 
 ### Additional notes
 
+Activity 12--13 cover the material in Module 7.  For more practice with theory-based inference for a single quantitative variable use the Module 7 Review worksheet in the Unit 2 Review Materials (pgs. 251--254).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered
 
 \newpage

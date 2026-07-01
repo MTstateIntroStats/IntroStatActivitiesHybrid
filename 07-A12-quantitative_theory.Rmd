@@ -266,6 +266,8 @@ plot(x, hx, type="l", lty=1, lwd=3, xlab="t value",
 
 ### Additional notes
 
+Activity 12--13 cover the material in Module 7.  For more practice with theory-based inference for a single quantitative variable use the Module 7 Review worksheet in the Unit 2 Review Materials (pgs. 251--254).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered
 
 \newpage

@@ -46,6 +46,7 @@ Equation for the standardized sample mean:
 
 \vspace{0.5in}
 
+\newpage 
 
 General steps of a hypothesis test
 
@@ -60,6 +61,7 @@ General steps of a hypothesis test
 4.	Calculate a p-value.
 
 \rgi \rgi - Calculate the standardized sample mean ($T$) and compare that to the $t$-distribution with $n-1$ degrees of freedom.
+
 \rgi \rgi - P-value will be the area under the curve beyond $T$ (in the direction of the alternative hypothesis)
 
 5.	Draw conclusions based on a p-value.
@@ -112,6 +114,8 @@ Calculate the standardized sample mean weight (the $T$-score):
 Interpret the standardized statistic:
 
 \vspace{0.8in}
+
+\newpage
 
 Label the standardized sample mean (standardized statistic) on the $t$-distribution with 82 degrees of freedom below and shade the area representing the p-value.  Why 82 degrees of freedom?
 
@@ -170,6 +174,8 @@ Generalization:
 
 ### Theory-based Confidence Interval for One Quantitative Variable (section 17.3.3) {-}
 
+\setstretch{1.5}
+
 Confidence intervals are used to estimate the _________________.
 
 General formula for a confidence interval is always:
@@ -182,11 +188,13 @@ For a single quantitative variable,
 
 * $\text{statistic}$ = ___________
 
-* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic} = $ ____________ $\times$ ______________
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}=$ ____________ $\times$ ______________
 
 The formula for the standard error of the sample mean is the same as was used in the previous video: $SE(\overline{y}) = \frac{s}{\sqrt{n}}$
 
 The $t^*$ multiplier is the value at the given percentile(s) of the t-distribution with $n - 1$ degrees of freedom.
+
+\setstretch{1}
 
 #### Optional notes: Additional Example {-}
 
@@ -228,6 +236,8 @@ pb %>%
 Calculate the standard error of the sample mean weight:
 
 \vspace{0.3in}
+
+\newpage
 
 To find the $t^*$ multiplier for a 90% confidence interval:
 

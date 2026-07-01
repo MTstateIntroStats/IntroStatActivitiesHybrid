@@ -4,15 +4,15 @@ Read Chapters 5, 17, and 12 in the course textbook.  Use the following videos to
 
 ### Course Videos
 
-* 17.3TheoryTests
+* Theoretical_Tests_One_Quantitative_Variable
 
-* 17.3TheoryIntervals
+* Theoretical_Intervals_One_Quantitative_Variable
 
-* Chapter12
+* Errors_Power
 
 \setstretch{1}
 
-### Theory-based Testing for a Single Mean - Video 17.3TheoryTests {-}
+### Theory-based Test for One Quantitative Variable (sections 17.3.1, 17.3.2 and 17.3.4) {-}
 
 Conditions for inference using theory-based methods:
 
@@ -22,7 +22,7 @@ Conditions for inference using theory-based methods:
 
 - Large enough sample size:
 
-\vspace{0.2in}
+\vspace{1in}
 
 #### $t$-distribution {-}
 
@@ -31,11 +31,9 @@ In the theoretical approach, we use the Central Limit Theorem (CLT) to tell us t
 $$\bar{y} \sim N\left(\mu_0, \frac{\sigma}{\sqrt{n}}\right)$$
 \setstretch{1.5}
 
-* Estimate the population standard deviation, $\sigma$, with the
-___________________________ standard deviation, ________.
+* Estimate the population standard deviation, $\sigma$, with the ___________________________ standard deviation, ________.
 
-* For a single quantitative variable we use the ____ - distribution
-with _______________
+* For a single quantitative variable we use the ____ - distribution with _______________
 degrees of freedom to approximate the sampling distribution.
 
 \setstretch{1}
@@ -48,14 +46,61 @@ Equation for the standardized sample mean:
 
 \vspace{0.5in}
 
-### Optional Notes: Video Example (Video 17.3TheoryTests) {-}
+\newpage 
+
+General steps of a hypothesis test
+
+1.	Write a research question and hypotheses.
+
+2.	Collect data and calculate a summary statistic.
+
+3.	Model a sampling distribution which assumes the null hypothesis is true.
+
+\rgi \rgi - If the conditions are met, the sampling distribution of a sample mean which assumes the null hypothesis is true is the $t$-distribution with $n-1$ degrees of freedom
+
+4.	Calculate a p-value.
+
+\rgi \rgi - Calculate the standardized sample mean ($T$) and compare that to the $t$-distribution with $n-1$ degrees of freedom.
+
+\rgi \rgi - P-value will be the area under the curve beyond $T$ (in the direction of the alternative hypothesis)
+
+5.	Draw conclusions based on a p-value.
+
+
+#### Optional notes: Additional Example {-}
+
+Adult male polar bears historically have weighed, on average, 370kg.  Scientists are concerned that reduction in food availability and a shortened hunting season may be negatively impacting their weights. The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea. Is there evidence that male polar bears in the Southern Beaufort Sea weigh less than 370kg, on average?  
 
 
 ``` r
 pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
 ```
 
-\newpage
+Plots of the data:
+
+
+``` r
+pb %>%
+    ggplot(aes(x = Weight)) +   # Name variable to plot
+    geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
+    labs(title = "Histogram of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "Frequency") # Label for y axis
+
+pb %>% # Data set piped into...
+ggplot(aes(x = Weight)) +   # Name variable to plot
+  geom_boxplot() +  # Create boxplot
+  labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "") + # Label for y axis  
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-1} \includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-2-2} \end{center}
 
 Summary Statistics:
 
@@ -67,16 +112,27 @@ pb %>%
 #> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
 ```
 
-Calculate the standardized sample mean weight of adult male polar bears:
+Calculate the standard error of the sample mean weight:
 
-\vspace{0.4in}
+\vspace{0.3in}
+
+Calculate the standardized sample mean weight (the $T$-score):
+
+\vspace{0.5in}
+
+Interpret the standardized statistic:
+
+\vspace{0.8in}
+
+\newpage
+
+Label the standardized sample mean (standardized statistic) on the $t$-distribution with 82 degrees of freedom below and shade the area representing the p-value.  Why 82 degrees of freedom?
+
+\vspace{0.3in}
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/pvaluepb-1} \end{center}
 
-Interpret the standardized sample mean weight:
-
-\vspace{0.8in}
 
 To find the theory-based p-value:
 
@@ -86,31 +142,151 @@ pt(-4.683, df=82, lower.tail=TRUE)
 #> [1] 5.531605e-06
 ```
 
-\newpage
+Interpretation of the p-value:
 
-### Theory-based Confidence Interval for a Single Mean - Video 17.3TheoryIntervals {-}
+* Statement about probability or proportion of samples
 
-* Calculate the interval centered at the sample statistic
+* Statistic (summary measure and value) and Direction of the alternative 
+    
+* Null hypothesis (population reference, summary measure, equal to null value)
 
-\rgi $\text{statistic} \pm \text{margin of error}$
+* Context of the problem (observational units, variable (if variable is quantitative, include units))
+
+\vspace{0.6in}
+
+Conclusion:
+
+* Amount of evidence
+    
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context (observational units, variable (if variable is quantitative, include units))
 
 \vspace{0.5in}
 
-The $t^*$ multiplier is the value at the given percentile of the t-distribution with $n - 1$ degrees of freedom.
+Decision at a significance level of 0.05 $(\alpha = 0.05)$:
+
+\vspace{0.3in}
+
+Generalization:
+
+* Can the results of the study be generalized to the target population?
+
+\vspace{0.4in}
+
+
+### Theory-based Confidence Interval for One Quantitative Variable (section 17.3.3) {-}
+
+\setstretch{1.5}
+
+Confidence intervals are used to estimate the _________________.
+
+General formula for a confidence interval is always:
+
+\rgi \rgi $\text{statistic} \pm \text{margin of error}$
+
+\rgi \rgi where $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}$
+
+For a single quantitative variable,
+
+* $\text{statistic}$ = ___________
+
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}=$ ____________ $\times$ ______________
+
+The formula for the standard error of the sample mean is the same as was used in the previous video: $SE(\overline{y}) = \frac{s}{\sqrt{n}}$
+
+The $t^*$ multiplier is the value at the given percentile(s) of the t-distribution with $n - 1$ degrees of freedom.
+
+\setstretch{1}
+
+#### Optional notes: Additional Example {-}
+
+
+What is the average weight of adult male polar bears?  The weight was measured on a representative sample of 83 male polar bears from the Southern Beaufort Sea.
+
+
+``` r
+pb <- read.csv("https://math.montana.edu/courses/s216/data/polarbear.csv")
+```
+
+Plots of the data:
+
+
+``` r
+pb %>%
+    ggplot(aes(x = Weight)) +   # Name variable to plot
+    geom_histogram(binwidth = 10) +  # Create histogram with specified binwidth
+    labs(title = "Histogram of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "Frequency") # Label for y axis
+
+pb %>% # Data set piped into...
+ggplot(aes(x = Weight)) +   # Name variable to plot
+  geom_boxplot() +  # Create boxplot
+  labs(title = "Boxplot of Male Polar Bear Weight", # Title for plot
+       x = "Weight (kg)", # Label for x axis
+       y = "") + # Label for y axis  
+    theme(axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank()) # Removes y-axis ticks
+
+```
+
+
+
+\begin{center}\includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-6-1} \includegraphics[width=0.6\linewidth]{07-VN07-one_meantheory_files/figure-latex/unnamed-chunk-6-2} \end{center}
+
+Summary Statistics:
+
+
+``` r
+pb %>%
+  summarise(favstats(Weight)) #Gives the summary statistics
+#>     min    Q1 median     Q3   max     mean       sd  n missing
+#> 1 104.1 276.3  339.4 382.45 543.6 324.5988 88.32615 83       0
+```
+
+Calculate the standard error of the sample mean weight:
+
+\vspace{0.3in}
+
+\newpage
+
+To find the $t^*$ multiplier for a 90% confidence interval:
+
+
+``` r
+qt(0.95, df = 82)
+#> [1] 1.663649
+```
+
+Draw a line at the provided $t^\star$ on the $t$-distribution with 82 degrees of freedom shown below, and label the percentile of the $t^\star$ value.  
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{07-VN07-one_meantheory_files/figure-latex/tstarpb2-1} \end{center}
 
-To find the $t^*$ multiplier for a 95\% confidence interval:
+Why did we use the 95th percentile of the appropriate $t$-distribution to calculate a 90% confidence interval?
+
+\vspace{0.4in}
+
+Calculate the margin of error for the 90% confidence interval from these data:
+
+\vspace{0.4in}
 
 
-``` r
-qt(0.975, df = 82)
-#> [1] 1.989319
-```
-Calculation of the confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
+Calculate the 90% confidence interval for the true mean weight of polar bears from the Southern Beaufort Sea:
 
 \vspace{0.8in}
+
+Confidence interval interpretation:
+
+* How confident you are (e.g., 90%, 95%, 98%, 99%)
+    
+* Parameter of interest (including context: observational units, variable (if variable is quantitative, include units))
+    
+* Calculated interval
+    
+\vspace{0.8in}
+
 
 ### Decisions, Errors, and Power - Video Chapter12 {-}
 
@@ -225,4 +401,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \vspace{0.6in}
 
+ 
 \newpage

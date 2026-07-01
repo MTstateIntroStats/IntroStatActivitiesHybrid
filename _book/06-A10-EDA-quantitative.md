@@ -290,6 +290,8 @@ IPEDS %>% # Data set piped into...
 
 ### Additional notes
 
+Activities 10--11 cover the material in Module 6.  For more practice with EDA and Simulation based hypothesis testing of a single quantitative variable use the Module 6 Review worksheet in the Unit 2 Review Materials (pgs. 248--250).
+
 Use this space to summarize your thoughts and take additional notes on today's activity and material covered.
 
 \newpage

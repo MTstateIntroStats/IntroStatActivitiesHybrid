@@ -259,7 +259,13 @@ Notation *(write all three options)*:
 
 #### Simulation-based method {-}
 
+Condition: Observational units must be **independent**, meaning
+
+\vspace{0.2in}
+
 \setstretch{1.5}
+
+\newpage
 
 Creation of the null distribution
 
@@ -267,7 +273,7 @@ Creation of the null distribution
 
 \vspace{0.2in}
 
-* Find the proportion of ___________________ at least as extreme as the observed sample ____________
+* Find the proportion of ___________________ at least as extreme as the observed ___________________
 
 * The null distribution estimates the sample to sample variability expected in the population
 
@@ -275,6 +281,8 @@ Creation of the null distribution
 
 
 #### Theory-based method {-}
+
+Conditions: Independence and a large enough sample size
 
 * Use a mathematical model to determine a distribution under the null hypothesis
 
@@ -288,15 +296,14 @@ Creation of the null distribution
 
 * What does the p-value measure?
 
-    * Probability of observing the sample ___________________ or more __________ 
-assuming the ________ hypothesis is __________.
+    * Probability of observing the ___________________ or _________________ assuming the ____________ hypothesis is ______________.
     
 * How much evidence does the p-value provide against the null hypothesis?
 
 
 \begin{center}\includegraphics[width=0.75\linewidth]{images/soe_gradient_gray} \end{center}
 
-\rgi \rgi - The __________________ the p-value, the ___________________ the evidence against the null hypothesis.
+\rgi \rgi - The __________________ the p-value, the ___________________ the evidence **against** the null hypothesis.
 
 
 * Write a conclusion based on the p-value.
@@ -304,6 +311,8 @@ assuming the ________ hypothesis is __________.
 \rgi \rgi - Answers the ________________ question.
     
 \rgi \rgi - Amount of _________________ in support of the _________________ hypothesis.
+
+\newpage
     
 * Decision: can we reject or fail to reject the null hypothesis?
 
@@ -435,6 +444,8 @@ Define the parameter in words and write it using proper notation
 
 \vspace{0.5in}
 
+\newpage
+
 Write the null and alternative hypotheses in words and in proper notation:
 
   \rgi In words:
@@ -446,8 +457,6 @@ Write the null and alternative hypotheses in words and in proper notation:
   \rgi \rgi $H_A:$
 
 \vspace{0.45in}
-
-\newpage
 
   \rgi In notation:
   
@@ -496,7 +505,7 @@ one_proportion_test(probability_success = 0.10, # Null hypothesis value
 
 Explain why the null distribution is centered at the value of approximately 0.10:
 
-\vspace{0.5in}
+\vspace{0.4in}
 
 Where is the red line plotted on the null distribution?  Why is that value important?
 
@@ -506,6 +515,10 @@ Why is the area left of the red line shaded on the null distribution?
 
 \vspace{0.3in}
 
+What is the p-value of the test?
+
+\vspace{0.15in}
+
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
@@ -514,7 +527,7 @@ Interpretation of the p-value:
     
 * Null hypothesis (population reference, summary measure, equal to null value)
 
-* Context of the problem (observational units, variable(s))
+* Context of the problem (observational units, variable (if variable is categorical, define "success"))
 
 Two example p-value interpretations are provided below.  Identify each of the components within the two examples:
 
@@ -522,7 +535,7 @@ Two example p-value interpretations are provided below.  Identify each of the co
 
 * Example 2: If 10% of all liver donor surgeries in the US result in a complication, 1236/10000 samples would simulate a proportion of complications of 0.048 or less. 
 
-\vspace{0.1in}
+\vspace{1mm}
 
 Conclusion: 
 
@@ -530,21 +543,19 @@ Conclusion:
     
 * For the alternative hypothesis (population reference, summary measure, direction, null value)
 
-* Context (observational units, variable(s))
+* Context (observational units, variable (if variable is categorical, define "success"))
 
 An example conclusion is provided below.  Identify each of the components within the example:
 
 * There is little to no that the proportion of all liver donor surgeries in the US that result in a complication is less than 0.10.
 
-\vspace{0.1in}
+\vspace{1mm}
 
 Generalization:
 
 * Can the results of the study be generalized to the target population?
 
-\vspace{0.4in}
-
-\newpage
+\vspace{0.3in}
 
 ### Video: Confidence intervals (chapter 10) {-}
 
@@ -628,7 +639,8 @@ Review the Medical Consultant example in section 10.1.
 
 \setstretch{1}
 
- 
+\newpage
+
 ### Video: Bootstrap Confidence Intervals for One Categorical Variable (section 14.2) {-}
 
 Review the Medical Consultant study from section 14.2.
@@ -652,11 +664,13 @@ Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variable (if variable is categorical, define "success"))
     
 * Calculated interval
     
 \vspace{0.8in}
+
+\newpage
 
 #### How does changing the confidence level impact the width of the confidence interval? {-}
 
@@ -689,6 +703,8 @@ one_proportion_bootstrap_CI(sample_size = 62, # Sample size
 
 
 \begin{center}\includegraphics[width=0.7\linewidth]{03-VN03-EDA_OneCatSimulation_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+\newpage
 
 ### Concept Check
 

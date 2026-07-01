@@ -105,15 +105,15 @@ $H_A:$
 
 * Simulate many samples assuming $H_0: \mu_d = 0$
 
-    * Shift the data by the difference between __________ and _____________.  Label cards with these shifted values.
+* Shift the data by the difference between __________ and _____________.  Label cards with these shifted values.
 
-    * Sample with replacement ___________ times from the shifted data
+* Sample with replacement ___________ times from the shifted data
 
-    * Plot the simulated shifted sample ______________________________ from each simulation
+* Plot the simulated shifted sample ______________________________ from each simulation
 
-    * Repeat 10000 times (simulations) to create the ________________ distribution
+* Repeat 10000 times (simulations) to create the ________________ distribution
 
-    * Find the proportion of simulations at least as extreme as _____________________
+* Find the proportion of simulations at least as extreme as _____________________
     
 #### Simulation-based Confidence Intervals {-}
 
@@ -150,7 +150,7 @@ Why should these data be treated as paired?
 
 \vspace{0.4in}
 
-Define the parameter in words and write it using proper notation
+Define the parameter in words and write it using proper notation.
 
 \vspace{0.5in}
 
@@ -407,7 +407,7 @@ qt(0.99, df=198, lower.tail = TRUE)
 Draw a line at the provided $t^\star$ on the $t$-distribution with 198 degrees of freedom shown below, and label the percentile of the $t^\star$ value.  
 
 
-```{r, tstar, echo = F}
+```{r, tstar, echo = TRUE}
 
 x <- seq(-4, 4, length=100)
 hx<-dt(x, 198)
@@ -429,7 +429,7 @@ Calculate a 98\% confidence interval for the parameter of interest.
 
 \vspace{0.6in}
 
-Do your confidence interval and p-value agree?
+Does your confidence interval and p-value agree?
 
 \vspace{0.5in}
 

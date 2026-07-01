@@ -4,34 +4,87 @@ Read Sections 15.3 and 15.4 in the course textbook.  Use the following videos to
 
 ### Course Videos
 
-* 15.3TheoryTests
 
-* 15.3TheoryIntervals
+* Theoretical_Tests_Two_Categorical_Variables
 
-<!-- * RelativeRisk -->
+* Theoretical_Intervals_Two_Categorical_Variables
 
 
 \setstretch{1}
 
-### Theoretical Testing for a Difference in Proportion - Video 15.4TheoryTests {-}
+### Video: Theoretical Testing for Two Categorical Variables (sections 15.3.1 and 15.3.3) {-}
 
-Example: In Modules 3 and 4, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?
+Conditions for inference using theory-based methods for two categorical variables:
 
-What is the explanatory variable?
-
-\vspace{0.2in}
-
-What is the response variable?
+- Independence: the response for one observational unit will not influence another observational unit
 
 \vspace{0.2in}
 
-Write the parameter of interest:
+- Large enough sample size:
+
+\vspace{0.7in}
+
+General steps of a hypothesis test
+
+1.	Write a research question and hypotheses.
+
+2.	Collect data and calculate a summary statistic.
+
+3.	Model a sampling distribution which assumes the null hypothesis is true.
+
+\rgi \rgi - If the conditions are met, the sampling distribution of a difference in sample proportions which assumes the null hypothesis is true is the standard Normal (N(0,1)) distribution
+
+4.	Calculate a p-value.
+
+\rgi \rgi - Calculate the standardized difference in sample proportions ($Z$) and compare that to the standard Normal (N(0,1)) distribution.
+
+\rgi \rgi - P-value will be the area under the curve beyond $Z$ (in the direction of the alternative hypothesis)
+
+5.	Draw conclusions based on a p-value.
+
+
+Equation for the standard error of the difference in sample proportions, assuming the null hypothesis is true:
 
 \vspace{0.8in}
 
-Hypotheses:
+\setstretch{1.5}
 
-In notation:  
+* This value measures how far each possible __________________________________ is from the __________, on average.
+
+\setstretch{1}
+
+Equation for the standardized difference in sample proportions (standardized statistic):
+
+\vspace{0.8in}
+
+\setstretch{1.5}
+
+* This value measures how many ___________ _____________ the observed difference in sample proportions is above/below the __________ ___________.
+
+\setstretch{1}
+
+
+#### Optional Notes: Additional Example {-}
+
+Example: Earlier in the semester, we investigated data on higher education institutions in the United States, collected by the Integrated Postsecondary Education Data System (IPEDS) for the National Center for Education Statistics (NCES) [@ipeds]. A random sample of 2900+ higher education institutions in the United States was collected in 2018.  Two variables measured on this data set is whether the institution is a land grant university and whether the institution offers tenure.  Does the proportion of universities that offer tenure differ between land grant and non-land-grant institutions?  Use land grant - non-land-grant as the order of subtraction.
+
+What are the observational units in this study?
+
+\vspace{0.3in}
+
+Explanatory variable (include: what is group 1?): 
+
+\vspace{0.2in}
+
+Response variable (include: what is a "success"?):
+
+\vspace{0.2in}
+
+Define the parameter in words and write it using proper notation
+
+\vspace{0.5in}
+
+Write the null and alternative hypotheses in proper notation:
 
 $H_0:$
 
@@ -76,74 +129,38 @@ IPEDS %>% group_by(LandGrant) %>% count(Tenure)
 
 \begin{center}\includegraphics[width=0.7\linewidth]{09-VN09-two-cat-theory_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-Report the summary statistic:
+Calculate the summary statistic and write it using proper notation:
 
-\vspace{0.6in}
+\vspace{0.3in}
 
-Conditions for inference using theory-based methods for two categorical variables:
+Interpretation of the summary statistic:
 
-- Independence: the response for one observational unit will not influence another observational unit
-
-\vspace{0.2in}
-
-- Large enough sample size:
-
-\vspace{0.7in}
+\vspace{0.4in}
 
 
 Are the conditions met to analyze the university data using theory-based methods?
 
 \vspace{0.8in}
-\newpage
+ 
 
-Steps to use theory-based methods:
-
-* Calculate the standardized statistic
-
-* Find the area under the standard normal distribution at least as extreme as the standardized statistic
-
-Equation for the standard error of the difference in sample proportions assuming the null hypothesis is true:
-
-\vspace{0.8in}
-
-\setstretch{1.5}
-
-* This value measures how far each possible sample difference in proportions is from the null value, on average.
-
-\setstretch{1}
-
-Equation for the standardized difference in sample proportions:
-
-\vspace{0.8in}
-
-\setstretch{1.5}
-
-* This value measures how many standard errors the sample difference in proportions is above/below the null value.
-
-\setstretch{1}
-
-### Optional Notes: Video Example (Video 15.3TheoryTests) {-}
-
-Calculate the standardized difference in sample proportion of higher education institutions that offer tenure between land grant universities and non-land grant universities.
-
-* First calculate the standard error of the difference in proportion assuming the null hypothesis is true
+Calculate the standard error of the difference in sample proportions, assuming the null hypothesis is true
 
 \vspace{0.4in}
 
-* Then calculate the Z score
+Calculate the standardized difference in sample proportions ($Z$) of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
 \vspace{0.4in}
 
-
-\begin{center}\includegraphics[width=0.5\linewidth]{09-VN09-two-cat-theory_files/figure-latex/standNormc-1} \end{center}
-
-Interpret the standardized statistic
+Interpret the standardized statistic.
 
 \vspace{0.5in}
 
-\newpage
+Label the standardized difference in sample proportions (standardized statistic) on the standard Normal distribution below and shade the area representing the p-value.
 
-To find the p-value, find the area under the standard normal distribution at the standardized statistic and more extreme.
+
+\begin{center}\includegraphics[width=0.5\linewidth]{09-VN09-two-cat-theory_files/figure-latex/standNormald-1} \end{center}
+
+To find the p-value, find the area under the standard Normal distribution at the standardized statistic and more extreme (in the direction of the alternative hypothesis).
 
 
 ``` r
@@ -153,15 +170,17 @@ pnorm(0.985, lower.tail = FALSE)*2
 ```
 #> [1] 0.3246241
 ```
+
 Interpretation of the p-value:
 
 * Statement about probability or proportion of samples
 
-* Statistic (summary measure and value)
+* Statistic (summary measure and value) and Direction of the alternative 
     
-* Direction of the alternative 
-    
-* Null hypothesis (in context) 
+* Null hypothesis (population reference, summary measure, equal to null value)
+
+* Context of the problem (observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
+
 
 \vspace{0.8in}
 
@@ -169,55 +188,67 @@ Conclusion with scope of inference:
 
 * Amount of evidence
     
-* Parameter of interest 
-    
-* Direction of the alternative hypothesis
+* For the alternative hypothesis (population reference, summary measure, direction, null value)
+
+* Context of the problem (observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
 
 * Generalization
 
 * Causation
 
-\vspace{0.6in}
- 
-
-### Theoretical Confidence Interval for a Difference in Proportion - Video 15.3TheoryIntervals {-}
-
-* Estimate the _______________ in true _______________ 
-
-* $CI = \text{statistic} \pm \text{margin of error}$
-
-#### Theory-based method for a two categorical variables {-}
-
-* $CI = \hat{p}_1-\hat{p}_2 \pm (z^* \times SE(\hat{p}_1-\hat{p}_2))$
-
-\setstretch{1.5}
-
-* When creating a confidence interval, we no longer assume the _____________ hypothesis is true. Use the sample _____________ to calculate the sample to sample variability, rather than $\hat{p}_{pooled}$.
-
-\setstretch{1}
-
-Equation for the standard error of the difference in sample proportions *NOT* assuming the null is true:
-
-\vspace{0.6in}
+\vspace{0.8in}
 
 \newpage
+
+### Theoretical Confidence Interval for Two Categorical Variables (section 15.3.2) {-}
+
+General formula for a confidence interval is always:
+
+\rgi \rgi $\text{statistic} \pm \text{margin of error}$
+
+\rgi \rgi where $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}$
+
+For two categorical variables,
+
+* $\text{statistic}$ = ___________________
+
+* $\text{margin of error} = \text{multiplier} \times \text{standard error of the statistic}=$ ____________ $\times$ ______________
+
+The $z^*$ multiplier is the value at the given percentile(s) of the standard Normal (N(0,1)) distribution.
+
+Formula for the standard error of the difference in sample proportions, not assuming the null hypothesis is true:
+
+\vspace{0.6in}
+
+* Because we no longer assume the _____________ hypothesis is true, we need to keep the two groups *separate*. Use the sample proportions in group 1 and in group 2 to calculate the sample to sample variability, rather than $\hat{p}_{pooled}$.
+
+\setstretch{1}
+ 
 
 ### Optional Notes: Video Example (Video 15.3TheoryIntervals) {-}  
 
 Estimate the difference in true proportions of higher education institutions that offer tenure between land grant universities and non-land grant universities.
 
-Find a 90\% confidence interval:
+Find a 99\% confidence interval:
 
-* 1st find the $z^*$ multiplier 
+* 1st, use `R` find the $z^*$ multiplier 
 
 
 ``` r
-qnorm(0.95, lower.tail=TRUE)
+qnorm(0.995, lower.tail=TRUE)
 ```
 
 ```
-#> [1] 1.644854
+#> [1] 2.575829
 ```
+\rgi \rgi - The above code used the 99.5th percentile to find $z^\star$.  What other percentile could have been used?
+
+\vspace{0.2in}
+
+Draw a line at the provided $z^\star$ on the standard Normal distribution shown below, and label the percentile of the $z^\star$ value.  
+
+
+\begin{center}\includegraphics[width=0.5\linewidth]{09-VN09-two-cat-theory_files/figure-latex/standNormalc-1} \end{center}
 
 * Next, calculate the standard error for the difference in proportions **NOT** assuming the null hypothesis is true
 
@@ -227,7 +258,7 @@ qnorm(0.95, lower.tail=TRUE)
 
 \vspace{0.6in}
 
-* Calculate the endpoints of the 90\% confidence interval
+* Calculate the endpoints of the 99\% confidence interval
 
 \vspace{0.5in}
 
@@ -235,13 +266,13 @@ Confidence interval interpretation:
 
 * How confident you are (e.g., 90%, 95%, 98%, 99%)
     
-* Parameter of interest
+* Parameter of interest (including context: observational units, variables (for two categorical variables, include: both explanatory variable groups, define a "success" from the response variable, and include order of subtraction))
     
 * Calculated interval
-    
-* Order of subtraction when comparing two groups
 
-\vspace{0.7in}
+\vspace{0.8in}
+
+
 
 ### Concept Check
 
@@ -255,4 +286,5 @@ Be prepared for group discussion in the next class. One member from the table sh
 
 \vspace{1in}
 
+ 
 \newpage
